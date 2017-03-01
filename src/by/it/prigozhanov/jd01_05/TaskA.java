@@ -1,6 +1,6 @@
 package by.it.prigozhanov.jd01_05;
 
-import static java.lang.Math.cos;
+import static java.lang.Math.*;
 
 /**
  * Created by v-omf on 3/1/2017.
@@ -9,8 +9,30 @@ public class TaskA {
     //задача1
     static double Task1(double a, double b) {
         double y;
-        y = Math.pow(Math.cos(Math.PI/4), 4) + Math.pow(Math.sqrt(a + 1.5), 1 / 5) + Math.pow((a * b), 8) - b / (Math.log(Math.abs(a*a)));
+        y = pow(cos(PI / 4), 4) + pow(sqrt(a + 1.5), 1 / 5) + pow((a * b), 8) - b / (log(abs(a * a)));
         return y;
+    }
+
+    //задача 2
+    static double Task2(double x, double a) {
+        double z;
+        if (x <= PI/2 || x >= PI/2) {
+            System.out.print("Неверный угол ");
+            return x;
+        } else
+        z = tan(x * x) + pow(cos(PI / 2 - a), 3) / (abs((x - pow(sqrt(a), 1 / 5))));
+
+        return z;
+    }
+
+    //задача 3
+    static void Task3(double x) {
+        double l;
+        for (double c = -10; c <= 1; c += 0.5) {
+            l = pow(sqrt(pow(abs(2 * x - c), 3)), 5) + 0.567;
+            System.out.printf("c=[%6.2f], l=[%-5.3f]", c, l);
+            System.out.println();
+        }
     }
 
 }
