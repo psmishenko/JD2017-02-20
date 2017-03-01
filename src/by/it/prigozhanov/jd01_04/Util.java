@@ -110,7 +110,7 @@ public class Util {
         for (int i = 0; i < n; i++) {
             m[i][i + a[0].length] = 1;
         }
-        int z = m.length;
+        int z = m[0].length;
         //прямой ход метода Гаусса
         for (int diag = 0; diag < n - 1; diag++) {
             for (int row = diag + 1; row < n; row++) {
