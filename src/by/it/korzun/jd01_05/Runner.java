@@ -6,6 +6,10 @@ public class Runner {
         System.out.println(Task1.run());
         System.out.println(Task2.run(3.24, 5.8));
         Task3.run();
+        System.out.println(Task4.run());
+        Task5.run();
+        Task6.run();
+        Task7.run();
 
     }
 }
