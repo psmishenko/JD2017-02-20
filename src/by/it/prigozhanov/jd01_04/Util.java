@@ -98,7 +98,7 @@ public class Util {
         System.out.println("Определитель: " + determ);
     }
 
-    static void inverseMarix(double[][] a, boolean showLog) {
+    static double[][] inverseMarix(double[][] a, boolean showLog) {
 
         int n = a.length;
         double[][] m = new double[n][a[0].length + a[0].length];
@@ -148,7 +148,22 @@ public class Util {
                 a[i][j] = m[i][j+n];
             }
         }
-        System.out.println("Обратная матрица");
-        InOut.arrayPrint(a, "I", false);
+        return a;
+    }
+
+    public static void matrixMultipliedByMatrix(double firstarr[][], double secondarr[][]) {
+        double[][] multarr = new double[firstarr.length][secondarr[0].length];
+        double sum = 0;
+        for (int i = 0; i < firstarr.length; i++) {
+            for (int j = 0; j < secondarr[0].length; j++) {
+                for (int k = 0; k < secondarr.length; k++) {
+                    multarr[i][j] += firstarr[i][k] * secondarr[k][j];
+                }
+                sum = 0;
+            }
+
+        }
+        System.out.println("Matrix Multiplied by Matrix");
+        InOut.arrayPrint(multarr, "M", false);
     }
 }
