@@ -1,7 +1,10 @@
 package by.it.radivonik.jd01_02;
 
 import java.io.IOException;
+<<<<<<< f1c030438cf71245b23b5a32fb8d20b0ebb8bca6
 import java.util.Scanner;
+=======
+>>>>>>> Тест
 
 /**
  * Created by Radivonik on 28.02.2017.
@@ -12,6 +15,7 @@ public class Runner {
       String line = "232 224 776 6687 89899 2323 656 797898 32 76767 7979 321212 68686";
       int arr[] = Util.lineToIntArray(line);
 
+<<<<<<< f1c030438cf71245b23b5a32fb8d20b0ebb8bca6
       // Задача A1
       System.out.println("\nЗадача A1");
       int max = TaskA.getMax(arr);
@@ -23,6 +27,17 @@ public class Runner {
       System.out.println("\nЗадача A2");
       double mean = TaskA.mean(arr);
       System.out.print("Числа меньше среднего " + mean + " таковы: ");
+=======
+      // A1
+      String max = TaskA.getMax(arr);
+      System.out.println(max);
+      String min = TaskA.getMin(arr);
+      System.out.println(min);
+
+      // A2
+      double mean = TaskA.mean(arr);
+      System.out.print("Числа меньше " + mean + " таковы: ");
+>>>>>>> Тест
       for (int i : arr) {
           if (i < mean) {
               System.out.print(i + " ");
@@ -30,6 +45,7 @@ public class Runner {
       }
       System.out.println();
 
+<<<<<<< f1c030438cf71245b23b5a32fb8d20b0ebb8bca6
       // Задача A3
       System.out.println("\nЗадача A3");
       for (int i : arr) {
@@ -100,5 +116,20 @@ public class Runner {
           int n = Integer.parseInt(scanner.nextLine());
           System.out.println(TaskB.getMonthName(n));
       }
+=======
+      // A3
+      for (int i : arr) {
+          if (TaskA.uniqueDigits(i)) {
+              System.out.print("Найдено число из разных цифр: " + i);
+              break;
+          }
+      }
+      System.out.println();
+
+      // B4
+      System.out.print("Введите номер месяца: ");
+      int n = Integer.parseInt(Util.getOneLine());
+      System.out.println(TaskB.getMonthName(n));
+>>>>>>> Тест
   }
 }

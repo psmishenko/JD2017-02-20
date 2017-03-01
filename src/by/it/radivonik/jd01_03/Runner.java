@@ -12,6 +12,7 @@ public class Runner {
         String line = "12.5 1.25 3.8 4.69 7.48 3.99 5.98 5.99";
         System.out.println(line);
         double[] a = InOut.readDoubleArrayFromLine(line);
+<<<<<<< f1c030438cf71245b23b5a32fb8d20b0ebb8bca6
 
         // Печать массива
         System.out.println("\nПечать массива");
@@ -53,5 +54,17 @@ public class Runner {
         System.out.println("\nУмножение матриц");
         InOut.printDoubleArray(Util.arrayMul(m1,v),"M1xV",5);
         InOut.printDoubleArray(Util.arrayMul(m1,m2),"M1xM2",3);
+=======
+        InOut.printDoubleArray(a,"A",3);
+        System.out.println();
+
+        Util.sort(a);
+        System.out.println("Sort");
+        InOut.printDoubleArray(a,"A",3);
+
+//        Arrays.sort(a);
+//        System.out.println("Sort");
+//        InOut.printDoubleArray(a,"A",3);
+>>>>>>> Тест
     }
 }

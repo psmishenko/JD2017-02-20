@@ -4,6 +4,7 @@ package by.it.radivonik.jd01_02;
  * Created by Radivonik on 28.02.2017.
  */
 public class TaskB {
+<<<<<<< f1c030438cf71245b23b5a32fb8d20b0ebb8bca6
     public static boolean isIn(int k, int n, int m ) {
         if ( k >= n && k <= m )
             return true;
@@ -48,6 +49,9 @@ public class TaskB {
     }
 
     public static String getMonthName(int nMonth) {
+=======
+    static String getMonthName(int nMonth) {
+>>>>>>> Тест
         String[] aMonth = {
                 "январь", "февраль", "март", "апрель", "май", "июнь",
                 "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"

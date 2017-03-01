@@ -4,11 +4,15 @@ package by.it.radivonik.jd01_03;
  * Created by user on 24.02.2017.
  */
 public class Util {
+<<<<<<< f1c030438cf71245b23b5a32fb8d20b0ebb8bca6
     /**
      * @version 1.0
      * @param ar массив double для сортировки по возрастанию
      */
     public static void sort(double[] ar) {
+=======
+    static void sort(double[] ar) {
+>>>>>>> Тест
         boolean swap; // признак сортированности
         int last = ar.length - 1;
         do {
@@ -22,6 +26,7 @@ public class Util {
                     swap = true;
                 }
             }
+<<<<<<< f1c030438cf71245b23b5a32fb8d20b0ebb8bca6
             last--;
         } while(swap);
     }
@@ -83,4 +88,10 @@ public class Util {
         return res;
     }
 
+=======
+
+            last--;
+        } while(swap);
+    }
+>>>>>>> Тест
 }
