@@ -23,6 +23,6 @@ public class Runner {
                 {2, 10, 9, 7},
                 {3, 8, 9, 2}
         };
-        Util.inverseMarix(inv, true);
+        Util.inverseMarix(inv, false);
     }
 }

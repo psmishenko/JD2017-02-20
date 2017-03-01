@@ -135,6 +135,20 @@ public class Util {
 
             }
         }
-            InOut.arrayPrint(m, "I", false);
+// делим каждый элемент ряда на частное диагонали
+        for (int diag = 0; diag < n; diag++) {
+            double x = 1 / m[diag][diag];
+            for (int col = 0; col < z; col++) {
+                m[diag][col] = m[diag][col] * x;
+            }
         }
+// отделяем инвертированную матрицу от единичной
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                a[i][j] = m[i][j+n];
+            }
+        }
+        System.out.println("Обратная матрица");
+        InOut.arrayPrint(a, "I", false);
     }
+}
