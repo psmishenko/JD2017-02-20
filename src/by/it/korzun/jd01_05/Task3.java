@@ -3,6 +3,7 @@ import static java.lang.Math.*;
 
 class Task3 {
     static void run() {
+        System.out.println("Task 3: ");
 
         System.out.println("┏━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┓");
         System.out.println("┃ param ┃        value       ┃");
