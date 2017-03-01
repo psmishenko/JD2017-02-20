@@ -6,10 +6,10 @@ package by.it.prigozhanov.jd01_04;
 public class Runner {
     public static void main(String[] args) {
         double[][] m = {
-                {2, 5, 4, 1},
-                {1, 3, 2, 1},
-                {2, 10, 9, 7},
-                {3, 8, 9, 2}
+                {16, 2, 52, 3},
+                {1, 24, 11, 5},
+                {2, 23, 51, 2},
+                {3, 11, 2, 51}
         };
     double[] y = {20, 11, 40, 37};
         Util.findRoots(m, y, true);
@@ -18,11 +18,13 @@ public class Runner {
         Util.findDeterminant(m);
 
         double[][] inv = {
-                {2, 5, 4, 1},
-                {1, 3, 2, 1},
-                {2, 10, 9, 7},
-                {3, 8, 9, 2}
+                {16, 2, 52, 3},
+                {1, 24, 11, 5},
+                {2, 23, 51, 2},
+                {3, 11, 2, 51}
         };
         Util.inverseMarix(inv, false);
+        InOut.arrayPrint(inv, "I", false);
+        Util.matrixMultipliedByMatrix(m, inv);
     }
 }
