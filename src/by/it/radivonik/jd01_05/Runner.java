@@ -5,6 +5,7 @@ package by.it.radivonik.jd01_05;
  */
 public class Runner {
     public static void main (String[] args) {
+<<<<<<< 6359246cfeeecc0ff2b5650c70e6a944a8cde40a
         // Вариант 8
         System.out.println("\nВариант 8");
 
@@ -24,5 +25,10 @@ public class Runner {
         // Задание 4
         System.out.println("\nЗадание 4");
         Task4.calc(2.408,0.2,0.4,0.02);
+=======
+        System.out.println(Task1.calc1(0.3,-21.17));
+        System.out.println(Task1.calc2(0.3,-21.17));
+
+>>>>>>> Задание 1
     }
 }
