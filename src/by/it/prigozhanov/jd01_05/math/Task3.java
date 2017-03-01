@@ -9,10 +9,9 @@ public class Task3 {
     static void calculate(double x) {
         double l;
         for (double c = -10; c <= 1; c += 0.5) {
-            l = pow(sqrt(pow(abs(2 * x - c), 3)), 1/5) + 0.567;
+            l = pow(pow(abs(2 * x - c), 3),1/5) + 0.567;
             System.out.printf("c=[%6.2f ], l=[ %-5.3f ]", c, l);
             System.out.println();
-
         }
     }
 }
