@@ -12,5 +12,6 @@ public class Runner {
 
         Task4.calculate();
         Task5.calculate();
+        Task6.calculate(2, 6);
     }
 }
