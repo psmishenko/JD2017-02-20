@@ -17,6 +17,10 @@ public class Task7 {
         // и автоматом высчитывать количество строк при заданном количестве столбцов и наоборот?
         // это нетрудно - например int maxrows=5; int cols=Math.ceil(arr.length/double(maxrows))
 
+        // ПАРДОН, на последнем слайде же показано - да, речь о прямоугольном выводе одномерных массивов
+        // и ограничениях на его размеры;
+        // уже не переделывал, надеюсь я тут показал достаточно
+
         double [] C=new double[elems+1];
 
         for (int i=0; i<=elems; i++){
@@ -44,7 +48,7 @@ public class Task7 {
 
         Arrays.sort(B);
         reverseArray(B); // это просто трындец! в Java нельзя отсортировать массив по убыванию?
-        printVertArray("B",B,100, 1);
+        //printVertArray("B",B,100, 1);
         printHorzArray("B",B,5, 1);
 
     }
