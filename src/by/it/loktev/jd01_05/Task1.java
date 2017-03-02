@@ -4,10 +4,6 @@ public class Task1 {
 
     public static void task1() {
 
-        System.out.println("-----------------------");
-        System.out.println("Контрольное задание №1");
-        System.out.println("-----------------------");
-
         double x=0.75;
 
         double p1=Math.sin(Math.PI/8-1);

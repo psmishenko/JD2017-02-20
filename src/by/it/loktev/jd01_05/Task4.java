@@ -4,10 +4,6 @@ public class Task4 {
 
     public static void task4(){
 
-        System.out.println("-----------------------");
-        System.out.println("Контрольное задание №4");
-        System.out.println("-----------------------");
-
         for (double t=2; t<=3; t+=0.1){
             double u=1;
             for (double a=12; a<=43; a++){
