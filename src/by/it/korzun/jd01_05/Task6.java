@@ -2,7 +2,7 @@ package by.it.korzun.jd01_05;
 
 import static java.lang.Math.*;
 
-public class Task6 {
+class Task6 {
     static void run(){
         System.out.println("Task6");
         double[] mass = new double[30];
@@ -12,7 +12,7 @@ public class Task6 {
         String nameOrig = "M";
 
         for (int i = 0; i < 30; i++) {
-            mass[i] = pow(pow(random()*3.67 + 5.33, 2) + 4.5, pow(3, -1));
+            mass[i] = pow(pow(random()*3.67 + 5.33, 2) + 4.5, 1.0/3.0);
             if(mass[i] > 3.5){
                 newMassLength++;
             }
@@ -30,14 +30,14 @@ public class Task6 {
         double sum = 0;
         double []newMass = new double[newMassLength];
         int k = 0;
-        for (int i = 0; i < mass.length; i++) {
-            if(mass[i] > 3.5){
-                newMass[k] = mass[i];
+        for (double mas : mass) {
+            if (mas > 3.5) {
+                newMass[k] = mas;
                 k++;
             }
         }
-        for (int i = 0; i < newMass.length; i++) {
-            sum += newMass[i];
+        for (double newMas : newMass) {
+            sum += newMas;
         }
         srArifm = sum/newMass.length;
 

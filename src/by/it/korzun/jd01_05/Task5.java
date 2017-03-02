@@ -2,10 +2,10 @@ package by.it.korzun.jd01_05;
 
 import static java.lang.Math.*;
 
-public class Task5 {
+class Task5 {
     static void run(){
         System.out.println("Task 5: ");
-        double z = 0;
+        double z;
         double r = 4.73;
         double x;
         for (int p = -6; p < 25; p += 4){
