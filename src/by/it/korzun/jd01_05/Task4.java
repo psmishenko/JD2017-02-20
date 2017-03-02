@@ -2,7 +2,7 @@ package by.it.korzun.jd01_05;
 
 import static java.lang.Math.*;
 
-public class Task4 {
+class Task4 {
     static double run(){
         System.out.println("Task 4: ");
         double sum = 0;

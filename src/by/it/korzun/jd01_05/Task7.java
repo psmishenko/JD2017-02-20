@@ -2,8 +2,8 @@ package by.it.korzun.jd01_05;
 
 import static java.lang.Math.*;
 
-public class Task7 {
-    static void sort(double[] arr){
+class Task7 {
+    private static void sort(double[] arr){
         boolean swap;
         int last = arr.length - 1;
         do{
