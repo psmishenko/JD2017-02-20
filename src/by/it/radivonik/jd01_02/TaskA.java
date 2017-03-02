@@ -4,27 +4,29 @@ package by.it.radivonik.jd01_02;
  * Created by Radivonik on 28.02.2017.
  */
 public class TaskA {
-    static String getMin(int array []) {
+    public static int getMax(int array []) {
         Integer res = 0;
         for (Integer i: array) {
-            if (res.toString().length() < i.toString().length()) {
+            if ( res.toString().length() < i.toString().length() ||
+                 res.toString().length() == i.toString().length() && res < i ) {
                 res = i;
             }
         }
-        return "MAX=" + res.toString() + " length=" + res.toString().length();
+        return res;
     }
 
-    static String getMax(int array []) {
+    public static int getMin(int array []) {
         Integer res = Integer.MAX_VALUE;
         for (Integer i: array) {
-            if (res.toString().length() > i.toString().length()) {
+            if ( res.toString().length() > i.toString().length() ||
+                 res.toString().length() == i.toString().length() && res > i ) {
                 res = i;
             }
         }
-        return "MIN=" + res.toString() + " length=" + res.toString().length();
+        return res;
     }
 
-    static double mean(int array[]) {
+    public static double mean(int array[]) {
         double res = 0;
         for (int i: array) {
             res += i;
@@ -33,7 +35,7 @@ public class TaskA {
         return res;
     }
 
-    static boolean uniqueDigits(Integer value) {
+    public static boolean uniqueDigits(Integer value) {
         char ch[] = value.toString().toCharArray();
         for (int i = 0; i < ch.length; i++) {
             for (int j = i + 1; j < ch.length; j++) {
