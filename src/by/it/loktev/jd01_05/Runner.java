@@ -32,6 +32,12 @@ public class Runner {
 
         Task6.task6();
 
+        System.out.println("-----------------------");
+        System.out.println("Контрольное задание №7");
+        System.out.println("-----------------------");
+
+        Task7.task7();
+
     }
 
 }
