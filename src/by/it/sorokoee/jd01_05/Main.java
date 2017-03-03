@@ -13,7 +13,7 @@ public class Main {
         //Задача2
 
         System.out.println("z="+ Task2.optC(3.24,5.8));
-        Task2.optD();
+//        Task2.optD();
         System.out.println();
 
         //Задача3
