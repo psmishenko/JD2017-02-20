@@ -1,15 +1,9 @@
 package by.it.radivonik.jd01_05;
 
-<<<<<<< 52b12d4770b0972651328887005bd0224abb5d3a
-import static java.lang.Math.*;
-
-=======
->>>>>>> Урок 05 Задание 1
 /**
  * Created by Radivonik on 02.03.2017.
  */
 public class Task4 {
-<<<<<<< 52b12d4770b0972651328887005bd0224abb5d3a
     public static void calc(double a, double b1, double b2, double db) {
         double z;
         double s;
@@ -28,6 +22,4 @@ public class Task4 {
         }
         System.out.println();
     }
-=======
->>>>>>> Урок 05 Задание 1
 }
