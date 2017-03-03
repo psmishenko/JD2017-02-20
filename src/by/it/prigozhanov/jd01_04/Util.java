@@ -4,6 +4,13 @@ package by.it.prigozhanov.jd01_04;
  * Created by Natasha on 27.02.2017.
  */
 public class Util {
+    /**
+     * Method prints to console changes step by step.
+     *
+     * @param m       double array - matrix
+     * @param showLog - boolean to show changes or no. If boolean is true - changes will
+     *                be printed to console, if false - they will not printed.
+     */
     private static void log(double[][] m, boolean showLog) {
         if (showLog) {
             InOut.arrayPrint(m, "m", false);
@@ -11,6 +18,14 @@ public class Util {
         }
     }
 
+    /**
+     * Method finds roots from Matrix a and Vector y by Gauss Jordan method.
+     *
+     * @param showLog - see log function.
+     * @param a - first matrix.
+     * @param y - vector
+     * @return
+     */
     static double[] findRoots(double[][] a, double[] y, boolean showLog) {
         int n = a.length;
         double[][] m = new double[n][n + 1];
@@ -63,6 +78,13 @@ public class Util {
         return x;
     }
 
+    /**
+     * Check matrix roots.
+     *
+     * @param m - matrix which wi check.
+     * @param x roots of this matrix.
+     * @see
+     */
     static void checker(double[][] m, double[] x) {
         double[][] multarr = new double[m.length][1];
         double sum = 0;
@@ -77,6 +99,12 @@ public class Util {
         InOut.arrayPrint(multarr, "C", true);
     }
 
+    /**
+     * Method finds determinant of matrix m.
+     *
+     * @param m - inputted matrix
+     * @version 1.0
+     */
     static void findDeterminant(double[][] m) {
         int n = m.length;
         double determ = 0;
@@ -98,6 +126,14 @@ public class Util {
         System.out.println("Определитель: " + determ);
     }
 
+    /**
+     * Method inversing matrix a.
+     *
+     * @param a       double array for inverse.
+     * @param showLog - step log.
+     * @return inverted Matrix by Gauss Jordan Method.
+     * @version 1.0
+     */
     static double[][] inverseMarix(double[][] a, boolean showLog) {
 
         int n = a.length;
@@ -145,12 +181,17 @@ public class Util {
 // отделяем инвертированную матрицу от единичной
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                a[i][j] = m[i][j+n];
+                a[i][j] = m[i][j + n];
             }
         }
         return a;
     }
 
+    /**
+     * @param firstarr  - double array (first matrix)
+     * @param secondarr - double array (second matrix)
+     * @author Vladimir Prigozhanov
+     */
     public static void matrixMultipliedByMatrix(double firstarr[][], double secondarr[][]) {
         double[][] multarr = new double[firstarr.length][secondarr[0].length];
         double sum = 0;
