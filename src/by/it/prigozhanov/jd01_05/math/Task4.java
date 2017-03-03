@@ -9,7 +9,7 @@ public class Task4 {
         double m = 1;
         for (int d = 23; d <= 39; d++) {
             for (double t = 2; t <= 3 ; t+=0.1) {
-                m*=log((abs(d-t)));
+                m*=log((abs(d)));
             }
         }
         System.out.println(m);
