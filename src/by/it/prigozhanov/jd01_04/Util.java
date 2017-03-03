@@ -1,7 +1,7 @@
 package by.it.prigozhanov.jd01_04;
 
 /**
- * Created by Natasha on 27.02.2017.
+ * Created by Prigozhanov on 27.02.2017.
  */
 public class Util {
     /**
@@ -22,8 +22,8 @@ public class Util {
      * Method finds roots from Matrix a and Vector y by Gauss Jordan method.
      *
      * @param showLog - see log function.
-     * @param a - first matrix.
-     * @param y - vector
+     * @param a       - first matrix.
+     * @param y       - vector
      * @return
      */
     static double[] findRoots(double[][] a, double[] y, boolean showLog) {
@@ -184,6 +184,7 @@ public class Util {
                 a[i][j] = m[i][j + n];
             }
         }
+        System.out.println("Инверсированная матрица");
         return a;
     }
 
@@ -191,20 +192,19 @@ public class Util {
      * @param firstarr  - double array (first matrix)
      * @param secondarr - double array (second matrix)
      * @author Vladimir Prigozhanov
+     * @version 1.0
      */
     public static void matrixMultipliedByMatrix(double firstarr[][], double secondarr[][]) {
         double[][] multarr = new double[firstarr.length][secondarr[0].length];
-        double sum = 0;
         for (int i = 0; i < firstarr.length; i++) {
             for (int j = 0; j < secondarr[0].length; j++) {
                 for (int k = 0; k < secondarr.length; k++) {
                     multarr[i][j] += firstarr[i][k] * secondarr[k][j];
                 }
-                sum = 0;
             }
 
         }
-        System.out.println("Matrix Multiplied by Matrix");
+        System.out.println("Перемноженные матрицы");
         InOut.arrayPrint(multarr, "M", false);
     }
 }
