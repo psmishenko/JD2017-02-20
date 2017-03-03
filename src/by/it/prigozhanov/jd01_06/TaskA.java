@@ -1,6 +1,4 @@
 package by.it.prigozhanov.jd01_06;
-
-import java.sql.Struct;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -16,7 +14,7 @@ public class TaskA {
 
         while (matcher.find()) {
             pos = matcher.start()+3;
-            sb.setCharAt(pos, '*');
+            sb.setCharAt(pos, '#');
             if (matcher.group().length()>6) {
                 pos = matcher.start()+6;
                 sb.setCharAt(pos, '#');
