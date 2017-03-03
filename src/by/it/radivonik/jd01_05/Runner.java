@@ -19,8 +19,10 @@ public class Runner {
 
         // Задание 3
         System.out.println("\nЗадание 3");
+        Task3.calc(2,3,0.1);
 
         // Задание 4
         System.out.println("\nЗадание 4");
+        Task4.calc(2.408,0.2,0.4,0.02);
     }
 }
