@@ -2,11 +2,9 @@ package by.it.sorokoee.jd01_05;
 
 import by.it.sorokoee.jd01_05.math.*;
 
-import static java.lang.Math.abs;
-
 public class Main {
     public static void main(String[] args) {
-         //Задача1
+        //Задача1
 
         System.out.println(Task1.optA(1.21,0.371));
         System.out.println(Task1.optB(1.21,0.371));
@@ -44,6 +42,8 @@ public class Main {
 
         Task7.printMassiv(Task7.getMassiv(34),"T");
         Task7.printMassiv(Task7.sortNewMass(Task7.getMassiv(34)),"K");
+
+
 
     }
 }
