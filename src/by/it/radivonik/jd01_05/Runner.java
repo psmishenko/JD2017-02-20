@@ -15,6 +15,7 @@ public class Runner {
 
         // Задание 2
         System.out.println("\nЗадание 2");
+        System.out.println(Task2.calc(2.57*Math.pow(10,3),0.873));
 
         // Задание 3
         System.out.println("\nЗадание 3");
