@@ -62,13 +62,11 @@ public class Util {
 
     public static void matrixMultipliedByMatrix(double firstarr[][], double secondarr[][]) {
         double[][] multarr = new double[firstarr.length][secondarr[0].length];
-        double sum = 0;
         for (int i = 0; i < firstarr.length; i++) {
             for (int j = 0; j < secondarr[0].length; j++) {
                 for (int k = 0; k < secondarr.length; k++) {
                     multarr[i][j] += firstarr[i][k] * secondarr[k][j];
                 }
-                sum = 0;
             }
 
         }
