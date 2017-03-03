@@ -2,6 +2,7 @@ package by.it.prigozhanov.jd01_04;
 
 /**
  * Created by Vladimir on 27.02.2017.
+ * @author Vladimir
  */
 public class Runner {
     public static void main(String[] args) {
@@ -25,7 +26,7 @@ public class Runner {
         };
         Util.inverseMarix(inv, false);
         InOut.arrayPrint(inv, "I", false);
-        Util.inverseMarix(inv, false);
-        InOut.arrayPrint(inv, "I", false);
+        Util.matrixMultipliedByMatrix(m, inv);
+
     }
 }
