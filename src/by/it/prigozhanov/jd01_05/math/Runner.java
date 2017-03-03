@@ -1,7 +1,8 @@
 package by.it.prigozhanov.jd01_05.math;
 
 /**
- * Created by v-omf on 3/1/2017.
+ * Created by Prigozhanv on 3/1/2017.
+ * Вариант 4
  */
 public class Runner {
     public static void main(String[] args) {
