@@ -25,6 +25,7 @@ public class Runner {
         };
         Util.inverseMarix(inv, false);
         InOut.arrayPrint(inv, "I", false);
-        Util.matrixMultipliedByMatrix(m, inv);
+        Util.inverseMarix(inv, false);
+        InOut.arrayPrint(inv, "I", false);
     }
 }
