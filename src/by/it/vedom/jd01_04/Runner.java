@@ -24,6 +24,8 @@ public class Runner {
 
 //        Util.findRoots(m, y, true);
 
+        System.out.println("Детерминант матрицы равен " +Util.findDeterminant(m));
+
         }
     }
 

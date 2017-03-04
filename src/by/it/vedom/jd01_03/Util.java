@@ -64,7 +64,7 @@ public class Util {
      *
      * @param matrix входная матрица
      * @param vector входной вектор
-     * @return результурующая матрица
+     * @return результирующая матрица
      */
 
     public static double[] matrixMulVector (double[][] matrix, double[] vector) {
@@ -81,7 +81,7 @@ public class Util {
      *
      * @param x первая входная матрица
      * @param y вторая входная матрица
-     * @return результирующую матрицу(результат перемножения двух входных)
+     * @return результирующая матрица(результат перемножения двух входных)
      */
 
     public static double[][] matrixMulmatrix (double[][] x, double[][] y) {

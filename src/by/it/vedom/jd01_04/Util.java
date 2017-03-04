@@ -73,5 +73,12 @@ public class Util {
         }
         return x;
     }
+
+    public static double findDeterminant(double[][] matrix){
+        double result = 1;
+        for (int diag = 0; diag < matrix.length; diag++)
+            result *= matrix[diag][diag];
+        return result;
+    }
 }
 

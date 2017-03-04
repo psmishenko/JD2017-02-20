@@ -106,8 +106,8 @@ public class Runner {
 
 
         System.out.println("---------------------------------------------------");
-        System.out.println("Задания C");
-        //
+//        System.out.println("Задания C");
+
     }
 }
 
