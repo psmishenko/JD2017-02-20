@@ -1,7 +1,7 @@
 package by.it.kolenda.jd01_05;
 
 public class Main {
-
+//Math variant 1
     public static void main(String[] args) {
 //Task1
             double x=1;
@@ -16,5 +16,10 @@ public class Main {
         System.out.println();
         System.out.println("Task 3 results are:");
         Task3.function3();
+//Task4
+        System.out.println();
+        System.out.println("Task 4 result is:");
+        System.out.println(Task4.summa());
+
     }
 }

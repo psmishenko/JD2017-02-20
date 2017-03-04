@@ -17,4 +17,3 @@ import static java.lang.Math.*;
                 }
             }
         }
-//String.format("%-8.4s%-4.1s",y,t)
