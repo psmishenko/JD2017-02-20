@@ -13,6 +13,7 @@ public class TaskA {
         int pos;
 
         while (matcher.find()) {
+            
             pos = matcher.start()+3;
             sb.setCharAt(pos, '#');
             if (matcher.group().length()>6) {
