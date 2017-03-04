@@ -1,8 +1,5 @@
 package by.it.vedom.jd01_04;
 
-/**
- * Created by Владислав on 27.02.2017.
- */
 public class Util {
 
     static private void log(double[][] m, boolean showLog) {
@@ -74,11 +71,13 @@ public class Util {
         return x;
     }
 
+
     public static double findDeterminant(double[][] matrix){
         double result = 1;
         for (int diag = 0; diag < matrix.length; diag++)
             result *= matrix[diag][diag];
         return result;
     }
+
 }
 

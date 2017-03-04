@@ -82,6 +82,7 @@ public class Util {
      * @param x первая входная матрица
      * @param y вторая входная матрица
      * @return результирующая матрица(результат перемножения двух входных)
+     * @return результирующую матрицу(результат перемножения двух входных)
      */
 
     public static double[][] matrixMulmatrix (double[][] x, double[][] y) {

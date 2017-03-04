@@ -12,6 +12,7 @@ public class Runner {
         System.out.println("┏━━━━━━━━━━━━━━┓");
         System.out.println("┃ Вариант 16 ┃");
         System.out.println("┗━━━━━━━━━━━━━━┛");
+
         // Задача 1
         double x = 234.1;
         System.out.println("Задача №1");
@@ -48,7 +49,6 @@ public class Runner {
         System.out.println("Сумма элементов исходного массива, которые больше 3 = " + sumArrayA+ "\n");
         double[] b = Task6.getElementsMoreThanThree(a);
         task6.printArray(b, "Сформированный");
-
 
     }
 }

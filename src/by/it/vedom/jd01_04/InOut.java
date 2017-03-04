@@ -1,8 +1,6 @@
 package by.it.vedom.jd01_04;
 
-/**
- * Created by Владислав on 27.02.2017.
- */
+
 public class InOut {
 
     static void arrayPrint (double[][] m, String name, boolean showIndex) {

@@ -1,8 +1,5 @@
 package by.it.vedom.jd01_04;
 
-/**
- * Created by Владислав on 27.02.2017.
- */
 public class Runner {
 
     public static void main(String[] args) {
@@ -23,6 +20,7 @@ public class Runner {
         InOut.arrayPrint(x, "X", 4);
 
 //        Util.findRoots(m, y, true);
+
 
         System.out.println("Детерминант матрицы равен " +Util.findDeterminant(m));
 

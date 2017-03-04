@@ -39,9 +39,9 @@ public class Runner {
         for (int i : arr) {
             if(TaskA.isDigitsDifferent(i)) {
                 System.out.println("Найдено число из разных цифр: " + i);
-                break;
-            }
-        }
+        break;
+    }
+}
 
         System.out.println("---------------------------------------------------");
         System.out.println("Задания B");
@@ -106,7 +106,11 @@ public class Runner {
 
 
         System.out.println("---------------------------------------------------");
+
 //        System.out.println("Задания C");
+
+
+        System.out.println("Задания C");
 
     }
 }
