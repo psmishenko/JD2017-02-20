@@ -9,13 +9,14 @@ import java.util.regex.Pattern;
 public class TaskB {
     public static void main(String[] args) {
         StringBuilder sb = new StringBuilder(Data.lukomor);
-        Pattern pattern = Pattern.compile("[ауоыиэяюёеАУОЫИЭЯЮЁЕ]");
-        String[] sb1 = pattern.split(sb);
+        Pattern pattern = Pattern.compile("[ауоыиэяюёеАУОЫИЭЯЮЁЕ]{0,}");
         Matcher matcher = pattern.matcher(sb);
 
         int end = sb.length();
         while (matcher.find()) {
-            System.out.print(matcher.group());
+            String s = "*";
+            System.out.println(matcher.start() + matcher.group());
         }
+        System.out.println(sb.toString());
     }
 }
