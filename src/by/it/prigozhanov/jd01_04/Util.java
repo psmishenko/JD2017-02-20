@@ -107,7 +107,7 @@ public class Util {
      */
     static void findDeterminant(double[][] m) {
         int n = m.length;
-        double determ = 0;
+        double determ = 1;
         //прямой ход метода Гаусса
         for (int diag = 0; diag < n; diag++) {
             for (int row = diag + 1; row < n; row++) {
@@ -115,13 +115,11 @@ public class Util {
                 for (int col = 0; col < n; col++) {
                     m[row][col] = m[row][col] - m[diag][col] * k;
                 }
-
             }
 
-            for (int i = 0; i < m.length - 1; i++) {
-                determ = m[i][i] * m[i + 1][i + 1];
-            }
-
+        }
+        for (int i = 0; i < m.length; i++) {
+            determ = determ * m[i][i];
         }
         System.out.println("Определитель: " + determ);
     }
