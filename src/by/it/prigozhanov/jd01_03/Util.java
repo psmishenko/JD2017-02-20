@@ -4,7 +4,11 @@ package by.it.prigozhanov.jd01_03;
  * Created by Vladimir on 24.02.2017.
  */
 public class Util {
-
+    /**
+     * Mehtod sort array elemeny by bubble sorting.
+     *
+     * @param arr array which will be sorted
+     */
     static void sort(double[] arr) {
         boolean swap; //признак сортированности
         int last = arr.length - 1;
@@ -24,6 +28,11 @@ public class Util {
         } while (swap);
     }
 
+    /**
+     * Method get Max value from "arr" array
+     *
+     * @param arr
+     */
     public static void getMaxValue(double[] arr) {
         System.out.println();
         double max = 0;
@@ -35,6 +44,11 @@ public class Util {
         System.out.print("Max = " + max);
     }
 
+    /**
+     * Method get Min value from "arr" array
+     *
+     * @param arr
+     */
     public static void getMinValue(double[] arr) {
         System.out.println();
         double min = Integer.MAX_VALUE;
@@ -46,6 +60,11 @@ public class Util {
         System.out.println("Min = " + min);
     }
 
+    /**
+     * Method multiplying matrix "arr" by vector "vector"
+     * @param arr - matrix
+     * @param vector - vector
+     */
     public static void matrixMultipliedByVector(double arr[][], double vector[][]) {
         double[][] multarr = new double[arr.length][1];
         double sum = 0;
@@ -60,6 +79,13 @@ public class Util {
         InOut.printArray2D(multarr, "V");
     }
 
+    /**
+     * Method multiplying matrix "firstarr" by matrix "secondarr"
+     *
+     * @author Vladimir Prigozhanov
+     * @param firstarr - first matrix
+     * @param secondarr - second matrix
+     */
     public static void matrixMultipliedByMatrix(double firstarr[][], double secondarr[][]) {
         double[][] multarr = new double[firstarr.length][secondarr[0].length];
         for (int i = 0; i < firstarr.length; i++) {
