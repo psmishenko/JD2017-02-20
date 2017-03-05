@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 public class TaskA {
 
-    public static void main(String[] args) {
+    public static void taskA() {
 
         StringBuilder sb=new StringBuilder(Data.lukomor);
 
@@ -44,6 +44,25 @@ public class TaskA {
                 word[i]=word2[i];
             }
         }
+
+        /*
+        String s1="Java";
+        String s2="Java";
+        String s3=new String("Java");
+        String s4=new String("Java");
+        System.out.println(s1==s2);
+        System.out.println(s1==s3);
+        System.out.println(s3==s4);
+        String s5=s3.intern();
+        System.out.println(s5);
+        System.out.println(s1==s5);
+        String s6=new String("Ja");
+        s6+="va";
+        System.out.println(s6);
+        String s7=s6.intern();
+        System.out.println(s7);
+        System.out.println(s1==s7);
+        */
 
 
     }
