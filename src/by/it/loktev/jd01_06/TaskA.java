@@ -7,7 +7,6 @@ import java.util.regex.Pattern;
 public class TaskA {
 
     public static void taskA() {
-
         StringBuilder sb=new StringBuilder(Data.lukomor);
 
         Pattern pattern=Pattern.compile("[а-яА-ЯёЁ]{4,}");
@@ -18,9 +17,10 @@ public class TaskA {
             sb.setCharAt(matcher.start()+3,'#');
             if (matcher.group().length()>=7)
                 sb.setCharAt(matcher.start()+6,'#');
-                //sb.replace(matcher.start()+6,matcher.start()+7,"#");
+            //sb.replace(matcher.start()+6,matcher.start()+7,"#");
         }
         System.out.println(sb);
+
 
         String [] word=Data.lukomor.split("[^а-яА-ЯёЁ]+");
         System.out.println(Arrays.toString(word));
