@@ -1,5 +1,7 @@
 package by.it.radivonik.jd01_05;
 
+import static java.lang.Math.*;
+
 /**
  * Created by Radivonik on 02.03.2017.
  */
