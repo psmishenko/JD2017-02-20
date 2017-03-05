@@ -12,7 +12,7 @@ public class Task4 {
         double b = b1;
 
         System.out.printf("%10s  %10s", "b", "z");
-        while (b <= b2) {
+        while (b < b2 + db/2) {
             z = 1.38 - a;
             s = 0;
             for (int c = 1; c <= 12; c++) {

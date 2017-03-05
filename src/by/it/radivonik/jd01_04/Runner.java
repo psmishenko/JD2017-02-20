@@ -13,7 +13,10 @@ public class Runner {
                 {3, 8, 9, 2}
         };
 
+        InOut.arrayPrint(y,"Y",4);
+        InOut.arrayPrint2D(m,"M");
+
         double[] x = TaskA.findRoot(m,y,false);
-        InOut.arrayPrint(x,"x",1);
+        InOut.arrayPrint(x,"X",4);
     }
 }

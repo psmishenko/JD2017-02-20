@@ -11,7 +11,7 @@ public class Task3 {
         double t = t1;
 
         System.out.printf("%10s  %10s", "t", "s");
-        while (t <= t2) {
+        while (t < t2 + dt/2) { // (dt/2) - чтобы гарантировано попадал последний элементт диапазона
             s = log10(abs(1.3 + t)) - pow(E, t);
             System.out.printf("\n%10.2f  %10.5f", t, s);
             t = t + dt;

@@ -1,8 +1,5 @@
 package by.it.radivonik.jd01_03;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 /**
  * Created by user on 24.02.2017.
  */

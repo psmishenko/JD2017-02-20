@@ -1,5 +1,7 @@
 package by.it.radivonik.jd01_05;
 
+import static java.lang.Math.*;
+
 /**
  * Created by Radivonik on 01.03.2017.
  */
@@ -15,7 +17,7 @@ public class Runner {
 
         // Задание 2
         System.out.println("\nЗадание 2");
-        System.out.println(Task2.calc(2.57*Math.pow(10,3),0.873));
+        System.out.println(Task2.calc(2.57*pow(10,3),0.873));
 
         // Задание 3
         System.out.println("\nЗадание 3");
@@ -24,5 +26,13 @@ public class Runner {
         // Задание 4
         System.out.println("\nЗадание 4");
         Task4.calc(2.408,0.2,0.4,0.02);
+
+        // Задание 5
+        System.out.println("\nЗадание 5");
+        Task5.calc(0.491*pow(10,4),-2,11,3);
+
+        // Задание 6
+        System.out.println("\nЗадание 6");
+        Task6.calc(-8,-2,40);
     }
 }
