@@ -12,6 +12,10 @@ public class Runner {
       String line = "232 224 776 6687 89899 2323 656 797898 32 76767 7979 321212 68686";
       int arr[] = Util.lineToIntArray(line);
 
+      // Исходный массив чисел к задачам уровня A
+      System.out.println("Исходный массив (к задачам уровня A:");
+      System.out.println(line);
+
       // Задача A1
       System.out.println("\nЗадача A1");
       int max = TaskA.getMax(arr);
