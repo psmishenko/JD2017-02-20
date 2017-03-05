@@ -1,7 +1,5 @@
 package by.it.Zyryanov.jd01_06;
 
-
-import java.util.StringTokenizer;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
