@@ -30,8 +30,8 @@ public class TaskA {
                         counter++;
                         words[j] = "";
                     }
-                    System.out.printf("Слово %s повторяется %d раз\n", word, counter);
                 }
+            System.out.printf("Слово %s повторяется %d раз\n", word, counter);
         }
     }
 }
