@@ -3,7 +3,7 @@ package by.it.dashkevich.jd01_05;
 /**
  * Created by дёня on 01.03.2017.
  */
-public class A1 {
+public class TaskA_1 {  //13 var
     public static void main(String[] args) {
         double a = 1.21;
         double b = 0.371;
