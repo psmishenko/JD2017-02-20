@@ -14,11 +14,19 @@ public class Runner {
         TaskA.taskA();
         */
 
+        /*
         System.out.println("---------");
         System.out.println("Задание B");
         System.out.println("---------");
 
         TaskB.taskB();
+        */
+
+        System.out.println("---------");
+        System.out.println("Задание C");
+        System.out.println("---------");
+
+        TaskC.taskC();
 
     }
 
