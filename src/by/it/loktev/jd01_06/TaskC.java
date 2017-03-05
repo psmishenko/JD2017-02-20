@@ -55,5 +55,70 @@ public class TaskC {
             System.out.println(formattedLine);
         }
 
+        // получаем все слова текста
+        Pattern words2SplitPattern = Pattern.compile("[^а-яА-ЯёЁ]+");
+        String [] words=words2SplitPattern.split(Data.lukomor);
+
+        System.out.println("\n");
+        int lenLimit=100000;
+        int Time1=createRandomStringMethod1(words,lenLimit);
+        int Time2=createRandomStringMethod2(words,lenLimit);
+        System.out.println("Выигрыш в микросекундах: "+(Time1-Time2)*1000);
+        createRandomStringMethod3(words,lenLimit);
+
+
     }
+
+    static public int createRandomStringMethod1(String [] words, int lenLimit){
+        long methodStart=System.currentTimeMillis();
+        String millionS=words[(int)Math.floor(Math.random()*words.length)]; // первое слово сразу впишем, т.к. остальные добавляются иначе - с пробелами перед ними
+        while ( true ){
+            String word=words[(int)Math.floor(Math.random()*words.length)];
+            int newLen=millionS.length()+1+word.length();
+            if ( newLen>lenLimit || newLen==lenLimit-1 ) // не допускаем переполнения строки, а также ситуации когда добавить останется только слово длины 0
+                continue;
+            millionS+=" "+word;
+            if ( newLen==lenLimit )
+                break;
+        }
+        long methodEnd=System.currentTimeMillis();
+        System.out.println("Длина миллионной строки: "+millionS.length()+" время "+(methodEnd-methodStart)+" мс");
+        return (int)(methodEnd-methodStart);
+    }
+
+    static public int createRandomStringMethod2(String [] words, int lenLimit){
+        long methodStart=System.currentTimeMillis();
+        StringBuilder millionSB=new StringBuilder(words[(int)Math.floor(Math.random()*words.length)]);
+        while ( true ){
+            String word=words[(int)Math.floor(Math.random()*words.length)];
+            int newLen=millionSB.length()+1+word.length();
+            if ( newLen>lenLimit || newLen==lenLimit-1 ) // не допускаем переполнения строки, а также ситуации когда добавить останется только слово длины 0
+                continue;
+            millionSB.append(" "+word);
+            if ( newLen==lenLimit )
+                break;
+        }
+        long methodEnd=System.currentTimeMillis();
+        System.out.println("Длина миллионной строки: "+millionSB.length()+" время "+(methodEnd-methodStart)+" мс");
+        return (int)(methodEnd-methodStart);
+    }
+
+    static public int createRandomStringMethod3(String [] words, int lenLimit){
+        long methodStart=System.currentTimeMillis();
+        StringBuilder millionSB=new StringBuilder(words[(int)Math.floor(Math.random()*words.length)]);
+        millionSB.ensureCapacity(lenLimit);
+        while ( true ){
+            String word=words[(int)Math.floor(Math.random()*words.length)];
+            int newLen=millionSB.length()+1+word.length();
+            if ( newLen>lenLimit || newLen==lenLimit-1 ) // не допускаем переполнения строки, а также ситуации когда добавить останется только слово длины 0
+                continue;
+            millionSB.append(" "+word);
+            if ( newLen==lenLimit )
+                break;
+        }
+        long methodEnd=System.currentTimeMillis();
+        System.out.println("Длина миллионной строки: "+millionSB.length()+" время "+(methodEnd-methodStart)+" мс");
+        return (int)(methodEnd-methodStart);
+    }
+
 }
