@@ -12,7 +12,12 @@ public class Runner {
 
         System.out.println("\nЗадание 3");
         TaskB.zad3();
-//        System.out.println("\nЗадание 4");
-//        TaskB.zad4();
+        System.out.println("\nЗадание 4");
+        TaskB.zad4();
+
+        System.out.println("\nЗадание 5");
+        TaskC.zad5();
+        System.out.println("\nЗадание 6");
+        TaskC.zad6();
     }
 }
