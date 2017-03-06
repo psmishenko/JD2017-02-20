@@ -24,7 +24,7 @@ public class TaskA {
                 s.setCharAt(pos,'#');
             }
         }
-        System.out.println(s);
+        System.out.println("\n"+s);
     }
 
     public static void zad2() {
@@ -39,8 +39,9 @@ public class TaskA {
                         words[j] = "";
                     }
                 }
-                System.out.printf("\nСлово '%s' повторяется %d раз",w,c);
+                System.out.printf("\nСлово '%s' повторяется %d раз",w.toLowerCase(),c);
             }
         }
+        System.out.println();
     }
 }
