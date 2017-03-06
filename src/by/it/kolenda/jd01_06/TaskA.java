@@ -19,6 +19,8 @@ public class TaskA {
                   sb.setCharAt(pos, '#');
               }
           }
+        System.out.println(sb);
+        System.out.println();
 
         String[] words = Data.lukomor.split("[^а-яА-ЯёЁ]+");
         for (int i = 0; i < words.length; i++) {
