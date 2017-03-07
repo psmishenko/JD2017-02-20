@@ -19,6 +19,6 @@ public class Task2 {
         double y;
 
         y = pow((a + 1.5), 1/3) + pow((a-b), 8) - (b/(asin(pow(abs(a), 2))));
-        System.out.println(y);
+        System.out.printf("%.2f" , y);
     }
 }

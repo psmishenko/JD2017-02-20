@@ -14,6 +14,7 @@ public class Task5 {
 
 
         //y = sqrt(abs((z - 2.56 * r)));
+        //
 
 
         //1 условие

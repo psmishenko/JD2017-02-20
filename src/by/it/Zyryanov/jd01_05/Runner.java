@@ -21,6 +21,8 @@ public class Runner {
         System.out.println("Задание 5");
         Task5.solver();
         System.out.println();
+        System.out.println("Задание 6");
+        Task6.solver();
 
 
     }
