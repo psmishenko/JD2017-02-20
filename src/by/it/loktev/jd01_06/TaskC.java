@@ -60,7 +60,7 @@ public class TaskC {
         String [] words=words2SplitPattern.split(Data.lukomor);
 
         System.out.println("\n");
-        int lenLimit=100000;
+        int lenLimit=1000000;
         int Time1=createRandomStringMethod1(words,lenLimit);
         int Time2=createRandomStringMethod2(words,lenLimit);
         System.out.println("Выигрыш в микросекундах: "+(Time1-Time2)*1000);
