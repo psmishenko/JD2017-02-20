@@ -11,7 +11,7 @@ public class TaskA_2 { //13 var
 
         z = Math.acos(x*x) - a*Math.sqrt(x/Math.pow(a, 3)) + Math.pow(Math.PI/2, 3)/Math.log10(2*x);
 
-        System.out.println(z);  // почему-то выводит NaN, не понял в чем дело
+        System.out.println(z);
 
     }
 }
