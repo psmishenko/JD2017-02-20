@@ -12,7 +12,8 @@ public class TaskB {
      * В стихотворении найти количество слов, начинающихся и заканчивающихся гласной буквой
      */
     public static void runPartA() {
-        String[] words = Data.lukomor.split("[^а-яА-ЯёЁ]+");
+        //String[] words = Data.lukomor.split("[^а-яА-ЯёЁ]+");
+        String[] words = Data.lukomor.split("[\\s\\n\\p{Punct}]+");
         //System.out.print(Arrays.toString(words));
         //System.out.println();
         int countWords = 0;
