@@ -1,12 +1,12 @@
 package by.it.radivonik.jd01_06;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.regex.*;
 
 /**
  * Created by Radivonik on 03.03.2017.
  */
 public class TaskA {
+    // Замена 4-го и 7-го символов в словах на символ '#'
     public static void zad1() {
         StringBuilder s = new StringBuilder(Data.lukomor);
         Pattern p = Pattern.compile("[а-яА-ЯёЁ]{4,}");
@@ -24,9 +24,10 @@ public class TaskA {
                 s.setCharAt(pos,'#');
             }
         }
-        System.out.println(s);
+        System.out.println("\n"+s);
     }
 
+    // Определение количества повторений каждого слова
     public static void zad2() {
         String[] words = Data.lukomor.split("[^а-яА-ЯёЁ]+");
         for (int i = 0; i < words.length; i++) {
@@ -39,8 +40,9 @@ public class TaskA {
                         words[j] = "";
                     }
                 }
-                System.out.printf("\nСлово '%s' повторяется %d раз",w,c);
+                System.out.printf("\nСлово '%s' повторяется %d раз",w.toLowerCase(),c);
             }
         }
+        System.out.println();
     }
 }
