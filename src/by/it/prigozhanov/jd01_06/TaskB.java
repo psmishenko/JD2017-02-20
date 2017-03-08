@@ -28,6 +28,12 @@ public class TaskB {
 
     }
 
+    /**
+     * Index of element "a" array equals index sentence in array "s" so when we sort elements of "a"
+     * array we sort elements of "s" array becouse there indexes are equals and number of words match.
+     * @param a int array with number of words int "s" array sentences.
+     * @param s sentences array.
+     */
     static void sentenseSort(int[] a, String[][] s) {
         boolean swap;
         int last = a.length - 1;
@@ -72,17 +78,17 @@ public class TaskB {
         for (int i = 0; i < sentenses.length; i++) {
             Matcher match = pt.matcher(sentenses[i]);
             Matcher line = linedown.matcher(sentenses[i]);
-            StringBuilder linesb = new StringBuilder(sentenses[i]);
+            StringBuilder linesb = new StringBuilder(sentenses[i]); // переносим найденное предложение в StringBuilder для возможности извлечения переносов строки.
             while (match.find()) {
-                while (line.find()) {
-                    pos = line.start();
-                    linesb.setCharAt(pos, ' ');
+                while (line.find()) { // когда находим перенос строки
+                    pos = line.start(); //позиция найденного переноса
+                    linesb.setCharAt(pos, ' '); //меняем \n на пустой символ
                 }
                 strarr[i][0] = linesb.toString().trim();
-                wordsCountArr[i] = strarr[i][0].split("[^а-яА-ЯёЁ]+").length;
+                wordsCountArr[i] = strarr[i][0].split("[^а-яА-ЯёЁ]+").length; // заполняем массив из колличества слов в предложении
             }
         }
-        sentenseSort(wordsCountArr, strarr);
+        sentenseSort(wordsCountArr, strarr); // сортировка предложений
         for (int i = 0; i < sentenses.length; i++) {
             System.out.print("[" + wordsCountArr[i] + "] ");
             System.out.println(strarr[i][0]);
