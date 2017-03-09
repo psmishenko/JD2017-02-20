@@ -4,32 +4,32 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class TaskB {
-    static int checkGlasn(String[] words){
+    private static int checkGlasn(String[] words){
         Pattern patternLong = Pattern.compile("[аеёиоуыэюяАЕЁИОУЫЭЮЯ](.)*[аеёиоуыэюяАЕЁИОУЫЭЮЯ]");
         Pattern patternOne = Pattern.compile("[аеёиоуыэюяАЕЁИОУЫЭЮЯ]");
         Matcher matcher;
         int count = 0;
-        for (int i = 0; i < words.length; i++) {
-            if(words[i].length() > 1) {
-                matcher = patternLong.matcher(words[i]);
-            }else{
-                matcher = patternOne.matcher(words[i]);
+        for (String word : words) {
+            if (word.length() > 1) {
+                matcher = patternLong.matcher(word);
+            } else {
+                matcher = patternOne.matcher(word);
             }
-            if(matcher.matches()){
-                //System.out.println(words[i]);
+            if (matcher.matches()) {
                 count++;
             }
         }
         return count;
     }
     static void run(){
+        System.out.println("TaskB:\n1.------------------------------------------");
         String[] words = Data.lukomor.split("[^а-яА-ЯеЁ]+");
-        System.out.println("B1: " + checkGlasn(words));
+        System.out.println("Количество подходящих слов: " + checkGlasn(words));
 
-        System.out.println("B2:");
-        String s = new String(Data.lukomor);
+        System.out.println("2.------------------------------------------");
+        String s = Data.lukomor;
         s = s.replaceAll("\\p{Cntrl}", " ");
-        String[] sentences = s.split("[.!?;]");
+        String[] sentences = s.split("[.!?;] ");
 
         sentences = Util06.sort(sentences);
         for (String sk:sentences) {

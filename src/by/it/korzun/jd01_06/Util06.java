@@ -1,15 +1,15 @@
 package by.it.korzun.jd01_06;
 
 
-public class Util06 {
+class Util06 {
     static String[] sort(String[] lines){
         int[] massWordsCount = new int[lines.length];
         String[] words;
         for (int i = 0; i < lines.length; i++) {
             words = lines[i].split("[\\s:,(\\s-\\s)]");
             int wordsCount = 0;
-            for (int j = 0; j < words.length; j++) {
-                if(!words[j].equals("")){
+            for (String word : words) {
+                if (!word.equals("")) {
                     wordsCount++;
                 }
             }
