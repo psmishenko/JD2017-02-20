@@ -21,6 +21,6 @@ public class Task4 {
                 a += 3.75;
             }
                 while (a >= -5 && a <= 12);
-        System.out.println(d);
+        System.out.printf("Ответ: %.2f", d);
     }
 }

@@ -16,7 +16,8 @@ public class Task3 {
 
            f = pow(E, pow(a, x)) - 3.45*a;
             a = a + 0.2;
-            System.out.println("[ "+ i +" ]  " + f);
+            System.out.printf("[%s] = %.2f",i,f);
+            System.out.println();
             i++;
         }
 
