@@ -24,7 +24,7 @@ public class Task6 {
 
             if (round(s[i]) % 2 != 0) {
                     counter++;
-                    System.out.printf("Нечётный элемент [ %d ] с числом", i);
+                    System.out.printf("Нечётный элемент [ %d ]", i);
                     System.out.println();
             }
         }
