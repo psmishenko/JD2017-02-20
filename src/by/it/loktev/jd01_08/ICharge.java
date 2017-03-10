@@ -7,5 +7,6 @@ public interface ICharge {
 
     int getBatteryLevel();
     void setBatteryLevel(int level);
+    void changeBatteryLevel(int delta);
 
 }
