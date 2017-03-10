@@ -28,23 +28,15 @@ public class TaskC {
                 Matcher matcher2 = pattern2.matcher(sb.substring(lastPos, matcher1.start()));
                 while (matcher2.find()) k++;
                 matcher2.reset();
-                int buf = numOfSpaces;
                 int z=k;
-                while (matcher2.find()) {
-                    System.out.println(matcher2.start());
-                    do {
-                        sb.insert(matcher2.start()," ");
-                        buf--;
-                        z--;
-                        if(z==0) {
-                            matcher2.reset();
-                            z=k;
-                        }
-                    } while (buf > 0);
+                for (int i = 0; i <numOfSpaces  ; i++) {
+                    int pos =0;
+                    matcher2.find(pos);
+
                 }
             }
             lastPos = matcher1.end()+numOfSpaces;
-            matcher1.find();
+
         }
         System.out.println(sb.toString());
     }
