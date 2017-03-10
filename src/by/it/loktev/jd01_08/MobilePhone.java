@@ -12,7 +12,6 @@ public class MobilePhone extends Computer implements ICharge {
         this.canGSM=canGSM;
         this.canGPS=canGPS;
         this.batteryLevel=0;
-        setBatteryLevel(50);
     }
 
     @Override
@@ -32,8 +31,7 @@ public class MobilePhone extends Computer implements ICharge {
 
     @Override
     public void run(String path){
-        super.run(path);
-        changeBatteryLevel(-20);
+        batteryLevel-=20;
         System.out.println("Запускаем программу под android: "+path+" осталось заряда "+getBatteryLevel());
     }
 
@@ -66,11 +64,6 @@ public class MobilePhone extends Computer implements ICharge {
     @Override
     public void setBatteryLevel(int level){
         batteryLevel=level;
-    }
-
-    @Override
-    public void changeBatteryLevel(int delta){
-        batteryLevel+=delta;
     }
 
 }

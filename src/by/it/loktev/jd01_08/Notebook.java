@@ -10,7 +10,6 @@ public class Notebook extends Computer implements ICharge {
         super(name,weight);
         this.powerVoltage=powerVoltage;
         this.batteryLevel=0;
-        setBatteryLevel(70);
     }
 
     @Override
@@ -30,8 +29,7 @@ public class Notebook extends Computer implements ICharge {
 
     @Override
     public void run(String path){
-        super.run(path);
-        changeBatteryLevel(-5);
+        batteryLevel-=5;
         System.out.println("Запускаем программу под windows: "+path+", осталось заряда "+getBatteryLevel());
     }
 
@@ -64,11 +62,6 @@ public class Notebook extends Computer implements ICharge {
     @Override
     public void setBatteryLevel(int level){
         batteryLevel=level;
-    }
-
-    @Override
-    public void changeBatteryLevel(int delta){
-        batteryLevel+=delta;
     }
 
 }
