@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 public class TaskA {
     static void run() {
+        System.out.println("TaskA:\n1.------------------------------------------");
         StringBuilder sb = new StringBuilder(Data.lukomor);
         Pattern pattern = Pattern.compile("[а-яА-ЯёЁ]{4,}");
         Matcher matcher = pattern.matcher(sb);
@@ -17,7 +18,7 @@ public class TaskA {
             }
         }
         System.out.println(sb.toString());
-
+        System.out.println("2.------------------------------------------");
         String[] words = Data.lukomor.split("[^а-яА-ЯеЁ]+");
         for (int i = 0; i < words.length; i++) {
             String word = words[i];
