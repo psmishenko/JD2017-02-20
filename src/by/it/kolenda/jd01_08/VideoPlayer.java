@@ -7,6 +7,12 @@ public class VideoPlayer extends Player {
 
     @Override
     public void showState() {
+        System.out.println(this.toString());
+
+    }
+
+    @Override
+    public String toString() {
         String sPlay;
         if (this.isPlay()) {
             sPlay = "Playback is on";
@@ -23,11 +29,9 @@ public class VideoPlayer extends Player {
             sPause = "Pause is off";
         }
 
+        String res=String.format("%s: %s, %s",this.getName(),sPlay,sPause);
+        return res;
     }
 
 
-    @Override
-    public String toString() {
-        return "VideoPlayer{}";
-    }
 }
