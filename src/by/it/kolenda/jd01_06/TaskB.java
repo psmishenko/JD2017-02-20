@@ -22,7 +22,7 @@ public class TaskB {
     public static void main(String[] args) {
 
         String[] words = Data.lukomor.split("[^а-яА-ЯёЁ]+");
-        Pattern pattern = Pattern.compile("[аяоёэеиую]");
+//        Pattern pattern = Pattern.compile("[аяоёэеиую]");
         int counter = 0;
         for (int i = 0; i < words.length; i++) {
             String word = words[i];
