@@ -9,4 +9,10 @@ abstract public class Computer extends ElectronicDevice implements IRunProgram {
     abstract public void repairBroken();
     abstract public void repairBroken(double price);
 
+    public void runScreenSaver(String path){
+        System.out.println("включаем скринсейвер...");
+        run(path);
+    }
+
+
 }

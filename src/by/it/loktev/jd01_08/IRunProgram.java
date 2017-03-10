@@ -4,4 +4,7 @@ public interface IRunProgram {
 
     void run(String path);
 
+    void pause();
+    void resume();
+
 }
