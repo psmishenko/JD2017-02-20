@@ -3,7 +3,7 @@ package by.it.akhmelev.jd01_08.level_A_classwork_demo;
 public class Main {
     public static void main(String[ ] args) {
         //создадим видеоплеер, запустим, два раза нажмем на паузу, остановим
-        VideoPleer videoPleer=new VideoPleer();
+        Pleer videoPleer=new VideoPleer();
         System.out.println(videoPleer.showState());
         videoPleer.play();  // нажали воспроизведение
         System.out.println(videoPleer.showState());
