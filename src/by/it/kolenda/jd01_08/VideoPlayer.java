@@ -1,0 +1,33 @@
+package by.it.kolenda.jd01_08;
+
+public class VideoPlayer extends Player {
+    public VideoPlayer(String name) {
+        super(name);
+    }
+
+    @Override
+    public void showState() {
+        String sPlay;
+        if (this.isPlay()) {
+            sPlay = "Playback is on";
+        }
+        else {
+            sPlay = "Playback is off";
+        }
+
+        String sPause;
+        if (this.isPause()) {
+            sPause = "Pause is on";
+        }
+        else {
+            sPause = "Pause is off";
+        }
+
+    }
+
+
+    @Override
+    public String toString() {
+        return "VideoPlayer{}";
+    }
+}
