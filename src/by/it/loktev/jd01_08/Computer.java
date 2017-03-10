@@ -11,7 +11,7 @@ abstract public class Computer extends ElectronicDevice implements IRunProgram {
 
     public void runScreenSaver(String path){
         System.out.println("включаем скринсейвер...");
-        run(path);
+        run(path); // позднее связывание
     }
 
 
