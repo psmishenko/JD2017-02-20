@@ -16,28 +16,41 @@ public class TaskC {
             if(currentLength>maxSymbols) maxSymbols=currentLength;
             lastPos = matcher1.end();
         }
-        System.out.println(maxSymbols);
-        Pattern pattern2 = Pattern.compile("[ ]+");
+        System.out.println("Максимальное кол-во символов в строке - "+maxSymbols+".\n");
+        Pattern pattern2 = Pattern.compile("[ ]+|[ ]{2,}");
+        Matcher matcher2 = pattern2.matcher(sb);
         lastPos =0;
         matcher1.reset();
-        while (matcher1.find()) {
+        while (matcher1.find(lastPos)) {
             currentLength = matcher1.start() - lastPos;
             int numOfSpaces = maxSymbols - currentLength;
             if(maxSymbols>currentLength) {
-                int k = 0;
-                Matcher matcher2 = pattern2.matcher(sb.substring(lastPos, matcher1.start()));
-                while (matcher2.find()) k++;
-                matcher2.reset();
-                int z=k;
-                for (int i = 0; i <numOfSpaces  ; i++) {
-                    int pos =0;
-                    matcher2.find(pos);
+                int pos =lastPos;
+                for (int i = 1; i <=numOfSpaces  ; i++) {
+                     matcher2.find(pos);
+                    if(matcher2.start()>(matcher1.start()+i)) {pos = lastPos; matcher2.find(pos);}
+                    sb.insert(matcher2.start()," ");
+                   if(matcher2.end()<(matcher1.start()+i)) pos = matcher2.end()+1;
+                }
 
+            }
+            lastPos +=maxSymbols+1;
+        }
+        // Т.к. в последнем предложении нет перевода строки, делаем спец. обработку для последнего предложения
+        Pattern pattern3 = Pattern.compile("\\.");
+        Matcher matcher3 = pattern3.matcher(sb);
+        matcher3.find(lastPos);
+            currentLength = matcher3.end() - lastPos;
+            int numOfSpaces = maxSymbols - currentLength;
+            if (maxSymbols>currentLength){
+                int pos =lastPos;
+                for (int i = 1; i <=numOfSpaces  ; i++) {
+                    if(!matcher2.find(pos)) {matcher2.reset(); pos = lastPos;}
+                   boolean b = matcher2.find(pos);
+                    sb.insert(matcher2.start()," ");
+                    if(b) pos = matcher2.end()+1;
                 }
             }
-            lastPos = matcher1.end()+numOfSpaces;
-
-        }
-        System.out.println(sb.toString());
+       System.out.println(sb.toString());
     }
 }
