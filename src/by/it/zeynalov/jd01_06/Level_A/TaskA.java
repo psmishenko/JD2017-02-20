@@ -2,27 +2,18 @@ package by.it.zeynalov.jd01_06.Level_A;
 
 
 import com.sun.org.apache.xpath.internal.SourceTree;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class TaskA {
 
-    //отдельный метод для нахождения в тексте слов начинающихся и заканчивающихся на гласные буквы
-    public static void text(String[] words) {
-        StringBuilder sb = new StringBuilder(Data.lukomor);
-        Pattern pattern = Pattern.compile("[ёйуеыаоэяию]");
-        for (String word : words) {
-            if (word.charAt(0) == word.charAt(word.length() - 1)) {
-                sb.append(word).append(" ");
-            }
-        }
-        System.out.println(sb);
-    }
-
     public static void main(String[] args) {
 
-
+        TaskC.showText();
+        TaskB.stix();
+        TaskC.optionC();
 
         StringBuilder sb = new StringBuilder(Data.lukomor);
         Pattern pattern = Pattern.compile("[а-яА-ЯёЁ]{4,}");
@@ -53,5 +44,4 @@ public class TaskA {
             }
         }
     }
-
 }
