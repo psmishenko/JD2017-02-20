@@ -1,8 +1,5 @@
 package by.it.akhmelev.jd01_09.nested;
 
-/**
- * Created by Alex on 18.02.2016.
- */
 public class ParentForNested {
     private int id;
 
