@@ -30,6 +30,7 @@ public class Notebook extends Computer implements ICharge {
 
     @Override
     public void run(String path){
+        super.run(path);
         changeBatteryLevel(-5);
         System.out.println("Запускаем программу под windows: "+path+", осталось заряда "+getBatteryLevel());
     }
