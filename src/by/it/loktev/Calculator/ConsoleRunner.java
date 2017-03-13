@@ -16,9 +16,13 @@ public class ConsoleRunner {
         oneRes(new VarF("3.8").sub(new VarF("26.2")));
         oneRes(new VarF("3.8").mul(new VarF("26.2")));
 
-        oneRes(new VarF("3.8").add(new VarV()));
-        oneRes(new VarV().add(new VarF("3.8")));
-        oneRes(new VarV().add(new VarV()));
+        VarV V=new VarV("{55.2,33.33,8,3.3}");
+        oneRes(V);
+
+
+        //oneRes(new VarF("3.8").add(new VarV()));
+        //oneRes(new VarV().add(new VarF("3.8")));
+        //oneRes(new VarV().add(new VarV()));
 
 
     }
