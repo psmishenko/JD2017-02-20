@@ -4,7 +4,7 @@ public class VarV extends Var {
 
     @Override
     public void fromString(String str) {
-        //this.value=Double.parseDouble(str);
+
     }
 
     @Override
@@ -13,5 +13,9 @@ public class VarV extends Var {
         return "";
     }
 
-
+    @Override
+    public Var add(Var arg) {
+        System.out.println("сложение вектора с чем-то");
+        return null;
+    }
 }
