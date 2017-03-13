@@ -13,6 +13,8 @@ public class ConsoleRunner {
         oneRes("-7 * 3.1",new VarFloat("-7").mul(new VarFloat("3.1")));
         oneRes("-4 / 8",new VarFloat("-4").div(new VarFloat("8")));
         oneRes("-9 - 0.9",new VarFloat("-9").sub(new VarFloat("0.9")));
+
+        oneRes("3.8 + {26.2}",new VarFloat("3.8").add(new VarVector()));
     }
 
     private static void oneRes(String exp, Var var) {
