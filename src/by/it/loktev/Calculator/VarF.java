@@ -2,7 +2,18 @@ package by.it.loktev.Calculator;
 
 public class VarF extends Var {
 
-    private double value;
+    private Double value;
+
+    @Override
+    public Var add(Var arg) {
+        if (arg instanceof VarF)
+        {
+            VarF argF=(VarF)arg;
+            return new VarF(this.value+argF.value);
+        }
+        else
+            return arg.add(this);
+    }
 
     public VarF(String str) {
         fromString(str);
@@ -19,5 +30,10 @@ public class VarF extends Var {
     @Override
     public void fromString(String str) {
         this.value=Double.parseDouble(str);
+    }
+
+    @Override
+    public String toString() {
+        return value.toString();
     }
 }
