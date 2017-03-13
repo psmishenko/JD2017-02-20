@@ -22,6 +22,5 @@ public class ConsoleRunner {
         if (var != null) {
             System.out.println(var);
         }
-        System.out.flush();
     }
 }
