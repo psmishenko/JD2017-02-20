@@ -6,12 +6,16 @@ package by.it.radivonik.jd01_08;
 public class Runner {
     public static void main(String[] args) {
         Player v = new VideoPlayer("Cometa");
-        v.play();
-        v.showState();
-        v.showState("Тест");
-        v.pause();
-        v.showState();
-        v.stop();
-        v.showState();
+        ITech iv = v;
+
+        iv.play();
+        iv.showState();
+        //v.showState("Тест");
+        iv.pause();
+        iv.showState();
+        iv.stop();
+        iv.showState();
+
+        System.out.println(v);
     }
 }
