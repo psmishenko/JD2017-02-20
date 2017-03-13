@@ -4,21 +4,25 @@ abstract public class Var implements IOperation, IVariable {
 
     @Override
     public Var add(Var arg) {
-        throw new Error("операция cложения невозможна");
+        new CalculatorError("операция cложения невозможна");
+        return null;
     }
 
     @Override
     public Var mul(Var arg) {
-        throw new Error("операция умножения невозможна");
+        new CalculatorError("операция умножения невозможна");
+        return null;
     }
 
     @Override
     public Var div(Var arg) {
-        throw new Error("операция деления невозможна");
+        new CalculatorError("операция деления невозможна");
+        return null;
     }
 
     @Override
     public Var sub(Var arg) {
-        throw new Error("операция вычитания невозможна");
+        new CalculatorError("операция вычитания невозможна");
+        return null;
     }
 }
