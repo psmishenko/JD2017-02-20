@@ -1,8 +1,42 @@
 package by.it.loktev.Calculator;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class VarF extends Var {
 
     private Double value;
+
+    public VarF(String str) {
+        fromString(str);
+    }
+
+    public VarF(double value) {
+        this.value = value;
+    }
+
+    public VarF(VarF v) {
+        this.value = v.value;
+    }
+
+    @Override
+    public void fromString(String str) {
+        // ожидаем строку вида 55.222
+        //Pattern p = Pattern.compile("^ *\\d+(?:\\.\\d*)? *$");
+        String doubleRE=" *\\d+(?:\\.\\d*)? *";
+        Pattern p = Pattern.compile("^"+doubleRE+"$");
+        Matcher m = p.matcher(str);
+        if ( !m.matches() ) {
+            new CalculatorError(str + " - недопустимое значение для преобразования в число");
+            return;
+        }
+        this.value=Double.parseDouble(m.group());
+    }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
 
     @Override
     public Var add(Var arg) {
@@ -43,25 +77,4 @@ public class VarF extends Var {
         return super.div(arg);
     }
 
-    public VarF(String str) {
-        fromString(str);
-    }
-
-    public VarF(double value) {
-        this.value = value;
-    }
-
-    public VarF(VarF v) {
-        this.value = v.value;
-    }
-
-    @Override
-    public void fromString(String str) {
-        this.value=Double.parseDouble(str);
-    }
-
-    @Override
-    public String toString() {
-        return value.toString();
-    }
 }
