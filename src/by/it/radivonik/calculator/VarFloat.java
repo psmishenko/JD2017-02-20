@@ -43,7 +43,7 @@ public class VarFloat extends Var {
     public Var div(Var var) {
         if (var instanceof VarFloat) {
             VarFloat operand = (VarFloat) var;
-            return new VarFloat(this.value / operand.value);
+            return new VarFloat(this.value/ operand.value);
         }
         else {
             return super.div(var);
