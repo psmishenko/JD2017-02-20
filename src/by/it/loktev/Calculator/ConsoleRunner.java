@@ -11,8 +11,10 @@ public class ConsoleRunner {
 
         // 3.8+26.2
 
-        Var res=new VarF("3.8").add(new VarF("26.2"));
-        oneRes(res);
+        oneRes(new VarF("3.8").add(new VarF("26.2")));
+        oneRes(new VarF("3.8").div(new VarF("26.2")));
+        oneRes(new VarF("3.8").sub(new VarF("26.2")));
+        oneRes(new VarF("3.8").mul(new VarF("26.2")));
 
         // 87.4-23.1 1.04*5.9 12.7*5 -6+12 -7*3.1 -4/8 -9-0.9
 
