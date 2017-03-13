@@ -32,6 +32,7 @@ public class MobilePhone extends Computer implements ICharge {
 
     @Override
     public void run(String path){
+        super.run(path);
         changeBatteryLevel(-20);
         System.out.println("Запускаем программу под android: "+path+" осталось заряда "+getBatteryLevel());
     }
