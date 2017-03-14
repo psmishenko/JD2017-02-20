@@ -5,7 +5,15 @@ import java.util.regex.Pattern;
 
 public class VarF extends Var {
 
+    static public String doubleRE=" *\\d+(?:\\.\\d*)? *";
+    static Pattern p = Pattern.compile("^"+doubleRE+"$");
+
     private Double value;
+
+    static Boolean canFromString(String str){
+        Matcher m = p.matcher(str);
+        return m.matches();
+    }
 
     public VarF(String str) {
         fromString(str);
@@ -21,10 +29,6 @@ public class VarF extends Var {
 
     @Override
     public void fromString(String str) {
-        // ожидаем строку вида 55.222
-        //Pattern p = Pattern.compile("^ *\\d+(?:\\.\\d*)? *$");
-        String doubleRE=" *\\d+(?:\\.\\d*)? *";
-        Pattern p = Pattern.compile("^"+doubleRE+"$");
         Matcher m = p.matcher(str);
         if ( !m.matches() ) {
             new CalculatorError(str + " - недопустимое значение для преобразования в число");
