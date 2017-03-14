@@ -1,4 +1,4 @@
-package by.it.akhmelev.jd01_10.Annotations;
+package by.it.akhmelev.jd01_10;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;

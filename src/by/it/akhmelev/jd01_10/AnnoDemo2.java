@@ -1,4 +1,4 @@
-package by.it.akhmelev.jd01_10.Annotations;
+package by.it.akhmelev.jd01_10;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -31,7 +31,7 @@ public class AnnoDemo2 {
     //===============================================================
     //аннотируемый класс
     @ControlledObject(name="biscuits")
-    public class Cookies {
+    public static class Cookies {
 
         @StartObject
         public void createCookie(){
@@ -46,7 +46,7 @@ public class AnnoDemo2 {
 
     //метод, проверяющий наличие аннотаций
     private void AnnotationReact() throws ClassNotFoundException {
-        Class cl = Class.forName("[... путь ...]Cookies"); //загружаем класс
+        Class cl = Class.forName("by.it.akhmelev.jd01_10.AnnoDemo2$Cookies"); //загружаем класс
         //был аннотирован класс или нет
         if(!cl.isAnnotationPresent(ControlledObject.class)){
             System.err.println("no annotation");
@@ -63,11 +63,11 @@ public class AnnoDemo2 {
             if(hasStart && hasStop){break;}
         }
         System.out.println("Start annotaton  - " + hasStart + ";  Stop annotation  - " + hasStop );
-
-        Set<Integer> s=new HashSet();
-
     }
 
-
+    public static void main(String[] args) throws ClassNotFoundException {
+        AnnoDemo2 instanse=new AnnoDemo2();
+        instanse.AnnotationReact();
+    }
 
 }
