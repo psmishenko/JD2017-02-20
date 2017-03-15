@@ -22,6 +22,20 @@ public class VarM extends Var {
         fromString(str);
     }
 
+    public VarM(double [] [] values){
+        this.rows=values.length;
+        this.cols=(this.rows>0)?(values[0].length):0;
+        this.value=new double[this.rows][this.cols];
+        for (int r = 0; r < this.rows; r++) {
+            if (this.cols!=values[r].length)
+            {
+                new CalculatorError("недопустимый двумерный массив для преобразования в матрицу (строки разной длины)");
+                return;
+            }
+            System.arraycopy(values[r],0,this.value[r],0,this.cols);
+        }
+    }
+
     @Override
     public void fromString(String str) {
         // ожидаем строку вида {{55.2,3.3},{5,7}}
@@ -99,9 +113,37 @@ public class VarM extends Var {
     }
 
     @Override
-    public Var add(Var arg) {
-        System.out.println("сложение матрицы с чем-то");
-        return null;
+    public Var mul(Var arg) {
+        if ( arg instanceof VarF ){
+            VarF varF=(VarF)arg;
+            double [] [] res=new double[this.rows][this.cols];
+            for (int r = 0; r < this.rows; r++) {
+                for (int c = 0; c <this.cols; c++) {
+                  res[r][c]=this.value[r][c]*varF.value;
+                }
+            }
+            return new VarM(res);
+        }
+        return super.mul(arg);
     }
+
+    /*
+    public static double [] arrayMulVector(double [] [] x, double [] y){
+        double [] z=new double[x.length];
+        for (int i=0; i<x.length; i++)
+            for (int j=0; j<y.length; j++)
+                z[i]+=x[i][j]*y[j];
+        return z;
+    }
+
+    public static double [] [] arrayMulVector(double [] [] x, double [] [] y){
+        double [] [] z=new double[x.length][y[0].length];
+        for (int i=0; i<x.length; i++)
+            for (int j=0; j<y[0].length; j++)
+                for (int k=0; k<y.length; k++)
+                    z[i][j]+=x[i][k]*y[k][j];
+        return z;
+    }
+    */
 
 }
