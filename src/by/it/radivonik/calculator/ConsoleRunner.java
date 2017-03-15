@@ -5,6 +5,7 @@ package by.it.radivonik.calculator;
  */
 public class ConsoleRunner {
     public static void main(String[] args) {
+        /*
         oneRes("3.8 + 26.2",new VarFloat("3.8").add(new VarFloat("26.2")));
         oneRes("87.4 - 23.1",new VarFloat("87.4").sub(new VarFloat("23.1")));
         oneRes("1.04 * 5.9",new VarFloat("1.04").mul(new VarFloat("5.9")));
@@ -13,8 +14,13 @@ public class ConsoleRunner {
         oneRes("-7 * 3.1",new VarFloat("-7").mul(new VarFloat("3.1")));
         oneRes("-4 / 8",new VarFloat("-4").div(new VarFloat("8")));
         oneRes("-9 - 0.9",new VarFloat("-9").sub(new VarFloat("0.9")));
-
-        oneRes("3.8 + {26.2}",new VarFloat("3.8").add(new VarVector()));
+        VarVector v = new VarVector("{2.5,3.5,6.7777,0,7,9}");
+        System.out.println(v);
+*/
+        VarVector v1 = new VarVector("{2.5,3.5,6.7777,0,7,9}");
+        VarVector v2 = new VarVector("{2.5,3.5,6.7777,0,7,9}");
+        VarVector v3 = (VarVector)v1.add(v2);
+        oneRes("v1 + v2",v3);
     }
 
     private static void oneRes(String exp, Var var) {
