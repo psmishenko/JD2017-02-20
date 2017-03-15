@@ -124,6 +124,14 @@ public class VarV extends Var {
             }
             return new VarF(sum);
         }
+        if ( arg instanceof VarM ) {
+            // умножение некоммутативно! построим матрицу из вектора
+            double [] [] matr=new double[1][this.size];
+            for (int i = 0; i < this.size; i++) {
+                matr[0][i]=this.value[i];
+            }
+            return new VarM(matr).mul(arg);
+        }
         return super.mul(arg);
     }
 
