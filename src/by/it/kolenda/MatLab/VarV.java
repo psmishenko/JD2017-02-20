@@ -1,6 +1,5 @@
 package by.it.kolenda.MatLab;
 
-
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
