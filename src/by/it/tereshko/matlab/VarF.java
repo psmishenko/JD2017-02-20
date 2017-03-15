@@ -40,8 +40,6 @@ public class VarF extends Var {
     }
 
 
-
-
     public VarF(String value) {
         fromString(value);
     }
