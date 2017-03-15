@@ -24,44 +24,39 @@ public class ConsoleRunner {
 
         // 3.8+26.2
 
+        System.out.println("=== скаляр со скаляром:");
+
         oneRes(new VarF("3.8").add(new VarF("26.2")));
         oneRes(new VarF("3.8").div(new VarF("26.2")));
         oneRes(new VarF("3.8").sub(new VarF("26.2")));
-        oneRes(new VarF("3.8").mul(new VarF("26.2")));
+        oneRes(new VarF("-3.8").mul(new VarF("26.2")));
+
+        System.out.println("=== вектор с вектором:");
+
+        oneRes(new VarV("{55.2,33.33,8,3.3}").add(new VarV("{1,2,3,4}")));
+        oneRes(new VarV("{55.2,33.33,8,3.3}").sub(new VarV("{1,2,3,4}")));
+        oneRes(new VarV("{55.2,33.33,8,3.3}").mul(new VarV("{1,2,3,4}")));
+
+        System.out.println("=== вектор со скаляром:");
 
         oneRes(new VarV("{55.2,33.33,8,3.3}").add(new VarF("1")));
-        oneRes(new VarV("{55.2,33.33,8,3.3}").add(new VarV("{1,2,3,4}")));
-        oneRes(new VarF("1").add(new VarV("{55.2,33.33,8,3.3}")));
-
         oneRes(new VarV("{55.2,33.33,8,3.3}").sub(new VarF("1")));
-        oneRes(new VarV("{55.2,33.33,8,3.3}").sub(new VarV("{1,2,3,4}")));
-        //oneRes(new VarF("1").sub(new VarV("{55.2,33.33,8,3.3}")));
-
         oneRes(new VarV("{55.2,33.33,8,3.3}").mul(new VarF("2")));
-        oneRes(new VarV("{55.2,33.33,8,3.3}").mul(new VarV("{1,2,3,4}")));
-        oneRes(new VarF("1").mul(new VarV("{55.2,33.33,8,3.3}")));
-
         oneRes(new VarV("{55.2,33.33,8,3.3}").div(new VarF("2")));
 
-        /*
-        VarV V=new VarV("{55.2,33.33,8,3.3}");
-        oneRes(V);
+        System.out.println("=== скаляр с вектором (авто-коммутация):");
 
-        double [] M2={5,6,7};
-        VarV V2=new VarV(M2);
-        oneRes(V2);
+        oneRes(new VarF("1").add(new VarV("{55.2,33.33,8,3.3}")));
+        oneRes(new VarF("2").mul(new VarV("{55.2,33.33,8,3.3}")));
 
-        VarV V3=new VarV(V2);
-        oneRes(V3);
+        System.out.println("=== тест матриц:");
 
         VarM M=new VarM("{{55.2,33.33},{8,3.3}}");
         oneRes(M);
 
-        System.out.println(newVar("5.55"));
-        System.out.println(newVar("{5.5,7.7}"));
-        System.out.println(newVar("{{5,7.7},{6.6,222}}"));
-        */
-
+        double [] [] aaa={{5,5},{7,8}};
+        VarM M2=new VarM(aaa);
+        oneRes(M2);
 
     }
 
