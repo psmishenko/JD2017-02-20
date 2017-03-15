@@ -2,7 +2,7 @@ package by.it.kolenda.MatLab;
 
 
 public class VarF extends Var{
-    private Double value;
+    public Double value;
 
     @Override
     public Var add(Var var) {
