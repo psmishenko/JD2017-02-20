@@ -75,7 +75,7 @@ public class VarVector extends Var {
         }
         else if (var instanceof VarVector) {
             for (int i = 0; i < res.length; i++) {
-                res[i] = vector[i] + ((VarVector) var).vector[i];
+                res[i] = vector[i] +  ((VarVector) var).vector[i];
             }
         }
         return new VarVector(res);
