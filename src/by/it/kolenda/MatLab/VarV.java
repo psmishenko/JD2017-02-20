@@ -28,11 +28,28 @@ public class VarV extends Var {
 
         return new VarV(res);
 
-//        for (int i = 0; i < res.length; i++) {
-//            res[i]=vector[i]+((VarV) var)[i];
-
         }
 
+    @Override
+    public Var sub(Var var) {
+        Double[] res = new Double[vector.length];
+        if (var instanceof VarF) {
+            for (int i = 0; i < res.length; i++) {
+                res[i] = vector[i] - ((VarF) var).value;
+            }
+
+        }
+        else if (var instanceof VarV){
+            for (int i = 0; i < res.length; i++) {
+                res[i]=vector[i] + ((VarF) var).value;
+
+            }
+        }
+        else return super.add(var);
+
+        return new VarV(res);
+
+    }
 
 
     public VarV(VarV copyFrom) {
@@ -69,7 +86,7 @@ public class VarV extends Var {
                 vector[i] = Double.parseDouble(oneValue);
                 i++;
             }
-//            String[] values=str.split(Patterns.exVal);
+
         } else {
             new Error("Error:" + str + " is not a vector");
         }
