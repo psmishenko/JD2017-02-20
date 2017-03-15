@@ -5,10 +5,10 @@ import java.util.regex.Pattern;
 
 public class VarF extends Var {
 
-    static public String doubleRE=" *\\d+(?:\\.\\d*)? *";
+    static public String doubleRE=" *\\-?\\d+(?:\\.\\d*)? *";
     static Pattern p = Pattern.compile("^"+doubleRE+"$");
 
-    private Double value;
+    public double value;
 
     static Boolean canFromString(String str){
         Matcher m = p.matcher(str);
@@ -39,7 +39,7 @@ public class VarF extends Var {
 
     @Override
     public String toString() {
-        return value.toString();
+        return Double.toString(value);
     }
 
     @Override
