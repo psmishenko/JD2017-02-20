@@ -2,7 +2,9 @@ package by.it.zeynalov.jd01_06.Level_A;
 
 
 import com.sun.org.apache.xpath.internal.SourceTree;
+
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -10,11 +12,6 @@ import java.util.regex.Pattern;
 public class TaskA {
 
     public static void main(String[] args) {
-
-        TaskC.showText();
-        TaskB.stix();
-        TaskC.optionC();
-
         StringBuilder sb = new StringBuilder(Data.lukomor);
         Pattern pattern = Pattern.compile("[а-яА-ЯёЁ]{4,}");
         Matcher matcher = pattern.matcher(sb);
@@ -43,5 +40,10 @@ public class TaskA {
                 System.out.printf("Слово %s повторяется %d раз\n", word, counter);
             }
         }
+
+        TaskC.showText();
+        TaskB.stix();
+        TaskC.optionC();
+
     }
 }
