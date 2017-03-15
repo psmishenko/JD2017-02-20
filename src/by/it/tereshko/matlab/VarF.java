@@ -1,7 +1,7 @@
 package by.it.tereshko.matlab;
 
 public class VarF extends Var {
-    private Double value;
+    public Double value;
 
     @Override
     public Var add(Var var) {

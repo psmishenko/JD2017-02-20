@@ -6,14 +6,69 @@ import java.util.regex.Pattern;
 
 public class VarV extends Var {
 
-    private Double[] vector;
-
+    public Double[] vector;
 
     @Override
     public Var add(Var var) {
-        System.out.println("Caught addition of vector with something");
-        return null;
+        Double[] res = new Double[vector.length];
+        if (var instanceof VarF) {
+            for (int i = 0; i < res.length; i++) {
+                res[i] = vector[i] + ((VarF) var).value;
+            }
+        } else if (var instanceof VarV) {
+            for (int i = 0; i < res.length; i++) {
+                res[i] = vector[i] + ((VarV) var).vector[i];
+            }
+        } else return super.add(var);
+        return new VarV(res);
+
+//        System.out.println("Caught addition of vector with something");
+//        return null;
     }
+
+    @Override
+    public Var sub(Var var) {
+        Double[] res = new Double[vector.length];
+        if (var instanceof VarF) {
+            for (int i = 0; i < res.length; i++) {
+                res[i] = vector[i] - ((VarF) var).value;
+            }
+        } else if (var instanceof VarV) {
+            for (int i = 0; i < res.length; i++) {
+                res[i] = vector[i] - ((VarV) var).vector[i];
+            }
+        } else return super.sub(var);
+        return new VarV(res);
+    }
+
+    @Override
+    public Var mul(Var var) {
+        Double[] res = new Double[vector.length];
+        if (var instanceof VarF) {
+            for (int i = 0; i < res.length; i++) {
+                res[i] = vector[i] * ((VarF) var).value;
+            }
+        } else if (var instanceof VarV) {
+            Double sum = 0.0;
+            for (int i = 0; i < res.length; i++) {
+                sum = sum + vector[i] * ((VarV) var).vector[i];
+            }
+            return new VarF(sum);
+        } else return super.mul(var);
+        return new VarV(res);
+    }
+
+    @Override
+    public Var div(Var var) {
+        Double[] res = new Double[vector.length];
+        if (var instanceof VarF) {
+            for (int i = 0; i < res.length; i++) {
+                res[i] = vector[i] / ((VarF) var).value;
+            }
+        } else return super.div(var);
+        return new VarV(res);
+    }
+
 
     public VarV(VarV copyFrom) {
         vector = new Double[copyFrom.vector.length];
