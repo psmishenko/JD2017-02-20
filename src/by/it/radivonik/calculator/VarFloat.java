@@ -4,7 +4,7 @@ package by.it.radivonik.calculator;
  * Created by Radivonik on 13.03.2017.
  */
 public class VarFloat extends Var {
-    private Double value;
+    public Double value;
 
     @Override
     public Var add(Var var) {
@@ -50,16 +50,16 @@ public class VarFloat extends Var {
         }
     }
 
+    public VarFloat(VarFloat var) {
+        this.value = var.value;
+    }
+
     public VarFloat(String value) {
         fromString(value);
     }
 
     public VarFloat(double value) {
         this.value = value;
-    }
-
-    public VarFloat(VarFloat var) {
-        this.value = var.value;
     }
 
     @Override

@@ -11,7 +11,7 @@ public class TaskB {
         StringBuilder sb = new StringBuilder(Data.lukomor);
 
         String glasLetters="аяуюоёэеыиАЯОЁЭЕЫИУЮ";
-        Pattern glasGlasPattern = Pattern.compile("^["+glasLetters+"](?:.+["+glasLetters+"])?$"); // слово начинающееся и заканчивающееся гласной
+        Pattern glasGlasPattern = Pattern.compile("^["+glasLetters+"](?:.*["+glasLetters+"])?$"); // слово начинающееся и заканчивающееся гласной
 
         Pattern wordPattern = Pattern.compile("[а-яА-ЯёЁ]+"); // ищем ВСЕ слова
         Matcher wordMatcher = wordPattern.matcher(sb);
