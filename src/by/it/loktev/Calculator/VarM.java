@@ -124,26 +124,77 @@ public class VarM extends Var {
             }
             return new VarM(res);
         }
+        if ( arg instanceof VarV ){
+            VarV varV=(VarV)arg;
+            if (this.cols!=varV.size) {
+                new CalculatorError("операция перемножения матрицы на вектор невозможна - несовместимые размерности");
+                return null;
+            }
+            double [] res=new double[this.rows];
+            for (int i=0; i<this.rows; i++)
+                for (int j=0; j<varV.size; j++)
+                    res[i]+=this.value[i][j]*varV.value[j];
+            return new VarV(res);
+        }
+        if ( arg instanceof VarM ){
+            VarM varM=(VarM)arg;
+            if (this.cols!=varM.rows) {
+                new CalculatorError("операция перемножения матриц невозможна - несовместимые размерности матриц");
+                return null;
+            }
+            double [] [] res=new double[this.rows][varM.cols];
+            for (int i=0; i<this.rows; i++)
+                for (int j=0; j<varM.cols; j++)
+                    for (int k=0; k<varM.rows; k++)
+                        res[i][j]+=value[i][k]*varM.value[k][j];
+            return new VarM(res);
+        }
         return super.mul(arg);
     }
 
-    /*
-    public static double [] arrayMulVector(double [] [] x, double [] y){
-        double [] z=new double[x.length];
-        for (int i=0; i<x.length; i++)
-            for (int j=0; j<y.length; j++)
-                z[i]+=x[i][j]*y[j];
-        return z;
+    @Override
+    public Var div(Var arg) {
+        if ( arg instanceof VarF ){
+            VarF varF=(VarF)arg;
+            double [] [] res=new double[this.rows][this.cols];
+            for (int r = 0; r < this.rows; r++) {
+                for (int c = 0; c <this.cols; c++) {
+                    res[r][c]=this.value[r][c]/varF.value;
+                }
+            }
+            return new VarM(res);
+        }
+        return super.div(arg);
     }
 
-    public static double [] [] arrayMulVector(double [] [] x, double [] [] y){
-        double [] [] z=new double[x.length][y[0].length];
-        for (int i=0; i<x.length; i++)
-            for (int j=0; j<y[0].length; j++)
-                for (int k=0; k<y.length; k++)
-                    z[i][j]+=x[i][k]*y[k][j];
-        return z;
+    @Override
+    public Var add(Var arg) {
+        if ( arg instanceof VarF ){
+            VarF varF=(VarF)arg;
+            double [] [] res=new double[this.rows][this.cols];
+            for (int r = 0; r < this.rows; r++) {
+                for (int c = 0; c <this.cols; c++) {
+                    res[r][c]=this.value[r][c]+varF.value;
+                }
+            }
+            return new VarM(res);
+        }
+        return super.add(arg);
     }
-    */
+
+    @Override
+    public Var sub(Var arg) {
+        if ( arg instanceof VarF ){
+            VarF varF=(VarF)arg;
+            double [] [] res=new double[this.rows][this.cols];
+            for (int r = 0; r < this.rows; r++) {
+                for (int c = 0; c <this.cols; c++) {
+                    res[r][c]=this.value[r][c]-varF.value;
+                }
+            }
+            return new VarM(res);
+        }
+        return super.sub(arg);
+    }
 
 }

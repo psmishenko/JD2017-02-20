@@ -49,6 +49,7 @@ public class ConsoleRunner {
         oneRes(new VarF("1").add(new VarV("{55.2,33.33,8,3.3}")));
         oneRes(new VarF("2").mul(new VarV("{55.2,33.33,8,3.3}")));
 
+        /*
         System.out.println("=== тест матриц:");
 
         VarM M=new VarM("{{55.2,33.33},{8,3.3}}");
@@ -57,7 +58,31 @@ public class ConsoleRunner {
         double [] [] aaa={{5,5},{7,8}};
         VarM M2=new VarM(aaa);
         oneRes(M2);
+        */
 
+        System.out.println("=== матрица с матрицей:");
+
+        oneRes(new VarM("{{5.2,3.3},{8,1.3},{1,2.2}}").mul(new VarM("{{2},{3}}")));
+
+        System.out.println("=== матрица с вектором:");
+
+        oneRes(new VarM("{{5.2,3.3},{8,1.3},{1,2.2}}").mul(new VarV("{2,3}")));
+
+        System.out.println("=== матрица со скаляром:");
+
+        oneRes(new VarM("{{5.2,3.3},{8,1.3},{1,2.2}}").mul(new VarF("2")));
+        oneRes(new VarM("{{5.2,3.3},{8,1.3},{1,2.2}}").div(new VarF("2")));
+        oneRes(new VarM("{{5.2,3.3},{8,1.3},{1,2.2}}").add(new VarF("2")));
+        oneRes(new VarM("{{5.2,3.3},{8,1.3},{1,2.2}}").sub(new VarF("2")));
+
+        System.out.println("=== вектор с матрицей (авто-коммутация):");
+
+        oneRes(new VarV("{2,3}").mul(new VarM("{{5.2,3.3,2.2},{1,5,2.2}}")));
+
+        System.out.println("=== скаляр с матрицей (авто-коммутация):");
+
+        oneRes(new VarF("2").mul(new VarM("{{5.2,3.3},{8,1.3},{1,2.2}}")));
+        oneRes(new VarF("2").add(new VarM("{{5.2,3.3},{8,1.3},{1,2.2}}")));
     }
 
 }
