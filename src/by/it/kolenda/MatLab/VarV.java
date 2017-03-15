@@ -1,18 +1,39 @@
 package by.it.kolenda.MatLab;
 
 
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class VarV extends Var {
-    private Double[] vector;
+    public Double[] vector;
 
 
     @Override
     public Var add(Var var) {
-        System.out.println("Поймали сложение вектора с чем-либо");
-        return null;
-    }
+        Double[] res = new Double[vector.length];
+        if (var instanceof VarF) {
+            for (int i = 0; i < res.length; i++) {
+                res[i] = vector[i] + ((VarF) var).value;
+            }
+
+        }
+        else if (var instanceof VarV){
+            for (int i = 0; i < res.length; i++) {
+                res[i]=vector[i] + ((VarF) var).value;
+
+            }
+        }
+        else return super.add(var);
+
+        return new VarV(res);
+
+//        for (int i = 0; i < res.length; i++) {
+//            res[i]=vector[i]+((VarV) var)[i];
+
+        }
+
+
 
     public VarV(VarV copyFrom) {
         this.vector = new Double[vector.length];
@@ -52,15 +73,16 @@ public class VarV extends Var {
         } else {
             new Error("Error:" + str + " is not a vector");
         }
-
     }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("{")
+        StringBuilder sb = new StringBuilder("{");
         String delimiter = "";
-        for (Double one : vector) {
-
+        for (Double one:vector) {
+            sb.append(delimiter);
+            sb.append(one.toString());
+            delimiter=",";
         }
         sb.append('}');
         return "(" + Arrays.toString(vector) + ")";
