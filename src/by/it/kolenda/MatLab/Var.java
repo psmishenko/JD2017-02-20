@@ -1,6 +1,6 @@
 package by.it.kolenda.MatLab;
 
-public abstract class Var implements Operation, IVariable {
+public abstract class Var implements IOperation, IVariable {
     @Override
     public Var add(Var var) {
         new Error("Операция сложения невозможна");
