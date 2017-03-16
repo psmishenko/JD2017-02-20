@@ -25,4 +25,9 @@ public class Oper1Pref extends ExpressionPart {
         return false;
     }
 
+    @Override
+    public String toString() {
+        return operation;
+    }
+
 }

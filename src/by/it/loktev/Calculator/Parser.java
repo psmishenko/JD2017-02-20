@@ -88,6 +88,22 @@ public class Parser {
 
             }
 
+            // унарные префиксные операции могут идти только до субвыражений
+            if (IsSubExprStart) {
+
+                Pattern pattOper1Pref = Pattern.compile("^" + Oper1Pref.oper1PrefRE);
+                Matcher matchOper1Pref = pattOper1Pref.matcher(exprSB);
+                if (matchOper1Pref.find()) {
+                    String literal = matchOper1Pref.group();
+                    System.out.println("Обнаружена унарная префиксная операция: "+literal);
+                    Oper1Pref oper1Pref = new Oper1Pref(literal);
+                    exprParts[exprCount++] = oper1Pref;
+                    exprSB.delete(0, literal.length());
+                    continue;
+                }
+
+            }
+
             new CalculatorError("невозможно распарсить остаток строки: "+exprSB);
             break;
         }

@@ -74,7 +74,7 @@ public class ConsoleRunner {
         System.out.println("=== тест парсера:");
 
         Parser parser=new Parser();
-        parser.parseString(" -5.2 * 3.3 / {6,7} - {{5.2,3.3},{8,1.3},{1,2.2}} ");
+        parser.parseString(" -5.2 * --3.3 / {6,7} - {{5.2,3.3},{8,1.3},{1,2.2}} ");
         System.out.println("Выражение распарсено:");
         parser.showExprParts();
     }
