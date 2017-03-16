@@ -1,4 +1,4 @@
-package by.it.vedom.jd01_08;
+package by.it.vedom.jd01_08.Example;
 
 public abstract class Player implements iTech {
 

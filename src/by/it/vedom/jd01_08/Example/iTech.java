@@ -1,4 +1,4 @@
-package by.it.vedom.jd01_08;
+package by.it.vedom.jd01_08.Example;
 
 public interface iTech {
     //Возможные действия
