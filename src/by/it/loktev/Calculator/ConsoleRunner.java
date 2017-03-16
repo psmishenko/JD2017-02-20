@@ -73,15 +73,13 @@ public class ConsoleRunner {
 
         System.out.println("=== тест парсера:");
 
-        /*
-        Parser parser=new Parser();
-        //parser.parseString(" 5.2 * ---2.3 / {6,7} - {{5.2,3.3},{8,1.3},{1,2.2}}  ");
-        parser.parseString(" 6+2*2-1 ");
-        Var V1=parser.calculate();
-        System.out.println(V);
-        */
-
         oneRes(Parser.parseAndCalc(" 6+3*4/6-1 ",false));
+        oneRes(Parser.parseAndCalc(" {5,7}+3 ",false));
+        oneRes(Parser.parseAndCalc(" {5,7}+{1,3} ",false));
+        oneRes(Parser.parseAndCalc(" {5,7}*2 ",false));
+        oneRes(Parser.parseAndCalc(" {{5.2,3.3},{8,1.3},{1,2.2}} * {{2},{3}} ",false));
+        oneRes(Parser.parseAndCalc(" {{5.2,3.3},{8,1.3},{1,2.2}} * {2,3} ",false));
+        oneRes(Parser.parseAndCalc(" {{5.2,3.3},{8,1.3},{1,2.2}} + 1 ",false));
     }
 
 }
