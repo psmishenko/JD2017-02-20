@@ -73,6 +73,7 @@ public class ConsoleRunner {
 
         System.out.println("=== тест парсера:");
 
+        oneRes(Parser.parseAndCalc(" 6+3 ",false));
         oneRes(Parser.parseAndCalc(" 6+3*4/6-1 ",false));
         oneRes(Parser.parseAndCalc(" {5,7}+3 ",false));
         oneRes(Parser.parseAndCalc(" {5,7}+{1,3} ",false));
@@ -80,6 +81,11 @@ public class ConsoleRunner {
         oneRes(Parser.parseAndCalc(" {{5.2,3.3},{8,1.3},{1,2.2}} * {{2},{3}} ",false));
         oneRes(Parser.parseAndCalc(" {{5.2,3.3},{8,1.3},{1,2.2}} * {2,3} ",false));
         oneRes(Parser.parseAndCalc(" {{5.2,3.3},{8,1.3},{1,2.2}} + 1 ",false));
+        oneRes(Parser.parseAndCalc(" -9-0.9 ",false));
+        oneRes(Parser.parseAndCalc(" (6+3)*2 ",false));
+        oneRes(Parser.parseAndCalc(" (6+3)*(2+1) ",false));
+        oneRes(Parser.parseAndCalc(" -(6+3)*4/(7-1) ",false));
+        oneRes(Parser.parseAndCalc(" 2*(3+4*(1+5)) ",false));
     }
 
 }

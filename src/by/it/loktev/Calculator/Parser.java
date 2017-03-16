@@ -82,7 +82,7 @@ public class Parser {
                     //System.out.println("Обнаружена бинарная операция: "+literal);
                     Oper2 oper2 = new Oper2(literal);
                     exprParts[exprCount++] = oper2;
-                    exprSB.delete(0, literal.length());
+                    exprSB.delete(0, matchOper2.group(0).length());
                     continue;
                 }
 
@@ -98,7 +98,23 @@ public class Parser {
                     //System.out.println("Обнаружена унарная префиксная операция: "+literal);
                     Oper1Pref oper1Pref = new Oper1Pref(literal);
                     exprParts[exprCount++] = oper1Pref;
-                    exprSB.delete(0, literal.length());
+                    exprSB.delete(0, matchOper1Pref.group(0).length());
+                    continue;
+                }
+
+            }
+
+            // скобки ожидаем всегда, хоть можно и умнее
+            {
+
+                Pattern pattBracket = Pattern.compile("^" + Bracket.bracketRE);
+                Matcher matchBracket = pattBracket.matcher(exprSB);
+                if (matchBracket.find()) {
+                    String literal = matchBracket.group(1);
+                    //System.out.println("Обнаружена скобка: "+literal);
+                    Bracket bracket= new Bracket(literal);
+                    exprParts[exprCount++] = bracket;
+                    exprSB.delete(0, matchBracket.group(0).length());
                     continue;
                 }
 
@@ -128,6 +144,65 @@ public class Parser {
 
     // вычисляет выражения [fromIndex,toIndex)
     public Var calculateFragment(int fromIndex, int toIndex, boolean showDebug) {
+
+        if ( showDebug )
+        {
+            System.out.println("Рассчитываем фрагмент:");
+            showExprParts(fromIndex,toIndex);
+        }
+
+        // ищем фрагменты в скобках
+
+        // ищем слева направо первую же правую скобку
+        boolean continueBrackets=true;
+        while (continueBrackets){
+            continueBrackets=false;
+
+            for ( int R=fromIndex; R<toIndex; R++ ){
+                ExpressionPart rightPart=exprParts[R];
+                if ( (rightPart.getPartType()==ExpressionPart.PartType.partBracket) && (((Bracket)rightPart).bracket.equals(")")) )
+                {
+                    // правая скобка найдена, влево от неё ищем соответствующую левую
+                    for ( int L=R-1; L>=fromIndex; L-- )
+                    {
+                        ExpressionPart leftPart=exprParts[L];
+                        if ( (leftPart.getPartType()==ExpressionPart.PartType.partBracket) && (((Bracket)leftPart).bracket.equals("(")) )
+                        {
+                            // левая скобка найдена, фрагмент [L+1,R-1) не имеет скобок
+                            if ( showDebug )
+                            {
+                                System.out.println("Найдены скобки, рекурсия...");
+                            }
+                            Var bracketsRes=calculateFragment(L+1,R,showDebug);
+                            if ( showDebug )
+                            {
+                                System.out.println("Результат расчёта скобок: "+bracketsRes);
+                                System.out.println("Полное выражение после расчёта скобок:");
+                                showExprParts();
+                            }
+                            // exprParts уже изменилось, exprCount уменьшилось, R указывает некорректно
+                            exprParts[L]=bracketsRes;
+                            System.arraycopy(exprParts,L+3,exprParts,L+1,exprCount-L-1);
+                            exprCount-=2; // только на скобку
+                            toIndex-=(R-L);
+                            if ( showDebug )
+                            {
+                                System.out.println("Полное выражение после удаления скобок:");
+                                showExprParts();
+                            }
+                            continueBrackets=true;
+                            break;
+                        }
+
+                    }
+
+                }
+                if ( continueBrackets ) // левая для этой правой уже отработана, надо всё начать сначала, т.к. exprParts изменилось
+                    break;
+            }
+
+        };
+
 
         // ищем унарные префиксные операторы, справа налево
 
@@ -171,7 +246,7 @@ public class Parser {
 
         if (showDebug) {
             System.out.println("Отработали унарные префиксные операции:");
-            showExprParts();
+            showExprParts(fromIndex, toIndex);
         }
 
         // ищем бинарные операторы умножения и деления, слева направо
@@ -264,25 +339,29 @@ public class Parser {
 
         if (showDebug) {
             System.out.println("Отработали бинарные операции:");
-            showExprParts();
+            showExprParts(fromIndex, toIndex);
         }
 
-        if ( (exprCount!=1) || !(exprParts[0] instanceof Var) ) {
+        if ( (toIndex-fromIndex!=1) || !(exprParts[fromIndex] instanceof Var) ) {
             new CalculatorError("выражение рассчитано не до конца");
             return null;
         }
 
-        return (Var)exprParts[0];
+        return (Var)exprParts[fromIndex];
     }
 
     public Var calculate(boolean showDebug) {
       return calculateFragment(0,exprCount,showDebug);
     }
 
-    public void showExprParts(){
-        for (int i = 0; i < exprCount; i++) {
+    public void showExprParts(int fromIndex, int toIndex){
+        for (int i = fromIndex; i < toIndex; i++) {
             System.out.println(i+" / "+exprParts[i].getPartType().toString()+" / "+exprParts[i]);
         }
+    }
+
+    public void showExprParts(){
+        showExprParts(0,exprCount);
     }
 
     public static Var parseAndCalc(String str, boolean showDebug)
