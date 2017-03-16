@@ -1,6 +1,6 @@
 package by.it.loktev.Calculator;
 
-abstract public class Var implements IOperation, IVariable {
+abstract public class Var extends ExpressionPart implements IOperation, IVariable {
 
     @Override
     public Var add(Var arg) {
@@ -25,4 +25,20 @@ abstract public class Var implements IOperation, IVariable {
         new CalculatorError("операция вычитания не реализована для таких типов значений");
         return null;
     }
+
+    @Override
+    PartType getPartType() {
+        return PartType.partVar;
+    }
+
+    @Override
+    boolean isSubExprStart() {
+        return false;
+    }
+
+    @Override
+    boolean isSubExprEnd() {
+        return true;
+    }
+
 }

@@ -22,8 +22,6 @@ public class ConsoleRunner {
 
     public static void main(String[] args) {
 
-        // 3.8+26.2
-
         System.out.println("=== скаляр со скаляром:");
 
         oneRes(new VarF("3.8").add(new VarF("26.2")));
@@ -49,17 +47,6 @@ public class ConsoleRunner {
         oneRes(new VarF("1").add(new VarV("{55.2,33.33,8,3.3}")));
         oneRes(new VarF("2").mul(new VarV("{55.2,33.33,8,3.3}")));
 
-        /*
-        System.out.println("=== тест матриц:");
-
-        VarM M=new VarM("{{55.2,33.33},{8,3.3}}");
-        oneRes(M);
-
-        double [] [] aaa={{5,5},{7,8}};
-        VarM M2=new VarM(aaa);
-        oneRes(M2);
-        */
-
         System.out.println("=== матрица с матрицей:");
 
         oneRes(new VarM("{{5.2,3.3},{8,1.3},{1,2.2}}").mul(new VarM("{{2},{3}}")));
@@ -83,6 +70,13 @@ public class ConsoleRunner {
 
         oneRes(new VarF("2").mul(new VarM("{{5.2,3.3},{8,1.3},{1,2.2}}")));
         oneRes(new VarF("2").add(new VarM("{{5.2,3.3},{8,1.3},{1,2.2}}")));
+
+        System.out.println("=== тест парсера:");
+
+        Parser parser=new Parser();
+        parser.parseString(" -5.2 * 3.3 / {6,7} - {{5.2,3.3},{8,1.3},{1,2.2}} ");
+        System.out.println("Выражение распарсено:");
+        parser.showExprParts();
     }
 
 }
