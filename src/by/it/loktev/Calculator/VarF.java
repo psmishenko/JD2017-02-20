@@ -81,4 +81,8 @@ public class VarF extends Var {
         return super.div(arg);
     }
 
+    public void neg(){
+        value=-value;
+    }
+
 }

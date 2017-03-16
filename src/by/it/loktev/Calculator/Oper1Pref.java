@@ -2,7 +2,7 @@ package by.it.loktev.Calculator;
 
 public class Oper1Pref extends ExpressionPart {
 
-    static public String oper1PrefRE=" *[-+] *";
+    static public String oper1PrefRE=" *([-+]) *";
 
     public String operation;
 

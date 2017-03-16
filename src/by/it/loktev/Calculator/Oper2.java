@@ -2,7 +2,7 @@ package by.it.loktev.Calculator;
 
 public class Oper2 extends ExpressionPart {
 
-    static public String oper2RE=" *[-+*/] *";
+    static public String oper2RE=" *([-+*/]) *";
 
     public String operation;
 
