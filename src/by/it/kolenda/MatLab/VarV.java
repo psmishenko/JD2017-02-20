@@ -40,16 +40,14 @@ public class VarV extends Var {
         }
         else if (var instanceof VarV){
             for (int i = 0; i < res.length; i++) {
-                res[i]=vector[i] + ((VarF) var).value;
+                res[i]=vector[i] - ((VarF) var).value;
 
             }
         }
         else return super.add(var);
 
         return new VarV(res);
-
     }
-
 
     public VarV(VarV copyFrom) {
         this.vector = new Double[vector.length];
