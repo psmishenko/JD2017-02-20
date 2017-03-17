@@ -43,6 +43,7 @@ public class VarV extends Var{
             return (var.add(this));
         }else
             return super.add(var);
+
     }
 
     @Override
@@ -97,7 +98,7 @@ public class VarV extends Var{
             }
             return this;
         }else {
-            return super.sub(var);
+            return super.div(var);
         }
     }
 

@@ -16,15 +16,15 @@ class Parser {
         return mass;
     }
 
-    private Var compileToVar(String str){
+    private Var compileToVar(String str) {
         Var v;
-        if(str.matches(Patterns.exVal)){
+        if (str.matches(Patterns.exVal)) {
             v = new VarF(str);
-        }else if(str.matches(Patterns.exVec)){
+        } else if (str.matches(Patterns.exVec)) {
             v = new VarV(str);
-        }else if(str.matches(Patterns.exMat)){
+        } else if (str.matches(Patterns.exMat)) {
             v = new VarM(str);
-        }else
+        } else
             return null;
         return v;
     }
@@ -38,6 +38,7 @@ class Parser {
             a = compileToVar(mass[0]);
             b = compileToVar(mass[2]);
 
+            System.out.println("");
             switch (mass[1]) {
                 case "+": {
                     System.out.println(a.add(b));

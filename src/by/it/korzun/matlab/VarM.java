@@ -6,23 +6,23 @@ import java.util.regex.Pattern;
 public class VarM extends Var{
     private double[][] matrix;
 
-    VarM(String str){
+    VarM(String str) {
         Pattern patternArgs = Pattern.compile("[{}]");
         Matcher matcher = patternArgs.matcher(str);
-        String []strings = str.split("},\\{");
+        String[] strings = str.split("},\\{");
         for (int i = 0; i < strings.length; i++) {
             matcher = patternArgs.matcher(strings[i]);
             strings[i] = matcher.replaceAll("");
         }
-        String [][]matrix = new String[strings.length][];
-        for(int i = 0; i < matrix.length; i++){
-            String []temp = strings[i].split(",");
+        String[][] matrix = new String[strings.length][];
+        for (int i = 0; i < matrix.length; i++) {
+            String[] temp = strings[i].split(",");
             matrix[i] = new String[temp.length];
             System.arraycopy(temp, 0, matrix[i], 0, matrix[0].length);
         }
         this.matrix = new double[matrix.length][matrix[0].length];
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++) {
+        for(int i = 0; i < matrix.length; i++){
+            for(int j = 0; j < matrix[0].length; j++){
                 this.matrix[i][j] = Double.parseDouble(matrix[i][j]);
             }
         }
@@ -69,6 +69,7 @@ public class VarM extends Var{
                 new Error("Несовпадающие размеры");
                 return null;
             }
+
         }
         else if(var instanceof VarF){
             for (int i = 0; i < this.matrix.length; i++) {
