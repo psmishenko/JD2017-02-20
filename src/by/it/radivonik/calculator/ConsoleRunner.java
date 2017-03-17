@@ -14,19 +14,31 @@ public class ConsoleRunner {
         oneRes("-7 * 3.1",new VarFloat("-7").mul(new VarFloat("3.1")));
         oneRes("-4 / 8",new VarFloat("-4").div(new VarFloat("8")));
         oneRes("-9 - 0.9",new VarFloat("-9").sub(new VarFloat("0.9")));
+
         VarVector v = new VarVector("{2.5,3.5,6.7777,0,7,9}");
         System.out.println(v);
-*/
+
         VarVector v1 = new VarVector("{2.5,3.5,6.7777,0,7,9}");
         VarVector v2 = new VarVector("{2.5,3.5,6.7777,0,7,9}");
         VarVector v3 = (VarVector)v1.add(v2);
         oneRes("v1 + v2",v3);
+        */
+
+        oneRes("1+2");
+        oneRes("3-1");
+        oneRes("{2.5,3.5,6.7777,0,7,9}+{2.5,3.5,6.7777,0,7,9}");
+
+        Parser.calc("A=3");
+        Parser.calc("B=3");
+        Parser.calc("C={3,4,5}");
+        System.out.println(Var.vars);
     }
 
     private static void oneRes(String exp, Var var) {
-        System.out.printf("%s = ",exp);
-        if (var != null) {
-            System.out.println(var);
-        }
+        System.out.printf("%s = %s\n",exp,var);
+    }
+
+    private static void oneRes(String exp) {
+        oneRes(exp,Parser.calc(exp));
     }
 }

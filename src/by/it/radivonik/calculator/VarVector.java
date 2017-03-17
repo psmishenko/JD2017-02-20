@@ -21,8 +21,8 @@ public class VarVector extends Var {
     }
 
     public VarVector(Double[] value) {
-        this.vector = new Double[value.length];
-        System.arraycopy(vector,0,this.vector,0,vector.length);
+        vector = new Double[value.length];
+        System.arraycopy(value,0,vector,0,vector.length);
     }
 
     public VarVector(String value) {

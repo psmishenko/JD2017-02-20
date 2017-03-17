@@ -1,9 +1,14 @@
 package by.it.radivonik.calculator;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by Radivonik on 13.03.2017.
  */
 public class Var implements IOperation, IVariable {
+    public static Map<String,Var> vars = new HashMap<>();
+
     @Override
     public Var add(Var var) {
         new Error("Операция сложения не реализована");
@@ -31,5 +36,10 @@ public class Var implements IOperation, IVariable {
     @Override
     public void fromString(String value) {
 
+    }
+
+    @Override
+    public void save(String name) {
+        vars.put(name,this);
     }
 }
