@@ -101,6 +101,7 @@ public class ConsoleRunner {
         Parser.parseAndCalc("aaa=5+2 ",false);
         Parser.parseAndCalc("bbb=7+1*2 ",false);
         Parser.parseAndCalc("printvar",false);
+        oneRes(Parser.parseAndCalc(" aaa+1+bbb ",false));
 
         //Storage.store("a",new VarF("5.5"));
         //System.out.println(Storage.restore("a"));

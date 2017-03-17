@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 public class Parser {
 
     static public String assignRE=" *([a-zA-Z]+) *= *";
+    static public String varNameRE=" *([a-zA-Z]+) *";
 
     ExpressionPart [] exprParts;
     int exprCount;
@@ -33,6 +34,20 @@ public class Parser {
 
             //System.out.println("Разбор остатка строки: "+exprSB);
 
+            // имена переменных могут идти только в начале субвыражений
+            if (IsSubExprStart) {
+                Pattern pattVarName = Pattern.compile("^" + varNameRE);
+                Matcher matchVarName = pattVarName.matcher(exprSB);
+                if (matchVarName.find()) {
+                    String varName = matchVarName.group(1);
+                    //System.out.println("Обнаружен VarM: " + literal);
+                    //VarM varM = new VarM(literal);
+                    //System.out.println("Построен VarM: " + varM);
+                    exprParts[exprCount++] = Storage.restore(varName);
+                    exprSB.delete(0, matchVarName.group(0).length());
+                    continue;
+                }
+            }
 
             // литералы значений могут идти только в начале субвыражений
             if (IsSubExprStart) {
