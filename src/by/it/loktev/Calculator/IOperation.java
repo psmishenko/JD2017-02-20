@@ -7,4 +7,6 @@ public interface IOperation {
     Var div(Var arg);
     Var sub(Var arg);
 
+    //Var assign(Var arg);
+
 }

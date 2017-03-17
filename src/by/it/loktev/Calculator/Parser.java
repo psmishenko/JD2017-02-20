@@ -5,19 +5,22 @@ import java.util.regex.Pattern;
 
 public class Parser {
 
+    static public String assignRE=" *([a-zA-Z]+) *= *";
+
     ExpressionPart [] exprParts;
     int exprCount;
 
     public Parser() {
     }
 
-    public Boolean parseString(String expr, boolean showDebug){
+    public Boolean parseString(StringBuffer exprSB, boolean showDebug){
+
+        //StringBuffer exprSB=new StringBuffer(expr.trim());
 
         // распарсим строку выражения в массив частей выражения
         exprParts=new ExpressionPart[10000]; // мы пока коллекций не знаем, допустим что больше 10000 частей выражения не будет
         exprCount=0;
 
-        StringBuffer exprSB=new StringBuffer(expr.trim());
         while ( exprSB.length()!=0 ){
 
             // чтобы определить, какие части выражения сейчас могут встретиться, установим, находимся ли мы сейчас
@@ -29,6 +32,7 @@ public class Parser {
             boolean IsSubExprEnd=(lastPart!=null)&&lastPart.isSubExprEnd();
 
             //System.out.println("Разбор остатка строки: "+exprSB);
+
 
             // литералы значений могут идти только в начале субвыражений
             if (IsSubExprStart) {
@@ -366,10 +370,47 @@ public class Parser {
 
     public static Var parseAndCalc(String str, boolean showDebug)
     {
-        Parser parser=new Parser();
-        if ( !parser.parseString(str,showDebug) )
+        if (str.equals("printvar")){
+            Storage.print();
             return null;
+        }
+
+        StringBuffer exprSB=new StringBuffer(str.trim());
+
+        String assignToVarName=null;
+
+        // если это присваивание - сразу получим имя переменной и нужное значение
+        Pattern pattAssign = Pattern.compile("^" + Parser.assignRE);
+        Matcher matchAssign = pattAssign.matcher(str);
+        if (matchAssign.find()) {
+            assignToVarName = matchAssign.group(1);
+            //VarM varM = new VarM(literal);
+            //System.out.println("Построен VarM: " + varM);
+            //exprParts[exprCount++] = varM;
+            //System.out.println(matchAssign.group(0));
+            exprSB.delete(0, matchAssign.group(0).length());
+            //System.out.println(exprSB);
+            //System.out.println(exprSB);
+            //Var assignRes=parseAndCalc(exprSB.toString(),showDebug);
+            //Storage.store(varName,assignRes);
+            //System.out.println("Присваивание: " + varName+" "+assignRes);
+            //return true;
+        }
+
+        Parser parser=new Parser();
+
+        if ( !parser.parseString(exprSB,showDebug) )
+            return null;
+
         Var V=parser.calculate(showDebug);
+
+        if (assignToVarName!=null) {
+            Storage.store(assignToVarName, V);
+            //if (showDebug)
+              //System.out.println("Присваивание: " + assignToVarName+" "+V);
+            return null;
+        }
+
         return V;
 
     }

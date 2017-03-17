@@ -20,6 +20,15 @@ public class ConsoleRunner {
         return null;
     }
 
+    /*
+    public class TTT<T extends Object>
+    {
+        public <T> void F(){
+            T vvv=new T();
+        }
+    }
+    */
+
     public static void main(String[] args) {
 
         System.out.println("=== скаляр со скаляром:");
@@ -86,6 +95,15 @@ public class ConsoleRunner {
         oneRes(Parser.parseAndCalc(" (6+3)*(2+1) ",false));
         oneRes(Parser.parseAndCalc(" -(6+3)*4/(7-1) ",false));
         oneRes(Parser.parseAndCalc(" 2*(3+4*(1+5)) ",false));
+
+        System.out.println("=== тест работы с переменными:");
+
+        Parser.parseAndCalc("aaa=5+2 ",false);
+        Parser.parseAndCalc("bbb=7+1*2 ",false);
+        Parser.parseAndCalc("printvar",false);
+
+        //Storage.store("a",new VarF("5.5"));
+        //System.out.println(Storage.restore("a"));
     }
 
 }
