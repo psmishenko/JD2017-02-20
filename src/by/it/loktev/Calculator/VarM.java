@@ -22,6 +22,20 @@ public class VarM extends Var {
         fromString(str);
     }
 
+    public VarM(double [] [] values){
+        this.rows=values.length;
+        this.cols=(this.rows>0)?(values[0].length):0;
+        this.value=new double[this.rows][this.cols];
+        for (int r = 0; r < this.rows; r++) {
+            if (this.cols!=values[r].length)
+            {
+                new CalculatorError("недопустимый двумерный массив для преобразования в матрицу (строки разной длины)");
+                return;
+            }
+            System.arraycopy(values[r],0,this.value[r],0,this.cols);
+        }
+    }
+
     @Override
     public void fromString(String str) {
         // ожидаем строку вида {{55.2,3.3},{5,7}}
@@ -99,9 +113,88 @@ public class VarM extends Var {
     }
 
     @Override
+    public Var mul(Var arg) {
+        if ( arg instanceof VarF ){
+            VarF varF=(VarF)arg;
+            double [] [] res=new double[this.rows][this.cols];
+            for (int r = 0; r < this.rows; r++) {
+                for (int c = 0; c <this.cols; c++) {
+                  res[r][c]=this.value[r][c]*varF.value;
+                }
+            }
+            return new VarM(res);
+        }
+        if ( arg instanceof VarV ){
+            VarV varV=(VarV)arg;
+            if (this.cols!=varV.size) {
+                new CalculatorError("операция перемножения матрицы на вектор невозможна - несовместимые размерности");
+                return null;
+            }
+            double [] res=new double[this.rows];
+            for (int i=0; i<this.rows; i++)
+                for (int j=0; j<varV.size; j++)
+                    res[i]+=this.value[i][j]*varV.value[j];
+            return new VarV(res);
+        }
+        if ( arg instanceof VarM ){
+            VarM varM=(VarM)arg;
+            if (this.cols!=varM.rows) {
+                new CalculatorError("операция перемножения матриц невозможна - несовместимые размерности матриц");
+                return null;
+            }
+            double [] [] res=new double[this.rows][varM.cols];
+            for (int i=0; i<this.rows; i++)
+                for (int j=0; j<varM.cols; j++)
+                    for (int k=0; k<varM.rows; k++)
+                        res[i][j]+=value[i][k]*varM.value[k][j];
+            return new VarM(res);
+        }
+        return super.mul(arg);
+    }
+
+    @Override
+    public Var div(Var arg) {
+        if ( arg instanceof VarF ){
+            VarF varF=(VarF)arg;
+            double [] [] res=new double[this.rows][this.cols];
+            for (int r = 0; r < this.rows; r++) {
+                for (int c = 0; c <this.cols; c++) {
+                    res[r][c]=this.value[r][c]/varF.value;
+                }
+            }
+            return new VarM(res);
+        }
+        return super.div(arg);
+    }
+
+    @Override
     public Var add(Var arg) {
-        System.out.println("сложение матрицы с чем-то");
-        return null;
+        if ( arg instanceof VarF ){
+            VarF varF=(VarF)arg;
+            double [] [] res=new double[this.rows][this.cols];
+            for (int r = 0; r < this.rows; r++) {
+                for (int c = 0; c <this.cols; c++) {
+                    res[r][c]=this.value[r][c]+varF.value;
+                }
+            }
+            return new VarM(res);
+        }
+        return super.add(arg);
+    }
+
+    @Override
+    public Var sub(Var arg) {
+        if ( arg instanceof VarF ){
+            VarF varF=(VarF)arg;
+            double [] [] res=new double[this.rows][this.cols];
+            for (int r = 0; r < this.rows; r++) {
+                for (int c = 0; c <this.cols; c++) {
+                    res[r][c]=this.value[r][c]-varF.value;
+                }
+            }
+            return new VarM(res);
+        }
+        return super.sub(arg);
     }
 
 }
