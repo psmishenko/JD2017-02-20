@@ -1,4 +1,4 @@
-package by.it.akhmelev.jd01_10_classwork_matlab;
+package by.it.akhmelev.jd01_11_classwork_matlab;
 
 public class VarF extends Var {
     public Double value;
@@ -48,7 +48,7 @@ public class VarF extends Var {
         this.value = value;
     }
 
-    public VarF(by.it.akhmelev.jd01_11_classwork_matlab.VarF var) {
+    public VarF(VarF var) {
         this.value = var.value;
     }
 
