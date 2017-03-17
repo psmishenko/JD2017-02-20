@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Var implements IOperation,IVariable {
-    static private Map<String,Var> vars = new HashMap<>();
+    static public Map<String,Var> vars = new HashMap<>();
 
     @Override
     public void save(String name) {

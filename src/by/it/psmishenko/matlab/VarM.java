@@ -18,7 +18,13 @@ public class VarM extends Var{
                     res[i][j] = matrix[i][j] + ((VarF) var).value;
                 }
             }
-        }//else if(var instanceof VarM ){}  реализовать сложение матриц (одинак. размерность)
+        }else if(var instanceof VarM ) {
+            for (int i = 0; i < res.length; i++) {
+                for (int j = 0; j < res[0].length; j++) {
+                    res[i][j] = matrix[i][j] + ((VarM) var).matrix[i][j];
+                }
+            }
+        }
         else return super.add(var);
         return new VarM(res);
     }
@@ -32,7 +38,13 @@ public class VarM extends Var{
                     res[i][j] = matrix[i][j] - ((VarF) var).value;
                 }
             }
-        } //else if(var instanceof VarM ){}  реализовать вычитание матриц (одинак. размерность)
+        } else if(var instanceof VarM ){
+            for (int i = 0; i < res.length; i++) {
+                for (int j = 0; j < res[0].length; j++) {
+                    res[i][j] = matrix[i][j] + ((VarM) var).matrix[i][j];
+                }
+            }
+        }
         else return super.add(var);
         return new VarM(res);
     }
@@ -46,8 +58,26 @@ public class VarM extends Var{
                     res[i][j] = matrix[i][j] * ((VarF) var).value;
                 }
             }
-        } //else if(var instanceof VarM ){}  реализовать умножение матриц
-        //else if(var instanceof VarV ){}  реализовать умножение матрицы на вектор
+        } else if(var instanceof VarM ){
+            for (int i = 0; i < res.length; i++) {
+                for (int j = 0; j < res[0].length; j++) {
+                    Double sum = 0.0;
+                    for (int k = 0; k < ((VarM) var).matrix[0].length; k++) {
+                      sum += matrix[i][k] * ((VarM) var).matrix[k][j];
+                        res[i][j] = sum;
+                    }
+                }}
+        }
+        else if(var instanceof VarV ){
+            Double[] resV = new Double[matrix.length];
+            for (int i = 0; i < matrix.length; i++) {
+                Double sum = 0.0;
+                for (int j = 0; j < ((VarV) var).vector.length; j++) {
+                    sum+= matrix[i][j]*((VarV) var).vector[j];
+                    resV[i] = sum;
+                }}
+                return new VarV(resV);
+        }
         else return super.add(var);
         return new VarM(res);
     }
