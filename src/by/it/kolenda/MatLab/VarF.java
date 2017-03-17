@@ -6,10 +6,7 @@ public class VarF extends Var{
 
     @Override
     public Var add(Var var) {
-
-        Var result=null;
         if (var instanceof VarF){
-
             VarF operand=(VarF) var;
             return new VarF(this.value+operand.value);
         }else
@@ -19,10 +16,7 @@ public class VarF extends Var{
 
     @Override
     public Var sub(Var var) {
-
-        Var result=null;
         if (var instanceof VarF){
-
             VarF operand=(VarF) var;
             return new VarF(this.value-operand.value);
         }else
@@ -32,27 +26,22 @@ public class VarF extends Var{
 
     @Override
     public Var mul(Var var) {
-
-        Var result=null;
         if (var instanceof VarF){
-
             VarF operand=(VarF) var;
             return new VarF(this.value * operand.value);
         }else
-            return super.mul(this);
+            return var.mul(this);
 
     }
 
     @Override
     public Var div(Var var) {
-
         Var result=null;
         if (var instanceof VarF){
-
             VarF operand=(VarF) var;
             return new VarF(this.value / operand.value);
         }else
-            return super.div(var);
+            return var.div(this);
 
     }
 

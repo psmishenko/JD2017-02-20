@@ -1,6 +1,13 @@
 package by.it.kolenda.MatLab;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public abstract class Var implements Operation, IVariable {
+
+    static private Map<String, Var> vars=new HashMap<>();
+
+
     @Override
     public Var add(Var var) {
         new Error("Операция сложения невозможна");
@@ -23,5 +30,10 @@ public abstract class Var implements Operation, IVariable {
     public Var div(Var var) {
         new Error("Операция деления невозможна");
         return null;
+    }
+
+    @Override
+    public void save(String name) {
+        vars.put(name, this);
     }
 }

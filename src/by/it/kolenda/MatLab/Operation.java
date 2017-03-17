@@ -6,4 +6,5 @@ public interface Operation {
     Var sub(Var var);
     Var mul(Var var);
     Var div(Var var);
+    void save (String name);
 }
