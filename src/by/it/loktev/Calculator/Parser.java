@@ -10,19 +10,30 @@ public class Parser {
 
     ExpressionPart [] exprParts;
     int exprCount;
+    int capacity;
 
     public Parser() {
+        capacity=0;
+        exprParts=null;
+        exprCount=0;
     }
 
     public boolean parseString(StringBuffer exprSB, boolean showDebug){
 
-        //StringBuffer exprSB=new StringBuffer(expr.trim());
-
         // распарсим строку выражения в массив частей выражения
-        exprParts=new ExpressionPart[10000]; // мы пока коллекций не знаем, допустим что больше 10000 частей выражения не будет
+
         exprCount=0;
 
         while ( exprSB.length()!=0 ){
+
+            if (exprCount==capacity){
+                capacity=capacity*2+5;
+                ExpressionPart [] newExprParts=new ExpressionPart[capacity];
+                if (exprCount>0)
+                  System.arraycopy(exprParts,0,newExprParts,0,exprCount);
+                exprParts=newExprParts;
+                //System.out.println("!!! mem");
+            }
 
             // чтобы определить, какие части выражения сейчас могут встретиться, установим, находимся ли мы сейчас
             // в начале подвыражения или в конце
