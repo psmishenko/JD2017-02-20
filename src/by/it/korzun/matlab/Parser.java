@@ -4,78 +4,61 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 class Parser {
-    private Var checkingType(String str){
-        Pattern patternArgs = Pattern.compile("[{}]");
-        Matcher matcher = patternArgs.matcher(str);
-        Var v;
-        if(!matcher.find()){
-            v = new VarF(str);
-        }else if(matcher.find() && matcher.start() == str.length() - 1){
-            str = matcher.replaceAll("");
-            String []elements = str.split(",");
-            v = new VarV(elements);
-        }else {
-            String []strings = str.split("},\\{");
-            for (int i = 0; i < strings.length; i++) {
-                matcher = patternArgs.matcher(strings[i]);
-                strings[i] = matcher.replaceAll("");
-            }
-            String [][]matrix = new String[strings.length][];
-            for(int i = 0; i < matrix.length; i++){
-                String []temp = strings[i].split(",");
-                matrix[i] = new String[temp.length];
-                System.arraycopy(temp, 0, matrix[i], 0, matrix[0].length);
-            }
-            v = new VarM(matrix);
+    private String []parseStringToMass(String str){
+        String []mass = new String[3];
+        Pattern patternExAny = Pattern.compile(Patterns.exAny);
+        Matcher matcherExAny = patternExAny.matcher(str);
+        if(matcherExAny.find() && matcherExAny.start() == 0){
+            mass[0] = str.substring(0, matcherExAny.end());
+            mass[1] = str.substring(matcherExAny.end(), matcherExAny.end() + 1);
+            mass[2] = str.substring(matcherExAny.end() + 1, str.length());
         }
+        return mass;
+    }
+
+    private Var compileToVar(String str){
+        Var v;
+        if(str.matches(Patterns.exVal)){
+            v = new VarF(str);
+        }else if(str.matches(Patterns.exVec)){
+            v = new VarV(str);
+        }else if(str.matches(Patterns.exMat)){
+            v = new VarM(str);
+        }else
+            return null;
         return v;
     }
 
     void parseString(String str){
-        Pattern pattern = Pattern.compile("}[+\\-*/]\\{");
-        Matcher matcher = pattern.matcher(str);
-        String[] mass;
-        if(!matcher.find()) {
-            mass = str.split("[+\\-*/]");
-            if(str.charAt(0) == '-') {
-                mass[0] = mass[1];
-                mass[1] = mass[2];
-                mass[0] = '-' + mass[0];
-            }
-        }else {
-            mass = str.split("}[+\\-*/]\\{");
-        }
-
+        String []mass = parseStringToMass(str);
 
         try {
             Var a;
             Var b;
-            a = checkingType(mass[0]);
-            b = checkingType(mass[1]);
+            a = compileToVar(mass[0]);
+            b = compileToVar(mass[2]);
 
-            Pattern patternOperator = Pattern.compile("[+\\-*/]");
-            matcher = patternOperator.matcher(str);
-            if (matcher.find()) {
-                if(matcher.start() == 0) {
-                    matcher.find();
+            switch (mass[1]) {
+                case "+": {
+                    System.out.println(a.add(b));
+                    break;
                 }
-                switch (str.charAt(matcher.start())) {
-                    case '+': {
-                        System.out.println(a.add(b));
-                        break;
-                    }
-                    case '-': {
-                        System.out.println(a.sub(b));
-                        break;
-                    }
-                    case '*': {
-                        System.out.println(a.mul(b));
-                        break;
-                    }
-                    case '/': {
-                        System.out.println(a.div(b));
-                        break;
-                    }
+                case "-": {
+                    System.out.println(a.sub(b));
+                    break;
+                }
+                case "*": {
+                    System.out.println(a.mul(b));
+                    break;
+                }
+                case "/": {
+                    System.out.println(a.div(b));
+                    break;
+                }
+                case "=": {
+                    String name = mass[0];
+                    b.save(name);
+                    break;
                 }
             }
         }catch (Exception e){

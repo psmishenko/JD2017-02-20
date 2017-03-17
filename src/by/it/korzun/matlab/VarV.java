@@ -1,6 +1,8 @@
 package by.it.korzun.matlab;
 
 import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class VarV extends Var{
     public double []vector;
@@ -8,10 +10,14 @@ public class VarV extends Var{
     VarV() {
     }
 
-    VarV(String[] value) {
-        vector = new double[value.length];
-        for (int i = 0; i < value.length; i++) {
-            vector[i] = Double.parseDouble(value[i]);
+    VarV(String str){
+        Pattern patternArgs = Pattern.compile("[{}]");
+        Matcher matcher = patternArgs.matcher(str);
+        str = matcher.replaceAll("");
+        String []elements = str.split(",");
+        vector = new double[elements.length];
+        for (int i = 0; i < elements.length; i++) {
+            vector[i] = Double.parseDouble(elements[i]);
         }
     }
 
@@ -23,14 +29,20 @@ public class VarV extends Var{
             }
             return this;
         }else if(var instanceof VarV){
-            for (int i = 0; i < this.vector.length; i++) {
-                this.vector[i] += ((VarV) var).vector[i];
+            if(((VarV) var).vector.length == this.vector.length) {
+                for (int i = 0; i < this.vector.length; i++) {
+                    this.vector[i] += ((VarV) var).vector[i];
+                }
+                return this;
+            }else {
+                new Error("Несовпадающие размеры");
+                return null;
             }
-            return this;
         }
-        else{
+        else if(!(var instanceof VarM)){
             return (var.add(this));
-        }
+        }else
+            return super.add(var);
     }
 
     @Override
@@ -42,10 +54,15 @@ public class VarV extends Var{
             return this;
         }
         else if(var instanceof VarV){
-            for (int i = 0; i < this.vector.length; i++) {
-                this.vector[i] -= ((VarV) var).vector[i];
+            if(((VarV) var).vector.length == this.vector.length) {
+                for (int i = 0; i < this.vector.length; i++) {
+                    this.vector[i] -= ((VarV) var).vector[i];
+                }
+                return this;
+            }else{
+                new Error("Несовпадающие размеры");
+                return null;
             }
-            return this;
         }else {
             return super.sub(var);
         }
@@ -59,10 +76,15 @@ public class VarV extends Var{
             return this;
         }
         else if(var instanceof VarV){
-            for (int i = 0; i < this.vector.length; i++) {
-                this.vector[i] *= ((VarV) var).vector[i];
+            if(((VarV) var).vector.length == this.vector.length) {
+                for (int i = 0; i < this.vector.length; i++) {
+                    this.vector[i] *= ((VarV) var).vector[i];
+                }
+                return this;
+            }else{
+                new Error("Несовпадающие размеры");
+                return null;
             }
-            return this;
         }else {
             return (var.add(this));
         }
@@ -81,9 +103,7 @@ public class VarV extends Var{
 
     @Override
     public String toString() {
-        return "VarV{" +
-                "vector=" + Arrays.toString(vector) +
-                '}';
+        return Arrays.toString(vector);
     }
 
     @Override
