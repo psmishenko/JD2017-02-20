@@ -14,7 +14,7 @@ public class Parser {
     public Parser() {
     }
 
-    public Boolean parseString(StringBuffer exprSB, boolean showDebug){
+    public boolean parseString(StringBuffer exprSB, boolean showDebug){
 
         //StringBuffer exprSB=new StringBuffer(expr.trim());
 
@@ -43,6 +43,10 @@ public class Parser {
                     //System.out.println("Обнаружен VarM: " + literal);
                     //VarM varM = new VarM(literal);
                     //System.out.println("Построен VarM: " + varM);
+                    if (!Storage.isExist(varName)){
+                        new CalculatorError("переменная "+varName+" не найдена в хранилище");
+                        return false;
+                    }
                     exprParts[exprCount++] = Storage.restore(varName);
                     exprSB.delete(0, matchVarName.group(0).length());
                     continue;
@@ -369,9 +373,11 @@ public class Parser {
         return (Var)exprParts[fromIndex];
     }
 
+    /*
     public Var calculate(boolean showDebug) {
       return calculateFragment(0,exprCount,showDebug);
     }
+    */
 
     public void showExprParts(int fromIndex, int toIndex){
         for (int i = fromIndex; i < toIndex; i++) {
@@ -383,24 +389,24 @@ public class Parser {
         showExprParts(0,exprCount);
     }
 
-    public static Var parseAndCalc(String str, boolean showDebug)
+    public static Var parseAndCalc(String str2, boolean showDebug)
     {
-        if (str.equals("printvar")){
+        if (str2.equals("printvar")){
             Storage.print();
             return null;
         }
-        if (str.equals("sortvar")){
+        if (str2.equals("sortvar")){
             Storage.printSort();
             return null;
         }
 
-        StringBuffer exprSB=new StringBuffer(str.trim());
+        StringBuffer exprSB=new StringBuffer(str2.trim());
 
         String assignToVarName=null;
 
         // если это присваивание - сразу получим имя переменной и нужное значение
         Pattern pattAssign = Pattern.compile("^" + Parser.assignRE);
-        Matcher matchAssign = pattAssign.matcher(str);
+        Matcher matchAssign = pattAssign.matcher(exprSB);
         if (matchAssign.find()) {
             assignToVarName = matchAssign.group(1);
             //VarM varM = new VarM(literal);
@@ -418,10 +424,14 @@ public class Parser {
 
         Parser parser=new Parser();
 
-        if ( !parser.parseString(exprSB,showDebug) )
+        if ( !parser.parseString(exprSB,showDebug) ) {
             return null;
+        }
 
-        Var V=parser.calculate(showDebug);
+        //Var V=parser.calculate(showDebug);
+        Var V=parser.calculateFragment(0,parser.exprCount,showDebug);
+        if ( V==null )
+            return null;
 
         if (assignToVarName!=null) {
             Storage.store(assignToVarName, V);

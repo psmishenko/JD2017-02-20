@@ -27,6 +27,10 @@ public class Storage {
         return vars.get(name);
     }
 
+    static public boolean isExist(String name){
+        return vars.containsKey(name);
+    }
+
     static public void print(){
         System.out.println("Переменные в хранилище:");
         for (Map.Entry<String,Var> ME : vars.entrySet()){
@@ -41,4 +45,6 @@ public class Storage {
             System.out.println(ME.getKey()+": "+ME.getValue());
         }
     }
+
+
 }
