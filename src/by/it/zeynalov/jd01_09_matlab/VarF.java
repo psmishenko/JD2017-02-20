@@ -2,16 +2,19 @@ package by.it.zeynalov.jd01_09_matlab;
 
 
 public class VarF extends Var {
-    private Double value;
+    public Double value;
 
     @Override
     public Var add(Var var) {
         if (var instanceof VarF) {
             VarF operand = (VarF) var;
-            return new VarF(this.value + operand.value);
+            return new VarF(this.value + operand.value); //this.value - текущее число, operand.value - число которое подали
         } else
             return (var.add(this));
     }
+
+    // {1,2,3} add 10
+    // 10 add {1,2,3}
 
     @Override
     public Var sub(Var var) {

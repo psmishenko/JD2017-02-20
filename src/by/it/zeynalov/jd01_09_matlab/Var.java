@@ -1,6 +1,7 @@
 package by.it.zeynalov.jd01_09_matlab;
 
 public abstract class Var implements IOperation, IVariable {
+
     @Override
     public Var add(Var var) {
         new Error("Операция сложения невозможна");
@@ -24,4 +25,9 @@ public abstract class Var implements IOperation, IVariable {
         new Error("Операция деления невозможна");
         return null;
     }
+
+  /*  @Override
+    public void save(String name){
+        vars.put(name, this);
+    }*/
 }
