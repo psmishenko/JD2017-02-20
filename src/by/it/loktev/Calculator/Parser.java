@@ -389,6 +389,10 @@ public class Parser {
             Storage.print();
             return null;
         }
+        if (str.equals("sortvar")){
+            Storage.printSort();
+            return null;
+        }
 
         StringBuffer exprSB=new StringBuffer(str.trim());
 

@@ -99,8 +99,10 @@ public class ConsoleRunner {
         System.out.println("=== тест работы с переменными:");
 
         Parser.parseAndCalc("aaa=5+2 ",false);
+        Parser.parseAndCalc("ccc=8 ",false);
         Parser.parseAndCalc("bbb=7+1*2 ",false);
         Parser.parseAndCalc("printvar",false);
+        Parser.parseAndCalc("sortvar",false);
         oneRes(Parser.parseAndCalc(" aaa+1+bbb ",false));
 
         //Storage.store("a",new VarF("5.5"));
