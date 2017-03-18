@@ -1,4 +1,4 @@
-package by.it.vedom.jd01_08.Homework;
+package by.it.vedom.jd01_08.Homework_8;
 
 public class Runner {
     public static void main(String[] args) {

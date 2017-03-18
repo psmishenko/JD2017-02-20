@@ -1,4 +1,4 @@
-package by.it.vedom.jd01_08.Homework;
+package by.it.vedom.jd01_08.Homework_8;
 
 public abstract class Student implements Enrollee {
 
@@ -64,3 +64,4 @@ public abstract class Student implements Enrollee {
         isGoToClasses = false;
     }
 }
+
