@@ -1,14 +1,8 @@
-package by.it.prigozhanov.matlab;
+package by.it.prigozhanov.matlab2;
 
-/**
- * Created by v-omf on 3/13/2017!
- */
 public interface IOperation {
-
     Var add(Var var);
     Var sub(Var var);
     Var mul(Var var);
     Var div(Var var);
-    void save(String name);
-
 }

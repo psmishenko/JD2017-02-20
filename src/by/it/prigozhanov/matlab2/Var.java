@@ -1,11 +1,6 @@
-package by.it.prigozhanov.matlab;
+package by.it.prigozhanov.matlab2;
 
-/**
- * Created by v-omf on 3/13/2017!
- */
 public abstract class Var implements IOperation, IVariable {
-
-
     @Override
     public Var add(Var var) {
         new Error("Операция сложения невозможна");

@@ -1,25 +1,19 @@
-package by.it.prigozhanov.matlab;
+package by.it.prigozhanov.matlab2;
 
-/**
- * Created by v-omf on 3/13/2017!
- */
 public class VarF extends Var {
-    private Double value;
-
+    public Double value;
 
     @Override
     public Var add(Var var) {
-        Var result = null;
         if (var instanceof VarF) {
             VarF operand = (VarF) var;
             return new VarF(this.value + operand.value);
         } else
-            return (var.add(this));
+        return (var.add(this));
     }
 
     @Override
     public Var sub(Var var) {
-        Var result = null;
         if (var instanceof VarF) {
             VarF operand = (VarF) var;
             return new VarF(this.value - operand.value);
@@ -29,27 +23,22 @@ public class VarF extends Var {
 
     @Override
     public Var mul(Var var) {
-        Var result = null;
         if (var instanceof VarF) {
-            VarF operand = (VarF) var;// явное приведение типа
+            VarF operand = (VarF) var;
             return new VarF(this.value * operand.value);
         } else
             return var.mul(this);
     }
 
+    @Override
     public Var div(Var var) {
-        Var result = null;
         if (var instanceof VarF) {
             VarF operand = (VarF) var;
             return new VarF(this.value / operand.value);
         } else
-            return super.div(this);
+            return super.div(var);
     }
 
-    @Override
-    public void save(String name) {
-
-    }
 
     public VarF(String value) {
         fromString(value);
@@ -63,11 +52,9 @@ public class VarF extends Var {
         this.value = var.value;
     }
 
-
     @Override
     public void fromString(String value) {
         this.value = Double.parseDouble(value);
-
     }
 
     @Override
