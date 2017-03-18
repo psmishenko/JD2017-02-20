@@ -9,5 +9,5 @@ public interface Mobile {
     void call();
     void setRington();
     void sendTextMessage();
-
+    void setDateAndTime();
 }

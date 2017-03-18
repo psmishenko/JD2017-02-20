@@ -5,15 +5,19 @@ package by.it.psmishenko.jd01_8.MyVar;
  */
 public class Runner {
     public static void main(String[] args) {
-        Model model = new Model("Siemens A25");
-        model.turnOff();
-        model.call(); model.sendTextMessage(); model.setRington();
-        model.showState();
-        model.turnOn();  model.showState();
+        SiemensMobile model = new Model("Siemens A25");
+        model.call(); // пытаемся позвонить по выкл. мобильному
+        model.showState(); // проверяем, вкл или вкл
+        model.turnOn(); // включаем
+        model.setDateAndTime();
         model.call();  model.sendTextMessage(); model.setRington();
-        SiemensMobile mobile = new Model("Siemens K12345");
-        mobile.showState(); mobile.turnOn();
-        mobile.call();mobile.setRington();mobile.sendTextMessage();
-
+        model.turnOff();  model.showState();
+        System.out.println("---------------------------------------\nПокупаем смартфон\n---------------------------------------");
+        SiemensMobile smartModel = new NewSmartModel("Siemens SmartD");
+        smartModel.sendTextMessage(); // выключен
+        smartModel.turnOn(); smartModel.showState(); // включаем
+        smartModel.setRington();
+        smartModel.call(); smartModel.setDateAndTime();smartModel.sendTextMessage();
+        smartModel.turnOff(); smartModel.showState();
     }
 }
