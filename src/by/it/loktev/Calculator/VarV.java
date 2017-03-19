@@ -21,6 +21,18 @@ public class VarV extends Var {
         fromString(str);
     }
 
+    public VarV(double [] value) {
+        this.size=value.length;
+        this.value = new double[this.size];
+        System.arraycopy(value,0,this.value,0,this.size);
+    }
+
+    public VarV(VarV v) {
+        this.size=v.size;
+        this.value = new double[this.size];
+        System.arraycopy(v.value,0,this.value,0,this.size);
+    }
+
     @Override
     public void fromString(String str) {
 
@@ -72,7 +84,91 @@ public class VarV extends Var {
 
     @Override
     public Var add(Var arg) {
-        System.out.println("сложение вектора с чем-то");
-        return null;
+        if ( arg instanceof VarF ){
+            double [] res=new double[this.size];
+            for (int i = 0; i <this.size ; i++) {
+                res[i]=value[i]+((VarF)arg).value;
+            }
+            return new VarV(res);
+        }
+        if ( arg instanceof VarV ){
+            double [] res=new double[this.size];
+            VarV argV=(VarV)arg;
+            if ( this.size!=argV.size )
+            {
+                new CalculatorError("операция сложения векторов - разные размеры");
+                return null;
+            }
+            for (int i = 0; i <this.size ; i++) {
+                res[i]=value[i]+argV.value[i];
+            }
+            return new VarV(res);
+        }
+        return super.add(arg);
+    }
+
+    @Override
+    public Var mul(Var arg) {
+        if ( arg instanceof VarF ){
+            double [] res=new double[this.size];
+            for (int i = 0; i <this.size ; i++) {
+                res[i]=value[i]*((VarF)arg).value;
+            }
+            return new VarV(res);
+        }
+        if ( arg instanceof VarV ){
+            double sum=0;
+            VarV argV=(VarV)arg;
+            for (int i = 0; i <this.size ; i++) {
+                sum+=value[i]*argV.value[i];
+            }
+            return new VarF(sum);
+        }
+        if ( arg instanceof VarM ) {
+            // умножение некоммутативно! построим матрицу из вектора
+            double [] [] matr=new double[1][this.size];
+            for (int i = 0; i < this.size; i++) {
+                matr[0][i]=this.value[i];
+            }
+            return new VarM(matr).mul(arg);
+        }
+        return super.mul(arg);
+    }
+
+    @Override
+    public Var div(Var arg) {
+        if ( arg instanceof VarF ){
+            double [] res=new double[this.size];
+            for (int i = 0; i <this.size ; i++) {
+                res[i]=value[i]/((VarF)arg).value;
+            }
+            return new VarV(res);
+        }
+        return super.div(arg);
+    }
+
+    @Override
+    public Var sub(Var arg) {
+        if ( arg instanceof VarF ){
+            double [] res=new double[this.size];
+            for (int i = 0; i <this.size ; i++) {
+                res[i]=value[i]-((VarF)arg).value;
+            }
+            return new VarV(res);
+        }
+        if ( arg instanceof VarV ){
+            double [] res=new double[this.size];
+            VarV argV=(VarV)arg;
+            if ( this.size!=argV.size )
+            {
+                new CalculatorError("операция вычитания векторов - разные размеры");
+                return null;
+            }
+            for (int i = 0; i <this.size ; i++) {
+                res[i]=value[i]-argV.value[i];
+            }
+            return new VarV(res);
+        }
+        return super.sub(arg);
     }
 }
