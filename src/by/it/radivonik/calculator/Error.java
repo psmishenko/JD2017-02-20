@@ -6,6 +6,6 @@ package by.it.radivonik.calculator;
 public class Error {
     public Error(String message) {
         System.out.flush();
-        System.err.println(message);
+        System.err.println("Ошибка: " + message);
     }
 }

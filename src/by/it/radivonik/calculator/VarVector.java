@@ -60,20 +60,11 @@ public class VarVector extends Var {
         return res.toString();
     }
 
-    public Var add(Var var) {
-        double[] res = new double[vector.length];
-        if (var instanceof VarFloat) {
-            for (int i = 0; i < res.length; i++) {
-                res[i] = vector[i] + ((VarFloat) var).getValue();
-            }
-        }
-        else if (var instanceof VarVector) {
-            for (int i = 0; i < res.length; i++) {
-                res[i] = vector[i] +  ((VarVector) var).vector[i];
-            }
-        }
-        return new VarVector(res);
+    public int length() {
+        return vector.length;
     }
 
-
+    public double getItem(int index) {
+        return vector[index];
+    }
 }
