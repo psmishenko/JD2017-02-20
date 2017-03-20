@@ -1,0 +1,69 @@
+package by.it.radivonik.jd01_12;
+
+import java.util.*;
+import java.util.regex.*;
+
+/**
+ * Created by Radivonik on 20.03.2017.
+ */
+public class TaskC {
+    public void runC1() {
+
+    }
+
+    public void runC2() {
+
+    }
+
+    public void runC3() {
+        String s1 = "{[234+24]}((56+5)*{34[454/(45+4)]+56}+4)";
+        String s2 = "[[234+24]]((56+5)*{34[454/(45+4)]+56}+4)";
+        String s3 = "{([234+24)}((56+5)*{34[454/(45+4)]+56}+4)";
+        String s4 = "{[234+24])}";
+        String s5 = "{[[(((234+24)))]](456[89])}";
+
+        checkBracketsPrint(s1);
+        checkBracketsPrint(s2);
+        checkBracketsPrint(s3);
+        checkBracketsPrint(s4);
+        checkBracketsPrint(s5);
+    }
+
+    private void checkBracketsPrint(String str) {
+        String msg1 = "В строке %s скобки расставлены корректно\n";
+        String msg2 = "В строке %s скобки расставлены некорректно, ошибка в позиции %d:\n\t%s\n";
+        int pos = checkBrackets(str);;
+        if (pos < 0)
+            System.out.printf(msg1,str);
+        else
+            System.out.printf(msg2,str,pos,str.substring(0,pos) + "  '" + str.substring(pos,pos+1) + "'  " + str.substring(pos+1));
+    }
+
+    private int checkBrackets(String str) {
+        String ptrBr = "[(){}\\[\\]]";  // скобки
+        String ptrBrOpen = "[({\\[]";   // открывающие скобки
+        String ptrBrClose = "[)}\\]]";  // закрывающие скобки
+
+        Deque<String> exp = new LinkedList<>();
+        Pattern p = Pattern.compile(ptrBr);
+        Matcher m = p.matcher(str);
+
+        while (m.find()) {
+            String s = m.group();
+            if (s.matches(ptrBrOpen))
+                exp.addLast(s);
+            else if (s.matches(ptrBrClose)) {
+                if (s.equals(")") && !exp.getLast().equals("(") ||
+                    s.equals("}") && !exp.getLast().equals("{") ||
+                    s.equals("]") && !exp.getLast().equals("[")) {
+                    return m.start();
+                }
+                else {
+                    exp.removeLast();
+                }
+            }
+        }
+
+        return -1;
+    }
+}
