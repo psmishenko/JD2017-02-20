@@ -25,7 +25,7 @@ public class Runner {
         oneRes("{2,3,4}+{5,6,7}");
         oneRes("{2,3,4}-{5,6,7}");
         System.out.println("Вариант C:");
-        System.out.println("Матрицы ПОКА не готовы");
+        System.out.println("Матрицы ПОКА- не готовы");
 
         System.out.println("\nЗадания к занятию JD01_11.2");
         System.out.println("Вариант А:");
