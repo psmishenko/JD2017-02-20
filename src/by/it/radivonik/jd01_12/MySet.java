@@ -5,6 +5,8 @@ import java.util.*;
 /**
  * Created by Radivonik on 20.03.2017.
  */
+
+// Описание класса для задания С2
 public class MySet<T> {
     public Set<T> getUnion(Set<T> a, Set<T> b) {
         Set<T> res = new HashSet<T>(a);

@@ -34,6 +34,7 @@ public class TaskB {
         }
     }
 
+    // вспомогательный метод для 2-го задания
     private <T extends List<?>> void processB2(T list) {
         System.out.printf("Счет для %s из %d элементов... ",list.getClass().getName(),list.size());
         Timer t = new Timer();
