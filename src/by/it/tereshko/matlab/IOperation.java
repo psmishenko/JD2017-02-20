@@ -1,6 +1,7 @@
 package by.it.tereshko.matlab;
 
 public interface IOperation {
+
     Var add(Var var);
 
     Var sub(Var var);
@@ -8,5 +9,7 @@ public interface IOperation {
     Var mul(Var var);
 
     Var div(Var var);
+
+    void save(String name);
 
 }
