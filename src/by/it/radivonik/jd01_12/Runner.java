@@ -20,8 +20,6 @@ public class Runner {
         taskB.runB1();
         System.out.println("Задание 2");
         taskB.runB2();
-        System.out.println("Задание 3");
-        taskB.runB3();
 
         TaskC taskC = new TaskC();
         System.out.println("\nВариант C");
