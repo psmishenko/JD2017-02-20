@@ -1,0 +1,61 @@
+package by.it.zeynalov.jd01_09_matlab_homework;
+
+public class VarF extends Var {
+    private float value; //передаем VarF какое либо значение в данном случае - float
+
+    public VarF(float value) {
+        this.value = value;
+    }
+
+    public VarF(String value) {
+        this.value = Float.parseFloat(value); //Float.parseFloat() - преобразует строку во float
+    }
+
+    @Override
+    public void fromString(String value) {
+        this.value = Float.parseFloat(value);
+    }
+
+    @Override
+    public String toString() { //здесь мы описываем как объект будет выглядить в виде строки
+
+        return String.valueOf(value);
+    }
+
+    @Override
+    public Var add(Var var) {
+        if (var instanceof VarF) {
+            VarF operand = (VarF) var;
+            return new VarF(this.value + operand.value);
+        } else
+            return (var.add(this));
+    }
+
+    @Override
+    public Var mul(Var var) {
+        if (var instanceof VarF) {
+            VarF operand = (VarF) var;
+            return new VarF(this.value - operand.value);
+        } else
+            return (var.mul(this));
+    }
+
+    @Override
+    public Var div(Var var) {
+        if (var instanceof VarF) {
+            VarF operand = (VarF) var;
+            return new VarF(this.value * operand.value);
+        } else
+            return (var.div(this));
+    }
+
+    @Override
+    public Var sub(Var var) {
+        if (var instanceof VarF) {
+            VarF operand = (VarF) var;
+            return new VarF(this.value / operand.value);
+        } else
+            return (var.sub(this));
+    }
+}
+
