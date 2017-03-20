@@ -1,4 +1,4 @@
-package by.it.tereshko.jd01_08.LevelA;
+package by.it.tereshko.jd01_08.levelA;
 
 public interface ITech {
 
