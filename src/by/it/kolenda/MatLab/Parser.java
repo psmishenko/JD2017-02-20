@@ -22,26 +22,26 @@ public class Parser {
     static Var calc(String expression) {
 
         Var res = null;
-        String op="";
+        String operation="";
         String[] part = expression.split(Patterns.exOper);
         Pattern p = Pattern.compile(Patterns.exOper);
         Matcher m = p.matcher(expression);
         if (m.find()) {
-            op = m.group();
+            operation = m.group();
         }
         Var one = createVar(part[0]);
         Var two = createVar(part[1]);
 
-        if (op.equals("=")) {
+        if (operation.equals("=")) {
             two.save(part[0]);
             res = two;
-        } else if (one.equals("+")) {
+        } else if (operation.equals("+")) {
             res = one.add(two);
-        } else if (one.equals("-")) {
+        } else if (operation.equals("-")) {
             res = one.sub(two);
-        } else if (one.equals("*")) {
+        } else if (operation.equals("*")) {
             res = one.mul(two);
-        } else if (one.equals("/")) {
+        } else if (operation.equals("/")) {
             res = one.div(two);
         }
         return res;

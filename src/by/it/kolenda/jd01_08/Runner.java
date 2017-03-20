@@ -13,6 +13,16 @@ public class Runner {
         player.showState();
         player.stop();
         player.showState();
-        System.out.println("\n"+player);
+        System.out.println(player+"\n");
+
+        Player p2 = new CDPlayer("Philips");
+        p2.play();
+        p2.showState();
+        p2.pause();
+        p2.showState();
+        System.out.println("\n"+p2);
+
+
     }
+
 }
