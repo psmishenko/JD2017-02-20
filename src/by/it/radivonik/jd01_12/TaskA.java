@@ -21,17 +21,17 @@ public class TaskA {
             if (value <= 1)
                 it.remove();
         }
-        System.out.println("Только положительные оценки: " + table);
+        System.out.println("Только положительные оценки > 1: " + table);
 
         // Способ 2
         Integer[] bad = new Integer[]{1, 2};
         List<Integer> badList = new ArrayList<Integer>(Arrays.asList(bad));
         table.removeAll(badList);
-        System.out.println("Только положительные оценки: " + table);
+        System.out.println("Только положительные оценки > 2: " + table);
 
         // Способ 3
         table.removeAll(Arrays.asList(new Integer[]{1, 2, 3}));
-        System.out.println("Только положительные оценки: " + table);
+        System.out.println("Только положительные оценки > 3: " + table);
     }
 
     public void runA2() {
@@ -45,8 +45,8 @@ public class TaskA {
         }
         System.out.println("Множество А: " + a);
         System.out.println("Множество B: " + b);
-        System.out.println("Объединение множеств A и B: " + MyCollection.getUnion(a, b));
-        System.out.println("Пересечение множеств A и B: " + MyCollection.getCross(a, b));
+        System.out.println("Объединение множеств A и B: " + MyCollect.getUnion(a, b));
+        System.out.println("Пересечение множеств A и B: " + MyCollect.getCross(a, b));
     }
 
     public void runA3() {

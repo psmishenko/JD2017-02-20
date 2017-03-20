@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * Created by Radivonik on 20.03.2017.
  */
-public class MyCollection {
+public class MyCollect {
     public static Set<Integer> getUnion(Set<Integer> a, Set<Integer> b) {
         Set<Integer> res = new HashSet<>(b);
         // Способ 1

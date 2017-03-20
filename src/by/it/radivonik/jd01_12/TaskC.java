@@ -1,5 +1,7 @@
 package by.it.radivonik.jd01_12;
 
+import com.sun.deploy.util.Waiter;
+
 import java.util.*;
 import java.util.regex.*;
 
@@ -12,7 +14,23 @@ public class TaskC {
     }
 
     public void runC2() {
+        MySet<Double> setD = new MySet<>();
+        Set<Double> aD = new HashSet<>(Arrays.asList(new Double[]{1.0,2.0,3.0,4.5}));
+        Set<Double> bD = new HashSet<>(Arrays.asList(new Double[]{5.0,2.0,4.0,4.5}));
+        System.out.println("Тип Double");
+        System.out.println("Множество А: " + aD);
+        System.out.println("Множество B: " + bD);
+        System.out.println("Объединение множеств A и B: " + setD.getUnion(aD, bD));
+        System.out.println("Пересечение множеств A и B: " + setD.getCross(aD, bD));
 
+        MySet<String> setS = new MySet<>();
+        Set<String> aS = new HashSet<>(Arrays.asList(new String[]{"мама","папа","дочка","сын","внучка","внук"}));
+        Set<String> bS = new HashSet<>(Arrays.asList(new String[]{"бабушка","дедушка","мама","дочка","внучка","сестра","брат"}));
+        System.out.println("Тип String");
+        System.out.println("Множество А: " + aS);
+        System.out.println("Множество B: " + bS);
+        System.out.println("Объединение множеств A и B: " + setS.getUnion(aS, bS));
+        System.out.println("Пересечение множеств A и B: " + setS.getCross(aS, bS));
     }
 
     public void runC3() {
