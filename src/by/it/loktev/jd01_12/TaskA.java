@@ -1,9 +1,6 @@
 package by.it.loktev.jd01_12;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class TaskA {
 
@@ -36,6 +33,50 @@ public class TaskA {
         List<Integer> badCollect=new ArrayList<Integer>(Arrays.asList(bad));
         table.removeAll(badCollect);
         System.out.println("Только положительные оценки: "+table);
+
+    }
+
+    void runA2(){
+
+        Set<Integer> a=new HashSet<>();
+        Set<Integer> b=new HashSet<>();
+
+        for (int i = 0; i < 8; i++) {
+            Integer value=(int)Math.floor(Math.random()*10+1);
+            a.add(value);
+        }
+        System.out.println("Первый список: "+a);
+
+        for (int i = 0; i < 8; i++) {
+            Integer value=(int)Math.floor(Math.random()*10+1);
+            b.add(value);
+        }
+        System.out.println("Второй список: "+b);
+
+        Set<Integer> c=MyCollect.getUnion(a,b);
+        System.out.println("Объединение: "+c);
+
+        Set<Integer> d=MyCollect.getCross(a,b);
+        System.out.println("Пересечение: "+d);
+
+    }
+
+    void runA3(){
+        List<Integer> table=new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            Integer value=(int)Math.floor(Math.random()*10-5);
+            table.add(value);
+        }
+        System.out.println("Исходный список: "+table);
+
+        Comparator<Integer> c=new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2-o1;
+            }
+        };
+        Collections.sort(table,c);
+        System.out.println("Сортированный список: "+table);
 
     }
 
