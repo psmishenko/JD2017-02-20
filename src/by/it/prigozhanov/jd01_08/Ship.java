@@ -11,4 +11,6 @@ public interface Ship {
     void coolingSystemOn();
     void coolingSystemOff();
     void move();
+    void stop();
+    void takeoffTheAirplane(int amountOfAirplanes);
 }

@@ -1,45 +1,40 @@
 package by.it.radivonik.calculator;
 
 import java.util.Arrays;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.regex.*;
 
 /**
  * Created by Radivonik on 13.03.2017.
  */
 public class VarVector extends Var {
-    private Double[] vector;
+    private double[] vector;
 
-    public VarVector(VarVector var) {
-        vector = new Double[var.vector.length];
-        /*
-        for (int i = 0; i < var.vector.length; i++) {
-            vector[i] = var.vector[i];
-        }
-         */
-        System.arraycopy(var.vector,0,vector,0,var.vector.length);
-    }
-
-    public VarVector(Double[] value) {
-        this.vector = new Double[value.length];
+    // Конструкторы
+    public VarVector(double[] vector) {
+        this.vector = new double[vector.length];
         System.arraycopy(vector,0,this.vector,0,vector.length);
     }
 
-    public VarVector(String value) {
-        fromString(value);
+    public VarVector(VarVector var) {
+        vector = new double[var.vector.length];
+        System.arraycopy(var.vector,0,vector,0,var.vector.length);
+    }
+
+    public VarVector(String str) {
+        fromString(str);
     }
 
     @Override
-    public void fromString(String value) {
-        Pattern p = Pattern.compile(IPatterns.exVec);
-        if (p.matcher(value).matches()) {
-            p = Pattern.compile(IPatterns.exVal);
-            Matcher m = p.matcher(value);
+    public void fromString(String str) {
+        Pattern p = Pattern.compile(IPatterns.ExVector);
+        if (p.matcher(str).matches()) {
+            p = Pattern.compile(IPatterns.ExNumber);
+            Matcher m = p.matcher(str);
             int size = 0;
             while (m.find())
                 size++;
 
-            vector = new Double[size];
+            vector = new double[size];
             m.reset();
             int i = 0;
             while (m.find()) {
@@ -48,7 +43,7 @@ public class VarVector extends Var {
             }
         }
         else {
-            new Error("Ошибка: " + value + " не является вектором");
+            new Error("Ошибка: " + str + " не является вектором");
         }
     }
 
@@ -65,21 +60,11 @@ public class VarVector extends Var {
         return res.toString();
     }
 
-    @Override
-    public Var add(Var var) {
-        Double[] res = new Double[vector.length];
-        if (var instanceof VarFloat) {
-            for (int i = 0; i < res.length; i++) {
-                res[i] = vector[i] + ((VarFloat) var).value;
-            }
-        }
-        else if (var instanceof VarVector) {
-            for (int i = 0; i < res.length; i++) {
-                res[i] = vector[i] +  ((VarVector) var).vector[i];
-            }
-        }
-        return new VarVector(res);
+    public int length() {
+        return vector.length;
     }
 
-
+    public double getItem(int index) {
+        return vector[index];
+    }
 }

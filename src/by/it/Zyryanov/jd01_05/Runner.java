@@ -7,7 +7,7 @@ public class Runner {
         System.out.println("Вариант 3");
         System.out.println();
         System.out.println("Задание 1");
-        Task1.solver(12.6453);
+        Task1.solver(1.99);
         System.out.println();
         System.out.println("Задание 2");
         Task2.solver(0.3 , -21.47);
