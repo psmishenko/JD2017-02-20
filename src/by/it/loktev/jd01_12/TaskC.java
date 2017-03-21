@@ -1,0 +1,54 @@
+package by.it.loktev.jd01_12;
+
+import java.util.*;
+
+public class TaskC {
+
+    private class Elem{
+        private int ident;
+        private String name;
+
+        public Elem(int ident, String name) {
+            this.ident = ident;
+            this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return ident + "/" + name;
+        }
+    }
+
+    void runC1() {
+
+        String text = "хлеб батон курица хлеб молоко мясо водка компот сок";
+
+        String[] namesArray = text.split("[^a-zA-Zа-яА-ЯёЁ]+");
+        System.out.println("Наименования:");
+        System.out.println(Arrays.toString(namesArray));
+
+        ArrayList<Elem> elems=new ArrayList<>();
+
+        // пусть шифром будет hashCode строки наименования; он не совсем уникальный, но для целей задания подойдёт
+        for ( String name : namesArray ){
+            int ident=name.hashCode();
+            elems.add(new Elem(ident,name));
+        }
+        System.out.println("Исходный список - шифры + наименования");
+        System.out.println(elems);
+
+        Comparator<Elem> comp=new Comparator<Elem>() {
+            @Override
+            public int compare(Elem e1, Elem e2) {
+                return e1.ident-e2.ident;
+            }
+        };
+        Collections.sort(elems,comp);
+        System.out.println("Список, отсортированный по шифрам:");
+        System.out.println(elems);
+
+        //TreeMap<Integer,String> C1=new TreeMap<>();
+    }
+
+
+}

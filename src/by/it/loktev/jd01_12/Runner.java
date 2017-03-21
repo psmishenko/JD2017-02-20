@@ -14,11 +14,17 @@ public class Runner {
         taskA.runA3();
         */
 
+        /*
         TaskB taskB=new TaskB();
-        //System.out.println("=== B1");
-        //taskB.runB1();
+        System.out.println("=== B1");
+        taskB.runB1();
         System.out.println("=== B2");
         taskB.runB2();
+        */
+
+        TaskC taskC=new TaskC();
+        System.out.println("=== C1");
+        taskC.runC1();
 
     }
 
