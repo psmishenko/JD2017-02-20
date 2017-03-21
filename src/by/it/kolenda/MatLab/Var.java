@@ -3,7 +3,7 @@ package by.it.kolenda.MatLab;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class Var implements Operation, IVariable {
+public abstract class Var implements IOperation, IVariable {
 
     static private Map<String, Var> vars=new HashMap<>();
 

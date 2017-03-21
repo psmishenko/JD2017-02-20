@@ -4,6 +4,7 @@ package by.it.kolenda.jd01_08;
 public abstract class Player implements ITech {
     private boolean isPlay;
     private boolean isPause;
+    private boolean isStop;
 
     public String getName() {
         return name;
@@ -28,10 +29,19 @@ public abstract class Player implements ITech {
         else {
             sPause = "Pause is off";
         }
-        return sPlay+" "+sPause;
 
+
+        String sStop;
+        if (this.isStop()) {
+            sStop = "Playback is off";
+        }
+        else {
+            sStop = "Playback is possible";
+        }
+        return sPlay+" "+sPause+" "+sStop;
 
     }
+
 
     public Player(String name) {
         this.name = name;
@@ -55,12 +65,17 @@ public abstract class Player implements ITech {
         isPause = pause;
     }
 
+    public boolean isStop() {return isStop;}
+
+    public void setStop(boolean stop) {isStop = stop;}
+
 //    public abstract void showState();
 
     @Override
     public void play() {
         isPlay = true;
         isPause = false;
+        isStop = false;
     }
 
     @Override
@@ -73,6 +88,7 @@ public abstract class Player implements ITech {
     public void stop() {
         isPlay = false;
         isPause = false;
+        isStop = true;
     }
 
     public void showState(){

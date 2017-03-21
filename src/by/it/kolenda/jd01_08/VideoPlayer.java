@@ -29,7 +29,15 @@ public class VideoPlayer extends Player {
             sPause = "Pause is off";
         }
 
-        String res=String.format("%s: %s, %s",this.getName(),sPlay,sPause);
+        String sStop;
+        if (this.isStop()) {
+            sStop = "Pause is on, stop is off";
+        }
+        else {
+            sStop = "Pause is off, stop is on";
+        }
+
+        String res=String.format("%s: %s, %s, %s.",this.getName(),sPlay,sPause,sStop);
         return res;
     }
 
