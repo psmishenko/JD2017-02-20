@@ -21,7 +21,7 @@ public class TaskC {
 
     void runC1() {
 
-        String text = "хлеб батон курица хлеб молоко мясо водка компот сок";
+        String text = "хлеб батон курица хлеб молоко мясо водка компот сок курица";
 
         String[] namesArray = text.split("[^a-zA-Zа-яА-ЯёЁ]+");
         System.out.println("Наименования:");
@@ -47,7 +47,20 @@ public class TaskC {
         System.out.println("Список, отсортированный по шифрам:");
         System.out.println(elems);
 
-        //TreeMap<Integer,String> C1=new TreeMap<>();
+        TreeSet<String> usedNames=new TreeSet<>(); // будем использовать этот сет для контроля повторяемости имён
+        Iterator<Elem> it=elems.iterator();
+        while ( it.hasNext() ){
+            Elem elem=it.next();
+            if (usedNames.contains(elem.name)){
+                it.remove();
+            }
+            else{
+                usedNames.add(elem.name);
+            }
+
+        }
+        System.out.println("Список после удаления повторяющихся наименований:");
+        System.out.println(elems);
     }
 
 
