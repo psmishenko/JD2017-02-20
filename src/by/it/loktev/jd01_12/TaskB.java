@@ -5,6 +5,7 @@ import java.util.*;
 public class TaskB {
 
     void runB1(){
+
         String text="What is Lorem Ipsum?\n" +
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n" +
                 "Why do we use it?\n" +
@@ -40,6 +41,82 @@ public class TaskB {
         System.out.println("Частота слов:");
         System.out.println(countWords);
 
+
+    }
+
+    // я описал параметризованный метод вместо двух - processArray и processLinked, это яснее и не нарушает DRY, недостатков не вижу
+    // вряд ли можно было итерирование+remove сделать быстрее, пользуясь какими-либо специфичными для ArrayList или LinkedList методами
+    <T extends List> void processList(T list, int N, boolean debug){
+
+        // заполним список номерами людей
+        for (int i = 1; i <=N ; i++) {
+            list.add(new Integer(i));
+        }
+        if (debug) {
+            System.out.println("Исходное положение: " + list);
+        }
+
+        int pos=0;
+        while( list.size()>1 ) {
+            Iterator<Integer> it=list.iterator();
+            while (it.hasNext()) {
+                Integer num = it.next();
+                pos++;
+                if (pos % 2 == 0) {
+                    it.remove();
+                    if (debug) {
+                        System.out.println("Удаляем: " + num + ", осталось: " + list);
+                    }
+                }
+            }
+        }
+    }
+
+    class TimeCheck{
+        private long prevTime;
+        TimeCheck(){
+            prevTime=System.nanoTime();
+        }
+        int check(){
+            long time=System.nanoTime();
+            long interval=time-prevTime;
+            prevTime=time;
+            return (int)interval/1000;
+        }
+    }
+
+    void runB2(){
+
+        System.out.println("=== ArrayList, N=10");
+        processList(new ArrayList<Integer>(),10,true);
+        System.out.println("=== LinkedList, N=10");
+        processList(new LinkedList<Integer>(),10,true);
+
+        System.out.println("=== Замер скорости:");
+        TimeCheck timeCheck=new TimeCheck();
+        processList(new ArrayList<Integer>(),10,false);
+        int AL1=timeCheck.check();
+        processList(new LinkedList<Integer>(),10,false);
+        int LL1=timeCheck.check();
+        processList(new ArrayList<Integer>(),1000,false);
+        int AL3=timeCheck.check();
+        processList(new LinkedList<Integer>(),1000,false);
+        int LL3=timeCheck.check();
+        processList(new ArrayList<Integer>(),100000,false);
+        int AL5=timeCheck.check();
+        processList(new LinkedList<Integer>(),100000,false);
+        int LL5=timeCheck.check();
+
+        System.out.println("ArrayList, N=10 - "+AL1+" мс");   // 40-60 мс
+        System.out.println("LinkedList, N=10 - "+LL1+" мс");  // 30-70 мс
+        // для N=10 результаты почти одинаковы, т.к. списки малы и ArrayList.remove не успевает повлиять на скорость
+        System.out.println("ArrayList, N=1000 - "+AL3+" мс");   // 2000-6900
+        System.out.println("LinkedList, N=1000 - "+LL3+" мс");  // 2000-3800
+        // для N=1000 результаты сравнимы, ArrayList.remove успевает слегка повлиять на скорость
+        System.out.println("ArrayList, N=100_000 - "+AL5+" мс");   // 853000-893000
+        System.out.println("LinkedList, N=100_000 - "+LL5+" мс");  // 38000-47000
+        // для N=100_000 результаты сильно отличаются, ArrayList.remove для большого массива дорог, LinkedList.remove дешёв
+        // стоимость доступа к i-му элементу в LinkedList сильно больше чем в ArrayList, но мы перебираем LinkedList итератором, т.е. доступ по индексу не требуется
 
     }
 
