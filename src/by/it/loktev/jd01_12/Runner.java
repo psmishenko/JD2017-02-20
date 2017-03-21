@@ -23,8 +23,10 @@ public class Runner {
         */
 
         TaskC taskC=new TaskC();
-        System.out.println("=== C1");
-        taskC.runC1();
+        //System.out.println("=== C1");
+        //taskC.runC1();
+        System.out.println("=== C2");
+        taskC.runC2();
 
     }
 

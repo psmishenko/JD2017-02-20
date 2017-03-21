@@ -63,5 +63,34 @@ public class TaskC {
         System.out.println(elems);
     }
 
+    void runC2(){
+
+        // проверять будем на String
+
+        MyGenericCollect<String> myStringCollect=new MyGenericCollect<String>();
+
+        Set<String> a=new HashSet<>();
+        Set<String> b=new HashSet<>();
+
+        for (int i = 0; i < 8; i++) {
+            String value="$"+(int)Math.floor(Math.random()*10+1);
+            a.add(value);
+        }
+        System.out.println("Первый список: "+a);
+
+        for (int i = 0; i < 8; i++) {
+            String value="$"+(int)Math.floor(Math.random()*10+1);
+            b.add(value);
+        }
+        System.out.println("Второй список: "+b);
+
+        Set<String> c=myStringCollect.getUnion(a,b);
+        System.out.println("Объединение: "+c);
+
+        Set<String> d=myStringCollect.getCross(a,b);
+        System.out.println("Пересечение: "+d);
+
+    }
+
 
 }
