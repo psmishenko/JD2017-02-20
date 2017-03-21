@@ -1,6 +1,8 @@
 package by.it.loktev.jd01_12;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TaskC {
 
@@ -89,6 +91,61 @@ public class TaskC {
 
         Set<String> d=myStringCollect.getCross(a,b);
         System.out.println("Пересечение: "+d);
+
+    }
+
+    private boolean checkBrackets(String str){
+
+        Stack<String> openedBrackets=new Stack<>();
+
+        Matcher bracketsMatcher=Pattern.compile("[\\(\\)\\[\\]\\{\\}]").matcher(str);
+        while (bracketsMatcher.find()){
+            String bracket=bracketsMatcher.group();
+            switch (bracket)
+            {
+                case "(":
+                case "[":
+                case "{":
+                    openedBrackets.push(bracket);
+                    break;
+                case ")":
+                    if ( (openedBrackets.size()==0) || !openedBrackets.pop().equals("(") )
+                        return false;
+                    break;
+                case "]":
+                    if ( (openedBrackets.size()==0) || !openedBrackets.pop().equals("[") )
+                        return false;
+                    break;
+                case "}":
+                    if ( (openedBrackets.size()==0) || !openedBrackets.pop().equals("{") )
+                        return false;
+                    break;
+            }
+        }
+        if (openedBrackets.size()>0)
+            return false; // не все скобки закрыты
+        return true;
+    }
+
+    void runC3(){
+
+        String s1="hello ( ) goodbye [] hello {} goodbye";
+        String s2="hello ( goodbye [ hello { berry } goodbye ] field ) forever";
+        String s3="hello ( goodbye [ hello ] berry { goodbye } field ) forever";
+        String s4="(([[{{}}]]))";
+        String s5="([)]";
+        String s6="([)";
+        String s7="";
+        String s8=")";
+
+        System.out.println("строка: "+s1+", скобки расставлены "+(checkBrackets(s1)?"правильно":"НЕправильно"));
+        System.out.println("строка: "+s2+", скобки расставлены "+(checkBrackets(s2)?"правильно":"НЕправильно"));
+        System.out.println("строка: "+s3+", скобки расставлены "+(checkBrackets(s3)?"правильно":"НЕправильно"));
+        System.out.println("строка: "+s4+", скобки расставлены "+(checkBrackets(s4)?"правильно":"НЕправильно"));
+        System.out.println("строка: "+s5+", скобки расставлены "+(checkBrackets(s5)?"правильно":"НЕправильно"));
+        System.out.println("строка: "+s6+", скобки расставлены "+(checkBrackets(s6)?"правильно":"НЕправильно"));
+        System.out.println("строка: "+s7+", скобки расставлены "+(checkBrackets(s7)?"правильно":"НЕправильно"));
+        System.out.println("строка: "+s8+", скобки расставлены "+(checkBrackets(s8)?"правильно":"НЕправильно"));
 
     }
 
