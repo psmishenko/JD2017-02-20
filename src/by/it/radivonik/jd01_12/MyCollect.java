@@ -6,23 +6,28 @@ import java.util.Set;
 /**
  * Created by Radivonik on 20.03.2017.
  */
-public class MyCollection {
+public class MyCollect {
     public static Set<Integer> getUnion(Set<Integer> a, Set<Integer> b) {
-        Set<Integer> res = new HashSet<>(b);
+        Set<Integer> res = new HashSet<>(a);
         // Способ 1
+        res.addAll(b);
+
+        // Способ 2
 //        for (Integer value: a) {
 //            if (!b.contains(value)) {
 //                res.add(value);
 //            }
 //        }
-
-        // Способ 2
-        res.addAll(a);
         return res;
     }
 
     public static Set<Integer> getCross(Set<Integer> a, Set<Integer> b) {
         // Способ 1
+        Set<Integer> res = new HashSet<>(a);
+        res.retainAll(b);
+        return res;
+
+        // Способ 2
 //        Set<Integer> res = new HashSet<>();
 //        for (Integer value: a) {
 //            if (b.contains(value)) {
@@ -30,10 +35,5 @@ public class MyCollection {
 //            }
 //        }
 //        return res;
-
-        // Способ 2
-        Set<Integer> res2 = new HashSet<>(a);
-        res2.retainAll(b);
-        return res2;
     }
 }
