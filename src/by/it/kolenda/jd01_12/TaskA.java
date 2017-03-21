@@ -28,7 +28,7 @@ public class TaskA {
         Integer[] bad = new Integer[]{1, 2};
         List<Integer> badColect = new ArrayList<>(Arrays.asList(bad));
         table.removeAll(badColect);
-        System.out.println(">2 notes " + table);
+        System.out.println(">2 оценки: " + table);
     }
 
     void runA2() {
