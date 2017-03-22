@@ -75,6 +75,8 @@ public class VarF extends Var {
         if (arg instanceof VarF)
         {
             VarF argF=(VarF)arg;
+            if ( argF.value==0 )
+                throw new CalculatorException("VarF.div - деление на ноль!");
             return new VarF(this.value/argF.value);
         }
         return super.div(arg);

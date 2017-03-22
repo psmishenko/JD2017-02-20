@@ -113,7 +113,8 @@ public class ConsoleRunner {
         oneRes(Parser.parseAndCalc(" aaa+eee ",false));
 
         System.out.println("=== тест исключений:");
-        Parser.parseAndCalc(" 5/0",false);
+        oneRes(Parser.parseAndCalc(" 5/0",false));
+        oneRes(Parser.parseAndCalc(" 2*(3+4*(1+5)) ",false));
 
         //Storage.store("a",new VarF("5.5"));
         //System.out.println(Storage.restore("a"));
