@@ -13,20 +13,26 @@ public class ConsoleRunner {
 //        Var vec = new VarV("{1,2,3}");
 //        System.out.println(vec);
 
-        Var vec1 = new VarV("{1.1,2.1,3.3,4.4,5}");
-        Var vec2 = new VarV("{1,2,3,4,5}");
+//        Var vec1 = new VarV("{1.1,2.1,3.3,4.4,5}");
+//        Var vec2 = new VarV("{1,2,3,4,5}");
 
-        oneRes(Parser.calc("1+2"));
-        oneRes(Parser.calc("{1,2,3,4,5}+2"));
-        oneRes(Parser.calc("{1,2,3,4,5}*2"));
-        oneRes(Parser.calc("{1,2,3,4,5}/2"));
-        oneRes(Parser.calc("{1,2,3,4,5}-2"));
-        oneRes(Parser.calc("A=3"));
-        oneRes(Parser.calc("B={1,2,3,4}"));
-        oneRes(Parser.calc("C=5"));
-        oneRes(Parser.calc("A=7"));
+        Var vec1 = new VarV("{1,5}");
+        Var vec2 = new VarV("{1,2,3}");
 
-        System.out.println(Var.vars);
+        oneRes(Parser.calc("5/0"));
+        oneRes(Parser.calc(vec1+" + "+vec2));
+
+//        oneRes(Parser.calc("1+2"));
+//        oneRes(Parser.calc("{1,2,3,4,5}+2"));
+//        oneRes(Parser.calc("{1,2,3,4,5}*2"));
+//        oneRes(Parser.calc("{1,2,3,4,5}/2"));
+//        oneRes(Parser.calc("{1,2,3,4,5}-2"));
+//        oneRes(Parser.calc("A=3"));
+//        oneRes(Parser.calc("B={1,2,3,4}"));
+//        oneRes(Parser.calc("C=5"));
+//        oneRes(Parser.calc("A=7"));
+//
+//        System.out.println(Var.vars);
 
 //        Var vec3 = vec1.add(vec2);
 //        System.out.println(vec3);

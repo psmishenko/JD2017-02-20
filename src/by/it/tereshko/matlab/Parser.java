@@ -20,28 +20,33 @@ public class Parser {
 
     static Var calc(String expression) {
         Var res = null;
-        String[] part = expression.split(Patterns.exOper);
-        Pattern p = Pattern.compile(Patterns.exOper);
-        Matcher m = p.matcher(expression);
-        String op = "";
-        if (m.find()) {
-            op = m.group();
-        }
+        try {
 
-        Var one = createVar(part[0]);
-        Var two = createVar(part[1]);
-        // выполним одну операцию
-        if (op.equals("=")) {
-            two.save(part[0]);
-            res = two;
-        } else if (one.equals("+")) {
-            res = one.add(two);
-        } else if (one.equals("-")) {
-            res = one.sub(two);
-        } else if (one.equals("*")) {
-            res = one.mul(two);
-        } else if (one.equals("/")) {
-            res = one.div(two);
+            String[] part = expression.split(Patterns.exOper);
+            Pattern p = Pattern.compile(Patterns.exOper);
+            Matcher m = p.matcher(expression);
+            String op = "";
+            if (m.find()) {
+                op = m.group();
+            }
+
+            Var one = createVar(part[0]);
+            Var two = createVar(part[1]);
+            // выполним одну операцию
+            if (op.equals("=")) {
+                two.save(part[0]);
+                res = two;
+            } else if (one.equals("+")) {
+                res = one.add(two);
+            } else if (one.equals("-")) {
+                res = one.sub(two);
+            } else if (one.equals("*")) {
+                res = one.mul(two);
+            } else if (one.equals("/")) {
+                res = one.div(two);
+            }
+        } catch (MathException e) {
+            System.out.println("Error: " + e.getMessage());
         }
         return res;
     }
