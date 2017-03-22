@@ -6,9 +6,9 @@ package by.it.radivonik.calculator;
 public interface IOperation {
     public enum OperationType {
         Add, Sub, Mul, Div, Save};
-    Var add(Var op1, Var op2);
-    Var sub(Var op1, Var op2);
-    Var mul(Var op1, Var op2);
-    Var div(Var op1, Var op2);
-    void save(String name, Var op);
+    Var add(Var op1, Var op2) throws MathException;
+    Var sub(Var op1, Var op2) throws MathException;
+    Var mul(Var op1, Var op2) throws MathException;
+    Var div(Var op1, Var op2) throws MathException;
+    void save(String name, Var op) throws MathException;
 }

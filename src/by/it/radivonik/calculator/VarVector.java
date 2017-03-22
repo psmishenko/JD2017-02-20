@@ -1,6 +1,5 @@
 package by.it.radivonik.calculator;
 
-import java.util.Arrays;
 import java.util.regex.*;
 
 /**
@@ -43,7 +42,7 @@ public class VarVector extends Var {
             }
         }
         else {
-            new Error("Ошибка: " + str + " не является вектором");
+            new MathException("Ошибка: " + str + " не является вектором");
         }
     }
 
