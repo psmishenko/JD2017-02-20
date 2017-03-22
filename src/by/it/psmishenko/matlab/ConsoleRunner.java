@@ -22,6 +22,8 @@ public class ConsoleRunner {
     public static void main(String[] args) throws IOException,MathException {
         boolean zxc = true;
         // тестовые строки из jd01_11
+        oneRes(Parser.calc("5/0"),"1:");
+        oneRes(Parser.calc("{{1,2,3},{4,5,6}}/0"),"2:");
      /* String levelA = "2.3+3";
       String levelB = "{1,2,3}/5";
       String levelC = "{{1,2},{4,5}}*{1,2}";
