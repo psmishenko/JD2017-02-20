@@ -19,7 +19,7 @@ public class ConsoleRunner {
         return line;
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException,MathException {
         boolean zxc = true;
         // тестовые строки из jd01_11
      /* String levelA = "2.3+3";
