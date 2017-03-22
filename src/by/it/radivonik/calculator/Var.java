@@ -10,7 +10,7 @@ public class Var implements IVariable {
     public static Map<String,Var> vars = new HashMap<>();
 
     @Override
-    public void fromString(String str) {
+    public void fromString(String str) throws ParseException {
 
     }
 

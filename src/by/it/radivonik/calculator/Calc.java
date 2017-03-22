@@ -7,7 +7,7 @@ import java.util.TreeMap;
  * Created by Radivonik on 18.03.2017.
  */
 public class Calc {
-    public static String calculate (String exp) throws MathException {
+    public static String calculate (String exp) {
         Operation op = new Operation();
         String[] aop = Parser.parse(exp);
         try {
@@ -37,7 +37,10 @@ public class Calc {
             }
         }
         catch (MathException e) {
-            System.out.println("Ошибка: " + e.getMessage());
+            System.out.println("Ошибка математическая: " + e.getMessage());
+        }
+        catch (ParseException e) {
+            System.out.println("Ошибка преобразования: " + e.getMessage());
         }
 
         return null;

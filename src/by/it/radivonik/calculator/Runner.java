@@ -6,7 +6,7 @@ import java.util.regex.*;
  * Created by Radivonik on 19.03.2017.
  */
 public class Runner {
-    public static void main(String[] args) throws MathException {
+    public static void main(String[] args)  {
         System.out.println("Задания к занятиям JD01_09, JD01_11.1");
         System.out.println("Вариант А:");
         oneRes("3.8+6.2");
@@ -41,14 +41,14 @@ public class Runner {
 
         oneRes("{2,3,4}/0");
         oneRes("{2,3,4}+{5,6}");
-
+        oneRes("{2,3,4}/{}");
      }
 
     private static void oneRes(String exp, String val) {
         System.out.printf("%s = %s\n",exp,val);
     }
 
-    private static void oneRes(String exp) throws MathException {
+    private static void oneRes(String exp) {
         oneRes(exp,Calc.calculate(exp));
     }
 }

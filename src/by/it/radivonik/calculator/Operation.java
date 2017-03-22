@@ -105,8 +105,7 @@ public class Operation implements IOperation {
         if (op == Add || op == Mul)
             return oper(op2,op1,op);
         else {
-            new MathException("Недопустимая операция");
-            return null;
+            throw new MathException("Недопустимая операция");
         }
     }
 
