@@ -1,5 +1,7 @@
 package by.it.loktev.jd01_13.VariantC;
 
+import java.util.ArrayList;
+
 public class C1Runner {
 
     public static void test() {
@@ -55,6 +57,18 @@ public class C1Runner {
         }
         catch(RunException re){
             System.out.println("##### Словлено исключение: "+re.getMessage());
+            System.out.println("##### Класс исключения: "+re.getClass().getName());
+            StackTraceElement [] st=re.getStackTrace();
+            System.out.println("##### Стек:");
+            ArrayList<String> stack=new ArrayList<>();
+            for ( StackTraceElement el : st ){
+                stack.add("Файл: "+el.getFileName()+", метод: "+el.getMethodName()+", строка: "+el.getLineNumber());
+                if (el.getMethodName()=="main")
+                    break;
+            }
+            for ( int i=0; i<stack.size(); i++ ){
+                System.out.println("Уровень: "+(stack.size()-i)+" "+stack.get(i));
+            }
         }
         finally{
             if ( dev1!=null )

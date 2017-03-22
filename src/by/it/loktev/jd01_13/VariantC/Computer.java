@@ -8,9 +8,9 @@ abstract public class Computer extends ElectronicDevice implements IRunProgram {
 
     // можно было не реализовывать run в этом классе, а только в дочерних;
     // но нужно же и показать вызов super.метод()
-    public void run(String path){
+    public void run(String path) throws RunException {
         System.out.println("Готовимся к запуску программы "+path+"...");
-        if ( Math.random()<0.1 )
+        if ( Math.random()<((this instanceof Notebook)?0.5:0.1) )
         {
             System.out.println("УПС! НЕ ХВАТИЛО ПАМЯТИ!");
             throw new RunException("Не хватило памяти для запуска программы "+path);

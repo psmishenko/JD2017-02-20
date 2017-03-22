@@ -29,8 +29,17 @@ public class Notebook extends Computer implements ICharge {
     }
 
     @Override
-    public void run(String path){
-        super.run(path);
+    public void run(String path) throws RunException {
+        try {
+            super.run(path);
+        }
+        catch ( RunException re ){
+            // предположим, что в некоторых случаях мы можем освободить память
+            if ( Math.random()<0.5 )
+                throw re; // не получилось освободить - пробрасываем исключение выше, больше ничего предпринять не можем
+            System.out.println("удалось освободить память!!! пробуем запустить программу ещё раз...");
+            super.run(path); // и тут уж будь что будет
+        }
         changeBatteryLevel(-5);
         System.out.println("Запускаем программу под windows: "+path+", осталось заряда "+getBatteryLevel());
     }
