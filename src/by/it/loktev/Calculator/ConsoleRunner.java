@@ -20,15 +20,6 @@ public class ConsoleRunner {
         return null;
     }
 
-    /*
-    public class TTT<T extends Object>
-    {
-        public <T> void F(){
-            T vvv=new T();
-        }
-    }
-    */
-
     public static void main(String[] args)  {
 
         try {
@@ -110,11 +101,14 @@ public class ConsoleRunner {
         Parser.parseAndCalc("printvar",false);
         Parser.parseAndCalc("sortvar",false);
         oneRes(Parser.parseAndCalc(" aaa*(1+bbb) ",false));
-        oneRes(Parser.parseAndCalc(" aaa+eee ",false));
 
         System.out.println("=== тест исключений:");
+        oneRes(Parser.parseAndCalc(" aaa+eee ",false));
         oneRes(Parser.parseAndCalc(" 5/0",false));
-        oneRes(Parser.parseAndCalc(" 2*(3+4*(1+5)) ",false));
+        oneRes(Parser.parseAndCalc(" (5+2",false));
+        oneRes(Parser.parseAndCalc(" {5,7}+{1,3,8} ",false));
+        oneRes(Parser.parseAndCalc(" {{5.2,3.3},{8,1.3},{1,2.2}} * {{2},{3},{4}} ",false));
+        oneRes(Parser.parseAndCalc(" 2*2 ",false));
 
         //Storage.store("a",new VarF("5.5"));
         //System.out.println(Storage.restore("a"));

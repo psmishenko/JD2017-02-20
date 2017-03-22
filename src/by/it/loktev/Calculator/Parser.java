@@ -438,7 +438,7 @@ public class Parser {
         }
         catch ( CalculatorException e )
         {
-            System.out.println("Исключение в парсере: "+e);
+            System.out.println("Исключение в парсере: "+e.getMessage());
             return null;
         }
 
