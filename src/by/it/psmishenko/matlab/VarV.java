@@ -7,9 +7,13 @@ import java.util.regex.Pattern;
 public class
 VarV extends Var {
     public Double[] vector;
-
+private void ckeckSize(VarV v1, VarV v2)throws MathException{
+    if(v1.vector.length!=v2.vector.length){
+        throw new MathException("Разный размер у векторов");
+    }
+}
     @Override
-    public Var add(Var var) {
+    public Var add(Var var) throws MathException {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
@@ -24,7 +28,7 @@ VarV extends Var {
     }
 
     @Override
-    public Var sub(Var var) {
+    public Var sub(Var var) throws MathException {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
@@ -39,7 +43,7 @@ VarV extends Var {
     }
 
     @Override
-    public Var mul(Var var) {
+    public Var mul(Var var) throws MathException {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
@@ -58,9 +62,10 @@ VarV extends Var {
     }
 
     @Override
-    public Var div(Var var) {
+    public Var div(Var var) throws MathException {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
+            if(((VarF)var).value==0) throw new MathException("Умножение ");
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] / ((VarF) var).value;
             }
