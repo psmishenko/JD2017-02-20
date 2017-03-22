@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Parser {
-    static Var createVar(String part) {
+    static Var createVar(String part) throws MathException {
         Var res;
         if (part.matches(Patterns.exMat)) {
             res = new VarM(part);
@@ -18,7 +18,6 @@ public class Parser {
     }
 
     static Var calc(String expression)throws MathException {
-        // try catch
         Var res = null;
         try {
         String[] part = expression.split(Patterns.exOper);
@@ -43,6 +42,12 @@ public class Parser {
         }
         }catch (MathException e){
             System.out.println("Ошибка:"+e.getMessage());
+            StackTraceElement[] st = e.getStackTrace();
+            System.out.println("Stack:");
+            for (StackTraceElement el:st) {
+                System.out.printf("В классе \"%s\" ,в методе \"%s\" , в строке \"%s\"\n",el.getClassName(),el.getMethodName(),el.getLineNumber());
+                if(el.getMethodName().equals("main"))break;
+            }
         }
         return res;
     }

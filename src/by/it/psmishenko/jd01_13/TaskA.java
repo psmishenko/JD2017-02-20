@@ -30,7 +30,7 @@ public class TaskA {
                 StackTraceElement[] st = e.getStackTrace();
                 System.out.println("Stack:");
                 for (StackTraceElement el:st) {
-                    System.out.printf("В файле\"%s\",В классе \"%s\" ,в файле \"%s\" , в строке\"%s\" ошибка\n",el.getFileName(),el.getClassName(),el.getMethodName(),el.getLineNumber());
+                    System.out.printf("В файле\"%s\",в классе \"%s\" ,в методе \"%s\" , в строке\"%s\" ошибка\n",el.getFileName(),el.getClassName(),el.getMethodName(),el.getLineNumber());
                     if(el.getMethodName().equals("main"))break;
                 }
             }
