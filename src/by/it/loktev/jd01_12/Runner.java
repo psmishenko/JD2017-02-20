@@ -6,7 +6,7 @@ import java.util.TreeMap;
 public class Runner {
 
     public static void main(String[] args) {
-/*
+
         TaskA taskA=new TaskA();
         System.out.println("=== A1");
         taskA.runA1();
@@ -14,7 +14,7 @@ public class Runner {
         taskA.runA2();
         System.out.println("=== A3");
         taskA.runA3();
-        */
+
 
         TaskB taskB=new TaskB();
         System.out.println("=== B1");
@@ -29,10 +29,9 @@ public class Runner {
         // у TreeMap внесение изменений дольше чем у HashMap, т.е. при небольшом количестве элементов TreeMap тратит неразумно много времени на перебалансировку дерева
         // у TreeMap поиск элементов обычно быстрее чем у HashMap, но при небольшом количестве повторений слов TreeMap не успевает проявить эффективность
         // поэтому, в данной задаче HashMap выигрывает
-        //System.out.println("=== B2");
-        //taskB.runB2();
+        System.out.println("=== B2");
+        taskB.runB2();
 
-/*
         TaskC taskC=new TaskC();
         System.out.println("=== C1");
         taskC.runC1();
@@ -40,7 +39,7 @@ public class Runner {
         taskC.runC2(8,true);
         System.out.println("=== C3");
         taskC.runC3();
-*/
+
 
     }
 

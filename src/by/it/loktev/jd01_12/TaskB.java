@@ -4,6 +4,11 @@ import java.util.*;
 
 public class TaskB <M extends Map> {
 
+    /**
+     * @version 1.0
+     * @param M - какая-либо из реализаций Map
+     * @return int - замеренное кол-во миллисекунд на выполнение
+     */
     <M extends Map> int runB1(M countWords2){
 
         String text="What is Lorem Ipsum?\n" +
@@ -75,6 +80,10 @@ public class TaskB <M extends Map> {
         }
     }
 
+    /**
+     * @version 1.0
+     * подсекает и возвращает время в миллисекундах до вызова check от создания или предыдущего вызова check
+     */
     class TimeCheck{
         private long prevTime;
         TimeCheck(){

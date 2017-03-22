@@ -21,6 +21,34 @@ public class TaskC {
         }
     }
 
+    private class MyIterator implements Iterator
+    {
+        int i; // какой элемент будет возвращён при следующем вызове next
+        List<Elem> list;
+
+        public void start(List<Elem> list){
+            this.i = 0;
+            this.list=list;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return i<list.size();
+        }
+
+        @Override
+        public Elem next() {
+            //System.out.println("!!!");
+            return list.get(i++);
+        }
+
+        @Override
+        public void remove() {
+           list.remove(i-1);
+        }
+
+    }
+
     void runC1() {
 
         String text = "хлеб батон курица хлеб молоко мясо водка компот сок курица";
@@ -29,7 +57,14 @@ public class TaskC {
         System.out.println("Наименования:");
         System.out.println(Arrays.toString(namesArray));
 
-        ArrayList<Elem> elems=new ArrayList<>();
+        ArrayList<Elem> elems=new ArrayList<Elem>(){
+            @Override
+            public Iterator<Elem> iterator() {
+                MyIterator myIterator=new MyIterator();
+                myIterator.start(this);
+                return myIterator;
+            }
+        };
 
         // пусть шифром будет hashCode строки наименования; он не совсем уникальный, но для целей задания подойдёт
         for ( String name : namesArray ){
@@ -49,7 +84,7 @@ public class TaskC {
         System.out.println("Список, отсортированный по шифрам:");
         System.out.println(elems);
 
-        TreeSet<String> usedNames=new TreeSet<>(); // будем использовать этот сет для контроля повторяемости имён
+        TreeSet<String> usedNames=new TreeSet<String>(); // будем использовать этот сет для контроля повторяемости имён
         Iterator<Elem> it=elems.iterator();
         while ( it.hasNext() ){
             Elem elem=it.next();
@@ -94,6 +129,11 @@ public class TaskC {
 
     }
 
+    /**
+     * @version 1.0
+     * @param str - строка, в которой нужно проверить расстановку скобок
+     * @return boolean - правильно ли расставлены скобки
+     */
     private boolean checkBrackets(String str){
 
         Stack<String> openedBrackets=new Stack<>();
