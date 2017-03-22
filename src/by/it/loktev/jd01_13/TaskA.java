@@ -6,8 +6,10 @@ import java.util.Scanner;
 
 public class TaskA {
 
-    public static void main(String[] args) {
+    public static void taskA() {
+
         Scanner scanner=null;
+
         try {
             scanner=new Scanner(System.in);
             List<Double> values = new ArrayList<>();

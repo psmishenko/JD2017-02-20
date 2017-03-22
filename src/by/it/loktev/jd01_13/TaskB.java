@@ -2,7 +2,7 @@ package by.it.loktev.jd01_13;
 
 public class TaskB {
 
-    public static void main(String[] args) {
+    public static void taskB() {
         try {
             level1();
         }
