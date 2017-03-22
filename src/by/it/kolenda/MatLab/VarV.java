@@ -6,10 +6,14 @@ import java.util.regex.Pattern;
 
 public class VarV extends Var {
     public Double[] vector;
+    private void checkSize(VarV v1, VarV v2) throws Error {
+        if (v1.vector.length!=v2.vector.length){
 
+        }
+    }
 
     @Override
-    public Var add(Var var) {
+    public Var add(Var var)  throws Error{
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
@@ -30,7 +34,7 @@ public class VarV extends Var {
         }
 
     @Override
-    public Var sub(Var var) {
+    public Var sub(Var var)  throws Error{
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
@@ -50,7 +54,7 @@ public class VarV extends Var {
     }
 
     @Override
-    public Var mul(Var var) {
+    public Var mul(Var var)  throws Error{
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
@@ -67,7 +71,7 @@ public class VarV extends Var {
     }
 
     @Override
-    public Var div(Var var) {
+    public Var div(Var var)  throws Error{
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {

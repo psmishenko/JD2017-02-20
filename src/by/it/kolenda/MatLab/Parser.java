@@ -20,8 +20,9 @@ public class Parser {
     }
 
     static Var calc(String expression) {
-
         Var res = null;
+        try{
+
         String operation="";
         String[] part = expression.split(Patterns.exOper);
         Pattern p = Pattern.compile(Patterns.exOper);
@@ -44,6 +45,9 @@ public class Parser {
         } else if (operation.equals("/")) {
             res = one.div(two);
         }
+        catch (Error e){
+                System.out.println("Error"+e.getMessage());
+        }  }
         return res;
 
     }

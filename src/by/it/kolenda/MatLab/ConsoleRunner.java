@@ -12,7 +12,9 @@ public class ConsoleRunner {
         Var vec1=new VarV("{1.1,2.2,3.3,4.4,5}");
         Var vec2=new VarV("{1,2,3,4,5}");
 
-        oneRes(Parser.calc("1+2"));
+        oneRes(Parser.calc(("5/0")));
+
+//        oneRes(Parser.calc("1+2"));
 
 
 //        oneRes(vec1.add(vec2));

@@ -1,9 +1,9 @@
 package by.it.kolenda.MatLab;
 
-public class Error {
+public class Error extends Exception {
 
     public Error (String message) {
-
-        System.out.println(message);
+super (message);
+//        System.out.println(message);
     }
 }
