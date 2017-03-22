@@ -1,6 +1,5 @@
 package by.it.loktev.Calculator;
 
-import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,7 +16,7 @@ public class VarV extends Var {
     double [] value;
     int size;
 
-    public VarV(String str) {
+    public VarV(String str) throws CalculatorException {
         fromString(str);
     }
 
@@ -34,7 +33,7 @@ public class VarV extends Var {
     }
 
     @Override
-    public void fromString(String str) {
+    public void fromString(String str) throws CalculatorException {
 
         // ожидаем строку вида {55.2,8,3.3}
 
@@ -42,8 +41,7 @@ public class VarV extends Var {
         Pattern p = Pattern.compile("^ *\\{ *([\\-\\+\\d\\., ]*) *\\} *$");
         Matcher m = p.matcher(str);
         if ( !m.matches() ) {
-            new CalculatorError(str + " - недопустимое значение для преобразования в вектор");
-            return;
+            throw new CalculatorException(str + " - недопустимое значение для преобразования в вектор");
         }
         String valuesStr=m.group(1);
 
@@ -61,8 +59,7 @@ public class VarV extends Var {
             String valueStr=valuesArr[i];
             m = p.matcher(valueStr);
             if ( !m.matches() ) {
-                new CalculatorError(valueStr + " - недопустимое значение для преобразования в число");
-                return;
+                throw new CalculatorException(valueStr + " - недопустимое значение для преобразования в число");
             }
             this.value[i]=Double.parseDouble(m.group());
         }
@@ -83,7 +80,7 @@ public class VarV extends Var {
     }
 
     @Override
-    public Var add(Var arg) {
+    public Var add(Var arg) throws CalculatorException {
         if ( arg instanceof VarF ){
             double [] res=new double[this.size];
             for (int i = 0; i <this.size ; i++) {
@@ -96,8 +93,7 @@ public class VarV extends Var {
             VarV argV=(VarV)arg;
             if ( this.size!=argV.size )
             {
-                new CalculatorError("операция сложения векторов - разные размеры");
-                return null;
+                throw new CalculatorException("операция сложения векторов - разные размеры");
             }
             for (int i = 0; i <this.size ; i++) {
                 res[i]=value[i]+argV.value[i];
@@ -108,7 +104,7 @@ public class VarV extends Var {
     }
 
     @Override
-    public Var mul(Var arg) {
+    public Var mul(Var arg) throws CalculatorException {
         if ( arg instanceof VarF ){
             double [] res=new double[this.size];
             for (int i = 0; i <this.size ; i++) {
@@ -136,7 +132,7 @@ public class VarV extends Var {
     }
 
     @Override
-    public Var div(Var arg) {
+    public Var div(Var arg) throws CalculatorException {
         if ( arg instanceof VarF ){
             double [] res=new double[this.size];
             for (int i = 0; i <this.size ; i++) {
@@ -148,7 +144,7 @@ public class VarV extends Var {
     }
 
     @Override
-    public Var sub(Var arg) {
+    public Var sub(Var arg) throws CalculatorException {
         if ( arg instanceof VarF ){
             double [] res=new double[this.size];
             for (int i = 0; i <this.size ; i++) {
@@ -161,8 +157,7 @@ public class VarV extends Var {
             VarV argV=(VarV)arg;
             if ( this.size!=argV.size )
             {
-                new CalculatorError("операция вычитания векторов - разные размеры");
-                return null;
+                throw new CalculatorException("операция вычитания векторов - разные размеры");
             }
             for (int i = 0; i <this.size ; i++) {
                 res[i]=value[i]-argV.value[i];

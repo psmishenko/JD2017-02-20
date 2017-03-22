@@ -15,7 +15,7 @@ public class VarF extends Var {
         return m.matches();
     }
 
-    public VarF(String str) {
+    public VarF(String str) throws CalculatorException {
         fromString(str);
     }
 
@@ -28,11 +28,10 @@ public class VarF extends Var {
     }
 
     @Override
-    public void fromString(String str) {
+    public void fromString(String str) throws CalculatorException {
         Matcher m = p.matcher(str);
         if ( !m.matches() ) {
-            new CalculatorError(str + " - недопустимое значение для преобразования в число");
-            return;
+            throw new CalculatorException(str + " - недопустимое значение для преобразования в число");
         }
         this.value=Double.parseDouble(m.group());
     }
@@ -43,7 +42,7 @@ public class VarF extends Var {
     }
 
     @Override
-    public Var add(Var arg) {
+    public Var add(Var arg) throws CalculatorException {
         if (arg instanceof VarF)
         {
             VarF argF=(VarF)arg;
@@ -53,7 +52,7 @@ public class VarF extends Var {
             return arg.add(this);
     }
 
-    public Var sub(Var arg) {
+    public Var sub(Var arg) throws CalculatorException {
         if (arg instanceof VarF)
         {
             VarF argF=(VarF)arg;
@@ -62,7 +61,7 @@ public class VarF extends Var {
         return super.sub(arg);
     }
 
-    public Var mul(Var arg) {
+    public Var mul(Var arg) throws CalculatorException {
         if (arg instanceof VarF)
         {
             VarF argF=(VarF)arg;
@@ -72,7 +71,7 @@ public class VarF extends Var {
             return arg.mul(this);
     }
 
-    public Var div(Var arg) {
+    public Var div(Var arg) throws CalculatorException {
         if (arg instanceof VarF)
         {
             VarF argF=(VarF)arg;

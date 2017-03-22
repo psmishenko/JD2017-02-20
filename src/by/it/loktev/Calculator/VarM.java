@@ -1,6 +1,5 @@
 package by.it.loktev.Calculator;
 
-import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,34 +17,32 @@ public class VarM extends Var {
     int rows;
     int cols;
 
-    public VarM(String str) {
+    public VarM(String str) throws CalculatorException {
         fromString(str);
     }
 
-    public VarM(double [] [] values){
+    public VarM(double [] [] values) throws CalculatorException {
         this.rows=values.length;
         this.cols=(this.rows>0)?(values[0].length):0;
         this.value=new double[this.rows][this.cols];
         for (int r = 0; r < this.rows; r++) {
             if (this.cols!=values[r].length)
             {
-                new CalculatorError("недопустимый двумерный массив для преобразования в матрицу (строки разной длины)");
-                return;
+                throw new CalculatorException("недопустимый двумерный массив для преобразования в матрицу (строки разной длины)");
             }
             System.arraycopy(values[r],0,this.value[r],0,this.cols);
         }
     }
 
     @Override
-    public void fromString(String str) {
+    public void fromString(String str) throws CalculatorException {
         // ожидаем строку вида {{55.2,3.3},{5,7}}
 
         // обрезаем не только фигурные скобки самой матрицы, но и самую левую и самую правую фигурные скобки от строк, чтобы дальше было проще разделять по },{
         Pattern p = Pattern.compile("^ *\\{ *\\{ *([\\{\\}\\-\\+\\d\\., ]*) *\\} *\\} *$");
         Matcher m = p.matcher(str);
         if ( !m.matches() ) {
-            new CalculatorError(str + " - недопустимое значение для преобразования в матрицу");
-            return;
+            throw new CalculatorException(str + " - недопустимое значение для преобразования в матрицу");
         }
         String rowsStr=m.group(1);
         //System.out.println(rowsStr);
@@ -73,8 +70,7 @@ public class VarM extends Var {
             }
             else
                 if (this.cols!=valuesArr.length) {
-                    new CalculatorError(str + " - недопустимое значение для преобразования в матрицу (строки разной длины)");
-                    return;
+                    throw new CalculatorException(str + " - недопустимое значение для преобразования в матрицу (строки разной длины)");
                 }
 
             for ( int c=0; c<this.cols; c++ )
@@ -82,8 +78,7 @@ public class VarM extends Var {
                 String valueStr=valuesArr[c];
                 m = p.matcher(valueStr);
                 if ( !m.matches() ) {
-                    new CalculatorError(valueStr + " - недопустимое значение для преобразования в число");
-                    return;
+                    throw new CalculatorException(valueStr + " - недопустимое значение для преобразования в число");
                 }
                 this.value[r][c]=Double.parseDouble(m.group());
             }
@@ -113,7 +108,7 @@ public class VarM extends Var {
     }
 
     @Override
-    public Var mul(Var arg) {
+    public Var mul(Var arg) throws CalculatorException {
         if ( arg instanceof VarF ){
             VarF varF=(VarF)arg;
             double [] [] res=new double[this.rows][this.cols];
@@ -127,8 +122,7 @@ public class VarM extends Var {
         if ( arg instanceof VarV ){
             VarV varV=(VarV)arg;
             if (this.cols!=varV.size) {
-                new CalculatorError("операция перемножения матрицы на вектор невозможна - несовместимые размерности");
-                return null;
+                throw new CalculatorException("операция перемножения матрицы на вектор невозможна - несовместимые размерности");
             }
             double [] res=new double[this.rows];
             for (int i=0; i<this.rows; i++)
@@ -139,8 +133,7 @@ public class VarM extends Var {
         if ( arg instanceof VarM ){
             VarM varM=(VarM)arg;
             if (this.cols!=varM.rows) {
-                new CalculatorError("операция перемножения матриц невозможна - несовместимые размерности матриц");
-                return null;
+                throw new CalculatorException("операция перемножения матриц невозможна - несовместимые размерности матриц");
             }
             double [] [] res=new double[this.rows][varM.cols];
             for (int i=0; i<this.rows; i++)
@@ -153,7 +146,7 @@ public class VarM extends Var {
     }
 
     @Override
-    public Var div(Var arg) {
+    public Var div(Var arg) throws CalculatorException {
         if ( arg instanceof VarF ){
             VarF varF=(VarF)arg;
             double [] [] res=new double[this.rows][this.cols];
@@ -168,7 +161,7 @@ public class VarM extends Var {
     }
 
     @Override
-    public Var add(Var arg) {
+    public Var add(Var arg) throws CalculatorException {
         if ( arg instanceof VarF ){
             VarF varF=(VarF)arg;
             double [] [] res=new double[this.rows][this.cols];
@@ -183,7 +176,7 @@ public class VarM extends Var {
     }
 
     @Override
-    public Var sub(Var arg) {
+    public Var sub(Var arg) throws CalculatorException {
         if ( arg instanceof VarF ){
             VarF varF=(VarF)arg;
             double [] [] res=new double[this.rows][this.cols];
