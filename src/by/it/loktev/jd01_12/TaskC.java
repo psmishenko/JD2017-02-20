@@ -65,7 +65,7 @@ public class TaskC {
         System.out.println(elems);
     }
 
-    void runC2(){
+    void runC2(int num, boolean showDebug){
 
         // проверять будем на String
 

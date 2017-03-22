@@ -2,9 +2,9 @@ package by.it.loktev.jd01_12;
 
 import java.util.*;
 
-public class TaskB {
+public class TaskB <M extends Map> {
 
-    void runB1(){
+    <M extends Map> int runB1(M countWords2){
 
         String text="What is Lorem Ipsum?\n" +
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n" +
@@ -30,7 +30,9 @@ public class TaskB {
         System.out.println(diffWords);
 
         // получаем частоту слов
-        HashMap<String,Integer> countWords=new HashMap<String,Integer>();
+        //HashMap<String,Integer> countWords=new HashMap<String,Integer>();
+        TimeCheck timeCheck=new TimeCheck();
+        Map<String,Integer> countWords=countWords2;
         for ( String word : wordsList ){
             Integer freq=countWords.get(word);
             if ( freq==null )
@@ -38,10 +40,11 @@ public class TaskB {
             freq++;
             countWords.put(word,freq);
         }
+        int mapTime=timeCheck.check();
         System.out.println("Частота слов:");
         System.out.println(countWords);
 
-
+        return mapTime;
     }
 
     // я описал параметризованный метод вместо двух - processArray и processLinked, это яснее и не нарушает DRY, недостатков не вижу
