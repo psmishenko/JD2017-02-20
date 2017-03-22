@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class
 VarV extends Var {
     public Double[] vector;
-private void ckeckSize(VarV v1, VarV v2)throws MathException{
+private void checkSize(VarV v1, VarV v2)throws MathException{
     if(v1.vector.length!=v2.vector.length){
         throw new MathException("Разный размер у векторов");
     }
@@ -20,6 +20,7 @@ private void ckeckSize(VarV v1, VarV v2)throws MathException{
                 res[i] = vector[i] + ((VarF) var).value;
             }
         } else if (var instanceof VarV) {
+            checkSize(this,(VarV) var);
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] + ((VarV) var).vector[i];
             }
@@ -35,6 +36,7 @@ private void ckeckSize(VarV v1, VarV v2)throws MathException{
                 res[i] = vector[i] - ((VarF) var).value;
             }
         } else if (var instanceof VarV) {
+            checkSize(this,(VarV) var);
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] - ((VarV) var).vector[i];
             }
@@ -50,8 +52,8 @@ private void ckeckSize(VarV v1, VarV v2)throws MathException{
                 res[i] = vector[i] * ((VarF) var).value;
             }
         } else if (var instanceof VarV) {
+            checkSize(this,(VarV) var);
             Double sum = 0.0;
-
             for (int i = 0; i < res.length; i++) {
                 sum += res[i] = vector[i] * ((VarV) var).vector[i];
 
@@ -65,7 +67,7 @@ private void ckeckSize(VarV v1, VarV v2)throws MathException{
     public Var div(Var var) throws MathException {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
-            if(((VarF)var).value==0) throw new MathException("Умножение ");
+            if(((VarF)var).value==0) throw new MathException("Деление на ноль");
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] / ((VarF) var).value;
             }
@@ -88,7 +90,7 @@ private void ckeckSize(VarV v1, VarV v2)throws MathException{
 
 
     @Override
-    public void fromString(String str) {
+    public void fromString(String str) throws MathException {
         Pattern p = Pattern.compile(Patterns.exVec);
         if (p.matcher(str).matches()) {
             p = Pattern.compile(Patterns.exVal);
@@ -105,11 +107,11 @@ private void ckeckSize(VarV v1, VarV v2)throws MathException{
             }
 
         } else {
-            new Error("Ошибка: " + str + "  не является вектором ");
+           throw new MathException("Ошибка: " + str + "  не является вектором ");
         }
     }
 
-    public VarV(String str) {
+    public VarV(String str)throws MathException {
         fromString(str);
     }
 
