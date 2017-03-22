@@ -28,7 +28,12 @@ public class TaskA {
                 } catch (NumberFormatException e) {
                     System.out.printf("Некорректный ввод строки %s\n", str);
                 } catch (ArithmeticException e) {
-                    System.out.printf("ошибка: " + e.getMessage());
+                    System.out.printf("Арифметическая ошибка: " + e.getMessage());
+                    StackTraceElement [] st=e.getStackTrace();
+                    System.out.println("\nСтек:");
+                    for ( StackTraceElement el : st ){
+                        System.out.println(el.getFileName()+" "+el.getMethodName()+" "+el.getLineNumber());
+                    }
                 }
             }
         }
