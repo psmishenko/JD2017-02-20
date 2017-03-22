@@ -7,7 +7,7 @@ public class VarV extends Var {
     public Double[] vector;
 
     @Override
-    public Var add(Var var) {
+    public Var add(Var var) throws MathExeption{
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
@@ -23,7 +23,7 @@ public class VarV extends Var {
     }
 
     @Override
-    public Var sub(Var var) {
+    public Var sub(Var var) throws MathExeption{
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
@@ -39,7 +39,7 @@ public class VarV extends Var {
     }
 
     @Override
-    public Var mul(Var var) {
+    public Var mul(Var var) throws MathExeption {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
@@ -56,7 +56,7 @@ public class VarV extends Var {
         return new VarV(res);
     }
 
-    public Var div(Var var) {
+    public Var div(Var var) throws MathExeption{
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
@@ -101,7 +101,7 @@ public class VarV extends Var {
                 i++;
             }
         } else {
-            new Error("Ошибка:" + value + " не является вектором");
+            new MathExeption("Ошибка:" + value + " не является вектором");
         }
     }
 
