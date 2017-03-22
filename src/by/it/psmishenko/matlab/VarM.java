@@ -10,7 +10,7 @@ public class VarM extends Var{
 
 // operations +-*/
     @Override
-    public Var add(Var var) {
+    public Var add(Var var) throws MathException {
         Double[][] res = new Double[matrix.length][matrix[0].length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
@@ -30,7 +30,7 @@ public class VarM extends Var{
     }
 
     @Override
-    public Var sub(Var var) {
+    public Var sub(Var var) throws MathException {
         Double[][] res = new Double[matrix.length][matrix[0].length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
@@ -50,7 +50,7 @@ public class VarM extends Var{
     }
 
     @Override
-    public Var mul(Var var) {
+    public Var mul(Var var) throws MathException {
         Double[][] res = new Double[matrix.length][matrix[0].length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
@@ -83,7 +83,7 @@ public class VarM extends Var{
     }
 
     @Override
-    public Var div(Var var) {
+    public Var div(Var var) throws MathException {
         Double[][] res = new Double[matrix.length][matrix[0].length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {

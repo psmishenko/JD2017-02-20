@@ -17,8 +17,10 @@ public class Parser {
         return res;
     }
 
-    static Var calc(String expression) {
+    static Var calc(String expression)throws MathException {
+        // try catch
         Var res = null;
+        try {
         String[] part = expression.split(Patterns.exOper);
         Pattern p = Pattern.compile(Patterns.exOper);
         Matcher m = p.matcher(expression);
@@ -38,6 +40,9 @@ public class Parser {
             res = one.mul(two);
         } else if (op.equals("/")) {
             res = one.div(two);
+        }
+        }catch (MathException e){
+            System.out.println("Ошибка:"+e.getMessage());
         }
         return res;
     }
