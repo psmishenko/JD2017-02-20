@@ -20,10 +20,18 @@ public class ConsoleRunner {
     }
 
     public static void main(String[] args) throws IOException,MathException {
-        boolean zxc = true;
+       // boolean zxc = true;
         // тестовые строки из jd01_11
-        oneRes(Parser.calc("5/0"),"1:");
+        System.out.println("Проверка деления на 0 для скаляров: 5/0"); oneRes(Parser.calc("5/0"),"1:");
+        System.out.println("Проверка деления на ноль для векторов и матриц");
         oneRes(Parser.calc("{{1,2,3},{4,5,6}}/0"),"2:");
+        oneRes(Parser.calc("{1,2,3}/0"),"3:");
+        System.out.println("Проверка размерностей для векторов и матриц");
+        oneRes(Parser.calc("{{1,2,3},{4,5,6}}+{{1,2},{1,2}}"),"4:");
+        oneRes(Parser.calc("{1,2,3}*{4,4}"),"5:");
+        oneRes(Parser.calc("{{1,2,3},{4,5,6}}*{1,2,3,4}"),"6:");
+        System.out.println("Проверка правильности ввода переменной");
+        oneRes(Parser.calc("{{1,2,3},{4,5,6}}*{1,2,3,4}"),"6:");
      /* String levelA = "2.3+3";
       String levelB = "{1,2,3}/5";
       String levelC = "{{1,2},{4,5}}*{1,2}";
@@ -45,7 +53,7 @@ public class ConsoleRunner {
         oneRes(Parser.calc(vec1+"*5"),vec1+"*5");
         oneRes(Parser.calc(vec1+"/5"),vec1+"/5");*/
         // тестовые строки из jd01_09 для матриц
-        String mat = "{{1,2},{8,3}}";
+      /*  String mat = "{{1,2},{8,3}}";
         oneRes(Parser.calc(mat+"+5"),mat+"+5");
         oneRes(Parser.calc(mat+"-5"),mat+"-5");
         oneRes(Parser.calc(mat+"*5"),mat+"*5");
@@ -77,6 +85,6 @@ public class ConsoleRunner {
                     break;
                     default: zxc = false;
             }
-        }while (zxc);
+        }while (zxc);*/
     }
 }
