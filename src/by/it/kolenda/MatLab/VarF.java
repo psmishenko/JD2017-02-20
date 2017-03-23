@@ -40,11 +40,12 @@ public class VarF extends Var{
         if (var instanceof VarF){
             VarF operand=(VarF) var;
             return new VarF(this.value / operand.value);
-            if (operand.value==0)
-                throw new Error("Div by zero")
+
+            if (operand.value==0) {
+                throw new Error("Div by zero");
+            return new VarF(this.value);}
         }else
             return var.div(this);
-
     }
 
     public VarF(String value) {

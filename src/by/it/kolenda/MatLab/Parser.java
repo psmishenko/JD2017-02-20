@@ -45,9 +45,10 @@ public class Parser {
         } else if (operation.equals("/")) {
             res = one.div(two);
         }
+        }
         catch (Error e){
                 System.out.println("Error"+e.getMessage());
-        }  }
+        }
         return res;
 
     }

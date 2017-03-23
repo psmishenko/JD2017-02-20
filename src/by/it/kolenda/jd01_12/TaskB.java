@@ -9,21 +9,22 @@ public class TaskB {
         List<String> collectionList=new ArrayList<>(Arrays.asList(list));
 //        for (String w : list)
 //            collectionList.add(w);
+        System.out.println();
         System.out.println(collectionList);
 
         Map<String,Integer> hw=new HashMap<>();
+        Collections.sort(collectionList);
+        System.out.println(collectionList);
 
-        //for (String)
-        //)
+        for (String word : list) {
+            int count = 1;
+            if (hw.containsKey(word)) {
+                count = hw.get(word) + 1;
+            }
+            hw.put(word, count);
+        }
 
-//        for (int i = 0; i < words.length; i++) {
-//               System.out.println(words[i]);
-//        }
-
-//        List<String> list = new ArrayList<String>(words);
-
-//      ArrayList<String> list = new ArrayList<String>();
-
+        System.out.print(hw);
 
     }
 }
