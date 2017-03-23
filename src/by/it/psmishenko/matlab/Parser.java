@@ -13,7 +13,7 @@ public class Parser {
             res = new VarV(part);
         } else if (part.matches(Patterns.exVal)) {
             res = new VarF(part);
-        } else res = null;
+        } else throw new MathException("Некорректный ввод переменной");
         return res;
     }
 
@@ -48,6 +48,7 @@ public class Parser {
                 System.out.printf("В классе \"%s\" ,в методе \"%s\" , в строке \"%s\"\n",el.getClassName(),el.getMethodName(),el.getLineNumber());
                 if(el.getMethodName().equals("main"))break;
             }
+            System.out.println("----------------------------------------------------------------------------");
         }
         return res;
     }
