@@ -18,7 +18,7 @@ public class Parser {
         exprCount=0;
     }
 
-    public boolean parseString(StringBuffer exprSB, boolean showDebug){
+    public boolean parseString(StringBuffer exprSB, boolean showDebug) throws CalculatorException {
 
         // распарсим строку выражения в массив частей выражения
 
@@ -55,8 +55,7 @@ public class Parser {
                     //VarM varM = new VarM(literal);
                     //System.out.println("Построен VarM: " + varM);
                     if (!Storage.isExist(varName)){
-                        new CalculatorError("переменная "+varName+" не найдена в хранилище");
-                        return false;
+                        throw new CalculatorException("переменная "+varName+" не найдена в хранилище");
                     }
                     exprParts[exprCount++] = Storage.restore(varName);
                     exprSB.delete(0, matchVarName.group(0).length());
@@ -154,8 +153,7 @@ public class Parser {
 
             }
 
-            new CalculatorError("невозможно распарсить остаток строки: "+exprSB);
-            return false;
+            throw new CalculatorException("невозможно распарсить остаток строки: "+exprSB);
         }
 
         ExpressionPart lastPart=null;
@@ -164,8 +162,7 @@ public class Parser {
         boolean IsSubExprEnd=lastPart.isSubExprEnd();
         if ( !IsSubExprEnd )
         {
-          new CalculatorError("выражение окончилось неожиданно");
-          return false;
+          throw new CalculatorException("выражение окончилось неожиданно");
         }
 
         if (showDebug) {
@@ -177,7 +174,7 @@ public class Parser {
     }
 
     // вычисляет выражения [fromIndex,toIndex)
-    public Var calculateFragment(int fromIndex, int toIndex, boolean showDebug) {
+    public Var calculateFragment(int fromIndex, int toIndex, boolean showDebug) throws CalculatorException {
 
         if ( showDebug )
         {
@@ -256,8 +253,7 @@ public class Parser {
                     }
                     else
                     {
-                        new CalculatorError("унарный минус применим только к скалярам");
-                        return null;
+                        throw new CalculatorException("унарный минус применим только к скалярам");
                     }
                 }
 
@@ -270,8 +266,7 @@ public class Parser {
                     }
                     else
                     {
-                        new CalculatorError("унарный плюс применим только к скалярам");
-                        return null;
+                        throw new CalculatorException("унарный плюс применим только к скалярам");
                     }
                 }
 
@@ -302,8 +297,7 @@ public class Parser {
                     }
                     else
                     {
-                        new CalculatorError("умножение применимо только к переменным");
-                        return null;
+                        throw new CalculatorException("умножение применимо только к переменным");
                     }
                 }
 
@@ -319,8 +313,7 @@ public class Parser {
                     }
                     else
                     {
-                        new CalculatorError("деление применимо только к переменным");
-                        return null;
+                        throw new CalculatorException("деление применимо только к переменным");
                     }
                 }
 
@@ -346,8 +339,7 @@ public class Parser {
                     }
                     else
                     {
-                        new CalculatorError("сложение применимо только к переменным");
-                        return null;
+                        throw new CalculatorException("сложение применимо только к переменным");
                     }
                 }
 
@@ -363,8 +355,7 @@ public class Parser {
                     }
                     else
                     {
-                        new CalculatorError("вычитание применимо только к переменным");
-                        return null;
+                        throw new CalculatorException("вычитание применимо только к переменным");
                     }
                 }
 
@@ -377,8 +368,7 @@ public class Parser {
         }
 
         if ( (toIndex-fromIndex!=1) || !(exprParts[fromIndex] instanceof Var) ) {
-            new CalculatorError("выражение рассчитано не до конца");
-            return null;
+            throw new CalculatorException("выражение рассчитано не до конца");
         }
 
         return (Var)exprParts[fromIndex];
@@ -435,14 +425,23 @@ public class Parser {
 
         Parser parser=new Parser();
 
-        if ( !parser.parseString(exprSB,showDebug) ) {
+        Var V=null;
+
+        try {
+            if (!parser.parseString(exprSB, showDebug)) {
+                return null;
+            }
+            //Var V=parser.calculate(showDebug);
+            V=parser.calculateFragment(0,parser.exprCount,showDebug);
+            if ( V==null )
+                return null;
+        }
+        catch ( CalculatorException e )
+        {
+            System.out.println("Исключение в парсере: "+e.getMessage());
             return null;
         }
 
-        //Var V=parser.calculate(showDebug);
-        Var V=parser.calculateFragment(0,parser.exprCount,showDebug);
-        if ( V==null )
-            return null;
 
         if (assignToVarName!=null) {
             Storage.store(assignToVarName, V);

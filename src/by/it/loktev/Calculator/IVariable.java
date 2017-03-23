@@ -4,6 +4,6 @@ public interface IVariable {
 
     String toString();
 
-    void fromString(String str);
+    void fromString(String str) throws CalculatorException;
 
 }

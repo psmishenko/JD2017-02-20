@@ -3,27 +3,23 @@ package by.it.loktev.Calculator;
 abstract public class Var extends ExpressionPart implements IOperation, IVariable {
 
     @Override
-    public Var add(Var arg) {
-        new CalculatorError("операция cложения не реализована для таких типов значений");
-        return null;
+    public Var add(Var arg) throws CalculatorException {
+        throw new CalculatorException("операция cложения не реализована для таких типов значений");
     }
 
     @Override
-    public Var mul(Var arg) {
-        new CalculatorError("операция умножения не реализована для таких типов значений");
-        return null;
+    public Var mul(Var arg) throws CalculatorException {
+        throw new CalculatorException("операция умножения не реализована для таких типов значений");
     }
 
     @Override
-    public Var div(Var arg) {
-        new CalculatorError("операция деления не реализована для таких типов значений");
-        return null;
+    public Var div(Var arg) throws CalculatorException {
+        throw new CalculatorException("операция деления не реализована для таких типов значений");
     }
 
     @Override
-    public Var sub(Var arg) {
-        new CalculatorError("операция вычитания не реализована для таких типов значений");
-        return null;
+    public Var sub(Var arg) throws CalculatorException {
+        throw new CalculatorException("операция вычитания не реализована для таких типов значений");
     }
 
     @Override
