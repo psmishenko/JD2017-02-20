@@ -9,5 +9,7 @@ public class Runner {
         taskA.runA1();
         taskA.runA2();
         taskA.runA3();
+        TaskB taskB = new TaskB();
+        taskB.runB1();
     }
 }
