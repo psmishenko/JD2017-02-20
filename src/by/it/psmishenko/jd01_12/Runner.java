@@ -29,6 +29,8 @@ public class Runner {
                     System.out.println("LinkedList: " + t);
                     break;
                 case "c":
+                    TaskC taskC = new TaskC();
+                    taskC.runC1();
                     break;
                 default:
                     zxc = false;
