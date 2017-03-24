@@ -43,7 +43,7 @@ public class TaskB {
     void processArray() {
         System.out.println("------------------------Задание В3 ArrayList -------------------------------\n");
         List<Integer> list = new ArrayList<>();
-        int n = 100000;
+        int n = 50;
         Date date = new Date();
         for (int i = 0; i < n; i++) {
             list.add(i + 1);
@@ -58,6 +58,7 @@ public class TaskB {
                 if (a % 2 == 0) {
                     it.remove();
                 }
+
                 a++;
             }
         }
@@ -71,12 +72,11 @@ public class TaskB {
     void processLinked() {
         System.out.println("------------------------Задание В1 LinkedList-------------------------------\n");
         List<Integer> list = new LinkedList<>();
-        int n = 100000;
+        int n = 50;
         Date date = new Date();
         for (int i = 0; i < n; i++) {
             list.add(i + 1);
         }
-
 
         while (list.size() > 1) {
             Iterator<Integer> it = list.iterator();
