@@ -27,4 +27,24 @@ public class MyCollect {
 //        }
         return res;
     }
+    <T> Set<T> getUnionV2(Set<T> a, Set<T> b){
+        Set<T> res = new HashSet<>(b);
+        res.addAll(a);
+        // второй способ
+//        for (Integer value:a) {
+//            if(!b.contains(value))  res.add(value);
+//        }
+        return res;
+    }
+    <T> Set<T> getCrossV2(Set<T> a, Set<T> b){
+        Set<T> res = new HashSet<>();
+        // первый способ
+        res.addAll(a);
+        res.retainAll(b);
+        // второй способ
+//        for (Integer value:a) {
+//         if(b.contains(value))  res.add(value);
+//        }
+        return res;
+    }
 }
