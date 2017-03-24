@@ -2,13 +2,13 @@ package by.it.tereshko.matlab;
 
 public interface IOperation {
 
-    Var add(Var var);
+    Var add(Var var) throws MathException;
 
-    Var sub(Var var);
+    Var sub(Var var) throws MathException;
 
-    Var mul(Var var);
+    Var mul(Var var) throws MathException;
 
-    Var div(Var var);
+    Var div(Var var) throws MathException;
 
     void save(String name);
 

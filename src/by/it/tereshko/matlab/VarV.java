@@ -1,6 +1,5 @@
 package by.it.tereshko.matlab;
 
-import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,14 +7,21 @@ public class VarV extends Var {
 
     public Double[] vector;
 
+    private void checkSize(VarV v1, VarV v2) throws MathException {
+        if (v1.vector.length != v2.vector.length) {
+            throw new MathException("Vectors are various sizes");
+        }
+    }
+
     @Override
-    public Var add(Var var) {
+    public Var add(Var var) throws MathException {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] + ((VarF) var).value;
             }
         } else if (var instanceof VarV) {
+            checkSize(this, (VarV) var);
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] + ((VarV) var).vector[i];
             }
@@ -27,13 +33,14 @@ public class VarV extends Var {
     }
 
     @Override
-    public Var sub(Var var) {
+    public Var sub(Var var) throws MathException {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] - ((VarF) var).value;
             }
         } else if (var instanceof VarV) {
+            checkSize(this, (VarV) var);
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] - ((VarV) var).vector[i];
             }
@@ -42,13 +49,14 @@ public class VarV extends Var {
     }
 
     @Override
-    public Var mul(Var var) {
+    public Var mul(Var var) throws MathException {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] * ((VarF) var).value;
             }
         } else if (var instanceof VarV) {
+            checkSize(this, (VarV) var);
             Double sum = 0.0;
             for (int i = 0; i < res.length; i++) {
                 sum = sum + vector[i] * ((VarV) var).vector[i];
@@ -59,9 +67,12 @@ public class VarV extends Var {
     }
 
     @Override
-    public Var div(Var var) {
+    public Var div(Var var) throws MathException {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
+            if (((VarF) var).value == 0) {
+                throw new MathException("Division by zero.");
+            }
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] / ((VarF) var).value;
             }
@@ -100,7 +111,7 @@ public class VarV extends Var {
                 i++;
             }
         } else {
-            new Error("Error:" + value + " is not a vector");
+            new MathException("MathException:" + value + " is not a vector");
         }
     }
 
