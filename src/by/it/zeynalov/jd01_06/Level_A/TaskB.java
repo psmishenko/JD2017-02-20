@@ -19,7 +19,7 @@ public class TaskB {
             if (pattern.matcher(o).matches()) System.out.println(o);
     //метод на возрастание количества слов
         String[] l = lukomor.replace("...", "").replace("\n", " ").split("[.]");
-        Arrays.sort(l, (o1, o2) -> o1.split("[^а-яА-ЯёЁ]+").length - o2.split("[^а-яА-ЯёЁ]+").length);
+        //Arrays.sort(l, (o1, o2) -> o1.split("[^а-яА-ЯёЁ]+").length - o2.split("[^а-яА-ЯёЁ]+").length);
         for (int i = 0; i < l.length; i++)
             System.out.println(l[i]);
 
