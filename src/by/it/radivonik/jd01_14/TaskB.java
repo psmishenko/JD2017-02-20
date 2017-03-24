@@ -13,18 +13,19 @@ public class TaskB {
     public static void run() {
         String path = System.getProperty("user.dir") + "/src/by/it/radivonik/jd01_14";
         String filename = path + "/taskB.txt";
+        StringBuilder text = new StringBuilder();
 
         try (BufferedReader fr = new BufferedReader(new FileReader(filename))) {
-            StringBuilder text = new StringBuilder();
             while (fr.ready())
                 text.append(fr.readLine()+"\n");
-            System.out.println(text);
-            System.out.printf("Количество знаков препинания: %d\n",calCount(text.toString(),"[.,!?;-]"));
-            System.out.printf("Количество слов: %d\n",calCount(text.toString(),"[а-яА-ЯёЁ]"));
         }
         catch (IOException e) {
             System.out.println(e.getStackTrace());
         }
+
+        System.out.println(text);
+        System.out.printf("Количество знаков препинания: %d\n",calCount(text.toString(),"[.,!?;-]"));
+        System.out.printf("Количество слов: %d\n",calCount(text.toString(),"[а-яА-ЯёЁ]"));
     }
 
     private static int calCount(String text, String pattern) {

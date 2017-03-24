@@ -5,7 +5,8 @@ package by.it.radivonik.jd01_14;
  */
 public class Runner {
     public static void main(String[] args) {
-        TaskA.run();
-        TaskB.run();
+//        TaskA.run();
+//        TaskB.run();
+        TaskC.run();
     }
 }
