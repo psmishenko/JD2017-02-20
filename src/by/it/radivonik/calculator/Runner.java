@@ -36,7 +36,7 @@ public class Runner {
         System.out.println(Var.vars);
         System.out.println("Вариант B:");
         oneRes("printvar");
-        System.out.println("Вариант C:");
+        System.out.println("Вариан т C:");
         oneRes("sortvar");
 
         oneRes("{2,3,4}/0");
