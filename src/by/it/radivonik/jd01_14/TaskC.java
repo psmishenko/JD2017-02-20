@@ -17,9 +17,9 @@ public class TaskC {
 
     public static void procFolder(File obj, String prefix) {
         if (obj.isFile())
-            System.out.println(prefix + "Файл: " + obj.toString());
+            System.out.println(prefix + obj.getName().toString());
         else {
-            System.out.println(prefix + "Папка: " + obj.toString());
+            System.out.println(prefix + obj.toString());
             List<File> filelist = new ArrayList<File>(Arrays.asList(obj.listFiles()));
             for (int i = 0; i < filelist.size(); i++) {
                 procFolder(filelist.get(i),prefix+"  ");
