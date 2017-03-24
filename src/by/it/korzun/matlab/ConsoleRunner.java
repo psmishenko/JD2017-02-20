@@ -29,7 +29,7 @@ public class ConsoleRunner {
                         break;
                 }
             } catch (Exception e) {
-                new Error("Некорректный ввод");
+                new MathException("Некорректный ввод");
             }
 
         }

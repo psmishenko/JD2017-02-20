@@ -1,7 +1,7 @@
 package by.it.korzun.matlab;
 
-class Error {
-    Error(String message) {
+class MathException extends Exception{
+    MathException(String message) {
         System.out.println(message);
     }
 }

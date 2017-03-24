@@ -27,26 +27,22 @@ public abstract class Var implements IOperation, IVariable{
     }
 
     @Override
-    public Var add(Var var) {
-        new Error("Операция сложения невозможна");
-        return null;
+    public Var add(Var var) throws MathException{
+        throw new MathException("Операция сложения невозможна");
     }
 
     @Override
-    public Var sub(Var var) {
-        new Error("Операция разности невозможна");
-        return null;
+    public Var sub(Var var) throws MathException{
+        throw new MathException("Операция разности невозможна");
     }
 
     @Override
-    public Var mul(Var var) {
-        new Error("Операция умножения невозможна");
-        return null;
+    public Var mul(Var var) throws MathException{
+        throw new MathException("Операция умножения невозможна");
     }
 
     @Override
-    public Var div(Var var) {
-        new Error("Операция деления невозможна");
-        return null;
+    public Var div(Var var) throws MathException{
+        throw new MathException("Операция деления невозможна");
     }
 }
