@@ -12,11 +12,11 @@ public class TaskA {
     String path = root + "/src/by/it/kolenda/jd01_14/";
     String fileName = path + "TaskA.data";
 
-   try {
+   try (
        FileOutputStream fs = new FileOutputStream(fileName);
        BufferedOutputStream bo = new BufferedOutputStream(fs);
        DataOutputStream dout = new DataOutputStream(bo);
-
+   ){
        for (int i = 0; i < 20; i++) {
 
            int value = (int) (Math.random() * 100.0);
@@ -36,7 +36,7 @@ public class TaskA {
 
                     int sum = 0;
 
-            while(dinput.available()>0);
+            while(dinput.available()>0)
 
                     {
                         int value = dinput.readInt();
@@ -45,7 +45,7 @@ public class TaskA {
                     }
 
         System.out.println(values);
-        System.out.printf("Average = \n",(double)sum/values.size());
+        System.out.printf("Average = %f \n",(double)sum/values.size());
                 }
 
         catch (IOException e) {

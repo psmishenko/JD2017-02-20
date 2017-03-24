@@ -47,7 +47,7 @@ public class TaskB {
                 }
         }
         System.out.println(text);
-        int count1 = calcCount("[^,.-;!?]", text.toString());
+        int count1 = calcCount("[,.-;!?]", text.toString());
         int count2 = calcCount("[а-яА-ЯёЁ]+", text.toString());
         System.out.println(count1+" "+count2);
 
