@@ -35,17 +35,17 @@ public class VarF extends Var{
     }
 
     @Override
-    public Var div(Var var)  throws Error{
-        Var result=null;
+    public Var div(Var var)  throws Error {
+//        Var result=null;
         if (var instanceof VarF){
             VarF operand=(VarF) var;
-            return new VarF(this.value / operand.value);
 
-            if (operand.value==0) {
+            if (operand.value==0)
                 throw new Error("Div by zero");
-            return new VarF(this.value);}
+            return new VarF(this.value/operand.value);
         }else
-            return var.div(this);
+            return super.div(var);
+
     }
 
     public VarF(String value) {
@@ -60,7 +60,6 @@ public class VarF extends Var{
         this.value=var.value;
     }
 
-
     @Override
     public void fromString(String value) {
         this.value=Double.parseDouble(value);
@@ -70,5 +69,4 @@ public class VarF extends Var{
     public String toString(){
         return value.toString();
     }
-
 }
