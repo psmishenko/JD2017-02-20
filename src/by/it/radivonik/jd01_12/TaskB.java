@@ -1,13 +1,41 @@
 package by.it.radivonik.jd01_12;
 
 import java.util.*;
+import java.util.regex.*;
 
 /**
  * Created by Radivonik on 20.03.2017.
  */
 public class TaskB {
     public void runB1() {
+        Map<String,Integer> wordCount = new TreeMap<>();
+        Pattern p = Pattern.compile("[a-zA-Z']+");
+        Matcher m = p.matcher(Data.example);
+        while (m.find()) {
+            String str = m.group();
+            if (wordCount.containsKey(str)) {
+                int count = wordCount.get(str);
+                wordCount.put(str,count+1);
+            }
+            else
+                wordCount.put(str,1);
+        }
 
+        // System.out.println(wordCount);
+        int i = 0;
+        for (Map.Entry<String,Integer> item:  wordCount.entrySet()) {
+            if (i == 0)
+                System.out.print("{");
+            System.out.printf("%s = %d",item.getKey(),item.getValue());
+            i++;
+            if (i < wordCount.size()) {
+                System.out.print(", ");
+                if (i%10 == 0)
+                    System.out.printf("\n");
+            }
+            else
+                System.out.print("}\n");
+        }
     }
 
     public void runB2() {
