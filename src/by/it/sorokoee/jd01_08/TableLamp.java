@@ -1,7 +1,16 @@
 package by.it.sorokoee.jd01_08;
 
+
+
 public class TableLamp extends Lamp {
     private int brightness = 0;
+
+    public TableLamp(int brightness) {
+        this.brightness = brightness;
+    }
+
+    public TableLamp() {
+    }
 
     public void setBrightness(int value){
         brightness = value;
@@ -16,7 +25,7 @@ public class TableLamp extends Lamp {
 
 
     }
-    public String showState(int brightness) {
+    public String showState(TableLamp tableLamp) {
 
             String state = null;
             if (this.getState()) {
