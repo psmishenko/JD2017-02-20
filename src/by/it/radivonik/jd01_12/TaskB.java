@@ -31,7 +31,7 @@ public class TaskB {
             if (i < wordCount.size()) {
                 System.out.print(", ");
                 if (i%10 == 0)
-                    System.out.printf("\n");
+                    System.out.print("\n");
             }
             else
                 System.out.print("}\n");
@@ -50,39 +50,39 @@ public class TaskB {
                     n = 100000; break;
             }
 
-            ArrayList<Integer> listArray = new ArrayList<>(n);
+            ArrayList<Integer> listArray = new ArrayList<Integer>(n);
             LinkedList<Integer> listLinked = new LinkedList<>();
             for (int j = 0; j < n; j++) {
-                listArray.add(j);
-                listLinked.add(j);
+                listArray.add(j+1);
+                listLinked.add(j+1);
             }
 
-            processB2(listArray);
-            processB2(listLinked);
+            processArray(listArray);
+            processLinked(listLinked);
         }
     }
 
+    private void processArray(ArrayList array) {
+        processB2(array);
+    }
+
+    private void processLinked(LinkedList linked) {
+        processB2(linked);
+    }
     // вспомогательный метод для 2-го задания
-    private <T extends List<?>> void processB2(T list) {
+    private void processB2(List list) {
         System.out.printf("Счет для %s из %d элементов... ",list.getClass().getName(),list.size());
         Timer t = new Timer();
+        boolean lastRemove = true;
         while(list.size() > 1) {
-            // Вариант 1
-            int c = 1;
-            for (Iterator<?> it = list.iterator(); it.hasNext(); c++) {
+            int c = lastRemove ? 1 : 0;
+            for (Iterator it = list.iterator(); it.hasNext(); c++) {
                 it.next();
-                if (c%2 == 0)
+                if (c%2 == 0) {
+                    lastRemove = !it.hasNext();
                     it.remove();
+                }
             }
-
-            // Вариант 2
-//            int size = list.size();
-//            for (int c = 1; c <= size; c++) {
-//                if (c%2 == 0) {
-//                    list.remove(c - 1);
-//                    size--;
-//                }
-//            }
         }
         System.out.println(t);
     }
