@@ -50,10 +50,22 @@ public class TaskB {
         }
 
         int a = 1;
-        while (list.size() > 0) {
-            if (a >= list.size()) {
-                a = 0;
+        while (list.size() > 1) {
+            if (list.size() - a == 0) {
+                list.remove(1);
+            } else if (list.size() - a == 2) {
                 list.remove(a);
+                a = 0;
+                if (list.size() > 1) {
+                    list.remove(a);
+                }
+                a++;
+            } else if (list.size() - a == 1) {
+                list.remove(a);
+                a = 1;
+                if (list.size() > 1) {
+                    list.remove(a);
+                }
                 a++;
             } else {
                 list.remove(a);
@@ -68,7 +80,7 @@ public class TaskB {
 
 
     void processLinked() {
-        System.out.println("------------------------Задание В1 LinkedList-------------------------------\n");
+        System.out.println("------------------------Задание В3 LinkedList-------------------------------\n");
         List<Integer> list = new LinkedList<>();
         int n = 10000;
         Date date = new Date();
@@ -76,10 +88,22 @@ public class TaskB {
             list.add(i + 1);
         }
         int a = 1;
-        while (list.size() > 0) {
-            if (a >= list.size()) {
-                a = 0;
+        while (list.size() > 1) {
+            if (list.size() - a == 0) {
+                list.remove(1);
+            } else if (list.size() - a == 2) {
                 list.remove(a);
+                a = 0;
+                if (list.size() > 1) {
+                    list.remove(a);
+                }
+                a++;
+            } else if (list.size() - a == 1) {
+                list.remove(a);
+                a = 1;
+                if (list.size() > 1) {
+                    list.remove(a);
+                }
                 a++;
             } else {
                 list.remove(a);
