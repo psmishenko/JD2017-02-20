@@ -33,7 +33,7 @@ public class TaskB {
                 counter += map.get(wordArr[i]);
                 map.put(wordArr[i], counter);
             } else map.put(wordArr[i], 1);
-            counter=1;
+            counter = 1;
         }
         System.out.println(map);
         System.out.println();
@@ -43,22 +43,20 @@ public class TaskB {
     void processArray() {
         System.out.println("------------------------Задание В3 ArrayList -------------------------------\n");
         List<Integer> list = new ArrayList<>();
-        int n = 50;
+        int n = 10000;
         Date date = new Date();
         for (int i = 0; i < n; i++) {
             list.add(i + 1);
         }
 
-
-        while (list.size() > 1) {
-            Iterator<Integer> it = list.iterator();
-            int a = 1;
-            while (it.hasNext()) {
-                it.next();
-                if (a % 2 == 0) {
-                    it.remove();
-                }
-
+        int a = 1;
+        while (list.size() > 0) {
+            if (a >= list.size()) {
+                a = 0;
+                list.remove(a);
+                a++;
+            } else {
+                list.remove(a);
                 a++;
             }
         }
@@ -72,20 +70,19 @@ public class TaskB {
     void processLinked() {
         System.out.println("------------------------Задание В1 LinkedList-------------------------------\n");
         List<Integer> list = new LinkedList<>();
-        int n = 50;
+        int n = 10000;
         Date date = new Date();
         for (int i = 0; i < n; i++) {
             list.add(i + 1);
         }
-
-        while (list.size() > 1) {
-            Iterator<Integer> it = list.iterator();
-            int a = 1;
-            while (it.hasNext()) {
-                it.next();
-                if (a % 2 == 0) {
-                    it.remove();
-                }
+        int a = 1;
+        while (list.size() > 0) {
+            if (a >= list.size()) {
+                a = 0;
+                list.remove(a);
+                a++;
+            } else {
+                list.remove(a);
                 a++;
             }
         }
