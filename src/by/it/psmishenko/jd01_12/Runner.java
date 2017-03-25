@@ -21,8 +21,8 @@ public class Runner {
                     break;
                 case "b":
                     TaskB taskB = new TaskB();
-                    taskB.runB1(Data.test);
-                    //taskB.runB1(Data.text);
+                    //taskB.runB1(Data.test);
+                    taskB.runB1(Data.text);
                     int n = 800; // N для B2
                     Timer t = new Timer();
                     taskB.processArray(n);
@@ -35,23 +35,21 @@ public class Runner {
                     taskC.runC1();System.out.println("-------------------------------");
                     Set<String> a1 = new HashSet<>(); Set<String> b1 = new HashSet<>();
                     Set<Double> a2 = new HashSet<>(); Set<Double> b2 = new HashSet<>();
-                    String[] arr1 = {"aaa","bbb","ccc"};
-                    String[] arr2 = {"zzz","kkk","aaa"};
                     for (int i = 0; i <3 ; i++) {
-                       a1.add(arr1[i]);
+                       a1.add(Data.arr1[i]);
                        a2.add(3.14+i);
                     }
                     for (int i = 0; i <3 ; i++) {
-                      b1.add(arr2[i]);
+                      b1.add(Data.arr2[i]);
                       b2.add(3.14-i);
                     }
                     taskC.runC2(a1,b1);System.out.println("-------------------------------");
                     taskC.runC2(a2,b2);System.out.println("-------------------------------");
+                    taskC.runC3("{{ahahaha}{fkfkf}[dkfmdk](ddd)");
                     break;
                 default:
                     zxc = false;
             }
-
         }while (zxc);
     }
     public static class Timer {

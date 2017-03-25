@@ -17,5 +17,6 @@ public class Data {
             "The moulding and patterning steps were combined to produce structures that contain microcavities filled with liquid and sealed with a thin gold film. " +
             "Armani and Liu plan to investigate other biodegradable plastics and develop an active drug-releasing chip that could be inserted into the body.\n";
     static String test = "ivan fedor ivan ivan fedor egor.";
-
+    static String[] arr1 = {"aaa","bbb","ccc"};
+    static String[] arr2 = {"zzz","kkk","aaa"};
 }

@@ -1,6 +1,8 @@
 package by.it.psmishenko.jd01_12;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by GN on 23.03.2017.
@@ -30,5 +32,18 @@ public class TaskC {
         System.out.println("aUb"+mc.getUnionV2(a,b));
         System.out.println("a_b"+mc.getCrossV2(a,b));
     }
-
+    void runC3(String str){
+        if(checkStr(str)) System.out.println("Строка \""+str+"\" корректна");
+        else System.out.println("Строка \""+str+"\" некорректна");
+    }
+    boolean checkStr (String str){
+        Pattern p = Pattern.compile("[\\{\\}\\(\\)]");
+        Matcher m = p.matcher(str);
+        List<String> bracketList = new ArrayList<>();
+        while (m.find()){
+            bracketList.add(m.group());
+        }
+        System.out.println("LOLOLOLOL:       "+bracketList);
+        return true;
+    }
 }
