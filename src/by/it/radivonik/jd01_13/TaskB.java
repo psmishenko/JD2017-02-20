@@ -2,18 +2,9 @@ package by.it.radivonik.jd01_13;
 
 /**
  * Created by Radivonik on 22.03.2017.
+ * Класс, реализующий задания Варианта B
  */
 public class TaskB {
-    public static void main(String[] args) {
-        try {
-            while (true)
-                level1();
-        }
-        catch (Exception e) {
-            System.out.println(e);
-        }
-    };
-
     public static void level1()  {
         System.out.println("Начало процедуры level1");
         level2();
@@ -26,8 +17,10 @@ public class TaskB {
 
     public static void level2()  {
         System.out.println("Начало процедуры level2");
-        /*if (Math.random() < 0.5)
-            throw new ArithmeticException("Генерация ошибки");*/
+        int x = (int) (Math.random() * 5 - 2);
+        if (x < 0)
+            throw new ArithmeticException("Нельзя извлечь корень из отрицательного числа " + x);
+        double y = Math.sqrt(x);
         level3();
         System.out.println("Окончание процедуры level2");
     }
@@ -35,7 +28,7 @@ public class TaskB {
     public static void level3() {
         System.out.println("Начало процедуры level3");
         try {
-            int i = 3 / (int) (Math.random() * 4);
+            int i = 3 / (int) (Math.random() * 5);
         }
         catch (ArithmeticException e) {
             System.out.println("Ошибка " + e.getMessage());
