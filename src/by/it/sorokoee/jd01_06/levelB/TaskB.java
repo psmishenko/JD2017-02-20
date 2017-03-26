@@ -35,14 +35,16 @@ public class TaskB {
         }
     }
 
-//    public static void sortPredlozh() {
+    public static void sortPredlozh() {
 //        String text = Data.lukomor.replaceAll("\n", " ");
-//        String[] stroki = text.split("[.!?]+ ");
-//        for (int i = 0; i < stroki.length; i++) {
+        String[] stroki = Data.lukomor.replaceAll("\n", " ").split("[.!?]+ ");
+        int [] lenStroki=new int[stroki.length];
+        for (int i = 0; i < stroki.length; i++) {
 //            String[] slova = stroki[i].split(" ");
+            lenStroki[i]=stroki[i].split(" ").length;
 //            System.out.println(slova.length);
-//        }
-//    }
+        }
+    }
 }
 
 
