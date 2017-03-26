@@ -65,14 +65,11 @@ public class Basic_IO {
         try (PrintWriter printer=
                new PrintWriter(
                    new FileWriter(fileOutHashMapTxt))){
-            //тип <Integer,String> опущен для сокращения демо
-            //его лучше указывать и для итератора и для Map.Entry
-            Iterator it=hm.entrySet().iterator();
-            while (it.hasNext()) {
-                Map.Entry pair=(Map.Entry)it.next();
+            for (Object o : hm.entrySet()) {
+                Map.Entry pair = (Map.Entry) o;
                 //сохранение возможно в произвольном формате
                 //здесь это ini (пара ключ:значение)
-                printer.println(pair.getKey()+":"+pair.getValue());
+                printer.println(pair.getKey() + ":" + pair.getValue());
             }
 
 

@@ -16,7 +16,7 @@ public class Encode {
         //вывод семейства кодировки и ее видов
         for (String name : charsetsMap.keySet()) {
             Charset charset = charsetsMap.get(name);
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
             sb.append(name);
             sb.append(" (");
             Iterator<String> aliases = charset.aliases().iterator();
@@ -41,7 +41,7 @@ public class Encode {
 
                 //создаем символьные потоки для чтения и записи, каждый в своей кодировке
                 BufferedReader reader = new BufferedReader(new InputStreamReader(rs, "cp1251"));
-                BufferedWriter writter = new BufferedWriter(new OutputStreamWriter(rw, "utf-8"));
+                BufferedWriter writter = new BufferedWriter(new OutputStreamWriter(rw, "utf-8"))
         ) {
             //перекодировка
             String line;
