@@ -8,7 +8,7 @@ public class TaskA {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Double> values = new ArrayList<>();
-        String str = "";
+        String str;
         while (!(str = scanner.nextLine()).equalsIgnoreCase("END")) {
             try {
                 Double value = Double.parseDouble(str);
@@ -27,14 +27,16 @@ public class TaskA {
                 StackTraceElement[] st = e.getStackTrace();
                 System.out.println("Stack:");
                 for (StackTraceElement el : st) {
-                    System.out.printf("Source class: \"%s\" file: \"%s\" line: \"&d\"", el.getClassName(), el.getFileName(), el.getLineNumber());
+                    System.out.printf("Source class: \"%s\" file: \"%s\" line: \"&d\"\n",
+                            el.getClassName(),
+                            el.getFileName(),
+                            el.getLineNumber());
 //                    System.out.println(el.getMethodName());
 //                    System.out.println(el.getLineNumber());
-//                    if (el.getMethodName().equals("main"))
-//                        break;
+                    if (el.getMethodName().equals("main"))
+                        break;
                 }
             }
         }
-
     }
 }

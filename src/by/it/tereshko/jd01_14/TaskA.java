@@ -7,7 +7,7 @@ import java.util.List;
 public class TaskA {
     public static void main(String[] args) {
         String root = System.getProperty("user.dir");
-        String path = "src/by/it/tereshko/jd01_14/";
+        String path = root + "/src/by/it/tereshko/jd01_14/";
         String filename = path + "taskA.data";
         try (FileOutputStream fs = new FileOutputStream(filename);
              BufferedOutputStream bo = new BufferedOutputStream(fs);
@@ -17,7 +17,6 @@ public class TaskA {
                 int value = (int) (Math.random() * 100.0);
                 dout.writeInt(value);
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -37,7 +36,7 @@ public class TaskA {
             }
             System.out.println(values);
             if (values.size() > 0) {
-                System.out.printf("Average = %f", (double) sum / values.size());
+                System.out.printf("Average = %f\n", (double) sum / values.size());
             } else {
                 System.out.println("No data caught.");
             }

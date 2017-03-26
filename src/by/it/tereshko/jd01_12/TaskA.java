@@ -10,6 +10,9 @@ public class TaskA {
             table.add(value);
         }
         System.out.println("All marks: " + table);
+
+//        variant 1
+
         Iterator<Integer> it = table.iterator();
         while (it.hasNext()) {
             Integer value = it.next();
@@ -18,12 +21,12 @@ public class TaskA {
         }
         System.out.println("Marks more than 1: " + table);
 
-//        variant 1
 //        System.out.println("Only satisfactory marks: " + table);
 
-        // variant 2
+//        variant 2
+
 //        Integer[] bad = new Integer[]{1, 2, 3};
-        // required at the job interview
+//        required at the job interview
 //        List<Integer> badCollect = new ArrayList<>(Arrays.asList(bad));
 //        table.removeAll(badCollect);
 
@@ -33,6 +36,7 @@ public class TaskA {
         System.out.println("Marks more than 2: " + table);
 
         // variant 3
+
         table.removeAll(Arrays.asList(new Integer[]{1, 2, 3}));
         System.out.println("Only satisfactory marks: " + table);
     }
@@ -61,6 +65,7 @@ public class TaskA {
             list.add(value);
         }
         System.out.println("All values: " + list);
+
         Comparator<Integer> c = new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {

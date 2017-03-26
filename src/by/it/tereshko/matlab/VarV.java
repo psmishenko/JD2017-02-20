@@ -9,7 +9,7 @@ public class VarV extends Var {
 
     private void checkSize(VarV v1, VarV v2) throws MathException {
         if (v1.vector.length != v2.vector.length) {
-            throw new MathException("Vectors are various sizes");
+            throw new MathException("Vectors are of various sizes");
         }
     }
 
@@ -27,8 +27,7 @@ public class VarV extends Var {
             }
         } else return super.add(var);
         return new VarV(res);
-
-//        System.out.println("Caught addition of vector with something");
+//        System.out.println("Caught addition of vector and something");
 //        return null;
     }
 
@@ -45,6 +44,7 @@ public class VarV extends Var {
                 res[i] = vector[i] - ((VarV) var).vector[i];
             }
         } else return super.sub(var);
+
         return new VarV(res);
     }
 
@@ -63,10 +63,10 @@ public class VarV extends Var {
             }
             return new VarF(sum);
         } else return super.mul(var);
+
         return new VarV(res);
     }
 
-    @Override
     public Var div(Var var) throws MathException {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
@@ -77,6 +77,7 @@ public class VarV extends Var {
                 res[i] = vector[i] / ((VarF) var).value;
             }
         } else return super.div(var);
+
         return new VarV(res);
     }
 
@@ -85,13 +86,17 @@ public class VarV extends Var {
         vector = new Double[copyFrom.vector.length];
 //        for (int i = 0; i < copyFrom.vector.length; i++) {
 //            vector[i] = copyFrom.vector[i];
-//        } the same as System.arraycopy(copyFrom.vector, 0, vector, 0, vector.length);
+//        } //the same as System.arraycopy(copyFrom.vector, 0, vector, 0, vector.length);
         System.arraycopy(copyFrom.vector, 0, vector, 0, vector.length);
     }
 
     public VarV(Double[] vector) {
         this.vector = new Double[vector.length];
         System.arraycopy(vector, 0, this.vector, 0, vector.length);
+    }
+
+    public VarV(String value) {
+        fromString(value);
     }
 
     @Override
@@ -106,17 +111,13 @@ public class VarV extends Var {
             m.reset();
             int i = 0;
             while (m.find()) {
-                String one = m.group();
-                vector[i] = Double.parseDouble(one);
+                String oneValue = m.group();
+                vector[i] = Double.parseDouble(oneValue);
                 i++;
             }
         } else {
-            new MathException("MathException:" + value + " is not a vector");
+            new MathException("Error: " + value + " is not a vector");
         }
-    }
-
-    public VarV(String value) {
-        fromString(value);
     }
 
     @Override

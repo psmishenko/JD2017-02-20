@@ -21,7 +21,6 @@ public class Parser {
     static Var calc(String expression) {
         Var res = null;
         try {
-
             String[] part = expression.split(Patterns.exOper);
             Pattern p = Pattern.compile(Patterns.exOper);
             Matcher m = p.matcher(expression);
@@ -29,20 +28,20 @@ public class Parser {
             if (m.find()) {
                 op = m.group();
             }
-
             Var one = createVar(part[0]);
             Var two = createVar(part[1]);
-            // выполним одну операцию
+
+            // execute 1 operation
             if (op.equals("=")) {
                 two.save(part[0]);
                 res = two;
-            } else if (one.equals("+")) {
+            } else if (op.equals("+")) {
                 res = one.add(two);
-            } else if (one.equals("-")) {
+            } else if (op.equals("-")) {
                 res = one.sub(two);
-            } else if (one.equals("*")) {
+            } else if (op.equals("*")) {
                 res = one.mul(two);
-            } else if (one.equals("/")) {
+            } else if (op.equals("/")) {
                 res = one.div(two);
             }
         } catch (MathException e) {
@@ -50,6 +49,5 @@ public class Parser {
         }
         return res;
     }
-
 }
 
