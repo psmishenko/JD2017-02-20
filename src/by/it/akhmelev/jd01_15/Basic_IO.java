@@ -42,7 +42,7 @@ public class Basic_IO {
         String fileOutTxt = src+"JD01_15/out.txt";
         try (PrintWriter printer=
                 new PrintWriter(
-                    new FileWriter(fileOutTxt, true))){
+                    new FileWriter(fileOutTxt, true))){ //true - обозначает дозапись
             printer.println(txtLn);  //тут что-то печатаем, для примера - все ту же коллекцию
                                      //обратите внимание как она выводится.
             System.out.print(txtLn); //для этого продублируем на консоль
