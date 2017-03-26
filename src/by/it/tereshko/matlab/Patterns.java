@@ -1,13 +1,13 @@
 package by.it.tereshko.matlab;
 
 public interface Patterns {
-    //возможные примеры регулярных выражений (конечно лучше составить свои).
-    String exVal = "((-?)([0-9.])+)";                                   //числа
-    String exVec = "\\{((-?([0-9.])+),?)+}";                            //вектора
-    String exMat = "\\{((\\{((-?([0-9.])+),?)+}),?)+}";                 //матрицы
-    String exAny = "(" + exMat + ")|(" + exVec + ")|(" + exVal + ")";   //одно из...
-    String exOper = "[-+*/=]";                                           //операция
+    //    possible examples of regular expressions
+    String exVal = "((-?)([0-9.])+)";                                   //numbers
+    String exVec = "\\{((-?([0-9.])+),?)+}";                            //vectors
+    String exMat = "\\{((\\{((-?([0-9.])+),?)+}),?)+}";                 //matrices
+    String exAny = "(" + exMat + ")|(" + exVec + ")|(" + exVal + ")";   //one of...
+    String exOper = "[-+*/=]";                                          //operations
     String exFull = "(" + exAny + ")" +
                     "(" + exOper + ")" +
-                    "(" + exAny + ")";                                  //выражение целиком
+                    "(" + exAny + ")";                                  //full expression
 }
