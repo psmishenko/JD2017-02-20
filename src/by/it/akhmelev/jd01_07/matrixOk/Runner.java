@@ -12,7 +12,7 @@ public class Runner {
             Multiplicator mult = new Multiplicator();
             System.out.println("Matrices product is " + mult.multiply(p, q));
         } catch (MatrixException ex) {
-            System.err.println("MathExeption of creating matrix " + ex);
+            System.err.println("Error of creating matrix " + ex);
         }
     }
 }

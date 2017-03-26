@@ -13,10 +13,10 @@ public class ConsoleRunner {
         Var vec2=new VarV("{1,2,3,4,5}");
 
         oneRes(Parser.calc("1+2"));
-//        oneRes(Parser.calc("{1,2,3,4,5}+2"));
-//        oneRes(Parser.calc("{1,2,3,4,5}*2"));
-//        oneRes(Parser.calc("{1,2,3,4,5}/2"));
-//        oneRes(Parser.calc("{1,2,3,4,5}-2"));
+        oneRes(Parser.calc("{1,2,3,4,5}+2"));
+        oneRes(Parser.calc("{1,2,3,4,5}*2"));
+        oneRes(Parser.calc("{1,2,3,4,5}/2"));
+        oneRes(Parser.calc("{1,2,3,4,5}-2"));
 //        oneRes(Parser.calc("A=3"));
 //        oneRes(Parser.calc("B={1,2,3,4}"));
 //        oneRes(Parser.calc("C=5"));
