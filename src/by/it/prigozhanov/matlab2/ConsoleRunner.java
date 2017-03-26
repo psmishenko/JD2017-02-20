@@ -10,11 +10,10 @@ public class ConsoleRunner {
 
     public static void main(String[] args) {
 //        Var vec1=new VarV("{1.1,2.2,3.3,4.4,5}");
-//        Var vec2=new VarV("{1,2,3,4,5}");
-
-        oneRes(new VarF("2").add(new VarF("2")));
 //        oneRes(vec1.add(vec2));
 //        oneRes(vec1.sub(vec2));
+//        Var vec2=new VarV("{1,2,3,4,5}");
+//        oneRes(new VarF("2").add(new VarF("2")));
 //        oneRes(vec1.mul(vec2));
 //        oneRes(vec1.div(vec2));
 

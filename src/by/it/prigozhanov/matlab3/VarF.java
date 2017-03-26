@@ -1,10 +1,10 @@
-package by.it.prigozhanov.matlab2;
+package by.it.prigozhanov.matlab3;
 
 public class VarF extends Var {
     public Double value;
 
     @Override
-    public Var add(Var var) throws MathExeption {
+    public Var add(Var var) {
         if (var instanceof VarF) {
             VarF operand = (VarF) var;
             return new VarF(this.value + operand.value);
@@ -13,7 +13,7 @@ public class VarF extends Var {
     }
 
     @Override
-    public Var sub(Var var) throws MathExeption{
+    public Var sub(Var var) {
         if (var instanceof VarF) {
             VarF operand = (VarF) var;
             return new VarF(this.value - operand.value);
@@ -22,7 +22,7 @@ public class VarF extends Var {
     }
 
     @Override
-    public Var mul(Var var) throws MathExeption {
+    public Var mul(Var var) {
         if (var instanceof VarF) {
             VarF operand = (VarF) var;
             return new VarF(this.value * operand.value);
@@ -31,7 +31,7 @@ public class VarF extends Var {
     }
 
     @Override
-    public Var div(Var var)throws MathExeption {
+    public Var div(Var var) {
         if (var instanceof VarF) {
             VarF operand = (VarF) var;
             return new VarF(this.value / operand.value);

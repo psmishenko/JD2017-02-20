@@ -1,4 +1,4 @@
-package by.it.prigozhanov.matlab2;
+package by.it.prigozhanov.matlab3;
 
 public class Error {
     public Error(String message) {

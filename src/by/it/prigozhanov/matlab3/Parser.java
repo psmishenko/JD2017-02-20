@@ -1,13 +1,9 @@
-package by.it.akhmelev.jd01_11_classwork_matlab;
-
-import by.it.akhmelev.jd01_10_classwork_matlab.*;
+package by.it.prigozhanov.matlab3;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * @author i.sukach
- */
+
 public class Parser {
 
     static Var createVar(String part){

@@ -1,4 +1,4 @@
-package by.it.akhmelev.jd01_11_classwork_matlab;
+package by.it.prigozhanov.matlab3;
 
 public class ConsoleRunner {
 
