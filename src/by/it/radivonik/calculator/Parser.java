@@ -23,7 +23,9 @@ public class Parser {
         return res;
     }
 
-    public static Var createVar(String part) {
+    public static Var createVar(String part) throws ParseException {
+        if (part == null)
+            throw new ParseException("Пустая строка");
         Var res = null;
         if (part.matches(IPatterns.ExNumber)) {
             res = new VarFloat(part);

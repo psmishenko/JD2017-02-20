@@ -11,17 +11,22 @@ public class VarFloat extends Var {
         this.value = value;
     }
 
-    public VarFloat(VarFloat var) {
+    public VarFloat(VarFloat var) throws ParseException {
         this.value = var.value;
     }
 
-    public VarFloat(String str) {
+    public VarFloat(String str) throws ParseException {
         fromString(str);
     }
 
     @Override
-    public void fromString(String str) {
-        this.value = Double.parseDouble(str);
+    public void fromString(String str) throws ParseException {
+        try {
+            this.value = Double.parseDouble(str);
+        }
+        catch (Exception e) {
+            throw new ParseException(str + "не является числом");
+        }
     }
 
     @Override

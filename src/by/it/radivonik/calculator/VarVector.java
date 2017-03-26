@@ -1,6 +1,5 @@
 package by.it.radivonik.calculator;
 
-import java.util.Arrays;
 import java.util.regex.*;
 
 /**
@@ -20,12 +19,12 @@ public class VarVector extends Var {
         System.arraycopy(var.vector,0,vector,0,var.vector.length);
     }
 
-    public VarVector(String str) {
+    public VarVector(String str) throws ParseException {
         fromString(str);
     }
 
     @Override
-    public void fromString(String str) {
+    public void fromString(String str) throws ParseException {
         Pattern p = Pattern.compile(IPatterns.ExVector);
         if (p.matcher(str).matches()) {
             p = Pattern.compile(IPatterns.ExNumber);
@@ -43,7 +42,7 @@ public class VarVector extends Var {
             }
         }
         else {
-            new Error("Ошибка: " + str + " не является вектором");
+            throw new ParseException(str + " не является вектором");
         }
     }
 
