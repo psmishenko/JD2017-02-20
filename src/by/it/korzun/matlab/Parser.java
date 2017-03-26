@@ -62,8 +62,8 @@ class Parser {
                     break;
                 }
             }
-        }catch (Exception e){
-            new Error("Неверное выражение");
+        }catch (MathException e){
+            System.out.println("Неверное выражение");
         }
 
     }
