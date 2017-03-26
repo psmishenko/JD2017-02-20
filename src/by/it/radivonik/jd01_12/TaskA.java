@@ -4,8 +4,12 @@ import java.util.*;
 
 /**
  * Created by Radivonik on 20.03.2017.
+ * Класс, реализующий задания варианта A
  */
 public class TaskA {
+    /**
+     * Метод, релизующий задание A1
+     */
     public void runA1() {
         List<Integer> table = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
@@ -34,6 +38,9 @@ public class TaskA {
         System.out.println("Только положительные оценки > 3: " + table);
     }
 
+    /**
+     * Метод, релизующий задание A2
+     */
     public void runA2() {
         Set<Integer> a = new HashSet<>();
         Set<Integer> b = new HashSet<>();
@@ -49,6 +56,9 @@ public class TaskA {
         System.out.println("Пересечение множеств A и B: " + MyCollect.getCross(a, b));
     }
 
+    /**
+     * Метод, релизующий задание A3
+     */
     public void runA3() {
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < 20; i++) {

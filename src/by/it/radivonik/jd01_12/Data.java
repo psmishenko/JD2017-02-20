@@ -2,9 +2,10 @@ package by.it.radivonik.jd01_12;
 
 /**
  * Created by Radivonik on 25.03.2017.
+ * Строковые константы для заданий
  */
 public class Data {
-    static String example =
+    static String textB1 =
         "It is both pleasant and a bit difficult to speak about myself.\n" +
         "It is pleasant because every person enjoys speaking about his or her interests, likes or dislikes.\n" +
         "But at the same time it is difficult because to study a person, especially yourself, it is a great journey, not a little walk.\n" +
@@ -29,4 +30,8 @@ public class Data {
         "As for my interests I am fond of psychology in the sphere of dealing with people and the questions of how to form your thoughts in the most favourable way.\n" +
         "I adore travelling, seeing other people, their traditions, customs, to get acquainted with their culture, going sightseeing.\n" +
         "Besides I like different kinds of music, I like music with rhythm you can dance to.";
+
+    static String textC1 =
+        "молоко батон хлеб сметана батон картофель молоко колбаса сметана молоко картофель масло хлеб батон " +
+        "колбаса сметана молоко картофель масло хлеб батон молоко батон хлеб сметана батон картофель молоко";
 }
