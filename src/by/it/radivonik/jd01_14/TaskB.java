@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 
 /**
  * Created by Radivonik on 24.03.2017.
+ * Класс, реализующий задания Варианта B
  */
 public class TaskB {
     public static void run() {
@@ -28,6 +29,12 @@ public class TaskB {
         System.out.printf("Количество слов: %d\n",calCount(text.toString(),"[а-яА-ЯёЁ]"));
     }
 
+    /**
+     * Метод, реализующий подсчет элементов строки, соответствующих регулярному выражению
+     * @param text строка
+     * @param pattern регулярное выражения джля поиска
+     * @return количество найденных элементов
+     */
     private static int calCount(String text, String pattern) {
         Pattern p = Pattern.compile(pattern);
         Matcher m = p.matcher(text.toString());

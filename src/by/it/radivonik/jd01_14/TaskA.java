@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * Created by Radivonik on 24.03.2017.
+ * Класс, реализующий задания Варианта A
  */
 public class TaskA {
     public static void run() {
@@ -23,7 +24,7 @@ public class TaskA {
             e.printStackTrace();
         }
 
-        // Чтение данных в файл
+        // Чтение данных из файла
         try (DataInputStream ds = new DataInputStream(new BufferedInputStream(new FileInputStream(filename)))){
             List<Integer> values = new ArrayList<>();
             double sum = 0;
