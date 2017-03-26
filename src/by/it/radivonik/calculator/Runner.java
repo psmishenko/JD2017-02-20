@@ -27,7 +27,7 @@ public class Runner {
         System.out.println("Вариант C:");
         System.out.println("Матрицы ПОКА- не готовы");
 
-        System.out.println("\nЗадания к занятию JD01_11.2");
+        System.out.println("\nЗадания к занятию JD01_11 (переменные)");
         System.out.println("Вариант А:");
         Calc.calculate("A=3.8");
         Calc.calculate("B={-2,3.5,4}");
@@ -36,13 +36,15 @@ public class Runner {
         System.out.println(Var.vars);
         System.out.println("Вариант B:");
         oneRes("printvar");
-        System.out.println("Вариан т C:");
+        System.out.println("Вариант C:");
         oneRes("sortvar");
 
+        System.out.println("\nЗадания к занятию JD01_13 (исключения)");
         oneRes("{2,3,4}/0");
         oneRes("{2,3,4}+{5,6}");
         oneRes("{2,3,4}/{}");
         oneRes("5/{2,3,4}");
+        oneRes("X=");
      }
 
     private static void oneRes(String exp, String val) {
