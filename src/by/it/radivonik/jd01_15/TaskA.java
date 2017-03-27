@@ -1,12 +1,11 @@
 package by.it.radivonik.jd01_15;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.*;
 
 /**
  * Created by Radivonik on 27.03.2017.
+ * Класс, реализующий задания Варианта A
  */
 public class TaskA {
     public static void run() {
