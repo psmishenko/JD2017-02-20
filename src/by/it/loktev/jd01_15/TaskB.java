@@ -63,7 +63,7 @@ public class TaskB {
             for ( String part : parts3 ) {
                 lineNum++;
                 System.out.println(String.format("%2d",lineNum)+" "+part);
-                bw.write(String.format("%2d",lineNum)+" "+part);
+                bw.write(String.format("%2d",lineNum)+" "+part+"\n");
             }
 
         } catch (IOException e) {
