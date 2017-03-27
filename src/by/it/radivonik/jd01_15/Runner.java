@@ -6,11 +6,11 @@ package by.it.radivonik.jd01_15;
 public class Runner {
     public static void main(String[] args) {
         System.out.println("Вариант A");
-        TaskA.run();
+        (new TaskA()).run();
         System.out.println("\nВариант B");
-        TaskB.run();
+        (new TaskB()).run();
         System.out.println("\nВариант C");
-        TaskC.run();
+        (new TaskC()).run();
     }
 }
 

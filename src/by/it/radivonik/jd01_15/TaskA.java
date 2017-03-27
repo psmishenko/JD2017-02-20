@@ -8,7 +8,7 @@ import java.util.*;
  * Класс, реализующий задания Варианта A
  */
 public class TaskA {
-    public static void run() {
+    public void run() {
         String path = System.getProperty("user.dir") + "/src/by/it/radivonik/jd01_15";
         String filename = path + "/matrix.txt";
         int[][] m = new int[4][4];
@@ -31,7 +31,7 @@ public class TaskA {
             strList.add(s.toString());
         }
 
-        // Вывод матрицы на консоль
+        // Вывод матрицы в консоль
         for (int i = 0; i < strList.size(); i++) {
             System.out.println(strList.get(i));
         }
@@ -43,7 +43,7 @@ public class TaskA {
             }
         }
         catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Ошибка: " + e.getMessage());
         }
     }
 }
