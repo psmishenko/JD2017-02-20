@@ -12,18 +12,18 @@ public class TaskA {
         for (int i = 0; i <n ; i++) {
             for (int j = 0; j <n ; j++) {
                 arr[i][j] =(int)  ( Math.random()*30)-15;
-                System.out.printf("%-3d ",arr[i][j]);
+                System.out.printf("%3d ",arr[i][j]);
             }
             System.out.println();
         }
         String root=System.getProperty("user.dir");
         String path = root + "/src/by/it/psmishenko/jd01_15/";
         String filename = path+"matrix.txt";
-        try(FileOutputStream fs = new FileOutputStream(filename);
-            PrintWriter pr = new PrintWriter(new OutputStreamWriter(fs,"utf-8"))){
+        try(FileWriter fs = new FileWriter(filename);
+            PrintWriter pr = new PrintWriter(fs)){
             for (int i = 0; i <n ; i++) {
                 for (int j = 0; j <n ; j++) {
-                   pr.printf("%-3d ",arr[i][j]);
+                   pr.printf("%3d ",arr[i][j]);
                 }
                 pr.print("\n");
             }
