@@ -7,8 +7,8 @@ public class Runner {
         System.out.println("=== задание A");
         TaskA.taskA();
 
-        //System.out.println("=== задание B");
-        //TaskB.taskB();
+        System.out.println("=== задание B");
+        TaskB.taskB();
 
         //System.out.println("=== задание C");
         //TaskC.taskC();
