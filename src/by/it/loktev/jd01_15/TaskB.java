@@ -1,8 +1,6 @@
 package by.it.loktev.jd01_15;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.regex.Pattern;
 
 public class TaskB {
@@ -19,6 +17,9 @@ public class TaskB {
 
         /* comment 1 */
         // comment 2
+        /*
+        comment1
+        */
 
         try (
                 FileReader fr = new FileReader(fileName); // comment
@@ -39,7 +40,7 @@ public class TaskB {
         for ( String part : parts1 )
             sb.append(part);
 
-        String comment2RE="/*.*?\\*/";
+        String comment2RE="/\\*[\\d\\D]*?\\*/";
 
         Pattern patt2=Pattern.compile(comment2RE);
         String [] parts2=patt2.split(sb);
@@ -47,7 +48,28 @@ public class TaskB {
         for ( String part : parts2 )
             sb.append(part);
 
-        System.out.println(sb);
+        String lineEndRE="\\n";
+
+        String fileName2=basePath+"TaskB.txt";
+
+        int lineNum=0;
+        Pattern patt3=Pattern.compile(lineEndRE);
+        String [] parts3=patt3.split(sb);
+        try (
+                FileWriter fw = new FileWriter(fileName2);
+                BufferedWriter bw = new BufferedWriter(fw);
+        )
+        {
+            for ( String part : parts3 ) {
+                lineNum++;
+                System.out.println(String.format("%2d",lineNum)+" "+part);
+                bw.write(String.format("%2d",lineNum)+" "+part);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
