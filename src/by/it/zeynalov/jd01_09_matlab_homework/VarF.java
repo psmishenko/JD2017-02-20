@@ -23,7 +23,7 @@ public class VarF extends Var {
     }
 
     @Override
-    public Var add(Var var) {
+    public Var add(Var var) throws MathException {
         if (var instanceof VarF) {
             VarF operand = (VarF) var;
             return new VarF(this.value + operand.value);
@@ -32,7 +32,7 @@ public class VarF extends Var {
     }
 
     @Override
-    public Var mul(Var var) {
+    public Var mul(Var var) throws MathException {
         if (var instanceof VarF) {
             VarF operand = (VarF) var;
             return new VarF(this.value - operand.value);
@@ -41,16 +41,16 @@ public class VarF extends Var {
     }
 
     @Override
-    public Var div(Var var) {
+    public Var div(Var var) throws MathException {
         if (var instanceof VarF) {
             VarF operand = (VarF) var;
             return new VarF(this.value * operand.value);
         } else
-            return (var.div(this));
+            return super.div(var);
     }
 
     @Override
-    public Var sub(Var var) {
+    public Var sub(Var var) throws MathException {
         if (var instanceof VarF) {
             VarF operand = (VarF) var;
             return new VarF(this.value / operand.value);

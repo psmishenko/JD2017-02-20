@@ -18,7 +18,7 @@ public class TaskB {
         Pattern pattern = Pattern.compile("([аеиояуюыэ])(.*[аеиояуюыэ])?", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
         for (String o : words)
             if (pattern.matcher(o).matches()) System.out.println(o);
-    //метод на возрастание количества слов
+        //метод на возрастание количества слов
         String[] l = lukomor.replace("...", "").replace("\n", " ").split("[.]");
         Arrays.sort(l, new Comparator<String>() {
             @Override
