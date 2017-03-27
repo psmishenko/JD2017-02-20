@@ -10,8 +10,8 @@ import java.util.List;
  */
 public class TaskA {
     public static void run() {
-        String path = System.getProperty("user.dir") + "/src/by//it/radivonik/jd01_14";
-        String filename = path + "//taskA.dat";
+        String path = System.getProperty("user.dir") + "/src/by/it/radivonik/jd01_14";
+        String filename = path + "/taskA.dat";
 
         // Запись данных в файл
         try (DataOutputStream ds = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(filename)))){
