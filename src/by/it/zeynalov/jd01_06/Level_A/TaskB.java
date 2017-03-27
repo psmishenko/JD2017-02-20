@@ -3,6 +3,7 @@ package by.it.zeynalov.jd01_06.Level_A;
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,9 +18,14 @@ public class TaskB {
         Pattern pattern = Pattern.compile("([аеиояуюыэ])(.*[аеиояуюыэ])?", Pattern.CASE_INSENSITIVE | Pattern.UNICODE_CASE);
         for (String o : words)
             if (pattern.matcher(o).matches()) System.out.println(o);
-    //метод на возрастание количества слов
+        //метод на возрастание количества слов
         String[] l = lukomor.replace("...", "").replace("\n", " ").split("[.]");
-        //Arrays.sort(l, (o1, o2) -> o1.split("[^а-яА-ЯёЁ]+").length - o2.split("[^а-яА-ЯёЁ]+").length);
+        Arrays.sort(l, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.split("[^а-яА-ЯёЁ]+").length - o2.split("[^а-яА-ЯёЁ]+").length;
+            }
+        });
         for (int i = 0; i < l.length; i++)
             System.out.println(l[i]);
 
