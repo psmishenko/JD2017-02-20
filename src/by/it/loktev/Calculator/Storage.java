@@ -98,6 +98,8 @@ public class Storage {
             }
 
 
+        } catch (FileNotFoundException e) {
+            System.out.println("Файл с переменными не найден - хранилище переменных оставлено пустым");
         } catch (IOException e) {
             e.printStackTrace();
         }

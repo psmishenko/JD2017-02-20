@@ -23,6 +23,12 @@ public class ConsoleRunner {
     public static void main(String[] args)  {
 
         try {
+
+            System.out.println("=== тест работы с автосохранёнными переменными:");
+
+            Parser.parseAndCalc("sortvar",false);
+            oneRes(Parser.parseAndCalc(" aaa*(1+bbb) ",false));
+
             System.out.println("=== скаляр со скаляром:");
 
             oneRes(new VarF("3.8").add(new VarF("26.2")));
