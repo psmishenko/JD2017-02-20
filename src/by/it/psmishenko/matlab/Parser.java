@@ -13,7 +13,7 @@ public class Parser {
             res = new VarV(part);
         } else if (part.matches(Patterns.exVal)) {
             res = new VarF(part);
-        } else throw new MathException("Некорректный ввод переменной");
+        } else res = null;
         return res;
     }
 
