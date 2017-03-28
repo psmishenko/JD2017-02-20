@@ -32,3 +32,37 @@ by.it.radivonik.calculator.ParseException: Пустая строка
 	at by.it.radivonik.calculator.Calc.calculate(Calc.java:35)
 	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:65)
 	at by.it.radivonik.calculator.Runner.main(Runner.java:46)
+Деление на ноль
+by.it.radivonik.calculator.MathException: Деление на ноль
+	at by.it.radivonik.calculator.Operation.oper(Operation.java:134)
+	at by.it.radivonik.calculator.Operation.oper(Operation.java:116)
+	at by.it.radivonik.calculator.Operation.div(Operation.java:72)
+	at by.it.radivonik.calculator.Calc.calculate(Calc.java:32)
+	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:65)
+	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
+У векторов в операции разная длина
+by.it.radivonik.calculator.MathException: У векторов в операции разная длина
+	at by.it.radivonik.calculator.Operation.oper(Operation.java:121)
+	at by.it.radivonik.calculator.Operation.add(Operation.java:21)
+	at by.it.radivonik.calculator.Calc.calculate(Calc.java:23)
+	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:65)
+	at by.it.radivonik.calculator.Runner.main(Runner.java:43)
+Пустая строка
+by.it.radivonik.calculator.ParseException: Пустая строка
+	at by.it.radivonik.calculator.Parser.createVar(Parser.java:28)
+	at by.it.radivonik.calculator.Calc.calculate(Calc.java:32)
+	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:65)
+	at by.it.radivonik.calculator.Runner.main(Runner.java:44)
+Недопустимая операция
+by.it.radivonik.calculator.MathException: Недопустимая операция
+	at by.it.radivonik.calculator.Operation.oper(Operation.java:108)
+	at by.it.radivonik.calculator.Operation.div(Operation.java:69)
+	at by.it.radivonik.calculator.Calc.calculate(Calc.java:32)
+	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:65)
+	at by.it.radivonik.calculator.Runner.main(Runner.java:45)
+Пустая строка
+by.it.radivonik.calculator.ParseException: Пустая строка
+	at by.it.radivonik.calculator.Parser.createVar(Parser.java:28)
+	at by.it.radivonik.calculator.Calc.calculate(Calc.java:35)
+	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:65)
+	at by.it.radivonik.calculator.Runner.main(Runner.java:46)

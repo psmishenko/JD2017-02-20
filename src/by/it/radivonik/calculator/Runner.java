@@ -42,7 +42,7 @@ public class Runner {
         oneRes("{2,3,4}/0");
         oneRes("{2,3,4}+{5,6}");
         oneRes("{2,3,4}/{}");
-        oneRes("5/{2,3,4}");
+        oneRes("5/{2,3,4,6}");
         oneRes("X=");
 
         System.out.println("\nЗадания к занятию JD01_15 (потоки ввода вывода)");
