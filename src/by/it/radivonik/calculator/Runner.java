@@ -29,10 +29,10 @@ public class Runner {
 
         System.out.println("\nЗадания к занятию JD01_11 (переменные)");
         System.out.println("Вариант А:");
-//        Calc.calculate("A=3.8");
-//        Calc.calculate("B={-2,3.5,4}");
-//        Calc.calculate("cc=-3.8");
-//        Calc.calculate("c1={-2.0,-3.5,0.00,4,9}");
+        Calc.calculate("A=3.8");
+        Calc.calculate("B={-2,3.5,4}");
+        Calc.calculate("cc=-3.8");
+        Calc.calculate("c1={-2.0,-3.5,0.00,4,9}");
         System.out.println("Вариант B:");
         oneRes("printvar");
         System.out.println("Вариант C:");
@@ -48,6 +48,7 @@ public class Runner {
         System.out.println("\nЗадания к занятию JD01_15 (потоки ввода вывода)");
         System.out.println("Смотрите файл vars.txt");
         try {
+            new Var().saveToFile();
             new Var().loadFromFile();
         }
         catch (Exception e) {

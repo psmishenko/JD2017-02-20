@@ -34,7 +34,6 @@ public class Calc {
             else if (aop[1].equals("=")) {
                 Var v = Parser.createVar(aop[2]);
                 op.save(aop[0],v);
-                new Var().saveToFile();
                 return v.toString();
             }
         }
