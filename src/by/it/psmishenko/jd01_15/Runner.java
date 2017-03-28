@@ -11,7 +11,7 @@ public class Runner {
        System.out.println("#2:");
         TaskB taskB = new TaskB();
         taskB.runB();
-        System.out.println("#3:");
+        System.out.println("\n#3:(Без обработки ошибок)");
         TaskC taskC = new TaskC();
         taskC.runC();
     }
