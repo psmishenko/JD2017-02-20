@@ -38,7 +38,7 @@ public class VarF extends Var{
         if(var instanceof  VarF){
             VarF operand = (VarF)var;
             if(operand.value == 0){
-                throw new MathException("Деление на ноль");
+                throw new MathException("Деление на ноль:");
             }
             return new VarF(this.value / operand.value);
         }else {

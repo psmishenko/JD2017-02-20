@@ -1,5 +1,6 @@
 package by.it.korzun.matlab;
 
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -7,9 +8,9 @@ public class VarM extends Var{
     private double[][] matrix;
 
     VarM(String str) {
-        Pattern patternArgs = Pattern.compile("[{}]");
+        Pattern patternArgs = Pattern.compile("[{}\\[\\]]");
         Matcher matcher = patternArgs.matcher(str);
-        String[] strings = str.split("},\\{");
+        String[] strings = str.split("[}\\]],\\s?[\\[{]");
         for (int i = 0; i < strings.length; i++) {
             matcher = patternArgs.matcher(strings[i]);
             strings[i] = matcher.replaceAll("");
@@ -46,7 +47,7 @@ public class VarM extends Var{
                 }
                 return this;
             }else{
-                throw new MathException("Несовпадающие размеры");
+                throw new MathException("Несовпадающие размеры:");
             }
         }
         else{
@@ -65,7 +66,7 @@ public class VarM extends Var{
                 }
                 return this;
             }else{
-                throw new MathException("Несовпадающие размеры");
+                throw new MathException("Несовпадающие размеры:");
             }
 
         }
@@ -116,13 +117,22 @@ public class VarM extends Var{
 
     @Override
     public String toString() {
-        String str = "";
-        for (double[] aMatrix : matrix) {
+        String str = "[";
+        for (int i = 0; i < matrix.length; i++) {
+            str += "[";
             for (int j = 0; j < matrix[0].length; j++) {
-                str += aMatrix[j] + " ";
+                if(j != matrix[0].length - 1) {
+                    str += matrix[i][j] + ", ";
+                }else{
+                    if(i != matrix.length - 1) {
+                        str += matrix[i][j] + "], ";
+                    }else{
+                        str += matrix[i][j] + "]";
+                    }
+                }
             }
-            str += "\n";
         }
+        str += "]";
         return str;
     }
 }
