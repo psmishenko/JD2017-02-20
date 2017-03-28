@@ -1,6 +1,7 @@
 package by.it.psmishenko.matlab;
 
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,6 +11,11 @@ public abstract class Var implements IOperation,IVariable {
     @Override
     public void save(String name) {
         vars.put(name,this);
+        try {
+            IOData.saveVarInTxt(name,vars.get(name));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
