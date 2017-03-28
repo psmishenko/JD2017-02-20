@@ -1,5 +1,6 @@
 package by.it.prigozhanov.matlab3;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,5 +35,6 @@ public abstract class Var implements IOperation, IVariable {
     @Override
     public void save(String name) {
         vars.put(name,this);
+        Util.upload(vars);
     }
 }
