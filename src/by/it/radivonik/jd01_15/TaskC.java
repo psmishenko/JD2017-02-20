@@ -2,6 +2,7 @@ package by.it.radivonik.jd01_15;
 
 import java.io.*;
 import java.nio.file.*;
+import java.text.DateFormat;
 import java.util.*;
 
 /**
@@ -24,10 +25,13 @@ public class TaskC {
                 // Обработка команды dir
                 if (cmd.toLowerCase().equals("dir")) {
                     for (File file: dir.listFiles()) {
-                        Path pfile = Paths.get(file.getAbsolutePath());
+                        Date d = new Date(file.lastModified());
+                        DateFormat df = DateFormat.getDateInstance(DateFormat.DEFAULT,new Locale("ru","RU"));
+                        DateFormat tf = DateFormat.getTimeInstance(DateFormat.DEFAULT,new Locale("ru","RU"));
                         System.out.printf(
-                            "%-28s %-5s %8s %s\n",
-                            Files.getAttribute(pfile,"lastModifiedTime",LinkOption.NOFOLLOW_LINKS),
+                            "%10s %8s %5s %8s %s\n",
+                            df.format(d),
+                            tf.format(d),
                             file.isDirectory()?"<DIR>":"",
                             file.isDirectory()?"":file.length(),
                             file.getName());
@@ -53,9 +57,9 @@ public class TaskC {
                 }
             }
         }
-        catch (IOException e) {
-            System.out.println("Ошибка: " + e.getMessage());
-        }
+//        catch (IOException e) {
+//            System.out.println("Ошибка: " + e.getMessage());
+//        }
         finally {
             if (scanner != null)
                 scanner.close();
