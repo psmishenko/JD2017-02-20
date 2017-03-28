@@ -36,7 +36,7 @@ public class TaskB {
         try {
             int i = 3 /(int)(Math.random() * 2);
         } catch (ArithmeticException e) {
-            System.out.println("Ощибка деления на 0" + e.getMessage());
+            System.out.println("Division error " + e.getMessage());
         }
         System.out.println("Конец процедуры level3");
 
