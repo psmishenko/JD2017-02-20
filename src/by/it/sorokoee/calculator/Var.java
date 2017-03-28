@@ -1,10 +1,14 @@
 package by.it.sorokoee.calculator;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public abstract class Var implements IOperation,IVariable {
-    static public Map<String,Var> vars=new HashMap<>();
+    static public Map<String,Var> vars=new TreeMap<>();
 
     @Override
     public void save(String name) {
@@ -35,4 +39,5 @@ public abstract class Var implements IOperation,IVariable {
          throw new MathException("Операция деления невозможна");
 
     }
+
 }
