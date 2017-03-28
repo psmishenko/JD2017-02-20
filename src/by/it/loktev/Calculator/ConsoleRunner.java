@@ -10,6 +10,7 @@ public class ConsoleRunner {
             System.out.println(v);
     }
 
+    /*
     private static Var newVar(String str) throws CalculatorException{
         if ( VarF.canFromString(str) )
             return new VarF(str);
@@ -19,10 +20,20 @@ public class ConsoleRunner {
             return new VarM(str);
         return null;
     }
+    */
 
     public static void main(String[] args)  {
 
+        Log.write("СТАРТ");
+
         try {
+
+
+            System.out.println("=== тест работы с автосохранёнными переменными:");
+
+            Parser.parseAndCalc("sortvar",false);
+            oneRes(Parser.parseAndCalc(" aaa*(1+bbb) ",false));
+
             System.out.println("=== скаляр со скаляром:");
 
             oneRes(new VarF("3.8").add(new VarF("26.2")));
@@ -71,47 +82,80 @@ public class ConsoleRunner {
 
             oneRes(new VarF("2").mul(new VarM("{{5.2,3.3},{8,1.3},{1,2.2}}")));
             oneRes(new VarF("2").add(new VarM("{{5.2,3.3},{8,1.3},{1,2.2}}")));
+
+            System.out.println("=== тест парсера:");
+
+            oneRes(Parser.parseAndCalc(" 6+3 ",false));
+            oneRes(Parser.parseAndCalc(" 6+3*4/6-1 ",false));
+            oneRes(Parser.parseAndCalc(" {5,7}+3 ",false));
+            oneRes(Parser.parseAndCalc(" {5,7}+{1,3} ",false));
+            oneRes(Parser.parseAndCalc(" {5,7}*2 ",false));
+            oneRes(Parser.parseAndCalc(" {{5.2,3.3},{8,1.3},{1,2.2}} * {{2},{3}} ",false));
+            oneRes(Parser.parseAndCalc(" {{5.2,3.3},{8,1.3},{1,2.2}} * {2,3} ",false));
+            oneRes(Parser.parseAndCalc(" {{5.2,3.3},{8,1.3},{1,2.2}} + 1 ",false));
+            oneRes(Parser.parseAndCalc(" -9-0.9 ",false));
+            oneRes(Parser.parseAndCalc(" (6+3)*2 ",false));
+            oneRes(Parser.parseAndCalc(" (6+3)*(2+1) ",false));
+            oneRes(Parser.parseAndCalc(" -(6+3)*4/(7-1) ",false));
+            oneRes(Parser.parseAndCalc(" 2*(3+4*(1+5)) ",false));
+
+            System.out.println("=== тест работы с переменными:");
+
+            Parser.parseAndCalc("aaa=5+2 ",false);
+            Parser.parseAndCalc(" ccc =8 ",false);
+            Parser.parseAndCalc("bbb=7+1*2 ",false);
+            Parser.parseAndCalc("ddd={2.2,3.3} ",false);
+            Parser.parseAndCalc("eee={{2.2,3.3},{7.7,6.6}} ",false);
+            Parser.parseAndCalc("printvar",false);
+            Parser.parseAndCalc("sortvar",false);
+            oneRes(Parser.parseAndCalc(" aaa*(1+bbb) ",false));
+
+
         }
         catch (CalculatorException e)
         {
             System.out.println("исключение: "+e);
         }
 
-        System.out.println("=== тест парсера:");
-
-        oneRes(Parser.parseAndCalc(" 6+3 ",false));
-        oneRes(Parser.parseAndCalc(" 6+3*4/6-1 ",false));
-        oneRes(Parser.parseAndCalc(" {5,7}+3 ",false));
-        oneRes(Parser.parseAndCalc(" {5,7}+{1,3} ",false));
-        oneRes(Parser.parseAndCalc(" {5,7}*2 ",false));
-        oneRes(Parser.parseAndCalc(" {{5.2,3.3},{8,1.3},{1,2.2}} * {{2},{3}} ",false));
-        oneRes(Parser.parseAndCalc(" {{5.2,3.3},{8,1.3},{1,2.2}} * {2,3} ",false));
-        oneRes(Parser.parseAndCalc(" {{5.2,3.3},{8,1.3},{1,2.2}} + 1 ",false));
-        oneRes(Parser.parseAndCalc(" -9-0.9 ",false));
-        oneRes(Parser.parseAndCalc(" (6+3)*2 ",false));
-        oneRes(Parser.parseAndCalc(" (6+3)*(2+1) ",false));
-        oneRes(Parser.parseAndCalc(" -(6+3)*4/(7-1) ",false));
-        oneRes(Parser.parseAndCalc(" 2*(3+4*(1+5)) ",false));
-
-        System.out.println("=== тест работы с переменными:");
-
-        Parser.parseAndCalc("aaa=5+2 ",false);
-        Parser.parseAndCalc(" ccc =8 ",false);
-        Parser.parseAndCalc("bbb=7+1*2 ",false);
-        Parser.parseAndCalc("printvar",false);
-        Parser.parseAndCalc("sortvar",false);
-        oneRes(Parser.parseAndCalc(" aaa*(1+bbb) ",false));
-
         System.out.println("=== тест исключений:");
-        oneRes(Parser.parseAndCalc(" aaa+eee ",false));
-        oneRes(Parser.parseAndCalc(" 5/0",false));
-        oneRes(Parser.parseAndCalc(" (5+2",false));
-        oneRes(Parser.parseAndCalc(" {5,7}+{1,3,8} ",false));
-        oneRes(Parser.parseAndCalc(" {{5.2,3.3},{8,1.3},{1,2.2}} * {{2},{3},{4}} ",false));
-        oneRes(Parser.parseAndCalc(" 2*2 ",false));
 
-        //Storage.store("a",new VarF("5.5"));
-        //System.out.println(Storage.restore("a"));
+        try {
+            oneRes(Parser.parseAndCalc(" aaa+eee ",false));
+        } catch (CalculatorException e) {
+            System.out.println("исключение: "+e);
+        }
+
+        try {
+            oneRes(Parser.parseAndCalc(" 5/0",false));
+        } catch (CalculatorException e) {
+            System.out.println("исключение: "+e);
+        }
+
+        try {
+            oneRes(Parser.parseAndCalc(" (5+2",false));
+        } catch (CalculatorException e) {
+            System.out.println("исключение: "+e);
+        }
+
+        try {
+            oneRes(Parser.parseAndCalc(" {5,7}+{1,3,8} ",false));
+        } catch (CalculatorException e) {
+            System.out.println("исключение: "+e);
+        }
+
+        try {
+            oneRes(Parser.parseAndCalc(" {{5.2,3.3},{8,1.3},{1,2.2}} * {{2},{3},{4}} ",false));
+        } catch (CalculatorException e) {
+            System.out.println("исключение: "+e);
+        }
+
+        try {
+            oneRes(Parser.parseAndCalc(" 2*2 ",false));
+        } catch (CalculatorException e) {
+            System.out.println("исключение: "+e);
+        }
+
+        Log.write("СТОП");
     }
 
 }
