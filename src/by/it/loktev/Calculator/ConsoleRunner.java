@@ -98,6 +98,8 @@ public class ConsoleRunner {
         Parser.parseAndCalc("aaa=5+2 ",false);
         Parser.parseAndCalc(" ccc =8 ",false);
         Parser.parseAndCalc("bbb=7+1*2 ",false);
+        Parser.parseAndCalc("ddd={2.2,3.3} ",false);
+        Parser.parseAndCalc("eee={{2.2,3.3},{7.7,6.6}} ",false);
         Parser.parseAndCalc("printvar",false);
         Parser.parseAndCalc("sortvar",false);
         oneRes(Parser.parseAndCalc(" aaa*(1+bbb) ",false));

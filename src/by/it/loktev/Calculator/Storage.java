@@ -1,23 +1,16 @@
 package by.it.loktev.Calculator;
 
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.regex.Pattern;
 
 public class Storage {
 
-    static private HashMap<String,Var> vars;
+    static private String fileName=System.getProperty("user.dir")+"/src/by/it/loktev/Calculator/vars.txt";
 
-    static {
-        vars=new HashMap<String,Var>();
-    }
-
-
-    /*
-    public Storage() {
-        this.vars = new HashMap<String,Var>();
-    }
-    */
+    static private HashMap<String,Var> vars=new HashMap<>();
 
     static public void store(String name, Var var){
         vars.put(name,var);
@@ -40,11 +33,29 @@ public class Storage {
 
     static public void printSort(){
         System.out.println("Переменные в хранилище по алфавиту:");
-        TreeMap<String,Var> varsSort=new TreeMap<String,Var>(vars);
+        TreeMap<String,Var> varsSort=new TreeMap<>(vars);
         for (Map.Entry<String,Var> ME : varsSort.entrySet()){
             System.out.println(ME.getKey()+": "+ME.getValue());
         }
     }
 
+    static public void writeToFile(){
+
+        try (
+                FileWriter fw = new FileWriter(fileName);
+                //ObjectOutputStream oos=new ObjectOutputStream(fw);
+                BufferedWriter bw=new BufferedWriter(fw);
+        )
+        {
+            for ( Map.Entry<String,Var> entry : vars.entrySet() ) {
+                bw.write(entry.getKey()+" = "+entry.getValue().serialize()+"\n");
+                //oos.writeObject(entry.getValue());
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }

@@ -447,6 +447,10 @@ public class Parser {
             Storage.store(assignToVarName, V);
             //if (showDebug)
               //System.out.println("Присваивание: " + assignToVarName+" "+V);
+
+            // после каждой операции присваивания - авто-сохраняем все переменные в vars.txt
+            Storage.writeToFile();
+
             return null;
         }
 
