@@ -391,8 +391,7 @@ public class Parser {
         showExprParts(0,exprCount);
     }
 
-    public static Var parseAndCalc(String str2, boolean showDebug)
-    {
+    public static Var parseAndCalc(String str2, boolean showDebug) throws CalculatorException {
         if (str2.equals("printvar")){
             Storage.print();
             return null;
@@ -428,7 +427,7 @@ public class Parser {
 
         Var V=null;
 
-        try {
+        //try {
             if (!parser.parseString(exprSB, showDebug)) {
                 return null;
             }
@@ -436,23 +435,23 @@ public class Parser {
             V=parser.calculateFragment(0,parser.exprCount,showDebug);
             if ( V==null )
                 return null;
+            /*
         }
         catch ( CalculatorException e )
         {
             System.out.println("Исключение в парсере: "+e.getMessage());
             return null;
         }
+        */
 
 
         if (assignToVarName!=null) {
             Storage.store(assignToVarName, V);
-            //if (showDebug)
-              //System.out.println("Присваивание: " + assignToVarName+" "+V);
-
-            // после каждой операции присваивания - авто-сохраняем все переменные в vars.txt
-            //Storage.writeToFile();
-
+            Log.write("присваивание переменной "+assignToVarName+" значения выражения: '"+str2+"', рассчитанное значение: "+V);
             return null;
+        }
+        else{
+            Log.write("расчёт выражения: '"+str2+"', рассчитанное значение: "+V);
         }
 
         return V;

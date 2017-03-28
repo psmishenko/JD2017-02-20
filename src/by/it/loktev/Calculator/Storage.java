@@ -86,7 +86,12 @@ public class Storage {
                     //System.out.println(varAndValueMatcher.group(1)+" / "+varAndValueMatcher.group(2));
                     String varName=varAndValueMatcher.group(1);
                     String varStringValue=varAndValueMatcher.group(2);
-                    Var newVar=Parser.parseAndCalc(varStringValue,false);
+                    Var newVar= null;
+                    try {
+                        newVar = Parser.parseAndCalc(varStringValue,false);
+                    } catch (CalculatorException e) {
+                        System.out.println("Из файла прочитана строка: '"+line+"', разобрать не удалось, проигнорирована");
+                    }
                     //System.out.println("прочитана "+varName+" равная "+newVar);
                     vars.put(varName,newVar);
                 }
