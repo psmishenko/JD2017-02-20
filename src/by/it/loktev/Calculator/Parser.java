@@ -5,8 +5,9 @@ import java.util.regex.Pattern;
 
 public class Parser {
 
-    static public String assignRE=" *([a-zA-Z]+) *= *";
-    static public String varNameRE=" *([a-zA-Z]+) *";
+    static public String varNameRE="[a-zA-Z]+";
+    static public String assignRE=" *("+varNameRE+") *= *";
+    static public String varNameExprPartRE=" *("+varNameRE+") *";
 
     ExpressionPart [] exprParts;
     int exprCount;
@@ -47,7 +48,7 @@ public class Parser {
 
             // имена переменных могут идти только в начале субвыражений
             if (IsSubExprStart) {
-                Pattern pattVarName = Pattern.compile("^" + varNameRE);
+                Pattern pattVarName = Pattern.compile("^" + varNameExprPartRE);
                 Matcher matchVarName = pattVarName.matcher(exprSB);
                 if (matchVarName.find()) {
                     String varName = matchVarName.group(1);

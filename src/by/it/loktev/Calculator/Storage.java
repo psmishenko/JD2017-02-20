@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Storage {
@@ -74,11 +75,26 @@ public class Storage {
         {
             vars.clear();
 
+            String varAndValueRE="^ *("+Parser.varNameRE+") *= *(.+) *$";
+            Pattern varAndValuePatt=Pattern.compile(varAndValueRE);
             while (true){
-              String line=br.readLine();
-              if (line==null)
+                String line=br.readLine();
+                if (line==null)
                   break;
-                System.out.println("прочитано: "+line);
+                Matcher varAndValueMatcher=varAndValuePatt.matcher(line);
+                if ( varAndValueMatcher.matches() ){
+                    //System.out.println(varAndValueMatcher.group(1)+" / "+varAndValueMatcher.group(2));
+                    String varName=varAndValueMatcher.group(1);
+                    String varStringValue=varAndValueMatcher.group(2);
+                    Var newVar=Parser.parseAndCalc(varStringValue,false);
+                    //System.out.println("прочитана "+varName+" равная "+newVar);
+                    vars.put(varName,newVar);
+                }
+                else
+                    System.out.println("Из файла прочитана строка: '"+line+"', разобрать не удалось, проигнорирована");
+
+                //System.out.println("прочитано: "+line);
+
             }
 
 
