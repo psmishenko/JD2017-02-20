@@ -8,12 +8,19 @@ import java.util.regex.Pattern;
 
 public class Storage {
 
-    static private String fileName=System.getProperty("user.dir")+"/src/by/it/loktev/Calculator/vars.txt";
+    static private String fileName;
 
-    static private HashMap<String,Var> vars=new HashMap<>();
+    static private HashMap<String,Var> vars;
+
+    static {
+        fileName=System.getProperty("user.dir")+"/src/by/it/loktev/Calculator/vars.txt";
+        vars=new HashMap<>();
+        loadFromFile();
+    }
 
     static public void store(String name, Var var){
         vars.put(name,var);
+        writeToFile();
     }
 
     static public Var restore(String name){
@@ -39,7 +46,7 @@ public class Storage {
         }
     }
 
-    static public void writeToFile(){
+    static private void writeToFile(){
 
         try (
                 FileWriter fw = new FileWriter(fileName);
@@ -51,6 +58,29 @@ public class Storage {
                 bw.write(entry.getKey()+" = "+entry.getValue().serialize()+"\n");
                 //oos.writeObject(entry.getValue());
             }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    static private void loadFromFile(){
+
+        try (
+                FileReader fr = new FileReader(fileName);
+                BufferedReader br=new BufferedReader(fr);
+        )
+        {
+            vars.clear();
+
+            while (true){
+              String line=br.readLine();
+              if (line==null)
+                  break;
+                System.out.println("прочитано: "+line);
+            }
+
 
         } catch (IOException e) {
             e.printStackTrace();
