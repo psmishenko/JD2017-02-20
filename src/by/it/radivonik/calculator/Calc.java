@@ -1,16 +1,17 @@
 package by.it.radivonik.calculator;
 
-import java.util.SortedMap;
-import java.util.TreeMap;
+import java.io.*;
+import java.util.*;
 
 /**
  * Created by Radivonik on 18.03.2017.
  */
 public class Calc {
     public static String calculate (String exp) {
-        Operation op = new Operation();
-        String[] aop = Parser.parse(exp);
         try {
+            Operation op = new Operation();
+            String[] aop = Parser.parse(exp);
+
             if (aop[0].equals("printvar")) {
                 return Var.vars.toString();
             }
@@ -38,11 +39,29 @@ public class Calc {
         }
         catch (MathException e) {
             System.out.println("Ошибка математическая: " + e.getMessage());
+            saveLog(e);
         }
         catch (ParseException e) {
             System.out.println("Ошибка преобразования: " + e.getMessage());
+            saveLog(e);
+        }
+        catch (Exception e) {
+            System.out.println("Ошибка: " + e.getMessage());
+            saveLog(e);
         }
 
         return null;
+    }
+
+    private static String fileLog = System.getProperty("user.dir") + "/src/by/it/radivonik/calculator/log.txt";
+
+    private static void saveLog(Exception except)  {
+        try (PrintWriter fileWriter = new PrintWriter(new FileWriter(fileLog,true))) {
+            fileWriter.println(except.getMessage());
+            except.printStackTrace(fileWriter);
+        }
+        catch (IOException e) {
+            System.out.println("Ошибка сохранения файла log.txt (" + e.getMessage() + ")");
+        }
     }
 }
