@@ -72,11 +72,11 @@
  72         listOut.addAll(Arrays.asList(strOut.toString().split("\\n")));
  73 
  74         
- 75         System.out.println(listOut);
+ 75         System.out.print(listOut);
  76 
  77         
  78         try (PrintWriter prn = new PrintWriter(new FileWriter(filename.replace(".java",".txt")))) {
- 79             prn.println(listOut);
+ 79             prn.print(listOut);
  80         }
  81         catch (IOException e) {
  82             System.out.println("Ошибка: " + e.getMessage());
@@ -91,4 +91,3 @@
  91         int posCopyBegin = 0;
  92     }
  93 }
-

@@ -75,11 +75,11 @@ public class TaskB {
         listOut.addAll(Arrays.asList(strOut.toString().split("\\n")));
 
         // Вывод в консоль
-        System.out.println(listOut);
+        System.out.print(listOut);
 
         // Вывод в файл
         try (PrintWriter prn = new PrintWriter(new FileWriter(filename.replace(".java",".txt")))) {
-            prn.println(listOut);
+            prn.print(listOut);
         }
         catch (IOException e) {
             System.out.println("Ошибка: " + e.getMessage());
