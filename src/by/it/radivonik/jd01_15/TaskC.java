@@ -57,9 +57,6 @@ public class TaskC {
                 }
             }
         }
-//        catch (IOException e) {
-//            System.out.println("Ошибка: " + e.getMessage());
-//        }
         finally {
             if (scanner != null)
                 scanner.close();
