@@ -1,6 +1,7 @@
 package by.it.psmishenko.matlab;
 
 
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -45,11 +46,18 @@ public class Parser {
             StackTraceElement[] st = e.getStackTrace();
             System.out.println("Stack:");
             for (StackTraceElement el:st) {
-                System.out.printf("В классе \"%s\" ,в методе \"%s\" , в строке \"%s\"\n",el.getClassName(),el.getMethodName(),el.getLineNumber());
+                System.out.printf("В классе \"%s\" ,в методе \"%s\" , в строке \"%s\"\n",
+                        el.getClassName(),el.getMethodName(),el.getLineNumber());
                 if(el.getMethodName().equals("main"))break;
             }
             System.out.println("----------------------------------------------------------------------------");
+            try {
+                IOData.saveErrorsInTxt(st,e.getMessage());
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
         }
+        if(res!=null) IOData.saveOperationsInTxt(expression,res.toString());
         return res;
     }
 
