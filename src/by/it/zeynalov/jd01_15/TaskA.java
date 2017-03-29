@@ -18,7 +18,7 @@ public class TaskA {
                 System.out.println();
                 for (int j = 0; j < mass.length; j++) {
                     mass[i][j] = rand.nextInt(15);
-                  //  pw.printf("%3d ", mass[i][j]);
+                  //    pw.printf("%3d ", mass[i][j]);
                     fos.write(mass[i][j]);
                 }
             }
