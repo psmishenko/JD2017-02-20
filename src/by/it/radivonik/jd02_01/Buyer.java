@@ -15,7 +15,7 @@ public class Buyer extends Thread implements IBuyer, IUseBacket {
 
     @Override
     public String toString() {
-        return getName() + " ";
+        return getName();
     }
 
     @Override
@@ -41,8 +41,15 @@ public class Buyer extends Thread implements IBuyer, IUseBacket {
 
     @Override
     public void chooseGoods() {
-        System.out.println(this + " выбрал товары");
-        Helper.sleep(Helper.getRandom(100,800));
+        System.out.println(this + " вошел в торговый зал");
+        int countGood = Helper.getRandom(1,4);
+        for (int i = 0; i < countGood; i++) {
+            int timeout = Helper.getRandom(400,700);
+            Helper.sleep(timeout);
+            Good good = Goods.getRandomGood();
+            System.out.printf("%s выбрал товар %s с ценой %s\n",this,good.getName(),good.getPrice());
+        }
+        System.out.println(this + " завершил выбор товаров");
     }
 
     @Override

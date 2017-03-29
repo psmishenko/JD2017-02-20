@@ -8,6 +8,9 @@ import java.util.Random;
 public class Helper {
     private static Random random;
 
+    private Helper () {
+    }
+
     static {
         long time = System.currentTimeMillis();
         random = new Random(time);
