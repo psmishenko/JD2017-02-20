@@ -22,7 +22,7 @@ public class ConsoleRunner {
     public static void main(String[] args) throws IOException,MathException {
        // boolean zxc = true;
         // тестовые строки из jd01_11
-        System.out.println("Проверка деления на 0 для скаляров: 5/0"); oneRes(Parser.calc("5/0"),"1:");
+       /* System.out.println("Проверка деления на 0 для скаляров: 5/0"); oneRes(Parser.calc("5/0"),"1:");
         System.out.println("Проверка деления на ноль для векторов и матриц");
         oneRes(Parser.calc("{{1,2,3},{4,5,6}}/0"),"2:");
         oneRes(Parser.calc("{1,2,3}/0"),"3:");
@@ -31,7 +31,7 @@ public class ConsoleRunner {
         oneRes(Parser.calc("{1,2,3}*{4,4}"),"5:");
         oneRes(Parser.calc("{{1,2,3},{4,5,6}}*{1,2,3,4}"),"6:");
         System.out.println("Проверка правильности ввода переменной");
-        oneRes(Parser.calc("{{1,2,3},{4,5,6}}*{1,2,3,4}"),"6:");
+        oneRes(Parser.calc("{{1,2,3},{4,5,6}}*{1,2,3,4}"),"6:");*/
      /* String levelA = "2.3+3";
       String levelB = "{1,2,3}/5";
       String levelC = "{{1,2},{4,5}}*{1,2}";
@@ -61,7 +61,7 @@ public class ConsoleRunner {
         oneRes(Parser.calc(mat+"*{1,2}"),mat+"*{1,2}");
         oneRes(Parser.calc(mat+"*"+mat),mat+"*"+mat);
         oneRes(Parser.calc(mat+"+"+mat),mat+"+"+mat);
-        oneRes(Parser.calc(mat+"-"+mat),mat+"-"+mat);
+        oneRes(Parser.calc(mat+"-"+mat),mat+"-"+mat);*/
         // операции присваивания
         Parser.calc("Ali=3");
         Parser.calc("Begemot={1,2,3,4}");
@@ -70,7 +70,8 @@ public class ConsoleRunner {
         Parser.calc("Aaa=7");
         Parser.calc("Aab=7");
         Parser.calc("Aac=7");
-        do {
+
+        /*do {
             System.out.println("Введите 1(printvar) или 2(sortvar) (или иной символ для завершения)");
             String choice = getOneLine();
             switch (choice){

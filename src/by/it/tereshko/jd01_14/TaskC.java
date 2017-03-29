@@ -1,8 +1,13 @@
 package by.it.tereshko.jd01_14;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TaskC {
+
+    static List<String> fileNames = new ArrayList<>();
+    static List<String> folderNames = new ArrayList<>();
 
     static void processFolder(String prefix, File object) {
         if (object.isFile())
@@ -21,5 +26,8 @@ public class TaskC {
         String path = root + "/src/by/it/tereshko/jd01_14/";
         File file = new File(path);
         processFolder("", file);
+
+        System.out.println("Folders: " + folderNames);
+        System.out.println("Files: " + fileNames);
     }
 }

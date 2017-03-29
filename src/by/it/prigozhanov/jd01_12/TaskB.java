@@ -109,6 +109,7 @@ public class TaskB {
                 list.remove(a);
                 a++;
             }
+            System.out.println(list);
         }
         Date newDate = new Date();
         long currentTime = newDate.getTime() - date.getTime();
