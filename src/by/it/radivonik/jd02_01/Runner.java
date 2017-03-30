@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class Runner {
     private static int countBuyer = 0;
-    private static int plan = 10;
+    private static int planTimeSec = 60;
     private static int pensioneerRate = 4;
     private static List<Buyer> buyerList = new ArrayList<>();
 
@@ -16,7 +16,7 @@ public class Runner {
         int numPensioneer = 0;
         int sec = 0;
 
-        while (countBuyer < plan) {
+        while (sec < planTimeSec) {
             int count = Helper.getRandom(2);
             while (count > 0) {
                 if (countBuyer % pensioneerRate == 0)
@@ -28,14 +28,14 @@ public class Runner {
                 buyer.start();
 
                 count--;
-                if (countBuyer == plan)
-                    break;
+//                if (countBuyer == plan)
+//                    break;
             }
 
             Helper.sleep(1000);
             sec++;
-            if (sec % 2 == 0)
-                System.out.printf("---Прошло %d секунд, покупателей в магазине - %d\n",sec,countBuyerActive());
+            if (sec % 10 == 0)
+                System.out.printf("---\n---Прошло %d секунд, покупателей в магазине - %d\n---\n",sec,countBuyerActive());
         }
 
         try {
