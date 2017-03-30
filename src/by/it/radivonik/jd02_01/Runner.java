@@ -9,9 +9,9 @@ public class Runner {
     private static int countBuyer = 0;
     private static int plan = 10;
     private static int pensioneerRate = 4;
+    private static List<Buyer> buyerList = new ArrayList<>();
 
     public static void main(String[] args) {
-        List<Buyer> buyerList = new ArrayList<>();
         Buyer buyer;
         int numPensioneer = 0;
 
@@ -41,6 +41,15 @@ public class Runner {
             e.printStackTrace();
         }
         System.out.println("Завершено");
+    }
+
+    private static int countBuyerActive() {
+        int c = 0;
+        for (Buyer b : buyerList) {
+            if (b.getState() != Thread.State.TERMINATED)
+                c++;
+        }
+        return c;
     }
 }
 
