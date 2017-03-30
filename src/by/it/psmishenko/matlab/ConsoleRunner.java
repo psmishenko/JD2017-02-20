@@ -20,9 +20,15 @@ public class ConsoleRunner {
     }
 
     public static void main(String[] args) throws IOException,MathException {
+        IOData.loadFromTxt();
+        System.out.println(Var.vars);
+        Parser.calc("Alfhfhfhf=3");
+        Parser.calc("Bjcjcjdeg={1,2,3,4}");
+        Parser.calc("Accccc=7");
+        IOData.saveVarInTxt();
        // boolean zxc = true;
         // тестовые строки из jd01_11
-       /* System.out.println("Проверка деления на 0 для скаляров: 5/0"); oneRes(Parser.calc("5/0"),"1:");
+        System.out.println("Проверка деления на 0 для скаляров: 5/0"); oneRes(Parser.calc("5/0"),"1:");
         System.out.println("Проверка деления на ноль для векторов и матриц");
         oneRes(Parser.calc("{{1,2,3},{4,5,6}}/0"),"2:");
         oneRes(Parser.calc("{1,2,3}/0"),"3:");
@@ -31,7 +37,7 @@ public class ConsoleRunner {
         oneRes(Parser.calc("{1,2,3}*{4,4}"),"5:");
         oneRes(Parser.calc("{{1,2,3},{4,5,6}}*{1,2,3,4}"),"6:");
         System.out.println("Проверка правильности ввода переменной");
-        oneRes(Parser.calc("{{1,2,3},{4,5,6}}*{1,2,3,4}"),"6:");*/
+        oneRes(Parser.calc("{{1,2,3},{4,5,6}}*{1,2,3,4}"),"6:");
      /* String levelA = "2.3+3";
       String levelB = "{1,2,3}/5";
       String levelC = "{{1,2},{4,5}}*{1,2}";
@@ -39,11 +45,11 @@ public class ConsoleRunner {
       oneRes(Parser.calc(levelB),levelB);
       oneRes(Parser.calc(levelC),levelC);*/
       // тестовые строки и операции для скаляров
-       /* String num1 = "10.5"; String num2 = "5.5";
+        String num1 = "10.5"; String num2 = "5.5";
         oneRes(Parser.calc(num1+"+"+num2),num1+"+"+num2);
         oneRes(Parser.calc(num1+"-"+num2),num1+"-"+num2);
         oneRes(Parser.calc(num1+"*"+num2),num1+"*"+num2);
-        oneRes(Parser.calc(num1+"/"+num2),num1+"/"+num2);*/
+        oneRes(Parser.calc(num1+"/"+num2),num1+"/"+num2);
        // тестовые строки и операции для вектров
        /* String vec1 = "{2,3,4}"; String vec2 = "{4,5,6}";
         oneRes(Parser.calc(vec1+"+"+vec2),vec1+"+"+vec2);
@@ -63,13 +69,6 @@ public class ConsoleRunner {
         oneRes(Parser.calc(mat+"+"+mat),mat+"+"+mat);
         oneRes(Parser.calc(mat+"-"+mat),mat+"-"+mat);*/
         // операции присваивания
-        Parser.calc("Ali=3");
-        Parser.calc("Begemot={1,2,3,4}");
-        Parser.calc("Alan=5");
-        Parser.calc("Abed=7");
-        Parser.calc("Aaa=7");
-        Parser.calc("Aab=7");
-        Parser.calc("Aac=7");
 
         /*do {
             System.out.println("Введите 1(printvar) или 2(sortvar) (или иной символ для завершения)");
