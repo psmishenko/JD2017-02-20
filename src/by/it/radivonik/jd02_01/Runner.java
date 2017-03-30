@@ -14,6 +14,7 @@ public class Runner {
     public static void main(String[] args) {
         Buyer buyer;
         int numPensioneer = 0;
+        int sec = 0;
 
         while (countBuyer < plan) {
             int count = Helper.getRandom(2);
@@ -30,7 +31,11 @@ public class Runner {
                 if (countBuyer == plan)
                     break;
             }
+
             Helper.sleep(1000);
+            sec++;
+            if (sec % 2 == 0)
+                System.out.printf("---Прошло %d секунд, покупателей в магазине - %d\n",sec,countBuyerActive());
         }
 
         try {
