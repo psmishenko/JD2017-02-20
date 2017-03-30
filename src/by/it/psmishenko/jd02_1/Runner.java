@@ -18,6 +18,6 @@ public class Runner {
             }
                Helper.sleep(1000);
         }
-        System.out.println("Все вошли");
+        System.out.println("---Больше в магазин не запускаем!!!---");
     }
 }
