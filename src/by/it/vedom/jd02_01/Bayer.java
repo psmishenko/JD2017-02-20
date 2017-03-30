@@ -18,14 +18,16 @@ public class Bayer extends Thread implements IBuyer, IUseBacket {
     public void run() {
 
         enterToMarket();
+        takeBacket();
         chooseGoods();
+        backBacket();
         goToOut();
 
     }
 
     @Override
     public void enterToMarket() {
-        System.out.println(this + " зашел в магазин");
+        System.out.println(this + "зашел в магазин");
     }
 
     @Override
@@ -39,6 +41,11 @@ public class Bayer extends Thread implements IBuyer, IUseBacket {
                     this,
                     good.getName() ,
                     good.getPrice() ));
+            Helper.sleep(timeout);
+            System.out.printf("%s положил товар %s ценой %s р. в корзину"+"\n",
+                    this,
+                    good.getName(),
+                    good.getPrice());
         }
         System.out.println("\n" + this+"Выбор товаров завершил." + "\n");
     }
@@ -50,7 +57,9 @@ public class Bayer extends Thread implements IBuyer, IUseBacket {
 
     @Override
     public void takeBacket() {
-
+        int timeout = Helper.getRandom(100, 200);
+        Helper.sleep(timeout);
+        System.out.println(this + "взял корзину.");
     }
 
     @Override
@@ -60,6 +69,8 @@ public class Bayer extends Thread implements IBuyer, IUseBacket {
 
     @Override
     public void backBacket() {
-
+        int timeout = Helper.getRandom(100, 200);
+        Helper.sleep(timeout);
+        System.out.println(this + "положил корзину на место.");
     }
 }

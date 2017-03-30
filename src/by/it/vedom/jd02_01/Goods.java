@@ -22,7 +22,6 @@ public class Goods {
     }
 
     protected static double getPrice(String name) {
-        List<Good> goods = new ArrayList(listGoods);
         for(Good good:listGoods){
             if(good.getName().equals(name))
                 return good.getPrice();
