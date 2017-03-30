@@ -1,10 +1,10 @@
 package by.it.akhmelev.jd02_01.classwork;
 
-public class Good {
+class Good {
     private String name;
     private double price;
 
-    public Good(String name, double price) {
+    Good(String name, double price) {
         this.name = name;
         this.price = price;
     }

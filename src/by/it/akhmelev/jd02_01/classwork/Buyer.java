@@ -1,10 +1,10 @@
 package by.it.akhmelev.jd02_01.classwork;
 
-public class Buyer extends Thread implements IBuyer, IUseBacket {
+class Buyer extends Thread implements IBuyer, IUseBacket {
 
     private int num;
 
-    public Buyer(int num) {
+    Buyer(int num) {
         super("Покупатель № " + num);
         this.num = num;
     }

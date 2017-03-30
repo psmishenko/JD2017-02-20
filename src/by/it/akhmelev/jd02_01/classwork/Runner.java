@@ -2,8 +2,8 @@ package by.it.akhmelev.jd02_01.classwork;
 
 public class Runner {
 
-    public static int countBuyers = 0;
-    public static int plan = 10;
+    private static final int plan = 10;
+    private static int countBuyers = 0;
 
     public static void main(String[] args) {
         Buyer buyer;

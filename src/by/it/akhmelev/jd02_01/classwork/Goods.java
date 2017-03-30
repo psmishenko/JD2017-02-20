@@ -2,7 +2,7 @@ package by.it.akhmelev.jd02_01.classwork;
 
 import java.util.*;
 
-public class Goods {
+class Goods {
 
     private static Set<Good> listGoods=new HashSet<Good>(){
         {
@@ -14,18 +14,17 @@ public class Goods {
         }
     };
 
-    protected static Good getRandomGood(){
-        List<Good> goods=new ArrayList(listGoods);
+    static Good getRandomGood(){
+        List<Good> goods=new ArrayList<>(listGoods);
         int position=Helper.getRandom(goods.size()-1);
-        Good good=goods.get(position);
-        return good;
-    };
+        return goods.get(position);
+    }
 
-    protected static double getPrice(Good good){
+    static double getPrice(Good good){
         return good.getPrice();
     }
 
-    protected static double getPrice(String name){
+    static double getPrice(String name){
         for (Good good:listGoods){
             if (good.getName().equals(name))
                 return good.getPrice();

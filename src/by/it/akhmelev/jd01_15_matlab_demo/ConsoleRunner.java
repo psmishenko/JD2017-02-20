@@ -26,7 +26,7 @@ public class ConsoleRunner {
 //        oneRes(Parser.calc("A=3"));
 //        oneRes(Parser.calc("B={1,2,3,4}"));
 //        oneRes(Parser.calc("C=5"));
-//        oneRes(Parser.calc("E=7"));
+//        oneRes(Parser.calc("D=7"));
 
 //        System.out.println(Var.vars);
 

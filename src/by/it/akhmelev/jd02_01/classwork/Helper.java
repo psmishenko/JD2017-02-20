@@ -2,7 +2,7 @@ package by.it.akhmelev.jd02_01.classwork;
 
 import java.util.Random;
 
-public class Helper {
+class Helper {
 
     private Helper(){
     }
@@ -13,11 +13,11 @@ public class Helper {
         random=new Random(time);
     }
 
-    protected static int getRandom(int max){
+    static int getRandom(int max){
         return random.nextInt(max+1);
     }
 
-    protected static int getRandom(int from,int to){
+    static int getRandom(int from, int to){
         return from+random.nextInt(to-from+1);
     }
 
