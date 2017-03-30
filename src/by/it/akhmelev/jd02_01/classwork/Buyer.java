@@ -28,25 +28,26 @@ class Buyer extends Thread implements IBuyer, IUseBacket {
 
     @Override
     public void chooseGoods() {
-        System.out.println(this + "вошел в торговый зал");
-        int max = Helper.getRandom(1, 4);
+        System.out.println(this + " вошел в торговый зал");
+        int max = Helper.getRandom(1, 9);
+        System.out.println(this + "  запланировал выбрать товаров: " + max + " шт.");
         for (int i = 1; i <= max; i++) {
             int timeout = Helper.getRandom(100, 200);
             Helper.sleep(timeout);
             Good good = Goods.getRandomGood();
             System.out.println(
-                    String.format("%s выбрал товар %s  цена:%s р.",
+                    String.format("%s   выбрал товар %s  цена:%s р.",
                             this,
                             good.getName(),
                             good.getPrice())
             );
         }
-        System.out.println(this + "Выбор товаров завершил");
+        System.out.println(this + "  выбор товаров завершил");
     }
 
     @Override
     public void goToOut() {
-        System.out.println(this + " вышел из магазина");
+        System.out.println(this + "вышел из магазина");
     }
 
     @Override
