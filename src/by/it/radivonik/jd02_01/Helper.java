@@ -25,8 +25,12 @@ public class Helper {
     }
 
     protected static void sleep(int millis) {
+        sleep(millis,1.0);
+    }
+
+    protected static void sleep(int millis, double mul) {
         try {
-            Thread.sleep(millis);
+            Thread.sleep((int)(Math.round(millis*mul)));
         }
         catch (InterruptedException e) {
             e.printStackTrace();
