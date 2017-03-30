@@ -12,7 +12,7 @@ public class MainA {
         try (FileOutputStream ts = new FileOutputStream(fileName);
              BufferedOutputStream bf = new BufferedOutputStream(ts);
              DataOutputStream dt = new DataOutputStream(bf);) {
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 2; i++) {
                 int value = (int) (Math.random() * 100.0);
                 dt.writeInt(value);
             }
