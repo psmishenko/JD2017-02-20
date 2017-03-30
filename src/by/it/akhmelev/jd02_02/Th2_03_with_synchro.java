@@ -3,7 +3,7 @@ package by.it.akhmelev.jd02_02;
 public class Th2_03_with_synchro {
 
     //переменная баланса
-    static Integer balance=new Integer(0);
+    private static Integer balance=0;
 
     //это касса. Просто добавляет в баланс единицу
     static class Cashier extends Thread {
@@ -15,6 +15,7 @@ public class Th2_03_with_synchro {
         }
         @Override
         public  void run() {
+            //noinspection SynchronizeOnNonFinalField
             synchronized (balance) {
                 //Удивительно, но и это не будет работать
                 balance += (calc(1));

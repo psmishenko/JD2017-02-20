@@ -4,7 +4,7 @@ public class Th2_05_with_synchro_ok {
 
     //переменная баланса
     private final static Integer fakeBalance=0;
-    static Integer balance=new Integer(0);
+    private static Integer balance=0;
 
     //это касса. Просто добавляет в баланс единицу
     static class Cashier extends Thread {

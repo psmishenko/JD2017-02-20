@@ -7,7 +7,7 @@ public class Th2_04_with_lock_ok {
 
     //переменная баланса
     private final static Lock lockBalance =new ReentrantLock();
-    static Integer balance=new Integer(0);
+    private static Integer balance=0;
 
     //это касса. Просто добавляет в баланс единицу
     static class Cashier extends Thread {
@@ -24,7 +24,7 @@ public class Th2_04_with_lock_ok {
             }
             finally {
                 lockBalance.unlock();
-            };
+            }
         }
     }
     //создадим 4444 касс. Каждая добавит по 1. Сколько всего будет?
