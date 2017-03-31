@@ -7,10 +7,10 @@ import com.sun.org.apache.xerces.internal.impl.xpath.regex.Match;
  */
 public class Buyer extends Thread implements IBuyer, IUseBacket {
     private int num;
-    private boolean pensioneer;
+    private boolean pensioner;
 
-    Buyer(int num, boolean pensioneer) {
-        super("Покупатель № " + num + (pensioneer ? " (пенсионер)" : ""));
+    Buyer(int num, boolean pensioner) {
+        super("Покупатель № " + num + (pensioner ? " (пенсионер)" : ""));
         this.num = num;
     }
 
@@ -71,6 +71,6 @@ public class Buyer extends Thread implements IBuyer, IUseBacket {
     }
 
     private double mul() {
-        return pensioneer ? 1.5 : 1.0;
+        return pensioner ? 1.5 : 1.0;
     }
 }

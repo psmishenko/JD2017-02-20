@@ -8,7 +8,7 @@ import java.util.*;
 public class Runner {
     private static int countBuyer = 0;
     private static int planTimeSec = 60;
-    private static int pensioneerRate = 4;
+    private static int pensionerRate = 4;
     private static List<Buyer> buyerList = new ArrayList<>();
 
     public static void main(String[] args) {
@@ -19,11 +19,11 @@ public class Runner {
         while (sec < planTimeSec) {
             int count = Helper.getRandom(2);
             while (count > 0) {
-                if (countBuyer % pensioneerRate == 0)
+                if (countBuyer % pensionerRate == 0)
                     numPensioneer = Helper.getRandom(0,3);
                 countBuyer++;
 
-                buyer = new Buyer(countBuyer,countBuyer % pensioneerRate == numPensioneer);
+                buyer = new Buyer(countBuyer,countBuyer % pensionerRate == numPensioneer);
                 buyerList.add(buyer);
                 buyer.start();
 
