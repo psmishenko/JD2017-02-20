@@ -6,8 +6,12 @@ public class Runner {
 
         System.out.println("=== магазин открыт");
 
-        Shop.buyersCount=0;
-        Shop.totalPrice=0;
+        Shop.buyersCount2=0;
+        Shop.totalPrice2=0;
+
+        new Dispatcher().start();
+
+        //Thread cashierThread=null;
 
         int buyerNum=0;
         long startTime=System.currentTimeMillis();
@@ -27,17 +31,18 @@ public class Runner {
             Buyer b=new Buyer(++buyerNum);
             b.start();
 
-            if (secondNum>0)
+
+            if (secondNum>4)
                 break;
         }
 
         System.out.println("=== закрываем вход, новых покупателей не впускаем");
 
-        while ( Shop.buyersCount>0 ){
+        while ( Shop.buyersCount2>0 ){
             Helper.sleep(100);
         }
 
-        System.out.println("=== магазин закрыт, обслужено "+buyerNum+" покупателей, касса "+Shop.totalPrice+" руб");
+        System.out.println("=== магазин закрыт, обслужено "+buyerNum+" покупателей, касса "+Shop.totalPrice2+" руб");
 
     }
 

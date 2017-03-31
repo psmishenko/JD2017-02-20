@@ -45,7 +45,9 @@ public class Buyer extends Thread implements IBuyer, IUseBacket {
         }
         Helper.sleep(Helper.getRandom(400,700)*timeMul);
         double backetPrice= getBacketPrice();
-        Shop.totalPrice+=backetPrice;
+        synchronized (Shop.class) {
+            Shop.totalPrice2 += backetPrice;
+        }
         System.out.println(this+" пошёл на кассу, оплатил "+backetPrice);
     }
 
@@ -85,7 +87,7 @@ public class Buyer extends Thread implements IBuyer, IUseBacket {
         System.out.println(this+" стал в очередь");
         synchronized (this){
            try {
-               wait();
+               this.wait();
            } catch (InterruptedException e) {
                e.printStackTrace();
            }
@@ -95,14 +97,18 @@ public class Buyer extends Thread implements IBuyer, IUseBacket {
 
     @Override
     public void run() {
-        Shop.buyersCount++;
+        synchronized (Shop.class) {
+            Shop.buyersCount2++;
+        }
         enterToMarket();
         takeBacket();
         chooseGoods();
         gotoQueue();
         backBacket();
         goToOut();
-        Shop.buyersCount--;
+        synchronized (Shop.class) {
+            Shop.buyersCount2--;
+        }
     }
 
     @Override

@@ -2,7 +2,7 @@ package by.it.loktev.jd02_01;
 
 public class Shop {
 
-    volatile static public int buyersCount; // количество покупателей сейчас в магазине
-    volatile static public double totalPrice; // общая сумма покупок (касса магазина)
+    static public int buyersCount2; // количество покупателей сейчас в магазине
+    static public double totalPrice2; // общая сумма покупок (касса магазина)
 
 }
