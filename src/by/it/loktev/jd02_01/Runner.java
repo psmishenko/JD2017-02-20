@@ -4,10 +4,10 @@ public class Runner {
 
     public static void main(String[] args)  {
 
-        System.out.println("=== магазин открыт");
-
+        Shop.opened=true;
         Shop.buyersCount2=0;
         Shop.totalPrice2=0;
+        System.out.println("=== магазин открыт");
 
         Dispatcher dispatcher=new Dispatcher();
         dispatcher.start();
@@ -46,6 +46,7 @@ public class Runner {
         //dispatcher.interrupt();
 
         System.out.println("=== магазин закрыт, обслужено "+buyerNum+" покупателей, касса "+Shop.totalPrice2+" руб");
+        Shop.opened=false;
 
     }
 

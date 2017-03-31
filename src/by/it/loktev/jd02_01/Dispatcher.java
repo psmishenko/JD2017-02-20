@@ -10,7 +10,7 @@ public class Dispatcher extends Thread {
     @Override
     public void run() {
 
-        while ( true ){
+        while ( Shop.opened ){
 
             if (  BuyersQueue.getCount()>cashiers.size()*5 && cashiers.size()<5) {
                 Cashier cashier=new Cashier("Кассир №"+Helper.getRandom(100,999));
