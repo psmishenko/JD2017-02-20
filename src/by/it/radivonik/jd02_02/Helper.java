@@ -1,9 +1,9 @@
-package by.it.radivonik.jd02_01;
+package by.it.radivonik.jd02_02;
 
-import java.util.Random;
+import java.util.*;
 
 /**
- * Created by Radivonik on 29.03.2017.
+ * Created by Radivonik on 31.03.2017.
  * Класс, реализующий вспомогательные методы для получения случайных чисел и работы с потоками
  */
 public class Helper {

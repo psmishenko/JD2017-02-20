@@ -1,10 +1,10 @@
-package by.it.radivonik.jd02_01;
+package by.it.radivonik.jd02_02;
 
 /**
- * Created by Radivonik on 29.03.2017.
+ * Created by Radivonik on 31.03.2017.
  * Класс, реализующий поведение покупателя в магазине
  */
-public class Buyer extends Thread implements IBuyer, IUseBasket {
+public class Buyer extends Thread implements IBuyer, IUseBasket{
     private int num;
     private boolean pensioner;
 
@@ -24,6 +24,7 @@ public class Buyer extends Thread implements IBuyer, IUseBasket {
         takeBasket();
         chooseGoods();
         putGoodsToBasket();
+        goToQueue();
         backBasket();
         goToOut();
     }
@@ -50,14 +51,30 @@ public class Buyer extends Thread implements IBuyer, IUseBasket {
         System.out.println(this + " вошел в торговый зал");
         int countGood = Helper.getRandom(1,4); // от 1 до 4-х продуктов
         for (int i = 0; i < countGood; i++) {
-            Helper.sleep(Helper.getRandom(500,2000),mul());
+            int timeout = Helper.getRandom(500,2000);
+            Helper.sleep(timeout,mul());
             Good good = Goods.getRandomGood();
             System.out.printf("%s выбрал товар %s с ценой %s\n",this,good.getName(),good.getPrice());
         }
         System.out.println(this + " завершил выбор товаров");
     }
 
-   @Override
+    @Override
+    public void goToQueue() {
+        System.out.println(this + " встал в очередь");
+        QueueBuyers.add(this);
+        synchronized (this) {
+            try {
+                this.wait();
+            }
+            catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println(this + " завершил обслуживание");
+    }
+
+    @Override
     public void backBasket() {
         Helper.sleep(Helper.getRandom(100,200),mul());
         System.out.println(this + " вернул корзину");
@@ -66,6 +83,9 @@ public class Buyer extends Thread implements IBuyer, IUseBasket {
     @Override
     public void goToOut() {
         System.out.println(this + " вышел из магазина");
+        synchronized (Dispatcher.monitorCount) {
+            Dispatcher.countBuyerComplet++;
+        }
     }
 
     // Множитель длительности операций для определенных категорий покупателей

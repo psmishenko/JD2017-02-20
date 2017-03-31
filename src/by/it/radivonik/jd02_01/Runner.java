@@ -4,50 +4,68 @@ import java.util.*;
 
 /**
  * Created by Radivonik on 29.03.2017.
+ * Основная программа
  */
 public class Runner {
-    private static int countBuyer = 0;
-    private static int planTimeSec = 60;
-    private static int pensionerRate = 4;
-    private static List<Buyer> buyerList = new ArrayList<>();
+    private final static int planTimeSec = 120; // моделирование процесса покупок в течениие 120 секунд
+    private final static int pensionerRate = 4; // частота встиречаемости пенсионеров
+    private static List<Buyer> buyerList = new ArrayList<>(); // список покупателей
 
     public static void main(String[] args) {
         Buyer buyer;
-        int numPensioneer = 0;
+        int countBuyer = 0;
+        int numPensioner = 0;
         int sec = 0;
+        int countBuyerInMinute = 0;
 
         while (sec < planTimeSec) {
-            int count = Helper.getRandom(2);
-            while (count > 0) {
-                if (countBuyer % pensionerRate == 0)
-                    numPensioneer = Helper.getRandom(0,3);
-                countBuyer++;
+            // определение количества покупателей в секунду
+            int delta = 1;
+            int secInMinute = sec % 60;
+            if ( secInMinute == 0) {      // в первую секунду около 10 покупателей
+                countBuyerInMinute = 0;
+                delta = 10;
+            }
+            else if (secInMinute > 30) {   // после 30-й секунды по хитрой формуле
+                delta = 0;
+                int t = 60 - secInMinute;
+                if (countBuyerInMinute <= 40 + (30 - t))
+                    delta = 1;
+            }
 
-                buyer = new Buyer(countBuyer,countBuyer % pensionerRate == numPensioneer);
+            int count = Helper.getRandom(2*delta);
+            while (count > 0) {
+                if (countBuyer % pensionerRate == 0)     // определение, кто будет пенсионером
+                    numPensioner = Helper.getRandom(0,3);
+
+                countBuyer++;
+                countBuyerInMinute++;
+
+                buyer = new Buyer(countBuyer,countBuyer % pensionerRate == numPensioner);
                 buyerList.add(buyer);
                 buyer.start();
 
                 count--;
-//                if (countBuyer == plan)
-//                    break;
             }
 
             Helper.sleep(1000);
             sec++;
+            // Вывод дополнительной информации
             if (sec % 10 == 0)
-                System.out.printf("---\n---Прошло %d секунд, покупателей в магазине - %d\n---\n",sec,countBuyerActive());
+                System.out.printf("---\n---Прошло %d секунд, покупателей всего: %d, в магазине: %d\n---\n",sec,countBuyer,countBuyerActive());
         }
 
         try {
             for (Buyer b : buyerList)
-                b.join();
+                b.join();  // присоединение к потокам для ожидания их завершения
         }
         catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Завершено");
+        System.out.printf("---\n---Завершено, покупателей всего: %d, в магазине: %d\n---\n",countBuyer,countBuyerActive());
     }
 
+    // Определение количества активных покупателей (находящихся в магазине)
     private static int countBuyerActive() {
         int c = 0;
         for (Buyer b : buyerList) {

@@ -1,7 +1,7 @@
-package by.it.radivonik.jd02_01;
+package by.it.radivonik.jd02_02;
 
 /**
- * Created by Radivonik on 29.03.2017.
+ * Created by Radivonik on 31.03.2017.
  * Класс, определяющий продукт (наименованиет и цена)
  */
 public class Good {
