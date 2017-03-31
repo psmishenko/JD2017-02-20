@@ -29,7 +29,7 @@ public class Runner {
             Helper.sleep(Helper.getRandom((int)(averInterval*0.8),(int)(averInterval*1.2))); // интервал между покупателями
 
             buyerNum++;
-            Buyer b=new Buyer(++buyerNum);
+            Buyer b=new Buyer(buyerNum);
             b.start();
 
 

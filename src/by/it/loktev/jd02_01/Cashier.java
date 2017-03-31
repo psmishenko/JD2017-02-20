@@ -33,7 +33,9 @@ public class Cashier implements Runnable {
             }
 
             Helper.sleep(Helper.getRandom(500,1000));
-            System.out.println(this+" закончил обслуживание "+b+", сумма чека "+b.getBacketPrice());
+            double backetPrice=b.getBacketPrice();
+            Shop.totalPrice2 +=backetPrice;
+            System.out.println(this+" закончил обслуживание "+b+", сумма чека "+backetPrice);
             synchronized (b){
                 b.notify();
             }

@@ -7,8 +7,9 @@ import java.util.Set;
 public class Buyer extends Thread implements IBuyer, IUseBacket {
 
     private int num;
+    public int queueNum;
 
-    private boolean isPensioner;
+    public boolean isPensioner;
     private double timeMul; // коэффициент увеличения времени на все операции
 
     private Map<Good,Double> backet;
@@ -45,11 +46,13 @@ public class Buyer extends Thread implements IBuyer, IUseBacket {
             System.out.println(this+" выбрал товар "+good.getName()+" ценой "+good.getPrice()+" "+quantity+" штук");
         }
         Helper.sleep(Helper.getRandom(400,700)*timeMul);
+        /*
         double backetPrice= getBacketPrice();
         synchronized (Shop.class) {
             Shop.totalPrice2 += backetPrice;
         }
-        System.out.println(this+" пошёл на кассу, оплатил "+backetPrice);
+        */
+        System.out.println(this+" пошёл на кассу");
     }
 
     @Override
