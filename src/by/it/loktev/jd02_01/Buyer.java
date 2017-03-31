@@ -80,11 +80,26 @@ public class Buyer extends Thread implements IBuyer, IUseBacket {
     }
 
     @Override
+    public void gotoQueue() {
+        BuyersQueue.add(this);
+        System.out.println(this+" стал в очередь");
+        synchronized (this){
+           try {
+               wait();
+           } catch (InterruptedException e) {
+               e.printStackTrace();
+           }
+       }
+       System.out.println(this+" завершил обслуживание в очереди");
+    }
+
+    @Override
     public void run() {
         Shop.buyersCount++;
         enterToMarket();
         takeBacket();
         chooseGoods();
+        gotoQueue();
         backBacket();
         goToOut();
         Shop.buyersCount--;

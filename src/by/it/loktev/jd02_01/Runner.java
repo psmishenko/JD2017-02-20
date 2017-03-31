@@ -26,6 +26,9 @@ public class Runner {
             buyerNum++;
             Buyer b=new Buyer(++buyerNum);
             b.start();
+
+            if (secondNum>0)
+                break;
         }
 
         System.out.println("=== закрываем вход, новых покупателей не впускаем");
