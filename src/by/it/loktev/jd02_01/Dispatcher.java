@@ -13,11 +13,11 @@ public class Dispatcher extends Thread {
         while ( true ){
 
             if (  BuyersQueue.getCount()>cashiers.size()*5 && cashiers.size()<5) {
-                Cashier cashier=new Cashier("Кассир");
+                Cashier cashier=new Cashier("Кассир №"+Helper.getRandom(100,999));
                 Thread cashierThread = new Thread(cashier);
                 cashierThread.start();
                 cashiers.add(cashier);
-                System.out.println("=== Кассир пришёл");
+                //System.out.println("=== Кассир пришёл");
             }
 
             Helper.sleep(500);
@@ -28,6 +28,6 @@ public class Dispatcher extends Thread {
 
     static public void removeCashier(Cashier cashier){
         cashiers.remove(cashier);
-        System.out.println("осталось кассиров: "+cashiers.size());
+        System.out.println("=== осталось кассиров: "+cashiers.size());
     }
 }

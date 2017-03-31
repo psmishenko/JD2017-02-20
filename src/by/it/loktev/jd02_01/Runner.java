@@ -33,7 +33,7 @@ public class Runner {
             b.start();
 
 
-            if (secondNum>4)
+            if (secondNum>=1)
                 break;
         }
 

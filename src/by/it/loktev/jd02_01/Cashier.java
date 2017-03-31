@@ -1,5 +1,7 @@
 package by.it.loktev.jd02_01;
 
+import java.util.Map;
+
 public class Cashier implements Runnable {
 
     private String name;
@@ -22,8 +24,16 @@ public class Cashier implements Runnable {
             if ( b==null )
                 break;
             System.out.println(this+" начал обслуживание "+b);
-            Helper.sleep(Helper.getRandom(2000,5000));
-            System.out.println(this+" закончил обслуживание "+b);
+
+            for ( Map.Entry<Good,Double> goodEntry : b.getBucket() ){
+                Helper.sleep(Helper.getRandom(200,500));
+                Good good=goodEntry.getKey();
+                Double quantity=goodEntry.getValue();
+                System.out.println(this+" взял из корзины товар "+good.getName()+" ценой "+good.getPrice()+" "+quantity+" штук");
+            }
+
+            Helper.sleep(Helper.getRandom(500,1000));
+            System.out.println(this+" закончил обслуживание "+b+", сумма чека "+b.getBacketPrice());
             synchronized (b){
                 b.notify();
             }

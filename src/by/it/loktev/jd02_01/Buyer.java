@@ -2,6 +2,7 @@ package by.it.loktev.jd02_01;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class Buyer extends Thread implements IBuyer, IUseBacket {
 
@@ -74,11 +75,14 @@ public class Buyer extends Thread implements IBuyer, IUseBacket {
     @Override
     public double getBacketPrice() {
         double price=0;
-        /*Set<Good,Double> backet=*/ //backet.entrySet().iterator();
         for ( Map.Entry<Good,Double> goodEntry : backet.entrySet() ){
            price+=goodEntry.getKey().getPrice()*goodEntry.getValue();
         }
         return price;
+    }
+
+    public Set<Map.Entry<Good,Double>> getBucket(){
+        return backet.entrySet();
     }
 
     @Override
