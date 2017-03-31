@@ -43,6 +43,7 @@ public class Buyer extends Thread implements IBuyer,Runnable,IUseBacket {
         enterToMarket();
         takeBacket();
         chooseGoods();
+        gotoQueue();
         backBacket();
         goToOut();
     }
@@ -64,12 +65,29 @@ public class Buyer extends Thread implements IBuyer,Runnable,IUseBacket {
             putGoodsToBacket(good.getName(),good.getPrice());
             backet.put(i,good);
         }
-        System.out.println(this+" купил товары: "+backet);
+        System.out.println(this+" выбрал товары: "+backet);
+    }
+
+    @Override
+    public void gotoQueue() {
+        System.out.println(this+" встал в очередь");
+        QBuyers.add(this);
+        synchronized (this){
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println(this+" завершил обслуживание");
     }
 
     @Override
     public void goToOut() {
         System.out.println(this+" вышел из магазина");
+        synchronized (Dispatcher.monitorCounters){
+            Dispatcher.countComplete++;
+        }
     }
 
     @Override
