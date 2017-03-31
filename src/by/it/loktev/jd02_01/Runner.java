@@ -4,10 +4,17 @@ public class Runner {
 
     public static void main(String[] args)  {
 
+        // работает ровно минуту + обслуживание уже вошедших
+
+        Shop.opened=true;
+        Shop.buyersCount2=0;
+        Shop.totalPrice2=0;
         System.out.println("=== магазин открыт");
 
-        Shop.buyersCount=0;
-        Shop.totalPrice=0;
+        Dispatcher dispatcher=new Dispatcher();
+        dispatcher.start();
+
+        //Thread cashierThread=null;
 
         int buyerNum=0;
         long startTime=System.currentTimeMillis();
@@ -24,17 +31,24 @@ public class Runner {
             Helper.sleep(Helper.getRandom((int)(averInterval*0.8),(int)(averInterval*1.2))); // интервал между покупателями
 
             buyerNum++;
-            Buyer b=new Buyer(++buyerNum);
+            Buyer b=new Buyer(buyerNum);
             b.start();
+
+
+            //if (secondNum>=1)
+            //    break;
         }
 
         System.out.println("=== закрываем вход, новых покупателей не впускаем");
 
-        while ( Shop.buyersCount>0 ){
+        while ( Shop.buyersCount2>0 ){
             Helper.sleep(100);
         }
 
-        System.out.println("=== магазин закрыт, обслужено "+buyerNum+" покупателей, касса "+Shop.totalPrice+" руб");
+        //dispatcher.interrupt();
+
+        System.out.println("=== магазин закрыт, обслужено "+buyerNum+" покупателей, выручка "+Shop.totalPrice2+" руб");
+        Shop.opened=false;
 
     }
 
