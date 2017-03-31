@@ -17,9 +17,9 @@ public class Runner {
         while (true) {
             delta = (System.currentTimeMillis() - startTime)/1000;
             if(delta < 30){
-                plan = (int)delta + 10;
+                plan = Helper.getRandom((int)delta,(int)delta + 10);
             }else if(delta < 60){
-                plan = 40 + (30 - (int)delta);
+                plan = Helper.getRandom(40 + (30 - (int)delta) - 10, 40 + (30 - (int)delta));
             }else{
                 startTime = System.currentTimeMillis();
                 System.out.println("///Новая минута: ///////////////////////////////////////////\n ");
