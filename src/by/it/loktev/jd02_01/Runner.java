@@ -9,7 +9,8 @@ public class Runner {
         Shop.buyersCount2=0;
         Shop.totalPrice2=0;
 
-        new Dispatcher().start();
+        Dispatcher dispatcher=new Dispatcher();
+        dispatcher.start();
 
         //Thread cashierThread=null;
 
@@ -41,6 +42,8 @@ public class Runner {
         while ( Shop.buyersCount2>0 ){
             Helper.sleep(100);
         }
+
+        //dispatcher.interrupt();
 
         System.out.println("=== магазин закрыт, обслужено "+buyerNum+" покупателей, касса "+Shop.totalPrice2+" руб");
 

@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Dispatcher extends Thread {
 
-    List<Cashier> cashiers=new ArrayList<>();
+    static List<Cashier> cashiers=new ArrayList<>();
 
     @Override
     public void run() {
@@ -14,7 +14,7 @@ public class Dispatcher extends Thread {
 
             if (  BuyersQueue.getCount()>cashiers.size()*5 && cashiers.size()<5) {
                 Cashier cashier=new Cashier("Кассир");
-                Thread cashierThread = new Thread();
+                Thread cashierThread = new Thread(cashier);
                 cashierThread.start();
                 cashiers.add(cashier);
                 System.out.println("=== Кассир пришёл");
@@ -24,5 +24,10 @@ public class Dispatcher extends Thread {
         }
 
 
+    }
+
+    static public void removeCashier(Cashier cashier){
+        cashiers.remove(cashier);
+        System.out.println("осталось кассиров: "+cashiers.size());
     }
 }

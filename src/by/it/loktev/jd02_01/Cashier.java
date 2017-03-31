@@ -29,6 +29,7 @@ public class Cashier implements Runnable {
             }
         }
         System.out.println(this+" закрыл кассу");
+        Dispatcher.removeCashier(this);
 
     }
 }
