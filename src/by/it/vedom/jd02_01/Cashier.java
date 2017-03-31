@@ -26,7 +26,6 @@ public class Cashier implements Runnable {
             synchronized (b) {
                 b.notify();
             }
-
             System.out.println(this+" завершил обслуживание для "+b);
         }
         System.out.println(this+ " закрыл кассу");

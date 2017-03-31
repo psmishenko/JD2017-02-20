@@ -23,5 +23,6 @@ public class Runner {
         System.out.println("--------------------------------");
         System.out.println("Все вошли");
         System.out.println("--------------------------------");
+
     }
 }
