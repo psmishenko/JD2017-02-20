@@ -120,6 +120,9 @@ public class Buyer extends Thread implements IBuyer, IUseBacket {
 
     @Override
     public String toString() {
-        return "Покупатель №"+num+(isPensioner?" (пенсионер)":"");
+        if (isPensioner)
+            return "Покуп/ПЕНС №"+num;
+        else
+            return "Покупатель №"+num;
     }
 }

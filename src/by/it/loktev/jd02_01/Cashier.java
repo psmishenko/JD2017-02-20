@@ -6,6 +6,8 @@ public class Cashier implements Runnable {
 
     private String name;
 
+    public Buyer currBuyer;
+
     public Cashier(String name) {
         this.name = name;
     }
@@ -18,14 +20,15 @@ public class Cashier implements Runnable {
     @Override
     public void run() {
 
+        currBuyer=null;
         System.out.println(this+" открыл кассу");
         while ( true ){
-            Buyer b=BuyersQueue.extract();
-            if ( b==null )
+            currBuyer=BuyersQueue.extract();
+            if ( currBuyer==null )
                 break;
-            System.out.println(this+" начал обслуживание "+b);
+            System.out.println(this+" начал обслуживание "+currBuyer);
 
-            for ( Map.Entry<Good,Double> goodEntry : b.getBucket() ){
+            for ( Map.Entry<Good,Double> goodEntry : currBuyer.getBucket() ){
                 Helper.sleep(Helper.getRandom(200,500));
                 Good good=goodEntry.getKey();
                 Double quantity=goodEntry.getValue();
@@ -33,12 +36,13 @@ public class Cashier implements Runnable {
             }
 
             Helper.sleep(Helper.getRandom(500,1000));
-            double backetPrice=b.getBacketPrice();
+            double backetPrice=currBuyer.getBacketPrice();
             Shop.totalPrice2 +=backetPrice;
-            System.out.println(this+" закончил обслуживание "+b+", сумма чека "+backetPrice);
-            synchronized (b){
-                b.notify();
+            System.out.println(this+" закончил обслуживание "+currBuyer+", сумма чека "+backetPrice);
+            synchronized (currBuyer){
+                currBuyer.notify();
             }
+            currBuyer=null;
         }
         System.out.println(this+" закрыл кассу");
         Dispatcher.removeCashier(this);

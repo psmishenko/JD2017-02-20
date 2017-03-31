@@ -4,6 +4,8 @@ public class Runner {
 
     public static void main(String[] args)  {
 
+        // работает ровно минуту + обслуживание уже вошедших
+
         Shop.opened=true;
         Shop.buyersCount2=0;
         Shop.totalPrice2=0;
@@ -33,8 +35,8 @@ public class Runner {
             b.start();
 
 
-            if (secondNum>=1)
-                break;
+            //if (secondNum>=1)
+            //    break;
         }
 
         System.out.println("=== закрываем вход, новых покупателей не впускаем");
@@ -45,7 +47,7 @@ public class Runner {
 
         //dispatcher.interrupt();
 
-        System.out.println("=== магазин закрыт, обслужено "+buyerNum+" покупателей, касса "+Shop.totalPrice2+" руб");
+        System.out.println("=== магазин закрыт, обслужено "+buyerNum+" покупателей, выручка "+Shop.totalPrice2+" руб");
         Shop.opened=false;
 
     }
