@@ -13,6 +13,9 @@ public class Goods {
             this.add(new Good("Кофе",3.90));
             this.add(new Good("Чай",10.3));
             this.add(new Good("Кола",12.0));
+            this.add(new Good("Пельмени",8.8));
+            this.add(new Good("Сметана",2.5));
+            this.add(new Good("Хлопья",5.3));
         }
     };
     protected static Good getRandomGood(){
