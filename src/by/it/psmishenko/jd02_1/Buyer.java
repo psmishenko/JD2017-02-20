@@ -9,18 +9,16 @@ import java.util.Map;
 public class Buyer extends Thread implements IBuyer,Runnable,IUseBacket {
     int num ;
     boolean pensioneer;
-    private Map<Integer,Good> backet = new HashMap<Integer, Good>(){
+    public Map<Integer,Good> backet = new HashMap<Integer, Good>(){
         @Override
         public String toString() {
             StringBuilder sb = new StringBuilder();
-            sb.append("( ");
             int k = 0;
             for (Map.Entry me:backet.entrySet()){
                 k++;
                 sb.append(me.getValue());
                if(k<backet.entrySet().size()) sb.append(", ");
             }
-            sb.append(" )");
             return sb.toString();
         }
     };
@@ -35,7 +33,7 @@ public class Buyer extends Thread implements IBuyer,Runnable,IUseBacket {
     public Buyer(int num) {
         super("Покупатель №"+num);
         this.num = num;
-        this.pensioneer = (num%4)==0;
+        this.pensioneer = Helper.getRandom(0,3)==3;
     }
 
     @Override
@@ -62,10 +60,9 @@ public class Buyer extends Thread implements IBuyer,Runnable,IUseBacket {
             Helper.sleep(timeout);
             Good good = Goods.getRandomGood();
             System.out.println(String.format("%s выбрал товар %s (Цена: %s  рублей)",this,good.getName(),+good.getPrice()));
-            putGoodsToBacket(good.getName(),good.getPrice());
-            backet.put(i,good);
+            putGoodsToBacket(i,good);
         }
-        System.out.println(this+" выбрал товары: "+backet);
+        System.out.println(this+" в корзине: "+backet);
     }
 
     @Override
@@ -98,10 +95,11 @@ public class Buyer extends Thread implements IBuyer,Runnable,IUseBacket {
     }
 
     @Override
-    public void putGoodsToBacket(String name, Double price) {
+    public void putGoodsToBacket(int i,Good good) {
         int timeout = Helper.getRandom(100,200)*mul();
         Helper.sleep(timeout);
-        System.out.printf("%s положил в корзину: %s (Цена: %s  рублей)\n",this,name,price);
+        backet.put(i,good);
+        System.out.printf("%s положил в корзину: %s (Цена: %s  рублей)\n",this,good.getName(),good.getPrice());
     }
 
     @Override

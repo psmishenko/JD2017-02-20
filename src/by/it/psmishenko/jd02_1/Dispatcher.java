@@ -10,7 +10,7 @@ public class Dispatcher extends Thread {
     static final Integer monitorCounters = 0;
     public static int countBuyers = 0;
     public static int countComplete = 0;
-    public static int plan = 10;
+    public static int plan = 100;
    static List<Thread> cashiers = new ArrayList<>();
 
     @Override
