@@ -6,5 +6,6 @@ package by.it.psmishenko.jd02_1;
 public interface IBuyer {
     void enterToMarket();
     void chooseGoods();
+    void gotoQueue();
     void goToOut();
 }

@@ -5,6 +5,6 @@ package by.it.psmishenko.jd02_1;
  */
 public interface IUseBacket {
     void takeBacket();
-    void putGoodsToBacket(String str,Double pr);
+    void putGoodsToBacket(int i,Good good);
     void backBacket();
 }
