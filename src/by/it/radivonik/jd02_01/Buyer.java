@@ -11,6 +11,7 @@ public class Buyer extends Thread implements IBuyer, IUseBasket {
     Buyer(int num, boolean pensioner) {
         super("Покупатель № " + num + (pensioner ? " (пенсионер)" : ""));
         this.num = num;
+        this.pensioner = pensioner;
     }
 
     @Override

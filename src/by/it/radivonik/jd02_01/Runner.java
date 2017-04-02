@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class Runner {
     private final static int planTimeSec = 120; // моделирование процесса покупок в течениие 120 секунд
-    private final static int pensionerRate = 4; // частота встиречаемости пенсионеров
+    private final static int pensionerRate = 4; // частота встречаемости пенсионеров
     private static List<Buyer> buyerList = new ArrayList<>(); // список покупателей
 
     public static void main(String[] args) {
