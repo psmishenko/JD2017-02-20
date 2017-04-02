@@ -59,10 +59,14 @@ public class Dispatcher implements Runnable {
     }
 
     static int getCountBuyerComplet() {
-        return countBuyerComplet;
+        synchronized (monitorDisp) {
+            return countBuyerComplet;
+        }
     }
 
     static double getSumItogo() {
-        return sumItogo;
+        synchronized (monitorDisp) {
+            return sumItogo;
+        }
     }
 }
