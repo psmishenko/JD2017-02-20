@@ -108,7 +108,7 @@ public class TaskB {
         }
         System.out.println("Исходное количество людей: " +list1);
         List<Integer> result1 = reformatList(list1, defaultIndex);
-        System.out.println("result: " + result + "Время обработки: \n" +timerForLinkedList);
+        System.out.println("result: " + result1 + "Время обработки: \n" +timerForLinkedList);
     }
 
 }
