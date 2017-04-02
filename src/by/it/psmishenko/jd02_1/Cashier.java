@@ -8,16 +8,19 @@ public class Cashier implements Runnable {
     public Cashier(int num) {
         name = "Кассир#"+num+"";
     }
+    public Buyer buyer;
     @Override
     public String toString() {
         return name;
     }
 
+
     @Override
     public void run() {
-        Buyer buyer;
+        Buyer tbuyer;
         System.out.println(this+" открыл кассу!!!");
-        while ((buyer=QBuyers.extract())!=null){
+        while ((tbuyer=QBuyers.extract())!=null){
+            buyer = tbuyer;
             System.out.println(this+" обслуживается -"+buyer);
             int timeout = Helper.getRandom(2000,5000);
             Helper.sleep(timeout);
@@ -29,7 +32,8 @@ public class Cashier implements Runnable {
                     System.out.println(this+" обслуживается -"+buyer+": пробиваем товар "+g);
                    bill += g.getPrice();
                 }
-                System.out.println(this+" - "+buyer+": чек: "+buyer.backet+", к оплате:"+bill);
+                Dispatcher.totalSum+=bill;
+                System.out.printf("%s - %s: чек: %s ,к оплате:%.2f\n",this,buyer,buyer.backet,bill);
                 System.out.println(this+" завершил обслуживание "+buyer);
             }
         }

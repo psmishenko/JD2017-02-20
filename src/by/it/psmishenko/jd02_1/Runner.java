@@ -8,6 +8,7 @@ public class Runner {
     public static void main(String[] args) {
         Buyer buyer;
         new Dispatcher().start();
+
         while(Dispatcher.countBuyers<Dispatcher.plan) {
             int count = Helper.getRandom(2);
             while (count>0) {
