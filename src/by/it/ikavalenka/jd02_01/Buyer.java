@@ -30,6 +30,14 @@ class Buyer extends Thread implements IBuyer, IUseBacket {
     }
 
     @Override
+    public void takeBacket() {
+        int timeout = Helper.getRandom(100, 200);
+        Helper.sleep(timeout);
+        System.out.println(this + " customer #" + sin + "take the basket");
+
+    }
+
+    @Override
     public void chooseGoods() {
         System.out.println(this + " entered in the shooping mall");
         int max = Helper.getRandom(1, 9);
@@ -49,23 +57,10 @@ class Buyer extends Thread implements IBuyer, IUseBacket {
     }
 
     @Override
-    public void goToOut() {
-        System.out.println(this + "out from market");
-    }
-
-    @Override
-    public void takeBacket() {
-        int timeout = Helper.getRandom(100, 200);
-        Helper.sleep(timeout);
-        System.out.println(this + " customer #" + sin + "take the basket");
-
-    }
-
-    @Override
     public void putGoodsToBucket() {
         int timeout = Helper.getRandom(100, 200);
         Helper.sleep(timeout);
-        System.out.println("basket is full" + this);            //как добавить список товара
+        System.out.println("basket is full" + this );            //как добавить список товара
 
     }
 
@@ -75,4 +70,10 @@ class Buyer extends Thread implements IBuyer, IUseBacket {
         Helper.sleep(timeout);
         System.out.println(this + "basket is empty");
     }
+
+    @Override
+    public void goToOut() {
+        System.out.println(this + "out from market");
+    }
+
 }

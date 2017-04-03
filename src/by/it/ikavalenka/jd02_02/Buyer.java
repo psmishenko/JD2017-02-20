@@ -1,8 +1,11 @@
 package by.it.ikavalenka.jd02_02;
 
-class Buyer extends Thread implements IBuyer {
+import java.util.Random;
+
+class Buyer extends Thread implements IBuyer, IUseBacket {
 
     private int sin;
+    Backet backet;
 
     Buyer(int sin) {
         super("Customer # " + sin);
@@ -18,27 +21,36 @@ class Buyer extends Thread implements IBuyer {
     public void run() {
         enterToMarket();
         chooseGoods();
-        goToQueue();
         goToOut();
-
+        takeBacket();
+        putGoodsToBucket();
+        backBacket();
     }
 
     @Override
     public void enterToMarket() {
-        System.out.println(this + "entered in the market");
+        System.out.println(this + "entered in market");
+    }
+
+    @Override
+    public void takeBacket() {
+        int timeout = Helper.getRandom(100, 200);
+        Helper.sleep(timeout);
+        System.out.println(this + " customer #" + sin + "take the basket");
+
     }
 
     @Override
     public void chooseGoods() {
-        System.out.println(this + " entered in the  shooping mall");
+        System.out.println(this + " entered in the shooping mall");
         int max = Helper.getRandom(1, 9);
-        System.out.println(this + "  want to choose: " + max + " ex.");
+        System.out.println(this.getName() + "  want to choose: " + max + " ex.");
         for (int i = 1; i <= max; i++) {
-            int timeout = Helper.getRandom(100, 200);
+            int timeout = Helper.getRandom(150, 200);
             Helper.sleep(timeout);
             Good good = Goods.getRandomGood();
             System.out.println(
-                    String.format("%s choose goods %s  price:%s r.",
+                    String.format("%s   choose good %s  price:%s r.",
                             this,
                             good.getName(),
                             good.getPrice())
@@ -48,24 +60,26 @@ class Buyer extends Thread implements IBuyer {
     }
 
     @Override
-    public void goToOut() {
-        System.out.println(this + "out from market");
-        synchronized (Dispitcher.monitorCount) {
-            Dispitcher.countComplete++;
-        }
+    public void putGoodsToBucket() {
+
+        int timeout = Helper.getRandom(100, 200);
+        Good good = Goods.getRandomGood();
+        Helper.sleep(timeout);
+
+        System.out.println(this + "basket is full"+ good.getName()+good.getPrice());            //как добавить список товара
+
     }
 
     @Override
-    public void goToQueue() {
-        System.out.println(this + "Customer  stay in  the queue");
-        BuyerQueue.add(this);
-        synchronized (this) {
-            try {
-                wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            System.out.println(this + "Service is completed");
-        }
+    public void backBacket() {
+        int timeout = Helper.getRandom(100, 200);
+        Helper.sleep(timeout);
+        System.out.println(this + "basket is empty");
     }
+
+    @Override
+    public void goToOut() {
+        System.out.println(this + "out from market");
+    }
+
 }

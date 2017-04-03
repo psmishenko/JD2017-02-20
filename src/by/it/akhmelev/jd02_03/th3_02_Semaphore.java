@@ -32,7 +32,7 @@ public class th3_02_Semaphore {
 
     public static void main(String[] args) {
         ExecutorService executors= Executors.newFixedThreadPool(10);
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 11; i++) {
             executors.execute(new Run("Поток №"+i));
         }
         executors.shutdown();
