@@ -8,5 +8,5 @@ public interface Employee {
     void signDocument();          //подписал документы
     void smoke();                 //перекур
     void miting();                //на совещании
-    void quit(boolean wish);      //уволился, уволили
+    void report();                //отчет о проделанной работе
 }

@@ -5,15 +5,11 @@ public class Director extends AbstractEmployee {
         super(name, age, workExperience);
     }
 
-    /*public void dismiss(Employee emp) {
-        emp.quit(false);
-        System.out.println("Уволил сотрудника");
-    }*/
-
-    @Override
-    public void quit(boolean wish) {
-        if(wish == false) {
-            System.out.println(getName() + " Уволил сотрудника");
+    public  void quit(AbstractEmployee employee) {
+        if(!(employee instanceof Director)) {
+            System.out.println(getName() + " Уволил сотрудника " + employee.getName());
+        }else {
+            System.out.println(getName() + " Не может уволить такого сотрудника");
         }
     }
 }

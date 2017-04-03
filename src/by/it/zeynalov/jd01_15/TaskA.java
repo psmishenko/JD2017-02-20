@@ -11,9 +11,9 @@ public class TaskA {
         String path = root + "/src/by/it/zeynalov/jd01_15/";
         String filename = path + "matrix.txt";
 
-        try (FileWriter fos = new FileWriter(filename);
-             PrintWriter pw = new PrintWriter(fos)) {
 
+            try (FileWriter fos = new FileWriter(filename);
+                 PrintWriter pw = new PrintWriter(fos)) {
             int[][] mass = new int[4][4];
             for (int i = 0; i < mass.length; i++) {
                 for (int j = 0; j < mass.length; j++) {

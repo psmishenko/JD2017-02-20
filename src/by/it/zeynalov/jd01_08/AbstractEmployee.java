@@ -5,6 +5,7 @@ public abstract class AbstractEmployee implements Employee {
     private int age;              //возраст
     private float workExperience; //стаж работы
 
+
     public AbstractEmployee(String name, int age, float workExperience) {
         this.name = name;
         this.age = age;
@@ -13,6 +14,14 @@ public abstract class AbstractEmployee implements Employee {
 
     public String getName() {
         return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public float getWorkExperience() {
+        return workExperience;
     }
 
     @Override
@@ -50,10 +59,8 @@ public abstract class AbstractEmployee implements Employee {
         System.out.println(name + " На совещании");
     }
 
-    public void quit(boolean wish) {
-        if (wish) {
-            System.out.println(name + " Уволился по собственному желанию");
-        }
+    @Override
+    public void report() {
     }
 
     public void printInfo() {
