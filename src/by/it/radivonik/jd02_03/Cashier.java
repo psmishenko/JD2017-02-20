@@ -4,11 +4,12 @@ package by.it.radivonik.jd02_03;
  * Created by Radivonik on 31.03.2017.
  * Класс, реализующий функционал кассира
  */
-public class Cashier extends Thread {
+public class Cashier implements Runnable {
+    private String name;
     private int num;
 
     public Cashier(int num) {
-        super("Кассир № " + num);
+       name = "Кассир № " + num;
         this.num = num;
     }
 
@@ -29,6 +30,7 @@ public class Cashier extends Thread {
                 Dispatcher.addSumItogo(itogo);
                 check = check + getState(String.format("%-15s %6.2f","ИТОГО",itogo),true);
                 System.out.print(check);
+                b.setiWait(false);
                 b.notify();
             }
 //            System.out.println(this + " завершил обслуживание " + b);
@@ -40,7 +42,7 @@ public class Cashier extends Thread {
 
     @Override
     public String toString() {
-        return getName();
+        return name;
     }
 
     private String getState(String str, boolean printExt) {

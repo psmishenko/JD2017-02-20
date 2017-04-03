@@ -1,13 +1,14 @@
 package by.it.radivonik.jd02_03;
 
 import java.util.*;
+import java.util.concurrent.*;
 
 /**
  * Created by Radivonik on 31.03.2017.
  * Класс, реализующий хранение списка продуктов и случайный выбор из списка
  */
 public class Goods {
-    private static Set<Good> goods = new HashSet<Good>() {
+    private static CopyOnWriteArrayList<Good> goods = new CopyOnWriteArrayList<Good>() {
         {
             this.add(new Good("Молоко",0.5));
             this.add(new Good("Хлеб",0.4));
@@ -33,8 +34,8 @@ public class Goods {
     };
 
     protected static Good getRandomGood() {
-        List<Good> goodList = new ArrayList<>(goods);
-        int pos = Helper.getRandom(goodList.size()-1);
-        return goodList.get(pos);
+        //List<Good> goodList = new ArrayList<>(goods);
+        int pos = Helper.getRandom(goods.size()-1);
+        return goods.get(pos);
     }
 }

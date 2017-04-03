@@ -9,6 +9,8 @@ import java.util.*;
 public class Buyer extends Thread implements IBuyer, IUseBasket{
     private int num;
     private boolean pensioner;
+    private boolean iWait;
+    private int numQueue;
     public List<Good> goods = new ArrayList<>();
 
     Buyer(int num, boolean pensioner) {
@@ -19,7 +21,7 @@ public class Buyer extends Thread implements IBuyer, IUseBasket{
 
     @Override
     public String toString() {
-        return getName();
+        return getName() + "(" + numQueue + ")";
     }
 
     @Override
@@ -67,9 +69,10 @@ public class Buyer extends Thread implements IBuyer, IUseBasket{
     @Override
     public void goToQueue() {
         QueueBuyers.add(this);
-//        System.out.println("->" + this + " встал в очередь: " + QueueBuyers.queueToString());
+        System.out.println("->" + this + " встал в очередь: " + QueueBuyers.queueToString());
         synchronized (this) {
             try {
+                iWait = true;
                 this.wait();
             }
             catch (InterruptedException e) {
@@ -88,9 +91,7 @@ public class Buyer extends Thread implements IBuyer, IUseBasket{
     @Override
     public void goToOut() {
 //        System.out.println("<-" + this + " вышел из магазина");
-        synchronized (Dispatcher.monitorDisp) {
-            Dispatcher.addCountBuyerCoplete(1);
-        }
+        Dispatcher.addCountBuyerCoplete(1);
     }
 
     // Множитель длительности операций для определенных категорий покупателей
@@ -101,5 +102,17 @@ public class Buyer extends Thread implements IBuyer, IUseBasket{
 
     public boolean isPensioner() {
         return pensioner;
+    }
+
+    public void setiWait(boolean iWait) {
+        this.iWait = iWait;
+    }
+
+    public int getNumQueue() {
+        return numQueue;
+    }
+
+    public void setNumQueue(int numQueue) {
+        this.numQueue = numQueue;
     }
 }
