@@ -15,8 +15,8 @@ public class QueueBuyers {
             new Comparator<Buyer>() {
                 @Override
                 public int compare(Buyer o1, Buyer o2) {
-                    //int comp = -Boolean.compare(o1.isPensioner(),o2.isPensioner());
-                    int comp = o2.getNumQueue() - o1.getNumQueue();
+                    int comp = -Boolean.compare(o1.isPensioner(),o2.isPensioner());
+                    //int comp = o2.getNumQueue() - o1.getNumQueue();
                     return comp;
                 }
             });
