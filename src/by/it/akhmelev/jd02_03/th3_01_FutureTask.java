@@ -19,9 +19,14 @@ public class th3_01_FutureTask {
         };
 
         FutureTask<Integer> task = new FutureTask<>(callTh);
-        task.run();
+        new Thread(task);
+//        task.run();
         try {
-            System.out.println("Result:"+task.get());
+//            System.out.println("Result:"+task.get());
+            System.out.println("Result:");
+
+            System.out.println(+task.get()+ " OK");
+
         } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }

@@ -17,12 +17,13 @@ class Goods {
             this.add(new Good("Meat",4.8));
             this.add(new Good("Bake",5.1));
             this.add(new Good("Pizza",13.1));
+
         }
     };
 
     static Good getRandomGood(){
         List<Good> goods=new ArrayList<>(listGoods);
-        int position=Helper.getRandom(goods.size()-1);
+        int position= Helper.getRandom(goods.size()-1);
         return goods.get(position);
     }
 
