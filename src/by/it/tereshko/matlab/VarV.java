@@ -1,6 +1,5 @@
 package by.it.tereshko.matlab;
 
-import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,64 +7,77 @@ public class VarV extends Var {
 
     public Double[] vector;
 
+    private void checkSize(VarV v1, VarV v2) throws MathException {
+        if (v1.vector.length != v2.vector.length) {
+            throw new MathException("Vectors are of various sizes");
+        }
+    }
+
     @Override
-    public Var add(Var var) {
+    public Var add(Var var) throws MathException {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] + ((VarF) var).value;
             }
         } else if (var instanceof VarV) {
+            checkSize(this, (VarV) var);
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] + ((VarV) var).vector[i];
             }
         } else return super.add(var);
         return new VarV(res);
-
-//        System.out.println("Caught addition of vector with something");
+//        System.out.println("Caught addition of vector and something");
 //        return null;
     }
 
     @Override
-    public Var sub(Var var) {
+    public Var sub(Var var) throws MathException {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] - ((VarF) var).value;
             }
         } else if (var instanceof VarV) {
+            checkSize(this, (VarV) var);
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] - ((VarV) var).vector[i];
             }
         } else return super.sub(var);
+
         return new VarV(res);
     }
 
     @Override
-    public Var mul(Var var) {
+    public Var mul(Var var) throws MathException {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] * ((VarF) var).value;
             }
         } else if (var instanceof VarV) {
+            checkSize(this, (VarV) var);
             Double sum = 0.0;
             for (int i = 0; i < res.length; i++) {
                 sum = sum + vector[i] * ((VarV) var).vector[i];
             }
             return new VarF(sum);
         } else return super.mul(var);
+
         return new VarV(res);
     }
 
-    @Override
-    public Var div(Var var) {
+    public Var div(Var var) throws MathException {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
+            if (((VarF) var).value == 0) {
+                throw new MathException("Division by zero.");
+            }
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] / ((VarF) var).value;
             }
         } else return super.div(var);
+
         return new VarV(res);
     }
 
@@ -74,13 +86,17 @@ public class VarV extends Var {
         vector = new Double[copyFrom.vector.length];
 //        for (int i = 0; i < copyFrom.vector.length; i++) {
 //            vector[i] = copyFrom.vector[i];
-//        } the same as System.arraycopy(copyFrom.vector, 0, vector, 0, vector.length);
+//        } //the same as System.arraycopy(copyFrom.vector, 0, vector, 0, vector.length);
         System.arraycopy(copyFrom.vector, 0, vector, 0, vector.length);
     }
 
     public VarV(Double[] vector) {
         this.vector = new Double[vector.length];
         System.arraycopy(vector, 0, this.vector, 0, vector.length);
+    }
+
+    public VarV(String value) {
+        fromString(value);
     }
 
     @Override
@@ -95,17 +111,13 @@ public class VarV extends Var {
             m.reset();
             int i = 0;
             while (m.find()) {
-                String one = m.group();
-                vector[i] = Double.parseDouble(one);
+                String oneValue = m.group();
+                vector[i] = Double.parseDouble(oneValue);
                 i++;
             }
         } else {
-            new Error("Error:" + value + " is not a vector");
+            new MathException("Error: " + value + " is not a vector");
         }
-    }
-
-    public VarV(String value) {
-        fromString(value);
     }
 
     @Override

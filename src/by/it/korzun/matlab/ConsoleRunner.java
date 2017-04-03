@@ -7,14 +7,16 @@ public class ConsoleRunner {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Parser parser = new Parser();
-        System.out.println("Введите выражение(или: exit - выйти, printvar - вывести все созданные переменные, sortvar -  " +
+        Var.load();
+        System.out.println("Введите выражение(или: sae - сохранить и выйти(!Без этой комманды все новые данные будут потеряны!), printvar - вывести все созданные переменные, sortvar -  " +
                 "\nсортировать и вывести): ");
         label:
         while (true) {
             try {
                 String str = scanner.nextLine();
                 switch (str) {
-                    case "exit":
+                    case "sae":
+                        Var.saveOnExit();
                         scanner.close();
                         break label;
                     case "printvar":
@@ -29,7 +31,7 @@ public class ConsoleRunner {
                         break;
                 }
             } catch (Exception e) {
-                new Error("Некорректный ввод");
+                new MathException("Некорректный ввод");
             }
 
         }

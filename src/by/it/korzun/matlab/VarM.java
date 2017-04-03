@@ -1,5 +1,6 @@
 package by.it.korzun.matlab;
 
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -7,9 +8,9 @@ public class VarM extends Var{
     private double[][] matrix;
 
     VarM(String str) {
-        Pattern patternArgs = Pattern.compile("[{}]");
+        Pattern patternArgs = Pattern.compile("[{}\\[\\]]");
         Matcher matcher = patternArgs.matcher(str);
-        String[] strings = str.split("},\\{");
+        String[] strings = str.split("[}\\]],\\s?[\\[{]");
         for (int i = 0; i < strings.length; i++) {
             matcher = patternArgs.matcher(strings[i]);
             strings[i] = matcher.replaceAll("");
@@ -29,7 +30,7 @@ public class VarM extends Var{
     }
 
     @Override
-    public Var add(Var var) {
+    public Var add(Var var) throws MathException{
         if(var instanceof  VarF){
             for (int i = 0; i < this.matrix.length; i++) {
                 for (int j = 0; j < this.matrix[i].length; j++) {
@@ -46,8 +47,7 @@ public class VarM extends Var{
                 }
                 return this;
             }else{
-                new Error("Несовпадающие размеры");
-                return null;
+                throw new MathException("Несовпадающие размеры:");
             }
         }
         else{
@@ -56,7 +56,7 @@ public class VarM extends Var{
     }
 
     @Override
-    public Var sub(Var var) {
+    public Var sub(Var var) throws MathException{
         if(var instanceof VarM){
             if(((VarM) var).matrix.length == this.matrix.length && ((VarM) var).matrix[0].length == this.matrix[0].length) {
                 for (int i = 0; i < this.matrix.length; i++) {
@@ -66,8 +66,7 @@ public class VarM extends Var{
                 }
                 return this;
             }else{
-                new Error("Несовпадающие размеры");
-                return null;
+                throw new MathException("Несовпадающие размеры:");
             }
 
         }
@@ -85,7 +84,7 @@ public class VarM extends Var{
     }
 
     @Override
-    public Var mul(Var var) {
+    public Var mul(Var var) throws MathException{
         if(var instanceof  VarF){
             for (int i = 0; i < this.matrix.length; i++) {
                 for (int j = 0; j < this.matrix[i].length; j++) {
@@ -107,7 +106,7 @@ public class VarM extends Var{
     }
 
     @Override
-    public Var div(Var var) {
+    public Var div(Var var) throws MathException{
         return super.div(var);
     }
 
@@ -118,13 +117,22 @@ public class VarM extends Var{
 
     @Override
     public String toString() {
-        String str = "";
-        for (double[] aMatrix : matrix) {
+        String str = "[";
+        for (int i = 0; i < matrix.length; i++) {
+            str += "[";
             for (int j = 0; j < matrix[0].length; j++) {
-                str += aMatrix[j] + " ";
+                if(j != matrix[0].length - 1) {
+                    str += matrix[i][j] + ", ";
+                }else{
+                    if(i != matrix.length - 1) {
+                        str += matrix[i][j] + "], ";
+                    }else{
+                        str += matrix[i][j] + "]";
+                    }
+                }
             }
-            str += "\n";
         }
+        str += "]";
         return str;
     }
 }

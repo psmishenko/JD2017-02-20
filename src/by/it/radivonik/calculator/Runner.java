@@ -6,7 +6,7 @@ import java.util.regex.*;
  * Created by Radivonik on 19.03.2017.
  */
 public class Runner {
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         System.out.println("Задания к занятиям JD01_09, JD01_11.1");
         System.out.println("Вариант А:");
         oneRes("3.8+6.2");
@@ -25,19 +25,37 @@ public class Runner {
         oneRes("{2,3,4}+{5,6,7}");
         oneRes("{2,3,4}-{5,6,7}");
         System.out.println("Вариант C:");
-        System.out.println("Матрицы ПОКА не готовы");
+        System.out.println("Матрицы ПОКА- не готовы");
 
-        System.out.println("\nЗадания к занятию JD01_11.2");
+        System.out.println("\nЗадания к занятию JD01_11 (переменные)");
         System.out.println("Вариант А:");
         Calc.calculate("A=3.8");
         Calc.calculate("B={-2,3.5,4}");
         Calc.calculate("cc=-3.8");
         Calc.calculate("c1={-2.0,-3.5,0.00,4,9}");
-        System.out.println(Var.vars);
         System.out.println("Вариант B:");
         oneRes("printvar");
         System.out.println("Вариант C:");
         oneRes("sortvar");
+
+        System.out.println("\nЗадания к занятию JD01_13 (исключения)");
+        oneRes("{2,3,4}/0");
+        oneRes("{2,3,4}+{5,6}");
+        oneRes("{2,3,4}/{}");
+        oneRes("5/{2,3,4,6}");
+        oneRes("X=");
+
+        System.out.println("\nЗадания к занятию JD01_15 (потоки ввода вывода)");
+        System.out.println("Смотрите файл vars.txt");
+        try {
+            new Var().saveToFile();
+            new Var().loadFromFile();
+        }
+        catch (Exception e) {
+            System.out.println("Ошибка: " + e.getMessage());
+        }
+        oneRes("printvar");
+        System.out.println("Смотрите файл log.txt");
      }
 
     private static void oneRes(String exp, String val) {

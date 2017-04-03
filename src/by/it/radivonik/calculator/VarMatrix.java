@@ -5,7 +5,7 @@ package by.it.radivonik.calculator;
  */
 public class VarMatrix extends Var {
     @Override
-    public void fromString(String value) {
+    public void fromString(String value) throws ParseException {
         super.fromString(value);
     }
 

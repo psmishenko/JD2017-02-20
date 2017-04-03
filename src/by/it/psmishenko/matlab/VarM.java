@@ -6,11 +6,15 @@ import java.util.regex.Pattern;
 
 public class VarM extends Var{
     public Double[][] matrix;
-
+    private void checkSize(VarM m1, VarM m2)throws MathException{
+        if(m1.matrix.length!=m2.matrix.length||m1.matrix[0].length!=m2.matrix[0].length){
+            throw new MathException("Разный размер у матриц");
+        }
+    }
 
 // operations +-*/
     @Override
-    public Var add(Var var) {
+    public Var add(Var var) throws MathException {
         Double[][] res = new Double[matrix.length][matrix[0].length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
@@ -19,6 +23,7 @@ public class VarM extends Var{
                 }
             }
         }else if(var instanceof VarM ) {
+            checkSize(this, (VarM) var);
             for (int i = 0; i < res.length; i++) {
                 for (int j = 0; j < res[0].length; j++) {
                     res[i][j] = matrix[i][j] + ((VarM) var).matrix[i][j];
@@ -30,7 +35,7 @@ public class VarM extends Var{
     }
 
     @Override
-    public Var sub(Var var) {
+    public Var sub(Var var) throws MathException {
         Double[][] res = new Double[matrix.length][matrix[0].length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
@@ -39,6 +44,7 @@ public class VarM extends Var{
                 }
             }
         } else if(var instanceof VarM ){
+            checkSize(this, (VarM) var);
             for (int i = 0; i < res.length; i++) {
                 for (int j = 0; j < res[0].length; j++) {
                     res[i][j] = matrix[i][j] + ((VarM) var).matrix[i][j];
@@ -50,7 +56,7 @@ public class VarM extends Var{
     }
 
     @Override
-    public Var mul(Var var) {
+    public Var mul(Var var) throws MathException {
         Double[][] res = new Double[matrix.length][matrix[0].length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
@@ -59,6 +65,7 @@ public class VarM extends Var{
                 }
             }
         } else if(var instanceof VarM ){
+            checkSize(this, (VarM) var);
             for (int i = 0; i < res.length; i++) {
                 for (int j = 0; j < res[0].length; j++) {
                     Double sum = 0.0;
@@ -69,6 +76,8 @@ public class VarM extends Var{
                 }}
         }
         else if(var instanceof VarV ){
+            if(this.matrix.length!=((VarV) var).vector.length)
+                throw new MathException("Число столбцов в матрице не совпадает с числом строк в векторе");
             Double[] resV = new Double[matrix.length];
             for (int i = 0; i < matrix.length; i++) {
                 Double sum = 0.0;
@@ -83,9 +92,10 @@ public class VarM extends Var{
     }
 
     @Override
-    public Var div(Var var) {
+    public Var div(Var var) throws MathException {
         Double[][] res = new Double[matrix.length][matrix[0].length];
         if (var instanceof VarF) {
+            if(((VarF)var).value==0) throw new MathException("Деление на ноль");
             for (int i = 0; i < res.length; i++) {
                 for (int j = 0; j <res[0].length; j++) {
                     res[i][j] = matrix[i][j] / ((VarF) var).value;
@@ -110,12 +120,12 @@ public class VarM extends Var{
         }
     }
 
-    public VarM(String str) {
+    public VarM(String str) throws MathException {
         fromString(str);
     }
 
     @Override
-    public void fromString(String str) {
+    public void fromString(String str) throws MathException {
         Pattern p = Pattern.compile(Patterns.exMat);
         if (p.matcher(str).matches()) {
             p = Pattern.compile(Patterns.exVal);
@@ -136,7 +146,7 @@ public class VarM extends Var{
                     matrix[i][j] = Double.parseDouble(oneValue);
                 }
             }
-        }else new Error("Ошибка: " + str + "  не является матрицей");
+        }else throw new MathException(str + "  не является матрицей");
     }
 
 

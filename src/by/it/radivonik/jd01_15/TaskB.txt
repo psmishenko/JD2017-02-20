@@ -1,0 +1,93 @@
+  1 package by.it.radivonik.jd01_15;
+  2 
+  3 import java.io.*;
+  4 import java.util.*;
+  5 import java.util.regex.*;
+  6 
+  7 
+  8 public class TaskB {
+  9     public void run() {
+ 10         String path = System.getProperty("user.dir") + "/src/by/it/radivonik/jd01_15";
+ 11         String filename = path + "/TaskB.java";
+ 12 
+ 13         
+ 14         StringBuilder strSrc = new StringBuilder();
+ 15         try (BufferedReader fr = new BufferedReader(new FileReader(filename))) {
+ 16            String line;
+ 17            while ((line = fr.readLine()) != null)
+ 18                strSrc.append(line + "\n");
+ 19         }
+ 20         catch (IOException e) {
+ 21             System.out.println(e.getMessage());
+ 22         }
+ 23 
+ 24         
+ 25         StringBuilder strOut = new StringBuilder();
+ 26         Pattern p = Pattern.compile("\\\"|\\/\\/|\\n|\\/\\*|\\*\\/");
+ 27         Matcher m = p.matcher(strSrc.toString());
+ 28         Comments com = new Comments();
+ 29         while (m.find()) {
+ 30             
+ 31             if (m.group().equals("\"") && !(m.start() > 0 && (strSrc.charAt(m.start() - 1) == '\\')) &&
+ 32                 !com.isCommentOneLine && !com.isCommentMultiLine)
+ 33                 com.isQuotes = !com.isQuotes; 
+ 34             
+ 35             else if (m.group().equals("//") && !com.isQuotes && !com.isCommentOneLine && !com.isCommentMultiLine) {
+ 36                 strOut.append(strSrc.substring(com.posCopyBegin, m.start()));
+ 37                 com.isCommentOneLine = true; 
+ 38                 com.posCopyBegin = m.start(); 
+ 39             }
+ 40             
+ 41             else if (m.group().equals("\n") && com.isCommentOneLine) {
+ 42                 com.isCommentOneLine = false; 
+ 43                 com.posCopyBegin = m.start(); 
+ 44             }
+ 45             
+ 46             else if (m.group().equals("/*") && !com.isQuotes && !com.isCommentOneLine && !com.isCommentMultiLine) {
+ 47                 strOut.append(strSrc.substring(com.posCopyBegin, m.start()));
+ 48                 com.isCommentMultiLine = true; 
+ 49                 com.posCopyBegin = m.start(); 
+ 50             }
+ 51             
+ 52             else if (m.group().equals("*/") && com.isCommentMultiLine) {
+ 53                 com.isCommentMultiLine = false; 
+ 54                 com.posCopyBegin = m.start() + 2; 
+ 55             }
+ 56         }
+ 57         strOut.append(strSrc.substring(com.posCopyBegin, strSrc.length()));
+ 58 
+ 59         
+ 60         List<String> listOut = new ArrayList<String>() {
+ 61             @Override
+ 62             public String toString() {
+ 63                 int n = 1;
+ 64                 StringBuilder res = new StringBuilder();
+ 65                 for (String s: this) {
+ 66                     res.append(String.format("%3d %s\n",n,s));
+ 67                     n++;
+ 68                 }
+ 69                 return res.toString();
+ 70             }
+ 71         };
+ 72         listOut.addAll(Arrays.asList(strOut.toString().split("\\n")));
+ 73 
+ 74         
+ 75         System.out.print(listOut);
+ 76 
+ 77         
+ 78         try (PrintWriter prn = new PrintWriter(new FileWriter(filename.replace(".java",".txt")))) {
+ 79             prn.print(listOut);
+ 80         }
+ 81         catch (IOException e) {
+ 82             System.out.println("Ошибка: " + e.getMessage());
+ 83         }
+ 84     }
+ 85 
+ 86     
+ 87     private class Comments {
+ 88         boolean isQuotes = false;
+ 89         boolean isCommentOneLine = false;
+ 90         boolean isCommentMultiLine = false;
+ 91         int posCopyBegin = 0;
+ 92     }
+ 93 }

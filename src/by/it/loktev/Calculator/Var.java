@@ -1,6 +1,8 @@
 package by.it.loktev.Calculator;
 
-abstract public class Var extends ExpressionPart implements IOperation, IVariable {
+import java.io.Serializable;
+
+abstract public class Var extends ExpressionPart implements IOperation, IVariable/*, Serializable*/ {
 
     @Override
     public Var add(Var arg) throws CalculatorException {
@@ -35,6 +37,16 @@ abstract public class Var extends ExpressionPart implements IOperation, IVariabl
     @Override
     boolean isSubExprEnd() {
         return true;
+    }
+
+    @Override
+    public String serialize() {
+        return toString();
+    }
+
+    @Override
+    public void unserialize(String s) throws CalculatorException {
+            fromString(s);
     }
 
 }

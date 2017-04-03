@@ -6,4 +6,7 @@ public interface IVariable {
 
     void fromString(String str) throws CalculatorException;
 
+    String serialize();
+    void unserialize(String s) throws CalculatorException;
+
 }

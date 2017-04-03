@@ -1,0 +1,70 @@
+01 package by.it.prigozhanov.jd01_15;
+02 
+03 import java.io.*;
+04 import java.util.regex.Matcher;
+05 import java.util.regex.Pattern;
+06 
+07 
+08 public class TaskB {
+09     
+10     public static void main(String[] args) {
+11         StringBuilder sb = new StringBuilder();
+12         String root = System.getProperty("user.dir");
+13         String path = root + "/src/by/it/prigozhanov/jd01_15/";
+14         String filenameIn = "taskB.java";
+15         String filenameOut = "taskB.txt";
+16 
+17         try (FileReader fr = new FileReader(path + filenameIn)) {
+18             while (fr.ready()) {
+19                 sb.append((char) fr.read());
+20             }
+21         } catch (FileNotFoundException e) {
+22             e.printStackTrace();
+23             
+24         } catch (IOException e) {
+25             e.printStackTrace();
+26         }
+27 
+28         Pattern pt1 = Pattern.compile("/{2}([^\n]*)");  
+29         Matcher m1 = pt1.matcher(sb);
+30         while (m1.find()) {
+31             sb.delete(m1.start(), m1.end());
+32             m1.reset();
+33         }
+34         Pattern pt = Pattern.compile("(/\\*)([^*/]*)(\\*/)");
+35         Matcher m = pt.matcher(sb);
+36         while (m.find()) {
+37             sb.delete(m.start(), m.end());
+38             m.reset();
+39         }
+40 
+41 
+42 
+43 
+44 
+45         String s = new String(sb);
+46         String[] sArr = s.split("\\n");
+47         for (int i = 0; i < sArr.length; i++) {
+48             if (i+1<10) {
+49                 System.out.printf("0%d %s\n", i+1, sArr[i]);
+50             } else
+51             System.out.printf("%2d %s\n", i+1, sArr[i]);
+52         }
+53 
+54         try (PrintWriter pw = new PrintWriter(new FileWriter(path+filenameOut))) {
+55             String[] sArr1 = s.split("\\n");
+56             for (int i = 0; i < sArr.length; i++) {
+57                 if (i+1<10) {
+58                     pw.printf("0%d %s\n", i+1, sArr[i]);
+59                 } else
+60                     pw.printf("%2d %s\n", i+1, sArr[i]);
+61             }
+62         } catch (IOException e) {
+63             e.printStackTrace();
+64         }
+65         
+66         
+67 
+68     }
+69 }
+70 

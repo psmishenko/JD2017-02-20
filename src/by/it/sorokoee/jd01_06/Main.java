@@ -8,6 +8,6 @@ public class Main {
     public static void main(String[] args) {
         TaskB.summaWords(Data.lukomor);
         System.out.println();
-
+TaskB.sortPredlozh();
     }
 }

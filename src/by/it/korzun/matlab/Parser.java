@@ -1,5 +1,8 @@
 package by.it.korzun.matlab;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -32,28 +35,36 @@ class Parser {
     void parseString(String str){
         String []mass = parseStringToMass(str);
 
-        try {
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(Var.path + "log.txt", true))) {
             Var a;
             Var b;
             a = compileToVar(mass[0]);
             b = compileToVar(mass[2]);
 
-            System.out.println("");
+
             switch (mass[1]) {
                 case "+": {
-                    System.out.println(a.add(b));
+                    Var res = a.add(b);
+                    System.out.println(res);
+                    bw.write(str + " = " + res.toString() + "\n");
                     break;
                 }
                 case "-": {
-                    System.out.println(a.sub(b));
+                    Var res = a.sub(b);
+                    System.out.println(res);
+                    bw.write(str + " = " + res.toString() + "\n");
                     break;
                 }
                 case "*": {
-                    System.out.println(a.mul(b));
+                    Var res = a.mul(b);
+                    System.out.println(res);
+                    bw.write(str + " = " + res.toString() + "\n");
                     break;
                 }
                 case "/": {
-                    System.out.println(a.div(b));
+                    Var res = a.div(b);
+                    System.out.println(res);
+                    bw.write(str + " = " + res.toString() + "\n");
                     break;
                 }
                 case "=": {
@@ -62,8 +73,10 @@ class Parser {
                     break;
                 }
             }
-        }catch (Exception e){
-            new Error("Неверное выражение");
+        }catch (MathException e){
+            new MathException(str + " - неверное выражение");
+        }catch (IOException io){
+
         }
 
     }

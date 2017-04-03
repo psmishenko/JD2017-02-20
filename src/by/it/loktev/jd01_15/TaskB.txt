@@ -1,0 +1,74 @@
+ 1 package by.it.loktev.jd01_15;
+ 2 
+ 3 import java.io.*;
+ 4 import java.util.regex.Pattern;
+ 5 
+ 6 public class TaskB {
+ 7 
+ 8     public static void taskB(){
+ 9 
+10         
+11         
+12 
+13         String basePath=System.getProperty("user.dir")+"/src/by/it/loktev/jd01_15/"; 
+14         String fileName=basePath+"TaskB.java";
+15 
+16         StringBuilder sb=new StringBuilder();
+17 
+18         
+19         
+20         
+21 
+22         try (
+23                 FileReader fr = new FileReader(fileName); 
+24                 BufferedReader bo = new BufferedReader(fr);
+25         ) {
+26             while ( bo.ready() ){
+27                 sb.append(bo.readLine()+"\n");
+28             }
+29         } catch (IOException e) {
+30             e.printStackTrace();
+31         }
+32 
+33         String comment1RE="
+34 
+35         Pattern patt1=Pattern.compile(comment1RE);
+36         String [] parts1=patt1.split(sb);
+37         sb=new StringBuilder();
+38         for ( String part : parts1 )
+39             sb.append(part);
+40 
+41         String comment2RE="/\\*[\\d\\D]*?\\*/";
+42 
+43         Pattern patt2=Pattern.compile(comment2RE);
+44         String [] parts2=patt2.split(sb);
+45         sb=new StringBuilder();
+46         for ( String part : parts2 )
+47             sb.append(part);
+48 
+49         String lineEndRE="\\n";
+50 
+51         String fileName2=basePath+"TaskB.txt";
+52 
+53         int lineNum=0;
+54         Pattern patt3=Pattern.compile(lineEndRE);
+55         String [] parts3=patt3.split(sb);
+56         try (
+57                 FileWriter fw = new FileWriter(fileName2);
+58                 BufferedWriter bw = new BufferedWriter(fw);
+59         )
+60         {
+61             for ( String part : parts3 ) {
+62                 lineNum++;
+63                 System.out.println(String.format("%2d",lineNum)+" "+part);
+64                 bw.write(String.format("%2d",lineNum)+" "+part+"\n");
+65             }
+66 
+67         } catch (IOException e) {
+68             e.printStackTrace();
+69         }
+70 
+71 
+72     }
+73 
+74 }
