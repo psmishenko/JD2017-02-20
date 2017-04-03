@@ -19,6 +19,8 @@ public class th3_01_FutureTask {
         };
 
         FutureTask<Integer> task = new FutureTask<>(callTh);
+
+
         task.run();
         try {
             System.out.println("Result:"+task.get());

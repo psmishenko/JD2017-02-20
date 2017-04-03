@@ -10,6 +10,12 @@ public class Bayer extends Thread implements IBuyer, IUseBacket {
 //    public static ArrayList<String> basket = new ArrayList<>();
     private Map<Good,Double> backet;
 
+    public void setiWait(boolean iWait) {
+        this.iWait = iWait;
+    }
+
+    private boolean iWait;
+
 
     public Bayer(int num) {
         super("Покупатель №"+num);
@@ -86,9 +92,7 @@ public class Bayer extends Thread implements IBuyer, IUseBacket {
     @Override
     public void goToOut() {
         System.out.println(this + "вышел из магазина.");
-        synchronized (Dispatcher.monitorCounter){
-            Dispatcher.countCountComplete++;
-        }
+        Dispatcher.countCountComplete.addAndGet(1);
     }
 
     @Override
@@ -96,6 +100,8 @@ public class Bayer extends Thread implements IBuyer, IUseBacket {
         System.out.println(this + "встал в очередь.");
         QueueBayers.add(this);
         synchronized (this) {
+            iWait = true;
+            while(iWait)
             try {
                 wait();
             } catch (InterruptedException e) {

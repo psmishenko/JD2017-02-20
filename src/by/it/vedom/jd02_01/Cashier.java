@@ -24,6 +24,7 @@ public class Cashier implements Runnable {
             int timeout = Helper.getRandom(2000, 5000);
             Helper.sleep(timeout);
             synchronized (b) {
+                b.setiWait(false);
                 b.notify();
             }
             System.out.println(this+" завершил обслуживание для "+b);
