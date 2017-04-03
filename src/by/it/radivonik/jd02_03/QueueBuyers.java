@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class QueueBuyers {
     private static AtomicInteger numQueue = new AtomicInteger(0);
     private final static PriorityBlockingQueue<Buyer> queue = new PriorityBlockingQueue<Buyer>(
-            200,
+            100,
             new Comparator<Buyer>() {
                 @Override
                 public int compare(Buyer o1, Buyer o2) {
