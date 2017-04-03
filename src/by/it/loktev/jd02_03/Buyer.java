@@ -109,18 +109,18 @@ public class Buyer extends Thread implements IBuyer, IUseBacket {
 
     @Override
     public void run() {
-        synchronized (Shop.class) {
+        //synchronized (Shop.class) {
             Shop.buyersCount.getAndIncrement();
-        }
+        //}
         enterToMarket();
         takeBacket();
         chooseGoods();
         gotoQueue();
         backBacket();
         goToOut();
-        synchronized (Shop.class) {
+        //synchronized (Shop.class) {
             Shop.buyersCount.getAndDecrement();
-        }
+        //}
     }
 
     @Override
