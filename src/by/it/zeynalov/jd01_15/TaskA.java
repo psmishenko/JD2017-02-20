@@ -11,16 +11,18 @@ public class TaskA {
         String path = root + "/src/by/it/zeynalov/jd01_15/";
         String filename = path + "matrix.txt";
 
-        try (FileOutputStream fos = new FileOutputStream(filename)) {
-          //  PrintWriter pw = new PrintWriter(new FileWriter(fos);
+
+            try (FileWriter fos = new FileWriter(filename);
+                 PrintWriter pw = new PrintWriter(fos)) {
             int[][] mass = new int[4][4];
             for (int i = 0; i < mass.length; i++) {
-                System.out.println();
                 for (int j = 0; j < mass.length; j++) {
-                    mass[i][j] = rand.nextInt(15);
-                  //    pw.printf("%3d ", mass[i][j]);
-                    fos.write(mass[i][j]);
+                    mass[i][j] = -15 + rand.nextInt(31);
+                    pw.printf("%3d ", mass[i][j]);
+                    System.out.printf("%3d ", mass[i][j]);
                 }
+                System.out.println();
+                pw.println();
             }
         } catch (IOException e) {
             e.printStackTrace();

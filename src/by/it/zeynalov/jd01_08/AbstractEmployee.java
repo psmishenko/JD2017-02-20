@@ -4,93 +4,66 @@ public abstract class AbstractEmployee implements Employee {
     private String name;          //имя
     private int age;              //возраст
     private float workExperience; //стаж работы
-    private int daysOfVacation;   //сколько дней отпуска
-    private float bonus;          //премия
 
-    public AbstractEmployee(String name,
-                            int age,
-                            float workExperience,
-                            int daysOfVacation,
-                            float bonus) {
+
+    public AbstractEmployee(String name, int age, float workExperience) {
         this.name = name;
         this.age = age;
         this.workExperience = workExperience;
-        this.daysOfVacation = daysOfVacation;
-        this.bonus = bonus;
     }
 
     public String getName() {
         return name;
     }
 
-    @Override
-    public void goWork(boolean goWork) {
-        if (goWork) {
-            System.out.println(name + " Пришел на работу");
-        } else {
-            System.out.println(name + " Его нету на работе");
-        }
+    public int getAge() {
+        return age;
+    }
+
+    public float getWorkExperience() {
+        return workExperience;
     }
 
     @Override
-    public void endWork(boolean endWork) {
-        if (endWork) {
-            System.out.println(name + " Закончил работу");
-        } else {
-            System.out.println(name + " Еще на работе");
-        }
+    public void goWork() {
+        System.out.println(name + " Пришел на работу");
     }
 
     @Override
-    public void cofeeBreak(boolean cofeeBreak) {
-        if (cofeeBreak = true) {
-            System.out.println(name + " На обеде");
-        } else {
-            System.out.println(name + " Нету его на обеде");
-        }
+    public void endWork() {
+        System.out.println(name + " Закончил работу");
     }
 
     @Override
-    public void getWage(boolean getWage) {
-        if (getWage) {
-            System.out.println(name + " Получил зарплату");
-        } else {
-            System.out.println(name + " Еще не получил зарплату");
-        }
+    public void cofeeBreak() {
+        System.out.println(name + " На обеде");
     }
 
     @Override
-    public void signDocument(boolean signDocument) {
-        if (signDocument) {
-            System.out.println(name + " Подписал документы");
-        } else {
-            System.out.println(name + " Документы не подписал");
-        }
+    public void getWage() {
+        System.out.println(name + " Получил зарплату");
     }
 
     @Override
-    public void smoke(boolean smoke) {
-        if (smoke) {
-            System.out.println(name + " Пошел на перекур");
-        } else {
-            System.out.println(name + " Не курит");
-        }
+    public void signDocument() {
+        System.out.println(name + " Подписал документы");
     }
 
     @Override
-    public void miting(boolean miting) {
-        if (miting) {
-            System.out.println(name + " На совещании");
-        } else {
-            System.out.println(name + " Нету на совещании");
-        }
+    public void smoke() {
+        System.out.println(name + " Пошел на перекур");
     }
 
-    public void quit(boolean quit) {
+    @Override
+    public void miting() {
+        System.out.println(name + " На совещании");
+    }
+
+    @Override
+    public void report() {
     }
 
     public void printInfo() {
-        System.out.println("Имя: " + name + " Возраст: " + age + " Стаж работы: " +
-                workExperience + " Дней отпуска: " + daysOfVacation + " Премия: " + bonus);
+        System.out.println("Имя: " + name + " Возраст: " + age + " Стаж работы: " + workExperience);
     }
 }

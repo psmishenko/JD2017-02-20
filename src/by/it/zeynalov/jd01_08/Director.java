@@ -1,15 +1,15 @@
 package by.it.zeynalov.jd01_08;
 
 public class Director extends AbstractEmployee {
-    public Director(String name, int age, float workExperience, int daysOfVacation, float bonus) {
-        super(name, age, workExperience, daysOfVacation, bonus);
+    public Director(String name, int age, float workExperience) {
+        super(name, age, workExperience);
     }
 
-    @Override
-    public void quit(boolean quit) {
-        if(quit) {
-            System.out.println(getName() + " Уволил сотрудника");
+    public  void quit(AbstractEmployee employee) {
+        if(!(employee instanceof Director)) {
+            System.out.println(getName() + " Уволил сотрудника " + employee.getName());
+        }else {
+            System.out.println(getName() + " Не может уволить такого сотрудника");
         }
-        super.quit(true);
     }
 }
