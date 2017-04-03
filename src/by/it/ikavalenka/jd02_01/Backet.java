@@ -1,7 +1,7 @@
 package by.it.ikavalenka.jd02_01;
 
-<<<<<<< HEAD
-import java.util.ArrayList;
+
+
 
 /**
  * Created by USER on 03.04.2017.
