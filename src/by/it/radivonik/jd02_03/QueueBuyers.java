@@ -24,12 +24,7 @@ public class QueueBuyers {
         return queue.size();
     }
 
-    static String queueToString() {
-        return queue.toString();
-    }
-
     static int getNumNext() {
         return numQueue.addAndGet(1);
     }
-
 }

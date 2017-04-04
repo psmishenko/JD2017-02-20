@@ -1,5 +1,7 @@
 package by.it.radivonik.jd02_03;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.*;
 
 /**
@@ -9,11 +11,14 @@ import java.util.concurrent.atomic.*;
 public class DispatcherBuyers extends Thread {
     private static final int planCountBuyers = 100; // количество моделируемых покупателей
     private static final int pensionerRate = 4;     // частота появления пенсионеров
-    private static AtomicInteger countBuyers = new AtomicInteger(0);
+    private static AtomicInteger countBuyers = new AtomicInteger(0);    // счетчик числа покупателей
+    private static AtomicInteger countBuyersChoosGoods = new AtomicInteger(0);    // счетчик числа покупателей в торговом зале
+    private static AtomicBoolean endProcess = new AtomicBoolean(false); // признак окончания моделирование
 
     @Override
     public void run() {
         Buyer buyer;
+        List<Thread> listBuyers = new ArrayList<>();
         int countBuyersInMinute = 0;
         int numPensioner = 0;
         int sec = 0;
@@ -42,14 +47,9 @@ public class DispatcherBuyers extends Thread {
                 countBuyersInMinute++;
 
                 buyer = new Buyer(countBuyers.get(),countBuyers.get() % pensionerRate == numPensioner);
-                new Thread(buyer).start();
-
-//                try {
-//                    buyer.join();
-//                }
-//                catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
+                Thread buyerThread = new Thread(buyer);
+                listBuyers.add(buyerThread);
+                buyerThread.start();
 
                 if (countBuyers.get() == planCountBuyers)
                     break;
@@ -58,10 +58,37 @@ public class DispatcherBuyers extends Thread {
 
             Helper.sleep(1000);
             sec++;
+
+            if (sec % 30 == 0)
+                System.out.printf(
+                    "---\n--- Прошло %d секунд, покупателей всего: %d, обслужено: %d, в очереди %d, выручка %-7.2f\n---\n",
+                    sec,DispatcherBuyers.getCountBuyers(),DispatcherCashiers.getCountBuyersComplet(),QueueBuyers.getCount(),DispatcherCashiers.getSumItogo());
         }
+
+        // Ожидание завершения всех потоков
+        for (Thread b: listBuyers) {
+            try {
+                b.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        endProcess.set(true);
     }
 
     static int getCountBuyers() {
         return countBuyers.get();
+    }
+
+    static int getCountBuyersChoosGoods() {
+        return countBuyersChoosGoods.get();
+    }
+
+    static void addCountBuyersChoosGoods(int count) {
+        countBuyersChoosGoods.addAndGet(count);
+    }
+
+    public static boolean isEndProcess() {
+        return endProcess.get();
     }
 }

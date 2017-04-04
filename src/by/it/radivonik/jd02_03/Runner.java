@@ -14,16 +14,16 @@ public class Runner {
         dispBuy.start();
         dispCash.start();
 
-//        DispatcherCashiers.setStop(true);
         try {
-//            dispCash.join(); // присоединение к потокам для ожидания их завершения
+            // Присоединение к потокам для ожидания их завершения
+            dispCash.join();
             dispBuy.join();
         }
         catch (InterruptedException e) {
             e.printStackTrace();
         }
         System.out.printf(
-            "---\n---Завершено, покупателей всего: %d, обслужено: %d, в очереди %d, выручка %7.2f\n---\n",
-            DispatcherBuyers.getCountBuyers(),DispatcherCashiers.getCountBuyerComplet(),QueueBuyers.getCount(),DispatcherCashiers.getSumItogo());
+            "---\n--- Завершено, покупателей всего: %d, обслужено: %d, в очереди %d, выручка %-7.2f\n---\n",
+            DispatcherBuyers.getCountBuyers(),DispatcherCashiers.getCountBuyersComplet(),QueueBuyers.getCount(),DispatcherCashiers.getSumItogo());
     }
 }

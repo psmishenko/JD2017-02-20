@@ -1,28 +1,29 @@
 package by.it.radivonik.jd02_03;
 
 import java.util.*;
+import java.util.concurrent.Semaphore;
 
 /**
  * Created by Radivonik on 31.03.2017.
  * Класс, реализующий поведение покупателя в магазине
  */
-public class Buyer implements IBuyer, IUseBasket, Runnable, Comparable<Buyer> {
-    private String name;
-    private int num;
-    private int numQueue = 0;
-    private boolean pensioner;
-    private boolean waitCashier;
-    public List<Good> goods = new ArrayList<>();
+public class Buyer implements Runnable, Comparable<Buyer>, IBuyer, IUseBasket {
+    private String name;       // наименование покупателя
+    private int num;           // номер покупателя
+    private int numQueue = 0;  // номер постановки в очередь
+    private boolean pensioner; // признак пенсионера
+    public List<Good> goods = new ArrayList<>(); // список выбранных продуктов
+    private static Semaphore semaphoreChoosGoods = new Semaphore(10); // семафор на выбор продуктов
 
     Buyer(int num, boolean pensioner) {
-        name = "Покупатель № " + num + (pensioner ? " (пенс.)" : "");
+        name = "Покупатель №" + num + (pensioner ? " (пенс.)" : "");
         this.num = num;
         this.pensioner = pensioner;
     }
 
     @Override
     public String toString() {
-        return name + (numQueue == 0 ? "" : "(очер." + numQueue + ")");
+        return name + (numQueue == 0 ? "" : " (стал в очер. под №" + numQueue + (pensioner ? "*" : "") + ")");
     }
 
     @Override
@@ -42,7 +43,7 @@ public class Buyer implements IBuyer, IUseBasket, Runnable, Comparable<Buyer> {
     }
 
     private int getNumCompare() {
-        return pensioner ? Integer.MIN_VALUE + 1000000 + numQueue : numQueue;
+        return pensioner ? (-1000000 + numQueue) : numQueue;
     }
 
     @Override
@@ -64,16 +65,27 @@ public class Buyer implements IBuyer, IUseBasket, Runnable, Comparable<Buyer> {
 
     @Override
     public void chooseGoods() {
-//        System.out.println(this + " вошел в торговый зал");
-        int countGood = Helper.getRandom(1,4); // от 1 до 4-х продуктов
-        for (int i = 0; i < countGood; i++) {
-            int timeout = Helper.getRandom(500,2000);
-            Helper.sleep(timeout,getMul());
-            Good good = Goods.getRandomGood();
-            goods.add(good);
-//            System.out.printf("%s выбрал товар %s с ценой %s\n",this,good.getName(),good.getPrice());
+        try {
+            semaphoreChoosGoods.acquire(); // ожидание разрешения семафора
+            DispatcherBuyers.addCountBuyersChoosGoods(1);
+            //System.out.println(this + " вошел в торговый зал");
+            int countGood = Helper.getRandom(1, 4); // от 1 до 4-х продуктов
+            for (int i = 0; i < countGood; i++) {
+                int timeout = Helper.getRandom(500, 2000);
+                Helper.sleep(timeout, getMul());
+                Good good = Goods.getRandomGood();
+                goods.add(good);
+                //            System.out.printf("%s выбрал товар %s с ценой %s\n",this,good.getName(),good.getPrice());
+            }
+            //System.out.println(this + " завершил выбор товаров");
         }
-//        System.out.println(this + " завершил выбор товаров");
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        finally {
+            semaphoreChoosGoods.release();
+            DispatcherBuyers.addCountBuyersChoosGoods(-1);
+        }
     }
 
     @Override
@@ -82,14 +94,11 @@ public class Buyer implements IBuyer, IUseBasket, Runnable, Comparable<Buyer> {
         QueueBuyers.add(this);
 //        System.out.println("->" + this + " встал в очередь: " + QueueBuyers.queueToString());
         synchronized (this) {
-            waitCashier = true;
-            while (waitCashier) {
-                try {
-                    this.wait();
-                }
-                catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+            try {
+                this.wait();
+            }
+            catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }
 //        System.out.println(this + " завершил обслуживание");
@@ -104,7 +113,6 @@ public class Buyer implements IBuyer, IUseBasket, Runnable, Comparable<Buyer> {
     @Override
     public void goToOut() {
 //        System.out.println("<-" + this + " вышел из магазина");
-        DispatcherCashiers.addCountBuyerCoplete(1);
     }
 
     // Множитель длительности операций для определенных категорий покупателей
@@ -119,9 +127,5 @@ public class Buyer implements IBuyer, IUseBasket, Runnable, Comparable<Buyer> {
 
     public boolean isPensioner() {
         return pensioner;
-    }
-
-    public void setWaitCashier(boolean waitCsahier) {
-        this.waitCashier = waitCashier;
     }
 }
