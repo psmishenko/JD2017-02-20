@@ -9,32 +9,27 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Класс, реализующий очередь в кассы
  */
 public class QueueBuyers {
+    private final static BlockingQueue<Buyer> queue = new PriorityBlockingQueue<Buyer>(40);
     private static AtomicInteger numQueue = new AtomicInteger(0);
-    private final static PriorityBlockingQueue<Buyer> queue = new PriorityBlockingQueue<Buyer>(
-            100,
-            new Comparator<Buyer>() {
-                @Override
-                public int compare(Buyer o1, Buyer o2) {
-                    int comp = -Boolean.compare(o1.isPensioner(),o2.isPensioner());
-                    //int comp = o2.getNumQueue() - o1.getNumQueue();
-                    return comp;
-                }
-            });
 
     static void add(Buyer buyer) {
         queue.add(buyer);
-        buyer.setNumQueue(numQueue.addAndGet(1));
     }
 
     static Buyer extract() {
         return queue.poll();
     }
 
-    static int getCount () {
+    static int getCount() {
         return queue.size();
     }
 
     static String queueToString() {
         return queue.toString();
     }
+
+    static int getNumNext() {
+        return numQueue.addAndGet(1);
+    }
+
 }
