@@ -21,7 +21,7 @@ public class Runner {
         while (true)
         {
             double secondNum=Math.floor((System.currentTimeMillis()-startTime)/1000.0); // номер секунды в минуте
-            if ( secondNum>5 ) // работаем только минуту
+            if ( secondNum>60 ) // работаем только минуту
                 break;
             double centerDiff=Math.abs(secondNum-30); // 30...0...30 в течение минуты
             double averInterval=centerDiff*10+100; // 100-400 в зависимости от секунды
