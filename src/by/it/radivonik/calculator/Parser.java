@@ -1,11 +1,15 @@
 package by.it.radivonik.calculator;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.*;
 
 /**
  * Created by Radivonik on 17.03.2017.
  */
 public class Parser {
+    private List<String> operations = new ArrayList<>();
+    private List<String> operands = new ArrayList<>();
     public static String[] parse(String exp) {
         String[] res = new String[3];
         Pattern p = Pattern.compile(IPatterns.ExExp);
