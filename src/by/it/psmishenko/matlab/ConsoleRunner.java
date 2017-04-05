@@ -20,8 +20,8 @@ public class ConsoleRunner {
     }
 
     public static void main(String[] args) throws IOException,MathException {
-        IOData.loadFromTxt();
-        System.out.println(Var.vars);
+       // IOData.loadFromTxt();
+      //  System.out.println(Var.vars);
         Parser.calc("Alfhfhfhf=3");
         Parser.calc("Bjcjcjdeg={1,2,3,4}");
         Parser.calc("Accccc=7");
