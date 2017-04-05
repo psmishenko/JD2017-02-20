@@ -1,5 +1,6 @@
 package by.it.akhmelev.jd02_03;
 
+import java.util.Collections;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ArrayBlockingQueue;
 
