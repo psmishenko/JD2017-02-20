@@ -47,7 +47,7 @@ public class VarM extends Var{
             checkSize(this, (VarM) var);
             for (int i = 0; i < res.length; i++) {
                 for (int j = 0; j < res[0].length; j++) {
-                    res[i][j] = matrix[i][j] + ((VarM) var).matrix[i][j];
+                    res[i][j] = matrix[i][j] - ((VarM) var).matrix[i][j];
                 }
             }
         }
