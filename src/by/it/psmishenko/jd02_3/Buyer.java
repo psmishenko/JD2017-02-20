@@ -3,6 +3,7 @@ package by.it.psmishenko.jd02_3;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Semaphore;
 
 /**
  * Created by user on 29.03.2017.
@@ -11,7 +12,7 @@ public class Buyer extends Thread implements IBuyer,Runnable,IUseBacket {
     int num ;
     boolean pensioneer;
     private boolean iWait;
-
+    private static Semaphore semaphore = new Semaphore(10);
     public void setiWait(boolean iWait) {
         this.iWait = iWait;
     }
@@ -60,7 +61,10 @@ public class Buyer extends Thread implements IBuyer,Runnable,IUseBacket {
 
     @Override
     public void chooseGoods() {
-        System.out.println(this+" вошёл в торговый зал");
+        System.out.println(this+" вошёл в торговый зал.Могут выбирать товар: "
+                +semaphore.availablePermits()+"!!!!!");
+        try {
+            semaphore.acquire();
         int max = Helper.getRandom(1,4);
         for (int i = 1; i <=max; i++) {
            int timeout = Helper.getRandom(500,2000)*mul();
@@ -70,22 +74,26 @@ public class Buyer extends Thread implements IBuyer,Runnable,IUseBacket {
             putGoodsToBacket(i,good);
         }
         System.out.println(this+" в корзине: "+backet);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }finally {
+            semaphore.release();
+        }
     }
 
     @Override
     public void gotoQueue() {
-        System.out.println(this+" встал в очередь");
         QBuyers.add(this);
+        System.out.println(this+" встал в очередь.В очереди "+QBuyers.getCount()+" ч.");
         synchronized (this){
             iWait = true;
             while (iWait){
             try {
-                wait();
+                this.wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }}
-        System.out.println(this+" завершил обслуживание");
     }
 
     @Override
