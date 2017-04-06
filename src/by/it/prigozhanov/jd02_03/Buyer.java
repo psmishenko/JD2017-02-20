@@ -10,10 +10,9 @@ public class Buyer extends Thread implements IBuyer, IUseBucket {
     private boolean pensioneer;
     protected double check=0;
     protected Basket basket = null;
-    private boolean iWait;
 
     public Buyer(int num, boolean pensioneer) {
-            super("( Покупатель № " + num +" ) ");
+        super("( Покупатель № " + num +" ) ");
         if (pensioneer) System.out.print("Пенсионер!");
         this.num = num;
         this.pensioneer = pensioneer;
@@ -32,7 +31,15 @@ public class Buyer extends Thread implements IBuyer, IUseBucket {
     public void run() {
         enterToMarket();
         takeBucket();
-        chooseGoods();
+        try {
+            Dispatcher.semaphore.acquire();
+            chooseGoods();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        finally {
+            Dispatcher.semaphore.release();
+        }
         goToQueue();
         putBucket();
         goToOut();
@@ -40,12 +47,13 @@ public class Buyer extends Thread implements IBuyer, IUseBucket {
 
     @Override
     public void enterToMarket() {
-        Dispatcher.currentBuyersCounterInStore.addAndGet(1);
+        Dispatcher.currentBuyersCounterInMarket.getAndIncrement();
         System.out.println(this + "зашёл в магазин");
     }
 
     @Override
     public void chooseGoods() {
+        Dispatcher.currentBuyersCounterInStore.incrementAndGet();
         System.out.println(this + "выбирает продукты");
         int max = Helper.getRandom(1, 5);
         for (int i = 1; i <= max; i++) {
@@ -55,6 +63,7 @@ public class Buyer extends Thread implements IBuyer, IUseBucket {
             System.out.printf("%sвыбрал товар (%s). Цена: %s$\n", this, good.getName(), good.getPrice());
             putGoodsToBucket(good);
         }
+        Dispatcher.currentBuyersCounterInStore.decrementAndGet();
 
     }
 
@@ -63,8 +72,6 @@ public class Buyer extends Thread implements IBuyer, IUseBucket {
         BuyersQueue.add(this);
         System.out.println(this + "подошёл на кассу");
         synchronized (this) {
-            iWait = true;
-            while (iWait)
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -76,14 +83,14 @@ public class Buyer extends Thread implements IBuyer, IUseBucket {
 
     @Override
     public void goToOut() {
-        Dispatcher.currentBuyersCounterInStore.addAndGet(-1);
-        Dispatcher.countComplete.getAndAdd(1);
+        Dispatcher.currentBuyersCounterInMarket.decrementAndGet();
+            Dispatcher.countComplete.incrementAndGet();
         System.out.println(this + "вышел из магазина");
     }
 
     @Override
     public void takeBucket() {
-        Dispatcher.buckets.getAndAdd(-1);
+        Dispatcher.buckets.decrementAndGet();
         if (pensioneer) Helper.sleep((int) (Helper.getRandom(100, 200) * 1.5));
         else Helper.sleep(Helper.getRandom(100, 200));
         Basket basket = new Basket(num);
@@ -98,19 +105,15 @@ public class Buyer extends Thread implements IBuyer, IUseBucket {
         if (basket == null) {
             System.out.println(this+ "не взял корзинку, операция не возможна");
         } else
-        this.basket.putGoodToBucket(good);
+            this.basket.putGoodToBucket(good);
     }
 
     @Override
     public void putBucket() {
-        Dispatcher.buckets.getAndAdd(1);
+        Dispatcher.buckets.incrementAndGet();
         if (pensioneer) Helper.sleep((int) (Helper.getRandom(100, 200) * 1.5));
         else Helper.sleep(Helper.getRandom(100, 200));
         System.out.println(this + "положил корзинку");
         System.out.println(basket);
-    }
-
-    public void setiWait(boolean iWait) {
-        this.iWait = iWait;
     }
 }
