@@ -1,6 +1,6 @@
 package by.it.ikavalenka.jd02_01;
 
-class Buyer extends Thread implements IBuyer{
+class Buyer extends Thread implements IBuyer, IUseBacket {
 
     private int sin;
 
@@ -19,11 +19,22 @@ class Buyer extends Thread implements IBuyer{
         enterToMarket();
         chooseGoods();
         goToOut();
+        takeBacket();
+        putGoodsToBucket();
+        backBacket();
     }
 
     @Override
     public void enterToMarket() {
         System.out.println(this + "entered in market");
+    }
+
+    @Override
+    public void takeBacket() {
+        int timeout = Helper.getRandom(100, 200);
+        Helper.sleep(timeout);
+        System.out.println(this + " customer #" + sin + "take the basket");
+
     }
 
     @Override
@@ -46,8 +57,45 @@ class Buyer extends Thread implements IBuyer{
     }
 
     @Override
+    public void putGoodsToBucket() {
+        int timeout = Helper.getRandom(100, 200);
+        Helper.sleep(timeout);
+        System.out.println("basket is full" + this );            //как добавить список товара
+
+    }
+
+    @Override
+    public void backBacket() {
+        int timeout = Helper.getRandom(100, 200);
+        Helper.sleep(timeout);
+        System.out.println(this + "basket is empty");
+    }
+
+    @Override
     public void goToOut() {
         System.out.println(this + "out from market");
     }
 
+    @Override
+    public void takeBacket() {
+        int timeout = Helper.getRandom(100, 200);
+        Helper.sleep(timeout);
+        System.out.println(this + " customer #" + sin + "take the basket");
+
+    }
+
+    @Override
+    public void putGoodsToBucket() {
+        int timeout = Helper.getRandom(100, 200);
+        Helper.sleep(timeout);
+        System.out.println("basket is full" + this);            //как добавить список товара
+
+    }
+
+    @Override
+    public void backBacket() {
+        int timeout = Helper.getRandom(100, 200);
+        Helper.sleep(timeout);
+        System.out.println(this + "basket is empty");
+    }
 }
