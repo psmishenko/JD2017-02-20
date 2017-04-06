@@ -14,6 +14,8 @@ public class Parser {
     private List<String> operation = new ArrayList<>();
     private List<String> operand;
 
+
+
     int getPosOperation() {
         int level = -1;
         int pos = -1;
@@ -75,6 +77,13 @@ public class Parser {
 
      Var calc(String expression)throws MathException {
         Var res = null;
+        Pattern pattern =
+                Pattern.compile(Patterns.expressionInBrackets);
+        Matcher matcher = pattern.matcher(expression);
+        if (matcher.find()){ // или if(matcher.find)
+            String s = expression.substring(matcher.start(),matcher.end());
+              expression =  expression.replace(s,"5");    // рекурсивный вызов calc и переопределение expression
+        }
         try {
             String[] part = expression.split(Patterns.exOper);
             operand = new ArrayList<>(Arrays.asList(part));

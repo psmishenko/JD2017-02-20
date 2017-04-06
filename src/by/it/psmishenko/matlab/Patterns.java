@@ -11,5 +11,5 @@ public interface Patterns {
     String exFull= "("+exAny+")"+
             "(" +exOper+")"+
             "(" +exAny +")"; //выражение целиком
-
+    String expressionInBrackets = "\\(["+Patterns.exAny+"|[A-Za-z]+]("+Patterns.exOper+")["+Patterns.exAny+"|[A-Za-z]+]\\)";
 }
