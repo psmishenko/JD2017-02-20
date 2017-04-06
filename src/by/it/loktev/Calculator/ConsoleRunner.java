@@ -27,12 +27,16 @@ public class ConsoleRunner {
         Log.write("СТАРТ");
 
         try {
-
-
             System.out.println("=== тест работы с автосохранёнными переменными:");
 
             Parser.parseAndCalc("sortvar",false);
             oneRes(Parser.parseAndCalc(" aaa*(1+bbb) ",false));
+
+        } catch (CalculatorException e) {
+            System.out.println("исключение: "+e);
+        }
+
+        try {
 
             System.out.println("=== скаляр со скаляром:");
 
