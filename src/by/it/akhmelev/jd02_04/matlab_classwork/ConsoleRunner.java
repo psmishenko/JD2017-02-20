@@ -9,11 +9,9 @@ public class ConsoleRunner {
     }
 
     public static void main(String[] args) {
-//        MapVars.loadMapFromFile();
+        MapVars.loadMapFromFile();
 //        System.out.println("\nТекущая карта переменных:\n"+ Var.vars);
-        Parser parser=new Parser();
-        Var vec1=new VarV("{1,5}");
-        Var vec2=new VarV("{1.7,2,3}");
+        Parser parser=new Parser(Parser.Debug.ON);
 
         oneRes(parser.calc("A=2+5.3"));
         oneRes(parser.calc("B=A*3.5"));
@@ -21,18 +19,20 @@ public class ConsoleRunner {
         oneRes(parser.calc("B2=A/2"));
 
 
-//        oneRes(Parser.calc("5/0"));
-//        oneRes(Parser.calc(vec1+"+"+vec2));
+        Var vec1=new VarV("{1,5}");
+        Var vec2=new VarV("{1.7,2,3}");
+        oneRes(parser.calc("5/0"));
+        oneRes(parser.calc(vec1+"+"+vec2));
 
-//        oneRes(Parser.calc("1+2"));
-//        oneRes(Parser.calc("{1,2,3,4,5}+2"));
-//        oneRes(Parser.calc("{1,2,3,4,5}*2"));
-//        oneRes(Parser.calc("{1,2,3,4,5}/2"));
-//        oneRes(Parser.calc("{1,2,3,4,5}-2"));
-//        oneRes(Parser.calc("A=3"));
-//        oneRes(Parser.calc("B={1,2,3,4}"));
-//        oneRes(Parser.calc("C=5"));
-//        oneRes(Parser.calc("D=7"));
+        oneRes(parser.calc("1+2"));
+        oneRes(parser.calc("{1,2,3,4,5}+2"));
+        oneRes(parser.calc("{1,2,3,4,5}*2"));
+        oneRes(parser.calc("{1,2,3,4,5}/2"));
+        oneRes(parser.calc("{1,2,3,4,5}-2"));
+        oneRes(parser.calc("A=3"));
+        oneRes(parser.calc("B={1,2,3,4}"));
+        oneRes(parser.calc("C=5"));
+        oneRes(parser.calc("D=7"));
 
 //        System.out.println(Var.vars);
 
