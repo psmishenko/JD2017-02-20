@@ -1,5 +1,8 @@
 package by.it.tereshko.matlab;
 
+import java.io.FileWriter;
+import java.io.PrintWriter;
+
 public class ConsoleRunner {
 
     private static void oneRes(Var var) {
@@ -9,7 +12,6 @@ public class ConsoleRunner {
     }
 
     public static void main(String[] args) {
-
 //        Var vec = new VarV("{1,2,3}");
 //        System.out.println(vec);
 
@@ -17,10 +19,12 @@ public class ConsoleRunner {
 //        Var vec2 = new VarV("{1,2,3,4,5}");
 
         Var vec1 = new VarV("{1,5}");
-        Var vec2 = new VarV("{1.7,2,3}");
+        Var vec2 = new VarV("{1,3}");
 
         oneRes(Parser.calc("5/0"));
-        oneRes(Parser.calc(vec1 + " + " + vec2));
+//        oneRes(Parser.calc(vec1 + " + " + vec2));
+//        oneRes(Parser.calc("a = 9"));
+
 
 //        oneRes(Parser.calc("1+2"));
 //        oneRes(Parser.calc("{1,2,3,4,5}+2"));
