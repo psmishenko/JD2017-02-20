@@ -1,10 +1,15 @@
 package by.it.loktev.Calculator;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.util.HashMap;
 
 import static org.junit.Assert.*;
 
 public class ParserTest {
+
+    static private HashMap<String,Var> varsReal;
 
     private void testParser(String exprStr, String goodResStr) throws CalculatorException {
         String realResStr = Parser.parseAndCalc(exprStr,false).toString();
@@ -91,50 +96,49 @@ public class ParserTest {
         testParser("2*(3+4*(1+5))","54.0");
     }
 
+    @BeforeClass
+    public static void prepareStorage() throws CalculatorException {
+        Storage.setTestMode();
+        Parser.parseAndCalc("aaa=5+2 ",false);
+        Parser.parseAndCalc("ccc=8 ",false);
+        Parser.parseAndCalc("bbb=7+1*2 ",false);
+        Parser.parseAndCalc("ddd={2.2,3.3} ",false);
+        Parser.parseAndCalc("eee={{2.2,3.3},{7.7,6.6}} ",false);
+    }
+
+
+    @Test
+    public void storageTest1() throws CalculatorException {
+        testParser("aaa","7.0");
+    }
+
+    @Test
+    public void storageTest2() throws CalculatorException {
+        testParser("bbb","9.0");
+    }
+
+    @Test
+    public void storageTest3() throws CalculatorException {
+        testParser("ccc","8.0");
+    }
+
+    @Test
+    public void storageTest4() throws CalculatorException {
+        testParser("ddd","{2.2,3.3}");
+    }
+
+    @Test
+    public void storageTest5() throws CalculatorException {
+        testParser("eee","{{2.2,3.3},{7.7,6.6}}");
+    }
+
+    @Test
+    public void storageTest6() throws CalculatorException {
+        testParser("aaa*(1+bbb)","70.0");
+    }
+
 
         /*
-            System.out.println("=== тест работы с переменными:");
-
-            Parser.parseAndCalc("aaa=5+2 ",false);
-            Parser.parseAndCalc(" ccc =8 ",false);
-            Parser.parseAndCalc("bbb=7+1*2 ",false);
-            Parser.parseAndCalc("ddd={2.2,3.3} ",false);
-            Parser.parseAndCalc("eee={{2.2,3.3},{7.7,6.6}} ",false);
-            Parser.parseAndCalc("printvar",false);
-            Parser.parseAndCalc("sortvar",false);
-            oneRes(Parser.parseAndCalc(" aaa*(1+bbb) ",false));
-
-            oneRes(Parser.parseAndCalc(" aaa*(1+bbb) ",false));
-
-=== тест работы с переменными:
-Переменные в хранилище:
-aaa: 7.0
-ccc: 8.0
-bbb: 9.0
-eee: {{2.2,3.3},{7.7,6.6}}
-ddd: {2.2,3.3}
-Переменные в хранилище по алфавиту:
-aaa: 7.0
-bbb: 9.0
-ccc: 8.0
-ddd: {2.2,3.3}
-eee: {{2.2,3.3},{7.7,6.6}}
-70.0
-=== тест работы с автосохранёнными переменными:
-Переменные в хранилище по алфавиту:
-aaa: 7.0
-bbb: 9.0
-ccc: 8.0
-ddd: {2.2,3.3}
-eee: {{2.2,3.3},{7.7,6.6}}
-70.0
-
-        }
-        catch (CalculatorException e)
-        {
-            System.out.println("исключение: "+e);
-        }
-
         System.out.println("=== тест исключений:");
 
         try {
