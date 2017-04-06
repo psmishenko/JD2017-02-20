@@ -3,20 +3,102 @@ package by.it.korzun.matlab;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 class Parser {
-    private String []parseStringToMass(String str){
-        String []mass = new String[3];
-        Pattern patternExAny = Pattern.compile(Patterns.exAny);
-        Matcher matcherExAny = patternExAny.matcher(str);
-        if(matcherExAny.find() && matcherExAny.start() == 0){
-            mass[0] = str.substring(0, matcherExAny.end());
-            mass[1] = str.substring(matcherExAny.end(), matcherExAny.end() + 1);
-            mass[2] = str.substring(matcherExAny.end() + 1, str.length());
+    private static Map<String, Integer> priority = new HashMap<>();
+    static {
+        priority.put("*", 3);
+        priority.put("/", 3);
+        priority.put("+", 2);
+        priority.put("-", 2);
+        priority.put("=", 1);
+    }
+
+    private List<String> operation = new ArrayList<>();
+    private List<String> operand;
+
+    private void resultOut(String expression, Var res){
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(Var.path + "log.txt", true))){
+            System.out.printf("%s\n", res.toString());
+            bw.write(expression + " = " + res.toString() + "\n");
+        }catch (IOException ignored){
+
         }
-        return mass;
+    }
+
+    private Var calcString(String expression){
+        Var res = null;
+        try {
+            String[] part = expression.split(Patterns.exOper);
+            operand = new ArrayList<>(Arrays.asList(part));
+            Pattern p = Pattern.compile(Patterns.exOper);
+            Matcher m = p.matcher(expression);
+            while (m.find()) {
+                operation.add(m.group());
+            }
+
+            while (operation.size() > 0) {
+                int pos = getPosOperation();
+                String v1 = operand.get(pos);
+                String op = operation.remove(pos);
+                String v2 = operand.remove(pos + 1);
+                res = oneOperationCalc(v1, op, v2);
+                operand.set(pos, res.toString());
+            }
+
+        }catch (MathException e){
+            new MathException(expression + " - неверное выражение");
+        }
+        return res;
+    }
+
+    private Var oneOperationCalc(String v1, String op, String v2) throws MathException{
+        Var res = null;
+        Var one = compileToVar(v1);
+        if (one == null && (!op.equals("="))) {
+            throw new MathException("Неизвеcтное значение " + v1);
+        }
+        Var two = compileToVar(v2);
+        if (two == null) {
+            throw new MathException("Неизвеcтное значение " + v2);
+        }
+        switch (op) {
+            case "=":
+                two.save(v1);
+                res = two;
+                break;
+            case "+":
+                res = one.add(two);
+                break;
+            case "-":
+                res = one.sub(two);
+                break;
+            case "*":
+                res = one.mul(two);
+                break;
+            case "/":
+                res = one.div(two);
+                break;
+        }
+        return res;
+    }
+
+    private int getPosOperation() {
+        int level = -1;
+        int pos = -1;
+        int i = 0;
+        for (String op : operation) {
+            int currentLevel = priority.get(op);
+            if (level < currentLevel) {
+                level = currentLevel;
+                pos = i;
+            }
+            i++;
+        }
+        return pos;
     }
 
     private Var compileToVar(String str) {
@@ -27,57 +109,43 @@ class Parser {
             v = new VarV(str);
         } else if (str.matches(Patterns.exMat)) {
             v = new VarM(str);
-        } else
-            return null;
+        } else {
+            v = Var.getVars().get(str);
+        }
         return v;
     }
 
-    void parseString(String str){
-        String []mass = parseStringToMass(str);
-
-        try(BufferedWriter bw = new BufferedWriter(new FileWriter(Var.path + "log.txt", true))) {
-            Var a;
-            Var b;
-            a = compileToVar(mass[0]);
-            b = compileToVar(mass[2]);
-
-
-            switch (mass[1]) {
-                case "+": {
-                    Var res = a.add(b);
-                    System.out.println(res);
-                    bw.write(str + " = " + res.toString() + "\n");
-                    break;
-                }
-                case "-": {
-                    Var res = a.sub(b);
-                    System.out.println(res);
-                    bw.write(str + " = " + res.toString() + "\n");
-                    break;
-                }
-                case "*": {
-                    Var res = a.mul(b);
-                    System.out.println(res);
-                    bw.write(str + " = " + res.toString() + "\n");
-                    break;
-                }
-                case "/": {
-                    Var res = a.div(b);
-                    System.out.println(res);
-                    bw.write(str + " = " + res.toString() + "\n");
-                    break;
-                }
-                case "=": {
-                    String name = mass[0];
-                    b.save(name);
-                    break;
-                }
-            }
-        }catch (MathException e){
-            new MathException(str + " - неверное выражение");
-        }catch (IOException io){
-
+    Var parseString(String expression, boolean isFirstOut) throws MathException{
+        Var res;
+        Var temp;
+        if(!BracketsChecker.check(expression)){
+            new MathException(expression + " - скобки расставлены неправильно");
         }
 
+        Pattern patternBrackets = Pattern.compile("[()]");
+        Matcher matcherBrackets = patternBrackets.matcher(expression);
+        int posOpen = -1;
+        String underBrackets;
+
+        while(matcherBrackets.find()){
+            if(expression.charAt(matcherBrackets.start()) == '('){
+                posOpen = matcherBrackets.start() + 1;
+            }
+            if(expression.charAt(matcherBrackets.start()) == ')'){
+                underBrackets = expression.substring(posOpen, matcherBrackets.start());
+                temp = calcString(underBrackets);
+                expression = expression.replace("(" + underBrackets + ")", temp.toString());
+                matcherBrackets = patternBrackets.matcher(expression);
+                matcherBrackets.reset();
+            }
+        }
+
+        res = calcString(expression);
+
+        if(!isFirstOut){
+            resultOut(expression, res);
+        }
+
+        return res;
     }
 }

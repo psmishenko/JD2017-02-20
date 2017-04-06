@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public abstract class Var implements IOperation, IVariable{
-    public static String path = System.getProperty("user.dir") + "/src/by/it/korzun/matlab/";
+    static String path = System.getProperty("user.dir") + "/src/by/it/korzun/matlab/";
     private static File file = new File(path + "vars.txt");
     static private Map<String, Var> vars = new HashMap<>();
 
@@ -19,19 +19,21 @@ public abstract class Var implements IOperation, IVariable{
         return vars;
     }
 
-    public static void load() {
+    static void load() throws MathException{
         try(BufferedReader br = new BufferedReader(new FileReader(file))){
+            System.out.println("Раннее созданные переменные:");
             Parser parser = new Parser();
             String newVar;
             while ((newVar = br.readLine()) != null) {
-                parser.parseString(newVar);
+                parser.parseString(newVar,true);
             }
+            System.out.println(Var.getVars());
         }catch (IOException e){
-
+            System.out.println(e.getMessage());
         }
     }
 
-    public static void saveOnExit(){
+    static void saveOnExit(){
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(file))){
             Iterator it = vars.entrySet().iterator();
             while(it.hasNext()){
@@ -39,7 +41,7 @@ public abstract class Var implements IOperation, IVariable{
                 bw.write(pair.getKey() + "=" + pair.getValue());
                 bw.newLine();
             }
-        }catch (IOException e){
+        }catch (IOException ignored){
 
         }
     }

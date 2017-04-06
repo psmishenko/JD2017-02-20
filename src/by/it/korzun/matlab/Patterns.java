@@ -7,7 +7,7 @@ public interface Patterns {
     String exMat="[\\{\\[](([\\{\\[]((-?([0-9.])+),?\\s?)+[}\\]]),?\\s?)+[}\\]]";                   //матрицы
     String exName = "([A-Za-zА-Яа-я]+)";                                //имена
     String exAny="("+exMat+")|("+exVec+")|("+exVal+")|("+exName+")";    //одно из...
-    String exOper="[-+*/]";                                             //операция
+    String exOper="(?<=[^{,=+*/-])[=+*/-]";                             //операция
     String exFull= "("+exAny+")"+"(" +exOper+")"+"(" +exAny +")";       //выражение целиком
 
 }
