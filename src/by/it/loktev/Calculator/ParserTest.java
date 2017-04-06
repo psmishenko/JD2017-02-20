@@ -9,11 +9,18 @@ import static org.junit.Assert.*;
 
 public class ParserTest {
 
-    static private HashMap<String,Var> varsReal;
-
     private void testParser(String exprStr, String goodResStr) throws CalculatorException {
         String realResStr = Parser.parseAndCalc(exprStr,false).toString();
         assertEquals(realResStr,goodResStr);
+    }
+
+    private void testException(String exprStr) {
+        try {
+            Parser.parseAndCalc(exprStr,false);
+            fail("expected exception is not thrown");
+        } catch (CalculatorException e) {
+            assertTrue(true);
+        }
     }
 
     @Test
@@ -137,40 +144,29 @@ public class ParserTest {
         testParser("aaa*(1+bbb)","70.0");
     }
 
+    @Test
+    public void exceptionTest1() throws CalculatorException {
+        testException("aaa+fff");
+    }
 
-        /*
-        System.out.println("=== тест исключений:");
+    @Test
+    public void exceptionTest2() throws CalculatorException {
+        testException("5/0");
+    }
 
-        try {
-            oneRes(Parser.parseAndCalc(" aaa+eee ",false));
-        } catch (CalculatorException e) {
-            System.out.println("исключение: "+e);
-        }
+    @Test
+    public void exceptionTest3() throws CalculatorException {
+        testException("(5+2");
+    }
 
-        try {
-            oneRes(Parser.parseAndCalc(" 5/0",false));
-        } catch (CalculatorException e) {
-            System.out.println("исключение: "+e);
-        }
+    @Test
+    public void exceptionTest4() throws CalculatorException {
+        testException("{5,7}+{1,3,8}");
+    }
 
-        try {
-            oneRes(Parser.parseAndCalc(" (5+2",false));
-        } catch (CalculatorException e) {
-            System.out.println("исключение: "+e);
-        }
-
-        try {
-            oneRes(Parser.parseAndCalc(" {5,7}+{1,3,8} ",false));
-        } catch (CalculatorException e) {
-            System.out.println("исключение: "+e);
-        }
-
-        try {
-            oneRes(Parser.parseAndCalc(" {{5.2,3.3},{8,1.3},{1,2.2}} * {{2},{3},{4}} ",false));
-        } catch (CalculatorException e) {
-            System.out.println("исключение: "+e);
-        }
-         */
-
+    @Test
+    public void exceptionTest5() throws CalculatorException {
+        testException("{{5.2,3.3},{8,1.3},{1,2.2}} * {{2},{3},{4}}");
+    }
 
 }
