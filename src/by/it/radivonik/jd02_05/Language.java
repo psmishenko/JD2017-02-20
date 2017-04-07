@@ -8,7 +8,7 @@ import java.util.ResourceBundle;
  */
 public class Language {
     private static String path = "by.it.radivonik.jd02_05.messages";
-    private static Locale locale = new Locale("ru","RU");
+    private static Locale locale = new Locale("en","US");
     static ResourceBundle resourceBundle = ResourceBundle.getBundle(path,locale);
 
     static void changeLocale(Locale localeNew) {

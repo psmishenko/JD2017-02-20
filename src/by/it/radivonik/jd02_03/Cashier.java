@@ -24,8 +24,9 @@ public class Cashier implements Runnable {
     public void run() {
         Buyer buyer;
         System.out.print(getState(this + " открыл кассу",true));
-        while ((buyer = QueueBuyers.extract()) != null || DispatcherCashiers.getCountBuyersComplet() == 0) {
+        while (DispatcherCashiers.isCashierCanWork(this)) {
 //            System.out.println(this + " обслуживает " + b);
+            buyer = QueueBuyers.extract();
             if ( buyer != null ) {
                 synchronized (buyer) {
                     Helper.sleep(Helper.getRandom(2000, 5000));
@@ -47,8 +48,6 @@ public class Cashier implements Runnable {
                 }
             }
 //            System.out.println(this + " завершил обслуживание " + b);
-            if (!DispatcherCashiers.isCashierCanWork(this))
-                break;
         }
         DispatcherCashiers.freeCashier(this);
         System.out.print(getState(this + " закрыл кассу",true));

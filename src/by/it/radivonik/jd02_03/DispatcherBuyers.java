@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.*;
  * Класс, управляющий созданием потоков Buyer
  */
 public class DispatcherBuyers extends Thread {
-    private static final int planCountBuyers = 50; // количество моделируемых покупателей
+    private static final int planCountBuyers = 100; // количество моделируемых покупателей
     private static final int pensionerRate = 4;     // частота появления пенсионеров
     private static AtomicInteger countBuyers = new AtomicInteger(0);    // счетчик числа покупателей
     private static AtomicInteger countBuyersChoosGoods = new AtomicInteger(0);    // счетчик числа покупателей в торговом зале

@@ -22,9 +22,7 @@ public class DispatcherCashiers extends Thread {
         for (int i = 0; i < cashStates.length(); i++)
             cashStates.set(i,0);
         ExecutorService execServ = Executors.newFixedThreadPool(maxCahiers);
-        while (! DispatcherBuyers.isEndProcess() &&
-                ( DispatcherCashiers.getCountBuyersComplet() == 0 ||
-                  DispatcherCashiers.getCountBuyersComplet() < DispatcherBuyers.getCountBuyers() ) ){
+        while (! DispatcherBuyers.isEndProcess()){
             if (isCashierCanWork(null)) {
                 // Создание потока кассира при необходимости
                 int numCashier = getNextCashierFree();
@@ -61,7 +59,9 @@ public class DispatcherCashiers extends Thread {
     // Определение необходимости продолжения работы кассы
     static boolean isCashierCanWork(Cashier cashier) {
         int numAdd = cashier == null ? 0 : 1;
-        return QueueBuyers.getCount() >= sizeBuyersToCashier * ( getCountCashiersWork() - numAdd );
+        return
+            QueueBuyers.getCount() >= sizeBuyersToCashier * ( getCountCashiersWork() - numAdd ) &&
+            !DispatcherBuyers.isEndProcess();
     }
 
     // Освобождение кассы

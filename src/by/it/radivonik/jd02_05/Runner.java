@@ -8,8 +8,8 @@ public class Runner {
         System.out.println("Вариант A");
         (new TaskA()).run(args);
         System.out.println("\nВариант B");
-        (new TaskB()).run();
+        (new TaskB()).run(args);
         System.out.println("\nВариант C");
-        (new TaskC()).run();
+        (new TaskC()).run(args);
     }
 }
