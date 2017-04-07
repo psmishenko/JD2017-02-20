@@ -6,8 +6,12 @@ import java.util.ResourceBundle;
 public class Language {
 
     private static final String path="by.it.loktev.jd02_05.messages";
-    private static Locale locale=Locale.US; //new Locale("be","BY");
-    public static ResourceBundle resourceBundle=ResourceBundle.getBundle(path,locale);
+    private static Locale locale;
+    public static ResourceBundle resourceBundle;
+
+    static {
+        changeLocale(Locale.US);
+    }
 
     static void changeLocale(Locale locale_){
         locale=locale_;

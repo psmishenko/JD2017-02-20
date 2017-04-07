@@ -1,5 +1,7 @@
 package by.it.loktev.jd02_05;
 
+import java.text.DateFormat;
+import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -12,6 +14,11 @@ public class Hello {
             Language.changeLocale(locale);
         }
         System.out.println(Language.getString(Messages.WELCOME));
+        System.out.println(Language.getString(Messages.HOWDOYOUDO));
+        System.out.println(Language.getString(Messages.MYNAME));
+
+       // Date d=new Date();
+       // DateFormat df=DateFormat.get
     }
 
 }
