@@ -1,0 +1,6 @@
+Main.welcome = Welcome!
+Main.HowDoYouDo = How do You do!
+Main.MyName = Alexey
+Main.CurrentDate = Today
+Main.ErrorLocale = Invalid locale
+Main.EnterLocale = Enter Locale

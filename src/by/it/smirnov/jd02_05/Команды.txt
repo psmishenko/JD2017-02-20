@@ -1,0 +1,4 @@
+"C:\Program Files\Java\jdk1.8.0_121\bin\native2ascii" -encoding utf-8 messages_be.txt messages_be.properties
+"C:\Program Files\Java\jdk1.8.0_121\bin\native2ascii" -encoding utf-8 messages_en.txt messages_en.properties
+"C:\Program Files\Java\jdk1.8.0_121\bin\native2ascii" -encoding utf-8 messages_ru.txt messages_ru.properties
+"C:\Program Files\Java\jdk1.8.0_121\bin\native2ascii" -encoding utf-8 messages.txt messages.properties
