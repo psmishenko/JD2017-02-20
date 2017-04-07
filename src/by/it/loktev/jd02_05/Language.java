@@ -1,5 +1,6 @@
 package by.it.loktev.jd02_05;
 
+import java.text.DateFormat;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -20,6 +21,10 @@ public class Language {
 
     static String getString(String key){
         return resourceBundle.getString(key);
+    }
+
+    static DateFormat getDateFormat(){
+        return DateFormat.getDateInstance(DateFormat.LONG,locale);
     }
 
 }
