@@ -24,5 +24,4 @@ public class ParserTest {
         assertEquals(res,control);
     }
 
-
 }

@@ -28,7 +28,7 @@ public class Cashier implements Runnable{
             System.out.println(this+" завершил обслуживание для "+b);
         }
         System.out.println(this+" закрыл кассу");
-        Dispatcher.cashiers.remove(Thread.currentThread());
+        Dispatcher.cashiers.remove(this);
         System.out.println("--------------Осталось кассиров: "+ Dispatcher.cashiers.size());
     }
 }
