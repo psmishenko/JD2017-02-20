@@ -1,6 +1,4 @@
-FOR %%I In (*txt) DO (
+FOR %%I In (*.txt) DO (
 
-"D:\students\Kolenda\JD2017-02-20\src\by\it\kolenda\jd02_05>native2ascii.exe" -encoding utf-8 messages.txt messages.properties
-"D:\students\Kolenda\JD2017-02-20\src\by\it\kolenda\jd02_05>native2ascii.exe" -encoding utf-8 messages_it_IT.txt messages_it_IT.properties
-"D:\students\Kolenda\JD2017-02-20\src\by\it\kolenda\jd02_05>native2ascii.exe" -encoding utf-8 messages_ru_RU.txt messages_ru_RU.properties
+"C:\Program Files\Java\jdk1.7.0_80\bin\native2ascii.exe" -encoding utf-8 %%I %%~nI.properties
 )
