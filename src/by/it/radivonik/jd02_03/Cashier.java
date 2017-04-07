@@ -42,6 +42,7 @@ public class Cashier implements Runnable {
                     check = check + getState("------------------------",false);
                     System.out.print(check);
                     DispatcherCashiers.addCountBuyersCoplete(1);
+                    buyer.setWaitCashier(false);
                     buyer.notify();
                 }
             }

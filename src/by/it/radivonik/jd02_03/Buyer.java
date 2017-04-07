@@ -14,6 +14,7 @@ public class Buyer implements Runnable, Comparable<Buyer>, IBuyer, IUseBasket {
     private boolean pensioner; // признак пенсионера
     public List<Good> goods = new ArrayList<>(); // список выбранных продуктов
     private static Semaphore semaphoreChoosGoods = new Semaphore(10); // семафор на выбор продуктов
+    boolean waitCashier = false;
 
     Buyer(int num, boolean pensioner) {
         name = "Покупатель №" + num + (pensioner ? " (пенс.)" : "");
@@ -43,7 +44,10 @@ public class Buyer implements Runnable, Comparable<Buyer>, IBuyer, IUseBasket {
     }
 
     private int getNumCompare() {
-        return pensioner ? (-1000000 + numQueue) : numQueue;
+        int res = numQueue;
+        if (pensioner)
+            res -= 1000000;
+        return res;
     }
 
     @Override
@@ -90,15 +94,17 @@ public class Buyer implements Runnable, Comparable<Buyer>, IBuyer, IUseBasket {
 
     @Override
     public void goToQueue() {
-        numQueue = QueueBuyers.getNumNext();
-        QueueBuyers.add(this);
-//        System.out.println("->" + this + " встал в очередь: " + QueueBuyers.queueToString());
         synchronized (this) {
-            try {
-                this.wait();
-            }
-            catch (InterruptedException e) {
-                e.printStackTrace();
+            numQueue = QueueBuyers.getNumNext();
+            QueueBuyers.add(this);
+//        System.out.println("->" + this + " встал в очередь: " + QueueBuyers.queueToString());
+            waitCashier = true;
+            while (waitCashier) {
+                try {
+                    this.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
 //        System.out.println(this + " завершил обслуживание");
@@ -127,5 +133,9 @@ public class Buyer implements Runnable, Comparable<Buyer>, IBuyer, IUseBasket {
 
     public boolean isPensioner() {
         return pensioner;
+    }
+
+    public void setWaitCashier(boolean waitCashier) {
+        this.waitCashier = waitCashier;
     }
 }
