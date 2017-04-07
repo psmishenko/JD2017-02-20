@@ -29,6 +29,7 @@ class Buyer extends Thread implements IBuyer, IUseBacket {
         System.out.println(this + "entered in market");
     }
 
+
     @Override
     public void takeBacket() {
         int timeout = Helper.getRandom(100, 200);
@@ -74,6 +75,14 @@ class Buyer extends Thread implements IBuyer, IUseBacket {
     @Override
     public void goToOut() {
         System.out.println(this + "out from market");
+    }
+
+    @Override
+    public void takeBacket() {
+        int timeout = Helper.getRandom(100, 200);
+        Helper.sleep(timeout);
+        System.out.println(this + " customer #" + sin + "take the basket");
+
     }
 
 }

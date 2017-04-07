@@ -9,6 +9,8 @@ import java.util.regex.Pattern;
 
 public class Storage {
 
+    static private boolean testMode=false;
+
     static private String fileName;
 
     static private HashMap<String,Var> vars;
@@ -17,6 +19,11 @@ public class Storage {
         fileName=System.getProperty("user.dir")+"/src/by/it/loktev/Calculator/vars.txt";
         vars=new HashMap<>();
         loadFromFile();
+    }
+
+    static public void setTestMode(){
+        vars=new HashMap<>();
+        testMode=true;
     }
 
     static public void store(String name, Var var){
@@ -48,7 +55,7 @@ public class Storage {
     }
 
     static private void writeToFile(){
-
+        if (testMode) return;
         try (
                 FileWriter fw = new FileWriter(fileName);
                 //ObjectOutputStream oos=new ObjectOutputStream(fw);
@@ -67,7 +74,7 @@ public class Storage {
     }
 
     static private void loadFromFile(){
-
+        if (testMode) return;
         try (
                 FileReader fr = new FileReader(fileName);
                 BufferedReader br=new BufferedReader(fr);
