@@ -1,3 +1,4 @@
 Main.welcome = Прывітанне!
 Main.HowDoYouDo = Як твае справы?
 Main.MyName = Павел
+Main.Enter = Увядзіце мову:

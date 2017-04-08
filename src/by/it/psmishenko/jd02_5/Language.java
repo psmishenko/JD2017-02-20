@@ -7,7 +7,7 @@ import java.util.ResourceBundle;
  * Created by user on 07.04.2017.
  */
 public class Language {
-    static private Locale locale= Locale.US;
+    static private Locale locale= Locale.getDefault();
     static private String path = "by.it.psmishenko.jd02_5.message";
    static ResourceBundle resourceBundle = ResourceBundle.getBundle(path,locale);
 

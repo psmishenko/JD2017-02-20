@@ -1,3 +1,4 @@
 Main.welcome = Welcome!
 Main.HowDoYouDo = How do you do?
 Main.MyName = Paul
+Main.Enter = Enter language:
