@@ -1,0 +1,3 @@
+Main.welcome=Bienvenutti!
+Main.HowDoYouDo=Que pasa?
+Main.MyName=Oleggio
