@@ -7,10 +7,10 @@ import java.util.*;
  * Created by Radivonik on 18.03.2017.
  */
 public class Calc {
-    public static String calculate (String exp) {
+    public static String calculate(String exp) {
         String res = null;
         try {
-            res = (new Parser()).parse(exp);
+            res = (new Parser()).parseCalc(exp);
         }
         catch (MathException e) {
             System.out.println("Ошибка математическая: " + e.getMessage());

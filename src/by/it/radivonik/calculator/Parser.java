@@ -7,7 +7,7 @@ import java.util.regex.*;
  * Created by Radivonik on 17.03.2017.
  */
 public class Parser {
-    String parse(String exp) throws MathException, ParseException {
+    String parseCalc(String exp) throws MathException, ParseException {
         Deque<String> varList = new LinkedList<>(); //
         Deque<Operation> opList = new LinkedList<>(); //
 
@@ -29,12 +29,12 @@ public class Parser {
             }
             else if (operation.getType() == IOperation.Type.BracketRight) {
                 while (opList.getLast().getType() != IOperation.Type.BracketLeft)
-                    parseProccess(varList, opList.removeLast());
+                    parseCalcProccess(varList, opList.removeLast());
                 opList.removeLast();
             }
             else {
                 while (!opList.isEmpty() && opList.getLast().getPriority() > 0 && opList.getLast().getPriority() >= operation.getPriority())
-                    parseProccess(varList, opList.removeLast());
+                    parseCalcProccess(varList, opList.removeLast());
                 opList.add(operation);
             }
         }
@@ -45,12 +45,12 @@ public class Parser {
         }
 
         while (!opList.isEmpty())
-            parseProccess(varList, opList.removeLast());
+            parseCalcProccess(varList, opList.removeLast());
 
         return varList.getLast();
     }
 
-    private void parseProccess(Deque<String> varList, Operation op) throws MathException, ParseException {
+    private void parseCalcProccess(Deque<String> varList, Operation op) throws MathException, ParseException {
        switch(op.getType()) {
             case NoArg:
                 varList.add(op.calc());
