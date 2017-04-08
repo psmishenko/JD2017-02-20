@@ -8,7 +8,9 @@ import java.util.*;
  * Created by Radivonik on 13.03.2017.
  */
 public class Var implements IVariable {
-    public static Map<String,Var> vars = new HashMap<String,Var>(){
+   private static String fileVars = System.getProperty("user.dir") + "/src/by/it/radivonik/calculator/vars.txt";
+   private static boolean isLoadFile = false;
+   private static Map<String,Var> vars = new HashMap<String,Var>(){
         @Override
         public String toString() {
             StringBuilder res = new StringBuilder("");
@@ -18,9 +20,6 @@ public class Var implements IVariable {
             return res.toString();
         }
     };
-
-    private static String fileVars = System.getProperty("user.dir") + "/src/by/it/radivonik/calculator/vars.txt";
-    private static boolean isLoadFile = false;
 
     @Override
     public void fromString(String str) throws ParseException {
@@ -32,7 +31,51 @@ public class Var implements IVariable {
         return super.toString();
     }
 
-    @Override
+    static Var createVar(String str) throws ParseException {
+        if (str == null)
+            throw new ParseException("Пустая строка");
+        Var res;
+        if (str.matches(IPatterns.ExNumber))
+            res = new VarFloat(str);
+        else if (str.matches(IPatterns.ExVector))
+            res = new VarVector(str);
+        else if (str.matches(IPatterns.exMatrix))
+            res = new VarMatrix(str);
+        else
+            res = vars.get(str);
+        return res;
+    }
+
+    static Var setVar(String name, String v) throws ParseException {
+        Var res = null;
+        if (v == null)
+            vars.remove(name);
+        else {
+            res = createVar(v);
+            vars.put(name, res);
+        }
+        return res;
+    }
+
+    static String getPrintVar() {
+        return vars.toString();
+    }
+
+    static String getSortVar() {
+        SortedMap<String,Var> varsSorted = new TreeMap<String,Var>(vars) {
+            @Override
+            public String toString() {
+                StringBuilder res = new StringBuilder("");
+                for (Map.Entry<String,Var> v: this.entrySet()) {
+                    res.append(String.format("%s=%s\n",v.getKey(),v.getValue()));
+                }
+                return res.toString();
+            }
+
+        };
+        return varsSorted.toString();
+    }
+
     public void loadFromFile() throws ParseException {
         if (isLoadFile)
             return;
@@ -53,7 +96,6 @@ public class Var implements IVariable {
         }
     }
 
-    @Override
     public void saveToFile() throws ParseException {
         if (vars.size() == 0)
             return;

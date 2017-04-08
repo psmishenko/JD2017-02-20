@@ -1,12 +1,15 @@
 package by.it.radivonik.calculator;
 
-import java.util.regex.*;
-
 /**
  * Created by Radivonik on 19.03.2017.
  */
 public class Runner {
     public static void main(String[] args)  {
+        oneRes("(3.8+6.2)*2");
+        oneRes("(28-21)/7");
+        oneRes("1.04*5.9-0.136");
+        oneRes("12*5+10*((4-3)*5)");
+
         System.out.println("Задания к занятиям JD01_09, JD01_11.1");
         System.out.println("Вариант А:");
         oneRes("3.8+6.2");
@@ -37,7 +40,7 @@ public class Runner {
         oneRes("printvar");
         System.out.println("Вариант C:");
         oneRes("sortvar");
-
+/*
         System.out.println("\nЗадания к занятию JD01_13 (исключения)");
         oneRes("{2,3,4}/0");
         oneRes("{2,3,4}+{5,6}");
@@ -55,7 +58,7 @@ public class Runner {
             System.out.println("Ошибка: " + e.getMessage());
         }
         oneRes("printvar");
-        System.out.println("Смотрите файл log.txt");
+        System.out.println("Смотрите файл log.txt");*/
      }
 
     private static void oneRes(String exp, String val) {

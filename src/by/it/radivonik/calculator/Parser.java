@@ -1,46 +1,65 @@
 package by.it.radivonik.calculator;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.util.regex.*;
 
 /**
  * Created by Radivonik on 17.03.2017.
  */
 public class Parser {
-    private List<String> operations = new ArrayList<>();
-    private List<String> operands = new ArrayList<>();
-    public static String[] parse(String exp) {
-        String[] res = new String[3];
-        Pattern p = Pattern.compile(IPatterns.ExExp);
+    String parse(String exp) throws MathException, ParseException {
+        Deque<String> varList = new LinkedList<>(); //
+        Deque<Operation> opList = new LinkedList<>(); //
+
+        Pattern p = Pattern.compile(Operations.getPattern());
         Matcher m = p.matcher(exp);
-        int i = 0;
-        while (m.find() && i < res.length) {
-            if (i == 1 && m.group().charAt(0) == '-' && m.group().length() > 1 ) {
-                res[i] = "-";
-                res[++i] =  m.group().substring(1);
+
+        int pos = 0;
+        while (m.find()) {
+            int s = m.start();
+            if (s > pos) {
+                String var = exp.substring(pos, s);
+                varList.add(var);
             }
-            else
-                res[i] = m.group();
-            i++;
+            pos = s + m.group().length();
+
+            Operation operation = Operations.getOperation(m.group());
+            if (operation.getType() == IOperation.Type.BracketLeft) {
+                opList.add(operation);
+            }
+            else if (operation.getType() == IOperation.Type.BracketRight) {
+                while (opList.getLast().getType() != IOperation.Type.BracketLeft)
+                    parseProccess(varList, opList.removeLast());
+                opList.removeLast();
+            }
+            else {
+                while (!opList.isEmpty() && opList.getLast().getPriority() > 0 && opList.getLast().getPriority() >= operation.getPriority())
+                    parseProccess(varList, opList.removeLast());
+                opList.add(operation);
+            }
         }
-        return res;
+
+        if (pos > 0 && pos < exp.length()) {
+            String var = exp.substring(pos, exp.length());
+            varList.add(var);
+        }
+
+        while (!opList.isEmpty())
+            parseProccess(varList, opList.removeLast());
+
+        return varList.getLast();
     }
 
-    public static Var createVar(String part) throws ParseException {
-        if (part == null)
-            throw new ParseException("Пустая строка");
-        Var res = null;
-        if (part.matches(IPatterns.ExNumber)) {
-            res = new VarFloat(part);
+    private void parseProccess(Deque<String> varList, Operation op) throws MathException, ParseException {
+       switch(op.getType()) {
+            case NoArg:
+                varList.add(op.calc());
+                break;
+            case TwoArg:
+                String v2 = varList.removeLast();
+                String v1 = varList.removeLast();
+                varList.add(op.calc(v1, v2));
+                break;
         }
-        else if (part.matches(IPatterns.ExVector)) {
-            res = new VarVector(part);
-        }
-        else if (part.matches(IPatterns.exMatrix)) {
-            res = new VarMatrix(part);
-        };
-        return res;
     }
-
 }

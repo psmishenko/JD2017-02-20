@@ -6,6 +6,4 @@ package by.it.radivonik.calculator;
 public interface IVariable {
     void fromString(String str) throws ParseException;
     String toString();
-    void loadFromFile() throws ParseException ;
-    void saveToFile() throws ParseException ;
 }

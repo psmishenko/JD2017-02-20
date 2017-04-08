@@ -8,34 +8,9 @@ import java.util.*;
  */
 public class Calc {
     public static String calculate (String exp) {
+        String res = null;
         try {
-            Operation op = new Operation();
-            String[] aop = Parser.parse(exp);
-
-            if (aop[0].equals("printvar")) {
-                return Var.vars.toString();
-            }
-            else if (aop[0].equals("sortvar")) {
-                SortedMap<String,Var> varsSorted = new TreeMap<>(Var.vars);
-                return varsSorted.toString();
-            }
-            else if (aop[1].equals("+")) {
-                return op.add(Parser.createVar(aop[0]),Parser.createVar(aop[2])).toString();
-            }
-            else if (aop[1].equals("-")) {
-                return op.sub(Parser.createVar(aop[0]),Parser.createVar(aop[2])).toString();
-            }
-            else if (aop[1].equals("*")) {
-                return op.mul(Parser.createVar(aop[0]),Parser.createVar(aop[2])).toString();
-            }
-            else if (aop[1].equals("/")) {
-                return op.div(Parser.createVar(aop[0]),Parser.createVar(aop[2])).toString();
-            }
-            else if (aop[1].equals("=")) {
-                Var v = Parser.createVar(aop[2]);
-                op.save(aop[0],v);
-                return v.toString();
-            }
+            res = (new Parser()).parse(exp);
         }
         catch (MathException e) {
             System.out.println("Ошибка математическая: " + e.getMessage());
@@ -50,7 +25,7 @@ public class Calc {
             saveLog(e);
         }
 
-        return null;
+        return res;
     }
 
     private static String fileLog = System.getProperty("user.dir") + "/src/by/it/radivonik/calculator/log.txt";
