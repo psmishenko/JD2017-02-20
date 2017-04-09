@@ -14,13 +14,14 @@ public class Dispatcher extends Thread {
    public static AtomicInteger countBuyers = new AtomicInteger(0);
     public static AtomicInteger countComplete = new AtomicInteger(0);
     public static int plan = 100;
-   static List<Thread> cashiers = new ArrayList<>();
+   static List<Cashier> cashiers = new ArrayList<>();
+   static double totalSum = 0.0;
     @Override
     public void run() {
         ExecutorService executorService = Executors.newFixedThreadPool(5);
         while (countComplete.get() < plan) {
             if (QBuyers.getCount() > cashiers.size() * 5 && cashiers.size() < 5) {
-                Thread cashier = new Thread(new Cashier(cashiers.size() + 1));
+                Cashier cashier = new Cashier(cashiers.size() + 1);
                 cashiers.add(cashier);
                 //cashier.start();
                 executorService.execute(cashier);
@@ -29,5 +30,4 @@ public class Dispatcher extends Thread {
         }
         executorService.shutdown();
     }
-
-}
+    }
