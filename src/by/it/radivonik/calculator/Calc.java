@@ -14,29 +14,30 @@ public class Calc {
         }
         catch (MathException e) {
             System.out.println("Ошибка математическая: " + e.getMessage());
-            saveLog(e);
+            Log.log(e);
         }
         catch (ParseException e) {
             System.out.println("Ошибка преобразования: " + e.getMessage());
-            saveLog(e);
+            Log.log(e);
         }
         catch (Exception e) {
             System.out.println("Ошибка: " + e.getMessage());
-            saveLog(e);
+            Log.log(e);
         }
 
         return res;
     }
 
-    private static String fileLog = System.getProperty("user.dir") + "/src/by/it/radivonik/calculator/log.txt";
-
-    private static void saveLog(Exception except)  {
-        try (PrintWriter fileWriter = new PrintWriter(new FileWriter(fileLog,true))) {
-            fileWriter.println(except.getMessage());
-            except.printStackTrace(fileWriter);
-        }
-        catch (IOException e) {
-            System.out.println("Ошибка сохранения файла log.txt (" + e.getMessage() + ")");
-        }
+    static void calculatePrint(String exp) {
+        calculatePrint(exp,Calc.calculate(exp),false);
     }
+
+    static void calculatePrint(String exp, boolean newLineResult) {
+        calculatePrint(exp,Calc.calculate(exp),newLineResult);
+    }
+
+    private static void calculatePrint(String exp, String val, boolean newLineResult) {
+        System.out.printf("%s =%s%s\n",exp,(newLineResult?"\n":" "),val);
+    }
+
 }

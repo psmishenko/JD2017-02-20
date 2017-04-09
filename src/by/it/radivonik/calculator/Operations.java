@@ -39,10 +39,6 @@ public class Operations {
        return operations.get(operator);
     }
 
-    static int getPriority(String operator) {
-        return operations.get(operator).getPriority();
-    }
-
     static String getPattern() {
         StringBuilder patternBracket = new StringBuilder("");
         StringBuilder patternNoArg = new StringBuilder("");
@@ -74,6 +70,10 @@ public class Operations {
         return res;
     }
 
+    private static String getOp(IOperation op, Var v1, Var v2) {
+        return v1.toString() + op.getOperator() + v2.toString();
+    }
+
     private static String calcTwoArg(IOperation op, Var v1, Var v2) throws MathException {
         if (v1 instanceof VarFloat && v2 instanceof VarFloat) {
             return calcTwoArg(op, (VarFloat)v1, (VarFloat)v2);
@@ -102,7 +102,7 @@ public class Operations {
                 res = new VarFloat(v1.getValue() * v2.getValue()); break;
             case "/":
                 if (v2.getValue() == 0)
-                    throw new MathException("Деление на ноль");
+                    throw new MathException("Деление на ноль: " + getOp(op,v1,v2));
                 res = new VarFloat(v1.getValue() / v2.getValue()); break;
             default:
                 return null;
@@ -114,7 +114,7 @@ public class Operations {
         if (op.getOperator() == "+" || op.getOperator() == "*")
             return calcTwoArg(op,v2,v1);
         else {
-            throw new MathException("Недопустимая операция");
+            throw new MathException("Недопустимая операция: " + getOp(op,v1,v2));
         }
     }
 
@@ -125,23 +125,23 @@ public class Operations {
         return calcTwoArg(op, v1, new VarVector(v));
     }
 
-    private static String calcTwoArg(IOperation op, VarVector op1, VarVector op2) throws MathException {
-        if (op1.length() != op2.length()) {
-            throw new MathException("У векторов в операции разная длина");
+    private static String calcTwoArg(IOperation op, VarVector v1, VarVector v2) throws MathException {
+        if (v1.length() != v2.length()) {
+            throw new MathException("У векторов в операции разная длина: " + getOp(op,v1,v2));
         }
-        double[] res = new double[op1.length()];
-        for (int i = 0; i < op1.length(); i++) {
+        double[] res = new double[v1.length()];
+        for (int i = 0; i < v1.length(); i++) {
             switch(op.getOperator()) {
                 case "+":
-                    res[i] = op1.getItem(i) + op2.getItem(i); break;
+                    res[i] = v1.getItem(i) + v2.getItem(i); break;
                 case "-":
-                    res[i] = op1.getItem(i) - op2.getItem(i); break;
+                    res[i] = v1.getItem(i) - v2.getItem(i); break;
                 case "*":
-                    res[i] = op1.getItem(i) * op2.getItem(i); break; // некорректная математическая операция
+                    res[i] = v1.getItem(i) * v2.getItem(i); break; // некорректная математическая операция
                 case "/":
-                    if (op2.getItem(i) == 0)
-                        throw new MathException("Деление на ноль");
-                    res[i] = op1.getItem(i) / op2.getItem(i); break;
+                    if (v2.getItem(i) == 0)
+                        throw new MathException("Деление на ноль: " + getOp(op,v1,v2));
+                    res[i] = v1.getItem(i) / v2.getItem(i); break;
                 default:
                     return null;
             }

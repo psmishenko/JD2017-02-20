@@ -1,2112 +1,490 @@
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:12)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:13)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:14)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:15)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:16)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:17)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:18)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:19)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:21)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:22)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:23)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:24)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:25)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:26)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:32)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:33)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:34)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:35)
-null
-java.lang.NullPointerException
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:37)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:39)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:43)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:44)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:45)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:46)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-null
-java.lang.NullPointerException
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:57)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:12)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:13)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:14)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:15)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:16)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:17)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:18)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:19)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:21)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:22)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:23)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:24)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:25)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:26)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:32)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:33)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:34)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:35)
-null
-java.lang.NullPointerException
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:37)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:39)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:43)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:44)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:45)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:46)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-null
-java.lang.NullPointerException
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:57)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:12)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:13)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:14)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:15)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:16)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:17)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:18)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:19)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:21)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:22)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:23)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:24)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:25)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:26)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:32)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:33)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:34)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:35)
-null
-java.lang.NullPointerException
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:37)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:39)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:43)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:44)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:45)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:46)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-null
-java.lang.NullPointerException
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:57)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:12)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:13)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:14)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:15)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:16)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:17)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:18)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:19)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:21)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:22)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:23)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:24)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:25)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:26)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:32)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:33)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:34)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:35)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:37)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:39)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:43)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:44)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:45)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:46)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:57)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:12)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:13)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:14)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:15)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:16)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:17)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:18)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:19)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:21)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:22)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:23)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:24)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:25)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:26)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:32)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:33)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:34)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:35)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:37)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:39)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:43)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:44)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:45)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:46)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:16)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:45)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:57)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:12)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:13)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:14)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:15)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:16)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:17)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:18)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:19)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:21)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:22)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:23)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:24)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:25)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:26)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:32)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:33)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:34)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:35)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:41)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:37)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:41)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:39)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:43)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:44)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:45)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:46)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:41)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:57)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:12)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:13)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:14)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:15)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:16)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:17)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:18)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:19)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:21)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:22)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:23)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:24)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:25)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:26)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:32)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:33)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:34)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:35)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:41)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:37)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:41)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:39)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:43)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:44)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:45)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:46)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Var.loadFromFile(Var.java:49)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:52)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:41)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:57)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:44)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:37)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:44)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:39)
-Деление на ноль
-by.it.radivonik.calculator.MathException: Деление на ноль
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:113)
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:95)
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:55)
-	at by.it.radivonik.calculator.Operations.calc(Operations.java:24)
-	at by.it.radivonik.calculator.Operation.calc(Operation.java:34)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:42)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
-У векторов в операции разная длина
-by.it.radivonik.calculator.MathException: У векторов в операции разная длина
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:100)
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:58)
-	at by.it.radivonik.calculator.Operations.calc(Operations.java:24)
-	at by.it.radivonik.calculator.Operation.calc(Operation.java:34)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:42)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:43)
-Недопустимая операция
-by.it.radivonik.calculator.MathException: Недопустимая операция
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:87)
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:52)
-	at by.it.radivonik.calculator.Operations.calc(Operations.java:24)
-	at by.it.radivonik.calculator.Operation.calc(Operation.java:34)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:42)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:45)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:42)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:46)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:44)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:57)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:44)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:37)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:44)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:39)
-Деление на ноль
-by.it.radivonik.calculator.MathException: Деление на ноль
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:113)
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:95)
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:55)
-	at by.it.radivonik.calculator.Operations.calc(Operations.java:24)
-	at by.it.radivonik.calculator.Operation.calc(Operation.java:34)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:42)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
-У векторов в операции разная длина
-by.it.radivonik.calculator.MathException: У векторов в операции разная длина
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:100)
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:58)
-	at by.it.radivonik.calculator.Operations.calc(Operations.java:24)
-	at by.it.radivonik.calculator.Operation.calc(Operation.java:34)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:42)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:43)
-Недопустимая операция
-by.it.radivonik.calculator.MathException: Недопустимая операция
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:87)
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:52)
-	at by.it.radivonik.calculator.Operations.calc(Operations.java:24)
-	at by.it.radivonik.calculator.Operation.calc(Operation.java:34)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:42)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:45)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:42)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:46)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:44)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:12)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:57)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:44)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:37)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:44)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:39)
-Деление на ноль
-by.it.radivonik.calculator.MathException: Деление на ноль
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:113)
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:95)
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:55)
-	at by.it.radivonik.calculator.Operations.calc(Operations.java:24)
-	at by.it.radivonik.calculator.Operation.calc(Operation.java:34)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:42)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
-У векторов в операции разная длина
-by.it.radivonik.calculator.MathException: У векторов в операции разная длина
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:100)
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:58)
-	at by.it.radivonik.calculator.Operations.calc(Operations.java:24)
-	at by.it.radivonik.calculator.Operation.calc(Operation.java:34)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:42)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:43)
-Недопустимая операция
-by.it.radivonik.calculator.MathException: Недопустимая операция
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:87)
-	at by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:52)
-	at by.it.radivonik.calculator.Operations.calc(Operations.java:24)
-	at by.it.radivonik.calculator.Operation.calc(Operation.java:34)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:42)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:45)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.removeLast(LinkedList.java:283)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:13)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:42)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:46)
-Index: 0, Size: 0
-java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.LinkedList.checkElementIndex(LinkedList.java:555)
-	at java.util.LinkedList.get(LinkedList.java:476)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:44)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:66)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:57)
-Unclosed character class near index 21
-(?<=[^{,])([])|[*+-=/]
-                     ^
-java.util.regex.PatternSyntaxException: Unclosed character class near index 21
-(?<=[^{,])([])|[*+-=/]
-                     ^
-	at java.util.regex.Pattern.error(Pattern.java:1955)
-	at java.util.regex.Pattern.clazz(Pattern.java:2548)
-	at java.util.regex.Pattern.sequence(Pattern.java:2063)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.group0(Pattern.java:2905)
-	at java.util.regex.Pattern.sequence(Pattern.java:2051)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.compile(Pattern.java:1696)
-	at java.util.regex.Pattern.<init>(Pattern.java:1351)
-	at java.util.regex.Pattern.compile(Pattern.java:1028)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:22)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:70)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:8)
-Unclosed character class near index 21
-(?<=[^{,])([])|[*+-=/]
-                     ^
-java.util.regex.PatternSyntaxException: Unclosed character class near index 21
-(?<=[^{,])([])|[*+-=/]
-                     ^
-	at java.util.regex.Pattern.error(Pattern.java:1955)
-	at java.util.regex.Pattern.clazz(Pattern.java:2548)
-	at java.util.regex.Pattern.sequence(Pattern.java:2063)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.group0(Pattern.java:2905)
-	at java.util.regex.Pattern.sequence(Pattern.java:2051)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.compile(Pattern.java:1696)
-	at java.util.regex.Pattern.<init>(Pattern.java:1351)
-	at java.util.regex.Pattern.compile(Pattern.java:1028)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:22)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:70)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:9)
-Unclosed character class near index 21
-(?<=[^{,])([])|[*+-=/]
-                     ^
-java.util.regex.PatternSyntaxException: Unclosed character class near index 21
-(?<=[^{,])([])|[*+-=/]
-                     ^
-	at java.util.regex.Pattern.error(Pattern.java:1955)
-	at java.util.regex.Pattern.clazz(Pattern.java:2548)
-	at java.util.regex.Pattern.sequence(Pattern.java:2063)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.group0(Pattern.java:2905)
-	at java.util.regex.Pattern.sequence(Pattern.java:2051)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.compile(Pattern.java:1696)
-	at java.util.regex.Pattern.<init>(Pattern.java:1351)
-	at java.util.regex.Pattern.compile(Pattern.java:1028)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:22)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:70)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:10)
-Unclosed character class near index 21
-(?<=[^{,])([])|[*+-=/]
-                     ^
-java.util.regex.PatternSyntaxException: Unclosed character class near index 21
-(?<=[^{,])([])|[*+-=/]
-                     ^
-	at java.util.regex.Pattern.error(Pattern.java:1955)
-	at java.util.regex.Pattern.clazz(Pattern.java:2548)
-	at java.util.regex.Pattern.sequence(Pattern.java:2063)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.group0(Pattern.java:2905)
-	at java.util.regex.Pattern.sequence(Pattern.java:2051)
-	at java.util.regex.Pattern.expr(Pattern.java:1996)
-	at java.util.regex.Pattern.compile(Pattern.java:1696)
-	at java.util.regex.Pattern.<init>(Pattern.java:1351)
-	at java.util.regex.Pattern.compile(Pattern.java:1028)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:22)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:70)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:11)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:37)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:70)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:8)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:37)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:70)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:9)
-Пустая строка
-by.it.radivonik.calculator.ParseException: Пустая строка
-	at by.it.radivonik.calculator.Var.createVar(Var.java:71)
-	at by.it.radivonik.calculator.Operations.calc(Operations.java:25)
-	at by.it.radivonik.calculator.Operation.calc(Operation.java:34)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:70)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:11)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:37)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:70)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:8)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:37)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:70)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:9)
-Пустая строка
-by.it.radivonik.calculator.ParseException: Пустая строка
-	at by.it.radivonik.calculator.Var.createVar(Var.java:71)
-	at by.it.radivonik.calculator.Operations.calc(Operations.java:25)
-	at by.it.radivonik.calculator.Operation.calc(Operation.java:34)
-	at by.it.radivonik.calculator.Parser.parseProccess(Parser.java:14)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:43)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:70)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:11)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:70)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:8)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:70)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:9)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:70)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:11)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:70)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:8)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:70)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:9)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:39)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:70)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:11)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:50)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:69)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:40)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:50)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:69)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:50)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:69)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:40)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:50)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:69)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:50)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:69)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:40)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:50)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:69)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:50)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:69)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:40)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:50)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:69)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:50)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:69)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:40)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:50)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:69)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:50)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:69)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:40)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:50)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:69)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:50)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:69)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:40)
-null
-java.util.NoSuchElementException
-	at java.util.LinkedList.getLast(LinkedList.java:257)
-	at by.it.radivonik.calculator.Parser.parse(Parser.java:50)
-	at by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-	at by.it.radivonik.calculator.Runner.oneRes(Runner.java:69)
-	at by.it.radivonik.calculator.Runner.main(Runner.java:42)
+[1] 09.04.2017 09:54:44 class java.lang.NullPointerException
+  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:59)
+[2] 09.04.2017 09:54:44 Пустая строка при создании пременной
+  by.it.radivonik.calculator.Var.createVar(Var.java:45)
+  by.it.radivonik.calculator.Var.setVar(Var.java:62)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:60)
+[3] 09.04.2017 09:54:44 Пустая строка при создании пременной
+  by.it.radivonik.calculator.Var.createVar(Var.java:45)
+  by.it.radivonik.calculator.Var.setVar(Var.java:62)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:61)
+[4] 09.04.2017 09:54:44 Пустая строка при создании пременной
+  by.it.radivonik.calculator.Var.createVar(Var.java:45)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:62)
+[5] 09.04.2017 09:54:44 Пустая строка при создании пременной
+  by.it.radivonik.calculator.Var.createVar(Var.java:45)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:64)
+[6] 09.04.2017 09:54:44 Пустая строка при создании пременной
+  by.it.radivonik.calculator.Var.createVar(Var.java:45)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:32)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:65)
+[7] 09.04.2017 09:54:44 Пустая строка при создании пременной
+  by.it.radivonik.calculator.Var.createVar(Var.java:45)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:66)
+[8] 09.04.2017 09:57:08 class java.lang.NullPointerException
+  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.main(Runner.java:30)
+[9] 09.04.2017 09:57:08 class java.lang.NullPointerException
+  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.main(Runner.java:31)
+[10] 09.04.2017 09:57:08 class java.lang.NullPointerException
+  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.main(Runner.java:32)
+[11] 09.04.2017 09:57:08 class java.lang.NullPointerException
+  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.main(Runner.java:33)
+[12] 09.04.2017 09:57:08 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:143)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:125)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:85)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:40)
+[13] 09.04.2017 09:57:08 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:130)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:88)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:41)
+[14] 09.04.2017 09:57:08 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:117)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:82)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:43)
+[15] 09.04.2017 09:57:08 class java.util.NoSuchElementException
+  java.util.LinkedList.removeLast(LinkedList.java:283)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:60)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:44)
+[16] 09.04.2017 09:57:08 class java.lang.NullPointerException
+  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:59)
+[17] 09.04.2017 09:57:08 Пустая строка при создании пременной
+  by.it.radivonik.calculator.Var.createVar(Var.java:45)
+  by.it.radivonik.calculator.Var.setVar(Var.java:62)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:60)
+[18] 09.04.2017 09:57:08 Пустая строка при создании пременной
+  by.it.radivonik.calculator.Var.createVar(Var.java:45)
+  by.it.radivonik.calculator.Var.setVar(Var.java:62)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:61)
+[19] 09.04.2017 09:57:08 Пустая строка при создании пременной
+  by.it.radivonik.calculator.Var.createVar(Var.java:45)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:62)
+[20] 09.04.2017 09:57:08 Пустая строка при создании пременной
+  by.it.radivonik.calculator.Var.createVar(Var.java:45)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:64)
+[21] 09.04.2017 09:57:08 Пустая строка при создании пременной
+  by.it.radivonik.calculator.Var.createVar(Var.java:45)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:32)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:65)
+[22] 09.04.2017 09:57:08 Пустая строка при создании пременной
+  by.it.radivonik.calculator.Var.createVar(Var.java:45)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:66)
+[23] 09.04.2017 09:57:27 class java.lang.NullPointerException
+  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Var.loadFromFile(Var.java:102)
+  by.it.radivonik.calculator.Var.<init>(Var.java:26)
+  by.it.radivonik.calculator.VarFloat.<init>(VarFloat.java:18)
+  by.it.radivonik.calculator.Var.createVar(Var.java:48)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:10)
+[24] 09.04.2017 09:57:27 class java.lang.NullPointerException
+  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Var.loadFromFile(Var.java:102)
+  by.it.radivonik.calculator.Var.<init>(Var.java:26)
+  by.it.radivonik.calculator.VarFloat.<init>(VarFloat.java:18)
+  by.it.radivonik.calculator.Var.createVar(Var.java:48)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:10)
+[25] 09.04.2017 09:57:27 class java.lang.NullPointerException
+  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Var.loadFromFile(Var.java:102)
+  by.it.radivonik.calculator.Var.<init>(Var.java:26)
+  by.it.radivonik.calculator.VarFloat.<init>(VarFloat.java:18)
+  by.it.radivonik.calculator.Var.createVar(Var.java:48)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:10)
+[26] 09.04.2017 09:57:27 class java.lang.NullPointerException
+  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Var.loadFromFile(Var.java:102)
+  by.it.radivonik.calculator.Var.<init>(Var.java:26)
+  by.it.radivonik.calculator.VarFloat.<init>(VarFloat.java:18)
+  by.it.radivonik.calculator.Var.createVar(Var.java:48)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:10)
+[27] 09.04.2017 09:57:27 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:143)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:125)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:85)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:40)
+[28] 09.04.2017 09:57:27 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:130)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:88)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:41)
+[29] 09.04.2017 09:57:27 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:117)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:82)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:43)
+[30] 09.04.2017 09:57:27 class java.util.NoSuchElementException
+  java.util.LinkedList.removeLast(LinkedList.java:283)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:60)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:44)
+[31] 09.04.2017 09:57:43 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:143)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:125)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:85)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:40)
+[32] 09.04.2017 09:57:43 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:130)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:88)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:41)
+[33] 09.04.2017 09:57:43 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:117)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:82)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:43)
+[34] 09.04.2017 09:57:43 class java.util.NoSuchElementException
+  java.util.LinkedList.removeLast(LinkedList.java:283)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:60)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:44)
+[35] 09.04.2017 10:00:08 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:143)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:125)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:85)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:40)
+[36] 09.04.2017 10:00:08 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:130)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:88)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:41)
+[37] 09.04.2017 10:00:08 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:117)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:82)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:43)
+[38] 09.04.2017 10:00:08 class java.util.NoSuchElementException
+  java.util.LinkedList.removeLast(LinkedList.java:283)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:60)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
+  by.it.radivonik.calculator.Runner.main(Runner.java:44)
+[39] 09.04.2017 10:00:55 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:143)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:125)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:85)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:77)
+  by.it.radivonik.calculator.Runner.main(Runner.java:40)
+[40] 09.04.2017 10:00:55 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:130)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:88)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:77)
+  by.it.radivonik.calculator.Runner.main(Runner.java:41)
+[41] 09.04.2017 10:00:55 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:117)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:82)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:77)
+  by.it.radivonik.calculator.Runner.main(Runner.java:43)
+[42] 09.04.2017 10:00:55 class java.util.NoSuchElementException
+  java.util.LinkedList.removeLast(LinkedList.java:283)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:60)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Runner.oneRes(Runner.java:77)
+  by.it.radivonik.calculator.Runner.main(Runner.java:44)
+[43] 09.04.2017 10:08:04 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:143)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:125)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:85)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
+  by.it.radivonik.calculator.Runner.main(Runner.java:40)
+[44] 09.04.2017 10:08:04 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:130)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:88)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
+  by.it.radivonik.calculator.Runner.main(Runner.java:41)
+[45] 09.04.2017 10:08:04 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:117)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:82)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
+  by.it.radivonik.calculator.Runner.main(Runner.java:43)
+[46] 09.04.2017 10:08:04 class java.util.NoSuchElementException
+  java.util.LinkedList.removeLast(LinkedList.java:283)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:60)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
+  by.it.radivonik.calculator.Runner.main(Runner.java:44)
+[47] 09.04.2017 11:00:41 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:143)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:125)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:85)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
+  by.it.radivonik.calculator.Runner.main(Runner.java:40)
+[48] 09.04.2017 11:00:41 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:130)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:88)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
+  by.it.radivonik.calculator.Runner.main(Runner.java:41)
+[49] 09.04.2017 11:00:41 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:117)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:82)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
+  by.it.radivonik.calculator.Runner.main(Runner.java:43)
+[50] 09.04.2017 11:00:41 class java.util.NoSuchElementException
+  java.util.LinkedList.removeLast(LinkedList.java:283)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:60)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
+  by.it.radivonik.calculator.Runner.main(Runner.java:44)

@@ -21,6 +21,10 @@ public class Var implements IVariable {
         }
     };
 
+    {
+        loadFromFile();
+    }
+
     @Override
     public void fromString(String str) throws ParseException {
 
@@ -33,14 +37,14 @@ public class Var implements IVariable {
 
     static Var createVar(String str) throws ParseException {
         if (str == null)
-            throw new ParseException("Пустая строка");
+            throw new ParseException("Пустая строка при создании пременной");
         Var res;
-        if (str.matches(IPatterns.ExNumber))
-            res = new VarFloat(str);
+        if (str.matches(IPatterns.ExMatrix))
+            res = new VarMatrix(str);
         else if (str.matches(IPatterns.ExVector))
             res = new VarVector(str);
-        else if (str.matches(IPatterns.exMatrix))
-            res = new VarMatrix(str);
+        else if (str.matches(IPatterns.ExNumber))
+            res = new VarFloat(str);
         else
             res = vars.get(str);
         return res;
@@ -48,8 +52,9 @@ public class Var implements IVariable {
 
     static Var setVar(String name, String v) throws ParseException {
         Var res = null;
-        if (v == null)
+        if (v == null) {
             vars.remove(name);
+        }
         else {
             res = createVar(v);
             vars.put(name, res);
@@ -76,7 +81,7 @@ public class Var implements IVariable {
         return varsSorted.toString();
     }
 
-    public void loadFromFile() throws ParseException {
+    static void loadFromFile() {
         if (isLoadFile)
             return;
 
@@ -92,11 +97,11 @@ public class Var implements IVariable {
                 Calc.calculate(line);
         }
         catch (IOException e) {
-            throw new ParseException("Не прочитан файл с переменными (" + e.getMessage() + ")");
+            Log.log("Не прочитан файл с переменными (" + e.getMessage() + ")");
         }
-    }
+}
 
-    public void saveToFile() throws ParseException {
+    static void saveToFile() {
         if (vars.size() == 0)
             return;
 
@@ -104,7 +109,7 @@ public class Var implements IVariable {
             fileWriter.print(vars);
         }
         catch (IOException e) {
-            throw new ParseException("Не сохранен файл с переменными (" + e.getMessage() + ")");
+            Log.log("Не сохранен файл с переменными (" + e.getMessage() + ")");
         }
     }
 }
