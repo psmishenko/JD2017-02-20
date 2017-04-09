@@ -1,41 +1,4 @@
-[1] 09.04.2017 09:54:44 class java.lang.NullPointerException
-  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
-  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
-  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
-  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
-  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
-  by.it.radivonik.calculator.Runner.main(Runner.java:59)
-[2] 09.04.2017 09:54:44 Пустая строка при создании пременной
-  by.it.radivonik.calculator.Var.createVar(Var.java:45)
-  by.it.radivonik.calculator.Var.setVar(Var.java:62)
-  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
-  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
-  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
-  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
-  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
-  by.it.radivonik.calculator.Runner.main(Runner.java:60)
-[3] 09.04.2017 09:54:44 Пустая строка при создании пременной
-  by.it.radivonik.calculator.Var.createVar(Var.java:45)
-  by.it.radivonik.calculator.Var.setVar(Var.java:62)
-  by.it.radivonik.calculator.Operations.calc(Operations.java:30)
-  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
-  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
-  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
-  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
-  by.it.radivonik.calculator.Runner.main(Runner.java:61)
-[4] 09.04.2017 09:54:44 Пустая строка при создании пременной
-  by.it.radivonik.calculator.Var.createVar(Var.java:45)
-  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
-  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
-  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
-  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
-  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
-  by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
-  by.it.radivonik.calculator.Runner.main(Runner.java:62)
-[5] 09.04.2017 09:54:44 Пустая строка при создании пременной
+[1] 09.04.2017 09:54:44 Пустая строка при создании пременной
   by.it.radivonik.calculator.Var.createVar(Var.java:45)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
   by.it.radivonik.calculator.Operation.calc(Operation.java:34)
@@ -44,7 +7,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:64)
-[6] 09.04.2017 09:54:44 Пустая строка при создании пременной
+[2] 09.04.2017 09:54:44 Пустая строка при создании пременной
   by.it.radivonik.calculator.Var.createVar(Var.java:45)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
   by.it.radivonik.calculator.Operation.calc(Operation.java:34)
@@ -53,7 +16,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:65)
-[7] 09.04.2017 09:54:44 Пустая строка при создании пременной
+[3] 09.04.2017 09:54:44 Пустая строка при создании пременной
   by.it.radivonik.calculator.Var.createVar(Var.java:45)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
   by.it.radivonik.calculator.Operation.calc(Operation.java:34)
@@ -62,35 +25,35 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:66)
-[8] 09.04.2017 09:57:08 class java.lang.NullPointerException
+[4] 09.04.2017 09:57:08 class java.lang.NullPointerException
   by.it.radivonik.calculator.Operations.calc(Operations.java:30)
   by.it.radivonik.calculator.Operation.calc(Operation.java:34)
   by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
   by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.main(Runner.java:30)
-[9] 09.04.2017 09:57:08 class java.lang.NullPointerException
+[5] 09.04.2017 09:57:08 class java.lang.NullPointerException
   by.it.radivonik.calculator.Operations.calc(Operations.java:30)
   by.it.radivonik.calculator.Operation.calc(Operation.java:34)
   by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
   by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.main(Runner.java:31)
-[10] 09.04.2017 09:57:08 class java.lang.NullPointerException
+[6] 09.04.2017 09:57:08 class java.lang.NullPointerException
   by.it.radivonik.calculator.Operations.calc(Operations.java:30)
   by.it.radivonik.calculator.Operation.calc(Operation.java:34)
   by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
   by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.main(Runner.java:32)
-[11] 09.04.2017 09:57:08 class java.lang.NullPointerException
+[7] 09.04.2017 09:57:08 class java.lang.NullPointerException
   by.it.radivonik.calculator.Operations.calc(Operations.java:30)
   by.it.radivonik.calculator.Operation.calc(Operation.java:34)
   by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
   by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.main(Runner.java:33)
-[12] 09.04.2017 09:57:08 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
+[8] 09.04.2017 09:57:08 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:143)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:125)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:85)
@@ -101,7 +64,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:40)
-[13] 09.04.2017 09:57:08 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
+[9] 09.04.2017 09:57:08 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:130)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:88)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
@@ -111,7 +74,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:41)
-[14] 09.04.2017 09:57:08 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
+[10] 09.04.2017 09:57:08 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:117)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:82)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
@@ -121,14 +84,14 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:43)
-[15] 09.04.2017 09:57:08 class java.util.NoSuchElementException
+[11] 09.04.2017 09:57:08 class java.util.NoSuchElementException
   java.util.LinkedList.removeLast(LinkedList.java:283)
   by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:60)
   by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:44)
-[16] 09.04.2017 09:57:08 class java.lang.NullPointerException
+[12] 09.04.2017 09:57:08 class java.lang.NullPointerException
   by.it.radivonik.calculator.Operations.calc(Operations.java:30)
   by.it.radivonik.calculator.Operation.calc(Operation.java:34)
   by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
@@ -136,7 +99,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:59)
-[17] 09.04.2017 09:57:08 Пустая строка при создании пременной
+[13] 09.04.2017 09:57:08 Пустая строка при создании пременной
   by.it.radivonik.calculator.Var.createVar(Var.java:45)
   by.it.radivonik.calculator.Var.setVar(Var.java:62)
   by.it.radivonik.calculator.Operations.calc(Operations.java:30)
@@ -146,7 +109,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:60)
-[18] 09.04.2017 09:57:08 Пустая строка при создании пременной
+[14] 09.04.2017 09:57:08 Пустая строка при создании пременной
   by.it.radivonik.calculator.Var.createVar(Var.java:45)
   by.it.radivonik.calculator.Var.setVar(Var.java:62)
   by.it.radivonik.calculator.Operations.calc(Operations.java:30)
@@ -156,7 +119,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:61)
-[19] 09.04.2017 09:57:08 Пустая строка при создании пременной
+[15] 09.04.2017 09:57:08 Пустая строка при создании пременной
   by.it.radivonik.calculator.Var.createVar(Var.java:45)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
   by.it.radivonik.calculator.Operation.calc(Operation.java:34)
@@ -165,7 +128,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:62)
-[20] 09.04.2017 09:57:08 Пустая строка при создании пременной
+[16] 09.04.2017 09:57:08 Пустая строка при создании пременной
   by.it.radivonik.calculator.Var.createVar(Var.java:45)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
   by.it.radivonik.calculator.Operation.calc(Operation.java:34)
@@ -174,7 +137,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:64)
-[21] 09.04.2017 09:57:08 Пустая строка при создании пременной
+[17] 09.04.2017 09:57:08 Пустая строка при создании пременной
   by.it.radivonik.calculator.Var.createVar(Var.java:45)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
   by.it.radivonik.calculator.Operation.calc(Operation.java:34)
@@ -183,7 +146,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:65)
-[22] 09.04.2017 09:57:08 Пустая строка при создании пременной
+[18] 09.04.2017 09:57:08 Пустая строка при создании пременной
   by.it.radivonik.calculator.Var.createVar(Var.java:45)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
   by.it.radivonik.calculator.Operation.calc(Operation.java:34)
@@ -192,7 +155,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:66)
-[23] 09.04.2017 09:57:27 class java.lang.NullPointerException
+[19] 09.04.2017 09:57:27 class java.lang.NullPointerException
   by.it.radivonik.calculator.Operations.calc(Operations.java:30)
   by.it.radivonik.calculator.Operation.calc(Operation.java:34)
   by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
@@ -209,7 +172,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:10)
-[24] 09.04.2017 09:57:27 class java.lang.NullPointerException
+[20] 09.04.2017 09:57:27 class java.lang.NullPointerException
   by.it.radivonik.calculator.Operations.calc(Operations.java:30)
   by.it.radivonik.calculator.Operation.calc(Operation.java:34)
   by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
@@ -226,7 +189,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:10)
-[25] 09.04.2017 09:57:27 class java.lang.NullPointerException
+[21] 09.04.2017 09:57:27 class java.lang.NullPointerException
   by.it.radivonik.calculator.Operations.calc(Operations.java:30)
   by.it.radivonik.calculator.Operation.calc(Operation.java:34)
   by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
@@ -243,7 +206,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:10)
-[26] 09.04.2017 09:57:27 class java.lang.NullPointerException
+[22] 09.04.2017 09:57:27 class java.lang.NullPointerException
   by.it.radivonik.calculator.Operations.calc(Operations.java:30)
   by.it.radivonik.calculator.Operation.calc(Operation.java:34)
   by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
@@ -260,7 +223,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:10)
-[27] 09.04.2017 09:57:27 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
+[23] 09.04.2017 09:57:27 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:143)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:125)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:85)
@@ -271,7 +234,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:40)
-[28] 09.04.2017 09:57:27 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
+[24] 09.04.2017 09:57:27 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:130)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:88)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
@@ -281,7 +244,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:41)
-[29] 09.04.2017 09:57:27 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
+[25] 09.04.2017 09:57:27 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:117)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:82)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
@@ -291,14 +254,14 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:43)
-[30] 09.04.2017 09:57:27 class java.util.NoSuchElementException
+[26] 09.04.2017 09:57:27 class java.util.NoSuchElementException
   java.util.LinkedList.removeLast(LinkedList.java:283)
   by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:60)
   by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:44)
-[31] 09.04.2017 09:57:43 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
+[27] 09.04.2017 09:57:43 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:143)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:125)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:85)
@@ -309,7 +272,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:40)
-[32] 09.04.2017 09:57:43 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
+[28] 09.04.2017 09:57:43 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:130)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:88)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
@@ -319,7 +282,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:41)
-[33] 09.04.2017 09:57:43 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
+[29] 09.04.2017 09:57:43 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:117)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:82)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
@@ -329,14 +292,14 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:43)
-[34] 09.04.2017 09:57:43 class java.util.NoSuchElementException
+[30] 09.04.2017 09:57:43 class java.util.NoSuchElementException
   java.util.LinkedList.removeLast(LinkedList.java:283)
   by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:60)
   by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:44)
-[35] 09.04.2017 10:00:08 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
+[31] 09.04.2017 10:00:08 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:143)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:125)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:85)
@@ -347,7 +310,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:40)
-[36] 09.04.2017 10:00:08 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
+[32] 09.04.2017 10:00:08 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:130)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:88)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
@@ -357,7 +320,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:41)
-[37] 09.04.2017 10:00:08 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
+[33] 09.04.2017 10:00:08 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:117)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:82)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
@@ -367,14 +330,14 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:43)
-[38] 09.04.2017 10:00:08 class java.util.NoSuchElementException
+[34] 09.04.2017 10:00:08 class java.util.NoSuchElementException
   java.util.LinkedList.removeLast(LinkedList.java:283)
   by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:60)
   by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:81)
   by.it.radivonik.calculator.Runner.main(Runner.java:44)
-[39] 09.04.2017 10:00:55 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
+[35] 09.04.2017 10:00:55 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:143)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:125)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:85)
@@ -385,7 +348,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:77)
   by.it.radivonik.calculator.Runner.main(Runner.java:40)
-[40] 09.04.2017 10:00:55 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
+[36] 09.04.2017 10:00:55 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:130)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:88)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
@@ -395,7 +358,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:77)
   by.it.radivonik.calculator.Runner.main(Runner.java:41)
-[41] 09.04.2017 10:00:55 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
+[37] 09.04.2017 10:00:55 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:117)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:82)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
@@ -405,14 +368,14 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:77)
   by.it.radivonik.calculator.Runner.main(Runner.java:43)
-[42] 09.04.2017 10:00:55 class java.util.NoSuchElementException
+[38] 09.04.2017 10:00:55 class java.util.NoSuchElementException
   java.util.LinkedList.removeLast(LinkedList.java:283)
   by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:60)
   by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Runner.oneRes(Runner.java:77)
   by.it.radivonik.calculator.Runner.main(Runner.java:44)
-[43] 09.04.2017 10:08:04 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
+[39] 09.04.2017 10:08:04 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:143)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:125)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:85)
@@ -423,7 +386,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
   by.it.radivonik.calculator.Runner.main(Runner.java:40)
-[44] 09.04.2017 10:08:04 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
+[40] 09.04.2017 10:08:04 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:130)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:88)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
@@ -433,7 +396,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
   by.it.radivonik.calculator.Runner.main(Runner.java:41)
-[45] 09.04.2017 10:08:04 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
+[41] 09.04.2017 10:08:04 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:117)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:82)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
@@ -443,14 +406,14 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
   by.it.radivonik.calculator.Runner.main(Runner.java:43)
-[46] 09.04.2017 10:08:04 class java.util.NoSuchElementException
+[42] 09.04.2017 10:08:04 class java.util.NoSuchElementException
   java.util.LinkedList.removeLast(LinkedList.java:283)
   by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:60)
   by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
   by.it.radivonik.calculator.Runner.main(Runner.java:44)
-[47] 09.04.2017 11:00:41 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
+[43] 09.04.2017 11:00:41 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:143)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:125)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:85)
@@ -461,7 +424,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
   by.it.radivonik.calculator.Runner.main(Runner.java:40)
-[48] 09.04.2017 11:00:41 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
+[44] 09.04.2017 11:00:41 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:130)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:88)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
@@ -471,7 +434,7 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
   by.it.radivonik.calculator.Runner.main(Runner.java:41)
-[49] 09.04.2017 11:00:41 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
+[45] 09.04.2017 11:00:41 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:117)
   by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:82)
   by.it.radivonik.calculator.Operations.calc(Operations.java:32)
@@ -481,7 +444,45 @@
   by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
   by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
   by.it.radivonik.calculator.Runner.main(Runner.java:43)
-[50] 09.04.2017 11:00:41 class java.util.NoSuchElementException
+[46] 09.04.2017 11:00:41 class java.util.NoSuchElementException
+  java.util.LinkedList.removeLast(LinkedList.java:283)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:60)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
+  by.it.radivonik.calculator.Runner.main(Runner.java:44)
+[47] 09.04.2017 11:20:19 Деление на ноль: {2.0,3.0,4.0}/{0.0,0.0,0.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:166)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:148)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:88)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
+  by.it.radivonik.calculator.Runner.main(Runner.java:40)
+[48] 09.04.2017 11:20:19 У векторов в операции разная длина: {2.0,3.0,4.0}+{5.0,6.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:153)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:91)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
+  by.it.radivonik.calculator.Runner.main(Runner.java:41)
+[49] 09.04.2017 11:20:19 Недопустимая операция: 5.0/{2.0,3.0,4.0,6.0}
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:132)
+  by.it.radivonik.calculator.Operations.calcTwoArg(Operations.java:82)
+  by.it.radivonik.calculator.Operations.calc(Operations.java:32)
+  by.it.radivonik.calculator.Operation.calc(Operation.java:34)
+  by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:61)
+  by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)
+  by.it.radivonik.calculator.Calc.calculate(Calc.java:13)
+  by.it.radivonik.calculator.Calc.calculatePrint(Calc.java:32)
+  by.it.radivonik.calculator.Runner.main(Runner.java:43)
+[50] 09.04.2017 11:20:19 class java.util.NoSuchElementException
   java.util.LinkedList.removeLast(LinkedList.java:283)
   by.it.radivonik.calculator.Parser.parseCalcProccess(Parser.java:60)
   by.it.radivonik.calculator.Parser.parseCalc(Parser.java:48)

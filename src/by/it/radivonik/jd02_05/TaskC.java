@@ -16,7 +16,6 @@ public class TaskC {
             while (!((cmd = scanner.nextLine()).toLowerCase().equals("exit"))) {
                 Locale locale = new Locale(cmd);
                 Language.changeLocale(locale);
-                System.out.println(locale.getCountry());
                 (new TaskA()).run(args);
                 (new TaskB()).run(args);
             }

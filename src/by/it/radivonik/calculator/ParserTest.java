@@ -41,12 +41,18 @@ public class ParserTest {
     @Test
     public void parseCalcB2() throws Exception {
         String res = (new Parser().parseCalc("D=((C-0.15)-20)/(7-5)"));
-        assertEquals(res, "10");
+        assertEquals(res, "10.0");
     }
 
     @Test
     public void parseCalcB3() throws Exception {
         String res = (new Parser().parseCalc("E={2,3}*(D/2)"));
         assertEquals(res, "{10.0,15.0}");
+    }
+
+    @Test
+    public void parseCalcC1() throws Exception {
+        String res = (new Parser().parseCalc("M={{1,2,3,4},{-1.1,-2.2,-3.3,-3.4}}*(8/(3-1))"));
+        assertEquals(res, "{{4.0,8.0,12.0,16.0},{-4.4,-8.8,-13.2,-13.6}}");
     }
 }

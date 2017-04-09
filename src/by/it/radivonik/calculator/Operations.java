@@ -74,18 +74,33 @@ public class Operations {
         return v1.toString() + op.getOperator() + v2.toString();
     }
 
-    private static String calcTwoArg(IOperation op, Var v1, Var v2) throws MathException {
+    private static String calcTwoArg(IOperation op, Var v1, Var v2) throws MathException, ParseException {
         if (v1 instanceof VarFloat && v2 instanceof VarFloat) {
             return calcTwoArg(op, (VarFloat)v1, (VarFloat)v2);
         }
         else if (v1 instanceof VarFloat && v2 instanceof VarVector) {
             return calcTwoArg(op, (VarFloat)v1,(VarVector)v2);
         }
+        else if (v1 instanceof VarFloat && v2 instanceof VarMatrix) {
+            return calcTwoArg(op, (VarFloat)v1, (VarMatrix)v2);
+        }
         else if (v1 instanceof VarVector && v2 instanceof VarFloat) {
             return calcTwoArg(op, (VarVector)v1,(VarFloat)v2);
         }
         else if (v1 instanceof VarVector && v2 instanceof VarVector) {
             return calcTwoArg(op, (VarVector)v1,(VarVector)v2);
+        }
+        else if (v1 instanceof VarVector && v2 instanceof VarMatrix) {
+            return calcTwoArg(op, (VarVector)v1,(VarMatrix)v2);
+        }
+        else if (v1 instanceof VarMatrix && v2 instanceof VarFloat) {
+            return calcTwoArg(op, (VarMatrix)v1,(VarFloat)v2);
+        }
+        else if (v1 instanceof VarMatrix && v2 instanceof VarVector) {
+            return calcTwoArg(op, (VarMatrix)v1,(VarVector)v2);
+        }
+        else if (v1 instanceof VarMatrix && v2 instanceof VarMatrix) {
+            return calcTwoArg(op, (VarMatrix)v1,(VarMatrix)v2);
         }
         else
             return null;
@@ -111,6 +126,14 @@ public class Operations {
     }
 
     private static String calcTwoArg(IOperation op, VarFloat v1, VarVector v2) throws MathException {
+        if (op.getOperator() == "+" || op.getOperator() == "*")
+            return calcTwoArg(op,v2,v1);
+        else {
+            throw new MathException("Недопустимая операция: " + getOp(op,v1,v2));
+        }
+    }
+
+    private static String calcTwoArg(IOperation op, VarFloat v1, VarMatrix v2) throws MathException, ParseException {
         if (op.getOperator() == "+" || op.getOperator() == "*")
             return calcTwoArg(op,v2,v1);
         else {
@@ -148,4 +171,51 @@ public class Operations {
         }
         return new VarVector(res).toString();
     }
+
+    private static String calcTwoArg(IOperation op, VarVector v1, VarMatrix v2) throws MathException {
+        return null;
+    }
+
+    private static String calcTwoArg(IOperation op, VarMatrix v1, VarFloat v2) throws MathException, ParseException {
+        double[][] m = new double[v1.rowCount()][v1.colCount()];
+        for (int i = 0; i < v1.rowCount(); i++) {
+            for (int j = 0; j < v1.colCount(); j++)
+                m[i][j] = v2.getValue();
+        }
+        return calcTwoArg(op, v1, new VarMatrix(m));
+    }
+
+    private static String calcTwoArg(IOperation op, VarMatrix v1, VarVector v2) throws MathException {
+        return null;
+    }
+
+    private static String calcTwoArg(IOperation op, VarMatrix v1, VarMatrix v2) throws MathException, ParseException {
+        if (v1.rowCount() != v2.rowCount() || v1.colCount() != v2.colCount()) {
+            throw new MathException("У матриц в операции разная размерность: " + getOp(op,v1,v2));
+        }
+        double[][] res = new double[v1.rowCount()][v1.colCount()];
+        for (int i = 0; i < v1.rowCount(); i++) {
+            for (int j = 0; j < v1.colCount() ; j++) {
+                switch(op.getOperator()) {
+                    case "+":
+                        res[i][j] = v1.getItem(i,j) + v2.getItem(i,j);
+                        break;
+                    case "-":
+                        res[i][j] = v1.getItem(i,j) - v2.getItem(i,j);
+                        break;
+                    case "*":
+                        res[i][j] = v1.getItem(i,j) * v2.getItem(i,j);
+                        break; // некорректная математическая операция
+                    case "/":
+                        if (v2.getItem(i,j) == 0)
+                            throw new MathException("Деление на ноль: " + getOp(op, v1, v2));
+                        res[i][j] = v1.getItem(i,j) / v2.getItem(i,j);
+                        break;
+                    default:
+                        return null;
+                }
+            }
+        }
+        return new VarMatrix(res).toString();
+   }
 }
