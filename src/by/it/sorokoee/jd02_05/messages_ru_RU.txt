@@ -1,0 +1,4 @@
+Main.welcome=Привет!
+Main.HowDoYouDo=Как твои дела?
+Main.MyName=Евгений
+Main.Now=Сегодня

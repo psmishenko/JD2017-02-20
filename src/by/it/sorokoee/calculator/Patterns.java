@@ -9,7 +9,7 @@ public interface Patterns {
     String exVec="\\{((-?([0-9.])+),?)+}";
     String exMat="\\{((\\{((-?([0-9.])+),?)+}),?)+}";
     String exAny="("+exMat+")|("+exVec+")|("+exVal+")";
-    String exOper="[-+*/=]";
+    String exOper="(?<=[^{,=+*/-])[=+*/-]";
     String exFull= "("+exAny+")"+
             "(" +exOper+")"+
             "(" +exAny +")";

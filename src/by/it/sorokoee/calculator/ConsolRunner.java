@@ -74,22 +74,29 @@ public class ConsolRunner {
 //
 //        oneRes(Parser.calc("5/0"));
 //        oneRes(Parser.calc(vec1+"+"+vec2));
+Parser parser=new Parser();
+        Var vec1=new VarV("{1,5}");
+        Var vec2=new VarV("{1.7,2,3}");
 
-        Parser.calc("A=3");
-        Parser.calc("B={1,2,3,4}");
-        Parser.calc("C=9");
-        Parser.calc("A=7");
+        oneRes(parser.calc("A=2+5.3"));
+        oneRes(parser.calc("B=A*3.5"));
+        oneRes(parser.calc("B1=B-0.55"));
+        oneRes(parser.calc("B2=A/2"));
+        parser.calc("A=3");
+        parser.calc("B={1,2,3,4}");
+        parser.calc("C=9");
+        parser.calc("A=7");
         writeMap();
-        Parser.calc("A=4");
-        Parser.calc("Y={1,2,3,4}");
-        Parser.calc("Z=9");
-        Parser.calc("D=7");
+        parser.calc("A=4");
+        parser.calc("Y={1,2,3,4}");
+        parser.calc("Z=9");
+        parser.calc("D=7");
         writeMap();
         loadMap();
-        Parser.calc("q=23");
-        Parser.calc("f={1,2,3,4,5}");
-        Parser.calc("k=94");
-        Parser.calc("h=75");
+        parser.calc("q=23");
+        parser.calc("f={1,2,3,4,5}");
+        parser.calc("k=94");
+        parser.calc("h=75");
         writeMap();
         loadMap();
 
