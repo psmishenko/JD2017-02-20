@@ -77,13 +77,20 @@ public class Parser {
 
      Var calc(String expression)throws MathException {
         Var res = null;
-        Pattern pattern =
-                Pattern.compile(Patterns.expressionInBrackets);
-        Matcher matcher = pattern.matcher(expression);
-        if (matcher.find()){ // или if(matcher.find)
-            String s = expression.substring(matcher.start(),matcher.end());
-              expression =  expression.replace(s,"5");    // рекурсивный вызов calc и переопределение expression
-        }
+       StringBuilder sb = new StringBuilder(expression);
+       Pattern pattern = Pattern.compile("[()]");
+       Matcher matcher = pattern.matcher(sb);
+       int posOfOpenBr = 0;
+       while (matcher.find()){
+           if(matcher.group().equals("(")){
+               posOfOpenBr = matcher.start()+1;
+           }
+           else if(matcher.group().equals(")")){
+            expression = sb.replace(posOfOpenBr-1,matcher.start()+1,
+                    calc(sb.substring(posOfOpenBr,matcher.start())).toString()).toString() ;
+            matcher.reset();
+           }
+       }
         try {
             String[] part = expression.split(Patterns.exOper);
             operand = new ArrayList<>(Arrays.asList(part));
