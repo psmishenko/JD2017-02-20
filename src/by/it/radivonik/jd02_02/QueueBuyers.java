@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class QueueBuyers {
     private final static PriorityQueue<Buyer> queue = new PriorityQueue<Buyer>(
-            30,
+            200,
             new Comparator<Buyer>() {
                 @Override
                 public int compare(Buyer o1, Buyer o2) {

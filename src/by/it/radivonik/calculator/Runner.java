@@ -1,31 +1,30 @@
 package by.it.radivonik.calculator;
 
-import java.util.regex.*;
-
 /**
  * Created by Radivonik on 19.03.2017.
  */
 public class Runner {
     public static void main(String[] args)  {
+/*
         System.out.println("Задания к занятиям JD01_09, JD01_11.1");
         System.out.println("Вариант А:");
-        oneRes("3.8+6.2");
-        oneRes("87.4-23.1");
-        oneRes("1.04*5.9");
-        oneRes("12.7*5");
-        oneRes("-6+12");
-        oneRes("-7*3.1");
-        oneRes("-4/8");
-        oneRes("-9-0.9");
+        Calc.calculatePrint("3.8+6.2");
+        Calc.calculatePrint("87.4-23.1");
+        Calc.calculatePrint("1.04*5.9");
+        Calc.calculatePrint("12.7*5");
+        Calc.calculatePrint("-6+12");
+        Calc.calculatePrint("-7*3.1");
+        Calc.calculatePrint("-4/8");
+        Calc.calculatePrint("-9-0.9");
         System.out.println("Вариант B:");
-        oneRes("{2,3,4}*2");
-        oneRes("{2,3,4}/3");
-        oneRes("{2,3,4}-5");
-        oneRes("-4+{2,3,4}");
-        oneRes("{2,3,4}+{5,6,7}");
-        oneRes("{2,3,4}-{5,6,7}");
+        Calc.calculatePrint("{2,3,4}*2");
+        Calc.calculatePrint("{2,3,4}/3");
+        Calc.calculatePrint("{2,3,4}-5");
+        Calc.calculatePrint("-4+{2,3,4}");
+        Calc.calculatePrint("{2,3,4}+{5,6,7}");
+        Calc.calculatePrint("{2,3,4}-{5,6,7}");
         System.out.println("Вариант C:");
-        System.out.println("Матрицы ПОКА- не готовы");
+        Calc.calculatePrint("{{2,3,4},{5,6,8}}*2");
 
         System.out.println("\nЗадания к занятию JD01_11 (переменные)");
         System.out.println("Вариант А:");
@@ -34,35 +33,38 @@ public class Runner {
         Calc.calculate("cc=-3.8");
         Calc.calculate("c1={-2.0,-3.5,0.00,4,9}");
         System.out.println("Вариант B:");
-        oneRes("printvar");
+        Calc.calculatePrint("printvar",true);
         System.out.println("Вариант C:");
-        oneRes("sortvar");
+        Calc.calculatePrint("sortvar",true);
 
         System.out.println("\nЗадания к занятию JD01_13 (исключения)");
-        oneRes("{2,3,4}/0");
-        oneRes("{2,3,4}+{5,6}");
-        oneRes("{2,3,4}/{}");
-        oneRes("5/{2,3,4,6}");
-        oneRes("X=");
+        Calc.calculatePrint("{2,3,4}/0");
+        Calc.calculatePrint("{2,3,4}+{5,6}");
+        Calc.calculatePrint("{2,3,4}/{}");
+        Calc.calculatePrint("5/{2,3,4,6}");
+        Calc.calculatePrint("X=");
 
         System.out.println("\nЗадания к занятию JD01_15 (потоки ввода вывода)");
         System.out.println("Смотрите файл vars.txt");
-        try {
-            new Var().saveToFile();
-            new Var().loadFromFile();
-        }
-        catch (Exception e) {
-            System.out.println("Ошибка: " + e.getMessage());
-        }
-        oneRes("printvar");
+        Var.saveToFile();
+        Calc.calculatePrint("printvar");
         System.out.println("Смотрите файл log.txt");
-     }
+*/
+        System.out.println("\nЗадания к занятию JD02_04 (сложный парсер + тесты JUnit)");
+        System.out.println("Вариант А:");
+        Calc.calculatePrint("A=2+5.3");
+        Calc.calculatePrint("B=A*3.5");
+        Calc.calculatePrint("B1=B+0.11*-5");
+        Calc.calculatePrint("B2=A/2-1");
+        System.out.println("Вариант B:");
+        Calc.calculatePrint("C=B+(A*2)");
+        Calc.calculatePrint("D=((C-0.15)-20)/(7-5)");
+        Calc.calculatePrint("E={2,3}*(D/2)");
+        System.out.println("Вариант C:");
+        Calc.calculatePrint("M={{1,2,3,4},{-1.1,-2.2,-3.3,-3.4}}*(8/(3-1))");
+//        Calc.calculatePrint("printvar",true);
 
-    private static void oneRes(String exp, String val) {
-        System.out.printf("%s = %s\n",exp,val);
+        Var.saveToFile();
     }
 
-    private static void oneRes(String exp) {
-        oneRes(exp,Calc.calculate(exp));
-    }
-}
+ }

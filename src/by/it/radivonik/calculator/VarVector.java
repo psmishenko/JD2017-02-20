@@ -10,17 +10,20 @@ public class VarVector extends Var {
 
     // Конструкторы
     public VarVector(double[] vector) {
-        this.vector = new double[vector.length];
-        System.arraycopy(vector,0,this.vector,0,vector.length);
+        vectorCopy(vector);
     }
 
     public VarVector(VarVector var) {
-        vector = new double[var.vector.length];
-        System.arraycopy(var.vector,0,vector,0,var.vector.length);
+        vectorCopy(var.vector);
     }
 
     public VarVector(String str) throws ParseException {
         fromString(str);
+    }
+
+    private void vectorCopy(double[] vector) {
+        this.vector = new double[vector.length];
+        System.arraycopy(vector,0,this.vector,0,vector.length);
     }
 
     @Override
