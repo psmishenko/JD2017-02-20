@@ -16,13 +16,16 @@ import java.util.ResourceBundle;
 public class Runner {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String language = null;
         while (true) {
-            System.out.println(Language.resourceBundle.getString(Message.ENTER));
-            String language = reader.readLine();
-            Language.setLanguage(language);
             if (args.length == 2) {
                 Language.setLanguage(args[0]);
+            } else {
+                System.out.println(Language.resourceBundle.getString(Message.ENTER));
+                language = reader.readLine();
+                Language.setLanguage(language);
             }
+
 
 
             System.out.println(Language.resourceBundle.getString(
