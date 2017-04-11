@@ -1,0 +1,3 @@
+Main.welcome = Guten Tag
+Main.HowDoYouDo = wie geht es ihnen
+Main.MyName = Sie name is

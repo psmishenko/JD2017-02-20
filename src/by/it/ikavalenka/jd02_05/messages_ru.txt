@@ -1,0 +1,3 @@
+Main.welcome = Привет
+Main.HowDoYouDo = Как дела
+Main.MyName = Мое имя

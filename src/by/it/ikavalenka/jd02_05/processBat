@@ -1,0 +1,5 @@
+FOR %%I In (*.txt)
+"C:\Users\USER\IdeaProjects\JD_01_2017_03\src\JD_01_2017_03\jd02_05>native2ascii.exe" -encoding utf-8 messages.txt messages.properties
+"C:\Users\USER\IdeaProjects\JD_01_2017_03\src\JD_01_2017_03\jd02_05>native2ascii.exe" -encoding utf-8 messages_by.txt messages_by_BY.properties
+"C:\Users\USER\IdeaProjects\JD_01_2017_03\src\JD_01_2017_03\jd02_05>native2ascii.exe" -encoding utf-8 messages_ru.txt messages_ru_RU.properties
+"C:\Users\USER\IdeaProjects\JD_01_2017_03\src\JD_01_2017_03\jd02_05>native2ascii.exe" -encoding utf-8 messages_de.txt messages_de_DE.properties
