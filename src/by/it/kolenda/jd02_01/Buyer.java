@@ -27,7 +27,7 @@ class Buyer extends Thread implements IBuyer, IUseBasket {
     @Override
     public void chooseGoods() {
         try {
-            int pause=Randoming.fromTo(500, 2000);
+            int pause=Randoming.fromTo(510, 2000);
             Thread.sleep(pause);
         } catch (InterruptedException e){
             System.out.println(this+" //некорректное завершение ожидания");
