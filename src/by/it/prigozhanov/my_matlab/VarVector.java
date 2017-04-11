@@ -8,6 +8,20 @@ package by.it.prigozhanov.my_matlab;
 public class VarVector extends Var {
     private double[] values;
 
+    private boolean isLenghEquals(VarVector varVector1, VarVector varVector2) {
+        if (varVector1.values.length == varVector2.values.length) return true;
+        else return false;
+    }
+
+    public VarVector(double[] values) {
+        this.values = values;
+    }
+
+    public VarVector(String stringVector) {
+
+    }
+
+
     @Override
     public Var plus(Var var) {
         return super.plus(var);
@@ -30,8 +44,13 @@ public class VarVector extends Var {
 
     @Override
     public String toString() {
-
-        return super.toString();
+        StringBuilder vector = new StringBuilder("{");
+        for (int i = 0; i < this.values.length; i++) {
+            vector.append(this.values[i]);
+            if (i+1 != this.values.length) vector.append(",");
+        }
+        vector.append("}");
+        return vector.toString();
     }
 
     @Override
