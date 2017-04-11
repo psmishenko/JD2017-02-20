@@ -20,11 +20,12 @@ public class IOData  {
         }
     }
     static void loadFromTxt() throws MathException {
+        Parser parser = new Parser();
         if(fileForVars.exists()){
             try (BufferedReader br = new BufferedReader(new FileReader(fileForVars))) {
                 String line;
                 while ((line = br.readLine()) != null) {
-                   Parser.calc(line);
+                   parser.calc(line);
                 }
                 br.readLine();
             } catch (IOException e) {
