@@ -1,0 +1,6 @@
+﻿Main.welcome = Привет!
+Main.HowDoYouDo = Как дела?
+Main.MyName = Алексей
+Main.CurrentDate = Сегодня
+Main.ErrorLocale = Неправильная локаль
+Main.EnterLocale = Введите локаль
