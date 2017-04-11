@@ -4,7 +4,7 @@ import java.util.Random;
 
 class Helper {
 
-    private Helper(){
+    public Helper(){
     }
 
     private static Random random;
