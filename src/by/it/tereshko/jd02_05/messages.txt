@@ -1,0 +1,3 @@
+Main.welcome=Welcome!
+Main.HowDoYouDo=How are you?
+Main.MyName=Andrei
