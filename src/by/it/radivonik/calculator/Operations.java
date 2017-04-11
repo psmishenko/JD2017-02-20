@@ -173,7 +173,7 @@ public class Operations {
     }
 
     private static String calcTwoArg(IOperation op, VarVector v1, VarMatrix v2) throws MathException {
-        return null;
+        throw new MathException("Недопустимая операция: " + getOp(op,v1,v2));
     }
 
     private static String calcTwoArg(IOperation op, VarMatrix v1, VarFloat v2) throws MathException, ParseException {
