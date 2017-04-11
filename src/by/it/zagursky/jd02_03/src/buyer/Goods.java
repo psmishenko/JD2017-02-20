@@ -1,6 +1,8 @@
 package by.it.zagursky.jd02_03.src.buyer;
 
-import Rnd.helper;
+
+
+import by.it.vedom.jd02_01.Helper;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -24,7 +26,7 @@ public class Goods {
      static  Good getRandomGoods()
      {
          List<Good> goods= new ArrayList(ListGoods);
-         int position= helper.getRandom(goods.size()-1);
+         int position= Hel.getRandom(goods.size()-1);
          Good good=goods.get(position);
          return good;
      }
