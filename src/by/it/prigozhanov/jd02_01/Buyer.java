@@ -10,6 +10,7 @@ import java.util.*;
 public class Buyer extends Thread implements IBuyer, IUseBucket {
     private int num;
     private boolean pensioneer;
+    private Basket basket = null;
 
     public Buyer(int num, boolean pensioneer) {
             super("( Покупатель № " + num +" ) ");
@@ -26,6 +27,7 @@ public class Buyer extends Thread implements IBuyer, IUseBucket {
     @Override
     public void run() {
         enterToMarket();
+        takeBucket();
         chooseGoods();
         putBucket();
         goToOut();
@@ -39,8 +41,6 @@ public class Buyer extends Thread implements IBuyer, IUseBucket {
 
     @Override
     public void chooseGoods() {
-        Double check = 0.0;
-        List<Good> bucketList = takeBucket();
         System.out.println(this + "выбирает продукты");
         int max = Helper.getRandom(1, 5);
         for (int i = 1; i <= max; i++) {
@@ -48,14 +48,9 @@ public class Buyer extends Thread implements IBuyer, IUseBucket {
             else Helper.sleep(Helper.getRandom(500, 2000));
             Good good = Goods.getRandomGood();
             System.out.printf("%sвыбрал товар (%s). Цена: %s$\n", this, good.getName(), good.getPrice());
+            putGoodsToBucket(good);
+        }
 
-            putGoodsToBucket(bucketList, good);
-        }
-        for (Good good : bucketList) {
-            check+=good.getPrice();
-        }
-        System.out.println(this + "оплатил товары: " + bucketList);
-        System.out.println(this + "получил чек на " + check + "$");
     }
 
     @Override
@@ -65,22 +60,22 @@ public class Buyer extends Thread implements IBuyer, IUseBucket {
     }
 
     @Override
-    public List<Good> takeBucket() {
-        Runner.buckets--;
+    public void takeBucket() {
         if (pensioneer) Helper.sleep((int) (Helper.getRandom(100, 200) * 1.5));
         else Helper.sleep(Helper.getRandom(100, 200));
-        List<Good> bucketGoods = new ArrayList<>();
+        Basket basket = new Basket(num);
+        this.basket = basket;
         System.out.println(this + "взял корзинку");
-        return bucketGoods;
     }
 
     @Override
-    public void putGoodsToBucket(List<Good> bucketGoods, Good good) {
+    public void putGoodsToBucket(Good good) {
         if (pensioneer) Helper.sleep((int) (Helper.getRandom(100, 200) * 1.5));
         else Helper.sleep(Helper.getRandom(100, 200));
-
-        bucketGoods.add(good);
-        System.out.printf("%sположил товар %s ценой %s$ в корзинку\n", this, good.getName(), good.getPrice());
+        if (basket == null) {
+            System.out.println(this+ "не взял корзинку, операция не возможна");
+        } else
+        this.basket.putGoodToBucket(good);
     }
 
     @Override
@@ -89,5 +84,6 @@ public class Buyer extends Thread implements IBuyer, IUseBucket {
         if (pensioneer) Helper.sleep((int) (Helper.getRandom(100, 200) * 1.5));
         else Helper.sleep(Helper.getRandom(100, 200));
         System.out.println(this + "положил корзинку");
+        System.out.println(basket);
     }
 }

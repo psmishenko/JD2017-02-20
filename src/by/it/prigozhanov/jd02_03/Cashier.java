@@ -1,6 +1,7 @@
 package by.it.prigozhanov.jd02_03;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by v-omf on 3/31/2017.
@@ -31,7 +32,6 @@ public class Cashier extends Thread {
             System.out.println(buyer + "получил чек на " + check + "$");
             getCheckToDispatcher(check);
             synchronized (buyer) {
-                buyer.setiWait(false);
                 buyer.notify();
             }
             check = 0;

@@ -30,6 +30,7 @@ public class Timer extends Thread {
                     System.out.println("План: " + Dispatcher.plan);
                     System.out.println("Время: " + minute + " минут " + second + " секунд");
                     System.out.println("Корзинок осталось: " + Dispatcher.buckets);
+                    System.out.println("Покупателей в магазине: " + Dispatcher.currentBuyersCounterInMarket);
                     System.out.println("Покупателей в зале: " + Dispatcher.currentBuyersCounterInStore);
                     System.out.println("Покупателей обслужено: " + Dispatcher.countComplete);
                     System.out.println("Людей в очереди: " + BuyersQueue.queueBuyers.size());
