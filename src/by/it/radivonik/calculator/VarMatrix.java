@@ -36,17 +36,13 @@ public class VarMatrix extends Var {
         Pattern p = Pattern.compile(IPatterns.ExMatrix);
         if (p.matcher(str).matches()) {
             Pattern pVec = Pattern.compile(IPatterns.ExVector);
-            Pattern pNum = Pattern.compile(IPatterns.ExNumber);
-
             Matcher mVec = pVec.matcher(str);
-            Matcher mNum;
 
             int rowCount = 0;
             int colCount = 0;
             while (mVec.find()) {
-                mNum = pNum.matcher(mVec.group());
                 if (rowCount == 0)
-                    while (mNum.find()) colCount++;
+                    colCount = new VarVector(mVec.group()).length();
                 rowCount++;
             }
 
@@ -54,15 +50,10 @@ public class VarMatrix extends Var {
             mVec.reset();
 
             int row = 0;
-            int col;
             while (mVec.find()) {
-                col = 0;
-                mNum = pNum.matcher(mVec.group());
-                while (mNum.find()) {
-                    matrix[row][col] = Double.parseDouble(mNum.group());
-                    col++;
-                }
-                ;
+                VarVector v = new VarVector(mVec.group());
+                for (int i = 0; i < colCount(); i++)
+                    matrix[row][i] = v.getItem(i);
                 row++;
             }
         }
