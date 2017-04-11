@@ -1,0 +1,3 @@
+Main.welcome=Прывiтанне!
+Main.howdoyoudo=Як тваi справы?
+Main.myname=Аляксей
