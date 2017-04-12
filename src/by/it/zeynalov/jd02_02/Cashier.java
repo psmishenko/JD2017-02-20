@@ -3,6 +3,11 @@ package by.it.zeynalov.jd02_02;
 public class Cashier implements Runnable {
 
     private String name;
+    private Buyer currentBuyer;
+
+    public Buyer getCurrentBuyer() {
+        return currentBuyer;
+    }
 
     public Cashier(int number) {
         name = "Кассир №" + number + " ";
@@ -15,17 +20,19 @@ public class Cashier implements Runnable {
 
     @Override
     public void run() {
-        Buyer b;
         System.out.println(this + " открыл кассу");
-        while ((b = QueueBuyers.extract()) != null) {
-            System.out.println(this + " обслуживается " + b);
+        while ((currentBuyer = QueueBuyers.extract()) != null) {
+            Dispatcher.showInfo();
+            System.out.println(this + " обслуживается " + currentBuyer );
             int timeout = Helper.getRandom(200, 500);
             Helper.sleep(timeout);
-            synchronized (b) {
-                b.setiWait(false);
-                b.notify();
+            synchronized (currentBuyer ) {
+                currentBuyer .setiWait(false);
+                currentBuyer .notify();
             }
-            System.out.println(this + " завершил обслуживание для " + b);
+            System.out.println(this + " завершил обслуживание для " + currentBuyer );
+            currentBuyer = null;
+            Dispatcher.showInfo();
         }
         System.out.println(this + " закрыл кассу");
         Dispatcher.cashiers.remove(Thread.currentThread());

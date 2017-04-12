@@ -15,5 +15,6 @@ public class QueueBuyers {
 
     static int getCount() {
         return queue.size();
+
     }
 }

@@ -32,7 +32,7 @@ public class Buyer extends Thread implements IBuyer, IUseBacket {
     public void chooseGoods() {
         System.out.println(this + " вошел в торговый зал");
         int max = Helper.getRandom(1, 4);
-        System.out.println(this + "  запланировал выбрать товаров: " + max + " шт.");
+        System.out.println(this + " запланировал выбрать товаров: " + max + " шт.");
         for (int i = 1; i <= max; i++) {
             int timeout = Helper.getRandom(10, 20);
             Helper.sleep(timeout);
