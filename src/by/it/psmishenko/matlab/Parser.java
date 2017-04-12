@@ -57,7 +57,7 @@ public class Parser {
         Var one = VarCreator.getInstance().createVar(v1);
         if (one == null && (!op.equals("=")))
             throw new MathException("Неизвеcтное значение " + v1);
-        Var two = VarCreator.getInstance().createVar(v1);
+        Var two = VarCreator.getInstance().createVar(v2);
         if (two == null)
             throw new MathException("Неизвеcтное значение " + v2);
         if (op.equals("=")) {
@@ -124,11 +124,24 @@ public class Parser {
             System.out.println("----------------------------------------------------------------------------");
             try {
                 IOData.saveErrorsInTxt(st,e.getMessage());
+                SingleLogger errorlogger = SingleLogger.getInstance();
+                String message1 = String.format("Ошибка: %s\nStack:\n",e.getMessage());
+                String message2 = "";
+                for (StackTraceElement el:st) {
+                    message2+=String.format("В классе \"%s\" ,в методе \"%s\" , в строке \"%s\"\n",
+                            el.getClassName(),el.getMethodName(),el.getLineNumber());
+                    if(el.getMethodName().equals("main"))break;
+                }
+                errorlogger.log(message1+message2);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
         }
-        if(res!=null) IOData.saveOperationsInTxt(expression,res.toString());
+        if(res!=null) {
+            IOData.saveOperationsInTxt(expression,res.toString());
+            SingleLogger operationsLogger = SingleLogger.getInstance();
+            operationsLogger.log(String.format("%s=%s",expression,res.toString()));
+        }
         return res;
     }
 

@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by user on 12.04.2017.
@@ -18,10 +19,11 @@ public class SingleLogger {
         return  instance;
     }
     void log(String message){
-        String path = System.getProperty("user.dir")+"\\src\\by\\it\\psmishenko\\jd02_6\\log.txt";
+        String path = System.getProperty("user.dir")+"\\src\\by\\it\\psmishenko\\matlab\\newLog.txt";
         Date d = new Date();
         DateFormat df =  DateFormat.getDateInstance(DateFormat.FULL);
-        String line =  df.format(d)+" "+message+"\n";
+        DateFormat dft = DateFormat.getTimeInstance();
+        String line =  df.format(d)+" "+dft.format(d)+"   "+message+"\n";
         try  (BufferedWriter out = new BufferedWriter(new FileWriter(path,true))){
            out.write(line);
         } catch (Exception e) {

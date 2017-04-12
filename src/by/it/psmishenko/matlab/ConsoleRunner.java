@@ -27,7 +27,7 @@ public class ConsoleRunner {
         oneRes(parser.calc("B=A*3.5"),"B=A*3.5");
         oneRes(parser.calc("B1=B-0.55"),"B1=B-0.55");
         oneRes(parser.calc("B2=A/2-1"),"B2=A/2-1");
-
+        oneRes(parser.calc("{{1,2,3},{4,5,6}}/0"),"2:");
         oneRes(parser.calc("C=B+(A*2)"),"C=B+(A*2)");
         oneRes(parser.calc("D=((C-0.15)-20)/(7-5)"),"D=((C-0.15)-20)/(7-5)");
         oneRes(parser.calc("E={2,3}*(D/2)"),"E={2,3}*(D/2)");
