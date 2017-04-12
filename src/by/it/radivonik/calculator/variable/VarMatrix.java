@@ -1,6 +1,8 @@
-package by.it.radivonik.calculator;
+package by.it.radivonik.calculator.variable;
 
-import java.util.Locale;
+import by.it.radivonik.calculator.parser.IPatterns;
+import by.it.radivonik.calculator.exception.ParseException;
+
 import java.util.regex.*;
 
 /**

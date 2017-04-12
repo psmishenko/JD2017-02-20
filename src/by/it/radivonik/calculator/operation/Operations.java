@@ -1,4 +1,12 @@
-package by.it.radivonik.calculator;
+package by.it.radivonik.calculator.operation;
+
+import by.it.radivonik.calculator.variable.Var;
+import by.it.radivonik.calculator.variable.VarFloat;
+import by.it.radivonik.calculator.exception.MathException;
+import by.it.radivonik.calculator.exception.ParseException;
+import by.it.radivonik.calculator.variable.VarCreator;
+import by.it.radivonik.calculator.variable.VarMatrix;
+import by.it.radivonik.calculator.variable.VarVector;
 
 import java.util.*;
 
@@ -29,17 +37,17 @@ public class Operations {
                 if (op.getOperator() == "=")
                     res = Var.setVar(args[0],args[1]).toString();
                 else
-                    res = calcTwoArg(op, VarCreator.getInstance().create(args[0]), VarCreator.getInstance().create(args[1]));
+                    res = calcTwoArg(op, VarCreator.getCreator().create(args[0]), VarCreator.getCreator().create(args[1]));
                 break;
         }
         return res;
     }
 
-    static Operation getOperation(String operator) {
+    public static Operation getOperation(String operator) {
        return operations.get(operator);
     }
 
-    static String getPattern() {
+    public static String getPattern() {
         StringBuilder patternBracket = new StringBuilder("");
         StringBuilder patternNoArg = new StringBuilder("");
         StringBuilder patternTwoArg = new StringBuilder("");

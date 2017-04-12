@@ -1,4 +1,10 @@
-package by.it.radivonik.calculator;
+package by.it.radivonik.calculator.parser;
+
+import by.it.radivonik.calculator.exception.MathException;
+import by.it.radivonik.calculator.exception.ParseException;
+import by.it.radivonik.calculator.operation.IOperation;
+import by.it.radivonik.calculator.operation.Operation;
+import by.it.radivonik.calculator.operation.Operations;
 
 import java.util.*;
 import java.util.regex.*;
@@ -7,7 +13,7 @@ import java.util.regex.*;
  * Created by Radivonik on 17.03.2017.
  */
 public class Parser {
-    String parseCalc(String exp) throws MathException, ParseException {
+    public String parseCalc(String exp) throws MathException, ParseException {
         Deque<String> varList = new LinkedList<>(); //
         Deque<Operation> opList = new LinkedList<>(); //
 

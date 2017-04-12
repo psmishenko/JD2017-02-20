@@ -1,4 +1,7 @@
-package by.it.radivonik.calculator;
+package by.it.radivonik.calculator.operation;
+
+import by.it.radivonik.calculator.exception.MathException;
+import by.it.radivonik.calculator.exception.ParseException;
 
 /**
  * Created by Radivonik on 18.03.2017.

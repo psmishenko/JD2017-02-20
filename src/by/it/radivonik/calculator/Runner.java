@@ -1,5 +1,7 @@
 package by.it.radivonik.calculator;
 
+import by.it.radivonik.calculator.variable.Var;
+
 /**
  * Created by Radivonik on 19.03.2017.
  */

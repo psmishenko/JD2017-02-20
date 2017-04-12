@@ -1,22 +1,23 @@
-package by.it.radivonik.calculator;
+package by.it.radivonik.calculator.variable;
+
+import by.it.radivonik.calculator.exception.ParseException;
+import by.it.radivonik.calculator.parser.IPatterns;
 
 /**
  * Created by Radivonik on 12.04.2017.
  */
 public class VarCreator {
-    private static VarCreator instance;
+    private static VarCreator creator = new VarCreator();
 
     private VarCreator() {
 
     }
 
-    static VarCreator getInstance() {
-        if (instance == null)
-            instance = new VarCreator();
-        return instance;
+    public static VarCreator getCreator() {
+        return creator;
     }
 
-    Var create(String str) throws ParseException {
+    public Var create(String str) throws ParseException {
         if (str == null)
             throw new ParseException("Пустая строка при создании пременной");
         Var res;

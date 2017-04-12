@@ -1,4 +1,4 @@
-package by.it.radivonik.calculator;
+package by.it.radivonik.calculator.log;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -8,43 +8,41 @@ import java.util.*;
  * Created by Radivonik on 09.04.2017.
  */
 public class Log {
-    private static Log log = null;
+    private static Log log = new Log();
     private final int maxLogMesages = 50;
-    private String filelogShort = "log.txt";
-    private String filelog = System.getProperty("user.dir") + "/src/by/it/radivonik/calculator/" + filelogShort;
+    private String filelogshort = "log.txt";
+    private String filelog = System.getProperty("user.dir") + "/src/by/it/radivonik/calculator/" + filelogshort;
     private Deque<String> logList = new LinkedList<>();
 
     private Log() {
         load();
     }
 
-    private static Log getLog() {
-        if (log == null)
-            log = new Log();
+    public static Log getLog() {
         return log;
     }
 
-    static void log(String message) {
-        getLog().logList.addLast(getLog().getTime() + " " + message);
-        while (getLog().logList.size() > getLog().maxLogMesages)
-            getLog().logList.removeFirst();
-        try (PrintWriter fileWriter = new PrintWriter(new FileWriter(getLog().filelog,false))) {
+    public void write(String message) {
+        logList.addLast(getTime() + " " + message);
+        while (logList.size() > maxLogMesages)
+            logList.removeFirst();
+        try (PrintWriter fileWriter = new PrintWriter(new FileWriter(filelog,false))) {
             int c = 0;
-            for (String m : getLog().logList)
+            for (String m : logList)
                 fileWriter.println("[" + (++c) + "] " + m);
         } catch (IOException e) {
-            System.out.println("Ошибка сохранения файла " + getLog().filelogShort + " (" + e.getMessage() + ")");
+            System.out.println("Ошибка сохранения файла " + filelogshort + " (" + e.getMessage() + ")");
         }
     }
 
-    static void log(Exception except)  {
+    public void write(Exception except)  {
         String m = except.getMessage();
         if (m == null)
             m = except.getClass().toString();
         StringBuilder message = new StringBuilder(m);
         for (StackTraceElement elemErr : except.getStackTrace())
             message.append("\n  " + elemErr.toString());
-        log(message.toString());
+        write(message.toString());
     }
 
     private void load() {
@@ -66,7 +64,7 @@ public class Log {
             }
         }
         catch (IOException e) {
-                System.out.println("Ошибка чтения файла " + filelogShort + " (" + e.getMessage() + ")");
+                System.out.println("Ошибка чтения файла " + filelogshort + " (" + e.getMessage() + ")");
         }
     }
 

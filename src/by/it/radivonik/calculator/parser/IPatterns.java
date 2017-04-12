@@ -1,4 +1,4 @@
-package by.it.radivonik.calculator;
+package by.it.radivonik.calculator.parser;
 
 /**
  * Created by Radivonik on 15.03.2017.

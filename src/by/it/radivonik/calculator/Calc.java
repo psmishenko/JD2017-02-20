@@ -1,7 +1,9 @@
 package by.it.radivonik.calculator;
 
-import java.io.*;
-import java.util.*;
+import by.it.radivonik.calculator.exception.MathException;
+import by.it.radivonik.calculator.exception.ParseException;
+import by.it.radivonik.calculator.log.Log;
+import by.it.radivonik.calculator.parser.Parser;
 
 /**
  * Created by Radivonik on 18.03.2017.
@@ -14,15 +16,15 @@ public class Calc {
         }
         catch (MathException e) {
             System.out.println("Ошибка математическая: " + e.getMessage());
-            Log.log(e);
+            Log.getLog().write(e);
         }
         catch (ParseException e) {
             System.out.println("Ошибка преобразования: " + e.getMessage());
-            Log.log(e);
+            Log.getLog().write(e);
         }
         catch (Exception e) {
             System.out.println("Ошибка: " + e.getMessage());
-            Log.log(e);
+            Log.getLog().write(e);
         }
 
         return res;
