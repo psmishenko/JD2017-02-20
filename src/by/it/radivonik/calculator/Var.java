@@ -34,7 +34,7 @@ public class Var implements IVariable {
     public String toString() {
         return super.toString();
     }
-
+/*
     static Var createVar(String str) throws ParseException {
         if (str == null)
             throw new ParseException("Пустая строка при создании пременной");
@@ -49,6 +49,10 @@ public class Var implements IVariable {
             res = vars.get(str);
         return res;
     }
+*/
+    static Var getVar(String name) {
+        return vars.get(name);
+    }
 
     static Var setVar(String name, String v) throws ParseException {
         Var res = null;
@@ -56,7 +60,7 @@ public class Var implements IVariable {
             vars.remove(name);
         }
         else {
-            res = createVar(v);
+            res = VarCreator.getInstance().create(v);
             vars.put(name, res);
         }
         return res;

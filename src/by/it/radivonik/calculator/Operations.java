@@ -29,7 +29,7 @@ public class Operations {
                 if (op.getOperator() == "=")
                     res = Var.setVar(args[0],args[1]).toString();
                 else
-                    res = calcTwoArg(op, Var.createVar(args[0]), Var.createVar(args[1]));
+                    res = calcTwoArg(op, VarCreator.getInstance().create(args[0]), VarCreator.getInstance().create(args[1]));
                 break;
         }
         return res;
