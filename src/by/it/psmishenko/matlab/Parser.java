@@ -31,7 +31,7 @@ public class Parser {
         return pos;
     }
 
-     Var createVar(String part) throws MathException {
+   /*  Var createVar(String part) throws MathException {
          Var res;
          if (part.matches(Patterns.exMat)) {
              res = new VarM(part);
@@ -42,7 +42,7 @@ public class Parser {
          } else
              res = Var.vars.get(part);
          return res;
-    }
+    }*/
 
 /*    private void debug() {
         StringBuilder sb = new StringBuilder(operand.get(0));
@@ -54,10 +54,10 @@ public class Parser {
 
     Var oneOperationCalc (String v1, String op, String v2) throws MathException {
         Var res = null;
-        Var one = createVar(v1);
+        Var one = VarCreator.getInstance().createVar(v1);
         if (one == null && (!op.equals("=")))
             throw new MathException("Неизвеcтное значение " + v1);
-        Var two = createVar(v2);
+        Var two = VarCreator.getInstance().createVar(v1);
         if (two == null)
             throw new MathException("Неизвеcтное значение " + v2);
         if (op.equals("=")) {
