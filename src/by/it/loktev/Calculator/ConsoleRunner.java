@@ -24,6 +24,14 @@ public class ConsoleRunner {
 
     public static void main(String[] args)  {
 
+        VarCreator vc=VarCreator.getInstance();
+        Var one=vc.create("55.66");
+        System.out.println(one);
+        Var two=vc.create("{7,8,9}");
+        System.out.println(two);
+        Var three=vc.create("{{6,7},{3,4}}");
+        System.out.println(three);
+
         Log.write("СТАРТ");
 
         try {
