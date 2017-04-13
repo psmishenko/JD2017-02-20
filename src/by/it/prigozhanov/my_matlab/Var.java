@@ -7,12 +7,12 @@ package by.it.prigozhanov.my_matlab;
  */
 public abstract class Var implements IOperations, IVar {
     @Override
-    public Var plus(Var var) {
+    public Var add(Var var) {
         return null;
     }
 
     @Override
-    public Var minus(Var var) {
+    public Var sub(Var var) {
         return null;
     }
 

@@ -7,8 +7,8 @@ package by.it.prigozhanov.my_matlab;
  */
 public interface IOperations {
 
-    Var plus(Var var);
-    Var minus(Var var);
+    Var add(Var var);
+    Var sub(Var var);
     Var div(Var var);
     Var mul(Var var);
 

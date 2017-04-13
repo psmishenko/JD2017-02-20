@@ -1,15 +1,12 @@
 package by.it.prigozhanov.my_matlab;
 
-import by.it.akhmelev.jd01_09_classwork_matlab.VarV;
-
 /**
  * Created by v-omf on 4/11/2017.
  *
  * @author v-omf
  */
 public class VarValue extends Var {
-    private Double value;
-
+    public Double value;
 
     public VarValue(String string) {
         fromString(string);
@@ -24,21 +21,21 @@ public class VarValue extends Var {
     }
 
     @Override
-    public Var plus(Var var) {
+    public Var add(Var var) {
         if (var instanceof VarValue) {
             VarValue operand = (VarValue) var;
             return new VarValue(this.value+operand.value);
         } else
-            return super.minus(var);
+            return var.add(this);
     }
 
     @Override
-    public Var minus(Var var) {
+    public Var sub(Var var) {
         if (var instanceof VarValue) {
             VarValue operand = (VarValue) var;
             return new VarValue(this.value-operand.value);
         } else
-        return super.minus(var);
+        return super.sub(var);
     }
 
     @Override
@@ -56,7 +53,7 @@ public class VarValue extends Var {
             VarValue operand = (VarValue) var;
             return new VarValue(this.value*operand.value);
         } else
-        return super.mul(var);
+        return var.mul(this);
     }
 
 
@@ -69,4 +66,7 @@ public class VarValue extends Var {
     public void fromString(String stringValue) {
         this.value = Double.parseDouble(stringValue);
     }
+
+
+
 }

@@ -14,12 +14,9 @@ public class Console {
     }
 
     public static void main(String[] args) {
-        printRes(new VarValue("1").plus(new VarValue("2")));
-        printRes(new VarValue("1").minus(new VarValue("2")));
-        printRes(new VarValue("1").div(new VarValue("2")));
-        printRes(new VarValue("1").mul(new VarValue("2")));
-        double[] arr = new double[] {1, 2, 3, 4, 5, 6, 7};
-        VarVector a = new VarVector(arr);
-        System.out.println(a);
+        printRes(Calculator.calculate("{1,2,3,4,5}+2"));
+        printRes(Calculator.calculate("{1,2,3,4,5}-2"));
+        printRes(Calculator.calculate("{1,2,3,4,5}/2"));
+        printRes(Calculator.calculate("{1,2,3,4,5}*2"));
     }
 }
