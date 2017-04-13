@@ -24,6 +24,8 @@ public class ConsoleRunner {
 
     public static void main(String[] args)  {
 
+        Log log=Log.getInstance();
+
         VarCreator vc=VarCreator.getInstance();
         Var one=vc.create("55.66");
         System.out.println(one);
@@ -32,7 +34,7 @@ public class ConsoleRunner {
         Var three=vc.create("{{6,7},{3,4}}");
         System.out.println(three);
 
-        Log.getInstance().write("СТАРТ");
+        log.write(LogItemKind.LogItemKind_Start,"СТАРТ");
 
         try {
             System.out.println("=== тест работы с автосохранёнными переменными:");
@@ -167,7 +169,7 @@ public class ConsoleRunner {
             System.out.println("исключение: "+e);
         }
 
-        Log.getInstance().write("СТОП");
+        log.write(LogItemKind.LogItemKind_End,"СТОП");
     }
 
 }
