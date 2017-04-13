@@ -13,7 +13,7 @@ public class Parser {
     private static final List<String> priority = new ArrayList<>(Arrays.asList("=,+,-,*,/".split(",")));
     private List<String> operation = new ArrayList<>();
     private List<String> operand;
-
+    public static String allResults = "";
 
 
     int getPosOperation() {
@@ -133,6 +133,7 @@ public class Parser {
                     if(el.getMethodName().equals("main"))break;
                 }
                 errorlogger.log(message1+message2);
+                allResults+=(expression+"\n"+message1+message2);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
@@ -141,6 +142,7 @@ public class Parser {
             IOData.saveOperationsInTxt(expression,res.toString());
             SingleLogger operationsLogger = SingleLogger.getInstance();
             operationsLogger.log(String.format("%s=%s",expression,res.toString()));
+            allResults+=String.format("%s=%s",expression,res.toString()+"\n");
         }
         return res;
     }
