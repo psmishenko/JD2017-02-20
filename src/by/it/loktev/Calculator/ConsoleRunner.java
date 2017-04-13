@@ -169,9 +169,14 @@ public class ConsoleRunner {
         log.write(LogItemKind.LogItemKind_End,"СТОП");
 
         String reportFilePath=System.getProperty("user.dir")+"/src/by/it/loktev/Calculator/";
+
         ReportDirectorFull rdf=new ReportDirectorFull();
         rdf.init(reportFilePath+"report_full.txt");
         rdf.buildReport();
+
+        ReportDirectorShort rds=new ReportDirectorShort();
+        rds.init(reportFilePath+"report_short.txt");
+        rds.buildReport();
     }
 
 }
