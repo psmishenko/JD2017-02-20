@@ -447,11 +447,11 @@ public class Parser {
 
         if (assignToVarName!=null) {
             Storage.store(assignToVarName, V);
-            Log.write("присваивание переменной "+assignToVarName+" значения выражения: '"+str2+"', рассчитанное значение: "+V);
+            Log.getInstance().write("присваивание переменной "+assignToVarName+" значения выражения: '"+str2+"', рассчитанное значение: "+V);
             return null;
         }
         else{
-            Log.write("расчёт выражения: '"+str2+"', рассчитанное значение: "+V);
+            Log.getInstance().write("расчёт выражения: '"+str2+"', рассчитанное значение: "+V);
         }
 
         return V;

@@ -7,15 +7,21 @@ import java.util.regex.Pattern;
 
 public class Log {
 
-    static private String logFileName;
-
+    static private Log instance;
+    static private String logFileName=System.getProperty("user.dir")+"/src/by/it/loktev/Calculator/log.txt";
     static private int maxLogRecords=50;
 
-    static {
-        logFileName=System.getProperty("user.dir")+"/src/by/it/loktev/Calculator/log.txt";
+    private Log(){
     }
 
-    static public void write(String s){
+    public static Log getInstance(){
+        if (instance==null){
+            instance=new Log();
+        }
+        return instance;
+    }
+
+    public void write(String s){
 
         LinkedList<String> logRecords=new LinkedList<>();
 

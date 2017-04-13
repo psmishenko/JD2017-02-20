@@ -32,7 +32,7 @@ public class ConsoleRunner {
         Var three=vc.create("{{6,7},{3,4}}");
         System.out.println(three);
 
-        Log.write("СТАРТ");
+        Log.getInstance().write("СТАРТ");
 
         try {
             System.out.println("=== тест работы с автосохранёнными переменными:");
@@ -167,7 +167,7 @@ public class ConsoleRunner {
             System.out.println("исключение: "+e);
         }
 
-        Log.write("СТОП");
+        Log.getInstance().write("СТОП");
     }
 
 }
