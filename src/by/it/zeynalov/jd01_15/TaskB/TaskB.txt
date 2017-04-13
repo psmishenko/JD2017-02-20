@@ -1,0 +1,32 @@
+ 1 package by.it.zeynalov.jd01_15.TaskB;
+ 2 
+ 3 import java.io.*;
+ 4 
+ 5 
+ 6 public class TaskB {
+ 7     public static void main(String[] args) {
+ 8         String path = System.getProperty("user.dir") + "/src/by/it/zeynalov/jd01_15/TaskB/";
+ 9         StringBuilder sb = new StringBuilder(); 
+10         int n = 1;
+11 
+12         try (BufferedReader br = new BufferedReader(new FileReader(path + "TaskB.java"))) {
+13             String sg;
+14             while ((sg = br.readLine()) != null) {
+15                 if (sg.contains("//") && sg.charAt(sg.indexOf("//") - 1) != '\"') {
+16                     sg = sg.substring(0, sg.indexOf("//"));
+17                 }
+18                 sg = String.format("%2d %s", n, sg);
+19                 n++;
+20                 sb.append(sg + "\n");
+21             }
+22         } catch (IOException e) { 
+23             e.printStackTrace();
+24         }
+25         try (PrintWriter out = new PrintWriter(path + "TaskB.txt")) {
+26             out.print(sb.toString());
+27         }catch (IOException e) {
+28             e.printStackTrace();
+29         }
+30         System.out.println(sb.toString());
+31     }
+32 }
