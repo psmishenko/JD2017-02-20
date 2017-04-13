@@ -3,8 +3,7 @@ package by.it.radivonik.calculator.parser;
 import by.it.radivonik.calculator.exception.MathException;
 import by.it.radivonik.calculator.exception.ParseException;
 import by.it.radivonik.calculator.operation.IOperation;
-import by.it.radivonik.calculator.operation.Operation;
-import by.it.radivonik.calculator.operation.Operations;
+import by.it.radivonik.calculator.operation.ListOperations;
 
 import java.util.*;
 import java.util.regex.*;
@@ -15,9 +14,9 @@ import java.util.regex.*;
 public class Parser {
     public String parseCalc(String exp) throws MathException, ParseException {
         Deque<String> varList = new LinkedList<>(); //
-        Deque<Operation> opList = new LinkedList<>(); //
+        Deque<String> opList = new LinkedList<>(); //
 
-        Pattern p = Pattern.compile(Operations.getPattern());
+        Pattern p = Pattern.compile(ListOperations.getPattern());
         Matcher m = p.matcher(exp);
 
         int pos = 0;
@@ -29,19 +28,21 @@ public class Parser {
             }
             pos = s + m.group().length();
 
-            Operation operation = Operations.getOperation(m.group());
-            if (operation.getType() == IOperation.Type.BracketLeft) {
-                opList.add(operation);
+            if (m.group().equals(ListOperations.getBracketLeft())) {
+                opList.addLast(m.group());
             }
-            else if (operation.getType() == IOperation.Type.BracketRight) {
-                while (opList.getLast().getType() != IOperation.Type.BracketLeft)
-                    parseCalcProccess(varList, opList.removeLast());
+            else if (m.group().equals(ListOperations.getBracketRight())) {
+                while (!opList.getLast().equals(ListOperations.getBracketLeft()))
+                    parseCalcExecute(opList.removeLast(),varList);
                 opList.removeLast();
             }
             else {
-                while (!opList.isEmpty() && opList.getLast().getPriority() > 0 && opList.getLast().getPriority() >= operation.getPriority())
-                    parseCalcProccess(varList, opList.removeLast());
-                opList.add(operation);
+                IOperation operation = ListOperations.getOperation(m.group());
+                while (!opList.isEmpty() &&
+                        ListOperations.getPriority(opList.getLast()) > 0 &&
+                        ListOperations.getPriority(opList.getLast()) >= operation.getPriority())
+                    parseCalcExecute(opList.removeLast(),varList);
+                opList.add(m.group());
             }
         }
 
@@ -51,21 +52,13 @@ public class Parser {
         }
 
         while (!opList.isEmpty())
-            parseCalcProccess(varList, opList.removeLast());
+            parseCalcExecute(opList.removeLast(),varList);
 
         return varList.getLast();
     }
 
-    private void parseCalcProccess(Deque<String> varList, Operation op) throws MathException, ParseException {
-       switch(op.getType()) {
-            case NoArg:
-                varList.add(op.calc());
-                break;
-            case TwoArg:
-                String v2 = varList.removeLast();
-                String v1 = varList.removeLast();
-                varList.add(op.calc(v1, v2));
-                break;
-        }
+    private void parseCalcExecute( String op, Deque<String> varList) throws MathException, ParseException {
+        IOperation operation = ListOperations.getOperation(op);
+        varList.add(operation.execute(varList));
     }
 }
