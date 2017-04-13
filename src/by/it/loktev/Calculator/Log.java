@@ -1,15 +1,22 @@
 package by.it.loktev.Calculator;
 
 import java.io.*;
+import java.sql.Time;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
+
 public class Log {
 
-    static private Log instance;
-    static private String logFileName=System.getProperty("user.dir")+"/src/by/it/loktev/Calculator/log.txt";
-    static private int maxLogRecords=50;
+    private static Log instance;
+
+    private String logFileName=System.getProperty("user.dir")+"/src/by/it/loktev/Calculator/log.txt";
+    private int maxLogRecords=50;
+
+    private List<LogItem> items=new LinkedList<>();
 
     private Log(){
     }
@@ -21,7 +28,10 @@ public class Log {
         return instance;
     }
 
-    public void write(String s){
+    public void write(LogItemKind kind, String s){
+
+        LogItem li=new LogItem(kind,s);
+        items.add(li);
 
         LinkedList<String> logRecords=new LinkedList<>();
 
