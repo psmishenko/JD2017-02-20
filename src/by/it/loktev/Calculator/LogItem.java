@@ -4,9 +4,9 @@ import java.sql.Time;
 
 public class LogItem{
 
-    private LogItemKind kind;
-    private String text;
-    private Time time;
+    public LogItemKind kind;
+    public String text;
+    public Time time;
 
     public LogItem(LogItemKind kind, String text) {
         this.kind = kind;
