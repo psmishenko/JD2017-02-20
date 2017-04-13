@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Iterator;
 
-public class ReportDirectorFull implements IReportDirector {
+public class ReportDirectorShort implements IReportDirector {
 
     String reportFileName;
 
@@ -29,7 +29,9 @@ public class ReportDirectorFull implements IReportDirector {
         {
             while ( iterator.hasNext() ){
                 LogItem li=iterator.next();
-                bw.write(sdf.format(li.time)+" "+li.text+"\n");
+                if ( li.kind==LogItemKind.LogItemKind_Start || li.kind==LogItemKind.LogItemKind_End )
+                    bw.write(sdf.format(li.time)+" ");
+                bw.write(li.text+"\n");
             }
             bw.flush();
         } catch (IOException e) {
