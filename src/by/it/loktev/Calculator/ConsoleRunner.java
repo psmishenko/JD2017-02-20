@@ -1,8 +1,5 @@
 package by.it.loktev.Calculator;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class ConsoleRunner {
 
     private static void oneRes(Var v){
@@ -170,6 +167,11 @@ public class ConsoleRunner {
         }
 
         log.write(LogItemKind.LogItemKind_End,"СТОП");
+
+        String reportFilePath=System.getProperty("user.dir")+"/src/by/it/loktev/Calculator/";
+        ReportDirectorFull rdf=new ReportDirectorFull();
+        rdf.init(reportFilePath+"report_full.txt");
+        rdf.buildReport();
     }
 
 }

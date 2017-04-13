@@ -2,6 +2,7 @@ package by.it.loktev.Calculator;
 
 import java.io.*;
 import java.sql.Time;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -9,7 +10,7 @@ import java.util.regex.Pattern;
 
 
 
-public class Log {
+public class Log implements Iterable<LogItem> {
 
     private static Log instance;
 
@@ -72,4 +73,8 @@ public class Log {
 
     }
 
+    @Override
+    public Iterator<LogItem> iterator() {
+        return items.iterator();
+    }
 }
