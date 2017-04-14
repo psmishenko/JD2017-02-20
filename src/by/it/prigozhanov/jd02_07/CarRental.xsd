@@ -26,6 +26,11 @@
         <all>
             <element name="Discription"/>
             <element name="Model" type="tns:Model"/>
+            <element name="Insuranse">
+                <complexType>
+                    <attribute name="Insurance" type="string" fixed="BNB Insurance"/>
+                </complexType>
+            </element>
             <element name="Price">
                 <complexType>
                     <attributeGroup ref="tns:currency"/>
