@@ -1,0 +1,12 @@
+<!ELEMENT Persons (Person)+>
+        <!ELEMENT Person (Email,Nicname,Password,Ads)>
+        <!ELEMENT Email (#PCDATA)>
+        <!ELEMENT Nicname (#PCDATA)>
+        <!ELEMENT Password (#PCDATA)>
+        <!ELEMENT Ads (Ad)+>
+        <!ELEMENT Ad (Car,YearOfIssue,TypeEngine,CapacityEngine,Spares)>
+        <!ELEMENT Car (#PCDATA)>
+        <!ELEMENT YearOfIssue (#PCDATA)>
+        <!ELEMENT TypeEngine (#PCDATA)>
+        <!ELEMENT CapacityEngine (#PCDATA)>
+        <!ELEMENT Spares (#PCDATA)>

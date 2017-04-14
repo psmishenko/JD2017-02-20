@@ -24,23 +24,9 @@ public class Parser {
         }
         return pos;
     }
-    static Var createVar(String part){
-        Var res;
-        if (part.matches(Patterns.exMat)){
-            res=new VarM(part);
-        }
-        else if (part.matches(Patterns.exVec)){
-            res=new VarV(part);
-        }
-        else if (part.matches(Patterns.exVal)){
-            res=new VarF(part);
-        }
-        else
-            res = Var.vars.get(part);
-        return res;
-    }
+
     private void debug() {
-        StringBuilder sb = new StringBuilder(operand.get(0));
+        StringBuilder sb = new StringBuilder("\t\tdebug: "+operand.get(0));
         for (int i = 0; i < operation.size(); i++) {
             sb.append(operation.get(i)).append(operand.get(i + 1));
         }
@@ -56,9 +42,10 @@ public class Parser {
              Matcher m = p.matcher(expression);
              while (m.find()) {
                  operation.add(m.group());
+                 if (debugOn) System.out.printf("\tDEBUG: %s operand=%s operation=%s\n",expression,operand,operation);
              }
              while (operation.size() > 0) {
-                 //debug();
+                 if (debugOn) debug();
                  int pos = getPosOperation();
                  String v1 = operand.get(pos);
                  String op = operation.remove(pos);
@@ -66,6 +53,7 @@ public class Parser {
                  res = oneOperationCalc(v1, op, v2);
                  operand.set(pos, res.toString());
              }
+             SingleLogger.getInstance().log(expression+"="+res);
          } catch (Exception e) {
              System.out.println("Ошибка: " + e.getMessage());
          }
@@ -74,10 +62,10 @@ public class Parser {
     Var oneOperationCalc(String v1, String op, String v2) throws MathException {
 
         Var res = null;
-        Var one = createVar(v1);
+        Var one =VarCreate.getInstance().createVar(v1);
         if (one == null && (!op.equals("=")))
             throw new MathException("Неизвеcтное значение " + v1);
-        Var two = createVar(v2);
+        Var two =VarCreate.getInstance().createVar(v2);
         if (two == null)
             throw new MathException("Неизвеcтное значение " + v2);
         if (op.equals("=")) {
@@ -94,7 +82,17 @@ public class Parser {
         }
         return res;
     }
+    enum Debug{
+        ON, OFF
+    }
+    private boolean debugOn;
+    public Parser(Debug debugStatus) {
+        this.debugOn = debugStatus== Debug.ON;
+    }
 
+    public Parser() {
+        this(Debug.OFF);
+    }
 
     }
 
