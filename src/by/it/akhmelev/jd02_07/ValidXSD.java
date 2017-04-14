@@ -2,7 +2,7 @@ package by.it.akhmelev.jd02_07;
 
 import org.xml.sax.SAXException;
 
-import javax.xml.*;
+import javax.xml.XMLConstants;
 import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
