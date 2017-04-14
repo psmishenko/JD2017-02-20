@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+        targetNamespace="http://kolenda"
+        xmlns:tns="http://kolenda"
+        elementFormDefault="qualified"
+        <element name="Clients">
+            <complexType>
+                <all>
+
+
+            </all>
+            </complexType>
+        </element>
+
+        </schema>
