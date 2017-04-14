@@ -1,0 +1,4 @@
+<!ELEMENT Books (Book)+>
+<!ELEMENT Book (Name,Type)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Type (#PCDATA)>

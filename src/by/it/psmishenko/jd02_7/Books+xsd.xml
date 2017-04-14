@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+        <Books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns="http://psmishenko.gmail.com"
+        xsi:schemaLocation="http://psmishenko.gmail.com">
+    <Book>
+        <Name>DogAndCAt</Name>
+        <Type>Ph</Type>
+
+    </Book>
+   <Book>
+       <Name>Space</Name>
+       <Type>Sc</Type>
+   </Book>
+
+
+
+
+
+
+
+</Books>

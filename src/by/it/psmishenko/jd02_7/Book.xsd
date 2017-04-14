@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://psmishenko.gmail.com"
+        xmlns:tns = "http://psmishenko.gmail.com"
+        elementFormDefault="qualified">
+<element name="Books">
+    <complexType>
+        <sequence>
+            <element name="Book" type="tns:Book" maxOccurs="unbounded"></element>
+        </sequence>
+    </complexType>
+</element>
+    <complexType name="Book">
+        <sequence>
+            <element name="Name" type="string"></element>
+            <element name="Type" type="string"></element>
+        </sequence>
+    </complexType>
+
+
+        </schema>
