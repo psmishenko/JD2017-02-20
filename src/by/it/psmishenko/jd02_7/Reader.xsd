@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://psmishenko/xml/Readers"
+        xmlns:tns="http://psmishenko/xml/Readers"
+        elementFormDefault="qualified">
+    <element name="Readers">
+        <complexType>
+            <sequence>
+                <element name="Reader" type="tns:Reader" maxOccurs="unbounded"></element>
+            </sequence>
+        </complexType>
+    </element>
+    <complexType name="Reader">
+        <sequence>
+            <element name="Name" type="string"/>
+            <element name="ID" type="positiveInteger"/>
+            <element name="Age" type="positiveInteger"/>
+            <element name="Books" type="tns:Books"/>
+        </sequence>
+    </complexType>
+    <complexType name="Books">
+        <sequence>
+            <element name="Book" type="tns:Book" minOccurs="1" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="Book">
+        <all> <!--в любом порядке -->
+            <element name="Author" type="string"/>
+            <element name="Title" type="string"/>
+            <element name="Year" type="positiveInteger"/>
+            <element name="ISBN" type="string"/>
+            <element name="LID" type="positiveInteger"/>
+        </all>
+    </complexType>
+
+
+</schema>

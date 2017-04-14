@@ -16,9 +16,10 @@ import java.io.IOException;
  */
 public class MyValidator {
     public static void main(String[] args) {
-        String lang = XMLConstants.W3C_XML_SCHEMA_INSTANCE_NS_URI;
-        String sname = "D:\\students\\psmish\\JD2017-02-20\\src\\by\\it\\psmishenko\\jd02_7\\Books.dtd";
-        String xmfile = "D:\\students\\psmish\\JD2017-02-20\\src\\by\\it\\psmishenko\\jd02_7\\Books.xml";
+        String root = System.getProperty("user.dir")+"\\src\\by\\it\\psmishenko\\jd02_7\\";
+        String sname = root+"Reader.xsd";
+        String xmfile = root+"Readers+XSD.xml";
+        String lang = XMLConstants.W3C_XML_SCHEMA_NS_URI;
         SchemaFactory factory = SchemaFactory.newInstance(lang);
         File schemaLocation = new File(sname);
         try {
@@ -29,6 +30,7 @@ public class MyValidator {
             System.out.println("Valid");
         } catch (SAXException e) {
             e.printStackTrace();
+            System.out.println("INValid");
         } catch (IOException e) {
             e.printStackTrace();
         }

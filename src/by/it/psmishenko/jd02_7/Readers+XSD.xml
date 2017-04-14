@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Readers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation = "http://psmishenko/xml/Readers Reader.xsd"
+xmlns="http://psmishenko/xml/Readers">  <!--читатель в библиотеке -->
+    <Reader>
+        <Name>Vasya</Name>  <!--Имя читателя -->
+        <ID>14322</ID>       <!--Уникальный номер читателя в библиотеке (номер уч. записи и т.п.) -->
+        <Age>88</Age>
+        <Books>             <!--Книги "на руках" -->
+            <Book>
+                <Author>Stephen King</Author>
+                <Title>The Dead Zone</Title>
+                <Year>1979</Year>
+                <ISBN>978-0-670-26077-5</ISBN>   <!-- International Standard Book Number -->
+                <LID>331177</LID>  <!-- Номер книги в библиотеке -->
+            </Book>
+            <Book>
+                <Author>Arthur Conan Doyle</Author>
+                <Title>Cremona</Title>
+                <Year>1898</Year>
+                <ISBN>928-0-610-21177-5</ISBN>   <!-- International Standard Book Number -->
+                <LID>22112</LID>  <!-- Номер книги в библиотеке -->
+            </Book>
+        </Books>
+    </Reader>
+</Readers>
