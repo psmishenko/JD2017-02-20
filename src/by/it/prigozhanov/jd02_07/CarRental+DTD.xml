@@ -39,7 +39,7 @@
                 <LuggageCapacity Amount="bags">4</LuggageCapacity>
             </Model>
             <Price currency="EUR">1000</Price>
-            <Insurance/>
+            <Insurance currency="EUR"></Insurance>
             <Location>Berlin</Location>
         </Car>
     </SportCars>

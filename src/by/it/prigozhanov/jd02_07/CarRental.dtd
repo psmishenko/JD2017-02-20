@@ -5,7 +5,7 @@
 <!ELEMENT Model (Name,HP,FuelConsumption,Seats,Doors,LuggageCapacity)>
 <!ELEMENT Price (#PCDATA)>
 <!ELEMENT Insurance (EMPTY)>
-<!ATTLIST Insurance currency (USD|EUR) #FIXED "EUR";
+<!ATTLIST Insurance currency CDATA #FIXED "EUR";
 <!ELEMENT Location (#PCDATA)>
 <!ELEMENT Name (#PCDATA)>
 <!ELEMENT HP (#PCDATA)>
