@@ -11,7 +11,7 @@ import javax.xml.validation.Validator;
 import java.io.File;
 import java.io.IOException;
 
-public class ClassValidator {
+public class XMLValidator {
     public static void main(String[] args) {
         String sname = "src/by/it/akhmelev/jd02_07/classwork/Person.xsd";
         String xmlfile = "src/by/it/akhmelev/jd02_07/classwork/Persons+XSD.xml";
@@ -31,7 +31,5 @@ public class ClassValidator {
             e.printStackTrace();
             System.out.println("IO Error");
         }
-
-
     }
 }
