@@ -24,7 +24,7 @@ public class valid {
         try {
             Schema schema=factory.newSchema(schemaLocation);
             Validator validator=schema.newValidator();
-            Source source=new StreamSource(xname);
+            Source source=new StreamSource(new File(xname));
             validator.validate(source);
             System.out.println("ВАЛИДЕН!");
         } catch (SAXException e) {

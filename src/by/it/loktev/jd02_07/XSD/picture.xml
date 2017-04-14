@@ -15,5 +15,6 @@
         <text left="77" top="88">
             GOODBYE!
         </text>
+        <square left="25" top="30" width="40" height="5" fill="yellow" />
     </group>
 </picture>

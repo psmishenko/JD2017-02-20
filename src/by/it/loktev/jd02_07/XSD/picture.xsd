@@ -4,27 +4,7 @@
         xmlns:tns="LOKTEV_PICTURE"
         elementFormDefault="qualified">
 
-<element name="picture">
-    <complexType>
-        <choice maxOccurs="unbounded" minOccurs="0">
-            <element name="square"
-                     type="tns:TSquare"
-                     maxOccurs="unbounded"
-            />
-            <element name="circle"
-                     type="tns:TCircle"
-                     maxOccurs="unbounded"
-            />
-            <element name="text"
-                     type="tns:TText"
-                     maxOccurs="unbounded"
-            />
-            <element name="group"
-                     type="tns:TGroup"
-                     maxOccurs="unbounded"
-            />
-        </choice>
-    </complexType>
+<element name="picture" type="tns:TGroup">
 </element>
 
 <complexType name="TCircle">
@@ -55,22 +35,10 @@
 
 <complexType name="TGroup">
     <choice maxOccurs="unbounded" minOccurs="0">
-        <element name="square"
-                 type="tns:TSquare"
-                 maxOccurs="unbounded"
-        />
-        <element name="circle"
-                 type="tns:TCircle"
-                 maxOccurs="unbounded"
-        />
-        <element name="text"
-                 type="tns:TText"
-                 maxOccurs="unbounded"
-        />
-        <element name="group"
-                 type="tns:TGroup"
-                 maxOccurs="unbounded"
-        />
+        <element name="square" type="tns:TSquare" />
+        <element name="circle" type="tns:TCircle" />
+        <element name="text" type="tns:TText" />
+        <element name="group" type="tns:TGroup" />
     </choice>
 </complexType>
 
