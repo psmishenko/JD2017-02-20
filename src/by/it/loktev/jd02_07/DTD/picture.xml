@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE picture SYSTEM "picture.dtd">
+<picture>
+    <square left="20" top="30" width="40" height="5" stroke="blue" />
+    <square left="20" top="30" width="40" height="5" stroke="blue" />
+    <circle centerx="50" centery="50" radius="20" fill="red" />
+    <text left="77" top="88">
+        HELLO!
+    </text>
+    <circle centerx="50" centery="50" radius="20" fill="red" />
+    <group>
+        <circle centerx="55" centery="50" radius="20" stroke="cyan" />
+        <square left="25" top="30" width="40" height="5" fill="yellow" />
+        <text left="77" top="88">
+            GOODBYE!
+        </text>
+    </group>
+</picture>
