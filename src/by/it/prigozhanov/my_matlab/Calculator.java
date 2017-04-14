@@ -1,5 +1,6 @@
 package by.it.prigozhanov.my_matlab;
 
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -7,6 +8,8 @@ import java.util.regex.Pattern;
  * Created by v-omf on 4/13/2017!
  */
 public class Calculator {
+    static HashMap<String, Var> vars = new HashMap<>();
+
 
     private static Var defineVar(String part) {
         Var res;
@@ -32,6 +35,14 @@ public class Calculator {
             res = first.div(second);
         } else res = null;
             return res;
+    }
+
+    private static void defineOperation(String expression) {
+
+    }
+
+    private static void save(String part1, Var var) {
+        vars.put(part1, var);
     }
 
     protected static Var calculate(String expression) {
