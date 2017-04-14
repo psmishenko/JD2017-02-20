@@ -57,7 +57,21 @@ public class Parser {
         return varList.getLast();
     }
 
-    private void parseCalcExecute( String op, Deque<String> varList) throws MathException, ParseException {
+    private void parceBrackets (String exp) throws MathException, ParseException {
+        Pattern p = Pattern.compile(ListOperations.getPatternBrackets());
+        Matcher m = p.matcher(exp);
+
+        while (m.find()) {
+            String expInBrackets;
+            if (m.group().length() > 2) {
+                expInBrackets = exp.substring(m.start() + 1, m.start() + m.group().length());
+                expInBrackets = parseCalc(expInBrackets);
+                //exp.r
+            }
+        }
+    }
+
+    private void parseCalcExecute(String op, Deque<String> varList) throws MathException, ParseException {
         IOperation operation = ListOperations.getOperation(op);
         varList.add(operation.execute(varList));
     }

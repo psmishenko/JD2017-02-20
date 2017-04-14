@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://radivonik.it-academy/xml/Persons"
+        xmlns:tns="http://radivonik.it-academy/xml/Persons"
+        elementFormDefault="qualified">
+<element name="Persons">
+    <complexType>
+        <sequence>
+            <element name="Person" type="tns:Person" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+</element>
+<complexType name="Person">
+    <sequence maxOccurs="1">
+        <element name="Email" type="string"/>
+        <element name="Nickname" type="string"/>
+        <element name="Password" type="string"/>
+        <element name="Ads" type="tns:Ads"/>
+    </sequence>
+    <attribute name="id"/>
+    <attribute name="name"/>
+</complexType>
+<complexType name="Ads">
+    <sequence maxOccurs="unbounded">
+        <element name="Ad" type="tns:Ad"/>
+    </sequence>
+</complexType>
+<complexType name="Ad">
+    <sequence maxOccurs="1">
+        <element name="Description" type="string"/>
+        <element name="Adres" type="string"/>
+        <element name="Floor" type="int"/>
+        <element name="Floors" type="int"/>
+        <element name="Square" type="decimal"/>
+    </sequence>
+</complexType>
+</schema>

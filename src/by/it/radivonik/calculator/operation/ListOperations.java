@@ -5,6 +5,7 @@ import by.it.radivonik.calculator.exception.MathException;
 import by.it.radivonik.calculator.exception.ParseException;
 import by.it.radivonik.calculator.variable.VarCreator;
 
+import java.text.StringCharacterIterator;
 import java.util.*;
 
 /**
@@ -40,10 +41,17 @@ public class ListOperations {
     }
 
     public static String getPattern() {
-        StringBuilder pattern = new StringBuilder("[" + getBracketLeft() + getBracketRight() + "]");
-        for (IOperation op: opList.values())
-            pattern.append("|").append(op.getPattern());
+        String delim = "";
+        StringBuilder pattern = new StringBuilder("");
+        for (IOperation op: opList.values()) {
+            pattern.append(delim).append(op.getPattern());
+            delim = "|";
+        }
         return pattern.toString();
+    }
+
+    public static String getPatternBrackets() {
+        return "\\([^()]*\\)";
     }
 
     public static String getBracketLeft() {
