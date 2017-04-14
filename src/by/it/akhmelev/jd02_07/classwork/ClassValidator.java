@@ -13,8 +13,8 @@ import java.io.IOException;
 
 public class ClassValidator {
     public static void main(String[] args) {
-        String sname = "D:\\students\\akhmelev\\JD2017-02-20\\src\\by\\it\\akhmelev\\jd02_07\\classwork\\Person.xsd";
-        String xmlfile = "D:\\students\\akhmelev\\JD2017-02-20\\src\\by\\it\\akhmelev\\jd02_07\\classwork\\Persons+XSD.xml";
+        String sname = "src/by/it/akhmelev/jd02_07/classwork/Person.xsd";
+        String xmlfile = "src/by/it/akhmelev/jd02_07/classwork/Persons+XSD.xml";
         String lang = XMLConstants.W3C_XML_SCHEMA_NS_URI;
         SchemaFactory factory = SchemaFactory.newInstance(lang);
         File schemaLocation = new File(sname);
