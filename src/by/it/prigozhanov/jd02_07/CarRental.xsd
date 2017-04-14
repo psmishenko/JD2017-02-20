@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://fastcarrental.ru/xml/CarRental"
+        xmlns:tns="http://fastcarrental.ru/xml/CarRental"
+        elementFormDefault="qualified">
+
+    <element name="CarList">
+        <complexType>
+            <sequence>
+                <element name="SportCars"
+                         type="tns:SportCars"
+                         maxOccurs="1"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="SportCars">
+         <sequence>
+             <element name="Car"
+                      type="tns:Car"
+                      maxOccurs="unbounded"/>
+         </sequence>
+    </complexType>
+
+    <complexType name="Car">
+        <all>
+             <element name="Discription"/>
+            <element name="Model" type="tns:Model"/>
+            <element name="Price" type="string"/>
+            <element name="Location" type="string"/>
+        </all>
+    </complexType>
+
+    <complexType name="Model">
+        <sequence>
+            <element name="Name" type="string"/>
+            <element name="HP" type="positiveInteger"/>
+            <element name="FuelConsumption" type="positiveInteger"/>
+            <element name="Seats" type="positiveInteger"/>
+            <element name="Doors" type="positiveInteger"/>
+            <element name="LuggageCapacity" type="positiveInteger"/>
+        </sequence>
+    </complexType>
+
+
+
+</schema>

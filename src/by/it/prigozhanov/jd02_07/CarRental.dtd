@@ -1,0 +1,15 @@
+<!ELEMENT CarList (SportCars)>
+<!ELEMENT SportCars (Car)*>
+<!ELEMENT Car (Discription,Model,Price,Location)>
+<!ELEMENT Discription (#PCDATA)>
+<!ELEMENT Model (Name,HP,FuelConsumption,Seats,Doors,LuggageCapacity)>
+<!ELEMENT Price (#PCDATA)>
+<!ELEMENT Location (#PCDATA)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT HP (#PCDATA)>
+<!ELEMENT FuelConsumption (#PCDATA)>
+<!ELEMENT Seats (#PCDATA)>
+<!ELEMENT Doors (#PCDATA)>
+<!ELEMENT LuggageCapacity (#PCDATA)>
+
+
