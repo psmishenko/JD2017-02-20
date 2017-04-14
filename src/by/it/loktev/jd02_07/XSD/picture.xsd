@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="LOKTEV_PICTURE"
+        xmlns:tns="LOKTEV_PICTURE"
+        elementFormDefault="qualified">
+
+<element name="picture">
+    <complexType>
+        <sequence>
+            <element name="square"
+                     type="tns:TSquare"
+                     maxOccurs="unbounded"
+            />
+            <element name="circle"
+                     type="tns:TCircle"
+                     maxOccurs="unbounded"
+            />
+            <element name="text"
+                     type="tns:TText"
+                     maxOccurs="unbounded"
+            />
+            <element name="group"
+                     type="tns:TGroup"
+                     maxOccurs="unbounded"
+            />
+        </sequence>
+    </complexType>
+</element>
+
+<complexType name="TCircle">
+    <attribute name="centerx" type="integer" use="required"></attribute>
+    <attribute name="centery" type="integer" use="required"></attribute>
+    <attribute name="radius" type="integer" use="required"></attribute>
+    <attribute name="fill" type="string"></attribute>
+    <attribute name="stroke" type="string"></attribute>
+</complexType>
+
+<complexType name="TSquare">
+    <attribute name="left" type="integer" use="required"></attribute>
+    <attribute name="top" type="integer" use="required"></attribute>
+    <attribute name="width" type="integer" use="required"></attribute>
+    <attribute name="height" type="integer" use="required"></attribute>
+    <attribute name="fill" type="string"></attribute>
+    <attribute name="stroke" type="string"></attribute>
+</complexType>
+
+<complexType name="TText">
+    <extension base="string">
+        <attribute name="left" type="integer"></attribute>
+        <attribute name="top" type="integer"></attribute>
+    </extension>
+</complexType>
+
+<complexType name="TGroup">
+    <sequence>
+        <element name="square"
+                 type="tns:TSquare"
+                 maxOccurs="unbounded"
+        />
+        <element name="circle"
+                 type="tns:TCircle"
+                 maxOccurs="unbounded"
+        />
+        <element name="text"
+                 type="tns:TText"
+                 maxOccurs="unbounded"
+        />
+        <element name="group"
+                 type="tns:TGroup"
+                 maxOccurs="unbounded"
+        />
+    </sequence>
+
+</complexType>
+
+</schema>
