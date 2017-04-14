@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Persons xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:shemaLocation="http://radivonik.it-academy/xml/Persons persons.xsd"
+xsi:schemaLocation="http://radivonik.it-academy/xml/Persons persons.xsd"
 xmlns="http://radivonik.it-academy/xml/Persons">
     <Person id="1" name="Alex" >
         <Email>aa@tu.by</Email>
