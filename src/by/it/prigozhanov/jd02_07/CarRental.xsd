@@ -15,18 +15,22 @@
     </element>
 
     <complexType name="SportCars">
-         <sequence>
-             <element name="Car"
-                      type="tns:Car"
-                      maxOccurs="unbounded"/>
-         </sequence>
+        <sequence>
+            <element name="Car"
+                     type="tns:Car"
+                     maxOccurs="unbounded"/>
+        </sequence>
     </complexType>
 
     <complexType name="Car">
         <all>
-             <element name="Discription"/>
+            <element name="Discription"/>
             <element name="Model" type="tns:Model"/>
-            <element name="Price" type="string"/>
+            <element name="Price">
+                <complexType>
+                    <attributeGroup ref="tns:currency"/>
+                </complexType>
+            </element>
             <element name="Location" type="string"/>
         </all>
     </complexType>
@@ -41,7 +45,10 @@
             <element name="LuggageCapacity" type="positiveInteger"/>
         </sequence>
     </complexType>
-
-
-
+    <attributeGroup name="currency">
+        <attribute name="USD" type="positiveInteger"/>
+        <attribute name="RUB" type="positiveInteger"/>
+        <attribute name="EUR" type="positiveInteger"/>
+        <attribute name="GBP" type="positiveInteger"/>
+    </attributeGroup>
 </schema>

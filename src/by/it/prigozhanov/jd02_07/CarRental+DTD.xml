@@ -10,10 +10,10 @@
                 <FuelConsumption>20</FuelConsumption>
                 <Seats>4</Seats>
                 <Doors>2</Doors>
-                <LuggageCapacity>3</LuggageCapacity>
+                <LuggageCapacity Amount="bags">4</LuggageCapacity>
             </Model>
-            <Price>1420</Price>
-            <Location>Minsk</Location>
+            <Price currency="GBP">1420</Price>
+            <Location>London</Location>
         </Car>
         <Car>
             <Discription>Meet the AMG model of the new Mercedes-Benz S-Class Coupe.</Discription>
@@ -23,9 +23,9 @@
                 <FuelConsumption>15</FuelConsumption>
                 <Seats>4</Seats>
                 <Doors>2</Doors>
-                <LuggageCapacity>2</LuggageCapacity>
+                <LuggageCapacity Amount="liters">15</LuggageCapacity>
             </Model>
-            <Price>1240</Price>
+            <Price currency="RUB">1240</Price>
             <Location>Moscow</Location>
         </Car>
         <Car>
@@ -36,9 +36,10 @@
                 <FuelConsumption>13</FuelConsumption>
                 <Seats>4</Seats>
                 <Doors>4</Doors>
-                <LuggageCapacity>4</LuggageCapacity>
+                <LuggageCapacity Amount="bags">4</LuggageCapacity>
             </Model>
-            <Price>1000</Price>
+            <Price currency="EUR">1000</Price>
+            <Insurance/>
             <Location>Berlin</Location>
         </Car>
     </SportCars>
