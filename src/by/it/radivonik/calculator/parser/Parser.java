@@ -15,39 +15,31 @@ public class Parser {
     public String parseCalc(String exp) throws MathException, ParseException {
         Deque<String> varList = new LinkedList<>(); //
         Deque<String> opList = new LinkedList<>(); //
+        String expCalc = parceBrackets(exp);
 
         Pattern p = Pattern.compile(ListOperations.getPattern());
-        Matcher m = p.matcher(exp);
+        Matcher m = p.matcher(expCalc);
 
         int pos = 0;
         while (m.find()) {
             int s = m.start();
             if (s > pos) {
-                String var = exp.substring(pos, s);
+                String var = expCalc.substring(pos, s);
                 varList.add(var);
             }
             pos = s + m.group().length();
 
-            if (m.group().equals(ListOperations.getBracketLeft())) {
-                opList.addLast(m.group());
-            }
-            else if (m.group().equals(ListOperations.getBracketRight())) {
-                while (!opList.getLast().equals(ListOperations.getBracketLeft()))
-                    parseCalcExecute(opList.removeLast(),varList);
-                opList.removeLast();
-            }
-            else {
-                IOperation operation = ListOperations.getOperation(m.group());
-                while (!opList.isEmpty() &&
-                        ListOperations.getPriority(opList.getLast()) > 0 &&
-                        ListOperations.getPriority(opList.getLast()) >= operation.getPriority())
-                    parseCalcExecute(opList.removeLast(),varList);
-                opList.add(m.group());
-            }
+            String strOp = m.group();
+            IOperation operation = ListOperations.getOperation(strOp);
+            while (!opList.isEmpty() &&
+                    ListOperations.getPriority(opList.getLast()) > 0 &&
+                    ListOperations.getPriority(opList.getLast()) >= operation.getPriority())
+                parseCalcExecute(opList.removeLast(),varList);
+            opList.add(strOp);
         }
 
-        if (pos > 0 && pos < exp.length()) {
-            String var = exp.substring(pos, exp.length());
+        if (pos > 0 && pos < expCalc.length()) {
+            String var = expCalc.substring(pos);
             varList.add(var);
         }
 
@@ -57,18 +49,23 @@ public class Parser {
         return varList.getLast();
     }
 
-    private void parceBrackets (String exp) throws MathException, ParseException {
+    private String parceBrackets(String exp) throws MathException, ParseException {
+        StringBuilder res = new StringBuilder(exp);
         Pattern p = Pattern.compile(ListOperations.getPatternBrackets());
-        Matcher m = p.matcher(exp);
 
-        while (m.find()) {
-            String expInBrackets;
-            if (m.group().length() > 2) {
-                expInBrackets = exp.substring(m.start() + 1, m.start() + m.group().length());
-                expInBrackets = parseCalc(expInBrackets);
-                //exp.r
+        while (true) {
+            Matcher m = p.matcher(res);
+            if (m.find()) {
+                String strFound = m.group();
+                String strReplace = "";
+                if (strFound.length() > 2)
+                    strReplace = parseCalc(res.substring(m.start() + 1, m.start() + strFound.length() - 1));
+                res = new StringBuilder(res.substring(0,m.start()) + strReplace + res.substring(m.start() + strFound.length()));
             }
+            else
+                break;
         }
+        return res.toString();
     }
 
     private void parseCalcExecute(String op, Deque<String> varList) throws MathException, ParseException {

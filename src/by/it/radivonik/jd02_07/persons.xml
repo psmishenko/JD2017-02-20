@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Persons xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://radivonik.it-academy/xml/Persons persons.xsd"
-xmlns="http://radivonik.it-academy/xml/Persons">
+xsi:schemaLocation="http://radivonik.it-academy/xml/persons persons.xsd"
+xmlns="http://radivonik.it-academy/xml/persons">
     <Person id="1" name="Alex" >
         <Email>aa@tu.by</Email>
         <Nickname>aa</Nickname>

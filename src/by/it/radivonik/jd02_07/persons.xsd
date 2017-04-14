@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://radivonik.it-academy/xml/Persons"
-        xmlns:tns="http://radivonik.it-academy/xml/Persons"
-        elementFormDefault="qualified">
+        xmlns:tns="http://radivonik.it-academy/xml/persons"
+        targetNamespace="http://radivonik.it-academy/xml/persons"
+        elementFormDefault="qualified"
+        attributeFormDefault="unqualified">
 <element name="Persons">
     <complexType>
         <sequence>

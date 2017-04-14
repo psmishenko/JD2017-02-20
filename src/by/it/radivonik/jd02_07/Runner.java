@@ -16,14 +16,16 @@ import java.io.IOException;
  */
 public class Runner {
     public static void main(String[] args) {
-        String filename = "D:\\Java\\Kurs\\JD2017-02-20\\src\\by\\it\\radivonik\\jd02_07\\persons.xsd";
+        String path = System.getProperty("user.dir") + "/src/by/it/radivonik/jd02_07";
+        String filexml = path + "/persons.xml";
+        String filexsd = path + "/persons.xsd";
         String lang = XMLConstants.W3C_XML_SCHEMA_NS_URI;
         SchemaFactory factory = SchemaFactory.newInstance(lang);
-        File schemaLocation = new File(filename);
+        File schemaLocation = new File(filexsd);
         try {
             Schema schema = factory.newSchema(schemaLocation);
             Validator validator = schema.newValidator();
-            Source source = new StreamSource(filename);
+            Source source = new StreamSource(filexml);
             validator.validate(source);
             System.out.println("Ура, товарищи!!!");
         }

@@ -63,7 +63,7 @@ public class Runner {
         Calc.calculatePrint("D=((C-0.15)-20)/(7-5)");
         Calc.calculatePrint("E={2,3}*(D/2)");
         System.out.println("Вариант C:");
-        Calc.calculatePrint("M={{1,2,3,4},{-1.1,-2.2,-3.3,-3.4}}*(8/(3-1))");
+        Calc.calculatePrint("M={{1,((1+1/2)*5),3,4},{-1.1,-2.2,-3.3,-3.4}}*(8/(3-1))");
 //        Calc.calculatePrint("printvar",true);
 
         Var.saveToFile();

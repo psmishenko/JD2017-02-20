@@ -12,7 +12,7 @@ import java.util.*;
  * Created by Radivonik on 08.04.2017.
  */
 public class ListOperations {
-    private static Map<String,IOperation> opList = new HashMap<>();
+    private static Map<String, IOperation> opList = new HashMap<>();
 
     static {
         add(new Operation("+", "((?<=[^{,+\\-*/])[+])", 2, OperationMath.getOperation()));
@@ -25,11 +25,11 @@ public class ListOperations {
     }
 
     private static void add(IOperation op) {
-        opList.put(op.getOperator(),op);
+        opList.put(op.getOperator(), op);
     }
 
     public static IOperation getOperation(String operator) {
-       return opList.get(operator);
+        return opList.get(operator);
     }
 
     public static int getPriority(String operator) {
@@ -43,7 +43,7 @@ public class ListOperations {
     public static String getPattern() {
         String delim = "";
         StringBuilder pattern = new StringBuilder("");
-        for (IOperation op: opList.values()) {
+        for (IOperation op : opList.values()) {
             pattern.append(delim).append(op.getPattern());
             delim = "|";
         }
@@ -53,12 +53,5 @@ public class ListOperations {
     public static String getPatternBrackets() {
         return "\\([^()]*\\)";
     }
-
-    public static String getBracketLeft() {
-        return "(";
-    }
-
-    public static String getBracketRight() {
-        return ")";
-    }
 }
+
