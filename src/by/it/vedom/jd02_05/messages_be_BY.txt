@@ -1,0 +1,3 @@
+Main.welcome = Прывшiтанне!
+Main.HowDoYouDo = Чым ты маешься!
+Main.MyName = Уладзiслау
