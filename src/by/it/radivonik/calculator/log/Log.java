@@ -10,8 +10,8 @@ import java.util.*;
 public class Log {
     private static Log log = new Log();
     private final int maxLogMesages = 50;
-    private String filelogshort = "log.txt";
-    private String filelog = System.getProperty("user.dir") + "/src/by/it/radivonik/calculator/" + filelogshort;
+    private String filelog = "log.txt";
+    private String filelogspec = System.getProperty("user.dir") + "/src/by/it/radivonik/calculator/" + filelog;
     private Deque<String> logList = new LinkedList<>();
 
     private Log() {
@@ -26,20 +26,18 @@ public class Log {
         logList.addLast(getTime() + " " + message);
         while (logList.size() > maxLogMesages)
             logList.removeFirst();
-        try (PrintWriter fileWriter = new PrintWriter(new FileWriter(filelog,false))) {
+        try (PrintWriter fileWriter = new PrintWriter(new FileWriter(filelogspec,false))) {
             int c = 0;
             for (String m : logList)
                 fileWriter.println("[" + (++c) + "] " + m);
         } catch (IOException e) {
-            System.out.println("Ошибка сохранения файла " + filelogshort + " (" + e.getMessage() + ")");
+            System.out.println("Ошибка сохранения файла " + filelog + " (" + e.getMessage() + ")");
         }
     }
 
     public void write(Exception except)  {
-        String m = except.getMessage();
-        if (m == null)
-            m = except.getClass().toString();
-        StringBuilder message = new StringBuilder(m);
+        StringBuilder message = new StringBuilder(except.getClass().getName());
+        message.append(": ").append(except.getMessage());
         for (StackTraceElement elemErr : except.getStackTrace())
             message.append("\n  " + elemErr.toString());
         write(message.toString());
@@ -48,7 +46,7 @@ public class Log {
     private void load() {
         String patternNum = "^\\[\\d+\\] ";
         String patternLog = "\\d{2}\\.\\d{2}\\.\\d{4} \\d{2}\\:\\d{2}\\:\\d{2}.*";
-        try (BufferedReader fileReader = new BufferedReader(new FileReader(filelog))) {
+        try (BufferedReader fileReader = new BufferedReader(new FileReader(filelogspec))) {
             StringBuilder message = new StringBuilder("");
             while (true) {
                 String line = fileReader.readLine();
@@ -64,7 +62,7 @@ public class Log {
             }
         }
         catch (IOException e) {
-                System.out.println("Ошибка чтения файла " + filelogshort + " (" + e.getMessage() + ")");
+                System.out.println("Ошибка чтения файла " + filelog + " (" + e.getMessage() + ")");
         }
     }
 

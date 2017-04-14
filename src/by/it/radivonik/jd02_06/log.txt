@@ -1,6 +1,7 @@
-12 апреля 2017 г. one
-12 апреля 2017 г. two
-12 апреля 2017 г. three
-12 апреля 2017 г. one
-12 апреля 2017 г. two
-12 апреля 2017 г. three
+14.04.2017 20:54:17.658 Событие 1
+14.04.2017 20:54:17.892 Событие 2
+14.04.2017 20:54:18.396 Событие 3
+14.04.2017 20:54:18.537 java.lang.ArithmeticException: / by zero
+  by.it.radivonik.jd02_06.Runner.main(Runner.java:22)
+14.04.2017 20:54:18.840 java.lang.ArrayIndexOutOfBoundsException: 2
+  by.it.radivonik.jd02_06.Runner.main(Runner.java:31)
