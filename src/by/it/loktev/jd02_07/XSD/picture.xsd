@@ -6,7 +6,7 @@
 
 <element name="picture">
     <complexType>
-        <sequence>
+        <choice maxOccurs="unbounded" minOccurs="0">
             <element name="square"
                      type="tns:TSquare"
                      maxOccurs="unbounded"
@@ -23,7 +23,7 @@
                      type="tns:TGroup"
                      maxOccurs="unbounded"
             />
-        </sequence>
+        </choice>
     </complexType>
 </element>
 
@@ -45,14 +45,16 @@
 </complexType>
 
 <complexType name="TText">
-    <extension base="string">
-        <attribute name="left" type="integer"></attribute>
-        <attribute name="top" type="integer"></attribute>
-    </extension>
+    <simpleContent>
+        <extension base="string">
+            <attribute name="left" type="integer"></attribute>
+            <attribute name="top" type="integer"></attribute>
+        </extension>
+    </simpleContent>
 </complexType>
 
 <complexType name="TGroup">
-    <sequence>
+    <choice maxOccurs="unbounded" minOccurs="0">
         <element name="square"
                  type="tns:TSquare"
                  maxOccurs="unbounded"
@@ -69,8 +71,7 @@
                  type="tns:TGroup"
                  maxOccurs="unbounded"
         />
-    </sequence>
-
+    </choice>
 </complexType>
 
 </schema>
