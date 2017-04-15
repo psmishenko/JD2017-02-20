@@ -11,7 +11,7 @@ public class Runner {
         String line = "12 555 6666";
 
 //        Чтение строки с клавиатуры
-//        String line = Util.GetOneLine();
+//        String line = ValueSaver.GetOneLine();
 
         int arr[] = Util.lineToIntArray(line);
 

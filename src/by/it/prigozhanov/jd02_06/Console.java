@@ -1,6 +1,4 @@
-package by.it.prigozhanov.my_matlab;
-
-import by.it.akhmelev.jd01_11.Generics.Demo;
+package by.it.prigozhanov.jd02_06;
 
 /**
  * Created by v-omf on 4/11/2017.

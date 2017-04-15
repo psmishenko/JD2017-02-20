@@ -1,4 +1,4 @@
-package by.it.prigozhanov.my_matlab;
+package by.it.prigozhanov.jd02_06;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

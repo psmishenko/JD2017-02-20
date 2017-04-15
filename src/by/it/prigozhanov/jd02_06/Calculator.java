@@ -1,6 +1,5 @@
-package by.it.prigozhanov.my_matlab;
+package by.it.prigozhanov.jd02_06;
 
-import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,23 +8,6 @@ import java.util.regex.Pattern;
  */
 public class Calculator {
     public Logger logger = Logger.getLogger();
-
-    protected static Var defineVar(String part) {
-        Var res;
-        if (part.matches(Expressions.MATRIX)) {
-            res = new VarMatrix(part);
-        } else if (part.matches(Expressions.VALUE)) {
-            res = new VarValue(part);
-        } else if (part.matches(Expressions.VECTOR)) {
-            res = new VarVector(part);
-        } else if (part.matches(Expressions.VARIABLE)) {
-            if (ValueSaver.loadedMap.size()==0) {
-                ValueSaver.uploadFromFile();
-            }
-           res = ValueSaver.loadedMap.get(part);
-        } else res = null;
-        return res;
-    }
 
     private static Var defineOperation(Var first, Var second, String operation) throws MatlabException {
         Var res;
@@ -50,7 +32,7 @@ public class Calculator {
             op = m.group();
         }
         if (op.equals("=")) {
-            Var value = defineVar(part[1]);
+            Var value = VarFactory.createVar(part[1]);
             value.save(part[0], value);
         }
 
@@ -66,13 +48,13 @@ public class Calculator {
         if (m.find()) {
             op = m.group();
         }
-        Var first = defineVar(part[0]);
-        Var second = defineVar(part[1]);
+        Var first = VarFactory.createVar(part[0]);
+        Var second = VarFactory.createVar(part[1]);
         try {
             res = defineOperation(first, second, op);
         } catch (MatlabException e) {
-            Logger.getLogger().logError(e.getMessage(), e, false);
             System.out.println("Ошибка: " + e.getMessage());
+            Logger.getLogger().logError(e, false);
         }
         return res;
     }
