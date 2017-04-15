@@ -1,0 +1,7 @@
+<!ELEMENT Brigades (Brigade)+>
+<!ELEMENT Brigade (Pilots, Navigator, Radio-operator, Stewardess)>
+<!ELEMENT Pilots (Pilot)+>
+<!ELEMENT Pilot (#PCDATA)+>
+<!ELEMENT Navigator (#PCDATA)>
+<!ELEMENT Radio-operator (#PCDATA)>
+<!ELEMENT Stewardess (#PCDATA)>
