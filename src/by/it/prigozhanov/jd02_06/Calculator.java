@@ -39,6 +39,8 @@ public class Calculator {
     }
 
     protected static Var calculate(String expression) {
+        ReportBuilder director = new TextReport();
+        director.createHeaderReport("Начало процедуры");
         defineOperation(expression);
         Var res = null;
         String op = "";
