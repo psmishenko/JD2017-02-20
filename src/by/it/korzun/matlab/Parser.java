@@ -50,20 +50,21 @@ class Parser {
             }
 
         }catch (MathException e){
-            new MathException(expression + " - неверное выражение");
+
         }
         return res;
     }
 
     private Var oneOperationCalc(String v1, String op, String v2) throws MathException{
+        VarCreator varCreator = new VarCreator();
         Var res = null;
-        Var one = compileToVar(v1);
+        Var one = varCreator.createVar(v1);
         if (one == null && (!op.equals("="))) {
-            throw new MathException("Неизвеcтное значение " + v1);
+            throw new MathException("Неизвеcтное значение " + v1 + " в выражении " + v1 + op + v2);
         }
-        Var two = compileToVar(v2);
+        Var two = varCreator.createVar(v2);
         if (two == null) {
-            throw new MathException("Неизвеcтное значение " + v2);
+            throw new MathException("Неизвеcтное значение " + v2 + " в выражении " + v1 + op + v2);
         }
         switch (op) {
             case "=":
@@ -99,20 +100,6 @@ class Parser {
             i++;
         }
         return pos;
-    }
-
-    private Var compileToVar(String str) {
-        Var v;
-        if (str.matches(Patterns.exVal)) {
-            v = new VarF(str);
-        } else if (str.matches(Patterns.exVec)) {
-            v = new VarV(str);
-        } else if (str.matches(Patterns.exMat)) {
-            v = new VarM(str);
-        } else {
-            v = Var.getVars().get(str);
-        }
-        return v;
     }
 
     Var parseString(String expression, boolean isFirstOut) throws MathException{
