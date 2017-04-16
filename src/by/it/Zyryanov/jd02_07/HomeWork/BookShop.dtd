@@ -1,0 +1,13 @@
+<!ELEMENT BookShop (Book_Catalogue)>
+        <!ELEMENT Book_Catalogue (Book)+>
+        <!ELEMENT Book (Description, Publisher, Author, Book_title, Genre, Book_Cover, Pages, Price)>
+        <!ATTLIST Price currency (BYR|EUR|USD) #REQUIRED>
+        <!ATTLIST Book_Cover cover hardness #FIXED "Rigid">
+        <!ELEMENT Description (#PCDATA)>
+        <!ELEMENT Publisher (#PCDATA)>
+        <!ELEMENT Author (#PCDATA)>
+        <!ELEMENT Book_title (#PCDATA)>
+        <!ELEMENT Genre (#PCDATA)>
+        <!ELEMENT Book_Cover (#PCDATA)>
+        <!ELEMENT Pages (#PCDATA)>
+        <!ELEMENT Price (#PCDATA)>
