@@ -14,6 +14,7 @@ public class Hello {
         System.out.println(Language.getString(Messages.WELCOME));
         System.out.println(Language.getString(Messages.MYNAME));
         System.out.println(Language.getString(Messages.HOWDOYOUDO));
+        System.out.println(Language.getString(Messages.TODAY));
 
         Date date = new Date();
         DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.LONG, Language.getLocale());

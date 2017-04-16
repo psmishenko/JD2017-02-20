@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 
 public class Parser {
 
+
     //приоритет операция определяется индексом в массиве (вообще, конечно правильнее будет сделать Map<String,Integer>)
     private static final List<String> priority = new ArrayList<>(Arrays.asList("=,+,-,*,/".split(",")));
     //операции в выражении. Для A=2+3/4 тут будут = + /
@@ -33,8 +34,10 @@ public class Parser {
     private Var oneOperationCalc(String v1, String op, String v2) throws MathExcepton {
         //выполним одну операцию
         Var res = null;
-        Var one = createVar(v1);
-        Var two = createVar(v2);
+
+        Var one = VarCreator.getInstance().createVar(v1);
+        Var two = VarCreator.getInstance().createVar(v2);
+
         //если это было присваивание, то сохраним переменную
         if (op.equals("=") && two!=null) {
             two.save(v1);
@@ -63,18 +66,6 @@ public class Parser {
         return res;
     }
 
-    private Var createVar(String part) {
-        Var res;
-        if (part.matches(Patterns.exMat)) {
-            res = new VarM(part);
-        } else if (part.matches(Patterns.exVec)) {
-            res = new VarV(part);
-        } else if (part.matches(Patterns.exVal)) {
-            res = new VarF(part);
-        } else
-            res = Var.vars.get(part);
-        return res;
-    }
 
     Var calc(String expression) {
         Var res = null;
@@ -97,6 +88,7 @@ public class Parser {
                 res = oneOperationCalc(v1, op, v2);
                 operand.set(pos, res.toString());       //сохраним результат
             }
+            SingleLogger.getInstance().log(expression+"="+res);
         } catch (Exception e) {
             System.out.println("Ошибка: " + e.getMessage());
         }

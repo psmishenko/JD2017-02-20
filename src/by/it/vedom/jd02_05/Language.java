@@ -11,7 +11,7 @@ public class Language {
         return locale;
     }
 
-    private static Locale locale= new Locale("ru", "RU");
+    private static Locale locale= new Locale("en", "EN");
 
     static ResourceBundle resourceBundle = ResourceBundle.getBundle(path, locale);
 

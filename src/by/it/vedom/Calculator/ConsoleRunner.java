@@ -10,7 +10,7 @@ public class ConsoleRunner {
 
     public static void main(String[] args) {
         MapVars.loadMapFromFile();
-        //System.out.println("\nТекущая карта переменных:\n"+ Var.vars);
+//        System.out.println("\nТекущая карта переменных:\n"+ Var.vars);
         Parser parser=new Parser(Parser.Debug.ON);
 
         oneRes(parser.calc("A=2+5.3"));
