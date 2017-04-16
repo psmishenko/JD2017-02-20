@@ -25,7 +25,7 @@ public class InOut {
     }
 
     /**
-     * Method will print single array to console with different values of columns.
+     * Method will print single array to console with different vector of columns.
      *
      * @param v - matrix of single array.
      * @param name - show the name of matrix before every index.

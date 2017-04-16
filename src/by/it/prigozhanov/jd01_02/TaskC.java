@@ -7,8 +7,8 @@ import java.io.IOException;
  */
 public class TaskC {
     public static void main(String[] args) throws IOException {
-//        String s = Util.GetLine();
-//        int n = Util.strToInt(s);
+//        String s = ValueSaver.GetLine();
+//        int n = ValueSaver.strToInt(s);
         int rand = (int) (Math.random() * 20);
         int[][] doubleArr = {
                 {1, 2, 3, 4},

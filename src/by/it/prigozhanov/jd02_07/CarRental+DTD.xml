@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE CarList SYSTEM "CarRental.dtd">
+<CarList>
+    <SportCars>
+        <Car>
+            <Discription>A fearless design philosophy has led to the DB11's iconic looks</Discription>
+            <Model>
+                <Name>Aston Martin DB11</Name>
+                <HP>620</HP>
+                <FuelConsumption>20</FuelConsumption>
+                <Seats>4</Seats>
+                <Doors>2</Doors>
+                <LuggageCapacity Amount="bags">4</LuggageCapacity>
+            </Model>
+            <Price currency="GBP">1420</Price>
+            <Location>London</Location>
+        </Car>
+        <Car>
+            <Discription>Meet the AMG model of the new Mercedes-Benz S-Class Coupe.</Discription>
+            <Model>
+                <Name>Mercedes-Benz S63</Name>
+                <HP>600</HP>
+                <FuelConsumption>15</FuelConsumption>
+                <Seats>4</Seats>
+                <Doors>2</Doors>
+                <LuggageCapacity Amount="liters">15</LuggageCapacity>
+            </Model>
+            <Price currency="RUB">1240</Price>
+            <Location>Moscow</Location>
+        </Car>
+        <Car>
+            <Discription>he improved styling of the second-generation 2017 Porsche Panamera</Discription>
+            <Model>
+                <Name>Porsche Panamera</Name>
+                <HP>520</HP>
+                <FuelConsumption>13</FuelConsumption>
+                <Seats>4</Seats>
+                <Doors>4</Doors>
+                <LuggageCapacity Amount="bags">4</LuggageCapacity>
+            </Model>
+            <Price currency="EUR">1000</Price>
+            <Insurance currency="EUR"></Insurance>
+            <Location>Berlin</Location>
+        </Car>
+    </SportCars>
+</CarList>
