@@ -7,13 +7,16 @@ import java.util.Locale;
 public class Hello {
 
     public static void main(String[] args) {
+
         if (args.length == 2) {
             Locale locale = new Locale(args[0], args[1]);
             Language.changeLocal(locale);
         }
+
         System.out.println(Language.getString(Messages.WELCOME));
         System.out.println(Language.getString(Messages.MYNAME));
         System.out.println(Language.getString(Messages.HOWDOYOUDO));
+        System.out.println("----------------------");
 
         Date d = new Date();
         DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.LONG, Language.getLocale());
