@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!--
+Система Выписка и печать Товарных накладных.
+Бухгалтер ведет учет Товаров и Клиентов.
+Кладовщик формирует и печатает Товарные накладные из списка доступных Товаров и для доступных клиентов.
+-->
 <Naklads xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://radivonik.it-academy/xml/naklads naklads.xsd"
 xmlns="http://radivonik.it-academy/xml/naklads">

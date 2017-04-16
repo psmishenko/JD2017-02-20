@@ -27,13 +27,13 @@ public class Runner {
             Validator validator = schema.newValidator();
             Source source = new StreamSource(filexml);
             validator.validate(source);
-            System.out.println("Ура, товарищи!!!\nФайл " + filexml + " соответствует описанию " + filexsd);
+            System.out.println("Ура, товарищи!!!\nФайл " + filexml + "\nсоответствует описанию " + filexsd);
         }
         catch (SAXException e) {
-            System.out.println("Проверка на корректность " + filexml + " не вполнена: " + e.getMessage());
+            System.out.println(filexml + " некорректен:\n" + e.getMessage());
         }
         catch (IOException e) {
-            System.out.println(filexml + " некорректен: " + e.getMessage());
+            System.out.println("Проверка на корректность " + filexml + " не вполнена:\n" + e.getMessage());
         }
     }
 }
