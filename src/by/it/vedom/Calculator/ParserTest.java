@@ -1,7 +1,11 @@
 package by.it.vedom.Calculator;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
+/**
+ * @author i.sukach
+ */
 public class ParserTest {
     @org.junit.Test
     public void calc() throws Exception {

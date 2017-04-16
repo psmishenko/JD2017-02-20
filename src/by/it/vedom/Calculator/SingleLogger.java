@@ -6,7 +6,6 @@ import java.text.DateFormat;
 import java.util.Date;
 
 public class SingleLogger {
-
     private static SingleLogger instance;
 
     private SingleLogger() {
@@ -32,5 +31,4 @@ public class SingleLogger {
 
         }
     }
-
 }

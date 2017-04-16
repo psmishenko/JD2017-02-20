@@ -1,6 +1,7 @@
 package by.it.vedom.Calculator;
 
 public class VarCreator {
+
     private static VarCreator instance;
 
     private VarCreator() {
@@ -8,7 +9,7 @@ public class VarCreator {
 
     static VarCreator getInstance(){
         if (instance==null){
-            instance=new VarCreator();
+           instance=new VarCreator();
         }
         return  instance;
     }

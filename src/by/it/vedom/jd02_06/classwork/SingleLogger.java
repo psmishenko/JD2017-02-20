@@ -1,4 +1,4 @@
-package by.it.vedom.jd02_06;
+package by.it.vedom.jd02_06.classwork;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

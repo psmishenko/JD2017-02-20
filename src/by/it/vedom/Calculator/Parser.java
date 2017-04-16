@@ -8,7 +8,6 @@ import java.util.regex.Pattern;
 
 public class Parser {
 
-
     //приоритет операция определяется индексом в массиве (вообще, конечно правильнее будет сделать Map<String,Integer>)
     private static final List<String> priority = new ArrayList<>(Arrays.asList("=,+,-,*,/".split(",")));
     //операции в выражении. Для A=2+3/4 тут будут = + /
@@ -88,7 +87,7 @@ public class Parser {
                 res = oneOperationCalc(v1, op, v2);
                 operand.set(pos, res.toString());       //сохраним результат
             }
-            SingleLogger.getInstance().log(expression+"="+res);
+        SingleLogger.getInstance().log(expression+"="+res);
         } catch (Exception e) {
             System.out.println("Ошибка: " + e.getMessage());
         }

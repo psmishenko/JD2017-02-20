@@ -2,3 +2,4 @@ Main.welcome = Привет!
 Main.HowDoYouDo = Что ты делаешь?
 Main.MyName = Владислав
 Main.Time = Сегодня
+
