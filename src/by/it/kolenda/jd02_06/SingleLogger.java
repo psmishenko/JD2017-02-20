@@ -11,9 +11,7 @@ public class SingleLogger {
 
     private static SingleLogger instance;
 
-    private SingleLogger() {
-
-    }
+    private SingleLogger() {}
 
     static SingleLogger getInstance() {
         if (instance == null) {
@@ -29,6 +27,7 @@ public class SingleLogger {
         Date d = new Date();
         DateFormat df = DateFormat.getDateInstance(DateFormat.FULL);
         String line = df.format(d) + " " + message + '\n';
+
         try (BufferedWriter out = new BufferedWriter(new FileWriter(fileLog, true))) {
             out.write(line);
         } catch (Exception e) {

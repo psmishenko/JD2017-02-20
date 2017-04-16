@@ -1,26 +1,26 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <Clients xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://kolenda clients.xsd"
     xmlns="http://kolenda">
-    <Fiz_lico>
-        <Name>Иванов Иван Иванович</Name>
-        <Profession>Инжинер</Profession>
-        <Address>г.Минск, ул.Гая, д.15, кв.1</Address>
+    <ClientFL>
+        <PersonalData>
+            <Name>Иванов Иван Иванович</Name>
+            <Profession>Инжинер</Profession>
+            <Address>г.Минск, ул.Гая, д.15, кв.1</Address>
+            <Email>Iviviv@gmail.com</Email>
+        </PersonalData>
         <AcctType>
+            <Current>true</Current>
             <Depo>true</Depo>
             <Credit>false</Credit>
-            <Current>false</Current>
         </AcctType>
-    </Fiz_lico>
-    <Yur_lico>
-        <Name>ООО Рога и Копыта</Name>
-        <Industry>Здравоохранение</Industry>
-        <Address>г.Минск, ул.Нестерова, д.1, кв.100</Address>
-        <AcctType>
-            <Depo>true</Depo>
-            <Credit>true</Credit>
-            <Current>true</Current>
-        </AcctType>
-    </Yur_lico>
+
+        <Actions>
+            <Pay>100</Pay>
+            <Refill>2000</Refill>
+            <Withdraw>300</Withdraw>
+            <Block>false</Block>
+        </Actions>
+    </ClientFL>
 </Clients>
