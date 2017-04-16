@@ -1,5 +1,6 @@
 package by.it.prigozhanov.jd02_06;
 
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,6 +9,7 @@ import java.util.regex.Pattern;
  */
 public class Calculator {
     public Logger logger = Logger.getLogger();
+    static ReportBuilder director = new TextReport();
 
     private static Var defineOperation(Var first, Var second, String operation) throws MatlabException {
         Var res;
@@ -39,8 +41,7 @@ public class Calculator {
     }
 
     protected static Var calculate(String expression) {
-        ReportBuilder director = new TextReport();
-        director.createHeaderReport("Начало процедуры");
+
         defineOperation(expression);
         Var res = null;
         String op = "";
@@ -58,6 +59,10 @@ public class Calculator {
             System.out.println("Ошибка: " + e.getMessage());
             Logger.getLogger().logError(e, false);
         }
+        if (res != null) {
+            director.createOperationReport(expression, res);
+        } else director.createAssignmentReport(expression);
+
         return res;
     }
 }

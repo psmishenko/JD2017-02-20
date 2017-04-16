@@ -12,7 +12,8 @@ public abstract class ReportBuilder {
     StringBuilder stringBuilder = new StringBuilder();
     public abstract void createHeaderReport(String text);
     public abstract void createStartTimeReport(Date time);
-    public abstract void createOperationReport(String operation);
+    public abstract void createOperationReport(String operation, Var res);
+    public abstract void createAssignmentReport(String operation);
     public abstract void createEndTimeReport(Date time);
     public abstract void fullReport(boolean showFullInfo);
     public String getInfo() {
