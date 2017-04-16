@@ -4,6 +4,6 @@ public class CalculatorException extends Exception {
 
     public CalculatorException(String message) {
         super(message);
-        Log.write("Исключение: "+message);
+        Log.getInstance().write(LogItemKind.LogItemKind_Exception,"Исключение: "+message);
     }
 }

@@ -1,21 +1,38 @@
 package by.it.loktev.Calculator;
 
 import java.io.*;
+import java.sql.Time;
+import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Log {
 
-    static private String logFileName;
 
-    static private int maxLogRecords=50;
+public class Log implements Iterable<LogItem> {
 
-    static {
-        logFileName=System.getProperty("user.dir")+"/src/by/it/loktev/Calculator/log.txt";
+    private static Log instance;
+
+    private String logFileName=System.getProperty("user.dir")+"/src/by/it/loktev/Calculator/log.txt";
+    private int maxLogRecords=50;
+
+    private List<LogItem> items=new LinkedList<>();
+
+    private Log(){
     }
 
-    static public void write(String s){
+    public static Log getInstance(){
+        if (instance==null){
+            instance=new Log();
+        }
+        return instance;
+    }
+
+    public void write(LogItemKind kind, String s){
+
+        LogItem li=new LogItem(kind,s);
+        items.add(li);
 
         LinkedList<String> logRecords=new LinkedList<>();
 
@@ -56,4 +73,8 @@ public class Log {
 
     }
 
+    @Override
+    public Iterator<LogItem> iterator() {
+        return items.iterator();
+    }
 }

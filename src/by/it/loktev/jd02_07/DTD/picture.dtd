@@ -1,0 +1,27 @@
+<!ELEMENT picture (circle, square, text, group)+>
+<!ELEMENT circle EMPTY>
+<!ATTLIST circle
+        centerx CDATA #REQUIRED
+        centery CDATA #REQUIRED
+        radius CDATA #REQUIRED
+        fill CDATA
+        stroke CDATA
+        >
+<!ELEMENT square EMPTY>
+<!ATTLIST square
+        left CDATA #REQUIRED
+        top CDATA #REQUIRED
+        width CDATA #REQUIRED
+        height CDATA #REQUIRED
+        fill CDATA
+        stroke CDATA
+        >
+<!ELEMENT text (#PCDATA)>
+<!ATTLIST text
+        left CDATA #REQUIRED
+        top CDATA #REQUIRED
+        >
+<!ELEMENT group (circle, square, text, group)+>
+
+
+

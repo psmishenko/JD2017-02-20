@@ -1,8 +1,5 @@
 package by.it.loktev.Calculator;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class ConsoleRunner {
 
     private static void oneRes(Var v){
@@ -24,7 +21,17 @@ public class ConsoleRunner {
 
     public static void main(String[] args)  {
 
-        Log.write("СТАРТ");
+        Log log=Log.getInstance();
+
+        VarCreator vc=VarCreator.getInstance();
+        Var one=vc.create("55.66");
+        System.out.println(one);
+        Var two=vc.create("{7,8,9}");
+        System.out.println(two);
+        Var three=vc.create("{{6,7},{3,4}}");
+        System.out.println(three);
+
+        log.write(LogItemKind.LogItemKind_Start,"СТАРТ");
 
         try {
             System.out.println("=== тест работы с автосохранёнными переменными:");
@@ -159,7 +166,20 @@ public class ConsoleRunner {
             System.out.println("исключение: "+e);
         }
 
-        Log.write("СТОП");
+        log.write(LogItemKind.LogItemKind_End,"СТОП");
+
+
+        String reportFilePath=System.getProperty("user.dir")+"/src/by/it/loktev/Calculator/";
+
+        ReportBuilder rb=new ReportBuilder();
+
+        ReportDirectorFull rdf=new ReportDirectorFull();
+        rdf.init(reportFilePath+"report_full.txt");
+        rdf.buildReport(rb);
+
+        ReportDirectorShort rds=new ReportDirectorShort();
+        rds.init(reportFilePath+"report_short.txt");
+        rds.buildReport(rb);
     }
 
 }

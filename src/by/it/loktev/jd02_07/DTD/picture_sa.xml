@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!DOCTYPE picture [
+    <!ELEMENT picture (circle, square, text, group)+>
+    <!ELEMENT circle EMPTY>
+    <!ATTLIST circle
+        centerx CDATA #REQUIRED
+        centery CDATA #REQUIRED
+        radius CDATA #REQUIRED
+        fill CDATA #IMPLIED
+        stroke CDATA #IMPLIED
+    >
+    <!ELEMENT square EMPTY>
+    <!ATTLIST square
+        left CDATA #REQUIRED
+        top CDATA #REQUIRED
+        width CDATA #REQUIRED
+        height CDATA #REQUIRED
+        fill CDATA #IMPLIED
+        stroke CDATA #IMPLIED
+    >
+    <!ELEMENT text (#PCDATA)>
+    <!ATTLIST text
+        left CDATA #REQUIRED
+        top CDATA #REQUIRED
+    >
+    <!ELEMENT group (circle, square, text)+>
+    ]>
+<picture>
+    <circle centerx="50" centery="50" radius="20" fill="red" />
+    <square left="20" top="30" width="40" height="5" stroke="blue" />
+    <text left="77" top="88">
+        HELLO!
+    </text>
+    <group>
+        <circle centerx="55" centery="50" radius="20" stroke="cyan" />
+        <square left="25" top="30" width="40" height="5" fill="yellow" />
+        <text left="77" top="88">
+            GOODBYE!
+        </text>
+    </group>
+</picture>
