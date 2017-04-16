@@ -2,6 +2,7 @@ package by.it.radivonik.calculator.operation;
 
 import by.it.radivonik.calculator.exception.MathException;
 import by.it.radivonik.calculator.exception.ParseException;
+import by.it.radivonik.calculator.log.Log;
 import by.it.radivonik.calculator.variable.*;
 
 import java.util.Deque;
@@ -20,7 +21,9 @@ public class OperationMath implements IOperationExecute  {
     public String executeOperation(IOperation op, Deque<String> varQueue) throws MathException, ParseException {
         String v2 = varQueue.removeLast();
         String v1 = varQueue.removeLast();
-        return calc(op, VarCreator.getCreator().create(v1), VarCreator.getCreator().create(v2));
+        String res = calc(op, VarCreator.getCreator().create(v1), VarCreator.getCreator().create(v2));
+        Log.getLog().write(v1 + " " + op.getOperator() + " " + v2 + " = " + res);
+        return res;
     }
 
     private String calc(IOperation op, Var v1, Var v2) throws MathException, ParseException {
@@ -68,8 +71,6 @@ public class OperationMath implements IOperationExecute  {
                 if (v2.getValue() == 0)
                     throw new MathException("Деление на ноль: " + getOp(op,v1,v2));
                 res = new VarFloat(v1.getValue() / v2.getValue()); break;
-            default:
-                return null;
         }
         return res.toString();
     }
@@ -91,34 +92,58 @@ public class OperationMath implements IOperationExecute  {
     }
 
     private String calc(IOperation op, VarVector v1, VarFloat v2) throws MathException {
-        double[] v = new double[v1.length()];
-        for (int i = 0; i < v1.length(); i++)
-            v[i] = v2.getValue();
-        return calc(op, v1, new VarVector(v));
+        double[] res = new double[v1.length()];
+        for (int i = 0; i < v1.length(); i++) {
+            switch (op.getOperator()) {
+                case "+":
+                    res[i] = v1.getItem(i) + v2.getValue();
+                    break;
+                case "-":
+                    res[i] = v1.getItem(i) - v2.getValue();
+                    break;
+                case "*":
+                    res[i] = v1.getItem(i) * v2.getValue();
+                    break;
+                case "/":
+                    if (v2.getValue() == 0)
+                        throw new MathException("Деление на ноль: " + getOp(op, v1, v2));
+                    res[i] = v1.getItem(i) / v2.getValue();
+                    break;
+            }
+        }
+        return new VarVector(res).toString();
     }
 
     private String calc(IOperation op, VarVector v1, VarVector v2) throws MathException {
         if (v1.length() != v2.length()) {
             throw new MathException("У векторов в операции разная длина: " + getOp(op,v1,v2));
         }
-        double[] res = new double[v1.length()];
-        for (int i = 0; i < v1.length(); i++) {
-            switch(op.getOperator()) {
-                case "+":
-                    res[i] = v1.getItem(i) + v2.getItem(i); break;
-                case "-":
-                    res[i] = v1.getItem(i) - v2.getItem(i); break;
-                case "*":
-                    res[i] = v1.getItem(i) * v2.getItem(i); break; // некорректная математическая операция
-                case "/":
-                    if (v2.getItem(i) == 0)
-                        throw new MathException("Деление на ноль: " + getOp(op,v1,v2));
-                    res[i] = v1.getItem(i) / v2.getItem(i); break;
-                default:
-                    return null;
-            }
+        else if (op.getOperator() == "/") {
+            throw new MathException("Недопустимая операция: " + getOp(op, v1, v2));
         }
-        return new VarVector(res).toString();
+
+        if (op.getOperator() == "+" || op.getOperator() == "-") {
+            double[] res = new double[v1.length()];
+            for (int i = 0; i < v1.length(); i++) {
+                switch (op.getOperator()) {
+                    case "+":
+                        res[i] = v1.getItem(i) + v2.getItem(i);
+                        break;
+                    case "-":
+                        res[i] = v1.getItem(i) - v2.getItem(i);
+                        break;
+                }
+            }
+            return new VarVector(res).toString();
+        }
+        else if (op.getOperator() == "*") {
+            double res = 0.0;
+            for (int i = 0; i < v1.length(); i++)
+                res += v1.getItem(i) * v2.getItem(i);
+            return new VarFloat(res).toString();
+        }
+
+        return null;
     }
 
     private String calc(IOperation op, VarVector v1, VarMatrix v2) throws MathException {
@@ -126,46 +151,91 @@ public class OperationMath implements IOperationExecute  {
     }
 
     private String calc(IOperation op, VarMatrix v1, VarFloat v2) throws MathException, ParseException {
-        double[][] m = new double[v1.rowCount()][v1.colCount()];
-        for (int i = 0; i < v1.rowCount(); i++) {
-            for (int j = 0; j < v1.colCount(); j++)
-                m[i][j] = v2.getValue();
-        }
-        return calc(op, v1, new VarMatrix(m));
-    }
-
-    private String calc(IOperation op, VarMatrix v1, VarVector v2) throws MathException {
-        return null;
-    }
-
-    private String calc(IOperation op, VarMatrix v1, VarMatrix v2) throws MathException, ParseException {
-        if (v1.rowCount() != v2.rowCount() || v1.colCount() != v2.colCount()) {
-            throw new MathException("У матриц в операции разная размерность: " + getOp(op,v1,v2));
-        }
         double[][] res = new double[v1.rowCount()][v1.colCount()];
         for (int i = 0; i < v1.rowCount(); i++) {
-            for (int j = 0; j < v1.colCount() ; j++) {
-                switch(op.getOperator()) {
+            for (int j = 0; j < v1.colCount(); j++) {
+                switch (op.getOperator()) {
                     case "+":
-                        res[i][j] = v1.getItem(i,j) + v2.getItem(i,j);
+                        res[i][j] = v1.getItem(i, j) + v2.getValue();
                         break;
                     case "-":
-                        res[i][j] = v1.getItem(i,j) - v2.getItem(i,j);
+                        res[i][j] = v1.getItem(i, j) - v2.getValue();
                         break;
                     case "*":
-                        res[i][j] = v1.getItem(i,j) * v2.getItem(i,j);
-                        break; // некорректная математическая операция
-                    case "/":
-                        if (v2.getItem(i,j) == 0)
-                            throw new MathException("Деление на ноль: " + getOp(op, v1, v2));
-                        res[i][j] = v1.getItem(i,j) / v2.getItem(i,j);
+                        res[i][j] = v1.getItem(i, j) * v2.getValue();
                         break;
-                    default:
-                        return null;
+                    case "/":
+                        if (v2.getValue() == 0)
+                            throw new MathException("Деление на ноль: " + getOp(op, v1, v2));
+                        res[i][j] = v1.getItem(i, j) / v2.getValue();
+                        break;
                 }
             }
         }
         return new VarMatrix(res).toString();
+    }
+
+    private String calc(IOperation op, VarMatrix v1, VarVector v2) throws MathException {
+        if (op.getOperator() == "+" || op.getOperator() == "-" || op.getOperator() == "/") {
+            throw new MathException("Недопустимая операция: " + getOp(op, v1, v2));
+        }
+        else if (v1.colCount() != v2.length()) {
+            throw new MathException("Для умножения необходимо чтобы кол-во столбцов матрицы было равно длине вектора: " + getOp(op,v1,v2));
+        }
+
+        if (op.getOperator() == "*" ) {
+            double[] res = new double[v1.rowCount()];
+            for (int i = 0; i < v1.rowCount(); i++) {
+                res[i] = 0.0;
+                for (int j = 0; j < v1.colCount(); j++)
+                    res[i] += v1.getItem(i,j) * v2.getItem(j);
+            }
+            return new VarVector(res).toString();
+        }
+
+        return  null;
+    }
+
+    private String calc(IOperation op, VarMatrix v1, VarMatrix v2) throws MathException, ParseException {
+        if ((op.getOperator() == "+" || op.getOperator() == "-") &&
+            (v1.rowCount() != v2.rowCount() || v1.colCount() != v2.colCount())) {
+            throw new MathException("У матриц в операции разная размерность: " + getOp(op,v1,v2));
+        }
+        if ((op.getOperator() == "*") && (v1.colCount() != v2.rowCount())) {
+            throw new MathException("Для умножения необходимо чтобы кол-во столбцов первой матрицы было равно кол-ву строк второй матрицы: " + getOp(op,v1,v2));
+        }
+        else if (op.getOperator() == "/") {
+            throw new MathException("Недопустимая операция: " + getOp(op, v1, v2));
+        }
+
+        if (op.getOperator() == "+" || op.getOperator() == "-") {
+            double[][] res = new double[v1.rowCount()][v1.colCount()];
+            for (int i = 0; i < v1.rowCount(); i++) {
+                for (int j = 0; j < v1.colCount() ; j++) {
+                    switch(op.getOperator()) {
+                        case "+":
+                            res[i][j] = v1.getItem(i, j) + v2.getItem(i, j);
+                            break;
+                        case "-":
+                            res[i][j] = v1.getItem(i, j) - v2.getItem(i, j);
+                            break;
+                    }
+                }
+            }
+            return new VarMatrix(res).toString();
+        }
+        else if (op.getOperator() == "*") {
+            double[][] res = new double[v1.rowCount()][v2.colCount()];
+            for (int i = 0; i < v1.rowCount(); i++)
+                for (int j = 0; j < v2.colCount(); j++) {
+                    res[i][j] = 0.0;
+                    for (int k = 0; k < v2.rowCount(); k++)
+                        res[i][j] += v1.getItem(i,k) * v2.getItem(k,j);
+                }
+            return new VarMatrix(res).toString();
+        }
+
+        return null;
     }
 
     private String getOp(IOperation op, Var v1, Var v2) {

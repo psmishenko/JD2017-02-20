@@ -8,6 +8,8 @@ import by.it.radivonik.calculator.variable.Var;
 public class Runner {
     public static void main(String[] args) {
 /*
+        Calc.start();
+
         System.out.println("Задания к занятиям JD01_09, JD01_11.1");
         System.out.println("Вариант А:");
         Calc.calculatePrint("3.8+6.2");
@@ -51,7 +53,7 @@ public class Runner {
         Var.saveToFile();
         Calc.calculatePrint("printvar");
         System.out.println("Смотрите файл log.txt");
-*/
+
         System.out.println("\nЗадания к занятию JD02_04 (сложный парсер + тесты JUnit)");
         System.out.println("Вариант А:");
         Calc.calculatePrint("A=2+5.3");
@@ -66,7 +68,11 @@ public class Runner {
         Calc.calculatePrint("M={{1,((1+1/2)*5),3,4},{-1.1,-2.2,-3.3,-3.4}}*(8/(3-1))");
 //        Calc.calculatePrint("printvar",true);
 
-        Var.saveToFile();
+        Calc.stop();
+*/
+        System.out.println("\nЗадания к занятию JD02_06 (Вариант С - отчеты)");
+        Calc.calculatePrint("reportlog",true);
+        Calc.calculatePrint("reportmini",true);
     }
 
  }

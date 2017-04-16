@@ -9,19 +9,21 @@ import java.io.IOException;
 /**
  * Created by Radivonik on 14.04.2017.
  */
-public class ReportLog implements IReport {
+public class ReportMini implements IReport {
     @Override
     public String header() {
-        return "--- Полный отчет\n";
+        return "--- Краткий отчет (без стека ошибок)\n";
     }
 
     @Override
     public String body() {
+        String patternLog = "\\[\\d+\\] \\d{2}\\.\\d{2}\\.\\d{4} \\d{2}\\:\\d{2}\\:\\d{2}.*";
         StringBuilder res = new StringBuilder("");
         try (BufferedReader fileReader = new BufferedReader(new FileReader(Log.getLog().getLogfile()))) {
             String line;
             while ((line = fileReader.readLine()) != null) {
-                res.append(line+"\n");
+                if (line.matches(patternLog))
+                    res.append(line+"\n");
             }
         }
         catch (IOException e) {

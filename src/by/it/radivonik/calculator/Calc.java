@@ -42,4 +42,11 @@ public class Calc {
         System.out.printf("%s =%s%s\n",exp,(newLineResult?"\n":" "),val);
     }
 
+    static void start() {
+        Log.getLog().write("Старт");
+    }
+
+    static void stop() {
+        Log.getLog().write("Стоп");
+    }
 }

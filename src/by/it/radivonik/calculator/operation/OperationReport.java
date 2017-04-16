@@ -22,8 +22,8 @@ public class OperationReport implements IOperationExecute {
             case "reportlog":
                 res = Report.report(new ReportLog());
                 break;
-            case "reportlogmini":
-                res = Report.report(new ReportLogMini());
+            case "reportmini":
+                res = Report.report(new ReportMini());
                 break;
         }
         return res;

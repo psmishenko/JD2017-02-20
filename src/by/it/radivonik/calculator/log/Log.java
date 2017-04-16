@@ -70,4 +70,8 @@ public class Log {
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         return sdf.format(System.currentTimeMillis());
     }
+
+    public String getLogfile() {
+        return filelogspec;
+    }
 }

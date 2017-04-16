@@ -23,7 +23,7 @@ public class ListOperations {
         add(new Operation("printvar", "printvar", 0, OperationStore.getOperation()));
         add(new Operation("sortvar", "sortvar", 0, OperationStore.getOperation()));
         add(new Operation("reportlog", "reportlog", 0, OperationReport.getOperation()));
-        add(new Operation("reportlogmini", "reportlogmini", 0, OperationReport.getOperation()));
+        add(new Operation("reportmini", "reportmini", 0, OperationReport.getOperation()));
     }
 
     private static void add(IOperation op) {

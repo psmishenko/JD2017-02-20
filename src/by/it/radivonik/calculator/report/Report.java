@@ -8,9 +8,9 @@ import by.it.radivonik.calculator.operation.IOperation;
 public class Report {
     public static String report(IReport rptBuilder) {
         StringBuilder res = new StringBuilder("");
-        res.append(rptBuilder.header()).append("\n");
-        res.append(rptBuilder.body()).append("\n");
-        res.append(rptBuilder.footer()).append("\n");
+        res.append(rptBuilder.header());
+        res.append(rptBuilder.body());
+        res.append(rptBuilder.footer());
         return res.toString();
     }
 }
