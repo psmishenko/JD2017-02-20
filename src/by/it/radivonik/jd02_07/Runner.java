@@ -17,8 +17,8 @@ import java.io.IOException;
 public class Runner {
     public static void main(String[] args) {
         String path = System.getProperty("user.dir") + "/src/by/it/radivonik/jd02_07";
-        String filexml = path + "/persons.xml";
-        String filexsd = path + "/persons.xsd";
+        String filexml = path + "/naklads.xml";
+        String filexsd = path + "/naklads.xsd";
         String lang = XMLConstants.W3C_XML_SCHEMA_NS_URI;
         SchemaFactory factory = SchemaFactory.newInstance(lang);
         File schemaLocation = new File(filexsd);
@@ -27,13 +27,13 @@ public class Runner {
             Validator validator = schema.newValidator();
             Source source = new StreamSource(filexml);
             validator.validate(source);
-            System.out.println("Ура, товарищи!!!");
+            System.out.println("Ура, товарищи!!!\nФайл " + filexml + " соответствует описанию " + filexsd);
         }
         catch (SAXException e) {
-            e.printStackTrace();
+            System.out.println("Проверка на корректность " + filexml + " не вполнена: " + e.getMessage());
         }
         catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(filexml + " некорректен: " + e.getMessage());
         }
     }
 }

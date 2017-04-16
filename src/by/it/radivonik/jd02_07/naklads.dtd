@@ -1,0 +1,24 @@
+<!ELEMENT Naklads (Naklad)+>
+<!ELEMENT Naklad (Date, Num, Seria, Klient, Avto, Tovars)>
+<!ATTLIST Naklad type CDATA #REQUIRED>
+<!ELEMENT Date (#PCDATA)>
+<!ELEMENT Num (#PCDATA)>
+<!ELEMENT Seria (#PCDATA)>
+<!ELEMENT Klient (Name, Unp, Adres)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT Unp (#PCDATA)>
+<!ELEMENT Adres (#PCDATA)>
+<!ELEMENT Avto (NumGos, Voditel)>
+<!ELEMENT NumGos (#PCDATA)>
+<!ELEMENT Voditel (#PCDATA)>
+<!ELEMENT Tovars (Tovar)+>
+<!ELEMENT Tovar (Name, EdIzm, Count, Cena, Stoim, PrNds, Nds, StoimPoln)>
+<!ELEMENT EdIzm (#PCDATA)>
+<!ELEMENT Count (#PCDATA)>
+<!ELEMENT Cena (#PCDATA)>
+<!ELEMENT Stoim (#PCDATA)>
+<!ELEMENT PrNds (#PCDATA)>
+<!ELEMENT Nds (#PCDATA)>
+<!ELEMENT StoimPoln (#PCDATA)>
+
+
