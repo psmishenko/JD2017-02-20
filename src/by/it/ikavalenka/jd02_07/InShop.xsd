@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://ikavalenka.it-academy.by/xml/InternetShop"
+        xmlns:tns="http://ikavalenka.it-academy.by/xml/InternetShop"
+        elementFormDefault="qualified">
+
+    <element name="InternetShop">
+    <complexType>
+    <sequence>
+    <element name="Administrator" type="tns:Administrator"/>
+    <element name="Client" type="tns:Client"/>
+    <element name="OrderC" type="tns:OrderC"/>
+    <element name="BlackListStatus" type="tns:BlackListStatus"/>
+    </sequence>
+    </complexType>
+    </element>
+
+    <element name="Administrator">
+            <complexType>
+                <sequence>
+                    <element name="Administrator"
+                            type="tns:Administrator"
+                            minOccurs="2"
+                            maxOccurs="unbounded">
+                    </element>
+                </sequence>
+            </complexType>
+    </element>
+
+    <complexType name="Administrator">
+            <sequence>
+    <element name="Catalog" type="string"/>
+    <element name="Order" type="integer"/>
+    <element name="BlackList" type="string"/>
+            </sequence>
+        <attribute name="login" type="tns:Login" use="required" />
+        <attribute name="password" type="tns:Password" use="required" />
+    </complexType>
+
+
+    <complexType name="Clients">
+            <sequence>
+                    <element name= "Client" type="tns:Client"
+                             minOccurs="2"
+                             maxOccurs="unbounded"/>
+    </sequence>
+    </complexType>
+    <complexType name="Client">
+        <sequence>
+    <element name="MadeOrder" type="string"/>
+    <element name="PayOreder" type="double"/>
+            </sequence>
+        <attribute name="login" type="tns:Login" use="required" />
+        <attribute name="password" type="tns:Password" use="required" />
+    </complexType>
+    <complexType name="OrderC">
+        <sequence>
+                <element name="Profit" type="string"/>
+                <element name="Count" type="string"/>
+                <element name="Sale" type="string"/>
+        </sequence>
+    </complexType>
+    <complexType name="BlackListStatus">
+        <sequence>
+            <element name="Client_id" type="integer"/>
+        </sequence>
+    </complexType>
+    <simpleType name ="Login">
+        <restriction base="string">
+                <pattern value="([a-zA-Z])[a-zA-Z0-9]{1,19}"/>
+                        </restriction>
+    </simpleType>
+
+    <simpleType name="Password">
+        <restriction base="string">
+            <pattern value="([a-zA-Z])[a-zA-Z0-9]{1,19}"/>
+        </restriction>
+    </simpleType>
+</schema>

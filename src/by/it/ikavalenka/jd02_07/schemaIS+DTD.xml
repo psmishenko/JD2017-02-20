@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE InternetShop SYSTEM "schemaIS.dtd">
+
+<InternetShop>
+
+<Administrator login="zAds36" password='pass2'>
+    <Catalog>CatalogAll</Catalog>
+    <Order>OrderNumber</Order>
+    <BlackList>None</BlackList>
+</Administrator>
+
+<Client login="login_1" password='pass_1'>
+<MadeOrder>OrderOne</MadeOrder>
+<PayOreder>1343.15</PayOreder>
+</Client>
+
+<OrderC>
+<Profit>Summary</Profit>
+<Count>CountFull</Count>
+<Sale>Procent</Sale>
+</OrderC>
+
+ <BlackListStatus>
+<Client_id>458</Client_id>
+ </BlackListStatus>
+
+</InternetShop>
+
