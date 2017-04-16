@@ -74,7 +74,7 @@ public class ConsolRunner {
 //
 //        oneRes(Parser.calc("5/0"));
 //        oneRes(Parser.calc(vec1+"+"+vec2));
-Parser parser=new Parser();
+Parser parser=new Parser(Parser.Debug.ON);
         Var vec1=new VarV("{1,5}");
         Var vec2=new VarV("{1.7,2,3}");
 
