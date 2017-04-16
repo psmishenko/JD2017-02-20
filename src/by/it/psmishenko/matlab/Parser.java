@@ -13,7 +13,7 @@ public class Parser {
     private static final List<String> priority = new ArrayList<>(Arrays.asList("=,+,-,*,/".split(",")));
     private List<String> operation = new ArrayList<>();
     private List<String> operand;
-
+    public static String allResults = "";
 
 
     int getPosOperation() {
@@ -31,7 +31,7 @@ public class Parser {
         return pos;
     }
 
-     Var createVar(String part) throws MathException {
+   /*  Var createVar(String part) throws MathException {
          Var res;
          if (part.matches(Patterns.exMat)) {
              res = new VarM(part);
@@ -42,7 +42,7 @@ public class Parser {
          } else
              res = Var.vars.get(part);
          return res;
-    }
+    }*/
 
 /*    private void debug() {
         StringBuilder sb = new StringBuilder(operand.get(0));
@@ -54,10 +54,10 @@ public class Parser {
 
     Var oneOperationCalc (String v1, String op, String v2) throws MathException {
         Var res = null;
-        Var one = createVar(v1);
+        Var one = VarCreator.getInstance().createVar(v1);
         if (one == null && (!op.equals("=")))
             throw new MathException("Неизвеcтное значение " + v1);
-        Var two = createVar(v2);
+        Var two = VarCreator.getInstance().createVar(v2);
         if (two == null)
             throw new MathException("Неизвеcтное значение " + v2);
         if (op.equals("=")) {
@@ -124,11 +124,26 @@ public class Parser {
             System.out.println("----------------------------------------------------------------------------");
             try {
                 IOData.saveErrorsInTxt(st,e.getMessage());
+                SingleLogger errorlogger = SingleLogger.getInstance();
+                String message1 = String.format("Ошибка: %s\nStack:\n",e.getMessage());
+                String message2 = "";
+                for (StackTraceElement el:st) {
+                    message2+=String.format("В классе \"%s\" ,в методе \"%s\" , в строке \"%s\"\n",
+                            el.getClassName(),el.getMethodName(),el.getLineNumber());
+                    if(el.getMethodName().equals("main"))break;
+                }
+                errorlogger.log(message1+message2);
+                allResults+=(expression+"\n"+message1+message2);
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
         }
-        if(res!=null) IOData.saveOperationsInTxt(expression,res.toString());
+        if(res!=null) {
+            IOData.saveOperationsInTxt(expression,res.toString());
+            SingleLogger operationsLogger = SingleLogger.getInstance();
+            operationsLogger.log(String.format("%s=%s",expression,res.toString()));
+            allResults+=String.format("%s=%s",expression,res.toString()+"\n");
+        }
         return res;
     }
 

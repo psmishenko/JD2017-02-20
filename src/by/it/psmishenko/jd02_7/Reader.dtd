@@ -1,0 +1,12 @@
+<!ELEMENT Readers (Reader)+>
+<!ELEMENT Reader (Name,ID,Age,Books)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT ID (#PCDATA)>
+<!ELEMENT Age (#PCDATA)>
+<!ELEMENT Books (Book)+>
+<!ELEMENT Book (Author,Title,Year,ISBN,LID)>
+        <!ELEMENT Author (#PCDATA)>
+        <!ELEMENT Title (#PCDATA)>
+        <!ELEMENT Year (#PCDATA)>
+        <!ELEMENT ISBN (#PCDATA)>
+        <!ELEMENT LID (#PCDATA)>

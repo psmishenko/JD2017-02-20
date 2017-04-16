@@ -1,6 +1,11 @@
 package by.it.psmishenko.matlab;
 
 
+import by.it.psmishenko.matlab.ReportPackage.FullReport;
+import by.it.psmishenko.matlab.ReportPackage.ReportBuilder;
+import by.it.psmishenko.matlab.ReportPackage.ReportDirector;
+import by.it.psmishenko.matlab.ReportPackage.ShortReport;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -20,6 +25,7 @@ public class ConsoleRunner {
     }
 
     public static void main(String[] args) throws IOException,MathException {
+        Timer t =new Timer();
         Parser parser = new Parser();
       //  Var vec1=new VarV("{1,5}");
        // Var vec2=new VarV("{1.7,2,3}");
@@ -27,11 +33,19 @@ public class ConsoleRunner {
         oneRes(parser.calc("B=A*3.5"),"B=A*3.5");
         oneRes(parser.calc("B1=B-0.55"),"B1=B-0.55");
         oneRes(parser.calc("B2=A/2-1"),"B2=A/2-1");
-
+        oneRes(parser.calc("{{1,2,3},{4,5,6}}/0"),"2:");
         oneRes(parser.calc("C=B+(A*2)"),"C=B+(A*2)");
         oneRes(parser.calc("D=((C-0.15)-20)/(7-5)"),"D=((C-0.15)-20)/(7-5)");
         oneRes(parser.calc("E={2,3}*(D/2)"),"E={2,3}*(D/2)");
-
+        t.stopTimer(); // обработка всех операций закончена
+        System.out.println("Time="+Timer.getDelta());
+        ReportDirector reportDirector = new ReportDirector();
+        ReportBuilder reportBuilder1 = new FullReport();
+        ReportBuilder reportBuilder2 = new ShortReport();
+        reportDirector.setReportBuilder(reportBuilder1);
+        reportDirector.constructReport();
+        reportDirector.setReportBuilder(reportBuilder2);
+        reportDirector.constructReport();
        // IOData.loadFromTxt();
       //  System.out.println(Var.vars);
        // Parser.calc("Alfhfhfhf=3");
