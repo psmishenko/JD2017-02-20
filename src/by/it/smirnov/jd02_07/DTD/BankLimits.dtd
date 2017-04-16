@@ -1,0 +1,26 @@
+        <!ELEMENT BankLimits (Banks,Limits)*>
+        <!ELEMENT Banks (Bank)*>
+        <!ELEMENT Bank (Name,MFO,FullMFO,Address,Group)*>
+        <!ELEMENT Name (#PCDATA)>
+        <!ELEMENT MFO (#PCDATA)>
+        <!ELEMENT FullMFO (#PCDATA)>
+        <!ELEMENT Address (Country,City,Street,Number,PostIndex?)*>
+        <!ELEMENT Country (#PCDATA)>
+        <!ELEMENT City (#PCDATA)>
+        <!ELEMENT Street (#PCDATA)>
+        <!ELEMENT Number (#PCDATA)>
+        <!ELEMENT PostIndex (#PCDATA)>
+        <!ELEMENT Group (#PCDATA)>
+        <!ELEMENT Limits (Limit)*>
+        <!ELEMENT Limit (Lim)*>
+        <!ATTLIST Limit
+                group CDATA #REQUIRED>
+        <!ELEMENT Lim (Opers)*>
+        <!ATTLIST Lim
+                fromDate CDATA #REQUIRED>
+        <!ELEMENT Opers (Oper)*>
+        <!ELEMENT Oper (Summa,Valut)*>
+        <!ATTLIST Oper
+                type CDATA #REQUIRED>
+        <!ELEMENT Summa (#PCDATA)>
+        <!ELEMENT Valut (#PCDATA)>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://it-academy.by/xml/BankLimits"
+        xmlns:tns="http://it-academy.by/xml/BankLimits"
+        elementFormDefault="qualified">
+
+    <element name="BankLimits">
+        <complexType>
+            <sequence>
+                <element name="Banks"
+                         type="tns:Banks"
+                         maxOccurs="unbounded">
+                </element>
+                <element name="Limits"
+                         type="tns:Limits"
+                         maxOccurs="unbounded">
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="Banks">
+        <sequence>
+            <element name="Bank"
+                     type="tns:Bank"
+                     maxOccurs="unbounded">
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="Bank">
+        <sequence>
+            <element name="Name" type="string"/>
+            <element name="MFO" type="integer"/>
+            <element name="FullMFO" type="string"/>
+            <element name="Address" type="tns:Address"/>
+            <element name="Group" type="string" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Address">
+        <sequence>
+            <element name="Country" type="string"/>
+            <element name="City" type="string"/>
+            <element name="Street" type="string"/>
+            <element name="Number" type="string"/>
+            <element name="PostIndex" type="string" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+
+    <complexType name="Limits">
+        <sequence>
+            <element name="Limit"
+                     type="tns:Limit"
+                     maxOccurs="unbounded">
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="Limit">
+        <sequence>
+            <element name="Lim" type="tns:Lim" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="group" type="string" use="required" />
+    </complexType>
+
+    <complexType name="Lim">
+        <sequence>
+            <element name="Opers" type="tns:Opers"/>
+        </sequence>
+        <attribute name="fromDate" type="date" use="required" />
+    </complexType>
+
+    <complexType name="Opers">
+        <sequence>
+            <element name="Oper"
+                     type="tns:Oper"
+                     maxOccurs="unbounded">
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="Oper">
+        <sequence>
+            <element name="Summa" type="float"/>
+            <element name="Valut" type="string"/>
+        </sequence>
+        <attribute name="type" type="tns:TypeOper" use="required" />
+    </complexType>
+
+    <simpleType name="TypeOper">
+        <restriction base="string">
+            <enumeration value="MM"/>
+            <enumeration value="FX"/>
+        </restriction>
+    </simpleType>
+
+</schema>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<!DOCTYPE BankLimits [
+        <!ELEMENT BankLimits (Banks,Limits)*>
+        <!ELEMENT Banks (Bank)*>
+        <!ELEMENT Bank (Name,MFO,FullMFO,Address,Group)*>
+        <!ELEMENT Name (#PCDATA)>
+        <!ELEMENT MFO (#PCDATA)>
+        <!ELEMENT FullMFO (#PCDATA)>
+        <!ELEMENT Address (Country,City,Street,Number,PostIndex?)*>
+        <!ELEMENT Country (#PCDATA)>
+        <!ELEMENT City (#PCDATA)>
+        <!ELEMENT Street (#PCDATA)>
+        <!ELEMENT Number (#PCDATA)>
+        <!ELEMENT PostIndex (#PCDATA)>
+        <!ELEMENT Group (#PCDATA)>
+        <!ELEMENT Limits (Limit)*>
+        <!ELEMENT Limit (Lim)*>
+        <!ATTLIST Limit
+            group CDATA #REQUIRED>
+        <!ELEMENT Lim (Opers)*>
+        <!ATTLIST Lim
+            fromDate CDATA #REQUIRED>
+        <!ELEMENT Opers (Oper)*>
+        <!ELEMENT Oper (Summa,Valut)*>
+        <!ATTLIST Oper
+            type CDATA #REQUIRED>
+        <!ELEMENT Summa (#PCDATA)>
+        <!ELEMENT Valut (#PCDATA)>
+]>
+<BankLimits>
+    <Banks>
+        <Bank>
+            <Name>АСБ "Беларусбанк"</Name>
+            <MFO>333</MFO>
+            <FullMFO>124589333</FullMFO>
+            <Address>
+                <Country>Беларусь</Country>
+                <City>Минск</City>
+                <Street>пр.Дзержинского</Street>
+                <Number>23</Number>
+            </Address>
+            <Group>Первая группа</Group>
+        </Bank>
+        <Bank>
+            <Name>ОАО "Приорбанк"</Name>
+            <MFO>749</MFO>
+            <FullMFO>124589479</FullMFO>
+            <Address>
+                <Country>Беларусь</Country>
+                <City>Минск</City>
+                <Street>ул.В.Хоружей</Street>
+                <Number>10</Number>
+                <PostIndex>220088</PostIndex>
+            </Address>
+            <Group>Вторая группа</Group>
+        </Bank>
+    </Banks>
+    <Limits>
+        <Limit group="Первая группа">
+            <Lim fromDate="01.01.2017">
+                <Opers>
+                    <Oper type="MM">
+                        <Summa>1000.00</Summa>
+                        <Valut>USD</Valut>
+                    </Oper>
+                    <Oper type="FM">
+                        <Summa>2000.00</Summa>
+                        <Valut>EUR</Valut>
+                    </Oper>
+                </Opers>
+            </Lim>
+            <Lim fromDate="01.02.2017">
+                <Opers>
+                    <Oper type="MM">
+                        <Summa>1500.00</Summa>
+                        <Valut>USD</Valut>
+                    </Oper>
+                    <Oper type="FM">
+                        <Summa>2500.00</Summa>
+                        <Valut>EUR</Valut>
+                    </Oper>
+                </Opers>
+            </Lim>
+        </Limit>
+        <Limit group="Вторая группа">
+            <Lim fromDate="01.01.2017">
+                <Opers>
+                    <Oper type="MM">
+                        <Summa>5000.00</Summa>
+                        <Valut>USD</Valut>
+                    </Oper>
+                    <Oper type="FM">
+                        <Summa>7000.00</Summa>
+                        <Valut>EUR</Valut>
+                    </Oper>
+                </Opers>
+            </Lim>
+            <Lim fromDate="01.02.2017">
+                <Opers>
+                    <Oper type="MM">
+                        <Summa>4500.00</Summa>
+                        <Valut>USD</Valut>
+                    </Oper>
+                    <Oper type="FM">
+                        <Summa>8500.00</Summa>
+                        <Valut>EUR</Valut>
+                    </Oper>
+                </Opers>
+            </Lim>
+        </Limit>
+    </Limits>
+</BankLimits>
