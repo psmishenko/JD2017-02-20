@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <!ELEMENT InternetShop (Administrator,Client,OrderC,BlackListStatus)+>
+
+        <!ELEMENT Administrator (Catalog,Order,BlackList)+>
+        <!ATTLIST Administrator login ID #REQUIRED password ID #REQUIRED>
+        <!ELEMENT Catalog (#PCDATA)>
+        <!ELEMENT Order (#PCDATA)>
+        <!ELEMENT BlackList (#PCDATA)>
+
+        <!ELEMENT Client (MadeOrder,PayOreder) >
+        <!ATTLIST Client login ID #REQUIRED password ID #REQUIRED>
+        <!ELEMENT MadeOrder (#PCDATA)>
+        <!ELEMENT PayOreder (#PCDATA)>
+
+        <!ELEMENT OrderC (Profit,Count,Sale)>
+        <!ELEMENT Profit (#PCDATA)>
+        <!ELEMENT Count (#PCDATA)>
+        <!ELEMENT Sale (#PCDATA)>
+
+        <!ELEMENT BlackListStatus (Client_id)>
+        <!ELEMENT Client_id (#PCDATA)+>

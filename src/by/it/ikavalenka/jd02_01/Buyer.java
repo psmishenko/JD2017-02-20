@@ -30,13 +30,13 @@ class Buyer extends Thread implements IBuyer, IUseBacket {
     }
 
 
-    @Override
-    public void takeBacket() {
-        int timeout = Helper.getRandom(100, 200);
-        Helper.sleep(timeout);
-        System.out.println(this + " customer #" + sin + "take the basket");
-
-    }
+//    @Override
+//    public void takeBacket() {
+//        int timeout = Helper.getRandom(100, 200);
+//        Helper.sleep(timeout);
+//        System.out.println(this + " customer #" + sin + "take the basket");
+//
+//    }
 
     @Override
     public void chooseGoods() {

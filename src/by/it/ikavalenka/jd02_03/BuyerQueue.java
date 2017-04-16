@@ -18,11 +18,11 @@ public  class BuyerQueue {
 
 //            queue.add(buyer);               //critical section
         }
-    static Buyer extract(){
-        synchronized (queue){
-            return queue.poll();
+   public static synchronized Buyer extract(){
+        if (queue.isEmpty()) return null;
+        else  return queue.remove();
         }
-    }
+
     static int getCount(){
         synchronized (queue){
             return queue.size();

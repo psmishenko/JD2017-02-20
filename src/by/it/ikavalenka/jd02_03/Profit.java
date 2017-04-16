@@ -1,4 +1,4 @@
-package by.it.ikavalenka.jd02_03.jd02_03;
+package by.it.ikavalenka.jd02_03;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
