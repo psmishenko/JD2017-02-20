@@ -4,16 +4,16 @@ public class VarF extends Var {
     public Double value;
 
     @Override
-    public Var add(Var var) throws MathExeption{
+    public Var add(Var var) throws MathExcepton {
         if (var instanceof VarF) {
             VarF operand = (VarF) var;
             return new VarF(this.value + operand.value);
         } else
-            return (var.add(this));
+        return (var.add(this));
     }
 
     @Override
-    public Var sub(Var var) throws MathExeption{
+    public Var sub(Var var)  throws MathExcepton {
         if (var instanceof VarF) {
             VarF operand = (VarF) var;
             return new VarF(this.value - operand.value);
@@ -22,7 +22,7 @@ public class VarF extends Var {
     }
 
     @Override
-    public Var mul(Var var) throws MathExeption {
+    public Var mul(Var var)  throws MathExcepton {
         if (var instanceof VarF) {
             VarF operand = (VarF) var;
             return new VarF(this.value * operand.value);
@@ -31,11 +31,11 @@ public class VarF extends Var {
     }
 
     @Override
-    public Var div(Var var) throws MathExeption {
+    public Var div(Var var)  throws MathExcepton {
         if (var instanceof VarF) {
             VarF operand = (VarF) var;
-            if (operand.value == 0)
-                throw new MathExeption("Деление на ноль.");
+            if (operand.value==0)
+                throw new MathExcepton("Деление на ноль.");
             return new VarF(this.value / operand.value);
         } else
             return super.div(var);
@@ -64,4 +64,3 @@ public class VarF extends Var {
         return value.toString();
     }
 }
-

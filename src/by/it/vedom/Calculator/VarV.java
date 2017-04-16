@@ -3,23 +3,24 @@ package by.it.vedom.Calculator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class VarV extends Var  {
+public class VarV extends Var {
     public Double[] vector;
 
-    private void checkSize(VarV v1, VarV v2) throws MathExeption {
-        if(v1.vector.length != v2.vector.length)
-            throw new MathExeption("Размеры векторов различны");
+    private void checkSize(VarV v1, VarV v2) throws MathExcepton {
+        if (v1.vector.length!=v2.vector.length) {
+            throw new MathExcepton("Разный размер у векторов");
+        }
     }
 
     @Override
-    public Var add(Var var) throws MathExeption {
+    public Var add(Var var) throws MathExcepton {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] + ((VarF) var).value;
             }
         } else if (var instanceof VarV) {
-            checkSize(this, (VarV) var);
+            checkSize(this,(VarV) var);
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] + ((VarV) var).vector[i];
             }
@@ -29,13 +30,14 @@ public class VarV extends Var  {
     }
 
     @Override
-    public Var sub(Var var) throws MathExeption {
+    public Var sub(Var var) throws MathExcepton {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] - ((VarF) var).value;
             }
         } else if (var instanceof VarV) {
+            checkSize(this,(VarV) var);
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] - ((VarV) var).vector[i];
             }
@@ -45,16 +47,17 @@ public class VarV extends Var  {
     }
 
     @Override
-    public Var mul(Var var) throws MathExeption {
+    public Var mul(Var var) throws MathExcepton {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] * ((VarF) var).value;
             }
         } else if (var instanceof VarV) {
-            Double sum=0.0;
+            checkSize(this,(VarV) var);
+            Double sum = 0.0;
             for (int i = 0; i < res.length; i++) {
-                sum=sum+ vector[i] * ((VarV) var).vector[i];
+                sum = sum + vector[i] * ((VarV) var).vector[i];
             }
             return new VarF(sum);
         } else return super.add(var);
@@ -62,15 +65,16 @@ public class VarV extends Var  {
         return new VarV(res);
     }
 
-    public Var div(Var var) throws MathExeption {
+    public Var div(Var var) throws MathExcepton {
         Double[] res = new Double[vector.length];
         if (var instanceof VarF) {
-            if(((VarF) var).value== 0)
-                throw new MathExeption("Деление на 0.");
+            if (((VarF) var).value==0){
+                throw new MathExcepton("Деление на ноль");
+            }
             for (int i = 0; i < res.length; i++) {
                 res[i] = vector[i] / ((VarF) var).value;
             }
-        } else return super.add(var);
+        } else return super.div(var);
         return new VarV(res);
     }
 
@@ -109,7 +113,7 @@ public class VarV extends Var  {
                 i++;
             }
         } else {
-            new MathExeption("Ошибка:" + value + " не является вектором");
+            new MathExcepton("Ошибка:" + value + " не является вектором");
         }
     }
 

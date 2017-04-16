@@ -1,0 +1,5 @@
+Main.welcome = Welcome!
+Main.HowDoYouDo = How do You do!
+Main.MyName = Vladislav
+Main.Time = Today
+

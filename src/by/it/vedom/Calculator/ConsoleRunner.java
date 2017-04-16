@@ -1,31 +1,38 @@
 package by.it.vedom.Calculator;
 
 public class ConsoleRunner {
-    private static void oneRes(Var var) {
+
+    private static void oneRes(Var var){
         if (var != null) {
             System.out.println(var);
         }
     }
 
-    public static void main(String[] args) throws MathExeption {
+    public static void main(String[] args) {
         MapVars.loadMapFromFile();
-        System.out.println("\nТекущая карта переменных:\n" + Var.vars);
+//        System.out.println("\nТекущая карта переменных:\n"+ Var.vars);
+        Parser parser=new Parser(Parser.Debug.ON);
 
-        Var vec1 = new VarV("{1,5}");
-        Var vec2 = new VarV("{1.7,2,3}");
+        oneRes(parser.calc("A=2+5.3"));
+        oneRes(parser.calc("B=A*3.5"));
+        oneRes(parser.calc("B1=B-0.55"));
+        oneRes(parser.calc("B2=A/2"));
 
-        oneRes(Parser.calc("5/0"));
-        oneRes(Parser.calc(vec1 + "+" + vec2));
 
-//        oneRes(Parser.calc("1+2"));
-        oneRes(Parser.calc("{1,2,3,4,5}+2"));
-        oneRes(Parser.calc("{1,2,3,4,5}*2"));
-        oneRes(Parser.calc("{1,2,3,4,5}/2"));
-        oneRes(Parser.calc("{1,2,3,4,5}-2"));
-//        oneRes(Parser.calc("A=3"));
-//        oneRes(Parser.calc("B={1,2,3,4}"));
-//        oneRes(Parser.calc("C=5"));
-//        oneRes(Parser.calc("E=7"));
+        Var vec1=new VarV("{1,5}");
+        Var vec2=new VarV("{1.7,2,3}");
+        oneRes(parser.calc("5/0"));
+        oneRes(parser.calc(vec1+"+"+vec2));
+
+        oneRes(parser.calc("1+2"));
+        oneRes(parser.calc("{1,2,3,4,5}+2"));
+        oneRes(parser.calc("{1,2,3,4,5}*2"));
+        oneRes(parser.calc("{1,2,3,4,5}/2"));
+        oneRes(parser.calc("{1,2,3,4,5}-2"));
+        oneRes(parser.calc("A=3"));
+        oneRes(parser.calc("B={1,2,3,4}"));
+        oneRes(parser.calc("C=5"));
+        oneRes(parser.calc("D=7"));
 
 //        System.out.println(Var.vars);
 
@@ -44,6 +51,6 @@ public class ConsoleRunner {
         MapVars.saveMapToFile();
 
         //Var.vars уже имеет анонимный класс с toString нужного формата (A=9\n B={1,2,3}\n и т.д.)
-        System.out.println("\nСохранена карта переменных:\n" + Var.vars);
+        //System.out.println("\nСохранена карта переменных:\n"+ Var.vars);
     }
 }

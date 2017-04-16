@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE Persons SYSTEM
+        "C:\Users\User\IdeaProjects\it-academy_vedom\JD2017-02-20_v2\src\by\it\vedom\jd02_07\Person.dtd">
+<Persons>
+    <Person>
+    <Email>privet@mail.ru</Email>
+    <Nickname>privet</Nickname>
+    <Password>qwepoiqwe</Password>
+    <Ads>
+        <Ad>
+            <Description>
+                Хорошая квартира
+            </Description>
+            <Address>
+                г. Минск, ул. В.Хоружей, д. 12, кв.13
+            </Address>
+            <Floor>3</Floor>
+            <Floors>5</Floors>
+            <Square>47.6</Square>
+        </Ad>
+        <Ad>
+            <Description>
+                Еще одна квартира
+            </Description>
+            <Address>
+                г. Минск, ул. Гикало, д. 1, кв.3
+            </Address>
+            <Floor>1</Floor>
+            <Floors>5</Floors>
+            <Square>45.4</Square>
+        </Ad>
+    </Ads>
+    </Person>
+</Persons>
