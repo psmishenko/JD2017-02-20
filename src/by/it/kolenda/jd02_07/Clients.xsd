@@ -6,10 +6,40 @@
         <element name="Clients">
             <complexType>
                 <all>
+                    <element name="ClientFL">
 
-
-            </all>
+                    </element>
+                </all>
             </complexType>
         </element>
 
-        </schema>
+    <element name="ClientFL">
+        <complexType>
+            <all>
+                <element name="PersonalData">
+                    <sequence>
+                        <element name="Name" type="string"/>
+                        <element name="Profession" type="string"/>
+                        <element name="Address" type="string"/>
+                        <element name="Email" type="string"/>
+                    </sequence>
+                </element>
+                <element name="AcctType">
+                    <all>
+                        <element name="Current" type="positiveInteger"/>
+                        <element name="Depo" type="positiveInteger"/>
+                        <element name="Credit" type="positiveInteger"/>
+                    </all>
+                </element>
+                <element name="Actions">
+                    <sequence>
+                        <element name="Pay" type="positiveInteger"/>
+                        <element name="Refill" type="positiveInteger"/>
+                        <element name="Withdraw" type="positiveInteger"/>
+                        <element name="block" type="boolean"/>
+                    </sequence>
+                </element>
+            </all>
+        </complexType>
+    </element>
+</schema>

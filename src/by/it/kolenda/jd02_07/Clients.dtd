@@ -1,11 +1,16 @@
-<!ELEMENT Clients (Fiz_lico,Yur_lico)+>
-        <!ELEMENT Fiz_lico (Name,Profession,Address,AcctType)>
+<!ELEMENT Clients (ClientFL)+>
+        <!ELEMENT ClientFL (PersonalData,AcctType,Actions)>
+        <!ELEMENT PersonalData (Name,Profession,Address,Email)>
         <!ELEMENT Name (#PCDATA)>
         <!ELEMENT Profession (#PCDATA)>
         <!ELEMENT Address (#PCDATA)>
+        <!ELEMENT Email (#PCDATA)>
         <!ELEMENT AcctType (Depo,Credit,Current)>
         <!ELEMENT Depo (#PCDATA)>
         <!ELEMENT Credit (#PCDATA)>
         <!ELEMENT Current (#PCDATA)>
-        <!ELEMENT Yur_lico (Name,Industry,Address,AcctType)>
-        <!ELEMENT Industry (#PCDATA)>
+        <!ELEMENT Actions (Pay,Refill,Withdraw,Block)>
+        <!ELEMENT Pay (#PCDATA)>
+        <!ELEMENT Refill (#PCDATA)>
+        <!ELEMENT Withdraw (#PCDATA)>
+        <!ELEMENT Block (#PCDATA)>
