@@ -19,7 +19,7 @@ public class TaskB {
 
     public static void main(String[] args) {
         String root=System.getProperty("user.dir");
-        String path=root+"/src/by/it/akhmelev/jd01_14/jd02_03/";
+        String path=root+"/src/by/it/akhmelev/jd01_14/classwork/";
         String filename=path+"taskB.txt";
 
         FileReader fr;

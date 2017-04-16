@@ -9,7 +9,7 @@ import java.util.List;
 public class TaskA {
     public static void main(String[] args) {
         String root=System.getProperty("user.dir");
-        String path=root+"/src/by/it/akhmelev/jd01_14/jd02_03/";
+        String path=root+"/src/by/it/akhmelev/jd01_14/classwork/";
         String filename=path+"taskA.data";
         try (FileOutputStream fs=new FileOutputStream(filename);
              BufferedOutputStream bo=new BufferedOutputStream(fs);
