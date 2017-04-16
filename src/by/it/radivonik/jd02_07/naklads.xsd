@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://radivonik.it-academy/xml/naklads"
+        xmlns:tns="http://radivonik.it-academy/xml/naklads"
+        elementFormDefault="qualified">
+<element name="Naklads">
+    <complexType>
+        <sequence>
+            <element name="Naklad" type="tns:Naklad" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+</element>
+<complexType name="Naklad">
+    <sequence maxOccurs="1">
+        <element name="Date" type="date"/>
+        <element name="Num" type="string"/>
+        <element name="Seria" type="string"/>
+        <element name="Klient" type="tns:Klient"/>
+        <element name="Avto" type="tns:Avto"/>
+        <element name="Tovars" type="tns:Tovars"/>
+    </sequence>
+    <attribute name="type" type="tns:NakladType"/>
+</complexType>
+<complexType name="Klient">
+    <sequence maxOccurs="1">
+        <element name="Name" type="string"/>
+        <element name="Unp" type="tns:Unp"/>
+        <element name="Adres" type="string"/>
+    </sequence>
+</complexType>
+<complexType name="Avto">
+    <sequence maxOccurs="1">
+        <element name="NumGos" type="tns:NumAvto"/>
+        <element name="Voditel" type="string"/>
+    </sequence>
+</complexType>
+<complexType name="Tovars">
+    <sequence>
+        <element name="Tovar" type="tns:Tovar" maxOccurs="unbounded"/>
+    </sequence>
+</complexType>
+<complexType name="Tovar">
+    <sequence maxOccurs="1">
+        <element name="Name" type="string"/>
+        <element name="EdIzm" type="string"/>
+        <element name="Count" type="decimal"/>
+        <element name="Cena" type="decimal"/>
+        <element name="Stoim" type="decimal"/>
+        <element name="PrNds" type="decimal"/>
+        <element name="Nds" type="decimal"/>
+        <element name="StoimPoln" type="decimal"/>
+    </sequence>
+</complexType>
+<simpleType name="NakladType">
+    <restriction base="string">
+        <enumeration value="TN_IN"/>
+        <enumeration value="TTN_IN"/>
+        <enumeration value="TN_OUT"/>
+        <enumeration value="TTN_OUT"/>
+    </restriction>
+</simpleType>
+<simpleType name="Unp">
+    <restriction base="string">
+        <pattern value="\d{9,10}"></pattern>
+    </restriction>
+</simpleType>
+    <simpleType name="NumAvto">
+        <restriction base="string">
+            <pattern value="\d{4} [A-Z]{2}-\d"></pattern>
+        </restriction>
+    </simpleType>
+</schema>

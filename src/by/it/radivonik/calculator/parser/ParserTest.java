@@ -1,5 +1,6 @@
-package by.it.radivonik.calculator;
+package by.it.radivonik.calculator.parser;
 
+import by.it.radivonik.calculator.parser.Parser;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

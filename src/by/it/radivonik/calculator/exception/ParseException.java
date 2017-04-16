@@ -1,4 +1,4 @@
-package by.it.radivonik.calculator;
+package by.it.radivonik.calculator.exception;
 
 /**
  * Created by Radivonik on 22.03.2017.

@@ -1,4 +1,4 @@
-package by.it.radivonik.calculator;
+package by.it.radivonik.calculator.log;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -8,49 +8,45 @@ import java.util.*;
  * Created by Radivonik on 09.04.2017.
  */
 public class Log {
-    private static Log log = null;
+    private static Log log = new Log();
     private final int maxLogMesages = 50;
-    private String filelogShort = "log.txt";
-    private String filelog = System.getProperty("user.dir") + "/src/by/it/radivonik/calculator/" + filelogShort;
+    private String filelog = "log.txt";
+    private String filelogspec = System.getProperty("user.dir") + "/src/by/it/radivonik/calculator/" + filelog;
     private Deque<String> logList = new LinkedList<>();
 
     private Log() {
         load();
     }
 
-    private static Log getLog() {
-        if (log == null)
-            log = new Log();
+    public static Log getLog() {
         return log;
     }
 
-    static void log(String message) {
-        getLog().logList.addLast(getLog().getTime() + " " + message);
-        while (getLog().logList.size() > getLog().maxLogMesages)
-            getLog().logList.removeFirst();
-        try (PrintWriter fileWriter = new PrintWriter(new FileWriter(getLog().filelog,false))) {
+    public void write(String message) {
+        logList.addLast(getTime() + " " + message);
+        while (logList.size() > maxLogMesages)
+            logList.removeFirst();
+        try (PrintWriter fileWriter = new PrintWriter(new FileWriter(filelogspec,false))) {
             int c = 0;
-            for (String m : getLog().logList)
+            for (String m : logList)
                 fileWriter.println("[" + (++c) + "] " + m);
         } catch (IOException e) {
-            System.out.println("Ошибка сохранения файла " + getLog().filelogShort + " (" + e.getMessage() + ")");
+            System.out.println("Ошибка сохранения файла " + filelog + " (" + e.getMessage() + ")");
         }
     }
 
-    static void log(Exception except)  {
-        String m = except.getMessage();
-        if (m == null)
-            m = except.getClass().toString();
-        StringBuilder message = new StringBuilder(m);
+    public void write(Exception except)  {
+        StringBuilder message = new StringBuilder(except.getClass().getName());
+        message.append(": ").append(except.getMessage());
         for (StackTraceElement elemErr : except.getStackTrace())
             message.append("\n  " + elemErr.toString());
-        log(message.toString());
+        write(message.toString());
     }
 
     private void load() {
         String patternNum = "^\\[\\d+\\] ";
         String patternLog = "\\d{2}\\.\\d{2}\\.\\d{4} \\d{2}\\:\\d{2}\\:\\d{2}.*";
-        try (BufferedReader fileReader = new BufferedReader(new FileReader(filelog))) {
+        try (BufferedReader fileReader = new BufferedReader(new FileReader(filelogspec))) {
             StringBuilder message = new StringBuilder("");
             while (true) {
                 String line = fileReader.readLine();
@@ -66,12 +62,16 @@ public class Log {
             }
         }
         catch (IOException e) {
-                System.out.println("Ошибка чтения файла " + filelogShort + " (" + e.getMessage() + ")");
+                System.out.println("Ошибка чтения файла " + filelog + " (" + e.getMessage() + ")");
         }
     }
 
     private String getTime() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         return sdf.format(System.currentTimeMillis());
+    }
+
+    public String getLogfile() {
+        return filelogspec;
     }
 }
