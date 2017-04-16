@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<BookShop xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://english-bookstore/xml/Catalogue"
+                xmlns="http://english-bookstore/xml/Catalogue">
+    <Book_Catalogue>
+        <Book>
+            <Description>Sherlock Holmes is the world's only consulting detective. Money and prestige don't interest
+                him, simply the chance to flex his intellectual muscles and practise his unique method of deduction are
+                enough. Following him through a series of problems, you are able to watch a great mind at work and delve
+                into the criminal world of London.
+            </Description>
+            <Publisher>Pinguin</Publisher>
+            <Author>Arthur Conan Doyle</Author>
+            <Book_title>Sherlock Holmes</Book_title>
+            <Genre>Novel</Genre>
+            <Book_Cover>Rigid</Book_Cover>
+            <Pages>305</Pages>
+            <Price>25</Price>
+        </Book>
+        <Book>
+            <Description>With H.G. Wells’ other novels, The War of the Worlds was one of the first and greatest works of
+                science fiction ever to be written. Even long before man had learned to fly, H.G. Wells wrote this story
+                of the Martian attack on England. These unearthly creatures arrive in huge cylinders, from which they
+                escape as soon as the metal is cool.
+            </Description>
+            <Publisher>Pinguin</Publisher>
+            <Author>H. G. Wells</Author>
+            <Book_title>The War of the Worlds</Book_title>
+            <Genre>Science fiction</Genre>
+            <Book_Cover>Rigid</Book_Cover>
+            <Pages>298</Pages>
+            <Price>18</Price>
+        </Book>
+    </Book_Catalogue>
+</BookShop>

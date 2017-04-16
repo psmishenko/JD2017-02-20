@@ -1,0 +1,3 @@
+Main.greetings=Добрый день Георгий!
+Main.askForTime=Который час?
+Main.askForName=Как тебя зовут?
