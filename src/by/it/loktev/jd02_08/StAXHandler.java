@@ -19,7 +19,7 @@ public class StAXHandler {
         this.reader = reader;
     }
 
-    public void run() throws XMLStreamException {
+    public String parse() throws XMLStreamException {
         CurrPrefix="";
         txt=new StringBuilder();
         out=new StringBuilder();
@@ -39,7 +39,7 @@ public class StAXHandler {
                     break;
             }
         }
-        System.out.println(out);
+        return out.toString();
     }
 
 

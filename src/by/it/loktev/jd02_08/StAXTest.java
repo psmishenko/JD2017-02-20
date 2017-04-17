@@ -19,7 +19,8 @@ public class StAXTest {
         ) {
             XMLStreamReader reader=xif.createXMLStreamReader(fis);
             StAXHandler stax=new StAXHandler(reader);
-            stax.run();
+            String res=stax.parse();
+            System.out.println(res);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
