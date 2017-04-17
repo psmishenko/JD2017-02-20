@@ -37,13 +37,12 @@ public class VarMatrix extends Var {
             while (matcherValue.find() && !lenChecked) {
                 width++;
             }
-            lenChecked=true;
+            lenChecked = true;
         }
         this.matrix = new Double[height][width];
-        Matcher matcher1 = matcher;
-        matcher1.reset();
-        while (matcher1.find()) {
-            String vector = matcher1.group();
+        matcher.reset();
+        while (matcher.find()) {
+            String vector = matcher.group();
             Matcher matcherValue = patternVal.matcher(vector);
             while (matcherValue.find()) {
                 this.matrix[line][pos] = Double.parseDouble(matcherValue.group());
@@ -61,9 +60,15 @@ public class VarMatrix extends Var {
         for (int i = 0; i < matrix.length; i++) {
             sb.append("{");
             for (int j = 0; j < matrix[0].length; j++) {
-                sb.append(matrix[i][j]+",");
+                sb.append(matrix[i][j]);
+                if (j + 1 != matrix[0].length) {
+                    sb.append(",");
+                }
             }
-            sb.append("},");
+            sb.append("}");
+            if (i + 1 != matrix.length) {
+                sb.append(",");
+            }
         }
         sb.append("}");
         return sb.toString();
