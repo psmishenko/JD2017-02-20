@@ -19,7 +19,7 @@ public class StAXRunner {
             XMLInputFactory inputFactory = XMLInputFactory.newInstance();
             XMLStreamReader reader = inputFactory.createXMLStreamReader(fileInputStream);
             StAX instance = new StAX(reader);
-            instance.parse();
+            System.out.println(instance.parse());
 
         } catch (IOException e) {
             e.printStackTrace();
