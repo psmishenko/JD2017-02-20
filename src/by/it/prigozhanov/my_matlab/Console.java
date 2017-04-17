@@ -1,6 +1,5 @@
 package by.it.prigozhanov.my_matlab;
 
-import by.it.akhmelev.jd01_11.Generics.Demo;
 
 /**
  * Created by v-omf on 4/11/2017.
@@ -16,11 +15,7 @@ public class Console {
     }
 
     public static void main(String[] args) {
-        printRes(Calculator.calculate("A=2"));
-        printRes(Calculator.calculate("B=0"));
-        printRes(Calculator.calculate("A/B"));
-        printRes(Calculator.calculate("{1,2,3,4}/{1,2,3,4}"));
-        printRes(Calculator.calculate("{1,2,3,4}/{1,2,3}"));
+        System.out.println(new VarMatrix("{{1,2,3,4},{5,6,7,8},{9,10,11,12}}"));
 
     }
 }
