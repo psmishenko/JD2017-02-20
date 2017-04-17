@@ -18,4 +18,6 @@
         </text>
         <square left="25" top="30" width="40" height="5" fill="yellow" />
     </group>
+    <square left="20" top="30" width="40" height="5" stroke="blue" />
+    <circle centerx="50" centery="50" radius="20" fill="red" />
 </picture>
