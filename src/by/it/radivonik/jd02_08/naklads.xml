@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+Система Выписка и печать Товарных накладных.
+Бухгалтер ведет учет Товаров и Клиентов.
+Кладовщик формирует и печатает Товарные накладные из списка доступных Товаров и для доступных клиентов.
+-->
+<Naklads xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://radivonik.it-academy/xml/naklads"
+         xmlns="http://radivonik.it-academy/xml/naklads">
+    <Naklad type="TTN_OUT">
+        <Date>2017-02-01</Date>
+        <Num>1</Num>
+        <Seria>AA</Seria>
+        <Klient>
+            <Name>Клиент1</Name>
+            <Unp>100123456</Unp>
+            <Adres>г.Минск</Adres>
+        </Klient>
+        <Avto>
+            <NumGos>1234 AA-7</NumGos>
+            <Voditel>Иванов А.А.</Voditel>
+        </Avto>
+        <Tovars>
+            <Tovar>
+                <Name>Молоко</Name>
+                <EdIzm>пак.</EdIzm>
+                <Count>50</Count>
+                <Cena>0.85</Cena>
+                <Stoim>40</Stoim>
+                <PrNds>20</PrNds>
+                <Nds>8</Nds>
+                <StoimPoln>48</StoimPoln>
+            </Tovar>
+            <Tovar>
+                <Name>Хлеб Майский</Name>
+                <EdIzm>бух.</EdIzm>
+                <Count>100</Count>
+                <Cena>0.25</Cena>
+                <Stoim>25</Stoim>
+                <PrNds>20</PrNds>
+                <Nds>5</Nds>
+                <StoimPoln>30</StoimPoln>
+            </Tovar>
+        </Tovars>
+    </Naklad>
+    <Naklad type="TTN_IN">
+        <Date>2017-03-01</Date>
+        <Num>2</Num>
+        <Seria>BB</Seria>
+        <Klient>
+            <Name>Клиент2</Name>
+            <Unp>100654321</Unp>
+            <Adres>г.Брест</Adres>
+        </Klient>
+        <Avto>
+            <NumGos>4321 BB-7</NumGos>
+            <Voditel>Петров А.А.</Voditel>
+        </Avto>
+        <Tovars>
+            <Tovar>
+                <Name>Сахар</Name>
+                <EdIzm>пак.</EdIzm>
+                <Count>100</Count>
+                <Cena>1.6</Cena>
+                <Stoim>160</Stoim>
+                <PrNds>20</PrNds>
+                <Nds>32</Nds>
+                <StoimPoln>192</StoimPoln>
+            </Tovar>
+            <Tovar>
+                <Name>Соль</Name>
+                <EdIzm>пак.</EdIzm>
+                <Count>100</Count>
+                <Cena>0.92</Cena>
+                <Stoim>92</Stoim>
+                <PrNds>20</PrNds>
+                <Nds>18.4</Nds>
+                <StoimPoln>110.4</StoimPoln>
+            </Tovar>
+        </Tovars>
+    </Naklad>
+</Naklads>
