@@ -8,14 +8,15 @@ package by.it.prigozhanov.my_matlab;
  */
 public class Console {
     private static void printRes(Var var) {
-        if (var!=null) {
+        if (var != null) {
             System.out.println(var);
         }
 
     }
 
-    public static void main(String[] args) {
-        System.out.println(new VarMatrix("{{1,2,3,4},{5,6,7,8},{9,10,11,12}}"));
-
+    public static void main(String[] args) throws MatlabException {
+       printRes(Calculator.calculate("{{2,4,0},{-2,1,3},{-1,0,1}}*{1,2,-1}"));
+        //{{2,4,0},{-2,1,3},{-1,0,1}}
+        //{1,2,-1}
     }
 }

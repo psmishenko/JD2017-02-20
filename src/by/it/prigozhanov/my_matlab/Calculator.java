@@ -27,17 +27,21 @@ public class Calculator {
         return res;
     }
 
-    private static Var defineOperation(Var first, Var second, String operation) throws MatlabException {
-        Var res;
-        if (operation.equals("+")) {
-            res = first.add(second);
-        } else if (operation.equals("-")) {
-            res = first.sub(second);
-        } else if (operation.equals("*")) {
-            res = first.mul(second);
-        } else if (operation.equals("/")) {
-            res = first.div(second);
-        } else res = null;
+    private static Var defineOperation(Var first, Var second, String operation)  {
+        Var res = null;
+        try {
+            if (operation.equals("+")) {
+                res = first.add(second);
+            } else if (operation.equals("-")) {
+                res = first.sub(second);
+            } else if (operation.equals("*")) {
+                res = first.mul(second);
+            } else if (operation.equals("/")) {
+                res = first.div(second);
+            } else res = null;
+        } catch (MatlabException e) {
+            e.printStackTrace();
+        }
         return res;
     }
 
@@ -70,9 +74,8 @@ public class Calculator {
         Var second = defineVar(part[1]);
         try {
             res = defineOperation(first, second, op);
-        } catch (MatlabException e) {
-            Logger.getLogger().logError(e.getMessage(), e, false);
-            System.out.println("Ошибка: " + e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return res;
     }

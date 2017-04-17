@@ -9,6 +9,35 @@ import java.util.regex.Pattern;
 public class VarMatrix extends Var {
     Double[][] matrix;
 
+    @Override
+    public Var add(Var var) throws MatlabException {
+
+        return super.add(var);
+    }
+
+    @Override
+    public Var sub(Var var) throws MatlabException {
+        return super.sub(var);
+    }
+
+    @Override
+    public Var div(Var var) throws MatlabException {
+        return super.div(var);
+    }
+
+    @Override
+    public Var mul(Var var) throws MatlabException {
+        if (var instanceof VarVector) {
+            VarVector vector = (VarVector) var;
+            for (int i = 0; i < matrix.length; i++) {
+                for (int j = 0; j < matrix[0].length; j++) {
+                    vector.vector[i]+=(matrix[i][j]*vector.vector[i]);
+                }
+            }
+            return new VarVector(vector);
+        } else
+            return super.mul(var);
+    }
 
     public VarMatrix(String matrix) {
         fromString(matrix);
