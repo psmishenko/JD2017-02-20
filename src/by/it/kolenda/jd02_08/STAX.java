@@ -6,7 +6,7 @@ import javax.xml.stream.XMLStreamReader;
 public class STAX {
 
     private XMLStreamReader reader;
-    public STAX(XMLStreamReader reader);
+    public STAX(XMLStreamReader reader)
     this reader = reader;
 
 
