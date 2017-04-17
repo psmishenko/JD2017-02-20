@@ -6,9 +6,11 @@ public class Runner {
 
         String XMLFileName=System.getProperty("user.dir")+"/src/by/it/loktev/jd02_08/picture.xml";
 
-        SAXTest.run(XMLFileName);
+        //SAXTest.run(XMLFileName);
 
-        StAXTest.run(XMLFileName);
+        //StAXTest.run(XMLFileName);
+
+        DOMTest.run(XMLFileName);
 
     }
 
