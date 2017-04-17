@@ -1,6 +1,7 @@
 package by.it.loktev.jd02_08;
 
 import org.w3c.dom.Element;
+import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
@@ -20,7 +21,15 @@ public class DOMHandler {
             case Node.ELEMENT_NODE:
                 Element elem=(Element)node;
                 String tagName=elem.getTagName();
-                out.append("\n"+CurrPrefix+"<"+tagName+">");
+                out.append("\n"+CurrPrefix+"<"+tagName);
+                NamedNodeMap attributes = node.getAttributes();
+                for ( int a=0; a<attributes.getLength(); a++ ){
+                    Node attNode=attributes.item(a);
+                    String attributeName=attNode.getNodeName();
+                    String attributeValue=attNode.getNodeValue();
+                    out.append(" "+attributeName+"=\""+attributeValue+"\"");
+                }
+                out.append(">");
                 NodeList children=node.getChildNodes();
                 for ( int i=0; i<children.getLength(); i++ )
                     print(CurrPrefix+"\t",children.item(i));
