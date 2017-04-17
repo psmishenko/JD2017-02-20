@@ -1,31 +1,31 @@
 package by.it.kolenda.jd02_08;
 
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLStreamConstants;
-import javax.xml.stream.XMLStreamReader;
+import javax.xml.stream.*;
 import javax.xml.stream.XMLStreamReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class STAXRunner {
 
     private static String fileNameXML = "src/by/it/kolenda/jd02_08/Clients.xml";
 
-    public static void main(String[] args)
+    public static void main(String[] args){
 
         XMLInputFactory inputFactory = XMLInputFactory.newInstance();
 
-        FileInputStream fileInputStream = new FileInputStream(fileNameXML);
+    try (FileInputStream fileInputStream = new FileInputStream(fileNameXML);){
+        XMLStreamReader reader = inputFactory.createXMLStreamReader(fileInputStream);
 
-        while (reader.hasNext());
-        int operation = reader.next()
-        switch (operation){
-            case XMLStreamConstants.START_ELEMENT;
-            case XMLStreamConstants.END_ELEMENT;
-            case XMLStreamConstants.CHARACTERS;
-
-        }
-
+        STAX instance = new STAX(reader);
+        String txt = instance.parse();
+        System.out.println(txt);
+    }
+    catch (XMLStreamException e) {
+        e.printStackTrace();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
 
     }
 }
