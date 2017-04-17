@@ -10,9 +10,7 @@ import java.io.IOException;
 
 public class StAXTest {
 
-    private static String XMLFileName=System.getProperty("user.dir")+"/src/by/it/loktev/jd02_08/picture.xml";
-
-    public static void run() {
+    public static void run(String XMLFileName) {
         XMLInputFactory xif=XMLInputFactory.newInstance();
         try (
             FileInputStream fis=new FileInputStream(XMLFileName);

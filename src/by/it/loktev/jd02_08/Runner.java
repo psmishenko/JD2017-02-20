@@ -4,9 +4,11 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        SAXTest.run();
+        String XMLFileName=System.getProperty("user.dir")+"/src/by/it/loktev/jd02_08/picture.xml";
 
-        StAXTest.run();
+        SAXTest.run(XMLFileName);
+
+        StAXTest.run(XMLFileName);
 
     }
 
