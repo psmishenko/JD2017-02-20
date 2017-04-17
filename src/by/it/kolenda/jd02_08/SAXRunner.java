@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class SAXRunner {
 
-    private static String filenameXML="src/by/it/kolenda/jd02_07/Clients.xml";
+    private static String filenameXML="src/by/it/kolenda/jd02_08/Clients.xml";
 
     public static void main(String[] args) {
 

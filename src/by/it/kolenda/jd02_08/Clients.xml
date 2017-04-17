@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Clients>
+    <ClientFL>
+        <PersonalData>
+            <Name>Иванов Иван Иванович</Name>
+            <Profession>Инжинер</Profession>
+            <Address>г.Минск, ул.Гая, д.15, кв.1</Address>
+            <Email>Iviviv@gmail.com</Email>
+        </PersonalData>
+        <AcctType>
+            <Current>true</Current>
+            <Depo>true</Depo>
+            <Credit>false</Credit>
+        </AcctType>
+
+        <Actions>
+            <Pay>100</Pay>
+            <Refill>2000</Refill>
+            <Withdraw>300</Withdraw>
+            <Block>false</Block>
+        </Actions>
+    </ClientFL>
+</Clients>
