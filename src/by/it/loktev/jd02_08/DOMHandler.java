@@ -27,11 +27,13 @@ public class DOMHandler {
                 out.append("\n"+CurrPrefix+"</"+tagName+">");
                 break;
             case Node.TEXT_NODE:
+                String txt=node.getNodeValue().trim();
+                if ( txt.length()>0 )
+                  out.append("\n"+CurrPrefix+txt);
                 break;
         }
 
 
-        //out.append(node.getNodeValue());
     }
 
     /*
