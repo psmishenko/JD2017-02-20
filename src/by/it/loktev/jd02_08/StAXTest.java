@@ -12,7 +12,7 @@ public class StAXTest {
 
     private static String XMLFileName=System.getProperty("user.dir")+"/src/by/it/loktev/jd02_08/picture.xml";
 
-    public static void main(String[] args) {
+    public static void run() {
         XMLInputFactory xif=XMLInputFactory.newInstance();
         try (
             FileInputStream fis=new FileInputStream(XMLFileName);
