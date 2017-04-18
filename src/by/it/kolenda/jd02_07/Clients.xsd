@@ -1,15 +1,51 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema">
-        targetNamespace="http://kolenda"
-        xmlns:tns="http://kolenda"
-        elementFormDefault="qualified"
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://kolenda.it-academy.by/xml/Clients"
+        xmlns:tns="http://kolenda.it-academy.by/xml/Clients"
+        elementFormDefault="qualified">
         <element name="Clients">
             <complexType>
                 <all>
+                    <element name="ClientFL">
 
-
-            </all>
+                    </element>
+                </all>
             </complexType>
         </element>
 
-        </schema>
+    <element name="ClientFL">
+        <complexType>
+            <all>
+                <element name="PersonalData">
+                    <complexType>
+                    <sequence>
+                        <element name="Name" type="string"/>
+                        <element name="Profession" type="string"/>
+                        <element name="Address" type="string"/>
+                        <element name="Email" type="string"/>
+                    </sequence>
+                    </complexType>
+                </element>
+                <element name="AcctType">
+                    <complexType>
+                    <all>
+                        <element name="Current" type="positiveInteger"/>
+                        <element name="Depo" type="positiveInteger"/>
+                        <element name="Credit" type="positiveInteger"/>
+                    </all>
+                    </complexType>
+                </element>
+                <element name="Actions">
+                    <complexType>
+                    <sequence>
+                        <element name="Pay" type="positiveInteger"/>
+                        <element name="Refill" type="positiveInteger"/>
+                        <element name="Withdraw" type="positiveInteger"/>
+                        <element name="block" type="boolean"/>
+                    </sequence>
+                    </complexType>
+                </element>
+            </all>
+        </complexType>
+    </element>
+</schema>

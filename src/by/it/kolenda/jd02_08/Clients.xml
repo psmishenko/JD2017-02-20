@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-        <!DOCTYPE Clients SYSTEM "Clients.dtd">
+
 <Clients>
     <ClientFL>
         <PersonalData>
@@ -13,6 +13,7 @@
             <Depo>true</Depo>
             <Credit>false</Credit>
         </AcctType>
+
         <Actions>
             <Pay>100</Pay>
             <Refill>2000</Refill>
