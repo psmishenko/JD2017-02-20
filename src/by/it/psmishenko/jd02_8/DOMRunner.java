@@ -15,7 +15,7 @@ import java.io.IOException;
  * Created by GN on 17.04.2017.
  */
 public class DOMRunner {
-    private static String fileNameXML = System.getProperty("user.dir")+"\\src\\by\\it\\psmishenko\\jd02_8\\Test.xml";
+    private static String fileNameXML = System.getProperty("user.dir")+"\\src\\by\\it\\psmishenko\\jd02_8\\Test2.xml";
 
     public static void main(String[] args) {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -24,7 +24,8 @@ public class DOMRunner {
                 Document document = builder.parse(new File(fileNameXML));
             Element element = document.getDocumentElement();
             DOM dom = new DOM();
-            dom.parseDOM(element);
+            dom.parseDOM(element,"");
+            System.out.println(DOM.text);
 
             }catch (ParserConfigurationException e) {
             e.printStackTrace();
