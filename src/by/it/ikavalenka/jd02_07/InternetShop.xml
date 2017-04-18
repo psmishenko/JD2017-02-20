@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<InternetShop xmlns="http://ikavalenka.it-academy.by/xml/InternetShop"
+<InternetShop xmlns="http://by/it/ikavalenka/jd02_07/xml/InternetShop"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://ikavalenka.it-academy.by/xml/InternetShop InShop.xsd">
+    xsi:schemaLocation="http://by/it/ikavalenka/jd02_07/xml/InternetShop InShop.xsd">
 
     <Administrator login="zAds36" password='pass2'>
         <Catalog>CatalogAll</Catalog>

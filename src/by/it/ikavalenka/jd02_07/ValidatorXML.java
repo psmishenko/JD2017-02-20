@@ -17,8 +17,8 @@ import java.io.IOException;
  */
 public class ValidatorXML {
     public static void main(String[] args) {
-        String sname ="src/ikavalenka/it/academy/by/jd02_07/InShop.xsd";
-        String xmlfile = "src/ikavalenka/it/academy/by/jd02_07/InternetShop.xml";
+        String sname ="src/by/it/ikavalenka/jd02_07/InShop.xsd";
+        String xmlfile = "src/by/it/ikavalenka/jd02_07/InternetShop.xml";
         String lang = XMLConstants.W3C_XML_SCHEMA_NS_URI;
         SchemaFactory factory = SchemaFactory.newInstance(lang);
         File schemaLocation = new File(sname);

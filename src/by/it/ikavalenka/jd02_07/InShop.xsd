@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="http://ikavalenka.it-academy.by/xml/InternetShop"
-        xmlns:tns="http://ikavalenka.it-academy.by/xml/InternetShop"
+    targetNamespace="http://by/it/ikavalenka/jd02_07/xml/InternetShop"
+        xmlns:tns="http://by/it/ikavalenka/jd02_07/xml/InternetShop"
         elementFormDefault="qualified">
 
     <element name="InternetShop">
