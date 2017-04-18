@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <CarList>
-
     <SportCars>
         <Car>
             <Discription>A fearless design philosophy has led to the DB11's iconic looks</Discription>
@@ -29,6 +28,34 @@
             <Price RUB="1255"/>
             <Insuranse/>
             <Location>Moscow</Location>
+        </Car>
+        <Car>
+            <Discription>Improved styling of the second-generation 2017 Porsche Panamera Turbo S</Discription>
+            <Model>
+                <Name>Porsche Panamera Turbo S</Name>
+                <HP>650</HP>
+                <FuelConsumption>13</FuelConsumption>
+                <Seats>4</Seats>
+                <Doors>4</Doors>
+                <LuggageCapacity>4</LuggageCapacity>
+            </Model>
+            <Price EUR="1500"/>
+            <Insuranse/>
+            <Location>Berlin</Location>
+        </Car>
+        <Car>
+            <Discription>Improved styling of the second-generation 2017 Porsche Panamera</Discription>
+            <Model>
+                <Name>Porsche Panamera</Name>
+                <HP>520</HP>
+                <FuelConsumption>13</FuelConsumption>
+                <Seats>4</Seats>
+                <Doors>4</Doors>
+                <LuggageCapacity>4</LuggageCapacity>
+            </Model>
+            <Price EUR="1150"/>
+            <Insuranse/>
+            <Location>Berlin</Location>
         </Car>
         <Car>
             <Discription>Improved styling of the second-generation 2017 Porsche Panamera</Discription>
