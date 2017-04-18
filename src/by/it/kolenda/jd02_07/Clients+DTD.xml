@@ -9,15 +9,15 @@
             <Email>Iviviv@gmail.com</Email>
         </PersonalData>
         <AcctType>
+            <Current>true</Current>
             <Depo>true</Depo>
             <Credit>false</Credit>
-            <Current>true</Current>
         </AcctType>
         <Actions>
-            <Pay></Pay>
-            <Refill></Refill>
-            <Withdraw></Withdraw>
-            <Block></Block>
+            <Pay>100</Pay>
+            <Refill>2000</Refill>
+            <Withdraw>300</Withdraw>
+            <Block>false</Block>
         </Actions>
     </ClientFL>
 </Clients>

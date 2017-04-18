@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<Clients xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://kolenda clients.xsd"
-    xmlns="http://kolenda">
+<Clients xmlns="http://kolenda"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="H:/Java/JD2017-02-20/src/by/it/kolenda/jd02_07/Clients.xsd"
+    >
     <ClientFL>
         <PersonalData>
             <Name>Иванов Иван Иванович</Name>

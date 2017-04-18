@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!ELEMENT Clients (ClientFL)+>
         <!ELEMENT ClientFL (PersonalData,AcctType,Actions)>
         <!ELEMENT PersonalData (Name,Profession,Address,Email)>
@@ -5,10 +6,10 @@
         <!ELEMENT Profession (#PCDATA)>
         <!ELEMENT Address (#PCDATA)>
         <!ELEMENT Email (#PCDATA)>
-        <!ELEMENT AcctType (Depo,Credit,Current)>
+        <!ELEMENT AcctType (Current,Depo,Credit)>
+        <!ELEMENT Current (#PCDATA)>
         <!ELEMENT Depo (#PCDATA)>
         <!ELEMENT Credit (#PCDATA)>
-        <!ELEMENT Current (#PCDATA)>
         <!ELEMENT Actions (Pay,Refill,Withdraw,Block)>
         <!ELEMENT Pay (#PCDATA)>
         <!ELEMENT Refill (#PCDATA)>
