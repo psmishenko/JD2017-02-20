@@ -13,7 +13,7 @@
             <Author>Arthur Conan Doyle</Author>
             <Book_title>Sherlock Holmes</Book_title>
             <Genre>Novel</Genre>
-            <Book_Cover>Rigid</Book_Cover>
+            <Book_Cover Paper=""></Book_Cover>
             <Pages>305</Pages>
             <Price>25</Price>
         </Book>
@@ -27,7 +27,7 @@
             <Author>H. G. Wells</Author>
             <Book_title>The War of the Worlds</Book_title>
             <Genre>Science fiction</Genre>
-            <Book_Cover>Rigid</Book_Cover>
+            <Book_Cover Rubber=""></Book_Cover>
             <Pages>298</Pages>
             <Price>18</Price>
         </Book>

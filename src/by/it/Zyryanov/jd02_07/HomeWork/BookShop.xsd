@@ -28,9 +28,19 @@
             <element name="Author" type="string"/>
             <element name="Book_title" type="string"/>
             <element name="Genre" type="string"/>
-            <element name="Book_Cover" type="string"/>
+            <element name="Book_Cover">
+                <complexType>
+                    <attributeGroup ref="tns:Book_Cover"/>
+                </complexType>
+            </element>
             <element name="Pages" type="positiveInteger"/>
             <element name="Price" type="positiveInteger"/>
         </sequence>
     </complexType>
+    <attributeGroup name="Book_Cover">
+        <attribute name="Rigid" type="string"/>
+        <attribute name="Soft" type="string"/>
+        <attribute name="Paper" type="string"/>
+        <attribute name="Rubber" type="string"/>
+    </attributeGroup>
 </schema> 
