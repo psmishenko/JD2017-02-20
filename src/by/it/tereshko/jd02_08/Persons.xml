@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Persons>
+    <Person>
+        <Email>flatsale@mail.ru</Email>
+        <Nickname>myname</Nickname>
+        <Password>password</Password>
+        <Ads>
+            <Ad>
+                <Description>A good flat</Description>
+                <Address>Minsk, Timoshenko Street, 5-15</Address>
+                <Floor>4</Floor>
+                <Floors>9</Floors>
+                <Square>60.5</Square>
+            </Ad>
+            <Ad>
+                <Description>Another good flat</Description>
+                <Address>Minsk, Timoshenko Street, 3-18</Address>
+                <Floor>2</Floor>
+                <Floors>10</Floors>
+                <Square>56.8</Square>
+            </Ad>
+        </Ads>
+    </Person>
+</Persons>
