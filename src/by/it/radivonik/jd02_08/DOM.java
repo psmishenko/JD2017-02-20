@@ -11,9 +11,11 @@ import java.io.IOException;
 public class DOM {
     private String tab;
     private StringBuilder text;
+    private StringBuilder value;
 
     public String parse(String filexml) {
         text = new StringBuilder("");
+        value = new StringBuilder("");
         tab = "";
         try {
             DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
@@ -38,28 +40,33 @@ public class DOM {
     private void parseNode(Node node) {
         switch (node.getNodeType()) {
             case Node.ELEMENT_NODE:
+                if (text.length() > 0)
+                    text.append("\n");
                 text.append(tab).append("<").append(node.getNodeName());
                 if (node.hasAttributes()) {
                     NamedNodeMap attributes = node.getAttributes();
                     for (int i = 0; i < attributes.getLength() ; i++)
                         text.append(" ").append(attributes.item(i));
                 }
-                text.append(">").append("\n");
-
+                text.append(">");
                 tab = tab + "\t";
+
                 NodeList childrens = node.getChildNodes();
                 for (int i = 0; i < childrens.getLength(); i++) {
                     parseNode(childrens.item(i));
                 }
-                tab = tab.substring(1);
 
-                text.append(tab).append("</").append(node.getNodeName()).append(">").append("\n");
+                tab = tab.substring(1);
+                if (value.length() > 0)
+                    text.append(value);
+                else
+                    text.append("\n").append(tab);
+                text.append("</").append(node.getNodeName()).append(">");
+                value.setLength(0);
                 break;
 
             case Node.TEXT_NODE:
-                String value = node.getNodeValue().trim();
-                if (!value.isEmpty())
-                    text.append(tab).append(value.trim()).append("\n");
+                value.append(node.getNodeValue().trim());
                 break;
         }
     }

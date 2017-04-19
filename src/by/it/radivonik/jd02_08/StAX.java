@@ -21,28 +21,32 @@ public class StAX {
                 int operation = reader.next();
                 switch (operation) {
                     case XMLStreamConstants.START_ELEMENT:
+                        if (text.length() > 0)
+                            text.append("\n");
                         text.append(tab).append("<").append(reader.getLocalName());
                         for (int i = 0; i < reader.getNamespaceCount(); i++) {
                             String prefix = reader.getNamespacePrefix(i);
                             String val = reader.getNamespaceURI(i);
-                            text.append(" xmlns").append(prefix!=null?":"+prefix:"").append("=\"").append(val).append("\"");
+                            text.append(" xmlns").append(nsPrefix(prefix,true)).append("=\"").append(val).append("\"");
                         }
                         for (int i = 0; i < reader.getAttributeCount(); i++) {
                             String prefix = reader.getAttributePrefix(i);
                             String name = reader.getAttributeLocalName(i);
                             String val = reader.getAttributeValue(i);
-                            text.append(" ").append(prefix!=null?prefix+":":"").append(name).append("=\"").append(val).append("\"");
+                            text.append(" ").append(nsPrefix(prefix,false)).append(name).append("=\"").append(val).append("\"");
                         }
-                        text.append(">").append("\n");
+                        text.append(">");
                         tab = tab + "\t";
                         value.setLength(0);
                         break;
                     case XMLStreamConstants.END_ELEMENT:
-                        if (value.length() > 0)
-                            text.append(tab).append(value).append("\n");
-                        value.setLength(0);
                         tab = tab.substring(1);
-                        text.append(tab).append("</").append(reader.getLocalName()).append(">").append("\n");
+                        if (value.length() > 0)
+                            text.append(value);
+                        else
+                            text.append("\n").append(tab);
+                        text.append("</").append(reader.getLocalName()).append(">");
+                        value.setLength(0);
                         break;
                     case XMLStreamConstants.CHARACTERS:
                         String s = reader.getText();
@@ -57,5 +61,16 @@ public class StAX {
         }
 
         return text.toString();
+    }
+
+    String nsPrefix(String prefix, boolean isNamespace) {
+         if (prefix != null && !prefix.isEmpty()) {
+             if (isNamespace)
+                 return ":" + prefix;
+             else
+                 return prefix + ":";
+         }
+         else
+            return "";
     }
 }
