@@ -1,7 +1,7 @@
-package by.it.radivonik.jd02_09;
+package by.it.radivonik.jd02_10;
 
 import by.it.radivonik.jd02_09.beans.*;
-
+import com.google.gson.*;
 import javax.xml.bind.*;
 import java.io.*;
 
@@ -17,15 +17,21 @@ public class Runner {
             Unmarshaller unmarshaller = context.createUnmarshaller();
             FileReader fileReader = new FileReader(filexml);
             Naklads naklads = (Naklads) unmarshaller.unmarshal(fileReader);
-            System.out.println(naklads);
+//            System.out.println(naklads);
 
             Marshaller marshaller = context.createMarshaller();
-            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            marshaller.marshal(naklads, System.out);
-        } catch (JAXBException e) {
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
+            marshaller.marshal(naklads,System.out);
+
+            Gson gson = new GsonBuilder().serializeNulls().setPrettyPrinting().create();
+            System.out.println(gson.toJson(naklads));
+        }
+        catch (JAXBException e) {
             e.printStackTrace();
-        } catch (FileNotFoundException e) {
+        }
+        catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
 }
+
