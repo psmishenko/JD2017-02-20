@@ -40,7 +40,7 @@ public class SAX extends DefaultHandler {
 
     @Override
     public void endDocument() throws SAXException {
-        System.out.println(text);
+//        System.out.println(text);
     }
 
     @Override

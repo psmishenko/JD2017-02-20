@@ -22,10 +22,16 @@ public class StAX {
                 switch (operation) {
                     case XMLStreamConstants.START_ELEMENT:
                         text.append(tab).append("<").append(reader.getLocalName());
+                        for (int i = 0; i < reader.getNamespaceCount(); i++) {
+                            String prefix = reader.getNamespacePrefix(i);
+                            String val = reader.getNamespaceURI(i);
+                            text.append(" xmlns").append(prefix!=null?":"+prefix:"").append("=\"").append(val).append("\"");
+                        }
                         for (int i = 0; i < reader.getAttributeCount(); i++) {
+                            String prefix = reader.getAttributePrefix(i);
                             String name = reader.getAttributeLocalName(i);
                             String val = reader.getAttributeValue(i);
-                            text.append(" ").append(name).append("=\"").append(val).append("\"");
+                            text.append(" ").append(prefix!=null?prefix+":":"").append(name).append("=\"").append(val).append("\"");
                         }
                         text.append(">").append("\n");
                         tab = tab + "\t";

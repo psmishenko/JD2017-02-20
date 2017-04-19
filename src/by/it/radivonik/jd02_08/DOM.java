@@ -41,18 +41,12 @@ public class DOM {
                 text.append(tab).append("<").append(node.getNodeName());
                 if (node.hasAttributes()) {
                     NamedNodeMap attributes = node.getAttributes();
-                    for (int i = 0; i < attributes.getLength() ; i++) {
-                        Node atr = attributes.item(i);
-                        text.append(" ").append(atr.getNodeName()).append("=\"").append(atr.getNodeValue()).append("\"");
-                    }
+                    for (int i = 0; i < attributes.getLength() ; i++)
+                        text.append(" ").append(attributes.item(i));
                 }
                 text.append(">").append("\n");
 
                 tab = tab + "\t";
-                String value = node.getTextContent();
-                if (value != null)
-                    text.append(tab).append(value).append("\n");
-
                 NodeList childrens = node.getChildNodes();
                 for (int i = 0; i < childrens.getLength(); i++) {
                     parseNode(childrens.item(i));
@@ -61,7 +55,12 @@ public class DOM {
 
                 text.append(tab).append("</").append(node.getNodeName()).append(">").append("\n");
                 break;
-        }
 
+            case Node.TEXT_NODE:
+                String value = node.getNodeValue().trim();
+                if (!value.isEmpty())
+                    text.append(tab).append(value.trim()).append("\n");
+                break;
+        }
     }
 }
