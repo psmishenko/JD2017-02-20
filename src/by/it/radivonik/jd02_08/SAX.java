@@ -1,8 +1,9 @@
 package by.it.radivonik.jd02_08;
 
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
+import org.xml.sax.*;
 import org.xml.sax.helpers.DefaultHandler;
+import javax.xml.parsers.*;
+import java.io.*;
 
 /**
  * Created by Radivonik on 17.04.2017.
@@ -12,9 +13,26 @@ public class SAX extends DefaultHandler {
     private StringBuilder text;
     private StringBuilder value;
 
+    public String parse(String filexml) {
+        try {
+            SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+            SAXParser saxParser = saxParserFactory.newSAXParser();
+            saxParser.parse(new File(filexml),this);
+        }
+        catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        }
+        catch (SAXException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        return text.toString();
+    }
+
     @Override
     public void startDocument() throws SAXException {
-//        System.out.println("Начало обработки");
         text = new StringBuilder("");
         value = new StringBuilder("");
         tab = "";

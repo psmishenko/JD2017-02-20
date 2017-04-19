@@ -1,25 +1,22 @@
 package by.it.radivonik.jd02_08;
 
 import javax.xml.stream.*;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * Created by Radivonik on 17.04.2017.
  */
 public class StAX {
-    private XMLStreamReader reader;
-
-    public StAX(XMLStreamReader reader) {
-        this.reader = reader;
-    }
-
-    void run() {
+     public String parse(String filexml) {
         String tab = "";
         StringBuilder text = new StringBuilder("");
         StringBuilder value = new StringBuilder("");
-        try {
+        XMLStreamReader reader;
+
+        try (FileInputStream fileStream = new FileInputStream(filexml)) {
+            XMLInputFactory inputFactory = XMLInputFactory.newInstance();
+            reader = inputFactory.createXMLStreamReader(fileStream);
+
             while (reader.hasNext()) {
                 int operation = reader.next();
                 switch (operation) {
@@ -47,10 +44,12 @@ public class StAX {
                         break;
                 }
             }
-            System.out.println(text);
-        }
-        catch (XMLStreamException e) {
+        } catch (XMLStreamException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
+        return text.toString();
     }
 }

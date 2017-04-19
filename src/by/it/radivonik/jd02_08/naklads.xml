@@ -5,8 +5,8 @@
 Кладовщик формирует и печатает Товарные накладные из списка доступных Товаров и для доступных клиентов.
 -->
 <Naklads xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://radivonik.it-academy/xml/naklads"
-         xmlns="http://radivonik.it-academy/xml/naklads">
+         xsi:schemaLocation="http://jd02_08.radivonik.it.by"
+         xmlns="http://jd02_08.radivonik.it.by">
     <Naklad type="TTN_OUT">
         <Date>2017-02-01</Date>
         <Num>1</Num>
