@@ -41,7 +41,7 @@ public class SAX extends DefaultHandler {
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         String tx=txtBuff.toString().trim();
-        if (txtBuff.length()>0)
+        if (tx.length()>0)
         {
             text.append(tab).append(tx).append("\n");
         }

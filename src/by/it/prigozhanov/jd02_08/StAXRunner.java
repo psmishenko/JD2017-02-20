@@ -21,7 +21,7 @@ public class StAXRunner {
             
             StAX instance = new StAX(reader);
 
-            instance.run();
+            System.out.println(instance.run());
 
         } catch (XMLStreamException | IOException e) {
             e.printStackTrace();
