@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://jd02_09a.loktev.it.by"
+        xmlns:tns="http://jd02_09a.loktev.it.by"
+        elementFormDefault="qualified">
+
+<element name="group">
+    <complexType>
+    <choice maxOccurs="unbounded" minOccurs="0">
+        <element name="square" type="tns:TSquare" />
+        <element name="circle" type="tns:TCircle" />
+        <element name="text" type="tns:TText" />
+    </choice>
+    </complexType>
+</element>
+
+<complexType name="TCircle">
+    <attribute name="centerx" type="integer" use="required"></attribute>
+    <attribute name="centery" type="integer" use="required"></attribute>
+    <attribute name="radius" type="integer" use="required"></attribute>
+    <attribute name="fill" type="string"></attribute>
+    <attribute name="stroke" type="string"></attribute>
+</complexType>
+
+<complexType name="TSquare">
+    <attribute name="left" type="integer" use="required"></attribute>
+    <attribute name="top" type="integer" use="required"></attribute>
+    <attribute name="width" type="integer" use="required"></attribute>
+    <attribute name="height" type="integer" use="required"></attribute>
+    <attribute name="fill" type="string"></attribute>
+    <attribute name="stroke" type="string"></attribute>
+</complexType>
+
+<complexType name="TText">
+    <simpleContent>
+        <extension base="string">
+            <attribute name="left" type="integer"></attribute>
+            <attribute name="top" type="integer"></attribute>
+        </extension>
+    </simpleContent>
+</complexType>
+
+
+</schema>
