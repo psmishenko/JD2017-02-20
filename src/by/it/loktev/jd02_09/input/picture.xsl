@@ -17,6 +17,10 @@
         <tr>
             <td>CIRCLE</td>
             <td>
+                <xsl:attribute name="style">
+                    background-color:<xsl:value-of select="@fill"/>;
+                    color:<xsl:value-of select="@stroke"/>
+                </xsl:attribute>
                 centerx=<xsl:value-of select="@centerx" />
                 centery=<xsl:value-of select="@centery" />
                 radius=<xsl:value-of select="@radius" />
@@ -30,6 +34,10 @@
         <tr>
             <td>SQUARE</td>
             <td>
+                <xsl:attribute name="style">
+                    background-color:<xsl:value-of select="@fill"/>;
+                    color:<xsl:value-of select="@stroke"/>
+                </xsl:attribute>
                 left=<xsl:value-of select="@left" />
                 top=<xsl:value-of select="@top" />
                 width=<xsl:value-of select="@width" />
