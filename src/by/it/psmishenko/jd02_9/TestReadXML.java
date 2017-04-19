@@ -21,11 +21,11 @@ public class TestReadXML {
         try {
             JAXBContext context = JAXBContext.newInstance(Readers.class);
             Unmarshaller um = context.createUnmarshaller();
-            String path = "D:\\students\\psmish\\JD2017-02-20\\src\\by\\it\\psmishenko\\jd02_9\\Readers+XSD.xml";
+            String path = System.getProperty("user.dir")+"\\src\\by\\it\\psmishenko\\jd02_9\\Readers+XSD.xml";
                 FileReader fileReader = new FileReader(new File(path));
              Object o = um.unmarshal(fileReader);
             Readers readers = (Readers) o;
-            System.out.println(readers+"\n lalalala \n");
+            System.out.println(readers+"\n");
 
             Marshaller marshaller =  context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
