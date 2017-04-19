@@ -36,19 +36,32 @@ public class DOM {
     }
 
     private void parseNode(Node node) {
-        String value = node.getNodeName().trim();
-        if (value != null)
-            text.append("<").append(value).append(">");
+        switch (node.getNodeType()) {
+            case Node.ELEMENT_NODE:
+                text.append(tab).append("<").append(node.getNodeName());
+                if (node.hasAttributes()) {
+                    NamedNodeMap attributes = node.getAttributes();
+                    for (int i = 0; i < attributes.getLength() ; i++) {
+                        Node atr = attributes.item(i);
+                        text.append(" ").append(atr.getNodeName()).append("=\"").append(atr.getNodeValue()).append("\"");
+                    }
+                }
+                text.append(">").append("\n");
 
-        tab = tab + "\t";
-        NodeList childrens = node.getChildNodes();
-        for (int i = 0; i < childrens.getLength(); i++) {
-            text.append(childrens.item(i).getLocalName());
-            parseNode(childrens.item(i));
+                tab = tab + "\t";
+                String value = node.getTextContent();
+                if (value != null)
+                    text.append(tab).append(value).append("\n");
+
+                NodeList childrens = node.getChildNodes();
+                for (int i = 0; i < childrens.getLength(); i++) {
+                    parseNode(childrens.item(i));
+                }
+                tab = tab.substring(1);
+
+                text.append(tab).append("</").append(node.getNodeName()).append(">").append("\n");
+                break;
         }
-        tab = tab.substring(1);
 
-        if (value != null)
-            text.append("</").append(value).append(">");
     }
 }
