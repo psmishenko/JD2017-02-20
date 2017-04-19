@@ -21,16 +21,17 @@ public class TestReadXML {
             Unmarshaller u=context.createUnmarshaller();
             FileReader fileReader=new FileReader(XMLFileName);
             Picture picture=(Picture)u.unmarshal(fileReader);
+            System.out.println("=== toString:");
             System.out.println(picture);
 
-            /*
             Marshaller marshaller=context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
+            System.out.println("=== XML output:");
             marshaller.marshal(picture,System.out);
 
             Gson gson=new GsonBuilder().setPrettyPrinting().create();
+            System.out.println("=== JSON output:");
             System.out.println(gson.toJson(picture));
-            */
 
         } catch (JAXBException e) {
             e.printStackTrace();

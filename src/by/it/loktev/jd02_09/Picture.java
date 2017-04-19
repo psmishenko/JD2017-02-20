@@ -94,7 +94,7 @@ public class Picture {
     @Override
     public String toString() {
         StringBuilder sb=new StringBuilder();
-        sb.append("\nPicture");
+        sb.append("Picture");
         sb.append("\n(");
         for ( Object O : squareOrCircleOrText ) {
             if ( O instanceof Group )
