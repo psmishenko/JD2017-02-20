@@ -18,12 +18,15 @@ import java.io.IOException;
 public class Runner {
     public static void main(String[] args) {
         String filexml = System.getProperty("user.dir") + "/src/by/it/radivonik/jd02_08/naklads.xml";
+<<<<<<< HEAD
 //        System.out.println("Вариант A");
 //        (new TaskA()).run();
 //        System.out.println("\nВариант B");
 //        (new TaskB()).run();
 //        System.out.println("\nВариант C");
 //        (new TaskC()).run();
+=======
+>>>>>>> origin/master
 
 //        try {
 //            SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
