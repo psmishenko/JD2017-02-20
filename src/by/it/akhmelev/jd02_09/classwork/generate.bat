@@ -1,0 +1,1 @@
+"C:\Program Files\Java\jdk1.8.0_111\bin\xjc.exe" D:\students\akhmelev\JD2017-02-20\src\by\it\akhmelev\jd02_09\classwork\04.xsd -d D:\students\akhmelev\JD2017-02-20\src

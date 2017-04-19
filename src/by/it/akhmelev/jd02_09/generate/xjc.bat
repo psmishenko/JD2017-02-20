@@ -5,9 +5,9 @@
 @echo обратите внимание, что слеши в конце не нужны
 @echo ну и конечно, на linux будет совершенно другой синтаксис
 
-set path_xjc="%JDK_HOME%\bin\xjc.exe"
-set path_to_src="..\..\..\..\..\..\src"
-set file_xcd="%path_to_src%\by\it\akhmelev\jd02_09\generate\xml_schema.xsd"
+set path_xjc="C:\Program Files\Java\jdk1.8.0_111\bin\xjc.exe"
+set path_to_src="D:\students\akhmelev\JD2017-02-20\src"
+set file_xcd="D:\students\akhmelev\JD2017-02-20\src\by\it\akhmelev\jd02_09\generate\xml_schema.xsd"
 
 :: Пути могут быть и абсолютными, вроде таких
 :: set path_xjc="H:\Program Files\Java\jdk1.8.0_101\bin\xjc.exe"
