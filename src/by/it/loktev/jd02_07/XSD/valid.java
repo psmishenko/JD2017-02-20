@@ -16,8 +16,8 @@ public class valid {
 
     public static void main(String[] args) {
         String path=System.getProperty("user.dir");
-        String sname=path+"/src/by/it/loktev/jd02_07/XSD/picture.xsd";
-        String xname=path+"/src/by/it/loktev/jd02_07/XSD/picture.xml";
+        String sname=path+"/src/by/it/loktev/jd02_07/XSD/group.xsd";
+        String xname=path+"/src/by/it/loktev/jd02_07/XSD/group.xml";
         String lang= XMLConstants.W3C_XML_SCHEMA_NS_URI;
         SchemaFactory factory=SchemaFactory.newInstance(lang);
         File schemaLocation=new File(sname);
