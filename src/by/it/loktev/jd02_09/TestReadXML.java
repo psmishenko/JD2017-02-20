@@ -14,21 +14,23 @@ public class TestReadXML {
 
     public static void main(String[] args) {
 
-        String XMLFileName=System.getProperty("user.dir")+"/src/by/it/loktev/jd02_09/group.xml";
+        String XMLFileName=System.getProperty("user.dir")+"/src/by/it/loktev/jd02_09/picture.xml";
 
         try {
-            JAXBContext context=JAXBContext.newInstance(TGroup.class);
+            JAXBContext context=JAXBContext.newInstance(Picture.class);
             Unmarshaller u=context.createUnmarshaller();
             FileReader fileReader=new FileReader(XMLFileName);
-            TGroup picture=(TGroup)u.unmarshal(fileReader);
+            Picture picture=(Picture)u.unmarshal(fileReader);
             System.out.println(picture);
 
+            /*
             Marshaller marshaller=context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
             marshaller.marshal(picture,System.out);
 
             Gson gson=new GsonBuilder().setPrettyPrinting().create();
             System.out.println(gson.toJson(picture));
+            */
 
         } catch (JAXBException e) {
             e.printStackTrace();
