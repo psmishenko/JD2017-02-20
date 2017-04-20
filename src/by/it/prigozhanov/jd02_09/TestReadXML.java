@@ -2,6 +2,7 @@ package by.it.prigozhanov.jd02_09;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -18,7 +19,7 @@ public class TestReadXML {
         try {
             JAXBContext context=JAXBContext.newInstance(CarList.class);
             Unmarshaller u =context.createUnmarshaller();
-            String path = "src/by/it/prigozhanov/jd02_09/CarRental.xml";
+            String path = "src/by/it/prigozhanov/jd02_09/CarRental+XSD.xml";
             FileReader fileReader = new FileReader(new File(path));
             Object o = u.unmarshal(fileReader);
             CarList carList = (CarList) o;

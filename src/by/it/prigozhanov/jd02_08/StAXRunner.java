@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class StAXRunner {
 
-    private static String filenameXML = "src/by/it/prigozhanov/jd02_08/CarRental.xml";
+    private static String filenameXML = "src/by/it/prigozhanov/jd02_08/CarRental+XSD.xml";
 
     public static void main(String[] args) {
         XMLInputFactory inputFactory = XMLInputFactory.newInstance();

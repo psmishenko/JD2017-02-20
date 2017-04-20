@@ -15,7 +15,7 @@ import java.io.IOException;
 public class DOMRunner {
 
     public static void main(String[] args) {
-        String filenameXML = "src/by/it/prigozhanov/jd02_08/CarRental.xml";
+        String filenameXML = "src/by/it/prigozhanov/jd02_08/CarRental+XSD.xml";
         File myXML = new File(filenameXML);
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = null;

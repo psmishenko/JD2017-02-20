@@ -12,7 +12,7 @@ import java.io.IOException;
  * Created by v-omf on 4/17/2017!
  */
 public class SAXRunner {
-    private static String filenameXML="src/by/it/prigozhanov/jd02_08/CarRental.xml";
+    private static String filenameXML="src/by/it/prigozhanov/jd02_08/CarRental+XSD.xml";
 
     public static void main(String[] args) {
 
