@@ -51,7 +51,7 @@ public class Group {
         @XmlElement(name = "text", type = Text.class),
         @XmlElement(name = "group", type = Group.class)
     })
-    protected List<Object> squareOrCircleOrText;
+    public List<Object> squareOrCircleOrText;
 
     public Group() {
         squareOrCircleOrText = new ArrayList<Object>();

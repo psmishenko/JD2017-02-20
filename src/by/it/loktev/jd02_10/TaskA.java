@@ -17,15 +17,17 @@ public class TaskA {
         s1.setFill("yellow");
         s1.setStroke("blue");
 
-        Circle c1=new Circle();
-        c1.setCenterx(200);
-        c1.setCentery(250);
-        c1.setRadius(110);
-        c1.setFill("white");
-        c1.setStroke("black");
+        p.addSquare(s1);
 
-        p.squareOrCircleOrText.add(s1);
-        p.squareOrCircleOrText.add(c1);
+        Square s2=new Square();
+        s2.setLeft(101);
+        s2.setTop(51);
+        s2.setWidth(81);
+        s2.setHeight(31);
+        s2.setFill("cyan");
+        s2.setStroke("black");
+
+        p.addSquare(s2);
 
         System.out.println("=== тестовый POJO-объект:");
         System.out.println(p.toString());
@@ -38,6 +40,7 @@ public class TaskA {
         Picture p2=gson.fromJson(pictureJSON, Picture.class);
         System.out.println("=== восстановленный из JSON POJO-объект:");
         System.out.println(p2.toString());
+
     }
 }
 

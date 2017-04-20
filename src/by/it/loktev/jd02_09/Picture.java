@@ -53,7 +53,7 @@ public class Picture {
         @XmlElement(name = "text", type = Text.class),
         @XmlElement(name = "group", type = Group.class)
     })
-    protected List<Object> squareOrCircleOrText;
+    public List<Object> squareOrCircleOrText;
 
     public Picture() {
         squareOrCircleOrText = new ArrayList<Object>();

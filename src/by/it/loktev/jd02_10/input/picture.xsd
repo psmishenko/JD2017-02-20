@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://jd02_10.loktev.it.by"
+        xmlns:tns="http://jd02_10.loktev.it.by"
+        elementFormDefault="qualified">
+
+<element name="picture">
+    <complexType>
+        <sequence maxOccurs="unbounded" minOccurs="0">
+            <element name="square" type="tns:Square" />
+        </sequence>
+    </complexType>
+</element>
+
+<complexType name="Square">
+    <attribute name="left" type="integer" use="required"></attribute>
+    <attribute name="top" type="integer" use="required"></attribute>
+    <attribute name="width" type="integer" use="required"></attribute>
+    <attribute name="height" type="integer" use="required"></attribute>
+    <attribute name="fill" type="string"></attribute>
+    <attribute name="stroke" type="string"></attribute>
+</complexType>
+
+</schema>
