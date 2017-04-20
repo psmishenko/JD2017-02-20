@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<BankLimits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://task_b.jd02_09.smirnov.it.by/"
+            xsi:schemaLocation="http://task_b.jd02_09.smirnov.it.by/">
+    <Banks>
+        <Bank>
+            <Name>АСБ "Беларусбанк"</Name>
+            <MFO>333</MFO>
+            <FullMFO>124589333</FullMFO>
+            <Address>
+                <Country>Беларусь</Country>
+                <City>Минск</City>
+                <Street>пр.Дзержинского</Street>
+                <Number>23</Number>
+            </Address>
+            <Group>Первая группа</Group>
+        </Bank>
+        <Bank>
+            <Name>ОАО "Приорбанк"</Name>
+            <MFO>749</MFO>
+            <FullMFO>124589479</FullMFO>
+            <Address>
+                <Country>Беларусь</Country>
+                <City>Минск</City>
+                <Street>ул.В.Хоружей</Street>
+                <Number>10</Number>
+                <PostIndex>220088</PostIndex>
+            </Address>
+            <Group>Вторая группа</Group>
+        </Bank>
+    </Banks>
+    <Limits>
+        <Limit group="Первая группа">
+            <Lim fromDate="2017-01-01">
+                <Opers>
+                    <Oper type="MM">
+                        <Summa>1000.00</Summa>
+                        <Valut>USD</Valut>
+                    </Oper>
+                    <Oper type="FX">
+                        <Summa>2000.00</Summa>
+                        <Valut>EUR</Valut>
+                    </Oper>
+                </Opers>
+            </Lim>
+            <Lim fromDate="2017-02-01">
+                <Opers>
+                    <Oper type="MM">
+                        <Summa>1500.00</Summa>
+                        <Valut>USD</Valut>
+                    </Oper>
+                    <Oper type="FX">
+                        <Summa>2500.00</Summa>
+                        <Valut>EUR</Valut>
+                    </Oper>
+                </Opers>
+            </Lim>
+        </Limit>
+        <Limit group="Вторая группа">
+            <Lim fromDate="2017-01-01">
+                <Opers>
+                    <Oper type="MM">
+                        <Summa>5000.00</Summa>
+                        <Valut>USD</Valut>
+                    </Oper>
+                    <Oper type="FX">
+                        <Summa>7000.00</Summa>
+                        <Valut>EUR</Valut>
+                    </Oper>
+                </Opers>
+            </Lim>
+            <Lim fromDate="2017-02-01">
+                <Opers>
+                    <Oper type="MM">
+                        <Summa>4500.00</Summa>
+                        <Valut>USD</Valut>
+                    </Oper>
+                    <Oper type="FX">
+                        <Summa>8500.00</Summa>
+                        <Valut>EUR</Valut>
+                    </Oper>
+                </Opers>
+            </Lim>
+        </Limit>
+    </Limits>
+</BankLimits>
