@@ -15,6 +15,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.datatype.XMLGregorianCalendar;
+import java.util.Date;
 
 
 /**
@@ -55,7 +56,7 @@ public class Naklad {
 
     @XmlElement(name = "Date", required = true)
     @XmlSchemaType(name = "date")
-    protected XMLGregorianCalendar date;
+    protected /*XMLGregorianCalendar*/ Date date;
     @XmlElement(name = "Num", required = true)
     protected String num;
     @XmlElement(name = "Seria", required = true)
@@ -77,7 +78,7 @@ public class Naklad {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public XMLGregorianCalendar getDate() {
+    public /*XMLGregorianCalendar*/ Date getDate() {
         return date;
     }
 
@@ -89,7 +90,7 @@ public class Naklad {
      *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setDate(XMLGregorianCalendar value) {
+    public void setDate(/*XMLGregorianCalendar*/Date value) {
         this.date = value;
     }
 

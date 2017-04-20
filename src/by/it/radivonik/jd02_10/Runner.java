@@ -23,7 +23,7 @@ public class Runner {
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
             marshaller.marshal(naklads,System.out);
 
-            Gson gson = new GsonBuilder().serializeNulls().setPrettyPrinting().create();
+            Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").serializeNulls().setPrettyPrinting().create();
             System.out.println(gson.toJson(naklads));
         }
         catch (JAXBException e) {
