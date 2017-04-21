@@ -1,30 +1,23 @@
 package by.it.loktev.jd02_10;
 
-public class ConverterFactory {
+public class ConverterFactory<T> {
+/*
+    static private ConverterFactory<T> instance;
 
-    private enum Format{
-        XML, JSON
+    private SingleLogger(){
     }
 
-    AbstractConverter createConverterBuilder(Class beanClass, String sourceFormatStr, String destFormatStr){
-        Format sourceFormat=Format.valueOf(sourceFormatStr.toUpperCase());
-        Format destFormat=Format.valueOf(destFormatStr.toUpperCase());
-        /*
-        switch (direction) {
-            case XML_TO_JSON:
-            {
-                return new ConverterXmlToJsonBuilder(beanClass);
-            }
-            case JSON_TO_XML:
-            {
-                return new ConverterJsonToXmlBuilder(beanClass);
-            }
-            default: throw new EnumConstantNotPresentException(
-                    direction.getDeclaringClass(),direction.name()
-            );
+    public static SingleLogger getInstance(){
+        if (instance==null){
+            instance=new SingleLogger();
         }
-        */
-        return null;
+        return instance;
+    }
+  */
+    public Converter createConverter(Object obj, String sourceFormatStr, String destFormatStr){
+        Converter<T> conv=new Converter<T>();
+        conv.set(obj.getClass(),sourceFormatStr,destFormatStr);
+        return conv;
     }
 
 }
