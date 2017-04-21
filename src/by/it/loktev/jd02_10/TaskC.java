@@ -35,10 +35,14 @@ public class TaskC {
         ConverterFactory<Picture> cf=new ConverterFactory<Picture>();
 
         Converter conv1=cf.createConverter(p,"XML","JSON");
-        StringBuilder sb_json=new StringBuilder(conv1.run(sb_xml.toString()));
-        //System.out.println("=== После конвертации в JSON:");
-        //System.out.println(sb_json);
+        String s_json=conv1.run(sb_xml.toString());
+        System.out.println("=== После конвертации в JSON:");
+        System.out.println(s_json);
 
+        Converter conv2=cf.createConverter(p,"JSON","XML");
+        String s_xml=conv2.run(s_json);
+        System.out.println("=== После обратной конвертации в XML:");
+        System.out.println(s_xml);
     }
 }
 

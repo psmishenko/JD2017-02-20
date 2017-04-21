@@ -45,9 +45,11 @@ public class Converter<T> {
 
     public String run(String s){
         T obj=from.run(s,cls);
+        /*
         System.out.println("+++temp");
         System.out.println(obj);
         System.out.println("---temp");
-        return to.run(obj);
+        */
+        return to.run(obj,cls);
     }
 }

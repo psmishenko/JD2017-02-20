@@ -9,10 +9,9 @@ public class Convert_From_XML<T> implements Convert_From<T> {
 
     public T run(String s, Class cls){
 
-        Unmarshaller u= null;
         try {
             JAXBContext context=JAXBContext.newInstance(cls);
-            u = context.createUnmarshaller();
+            Unmarshaller u = context.createUnmarshaller();
             StringBuffer sb=null;
             return (T)u.unmarshal(new StringReader(s));
         } catch (JAXBException e) {
