@@ -18,6 +18,12 @@ public class Runner {
         System.out.println("\n");
         TaskB.run();
 
+        System.out.println("\n");
+        System.out.println("=====================");
+        System.out.println("===== задание C =====");
+        System.out.println("=====================");
+        System.out.println("\n");
+        TaskC.run();
     }
 
 
