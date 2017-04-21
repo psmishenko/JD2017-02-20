@@ -32,10 +32,9 @@ public class TaskC {
         System.out.println("=== Исходный XML:");
         System.out.println(sb_xml);
 
-        Picture p=new Picture();
         ConverterFactory<Picture> cf=new ConverterFactory<Picture>();
 
-        Converter conv1=cf.createConverter(p,"XML","JSON");
+        Converter conv1=cf.createConverter(Picture.class,"XML","JSON");
         String s_json=conv1.run(sb_xml.toString());
         System.out.println("=== После конвертации в JSON:");
         System.out.println(s_json);
@@ -50,7 +49,7 @@ public class TaskC {
         }
         System.out.println("=== JSON записан в output");
 
-        Converter conv2=cf.createConverter(p,"JSON","XML");
+        Converter conv2=cf.createConverter(Picture.class,"JSON","XML");
         String s_xml=conv2.run(s_json);
         System.out.println("=== После обратной конвертации в XML:");
         System.out.println(s_xml);
