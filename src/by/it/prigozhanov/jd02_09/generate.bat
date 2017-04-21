@@ -1,1 +1,1 @@
-"C:\Program Files\Java\jdk1.8.0_121\bin\xjc.exe" E:\JAVA\ITacadamyGit\JD2017-02-20_v3\src\by\it\prigozhanov\jd02_09\CarRental.xsd -d E:\JAVA\ITacadamyGit\JD2017-02-20_v3\src
+"C:\Program Files\Java\jdk1.8.0_121\bin\xjc.exe" D:\JAVA\Git\JD2017-02-20\src\by\it\prigozhanov\jd02_09\CarRental.xsd -d D:\JAVA\Git\JD2017-02-20\src

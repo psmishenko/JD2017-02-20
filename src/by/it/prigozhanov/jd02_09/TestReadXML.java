@@ -11,25 +11,24 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 
-/**
- * Created by v-omf on 4/19/2017!
- */
 public class TestReadXML {
     public static void main(String[] args) {
         try {
-            JAXBContext context=JAXBContext.newInstance(CarList.class);
-            Unmarshaller u =context.createUnmarshaller();
+            JAXBContext context = JAXBContext.newInstance(CarList.class);
+            Unmarshaller u = context.createUnmarshaller();
             String path = "src/by/it/prigozhanov/jd02_09/CarRental+XSD.xml";
+
             FileReader fileReader = new FileReader(new File(path));
             Object o = u.unmarshal(fileReader);
             CarList carList = (CarList) o;
 
             Marshaller marshaller = context.createMarshaller();
-            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             marshaller.marshal(carList, System.out);
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            System.out.println(gson.toJson(carList));
+            String s = gson.toJson(carList);
+            System.out.println(s);
 
         } catch (JAXBException e) {
             e.printStackTrace();
