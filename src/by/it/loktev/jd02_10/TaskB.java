@@ -15,11 +15,11 @@ import java.io.IOException;
 public class TaskB {
 
     public static void run() {
-/*
-        String BasePath=System.getProperty("user.dir")+"/src/by/it/loktev/jd02_09/";
+
+        String BasePath=System.getProperty("user.dir")+"/src/by/it/loktev/jd02_10/";
 
         String XMLInputFileName=BasePath+"input/picture.xml";
-        //String XMLOutputFileName=BasePath+"output/picture.xml";
+        String XMLOutputFileName=BasePath+"output/picture.xml";
 
         try {
             JAXBContext context=JAXBContext.newInstance(Picture.class);
@@ -56,7 +56,7 @@ public class TaskB {
         }
 
 
-    */
+
     }
 }
 

@@ -11,14 +11,12 @@ public class Runner {
         System.out.println("\n");
         TaskA.run();
 
-        /*
         System.out.println("\n");
         System.out.println("=====================");
         System.out.println("===== задание B =====");
         System.out.println("=====================");
         System.out.println("\n");
         TaskB.run();
-        */
 
     }
 
