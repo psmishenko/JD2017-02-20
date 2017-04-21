@@ -1,0 +1,47 @@
+{
+  "banks": [
+    {
+      "bank": [
+        {
+          "name": "ОАО Приорбанк",
+          "mfo": 333,
+          "fullMFO": "159475333",
+          "address": {
+            "country": "Беларусь",
+            "city": "Минск",
+            "street": "М.Богдановича",
+            "number": "15-Б",
+            "postIndex": "220039"
+          },
+          "group": "Первая группа"
+        },
+        {
+          "name": "ОАО БПС-Сбербанк",
+          "mfo": 369,
+          "fullMFO": "159000369",
+          "address": {
+            "country": "Беларусь",
+            "city": "Минск",
+            "street": "бул.Мулявина",
+            "number": "6",
+            "postIndex": ""
+          },
+          "group": "Вторая группа"
+        },
+        {
+          "name": "Deutsche Bank",
+          "mfo": 50777,
+          "fullMFO": "",
+          "address": {
+            "country": "Германия",
+            "city": "Берлин",
+            "street": "Штирлиц штрассе",
+            "number": "666",
+            "postIndex": ""
+          },
+          "group": "Первая группа"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "banks": [
+    {
+      "bank": [
+        {
+          "name": "АСБ \"Беларусбанк\"",
+          "mfo": 333,
+          "fullMFO": "124589333",
+          "address": {
+            "country": "Беларусь",
+            "city": "Минск",
+            "street": "пр.Дзержинского",
+            "number": "23",
+            "postIndex": null
+          },
+          "group": [
+            "Первая группа"
+          ]
+        },
+        {
+          "name": "ОАО \"Приорбанк\"",
+          "mfo": 749,
+          "fullMFO": "124589479",
+          "address": {
+            "country": "Беларусь",
+            "city": "Минск",
+            "street": "ул.В.Хоружей",
+            "number": "10",
+            "postIndex": [
+              "220088"
+            ]
+          },
+          "group": [
+            "Вторая группа"
+          ]
+        }
+      ]
+    }
+  ],
+  "limits": [
+    {
+      "limit": [
+        {
+          "lim": [
+            {
+              "opers": {
+                "oper": [
+                  {
+                    "summa": 1000.0,
+                    "valut": "USD",
+                    "type": "MM"
+                  },
+                  {
+                    "summa": 2000.0,
+                    "valut": "EUR",
+                    "type": "FX"
+                  }
+                ]
+              },
+              "fromDate": "2017-01-01"
+            },
+            {
+              "opers": {
+                "oper": [
+                  {
+                    "summa": 1500.0,
+                    "valut": "USD",
+                    "type": "MM"
+                  },
+                  {
+                    "summa": 2500.0,
+                    "valut": "EUR",
+                    "type": "FX"
+                  }
+                ]
+              },
+              "fromDate": "2017-02-01"
+            }
+          ],
+          "group": "Первая группа"
+        },
+        {
+          "lim": [
+            {
+              "opers": {
+                "oper": [
+                  {
+                    "summa": 5000.0,
+                    "valut": "USD",
+                    "type": "MM"
+                  },
+                  {
+                    "summa": 7000.0,
+                    "valut": "EUR",
+                    "type": "FX"
+                  }
+                ]
+              },
+              "fromDate": "2017-01-01"
+            },
+            {
+              "opers": {
+                "oper": [
+                  {
+                    "summa": 4500.0,
+                    "valut": "USD",
+                    "type": "MM"
+                  },
+                  {
+                    "summa": 8500.0,
+                    "valut": "EUR",
+                    "type": "FX"
+                  }
+                ]
+              },
+              "fromDate": "2017-02-01"
+            }
+          ],
+          "group": "Вторая группа"
+        }
+      ]
+    }
+  ]
+}
