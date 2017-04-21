@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Persons xmlns="http://jd02_09.sorokoee.it.by"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://jd02_09.sorokoee.it.by Person.xsd">
+    <Person>
+        <Email>sor@gmail.com</Email>
+        <Nicname>sor</Nicname>
+        <Password>qwerty</Password>
+        <Ads>
+            <Ad>
+                <Car>BMW 5(E60)</Car>
+                <YearOfIssue> 2005 </YearOfIssue>
+                <TypeEngine>дизель</TypeEngine>
+                <CapacityEngine>2.0</CapacityEngine>
+                <Spares>двигатель, бампер</Spares>
+            </Ad>
+            <Ad>
+                <Car>BMW 7(E65)</Car>
+                <YearOfIssue> 2007 </YearOfIssue>
+                <TypeEngine>дизель</TypeEngine>
+                <CapacityEngine>3.0</CapacityEngine>
+                <Spares>двигатель, кузов</Spares>
+            </Ad>
+        </Ads>
+    </Person>
+
+</Persons>
