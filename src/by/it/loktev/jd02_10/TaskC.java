@@ -15,6 +15,7 @@ public class TaskC {
 
         String BasePath=System.getProperty("user.dir")+"/src/by/it/loktev/jd02_10/";
         String XMLInputFileName=BasePath+"input/picture.xml";
+        String JSONOutputFileName=BasePath+"output/picture.json";
 
         StringBuffer sb_xml=new StringBuffer();
         try (
@@ -38,6 +39,16 @@ public class TaskC {
         String s_json=conv1.run(sb_xml.toString());
         System.out.println("=== После конвертации в JSON:");
         System.out.println(s_json);
+
+        try (
+                FileWriter fw = new FileWriter(JSONOutputFileName);
+                BufferedWriter bw = new BufferedWriter(fw);
+        ) {
+            bw.write(s_json);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("=== JSON записан в output");
 
         Converter conv2=cf.createConverter(p,"JSON","XML");
         String s_xml=conv2.run(s_json);

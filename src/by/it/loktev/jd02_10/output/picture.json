@@ -1,0 +1,28 @@
+{
+  "square": [
+    {
+      "left": 20,
+      "top": 30,
+      "width": 40,
+      "height": 5,
+      "fill": null,
+      "stroke": "blue"
+    },
+    {
+      "left": 20,
+      "top": 30,
+      "width": 40,
+      "height": 5,
+      "fill": "red",
+      "stroke": null
+    },
+    {
+      "left": 20,
+      "top": 30,
+      "width": 40,
+      "height": 5,
+      "fill": "yellow",
+      "stroke": "black"
+    }
+  ]
+}
