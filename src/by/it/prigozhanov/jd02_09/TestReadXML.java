@@ -21,14 +21,14 @@ public class TestReadXML {
             FileReader fileReader = new FileReader(new File(path));
             Object o = u.unmarshal(fileReader);
             CarList carList = (CarList) o;
+            System.out.println(carList);
 
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             marshaller.marshal(carList, System.out);
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            String s = gson.toJson(carList);
-            System.out.println(s);
+            System.out.println(gson.toJson(carList));
 
         } catch (JAXBException e) {
             e.printStackTrace();
@@ -37,3 +37,5 @@ public class TestReadXML {
         }
     }
 }
+
+
