@@ -75,8 +75,6 @@ public class Books {
 
     @Override
     public String toString() {
-        return "Books{" +
-                "book=" + book +
-                '}';
+        return "Books:" + book;
     }
 }
