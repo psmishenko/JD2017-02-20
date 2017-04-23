@@ -28,6 +28,5 @@ public class TaskBC {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
     }
 }
