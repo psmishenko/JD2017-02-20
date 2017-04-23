@@ -7,11 +7,11 @@ public class Runner {
     public static void main(String[] args) {
         String filexml = System.getProperty("user.dir") + "/src/by/it/radivonik/jd02_09/naklads.xml";
 
-        System.out.println("Вариант A ()");
-//        System.out.println(parserSAX.parse(filexml));
+        System.out.println("Вариант A (XML+XSL->HTML)");
+        new TaskA().run(filexml);
 
-        System.out.println("\nВариант B (Демарашализация/Марашализация вручную созданных классов Java beans)");
-//        new TaskBC().run(by.it.radivonik.jd02_09.beans.manual.Naklads.class, filexml);
+        System.out.println("\nВариант B (Демарашализация/Марашализация созданных вручную классов Java beans)");
+        new TaskBC().run(by.it.radivonik.jd02_09.beans.manual.Naklads.class, filexml);
 
         System.out.println("\nВариант C (Демарашализация/Марашализация автоматически сгенерированных классов Java beans)");
         new TaskBC().run(by.it.radivonik.jd02_09.beans.Naklads.class, filexml);
