@@ -64,13 +64,13 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "ModelName='" + ModelName + '\'' +
-                ", HorsePower=" + HorsePower +
-                ", Seats=" + Seats +
-                ", LuggageCapacity=" + LuggageCapacity +
-                ", Doors=" + Doors +
-                '}';
+        return "\nCar{" +
+                "\nModelName='" + ModelName + '\'' +
+                ", \nHorsePower=" + HorsePower +
+                ", \nSeats=" + Seats +
+                ", \nLuggageCapacity=" + LuggageCapacity +
+                ", \nDoors=" + Doors +
+                "\n}";
     }
 
 }

@@ -8,7 +8,7 @@ import java.util.List;
  * @author v-omf
  */
 public class CarList {
-    private List cars;
+    private List<Car> cars;
 
     public CarList() {}
 
@@ -27,7 +27,7 @@ public class CarList {
     @Override
     public String toString() {
         return "CarList{" +
-                "cars=" + cars +
-                '}';
+                "\ncars=" + cars +
+                "}";
     }
 }
