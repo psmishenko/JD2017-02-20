@@ -4,9 +4,7 @@
 Бухгалтер ведет учет Товаров и Клиентов.
 Кладовщик формирует и печатает Товарные накладные из списка доступных Товаров и для доступных клиентов.
 -->
-<Naklads xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://beans.jd02_09.radivonik.it.by"
-         xmlns="http://beans.jd02_09.radivonik.it.by">
+<Naklads>
     <Naklad type="TTN_OUT">
         <Date>2017-02-01</Date>
         <Num>1</Num>
