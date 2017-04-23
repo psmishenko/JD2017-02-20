@@ -17,10 +17,11 @@ public class TransformerXSL {
 
     public static void main(String[] args) {
         String fileName=root+"CarRental.xml";
-        TransformerFactory tf = TransformerFactory.newInstance();
+
         try {
+            TransformerFactory tf = TransformerFactory.newInstance();
             Transformer transformer = tf.newTransformer(new StreamSource(root+"CarRental.xsl"));
-            transformer.transform(new StreamSource(root+"carRental.xsl"), new StreamResult(root+"xpath.html"));
+            transformer.transform(new StreamSource(root+"carRental.xml"), new StreamResult(root+"xpath.html"));
             System.out.println("transform " + fileName + " complete!");
         } catch (TransformerConfigurationException e) {
             e.printStackTrace();

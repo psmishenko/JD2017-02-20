@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<CarList>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CarList xmlns="http://jd02_09.prigozhanov.it.by">
     <SportCars>
         <Car>
-            <Discription>A fearless design philosophy has led to the DB11's iconic looks</Discription>
+            <Discription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">A fearless design philosophy has led to the DB11's iconic looks</Discription>
             <Model>
                 <Name>Aston Martin DB11</Name>
                 <HP>620</HP>
@@ -11,12 +11,12 @@
                 <Doors>2</Doors>
                 <LuggageCapacity>3</LuggageCapacity>
             </Model>
-            <Price GBP="1420"/>
             <Insuranse/>
+            <Price GBP="1420"/>
             <Location>London</Location>
         </Car>
         <Car>
-            <Discription>Meet the AMG model of the new Mercedes-Benz S-Class Coupe.</Discription>
+            <Discription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Meet the AMG model of the new Mercedes-Benz S-Class Coupe.</Discription>
             <Model>
                 <Name>Mercedes-Benz S63</Name>
                 <HP>600</HP>
@@ -25,12 +25,12 @@
                 <Doors>2</Doors>
                 <LuggageCapacity>2</LuggageCapacity>
             </Model>
-            <Price RUB="1255"/>
             <Insuranse/>
+            <Price RUB="1255"/>
             <Location>Moscow</Location>
         </Car>
         <Car>
-            <Discription>Improved styling of the second-generation 2017 Porsche Panamera</Discription>
+            <Discription xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Improved styling of the second-generation 2017 Porsche Panamera</Discription>
             <Model>
                 <Name>Porsche Panamera</Name>
                 <HP>520</HP>
@@ -39,8 +39,8 @@
                 <Doors>4</Doors>
                 <LuggageCapacity>4</LuggageCapacity>
             </Model>
-            <Price EUR="1200"/>
             <Insuranse/>
+            <Price EUR="1200"/>
             <Location>Berlin</Location>
         </Car>
     </SportCars>

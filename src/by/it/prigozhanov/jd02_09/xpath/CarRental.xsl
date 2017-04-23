@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xmlns:xsd="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="html"/>
 
+    <xsl:template match="/CarList">
+        <xsd:apply-templates/>
+    </xsl:template>
 
     <xsl:template match="/CarList/SportCars">
         <table border="1" cellspacing="0" cellpadding="10">
@@ -19,62 +23,62 @@
             <xsl:apply-templates/>
         </table>
     </xsl:template>
-    <xsl:template match="CarList/SportCars/Car">
+    <xsl:template match="/CarList/SportCars/Car">
         <tr>
             <xsl:apply-templates/>
         </tr>
     </xsl:template>
-    <xsl:template match="CarList/SportCars/Car/Discription">
+    <xsl:template match="/CarList/SportCars/Car/Discription">
         <td>
             <xsl:value-of select="text()"/>
         </td>
     </xsl:template>
-    <xsl:template match="CarList/SportCars/Car/Model">
+    <xsl:template match="/CarList/SportCars/Car/Model">
 
             <xsl:apply-templates/>
 
     </xsl:template>
-    <xsl:template match="CarList/SportCars/Car/Price">
+    <xsl:template match="/CarList/SportCars/Car/Price">
         <td>
             <xsl:apply-templates/>
         </td>
     </xsl:template>
-    <xsl:template match="CarList/SportCars/Car/Location">
+    <xsl:template match="/CarList/SportCars/Car/Location">
         <td>
             <xsl:value-of select="text()"/>
         </td>
     </xsl:template>
-    <xsl:template match="CarList/SportCars/Car/Model/Name">
+    <xsl:template match="/CarList/SportCars/Car/Model/Name">
         <td>
             <xsl:value-of select="text()"/>
         </td>
     </xsl:template>
-    <xsl:template match="CarList/SportCars/Car/Model/HP">
+    <xsl:template match="/CarList/SportCars/Car/Model/HP">
         <td>
             <xsl:value-of select="text()"/>
         </td>
     </xsl:template>
-    <xsl:template match="CarList/SportCars/Car/Model/FuelConsumption">
+    <xsl:template match="/CarList/SportCars/Car/Model/FuelConsumption">
         <td>
             <xsl:value-of select="text()"/>
         </td>
     </xsl:template>
-    <xsl:template match="CarList/SportCars/Car/Model/Seats">
+    <xsl:template match="/CarList/SportCars/Car/Model/Seats">
         <td>
             <xsl:value-of select="text()"/>
         </td>
     </xsl:template>
-    <xsl:template match="CarList/SportCars/Car/Model/Doors">
+    <xsl:template match="/CarList/SportCars/Car/Model/Doors">
         <td>
             <xsl:value-of select="text()"/>
         </td>
     </xsl:template>
-    <xsl:template match="CarList/SportCars/Car/Model/LuggageCapacity">
+    <xsl:template match="/CarList/SportCars/Car/Model/LuggageCapacity">
         <td>
             <xsl:value-of select="text()"/>
         </td>
     </xsl:template>
-    <xsl:template match="CarList/SportCars/Car/Price">
+    <xsl:template match="/CarList/SportCars/Car/Price">
         <td>
             <xsl:value-of select="attribute::GBP"/>
             <xsl:value-of select="attribute::RUB"/>

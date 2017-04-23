@@ -1,0 +1,25 @@
+{
+  "cars": [
+    {
+      "ModelName": "Aston Maritn",
+      "HorsePower": 650,
+      "Seats": 4,
+      "LuggageCapacity": 3,
+      "Doors": 2
+    },
+    {
+      "ModelName": "Porsche Panamera",
+      "HorsePower": 700,
+      "Seats": 4,
+      "LuggageCapacity": 3,
+      "Doors": 4
+    },
+    {
+      "ModelName": "BMW M3 E92",
+      "HorsePower": 429,
+      "Seats": 2,
+      "LuggageCapacity": 3,
+      "Doors": 4
+    }
+  ]
+}
