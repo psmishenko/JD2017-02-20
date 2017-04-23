@@ -11,13 +11,13 @@ public class Runner {
         String filejson = System.getProperty("user.dir") + "/src/by/it/radivonik/jd02_10/naklads.json";
 
         System.out.println("Вариант A (POJO<->JSON)");
-        new TaskA().run(filejson);
+        new TaskA().run(Naklads.class, filejson);
 
         System.out.println("\nВариант B (XML<->JSON)");
         new TaskB().run(Naklads.class, filexml);
-//
-//        System.out.println("\nВариант C ()");
-//        new TaskC().run(by.it.radivonik.jd02_09.beans.Naklads.class, filexml);
+
+        System.out.println("\nВариант C (Converter<T>)");
+        new TaskC().run(filexml, filejson);
     }
 }
 

@@ -3,7 +3,7 @@
     {
       "date": {
         "year": 2017,
-        "month": 2,
+        "month": 1,
         "dayOfMonth": 1,
         "hourOfDay": 0,
         "minute": 0,
@@ -49,7 +49,7 @@
     {
       "date": {
         "year": 2017,
-        "month": 3,
+        "month": 2,
         "dayOfMonth": 1,
         "hourOfDay": 0,
         "minute": 0,
@@ -90,7 +90,7 @@
           }
         ]
       },
-      "type": "TTN_OUT"
+      "type": "TTN_IN"
     }
   ]
 }

@@ -1,5 +1,7 @@
 package by.it.radivonik.jd02_10.beans;
 
+import sun.util.calendar.CalendarDate;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -8,6 +10,8 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import java.text.*;
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
 
 /**
@@ -48,7 +52,7 @@ public class Naklad {
 
     @XmlElement(name = "Date", required = true)
     @XmlSchemaType(name = "date")
-    protected Date date;
+    protected GregorianCalendar date;
     @XmlElement(name = "Num", required = true)
     protected String num;
     @XmlElement(name = "Seria", required = true)
@@ -70,7 +74,7 @@ public class Naklad {
      *     {@link Date }
      *
      */
-    public Date getDate() {
+    public GregorianCalendar getDate() {
         return date;
     }
 
@@ -82,7 +86,7 @@ public class Naklad {
      *     {@link Date }
      *
      */
-    public void setDate(Date value) {
+    public void setDate(GregorianCalendar value) {
         this.date = value;
     }
 
@@ -235,7 +239,7 @@ public class Naklad {
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         return
             "Naklad{\n" +
-            "type=" + type + ", date=" + df.format(date) + ", num='" + num + "', seria='" + seria + "',\n" +
+            "type=" + type + ", date=" + df.format(date.getTime()) + ", num='" + num + "', seria='" + seria + "',\n" +
             "klient=" + klient + ",\n" +
             "avto=" + avto + ",\n" +
             "tovars=" + tovars +

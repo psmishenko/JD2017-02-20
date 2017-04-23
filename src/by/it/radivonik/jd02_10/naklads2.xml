@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Naklads>
     <Naklad type="TTN_OUT">
-        <Date>2017-02-01</Date>
+        <Date>2017-02-01T00:00:00+03:00</Date>
         <Num>1</Num>
         <Seria>AA</Seria>
         <Klient>
@@ -37,7 +37,7 @@
         </Tovars>
     </Naklad>
     <Naklad type="TTN_IN">
-        <Date>2017-03-01</Date>
+        <Date>2017-03-01T00:00:00+03:00</Date>
         <Num>2</Num>
         <Seria>BB</Seria>
         <Klient>
