@@ -1,0 +1,1 @@
+"C:\Program Files\Java\jdk1.8.0_111\bin\xjc.exe" C:\Users\USER\IdeaProjects\JD2017-02-20\src\by\it\ikavalenka\jd02_09\InShop.xsd -d C:\Users\USER\IdeaProjects\JD2017-02-20\src

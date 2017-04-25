@@ -1,6 +1,8 @@
 package by.it.ikavalenka.jd02_03;
 
 import java.util.Map;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Created by USER on 31.03.2017.
@@ -10,6 +12,7 @@ public class Cashier implements Runnable,ICashier{
         private Buyer buyer;
         private int sin;
         private int bill =0;
+        private  final Lock countLock = new ReentrantLock();
 
 
     public Cashier(int number) {
@@ -20,14 +23,15 @@ public class Cashier implements Runnable,ICashier{
     public String toString() {
         return name;
     }
-//    public int getBill() {
-//        return bill;
-//    }
 
-//
-//    public int getNum() {
-//        return sin;
-//    }
+
+    public int getNum() {
+        return sin;
+}
+    public int getBill() {
+        return bill;
+    }
+
 
     @Override
     public void run() {
@@ -58,7 +62,7 @@ public class Cashier implements Runnable,ICashier{
             System.out.println(buyer + " went to Cashier.");
         }
         else {
-            Helper.getRandom(100);
+            Helper.getRandom(1000);
             takeBuyerFromQueue();
         }
     }
@@ -87,7 +91,7 @@ public class Cashier implements Runnable,ICashier{
     public void clientMayExit() {
         synchronized (this.buyer){
             this.buyer.setWiatInTheBuyerQueue(false);
-            this.buyer.notifyAll();
+            this.buyer.notify();
         }
 
     }
@@ -97,6 +101,7 @@ public class Cashier implements Runnable,ICashier{
         Profit.addCashierProfit(this.sin,this.bill);
         Profit.addSumProfit(this.bill);
         System.out.println(this);
+        Dispitcher.reduceCountCashier();
         this.bill=0;
     }
 }
