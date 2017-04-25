@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://jd02_10.korzun.it.by/"
+        xmlns:tns="http://jd02_10.korzun.it.by/"
+        elementFormDefault="qualified">
+    <element name="Brigades">
+        <complexType>
+            <sequence>
+                <element name="Brigade"
+                         type="tns:Brigade"
+                         maxOccurs="unbounded">
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="Brigade">
+        <sequence>
+            <element name="Pilots"
+                     type="tns:Pilots">
+            </element>
+            <element name="Navigator"
+                     type="string">
+            </element>
+            <element name="Radio-operator"
+                     type="string">
+            </element>
+            <element name="Stewardess"
+                     type="string">
+            </element>
+        </sequence>
+    </complexType>
+
+    <complexType name="Pilots">
+        <sequence>
+            <element name="Pilot"
+                     type="string"
+                     minOccurs="1"
+                     maxOccurs="unbounded">
+            </element>
+        </sequence>
+    </complexType>
+
+</schema>
