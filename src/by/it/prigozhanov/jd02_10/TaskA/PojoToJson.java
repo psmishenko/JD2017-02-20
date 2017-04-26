@@ -28,11 +28,9 @@ public class PojoToJson {
         String text = gson.toJson(carList);
         try (BufferedWriter bf = new BufferedWriter(new FileWriter(pathToJsonFile))) {
             bf.write(text);
+            System.out.println("JSON файл успешно создан!");
         } catch (IOException e) {
             System.out.println("Ошибка при записи файла: " + e.getMessage());
-        }
-        finally {
-            System.out.println("JSON файл успешно создан!");
         }
 
 

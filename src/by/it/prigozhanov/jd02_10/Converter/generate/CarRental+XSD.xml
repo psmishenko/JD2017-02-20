@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<CarList xmlns="http://TaskB.jd02_10.prigozhanov.it.by"
+<CarList xmlns="http://jd02_09.prigozhanov.it.by"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://TaskB.jd02_10.prigozhanov.it.by CarRental.xsd">
+         xsi:schemaLocation="http://jd02_09.prigozhanov.it.by CarRental.xsd">
 
     <SportCars>
         <Car>
