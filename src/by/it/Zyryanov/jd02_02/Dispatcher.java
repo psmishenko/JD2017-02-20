@@ -3,6 +3,7 @@ package by.it.Zyryanov.jd02_02;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Semaphore;
 
 public class Dispatcher extends Thread{
     static final Integer monitorCounters = 0;
@@ -10,6 +11,7 @@ public class Dispatcher extends Thread{
     static int countComplete = 0;
     static int countBuyers = 0;
     static List<Thread> cashiers = new ArrayList<>();
+    public static Semaphore semaphore = new Semaphore(10);
 
     @Override
     public void run() {

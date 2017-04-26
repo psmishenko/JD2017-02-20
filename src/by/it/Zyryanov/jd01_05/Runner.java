@@ -22,7 +22,7 @@ public class Runner {
         Task5.solver();
         System.out.println();
         System.out.println("Задание 6");
-        Task6.solver();
+        Task6_V2.solver();
 
 
     }

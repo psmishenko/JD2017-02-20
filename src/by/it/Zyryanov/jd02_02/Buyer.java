@@ -6,7 +6,6 @@ public class Buyer extends Thread implements IBuyer{
     private int num;
     public boolean pensioneer = false;
     public Basket basket;
-    //public Shop shop;
 
 
     Buyer(int num){
@@ -22,7 +21,14 @@ public class Buyer extends Thread implements IBuyer{
     @Override
     public void run() {
         enterTheShop();
-        chooseGoods();
+        try {
+            Dispatcher.semaphore.acquire();
+            chooseGoods();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            Dispatcher.semaphore.release();
+        }
         goToQueue();
         exitTheShop();
     }

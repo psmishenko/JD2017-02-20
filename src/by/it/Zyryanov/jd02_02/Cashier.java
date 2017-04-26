@@ -22,7 +22,7 @@ public class Cashier implements Runnable{
         System.out.println(this + " открыл кассу");
         while ((b = QueueBuyers.extract()) != null){
             System.out.println(this + " обслуживается " + b);
-            int timeout = Helper.getRandom(200, 500);
+            int timeout = Helper.getRandom(2000, 5000);
             Helper.sleep(timeout);
             synchronized (b){
                 b.notify();
