@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Persons>
+    <Person>
+        <Email>sor@gmail.com</Email>
+        <Nicname>sor</Nicname>
+        <Password>qwerty</Password>
+        <Ad>
+            <Car>BMW 5(E60)</Car>
+            <YearOfIssue> 2005 </YearOfIssue>
+            <TypeEngine>дизель</TypeEngine>
+            <CapacityEngine>2.0</CapacityEngine>
+            <Spares>двигатель, бампер</Spares>
+            </Ad>
+
+    </Person>
+    <Person>
+    <Email>buwer@gmail.com</Email>
+    <Nicname>buw</Nicname>
+    <Password>dsfdcd</Password>
+
+    <Ad>
+        <Car>BMW 7(E65)</Car>
+        <YearOfIssue> 2004 </YearOfIssue>
+        <TypeEngine>дизель</TypeEngine>
+        <CapacityEngine>3.0</CapacityEngine>
+        <Spares>двигатель, кузов</Spares>
+    </Ad>
+
+</Person>
+</Persons>
