@@ -21,4 +21,14 @@
     <xsl:template match="/BookShop/Book_Catalogue/Book/Description">
         <td><b>Description</b> <br/> <xsl:apply-templates/></td>
     </xsl:template>
+    <xsl:template match="/BookShop/Book_Catalogue/Book/Publisher">
+        <td><b>Publisher</b> <br/> <xsl:apply-templates/></td>
+    </xsl:template>
+    <xsl:template match="/BookShop/Book_Catalogue/Book/Book_Cover">
+        <td><b>Book_Cover</b> <br/> <xsl:apply-templates/></td>
+    </xsl:template>
+    <xsl:template match="/BookShop/Book_Catalogue/Book/Price">
+        <td><b>Price</b> <br/> <xsl:apply-templates/></td>
+    </xsl:template>
+    Book_Cover
 </xsl:stylesheet>
