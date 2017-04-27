@@ -71,10 +71,6 @@ public class TaskB {
             e.printStackTrace();
         }
 
-
-
-
-
     }
 }
 

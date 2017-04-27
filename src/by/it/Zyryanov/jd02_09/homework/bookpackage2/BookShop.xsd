@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://bookpackage2.homework.jd02_09.Zyryanov.it.by"
+        xmlns:tns="http://bookpackage2.homework.jd02_09.Zyryanov.it.by"
+        elementFormDefault="qualified">
+    <element name="BookShop">
+        <complexType>
+            <all>
+                <element name="Book_Catalogue"
+                         type="tns:Book_Catalogue"
+                         maxOccurs="1">
+                </element>
+            </all>
+        </complexType>
+    </element>
+    <complexType name="Book_Catalogue">
+        <sequence>
+            <element name="Book"
+                     type="tns:Book"
+                     maxOccurs="unbounded">
+            </element>
+        </sequence>
+    </complexType>
+    <complexType name="Book">
+        <sequence>
+            <element name="Description" type="string"/>
+            <element name="Publisher" type="string"/>
+            <element name="Author" type="string"/>
+            <element name="Book_title" type="string"/>
+            <element name="Genre" type="string"/>
+            <element name="Book_Cover">
+                <complexType>
+                    <attributeGroup ref="tns:Book_Cover"/>
+                </complexType>
+            </element>
+            <element name="Pages" type="positiveInteger"/>
+            <element name="Price" type="positiveInteger"/>
+        </sequence>
+    </complexType>
+    <attributeGroup name="Book_Cover">
+        <attribute name="Rigid" type="string"/>
+        <attribute name="Soft" type="string"/>
+        <attribute name="Paper" type="string"/>
+        <attribute name="Rubber" type="string"/>
+    </attributeGroup>
+</schema> 

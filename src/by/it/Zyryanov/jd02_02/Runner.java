@@ -3,9 +3,9 @@ package by.it.Zyryanov.jd02_02;
 
 public class Runner {
 
-    private static final int plan = 10;
+    private static final int plan = 100;
     private static int countBuyers = 0;
-    public static int numberOfBaskets = 10;
+    public static int numberOfBaskets = 100;
     public static int inShopNow = 0;
 
 

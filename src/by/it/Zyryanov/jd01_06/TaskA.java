@@ -25,7 +25,7 @@ public class TaskA {
         String[] words = Data.lukomor.split("[^а-яА-ЯёЁ]+");
         for (int i = 0; i < words.length ; i++) {
             String word = words[i];
-            int counter = 0;
+            int counter = 1;
             if (!word.isEmpty())
             for (int j = i + 1; j < words.length; j++) {
                 if (word.equalsIgnoreCase(words[j])){
