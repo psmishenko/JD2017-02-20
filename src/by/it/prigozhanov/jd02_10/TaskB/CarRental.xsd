@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://TaskB.jd02_10.prigozhanov.it.by"
+        xmlns:tns="http://TaskB.jd02_10.prigozhanov.it.by"
+        elementFormDefault="qualified">
+
+    <element name="CarList">
+        <complexType>
+            <sequence>
+                <element name="SportCars"
+                         type="tns:SportCars"
+                         maxOccurs="1"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="SportCars">
+        <sequence>
+            <element name="Car"
+                     type="tns:Car"
+                     maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="Car">
+        <all>
+            <element name="Discription"/>
+            <element name="Model" type="tns:Model"/>
+            <element name="Insuranse">
+                <complexType>
+                    <attribute name="Insurance" type="string" fixed="BNB Insurance"/>
+                </complexType>
+            </element>
+            <element name="Price">
+                <complexType>
+                    <attributeGroup ref="tns:currency"/>
+                </complexType>
+            </element>
+            <element name="Location" type="string"/>
+        </all>
+    </complexType>
+
+    <complexType name="Model">
+        <sequence>
+            <element name="Name" type="string"/>
+            <element name="HP" type="positiveInteger"/>
+            <element name="FuelConsumption" type="positiveInteger"/>
+            <element name="Seats" type="positiveInteger"/>
+            <element name="Doors" type="positiveInteger"/>
+            <element name="LuggageCapacity" type="positiveInteger"/>
+        </sequence>
+    </complexType>
+    <attributeGroup name="currency">
+        <attribute name="USD" type="positiveInteger"/>
+        <attribute name="RUB" type="positiveInteger"/>
+        <attribute name="EUR" type="positiveInteger"/>
+        <attribute name="GBP" type="positiveInteger"/>
+    </attributeGroup>
+</schema>

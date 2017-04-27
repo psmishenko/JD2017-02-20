@@ -1,4 +1,4 @@
-package by.it.prigozhanov.jd02_07;
+package by.it.prigozhanov.jd02_09;
 
 import org.xml.sax.SAXException;
 
@@ -17,8 +17,8 @@ import java.io.IOException;
 public class ClassValidator {
     public static void main(String[] args) {
         String path = System.getProperty("user");
-        String xmlfile="src/by/it/prigozhanov/jd02_07/CarRental+XSD.xml";
-        String sname="src/by/it/prigozhanov/jd02_07/CarRental.xsd";
+        String xmlfile="src/by/it/prigozhanov/jd02_09/CarRental+XSD.xml";
+        String sname="src/by/it/prigozhanov/jd02_09/CarRental.xsd";
         String lang= XMLConstants.W3C_XML_SCHEMA_NS_URI;
         SchemaFactory factory = SchemaFactory.newInstance(lang);
         File schemaLocation = new File(sname);

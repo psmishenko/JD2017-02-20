@@ -120,6 +120,9 @@ public class VarVector extends Var {
                 return new VarVector(res);
             } else System.out.println("Операция не возможна, векторы имеют разные длинны");
         }
+        if (var instanceof VarMatrix) {
+            return var.mul(this);
+        }
         return super.mul(var);
     }
 

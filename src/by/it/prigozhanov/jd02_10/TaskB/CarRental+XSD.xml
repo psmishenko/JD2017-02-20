@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CarList xmlns="http://TaskB.jd02_10.prigozhanov.it.by"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://TaskB.jd02_10.prigozhanov.it.by CarRental.xsd">
+
+    <SportCars>
+        <Car>
+            <Discription>A fearless design philosophy has led to the DB11's iconic looks</Discription>
+            <Model>
+                <Name>Aston Martin DB11</Name>
+                <HP>620</HP>
+                <FuelConsumption>20</FuelConsumption>
+                <Seats>4</Seats>
+                <Doors>2</Doors>
+                <LuggageCapacity>3</LuggageCapacity>
+            </Model>
+            <Price GBP="1420"/>
+            <Insuranse/>
+            <Location>London</Location>
+        </Car>
+        <Car>
+            <Discription>Meet the AMG model of the new Mercedes-Benz S-Class Coupe.</Discription>
+            <Model>
+                <Name>Mercedes-Benz S63</Name>
+                <HP>600</HP>
+                <FuelConsumption>15</FuelConsumption>
+                <Seats>4</Seats>
+                <Doors>2</Doors>
+                <LuggageCapacity>2</LuggageCapacity>
+            </Model>
+            <Price RUB="1255"/>
+            <Insuranse/>
+            <Location>Moscow</Location>
+        </Car>
+        <Car>
+            <Discription>Improved styling of the second-generation 2017 Porsche Panamera</Discription>
+            <Model>
+                <Name>Porsche Panamera</Name>
+                <HP>520</HP>
+                <FuelConsumption>13</FuelConsumption>
+                <Seats>4</Seats>
+                <Doors>4</Doors>
+                <LuggageCapacity>4</LuggageCapacity>
+            </Model>
+            <Price EUR="1200"/>
+            <Insuranse/>
+            <Location>Berlin</Location>
+        </Car>
+    </SportCars>
+</CarList>
