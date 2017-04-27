@@ -1,0 +1,96 @@
+{
+  "naklad": [
+    {
+      "date": {
+        "year": 2017,
+        "month": 2,
+        "dayOfMonth": 1,
+        "hourOfDay": 0,
+        "minute": 0,
+        "second": 0
+      },
+      "num": "1",
+      "seria": "AA",
+      "klient": {
+        "name": "Клиент1",
+        "unp": "100123456",
+        "adres": "г.Минск"
+      },
+      "avto": {
+        "numGos": "1234 AA-7",
+        "voditel": "Иванов А.А."
+      },
+      "tovars": {
+        "tovar": [
+          {
+            "name": "Молоко",
+            "edIzm": "пак.",
+            "count": 50,
+            "cena": 0.85,
+            "stoim": 40,
+            "prNds": 20,
+            "nds": 8,
+            "stoimPoln": 48
+          },
+          {
+            "name": "Хлеб Майский",
+            "edIzm": "бух.",
+            "count": 100,
+            "cena": 0.25,
+            "stoim": 25,
+            "prNds": 20,
+            "nds": 5,
+            "stoimPoln": 30
+          }
+        ]
+      },
+      "type": "TTN_OUT"
+    },
+    {
+      "date": {
+        "year": 2017,
+        "month": 3,
+        "dayOfMonth": 1,
+        "hourOfDay": 0,
+        "minute": 0,
+        "second": 0
+      },
+      "num": "2",
+      "seria": "BB",
+      "klient": {
+        "name": "Клиент2",
+        "unp": "100654321",
+        "adres": "г.Брест"
+      },
+      "avto": {
+        "numGos": "4321 BB-7",
+        "voditel": "Петров А.А."
+      },
+      "tovars": {
+        "tovar": [
+          {
+            "name": "Сахар",
+            "edIzm": "пак.",
+            "count": 100,
+            "cena": 1.6,
+            "stoim": 160,
+            "prNds": 20,
+            "nds": 32,
+            "stoimPoln": 192
+          },
+          {
+            "name": "Соль",
+            "edIzm": "пак.",
+            "count": 100,
+            "cena": 0.92,
+            "stoim": 92,
+            "prNds": 20,
+            "nds": 18.4,
+            "stoimPoln": 110.4
+          }
+        ]
+      },
+      "type": "TTN_OUT"
+    }
+  ]
+}
