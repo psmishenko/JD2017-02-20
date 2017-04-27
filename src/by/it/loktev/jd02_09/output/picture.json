@@ -1,0 +1,81 @@
+{
+  "squareOrCircleOrText": [
+    {
+      "left": 20,
+      "top": 30,
+      "width": 40,
+      "height": 5,
+      "stroke": "blue"
+    },
+    {
+      "left": 20,
+      "top": 30,
+      "width": 40,
+      "height": 5,
+      "stroke": "blue"
+    },
+    {
+      "centerx": 50,
+      "centery": 50,
+      "radius": 20,
+      "fill": "red",
+      "stroke": "black"
+    },
+    {
+      "value": "\n        HELLO!\n    ",
+      "left": 77,
+      "top": 88
+    },
+    {
+      "centerx": 50,
+      "centery": 50,
+      "radius": 20,
+      "fill": "red",
+      "stroke": "black"
+    },
+    {
+      "squareOrCircleOrText": [
+        {
+          "centerx": 55,
+          "centery": 50,
+          "radius": 20,
+          "fill": "none",
+          "stroke": "cyan"
+        },
+        {
+          "left": 25,
+          "top": 30,
+          "width": 40,
+          "height": 5,
+          "fill": "yellow"
+        },
+        {
+          "value": "\n            GOODBYE!\n        ",
+          "left": 77,
+          "top": 88
+        },
+        {
+          "left": 25,
+          "top": 30,
+          "width": 40,
+          "height": 5,
+          "fill": "yellow"
+        }
+      ]
+    },
+    {
+      "left": 20,
+      "top": 30,
+      "width": 40,
+      "height": 5,
+      "stroke": "blue"
+    },
+    {
+      "centerx": 50,
+      "centery": 50,
+      "radius": 20,
+      "fill": "red",
+      "stroke": "black"
+    }
+  ]
+}

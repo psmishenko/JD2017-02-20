@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<picture xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://jd02_10.loktev.it.by"
+         xmlns="http://jd02_10.loktev.it.by"
+>
+    <square left="20" top="30" width="40" height="5" stroke="blue" />
+    <square left="20" top="30" width="40" height="5" fill="red" />
+    <square left="20" top="30" width="40" height="5" fill="yellow" stroke="black" />
+</picture>

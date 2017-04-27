@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<picture xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://jd02_09.loktev.it.by"
+         xmlns="http://jd02_09.loktev.it.by"
+>
+    <square left="20" top="30" width="40" height="5" stroke="blue" />
+    <square left="20" top="30" width="40" height="5" stroke="blue" />
+    <circle centerx="50" centery="50" radius="20" fill="red" />
+    <text left="77" top="88">
+        HELLO!
+    </text>
+    <circle centerx="50" centery="50" radius="20" fill="red" />
+    <group>
+        <circle centerx="55" centery="50" radius="20" stroke="cyan" />
+        <square left="25" top="30" width="40" height="5" fill="yellow" />
+        <text left="77" top="88">
+            GOODBYE!
+        </text>
+        <square left="25" top="30" width="40" height="5" fill="yellow" />
+    </group>
+    <square left="20" top="30" width="40" height="5" stroke="blue" />
+    <circle centerx="50" centery="50" radius="20" fill="red" />
+</picture>

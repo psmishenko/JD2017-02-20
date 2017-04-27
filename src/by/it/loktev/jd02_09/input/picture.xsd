@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://jd02_09.loktev.it.by"
+        xmlns:tns="http://jd02_09.loktev.it.by"
+        elementFormDefault="qualified">
+
+<element name="picture">
+    <complexType>
+        <choice maxOccurs="unbounded" minOccurs="0">
+            <element name="square" type="tns:Square" />
+            <element name="circle" type="tns:Circle" />
+            <element name="text" type="tns:Text" />
+            <element name="group" type="tns:Group" />
+        </choice>
+    </complexType>
+</element>
+
+<complexType name="Circle">
+    <attribute name="centerx" type="integer" use="required"></attribute>
+    <attribute name="centery" type="integer" use="required"></attribute>
+    <attribute name="radius" type="integer" use="required"></attribute>
+    <attribute name="fill" type="string"></attribute>
+    <attribute name="stroke" type="string"></attribute>
+</complexType>
+
+<complexType name="Square">
+    <attribute name="left" type="integer" use="required"></attribute>
+    <attribute name="top" type="integer" use="required"></attribute>
+    <attribute name="width" type="integer" use="required"></attribute>
+    <attribute name="height" type="integer" use="required"></attribute>
+    <attribute name="fill" type="string"></attribute>
+    <attribute name="stroke" type="string"></attribute>
+</complexType>
+
+<complexType name="Text">
+    <simpleContent>
+        <extension base="string">
+            <attribute name="left" type="integer"></attribute>
+            <attribute name="top" type="integer"></attribute>
+        </extension>
+    </simpleContent>
+</complexType>
+
+<complexType name="Group">
+    <choice maxOccurs="unbounded" minOccurs="0">
+        <element name="square" type="tns:Square" />
+        <element name="circle" type="tns:Circle" />
+        <element name="text" type="tns:Text" />
+        <element name="group" type="tns:Group" />
+    </choice>
+</complexType>
+
+</schema>
