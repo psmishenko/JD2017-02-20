@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InternetShop>
+
+    <Administrator login="zAds36" password='pass2'>
+        <Catalog>CatalogAll</Catalog>
+        <Order>12</Order>
+        <BlackList>None</BlackList>
+    </Administrator>
+
+    <Client login="xAbz46" password='pass1'>
+        <MadeOrder>OrderOne</MadeOrder>
+        <PayOreder>1343.15</PayOreder>
+    </Client>
+
+    <OrderC>
+        <Profit>Summary</Profit>
+        <Count>AllDevice</Count>
+        <Sale>Procent</Sale>
+    </OrderC>
+
+    <BlackListStatus>
+        <Client_id>458</Client_id>
+    </BlackListStatus>
+</InternetShop>

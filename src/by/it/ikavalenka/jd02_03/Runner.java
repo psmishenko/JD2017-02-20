@@ -15,7 +15,7 @@ public class Runner {
                 count--;
                 if (countBuyers == plan) break;
             }
-            Helper.sleep(25000);
+            Helper.sleep(2500);
         }
         System.out.println("All in");
     }

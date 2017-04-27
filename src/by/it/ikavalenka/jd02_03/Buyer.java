@@ -11,7 +11,8 @@ class Buyer extends Thread implements IBuyer, IUseBacket,Runnable {
     private boolean wiatInTheBuyerQueue = true;
 
     Buyer(int sin,boolean retired) {
-        super("Customer # " + sin);
+        Dispitcher.addCountBuyersIn();
+//        super("Customer # " + sin);
         this.sin = sin;
         this.retired = retired;
         this.setName("Buyer " + sin + " ");
@@ -119,4 +120,5 @@ class Buyer extends Thread implements IBuyer, IUseBacket,Runnable {
         }
 
     }
+
 }
