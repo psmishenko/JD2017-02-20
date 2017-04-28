@@ -1,0 +1,77 @@
+ 1 package by.it.Zyryanov.jd01_15;
+ 2 
+ 3 import java.io.*;
+ 4 import java.util.ArrayList;
+ 5 import java.util.regex.Matcher;
+ 6 import java.util.regex.Pattern;
+ 7 
+ 8 public class TaskB {
+ 9     public static void main(String[] args) {
+10 
+11         String path = "/Users/georgijzyranov/Documents/Git Hub Homework /JD2017-02-20/src/by/it/Zyryanov/jd01_15/";
+12         String filename = path + "TaskB.java";
+13 
+14 
+15         
+16         StringBuilder sb = new StringBuilder();
+17 
+18         try (FileReader reader = new FileReader(filename)) {
+19             while (reader.ready()) {
+20                 sb.append((char) reader.read());
+21             }
+22         } catch (FileNotFoundException e) {
+23             e.printStackTrace();
+24         } catch (IOException e) {
+25             e.printStackTrace();
+26         }
+27         
+28         
+29         
+30 
+31 
+32         
+33 
+34         Pattern pattern2 = Pattern.compile("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?:
+35         
+36         Matcher matcher2 = pattern2.matcher(sb);
+37 
+38 
+39         while (matcher2.find()) {
+40             int start = 0;
+41            start =  matcher2.start();
+42             int end = 0;
+43             end = matcher2.end();
+44             sb.delete(start, end);
+45             matcher2.reset();
+46         }
+47 
+48         String sb2 = sb.toString();
+49 
+50         String lineEndRE="\\n";
+51 
+52         String fileName2=path+"TaskB.txt";
+53 
+54         int lineNum=0;
+55         Pattern patt3=Pattern.compile(lineEndRE);
+56         String [] parts3=patt3.split(sb);
+57         try (
+58                 FileWriter fw = new FileWriter(fileName2);
+59                 BufferedWriter bw = new BufferedWriter(fw);
+60         )
+61         {
+62             for ( String part : parts3 ) {
+63                 lineNum++;
+64                 System.out.println(String.format("%2d",lineNum)+" "+part);
+65                 bw.write(String.format("%2d",lineNum)+" "+part+"\n");
+66             }
+67 
+68         } catch (IOException e) {
+69             e.printStackTrace();
+70         }
+71 
+72 
+73 
+74 
+75 
+76     }
+77 }
