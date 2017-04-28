@@ -69,8 +69,8 @@ CREATE TABLE IF NOT EXISTS `akhmelev`.`ads` (
   `Description` VARCHAR(2000) NOT NULL,
   `FK_users` INT(11) NOT NULL,
   PRIMARY KEY (`ID`),
-  INDEX `fk_ads_users1_idx` (`FK_users` ASC),
-  CONSTRAINT `fk_ads_users1`
+  INDEX `fk_ads_users_idx` (`FK_users` ASC),
+  CONSTRAINT `fk_ads_users`
     FOREIGN KEY (`FK_users`)
     REFERENCES `akhmelev`.`users` (`ID`)
     ON DELETE CASCADE

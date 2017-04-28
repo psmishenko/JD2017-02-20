@@ -52,7 +52,7 @@ public class OperationReportBuilder extends ReportBuilder implements Runnable {
     @Override
     public void setStartTime() {
         try(PrintWriter print = new PrintWriter(new FileWriter(file,true))) {
-            print.println("Begin of the work: "+this.startDate);
+            print.println("Begin of the demo: "+this.startDate);
         } catch (IOException e) {
             System.out.println("Adding start time has failed.");
         }
@@ -89,7 +89,7 @@ public class OperationReportBuilder extends ReportBuilder implements Runnable {
     public void setEndTime() {
         Date endTime = new Date();
         try(PrintWriter print = new PrintWriter(new FileWriter(file,true))) {
-            print.println("End of  work: "+endTime);
+            print.println("End of  demo: "+endTime);
         } catch (IOException e) {
             System.out.println("Adding end time has failed.");
         }
