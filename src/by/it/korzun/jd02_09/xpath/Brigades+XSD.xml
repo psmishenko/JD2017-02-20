@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Brigades xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xpath.jd02_09.korzun.it.by/"
+        xmlns="http://xpath.jd02_09.korzun.it.by/">
+    <Brigade>
+        <Pilots>
+            <Pilot>Ivan Ivanovich</Pilot>
+            <Pilot>Walter Ritz</Pilot>
+        </Pilots>
+        <Navigator>Carolus Rex</Navigator>
+        <Radio-operator>Gunter Jonas</Radio-operator>
+        <Stewardess>Maria Ivanovna</Stewardess>
+    </Brigade>
+
+    <Brigade>
+        <Pilots>
+            <Pilot>Petr Mihailovich</Pilot>
+            <Pilot>Adolf Hurwitz</Pilot>
+        </Pilots>
+        <Navigator>John Walter</Navigator>
+        <Radio-operator>Kenneth Gibbs</Radio-operator>
+        <Stewardess>Peter Jennings</Stewardess>
+    </Brigade>
+</Brigades>
