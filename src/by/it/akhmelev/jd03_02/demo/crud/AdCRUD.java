@@ -50,7 +50,7 @@ public class AdCRUD {
         try (
                 //создаем соединение и объект для запросов к базе
                 Connection connection = ConnectionCreator.getConnection(); //создаем соединение с базой
-                Statement statement = connection.createStatement(); //создаем объект для обращения к базе
+                Statement statement = connection.createStatement() //создаем объект для обращения к базе
         ) {
             //выполняем добавление в базу, должна быть добавлена одна запись. Проверим это.
             //create(insert) update delete - это executeUpdate, а select это executeQuery
@@ -65,8 +65,6 @@ public class AdCRUD {
                     ad.setId(id);
                 }
             }
-        } catch (SQLException e) {
-            throw e;
         }
         return ad;
     }
@@ -76,7 +74,7 @@ public class AdCRUD {
         String readAdSQL = "SELECT * FROM ads where ID=" + id;
         try (
                 Connection connection = ConnectionCreator.getConnection();
-                Statement statement = connection.createStatement();
+                Statement statement = connection.createStatement()
         ) {
             final ResultSet resultSet = statement.executeQuery(readAdSQL);
             if (resultSet.next()) {
@@ -92,8 +90,6 @@ public class AdCRUD {
                         resultSet.getInt("FK_Users")
                 );
             }
-        } catch (SQLException e) {
-            throw e;
         }
         return adResult;
     }
@@ -123,13 +119,11 @@ public class AdCRUD {
         );
         try (
                 Connection connection = ConnectionCreator.getConnection();
-                Statement statement = connection.createStatement();
+                Statement statement = connection.createStatement()
         ) {
             System.out.println(updateAdSQL);
             if (statement.executeUpdate(updateAdSQL) == 1)
                 adResult = ad;
-        } catch (SQLException e) {
-            throw e;
         }
         return adResult;
     }
@@ -138,11 +132,9 @@ public class AdCRUD {
         String deleteAdSQL = String.format("DELETE FROM ads WHERE ads.ID = %d", ad.getId());
         try (
                 Connection connection = ConnectionCreator.getConnection();
-                Statement statement = connection.createStatement();
+                Statement statement = connection.createStatement()
         ) {
             return (statement.executeUpdate(deleteAdSQL) == 1);
-        } catch (SQLException e) {
-            throw e;
         }
     }
 

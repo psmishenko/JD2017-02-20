@@ -7,19 +7,12 @@ import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConnectionCreator {
-
-    //Памятка. Корректно держать эти настройки соединения вне кода (!)
-    private static final String URL_DB =
-            "jdbc:mysql://127.0.0.1:2016/akhmelev"
-             +"?useUnicode=true&characterEncoding=UTF-8";
-    private static final String USER_DB = "root";
-    private static final String PASSWORD_DB = "";
+class ConnectionCreator {
 
     //==============================================================================
     //регистрация драйвера
     static {
-        Driver driver = null;
+        Driver driver;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             driver = new FabricMySQLDriver();
@@ -37,9 +30,9 @@ public class ConnectionCreator {
 
     public static Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed()) {
-                synchronized (URL_DB) {
+                synchronized (CN.USER_DB) {
                     if (connection == null || connection.isClosed())
-                        connection = DriverManager.getConnection(URL_DB, USER_DB, PASSWORD_DB);
+                        connection = DriverManager.getConnection(CN.URL_DB, CN.USER_DB, CN.PASSWORD_DB);
                 }
         }
         return connection;

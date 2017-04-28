@@ -2,7 +2,6 @@ package by.it.akhmelev.jd03_02;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Ex_01__CreateTable {
@@ -10,7 +9,7 @@ public class Ex_01__CreateTable {
 
     public static void main(String[] args) {
         try (Connection connection = ConnectionCreator.getConnection();
-             Statement statement = connection.createStatement();) {
+             Statement statement = connection.createStatement()) {
             //ПРИМЕР. удаляем таблицу
             statement.executeUpdate("DROP TABLE IF EXISTS DB_USER ");
 

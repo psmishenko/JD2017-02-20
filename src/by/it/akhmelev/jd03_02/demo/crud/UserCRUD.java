@@ -21,7 +21,7 @@ public class UserCRUD {
         try (
                 //создаем соединение и объект для запросов к базе
                 Connection connection = ConnectionCreator.getConnection(); //создаем соединение с базой
-                Statement statement = connection.createStatement(); //создаем объект для обращения к базе
+                Statement statement = connection.createStatement() //создаем объект для обращения к базе
         ) {
             //выполняем добавление в базу, должна быть добавлена одна запись. Проверим это.
             //create(insert) update delete - это executeUpdate, а select это executeQuery
@@ -32,10 +32,6 @@ public class UserCRUD {
                     user.setID(id);
                 }
             }
-
-        } catch (SQLException e) {
-            System.out.println(createUserSQL);
-            throw e;
         }
         return user;
     }
@@ -45,7 +41,7 @@ public class UserCRUD {
         String readUserSQL = "SELECT * FROM users where ID=" + id;
         try (
                 Connection connection = ConnectionCreator.getConnection();
-                Statement statement = connection.createStatement();
+                Statement statement = connection.createStatement()
         ) {
             final ResultSet resultSet = statement.executeQuery(readUserSQL);
             if (resultSet.next()) {
@@ -56,8 +52,6 @@ public class UserCRUD {
                         resultSet.getString("Password"),
                         resultSet.getInt("FK_roles"));
             }
-        } catch (SQLException e) {
-            throw e;
         }
         return userResult;
     }
@@ -70,12 +64,10 @@ public class UserCRUD {
         );
         try (
                 Connection connection = ConnectionCreator.getConnection();
-                Statement statement = connection.createStatement();
+                Statement statement = connection.createStatement()
         ) {
             if (statement.executeUpdate(updateUserSQL) == 1)
                 userResult = user;
-        } catch (SQLException e) {
-            throw e;
         }
         return userResult;
     }
@@ -84,11 +76,9 @@ public class UserCRUD {
         String deleteUserSQL = String.format("DELETE FROM users WHERE users.ID = %d", user.getID());
         try (
                 Connection connection = ConnectionCreator.getConnection();
-                Statement statement = connection.createStatement();
+                Statement statement = connection.createStatement()
         ) {
             return (statement.executeUpdate(deleteUserSQL) == 1);
-        } catch (SQLException e) {
-            throw e;
         }
     }
 

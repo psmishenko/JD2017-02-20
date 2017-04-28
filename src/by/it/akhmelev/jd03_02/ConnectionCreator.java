@@ -6,7 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConnectionCreator {
+class ConnectionCreator {
 
     //Памятка. Корректно держать эти настройки соединения вне кода (!)
     private static final String URL_DB =

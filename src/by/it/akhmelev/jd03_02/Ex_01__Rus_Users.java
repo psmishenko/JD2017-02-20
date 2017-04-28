@@ -8,7 +8,7 @@ public class Ex_01__Rus_Users {
 
     public static void main(String[ ] args) {
         try (Connection connection=ConnectionCreator.getConnection();
-             Statement statement=connection.createStatement();) {
+             Statement statement=connection.createStatement()) {
 
             //вставляем пользователей
             statement.executeUpdate(
