@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Persons>
+    <Person>
+        <Email>privet@mail.ru</Email>
+        <Nickname>privet</Nickname>
+        <Password>root</Password>
+        <Ads>
+            <Ad>
+                <Description>
+                    Хорошая квартитра
+                </Description>
+                <Adress>
+                    г.Минск, ул.В.Хоружей,д.12, кв.13
+                </Adress>
+                <Floor>3</Floor>
+                <Floors>5</Floors>
+                <Square>47.6</Square>
+            </Ad>
+            <Ad>
+                <Description>
+                    Еще одна хорошая квартитра
+                </Description>
+                <Adress>
+                    г.Минск, ул.Гикало,д.12, кв.13
+                </Adress>
+                <Floor>3</Floor>
+                <Floors>5</Floors>
+                <Square>47.6</Square>
+            </Ad>
+        </Ads>
+    </Person>
+</Persons>

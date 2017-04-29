@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CoffeeHouses xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://zeynalov.it-academy/xml/CoffeeHouses CoffeeHouse.xsd"
+         xmlns="http://zeynalov.it-academy/xml/CoffeeHouses">
+   <CoffeHouse>
+       <Administrator>Sam</Administrator>
+       <Waitress>Kira</Waitress>
+       <Barista>Din</Barista>
+       <Menus>
+               <Menu>
+                   <Description>Menu</Description>
+                   <Latte>Latte</Latte>
+                   <Americano>Americano</Americano>
+                   <Cappuccino>Cappucino</Cappuccino>
+                   <Espresso>Espresso</Espresso>
+               </Menu>
+       </Menus>
+   </CoffeHouse>
+</CoffeeHouses>

@@ -1,0 +1,12 @@
+<!ELEMENT CoffeeHouses (CoffeeHouse)+>
+<!ELEMENT CoffeeHouse (Administrator, Waitress, Barista, Menus)>
+<!ELEMENT Administrator (#PCDATA)>
+<!ELEMENT Waitress (#PCDATA)>
+<!ELEMENT Barista (#PCDATA)>
+<!ELEMENT Menus (Menu)+>
+<!ELEMENT Menu (Description, Latte, Americano, Cappuccino, Espresso)>
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT Latte (#PCDATA)>
+<!ELEMENT Americano (#PCDATA)>
+<!ELEMENT Cappuccino (#PCDATA)>
+<!ELEMENT Espresso (#PCDATA)>
