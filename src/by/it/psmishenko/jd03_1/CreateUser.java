@@ -19,7 +19,9 @@ public class CreateUser {
         try(
         Connection connection = DriverManager.getConnection(CN.URL_DB,CN.USER_DB,CN.PASSWORD_DB)) {
             Statement statement = connection.createStatement();
-            statement.executeUpdate()
+            statement.executeUpdate(
+                    "INSERT INTO `users` (`Login`, `Password`, `Email`, `FK_roles`) " +
+                            "VALUES ('User','user','user@mail.ru',2);");
         } catch (SQLException e) {
             e.printStackTrace();
         }
