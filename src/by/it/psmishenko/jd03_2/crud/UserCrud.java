@@ -38,7 +38,7 @@ public class UserCrud {
                     , user.getLogin(), user.getPassword(), user.getEmail(), user.getFk_roles());
             ResultSet rs = statement.executeQuery(sql);
             if(rs.next()){
-                resultUser = new User(rs.getInt("ID"),rs.getString("Login"),rs.getString("Password")) // new user
+              //  resultUser = new User(rs.getInt("ID"),rs.getString("Login"),rs.getString("Password")) // new user
 
             }
         }
