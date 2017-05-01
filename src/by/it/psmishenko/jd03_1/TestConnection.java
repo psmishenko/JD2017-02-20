@@ -8,22 +8,22 @@ import java.sql.SQLException;
  * Created by GN on 28.04.2017.
  */
 public class TestConnection {
-    public static void main(String[] args) {
-        try {
+    public static void testCon() {
+       /* try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
+*/
         try (
                 Connection connection =
                         DriverManager.getConnection(CN.URL_DB, CN.USER_DB, CN.PASSWORD_DB)
         ) {
             if (connection.isClosed()) {
-                System.out.println("closed");
+                System.out.println("Test connection result: closed");
             }
             else
-                System.out.println("open");
+                System.out.println("Test connection result: open");
         } catch (SQLException e) {
             e.printStackTrace();
         }
