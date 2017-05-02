@@ -1,7 +1,9 @@
 package by.it.loktev.jd03_02;
 
+import by.it.loktev.jd03_02.beans.Ad;
 import by.it.loktev.jd03_02.beans.Role;
 import by.it.loktev.jd03_02.beans.User;
+import by.it.loktev.jd03_02.crud.AdCRUD;
 import by.it.loktev.jd03_02.crud.ConnectorCreator;
 import by.it.loktev.jd03_02.crud.RoleCRUD;
 import by.it.loktev.jd03_02.crud.UserCRUD;
@@ -50,11 +52,11 @@ public class C_Init {
         );
 
         UserCRUD userCRUD=new UserCRUD();
-        User user1=new User(1,"admin1","pass1","email1@gmail.com",1);
+        User user1=new User(1,"admin1","pass1","email1@gmail.com",role1.getId());
         userCRUD.create(user1);
-        User user2=new User(2,"user2","pass2","email2@gmail.com",2);
+        User user2=new User(2,"user2","pass2","email2@gmail.com",role2.getId());
         userCRUD.create(user2);
-        User user3=new User(3,"user3","pass3","email3@gmail.com",2);
+        User user3=new User(3,"user3","pass3","email3@gmail.com",role2.getId());
         userCRUD.create(user3);
 /*
         C_RunSQL.run(
@@ -83,13 +85,21 @@ public class C_Init {
                         ") ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;\n"
         );
 
+        AdCRUD adCRUD=new AdCRUD();
+        Ad ad1=new Ad(0,1,5,2,"Мулявина 6","ЦА",user2.getId());
+        adCRUD.create(ad1);
+        Ad ad2=new Ad(0,1,5,2,"Мулявина 7","СервисДеск",user3.getId());
+        adCRUD.create(ad2);
+        Ad ad3=new Ad(0,1,5,2,"Мулявина 8","ШББ",user2.getId());
+        adCRUD.create(ad3);
+        /*
         C_RunSQL.run(
                 "INSERT INTO `ads` (`id`, `floor`, `floors`, `rooms`, `address`, `desc`, `userid`) VALUES\n" +
                         "\t(4, 1, 5, 2, 'Мулявина 6', 'ЦА', 1),\n" +
                         "\t(5, 3, 5, 2, 'Мулявина 8', 'не ЦА', 1),\n" +
                         "\t(6, 5, 5, 2, 'Мулявина 10', 'не ЦА', 1);\n"
         );
-
+*/
 
     }
 }
