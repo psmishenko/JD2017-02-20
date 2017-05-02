@@ -17,7 +17,7 @@ public class ConnectorCreator {
 
     }
 
-    static Connection getConnection() throws SQLException {
+    static public Connection getConnection() throws SQLException {
         if ( connection==null || connection.isClosed() ) {
             synchronized (CN.URL_DB) {
                 if ( connection==null || connection.isClosed() ) {

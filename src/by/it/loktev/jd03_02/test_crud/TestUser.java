@@ -6,8 +6,11 @@ import by.it.loktev.jd03_02.crud.UserCRUD;
 import java.sql.SQLException;
 
 public class TestUser {
-    public static void main(String[] args) {
+
+    public static void run() {
+
         User user = new User(0, "login", "pass", "email", 2);
+
         try {
 
             //проверка CRUD для пользователей
@@ -16,7 +19,7 @@ public class TestUser {
 
             //создание
             userCRUD.create(user);
-            System.out.println("created: "+user);
+            System.out.println("created "+user);
 
             //чтение
             user=userCRUD.read(user);

@@ -16,7 +16,7 @@ public class UserCRUD {
                 Statement statement=connection.createStatement();
 
         ){
-            String SQL="select * from user where id="+user.getId()+";";
+            String SQL="select * from users where id="+user.getId()+";";
             ResultSet rs=statement.executeQuery(SQL);
             rs.next();
             result=new User(
@@ -35,7 +35,7 @@ public class UserCRUD {
                 Connection connection=ConnectorCreator.getConnection();
                 Statement statement=connection.createStatement();
         ) {
-            String SQL="insert into user(login,password,email,roleid) values('"+user.getLogin()+"','"+user.getPassword()+"','"+user.getEmail()+"',"+user.getRoleId()+");";
+            String SQL="insert into users(login,password,email,roleid) values('"+user.getLogin()+"','"+user.getPassword()+"','"+user.getEmail()+"',"+user.getRoleId()+");";
             statement.executeUpdate(SQL,Statement.RETURN_GENERATED_KEYS);
             ResultSet keys=statement.getGeneratedKeys();
             keys.next();
@@ -51,7 +51,7 @@ public class UserCRUD {
                 Connection connection=ConnectorCreator.getConnection();
                 Statement statement=connection.createStatement();
         ) {
-            String SQL="update user set login='"+user.getLogin()+"',password='"+user.getPassword()+"',email='"+user.getEmail()+"',roleid='"+user.getRoleId()+"' where id="+user.getId()+";";
+            String SQL="update users set login='"+user.getLogin()+"',password='"+user.getPassword()+"',email='"+user.getEmail()+"',roleid='"+user.getRoleId()+"' where id="+user.getId()+";";
             statement.executeUpdate(SQL);
         }
 
@@ -62,7 +62,7 @@ public class UserCRUD {
                 Connection connection=ConnectorCreator.getConnection();
                 Statement statement=connection.createStatement();
         ) {
-            String SQL="delete from user where id="+user.getId()+";";
+            String SQL="delete from users where id="+user.getId()+";";
             statement.executeUpdate(SQL);
         }
 
