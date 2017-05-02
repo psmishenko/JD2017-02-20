@@ -25,18 +25,26 @@ public class RoleCRUD {
     }
 
     public int create(Role role) throws SQLException {
+        int id=role.getId();
         try (
                 Connection connection=ConnectorCreator.getConnection();
                 Statement statement=connection.createStatement();
         ) {
-            String SQL="insert into roles(name) values('"+role.getName()+"');";
-            statement.executeUpdate(SQL,Statement.RETURN_GENERATED_KEYS);
-            ResultSet keys=statement.getGeneratedKeys();
-            keys.next();
-            int id=keys.getInt(1);
-            role.setId(id);
-            return id;
+            if (id==0) {
+                String SQL = "insert into roles(name) values('" + role.getName() + "');";
+                statement.executeUpdate(SQL, Statement.RETURN_GENERATED_KEYS);
+                ResultSet keys = statement.getGeneratedKeys();
+                keys.next();
+                id = keys.getInt(1);
+                role.setId(id);
+            }
+            else{
+                String SQL = "insert into roles(id,name) values("+id+",'" + role.getName() + "');";
+                statement.executeUpdate(SQL);
+            }
+
         }
+        return id;
 
     }
 

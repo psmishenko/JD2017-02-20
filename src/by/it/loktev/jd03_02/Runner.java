@@ -11,6 +11,14 @@ public class Runner {
 
         try {
 
+            System.out.println("\n=== Вариант C\n");
+
+            C_Reset.run();
+            System.out.println("База очищена!");
+
+            C_Init.run();
+            System.out.println("База наполнена!");
+
             System.out.println("\n=== Вариант A\n");
 
             TestRole.run();

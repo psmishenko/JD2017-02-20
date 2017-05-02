@@ -31,18 +31,25 @@ public class UserCRUD {
     }
 
     public int create(User user) throws SQLException {
+        int id=user.getId();
         try (
                 Connection connection=ConnectorCreator.getConnection();
                 Statement statement=connection.createStatement();
         ) {
-            String SQL="insert into users(login,password,email,roleid) values('"+user.getLogin()+"','"+user.getPassword()+"','"+user.getEmail()+"',"+user.getRoleId()+");";
-            statement.executeUpdate(SQL,Statement.RETURN_GENERATED_KEYS);
-            ResultSet keys=statement.getGeneratedKeys();
-            keys.next();
-            int id=keys.getInt(1);
-            user.setId(id);
-            return id;
+            if ( id==0 ) {
+                String SQL = "insert into users(login,password,email,roleid) values('" + user.getLogin() + "','" + user.getPassword() + "','" + user.getEmail() + "'," + user.getRoleId() + ");";
+                statement.executeUpdate(SQL, Statement.RETURN_GENERATED_KEYS);
+                ResultSet keys = statement.getGeneratedKeys();
+                keys.next();
+                id = keys.getInt(1);
+                user.setId(id);
+            }
+            else{
+                String SQL = "insert into users(id,login,password,email,roleid) values("+id+",'" + user.getLogin() + "','" + user.getPassword() + "','" + user.getEmail() + "'," + user.getRoleId() + ");";
+                statement.executeUpdate(SQL);
+            }
         }
+        return id;
 
     }
 
