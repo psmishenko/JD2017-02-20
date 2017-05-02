@@ -29,6 +29,10 @@ public class Runner {
 
             TaskB.run();
 
+            //System.out.println("\n=== Вариант C (подготовка)\n");
+
+            //CRUDTest.testUserCRUD();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
