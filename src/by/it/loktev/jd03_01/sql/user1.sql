@@ -1,0 +1,1 @@
+INSERT INTO user (login, password, email, fk_role) VALUES ('log', 'pass', 'admin@tut.by', 1);
