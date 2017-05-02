@@ -8,11 +8,14 @@ public class Book {
     private String author;
     private String title;
     private int year;
-    private int isbn;
+    private String isbn;
     private int lid;
     private int fk_users;
 
-    public Book(int id, String author, String title, int year, int isbn, int lid, int fk_users) {
+    public Book() {
+    }
+
+    public Book(int id, String author, String title, int year, String isbn, int lid, int fk_users) {
         this.id = id;
         this.author = author;
         this.title = title;
@@ -20,9 +23,6 @@ public class Book {
         this.isbn = isbn;
         this.lid = lid;
         this.fk_users = fk_users;
-    }
-
-    public Book() {
     }
 
     public int getId() {
@@ -57,11 +57,11 @@ public class Book {
         this.year = year;
     }
 
-    public int getIsbn() {
+    public String getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(int isbn) {
+    public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
 
@@ -90,12 +90,11 @@ public class Book {
 
         if (id != book.id) return false;
         if (year != book.year) return false;
-        if (isbn != book.isbn) return false;
         if (lid != book.lid) return false;
         if (fk_users != book.fk_users) return false;
         if (author != null ? !author.equals(book.author) : book.author != null) return false;
-        return title != null ? title.equals(book.title) : book.title == null;
-
+        if (title != null ? !title.equals(book.title) : book.title != null) return false;
+        return isbn != null ? isbn.equals(book.isbn) : book.isbn == null;
     }
 
     @Override
@@ -104,7 +103,7 @@ public class Book {
         result = 31 * result + (author != null ? author.hashCode() : 0);
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + year;
-        result = 31 * result + isbn;
+        result = 31 * result + (isbn != null ? isbn.hashCode() : 0);
         result = 31 * result + lid;
         result = 31 * result + fk_users;
         return result;
@@ -117,7 +116,7 @@ public class Book {
                 ", author='" + author + '\'' +
                 ", title='" + title + '\'' +
                 ", year=" + year +
-                ", isbn=" + isbn +
+                ", isbn='" + isbn + '\'' +
                 ", lid=" + lid +
                 ", fk_users=" + fk_users +
                 '}';
