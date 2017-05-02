@@ -18,7 +18,7 @@ public class Runner {
         )
         {
 
-            System.out.println("=== Вариант A");
+            System.out.println("\n=== Вариант A\n");
 
             /*
             A_AddUser.run(connection,"login1","pass1","email1@gmail.com",1);
@@ -29,23 +29,9 @@ public class Runner {
             */
             System.out.println("(пользователи и объявления добавлены ранее)");
 
-            System.out.println("=== Вариант B");
+            System.out.println("\n=== Вариант B\n");
 
-            Statement usersStatement = connection.createStatement();
-            ResultSet usersResultSet = usersStatement.executeQuery("select login, roleid from users;");
-            while (usersResultSet.next()) {
-                String login = usersResultSet .getString("login");
-                int role = usersResultSet .getInt("roleid");
-                String roleName="???";
-
-                Statement roleStatement = connection.createStatement();
-                ResultSet roleResultSet = roleStatement.executeQuery("select name from roles where id="+role+";");
-                while (roleResultSet.next()) {
-                    roleName=roleResultSet.getString("name");
-                }
-                System.out.println("Пользователь: " + login+" роль: "+roleName);
-
-            }
+            B_ShowUsers.run(connection);
 
         } catch (SQLException e) {
             e.printStackTrace();

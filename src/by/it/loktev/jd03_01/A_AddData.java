@@ -10,14 +10,6 @@ public class A_AddData {
 
             Statement statement=connection.createStatement();
             statement.executeUpdate("INSERT INTO ads (floor, floors, rooms, address, `desc`, userid) VALUES ("+floor+","+floors+","+rooms+",'"+address+"','"+desc+"',"+user+");");
-/*
-            Statement statement = connection.createStatement();) {
-            //получаем пользователей
-            ResultSet resultSet = statement.executeQuery("select * from users;");
-            while (resultSet.next()) {
-                String out = resultSet.getString("Email") + ", " + resultSet.getString("Login");
-                System.out.println(out);
-                */
     }
 
 }
