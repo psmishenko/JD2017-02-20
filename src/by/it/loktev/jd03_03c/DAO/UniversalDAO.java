@@ -21,15 +21,17 @@ import java.util.List;
 
 public class UniversalDAO<TypeBean> {
 
-    private TypeBean bean; //это некий неизвестный bean
+    //private TypeBean bean2; //это некий неизвестный bean
+    private Class beanClass;
     private String table; //это его таблица в базе
     private Field[] fields; //это поля bean
 
     //конструктор DAO
-    public UniversalDAO(TypeBean bean, String sqlTableName) {
-        this.bean = bean;
+    public UniversalDAO(/*TypeBean bean*/Class beanClass, String sqlTableName) {
+        //this.bean2 = bean;
+        this.beanClass=beanClass; //bean.getClass();
         this.table = sqlTableName;
-        this.fields = bean.getClass().getDeclaredFields();
+        this.fields = /*bean.getClass()*/beanClass.getDeclaredFields();
     }
 
     //=======================================================================================================
@@ -172,7 +174,7 @@ public class UniversalDAO<TypeBean> {
     @SuppressWarnings("unchecked") //подавление warning-а
     private TypeBean newBean() {
         try {
-            return (TypeBean) bean.getClass().newInstance();
+            return (TypeBean)/* bean.getClass()*/beanClass.newInstance();
         } catch (InstantiationException | IllegalAccessException e) {
             e.printStackTrace();
         }

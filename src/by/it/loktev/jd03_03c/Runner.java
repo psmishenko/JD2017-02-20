@@ -14,14 +14,14 @@ public class Runner {
         try {
 
 
-            System.out.println("\n=== Вариант A\n");
+            System.out.println("\n=== тестируем\n");
 
             TestRole.run();
 
             TestUser.run();
 
-            UniversalDAO<User> userDAO=new UniversalDAO<User>(new User(),"users");
-            UniversalDAO<Role> roleDAO=new UniversalDAO<Role>(new Role(),"roles");
+            UniversalDAO<User> userDAO=new UniversalDAO<User>(User.class,"users");
+            UniversalDAO<Role> roleDAO=new UniversalDAO<Role>(Role.class,"roles");
             List<User> users=userDAO.getAll("");
             for ( User user : users ){
                 int roleid=user.getRoleId();

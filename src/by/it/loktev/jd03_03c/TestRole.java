@@ -9,7 +9,7 @@ public class TestRole {
 
     public static void run() throws SQLException {
 
-        UniversalDAO<Role> roleDAO=new UniversalDAO<Role>(new Role(),"roles");
+        UniversalDAO<Role> roleDAO=new UniversalDAO<Role>(Role.class,"roles");
 
         Role role1=roleDAO.read(1);
         System.out.println("Прочитана роль по id: "+role1);

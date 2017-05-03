@@ -13,7 +13,7 @@ public class TestUser {
 
         try {
 
-            UniversalDAO<User> userDAO=new UniversalDAO<User>(new User(),"users");
+            UniversalDAO<User> userDAO=new UniversalDAO<User>(User.class,"users");
 
             //создание
             userDAO.create(user);
