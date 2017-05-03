@@ -1,10 +1,8 @@
-package by.it.loktev.jd03_03;
+package by.it.loktev.jd03_03c;
 
-import by.it.loktev.jd03_03.DAO.DAO;
-import by.it.loktev.jd03_03.DAO.RoleDAO;
-import by.it.loktev.jd03_03.DAO.UserDAO;
-import by.it.loktev.jd03_03.beans.Role;
-import by.it.loktev.jd03_03.beans.User;
+import by.it.loktev.jd03_03c.DAO.UniversalDAO;
+import by.it.loktev.jd03_03c.beans.Role;
+import by.it.loktev.jd03_03c.beans.User;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -22,8 +20,8 @@ public class Runner {
 
             TestUser.run();
 
-            UserDAO userDAO= DAO.getInstance().getUser();
-            RoleDAO roleDAO= DAO.getInstance().getRole();
+            UniversalDAO<User> userDAO=new UniversalDAO<User>(new User(),"users");
+            UniversalDAO<Role> roleDAO=new UniversalDAO<Role>(new Role(),"roles");
             List<User> users=userDAO.getAll("");
             for ( User user : users ){
                 int roleid=user.getRoleId();
@@ -37,7 +35,6 @@ public class Runner {
                         );
 
             }
-
 
         } catch (SQLException e) {
             e.printStackTrace();
