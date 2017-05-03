@@ -1,5 +1,6 @@
 package by.it.loktev.jd03_03;
 
+import by.it.loktev.jd03_03.DAO.DAO;
 import by.it.loktev.jd03_03.DAO.UserDAO;
 import by.it.loktev.jd03_03.beans.User;
 
@@ -13,7 +14,7 @@ public class TestUser {
 
         try {
 
-            UserDAO userDAO = new UserDAO();
+            UserDAO userDAO= DAO.getInstance().getUser();
 
             //создание
             userDAO.create(user);

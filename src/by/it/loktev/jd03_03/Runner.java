@@ -1,5 +1,6 @@
 package by.it.loktev.jd03_03;
 
+import by.it.loktev.jd03_03.DAO.DAO;
 import by.it.loktev.jd03_03.DAO.RoleDAO;
 import by.it.loktev.jd03_03.DAO.UserDAO;
 import by.it.loktev.jd03_03.beans.Role;
@@ -21,8 +22,10 @@ public class Runner {
 
             TestUser.run();
 
-            UserDAO userDAO=new UserDAO();
-            RoleDAO roleDAO=new RoleDAO();
+            //UserDAO userDAO=new UserDAO();
+            //RoleDAO roleDAO=new RoleDAO();
+            UserDAO userDAO= DAO.getInstance().getUser();
+            RoleDAO roleDAO= DAO.getInstance().getRole();
             List<User> users=userDAO.getAll("");
             for ( User user : users ){
                 int roleid=user.getRoleId();

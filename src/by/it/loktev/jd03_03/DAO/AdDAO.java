@@ -11,6 +11,22 @@ import java.util.List;
 
 public class AdDAO extends AbstractDAO implements InterfaceDAO<Ad> {
 
+    static private AdDAO instance;
+
+    private AdDAO(){
+    }
+
+    static AdDAO getInstance(){
+        if ( instance==null ) {
+            synchronized (AdDAO.class) {
+                if (instance == null) {
+                    instance = new AdDAO();
+                }
+            }
+        }
+        return instance;
+    }
+
     @Override
     public List<Ad> getAll(String whereString) throws SQLException {
         List<Ad> list=new ArrayList<Ad>();

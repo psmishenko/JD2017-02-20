@@ -11,6 +11,22 @@ import java.util.List;
 
 public class UserDAO extends AbstractDAO implements InterfaceDAO<User> {
 
+    static private UserDAO instance;
+
+    private UserDAO(){
+    }
+
+    static UserDAO getInstance(){
+        if ( instance==null ) {
+            synchronized (UserDAO.class) {
+                if (instance == null) {
+                    instance = new UserDAO();
+                }
+            }
+        }
+        return instance;
+    }
+
     @Override
     public List<User> getAll(String whereString) throws SQLException {
         List<User> list=new ArrayList<User>();

@@ -11,6 +11,23 @@ import java.util.List;
 
 public class RoleDAO extends AbstractDAO implements InterfaceDAO<Role> {
 
+    static private RoleDAO instance;
+
+    private RoleDAO(){
+    }
+
+    static RoleDAO getInstance(){
+        if ( instance==null ) {
+            synchronized (UserDAO.class) {
+                if (instance == null) {
+                    instance = new RoleDAO();
+                }
+            }
+        }
+        return instance;
+    }
+
+
     @Override
     public List<Role> getAll(String whereString) throws SQLException {
         List<Role> list=new ArrayList<Role>();
