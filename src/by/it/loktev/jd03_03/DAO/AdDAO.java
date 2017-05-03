@@ -19,7 +19,7 @@ public class AdDAO extends AbstractDAO implements InterfaceDAO<Ad> {
                 Statement statement=connection.createStatement();
 
         ){
-            String SQL="select * from ads;";
+            String SQL="select * from ads "+whereString+";";
             ResultSet rs=statement.executeQuery(SQL);
             while ( rs.next() ) {
                 Ad ad=new Ad(

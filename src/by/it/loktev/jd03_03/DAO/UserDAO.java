@@ -19,7 +19,7 @@ public class UserDAO extends AbstractDAO implements InterfaceDAO<User> {
                 Statement statement=connection.createStatement();
 
         ){
-            String SQL="select * from users;";
+            String SQL="select * from users "+whereString+";";
             ResultSet rs=statement.executeQuery(SQL);
             while ( rs.next() ) {
                 User user=new User(
