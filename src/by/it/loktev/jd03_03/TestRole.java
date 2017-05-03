@@ -1,7 +1,7 @@
-package by.it.loktev.jd03_02.test_crud;
+package by.it.loktev.jd03_03;
 
-import by.it.loktev.jd03_02.beans.Role;
-import by.it.loktev.jd03_02.crud.RoleCRUD;
+import by.it.loktev.jd03_03.DAO.RoleDAO;
+import by.it.loktev.jd03_03.beans.Role;
 
 import java.sql.SQLException;
 
@@ -16,11 +16,9 @@ public class TestRole {
         */
         //roleCRUD.update(role);
 
-        RoleCRUD roleCRUD=new RoleCRUD();
+        RoleDAO roleDAO=new RoleDAO();
 
-        Role role1=new Role();
-        role1.setId(1);
-        role1=roleCRUD.read(role1);
+        Role role1=roleDAO.read(1);
         System.out.println("Прочитана роль по id: "+role1);
 
     }
