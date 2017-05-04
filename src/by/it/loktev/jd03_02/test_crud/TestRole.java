@@ -10,7 +10,7 @@ public class TestRole {
     public static void run() throws SQLException {
 
         /*
-        RoleCRUD roleCRUD=new RoleCRUD();
+        RoleDAO roleCRUD=new RoleDAO();
         Role role=new Role(1,"Администратор2");
         roleCRUD.create(role);
         */
