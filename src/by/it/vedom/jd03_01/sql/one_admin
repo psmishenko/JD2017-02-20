@@ -1,0 +1,2 @@
+INSERT INTO `users`(`login`, `password`, `email`, `role_role_id`)
+VALUES ('Admin','admin','adm@mail.ru',1);
