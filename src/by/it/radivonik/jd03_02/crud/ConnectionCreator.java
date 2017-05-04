@@ -9,7 +9,7 @@ import java.util.Properties;
 /**
  * Created by Radivonik on 29.04.2017.
  */
-public class ConnectionCreater {
+public class ConnectionCreator {
     static private Connection connection;
 
     static {

@@ -13,8 +13,8 @@ import java.sql.Statement;
 public class RoleCRUD {
     public boolean create(Role role) throws SQLException {
         try (
-            Connection connection = ConnectionCreater.getConnection();
-            Statement statement = connection.createStatement(); ) {
+                Connection connection = ConnectionCreator.getConnection();
+                Statement statement = connection.createStatement(); ) {
             String sql = String.format("INSERT INTO roles (role) VALUES ('%s')",role.getRole());
             if (statement.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS) == 1) {
                 ResultSet keys = statement.getGeneratedKeys();

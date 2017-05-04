@@ -5,14 +5,14 @@ package by.it.radivonik.jd03_02.beans;
  */
 public class Role {
     private int id;
-    private String role;
+    private String name;
 
     public Role() {
     }
 
-    public Role(int id, String role) {
+    public Role(int id, String name) {
         this.id = id;
-        this.role = role;
+        this.name = name;
     }
 
     public int getId() {
@@ -23,37 +23,16 @@ public class Role {
         this.id = id;
     }
 
-    public String getRole() {
-        return role;
+    public String getName() {
+        return name;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return "Role{" +
-                "id=" + id +
-                ", role='" + role + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Role role1 = (Role) o;
-
-        if (id != role1.id) return false;
-        return role != null ? role.equals(role1.role) : role1.role == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (role != null ? role.hashCode() : 0);
-        return result;
+        return "Role{id=" + id + ", name='" + name + "'}";
     }
 }
