@@ -31,12 +31,13 @@ public class Test {
         if(dao.user.create(user)) System.out.println("Create user: "+dao.user.read(user.getId()));
         user.setEmail("abra");
         if(dao.user.update(user)) System.out.println("update user: "+dao.user.read(user.getId()));
-        if(dao.user.delete(user)) System.out.println("deleted user");
+        if(dao.user.delete(user)) System.out.println("deleted user\n"+dao.user.getAll(""));
         // Test Book
         Book book = new Book(1,"S.Frog","LAlaland",2016,"123-444-321",123456,2);
         if(dao.book.create(book)) System.out.println("Create book: "+dao.book.read(book.getId()));
         book.setTitle("Lalalallnnnnnnd");
         if(dao.book.update(book)) System.out.println("upd book: "+dao.book.read(book.getId()));
-        if(dao.book.delete(book)) System.out.println("deleted");
+        if(dao.book.delete(book)) System.out.println("deleted\n"+dao.book.getAll(""));
+        ShowUsers.showAllUsers(dao.user.getAll(""),dao.role.getAll(""));
     }
 }
