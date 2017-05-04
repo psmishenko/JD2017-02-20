@@ -7,7 +7,7 @@ import java.sql.SQLException;
 /**
  * Created by Radivonik on 04.05.2017.
  */
-public class TovarDAO extends AbstractDAO<Tovar> implements InterfaceDAO<Tovar> {
+public class TovarDAO extends AbstractDAO<Tovar> {
     @Override
     protected String sqlSelect() {
         return "SELECT * FROM tovar";

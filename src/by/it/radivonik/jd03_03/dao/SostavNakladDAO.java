@@ -7,7 +7,7 @@ import java.sql.SQLException;
 /**
  * Created by Radivonik on 05.05.2017.
  */
-public class SostavNakladDAO extends AbstractDAO<SostavNaklad> implements InterfaceDAO<SostavNaklad>  {
+public class SostavNakladDAO extends AbstractDAO<SostavNaklad> {
     @Override
     protected String sqlSelect() {
         return "SELECT * FROM sostavnaklad";

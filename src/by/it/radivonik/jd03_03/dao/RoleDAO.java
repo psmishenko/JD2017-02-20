@@ -7,7 +7,7 @@ import java.sql.SQLException;
 /**
  * Created by Radivonik on 03.05.2017.
  */
-public class RoleDAO extends AbstractDAO<Role> implements InterfaceDAO<Role> {
+public class RoleDAO extends AbstractDAO<Role> {
     @Override
     protected String sqlSelect() {
         return "SELECT * FROM role";

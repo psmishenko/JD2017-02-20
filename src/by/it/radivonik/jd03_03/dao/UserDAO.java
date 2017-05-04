@@ -8,7 +8,7 @@ import java.sql.SQLException;
 /**
  * Created by Radivonik on 03.05.2017.
  */
-public class UserDAO extends AbstractDAO<User> implements InterfaceDAO<User> {
+public class UserDAO extends AbstractDAO<User> {
     @Override
     protected String sqlSelect() {
         return "SELECT * FROM user";
