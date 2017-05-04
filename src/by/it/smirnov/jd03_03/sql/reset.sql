@@ -1,0 +1,22 @@
+DROP TABLE IF EXISTS `limits`;
+DROP TABLE IF EXISTS `kursvaluts`;
+DROP TABLE IF EXISTS `sdels`;
+DROP TABLE IF EXISTS `banks`;
+DROP TABLE IF EXISTS `sysopers`;
+DROP TABLE IF EXISTS `usersroles`;
+DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `opertypes`;
+DROP TABLE IF EXISTS `roles`;
+DROP TABLE IF EXISTS `groupsbanks`;
+DROP TABLE IF EXISTS `countrys`;
+DROP TABLE IF EXISTS `valuts`;
+
+
+
+
+
+
+
+
+
+
