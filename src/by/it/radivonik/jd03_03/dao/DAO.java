@@ -10,9 +10,11 @@ public class DAO {
     private TovarDAO tovar;
     private KlientDAO klient;
     private AvtoDAO avto;
+    private NakladDAO naklad;
+    private SostavNakladDAO sostavnaklad;
+    private SkladDAO sklad;
 
     private DAO() {
-
     }
 
     public static DAO getInstance() {
@@ -25,6 +27,9 @@ public class DAO {
                     dao.tovar = new TovarDAO();
                     dao.klient = new KlientDAO();
                     dao.avto = new AvtoDAO();
+                    dao.naklad = new NakladDAO();
+                    dao.sostavnaklad = new SostavNakladDAO();
+                    dao.sklad = new SkladDAO();
                 }
             }
         }
@@ -49,5 +54,17 @@ public class DAO {
 
     public AvtoDAO getAvto() {
         return avto;
+    }
+
+    public NakladDAO getNaklad() {
+        return naklad;
+    }
+
+    public SostavNakladDAO getSostavnaklad() {
+        return sostavnaklad;
+    }
+
+    public SkladDAO getSklad() {
+        return sklad;
     }
 }

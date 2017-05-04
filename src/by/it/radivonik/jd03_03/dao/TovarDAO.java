@@ -31,7 +31,6 @@ public class TovarDAO extends AbstractDAO<Tovar> implements InterfaceDAO<Tovar> 
         return String.format(sql, tovar.getId());
     }
 
-
     @Override
     protected void setId(Tovar tovar, int id) {
         tovar.setId(id);
