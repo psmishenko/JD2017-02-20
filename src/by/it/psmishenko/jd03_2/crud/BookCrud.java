@@ -45,12 +45,12 @@ public class BookCrud {
             return (1 == statement.executeUpdate(sql));
         }
     }
-    public  Book read(Book user) throws SQLException {
+    public  Book read(Book book) throws SQLException {
         Book resultBook = null;
         try(Connection connection = ConnectorCreator.getConnection();
             Statement statement = connection.createStatement()) {
             String sql = String.format("SELECT `ID`, `Author`, `Title`, `Year`, `ISBN`, `LID`, `FK_users` FROM `books` WHERE ID =  %d "
-                    ,user.getId());
+                    ,book.getId());
             ResultSet rs = statement.executeQuery(sql);
             if(rs.next()){
                 resultBook = new Book(rs.getInt("ID"),rs.getString("Author"),rs.getString("Title"),
