@@ -1,7 +1,7 @@
 package by.it.radivonik.jd03_02.beans;
 
 /**
- * Created by Radivonik on 29.04.2017.
+ * Created by Radivonik on 03.05.2017.
  */
 public class User {
     private int id;
@@ -57,7 +57,7 @@ public class User {
         return idRole;
     }
 
-    public void setIdRole(int id_role) {
+    public void setIdRole(int idRole) {
         this.idRole = idRole;
     }
 

@@ -3,16 +3,18 @@ package by.it.radivonik.jd03_02.beans;
 /**
  * Created by Radivonik on 04.05.2017.
  */
-public class Role {
+public class Tovar {
     private int id;
     private String name;
+    private String edizm;
 
-    public Role() {
+    public Tovar() {
     }
 
-    public Role(int id, String name) {
+    public Tovar(int id, String name, String edizm) {
         this.id = id;
         this.name = name;
+        this.edizm = edizm;
     }
 
     public int getId() {
@@ -31,8 +33,16 @@ public class Role {
         this.name = name;
     }
 
+    public String getEdizm() {
+        return edizm;
+    }
+
+    public void setEdizm(String edizm) {
+        this.edizm = edizm;
+    }
+
     @Override
     public String toString() {
-        return "Role{id=" + id + ", name='" + name + "'}";
+        return "Tovar{id=" + id + ", name='" + name + "', edizm='" + edizm + "'}";
     }
 }
