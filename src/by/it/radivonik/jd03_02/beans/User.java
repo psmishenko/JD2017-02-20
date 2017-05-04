@@ -8,17 +8,17 @@ public class User {
     private String login;
     private String password;
     private String email;
-    private int id_role;
+    private int idRole;
 
     public User() {
     }
 
-    public User(int id, String login, String password, String email, int id_role) {
+    public User(int id, String login, String password, String email, int idRole) {
         this.id = id;
         this.login = login;
         this.password = password;
         this.email = email;
-        this.id_role = id_role;
+        this.idRole = idRole;
     }
 
     public int getId() {
@@ -53,32 +53,18 @@ public class User {
         this.email = email;
     }
 
-    public int getId_role() {
-        return id_role;
+    public int getIdRole() {
+        return idRole;
     }
 
-    public void setId_role(int id_role) {
-        this.id_role = id_role;
+    public void setIdRole(int id_role) {
+        this.idRole = idRole;
     }
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", id_role=" + id_role +
-                '}';
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (login != null ? login.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + id_role;
-        return result;
+        return
+            "User{id=" + id + ", login='" + login + "', password='" +
+            password + "', email='" + email + "', idRole=" + idRole + "}";
     }
 }
