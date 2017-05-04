@@ -28,7 +28,22 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
 
     @Override
     public List<T> getAll(String where) throws SQLException {
-        List<T> beans = new ArrayList<>();
+        final List<T> beans = new ArrayList<T>(){
+            @Override
+            public String toString() {
+                StringBuilder res = new StringBuilder("");
+                int c = 0;
+                String delim = "";
+                for (T bean: this) {
+                    res.append(delim).append(bean);
+                    delim = "\n";
+                    c++;
+                };
+                res.append(delim).append("Итого записей: ").append(c);
+                return res.toString();
+            }
+        };
+
         try (
             Connection connection = ConnectionCreator.getConnection();
             Statement statement = connection.createStatement();) {
@@ -43,7 +58,7 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
 
     @Override
     public T read(int id) throws SQLException {
-        List<T> beans = getAll("WHERE id = " + id);
+        List<T> beans = getAll(sqlWhereId(id));
         if (beans.size() > 0)
             return beans.get(0);
         else
@@ -51,6 +66,9 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
     }
 
     protected abstract String sqlSelect();
+    protected String sqlWhereId(int id) {
+        return "WHERE id = " + id;
+    };
     protected abstract String sqlInsert(T bean);
     protected abstract String sqlUpdate(T bean);
     protected abstract String sqlDelete(T bean);
