@@ -13,11 +13,24 @@ public class Runner {
         DAO dao = DAO.getInstance();
 
         try {
-            User user = new User(0, "user2", "password2", "user2@mail.ru", 2);
+            System.out.println("Вариант A");
+            System.out.println("Список пользователей:\n" + dao.getUserRole().getAll(""));
+            User user = new User(0, "user", "password", "user@mail.ru", 2);
             dao.getUser().create(user);
-            System.out.println(dao.getUser().getAll(""));
-            System.out.println(dao.getUser().read(user.getId()));
+            System.out.println("Создание нового пользователя:\n" + dao.getUserRole().read(user.getId()));
+            System.out.println("Список пользователей после создания пользователя:\n" + dao.getUser().getAll(""));
+            user.setLogin("new_login");
+            user.setPassword("new_password");
+            dao.getUser().update(user);
+            System.out.println("Изменение пользователя:\n" + dao.getUserRole().read(user.getId()));
             dao.getUser().delete(user);
+            System.out.println("Список пользователей после удаления пользователя:\n" + dao.getUserRole().getAll(""));
+
+            System.out.println("\nВариант B");
+            System.out.println("См. реализацию класса DAO");
+
+            System.out.println("\nВариант C");
+            System.out.println("Не реализован");
         }
         catch (SQLException e) {
             e.printStackTrace();

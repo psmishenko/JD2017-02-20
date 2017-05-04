@@ -15,6 +15,11 @@ public class UserDAO extends AbstractDAO<User> implements InterfaceDAO<User> {
     }
 
     @Override
+    protected String sqlWhereId(int id) {
+        return "WHERE user.id = " + id;
+    }
+
+    @Override
     protected String sqlInsert(User user) {
         String sql = "INSERT INTO user (login, password, email, id_role) VALUES ('%s', '%s', '%s', %d)";
         return String.format(sql, user.getLogin(), user.getPassword(), user.getEmail(), user.getIdRole());
@@ -31,7 +36,6 @@ public class UserDAO extends AbstractDAO<User> implements InterfaceDAO<User> {
         String sql = "DELETE FROM user WHERE id = %d";
         return String.format(sql, user.getId());
     }
-
 
     @Override
     protected void setId(User user, int id) {
