@@ -1,4 +1,4 @@
-package by.it.vedom.jd02_10;
+package by.it.vedom.jd02_10.Converter;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

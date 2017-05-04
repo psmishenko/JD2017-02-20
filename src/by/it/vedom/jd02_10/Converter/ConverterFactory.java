@@ -1,4 +1,4 @@
-package by.it.vedom.jd02_10;
+package by.it.vedom.jd02_10.Converter;
 
 class ConverterFactory {
     private enum Direction{

@@ -1,14 +1,13 @@
-package by.it.vedom.jd02_10;
+package by.it.vedom.jd02_10.Converter;
 
-
-import by.it.vedom.jd02_09.Students;
+import by.it.akhmelev.jd02_09.generate.Students;
 
 import java.io.File;
 
 public class Runner {
     public static void main(String[] args) {
         File file;
-        String src=System.getProperty("user.dir")+"/src/by/it/vedom/";
+        String src=System.getProperty("user.dir")+"/src/by/it/akhmelev/";
         ConverterFactory converterFactory = new ConverterFactory();
 
         //из XML-файла в JSON-текст
