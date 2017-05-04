@@ -7,7 +7,7 @@ import java.sql.SQLException;
 /**
  * Created by Radivonik on 05.05.2017.
  */
-public class SkladDAO extends AbstractDAO<Sklad> implements InterfaceDAO<Sklad>  {
+public class SkladDAO extends AbstractDAO<Sklad>  {
     @Override
     protected String sqlSelect() {
         return "SELECT * FROM sklad";

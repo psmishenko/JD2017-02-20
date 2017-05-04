@@ -7,7 +7,7 @@ import java.sql.SQLException;
 /**
  * Created by Radivonik on 04.05.2017.
  */
-public class KlientDAO extends AbstractDAO<Klient> implements InterfaceDAO<Klient> {
+public class KlientDAO extends AbstractDAO<Klient>{
     @Override
     protected String sqlSelect() {
         return "SELECT * FROM klient";

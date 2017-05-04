@@ -7,7 +7,7 @@ import java.sql.SQLException;
 /**
  * Created by Radivonik on 04.05.2017.
  */
-public class AvtoDAO extends AbstractDAO<Avto> implements InterfaceDAO<Avto> {
+public class AvtoDAO extends AbstractDAO<Avto> {
     @Override
     protected String sqlSelect() {
         return "SELECT * FROM avto";
