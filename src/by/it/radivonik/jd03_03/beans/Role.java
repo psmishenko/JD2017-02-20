@@ -1,4 +1,4 @@
-package by.it.radivonik.jd03_02.beans;
+package by.it.radivonik.jd03_03.beans;
 
 /**
  * Created by Radivonik on 04.05.2017.

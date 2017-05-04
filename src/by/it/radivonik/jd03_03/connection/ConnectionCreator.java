@@ -1,11 +1,11 @@
-package by.it.radivonik.jd03_03.crud;
+package by.it.radivonik.jd03_03.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- * Created by Radivonik on 03.05.2017.
+ * Created by Radivonik on 04.05.2017.
  */
 public class ConnectionCreator {
     static private Connection connection;

@@ -80,7 +80,7 @@ DROP TABLE IF EXISTS `klients`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `klients` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
+  `numgos` varchar(255) NOT NULL,
   `unn` varchar(20) NOT NULL,
   `adres` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)

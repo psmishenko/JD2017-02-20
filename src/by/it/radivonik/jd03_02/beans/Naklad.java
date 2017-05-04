@@ -3,7 +3,7 @@ package by.it.radivonik.jd03_02.beans;
 import java.sql.Date;
 
 /**
- * Created by aleksandr.radivonik on 04.05.2017.
+ * Created by Radivonik on 03.05.2017.
  */
 public class Naklad {
     private int id;
@@ -95,15 +95,8 @@ public class Naklad {
 
     @Override
     public String toString() {
-        return "Naklad{" +
-                "id=" + id +
-                ", date=" + date +
-                ", num='" + num + '\'' +
-                ", seria='" + seria + '\'' +
-                ", idUser=" + idUser +
-                ", idType=" + idType +
-                ", idKlient=" + idKlient +
-                ", idAvto=" + idAvto +
-                '}';
+        return
+            "Naklad{id=" + id + ", date=" + date + ", num='" + num + "', seria='" + seria + "', " +
+            "idUser=" + idUser + ", idType=" + idType + ", idKlient=" + idKlient + ", idAvto=" + idAvto + "}";
     }
 }

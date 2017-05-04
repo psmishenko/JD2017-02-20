@@ -1,13 +1,11 @@
-package by.it.radivonik.jd03_02.crud;
-
+package by.it.radivonik.jd03_02.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
 
 /**
- * Created by Radivonik on 29.04.2017.
+ * Created by Radivonik on 04.05.2017.
  */
 public class ConnectionCreator {
     static private Connection connection;
@@ -21,7 +19,7 @@ public class ConnectionCreator {
         }
     }
 
-    static Connection getConnection() throws SQLException {
+    public static Connection getConnection() throws SQLException {
         if (connection == null || connection.isClosed()) {
             synchronized (CN.URL_DB) {
                 connection = DriverManager.getConnection(CN.URL_DB, CN.USER_DB, CN.PASSWORD_DB);
