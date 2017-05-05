@@ -16,12 +16,12 @@ public class UserRoleDAO extends UserDAO {
     @Override
     protected UserRole newBean(ResultSet resultSet) throws SQLException {
         UserRole userRole = new UserRole(
-                resultSet.getInt("id"),
-                resultSet.getString("login"),
-                resultSet.getString("password"),
-                resultSet.getString("email"),
-                resultSet.getInt("id_role"),
-                resultSet.getString("name_role"));
+            resultSet.getInt("id"),
+            resultSet.getString("login"),
+            resultSet.getString("password"),
+            resultSet.getString("email"),
+            resultSet.getInt("id_role"),
+            resultSet.getString("name_role"));
         return userRole;
     }
 }
