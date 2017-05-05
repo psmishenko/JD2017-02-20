@@ -13,6 +13,9 @@ public class Runner {
             System.out.println("Добавлен пользователь");
             new A_AddData().run();
             System.out.println("Добавлены данные");
+
+            System.out.println("\nВариант B");
+            new B_ShowUsers().run();
         } catch (SQLException e) {
             e.printStackTrace();
         }
