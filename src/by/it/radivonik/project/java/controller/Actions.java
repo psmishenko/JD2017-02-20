@@ -1,7 +1,5 @@
 package by.it.radivonik.project.java.controller;
 
-import sun.rmi.log.LogInputStream;
-
 /**
  * Created by Radivonik on 05.05.2017.
  */
@@ -29,7 +27,7 @@ public enum Actions {
     };
 
     public String jsp = "/error.jsp";
-    private ActionCommand command;
+    public ActionCommand command;
     public ActionCommand getCurrentCommand() {
         return command;
     }
