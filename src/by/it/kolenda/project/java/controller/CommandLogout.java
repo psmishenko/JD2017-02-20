@@ -1,12 +1,12 @@
 package by.it.kolenda.project.java.controller;
 
-import com.sun.deploy.net.HttpRequest;
+import javax.servlet.http.HttpServletRequest;
 
 
 public class CommandLogout implements ActionComand{
 
     @Override
-    public String execute(HttpRequest request) {
+    public String execute(HttpServletRequest request) {
         return "/index.jsp";
     }
 }
