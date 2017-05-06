@@ -5,9 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by Radivonik on 05.05.2017.
  */
-public class CommandLogout implements ActionCommand {
+public class CommandLogout extends Action {
     @Override
-    public String execute(HttpServletRequest req) {
-        return "/logout.jsp";
+    public Action execute(HttpServletRequest req) {
+        return null;
     }
 }

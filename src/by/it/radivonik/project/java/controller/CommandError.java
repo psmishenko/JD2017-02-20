@@ -5,9 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by Radivonik on 05.05.2017.
  */
-public class CommandError implements ActionCommand {
+public class CommandError extends Action {
     @Override
-    public String execute(HttpServletRequest req) {
-        return "/error.jsp";
+    public Action execute(HttpServletRequest req) {
+        return null;
     }
 }
