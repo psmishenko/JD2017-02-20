@@ -5,9 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by user on 05.05.2017.
  */
-public class CommandSignup implements ActionCommand {
+ class CmdError extends Action {
     @Override
-    public String execute(HttpServletRequest request) {
-        return "/signup.jsp";
+    public Action execute(HttpServletRequest request) {
+        return null;
     }
 }

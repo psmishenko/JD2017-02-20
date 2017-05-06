@@ -1,32 +1,41 @@
 package by.it.psmishenko.project.java.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * Created by user on 05.05.2017.
  */
 enum  Actions {
     SIGNUP {
         {
-            this.command = new CommandSignup();
+            this.command = new CmdSignup();
         }
     },
     LOGIN {
         {
-            this.command = new CommandLogin();
+            this.command = new CmdLogin();
         }
     },
     LOGOUT {
         {
-            this.command = new CommandLogout();
+            this.command = new CmdLogout();
         }
     },
     ERROR {
         {
-            this.command = new CommandError();
+            this.command = new CmdError();
         }
     };
-    public String jsp = "/error.jsp";
-    public ActionCommand command;
-    public ActionCommand getCurrentCommand(){
-        return command;
+
+    public Action command;
+    static  Action defineFrom(HttpServletRequest request){
+        String command = request.getParameter("command");
+        Action res;
+        try {
+            res = Actions.valueOf(command.toUpperCase()).command;
+        }catch (IllegalArgumentException e){
+            res = Actions.ERROR.command;
+        }
+       return  res;
     }
 }
