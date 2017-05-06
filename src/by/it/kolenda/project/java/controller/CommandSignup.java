@@ -1,14 +1,12 @@
 package by.it.kolenda.project.java.controller;
 
-import com.sun.deploy.net.HttpRequest;
+import javax.servlet.http.HttpServletRequest;
 
-/**
- * Created by user on 05.05.2017.
- */
+
 public class CommandSignup implements ActionComand{
 
     @Override
-    public String execute(HttpRequest request) {
+    public String execute(HttpServletRequest request) {
         return "/index.jsp";
     }
 }
