@@ -15,9 +15,9 @@ public class CommandSignUp extends Action {
         User user = new User();
         try {
             user.setId(0);
-            user.setLogin(Form.getString(req,"login",Pattern.LOGIN));
-            user.setPassword(Form.getString(req,"password",Pattern.PASSWORD));
-            user.setEmail(Form.getString(req,"email",Pattern.EMAIL));
+            user.setLogin(Form.getString(req, "login", Pattern.LOGIN));
+            user.setPassword(Form.getString(req, "password",  Pattern.PASSWORD));
+            user.setEmail(Form.getString(req, "email", Pattern.EMAIL));
             user.setIdRole(2);
             DAO dao = DAO.getInstance();
             if (dao.getUser().create(user))
