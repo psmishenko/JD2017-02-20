@@ -7,12 +7,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 
 public class FrontController extends HttpServlet{
+
+    private RequestDispatcher dispatcher(Action action){
+        return getServletContext().getRequestDispatcher()
+    }
+
+
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+//        Action action = Action.defineFrom(req);
+//        Action nextAction = action.execute(req);
+//        if (nextAction !==null)
+
+
         process(req, resp);
     }
 
