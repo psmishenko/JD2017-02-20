@@ -1,6 +1,8 @@
 package by.it.kolenda.project.java.controller;
 
 
+import javax.servlet.http.HttpServletRequest;
+
 enum Actions {
     SIGNUP {{
         this.command = new CommandSignup();
@@ -18,11 +20,23 @@ enum Actions {
     public String jsp = "/error.jsp";
     public ActionComand command;
 
-    public ActionComand getCurrentCommand()
+    static Action defineFrom(HttpServletRequest request);
 
-    {
-        return command;
-    }
+    String command = request.getParameter("command");
+    Action res;
+    try
+
+            catch
+
+            return res;
+
+
+
+//    public ActionComand getCurrentCommand()
+//
+//    {
+//        return command;
+//    }
 
     ;
 
