@@ -1,6 +1,6 @@
 <%@ include file="include/begin-html.jsp" %>
 
-<form class="form-horizontal">
+<form class="form-horizontal" action="do?command=SignUp" method="POST">
 <fieldset>
 
 <!-- Form Name -->
