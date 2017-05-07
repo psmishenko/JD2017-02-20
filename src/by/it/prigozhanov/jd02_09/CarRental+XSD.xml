@@ -2,8 +2,6 @@
 <CarList xmlns="http://jd02_09.prigozhanov.it.by"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://jd02_09.prigozhanov.it.by CarRental.xsd">
-
-    <SportCars>
         <Car>
             <Discription>A fearless design philosophy has led to the DB11's iconic looks</Discription>
             <Model>
@@ -46,5 +44,4 @@
             <Insuranse/>
             <Location>Berlin</Location>
         </Car>
-    </SportCars>
 </CarList>

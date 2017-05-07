@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CarList xmlns="http://TaskB.jd03_02.prigozhanov.it.by"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://TaskB.jd03_02.prigozhanov.it.by CarRental.xsd">
+    <Car>
+        <Mark>BMW</Mark>
+        <Model>M6</Model>
+        <HP>620</HP>
+        <Location>Berlin</Location>
+        <Luggage_capacity>3</Luggage_capacity>
+    </Car>
+    <Car>
+        <Mark>BMW</Mark>
+        <Model>M3</Model>
+        <HP>450</HP>
+        <Location>Minsk</Location>
+        <Luggage_capacity>3</Luggage_capacity>
+    </Car>
+    <Car>
+        <Mark>Porsche</Mark>
+        <Model>Cayene</Model>
+        <HP>300</HP>
+        <Location>Minsk</Location>
+        <Luggage_capacity>4</Luggage_capacity>
+    </Car>
+    <Car>
+        <Mark>Honda</Mark>
+        <Model>Accord</Model>
+        <HP>320</HP>
+        <Location>Minsk</Location>
+        <Luggage_capacity>4</Luggage_capacity>
+    </Car>
+    <Car>
+        <Mark>Honda</Mark>
+        <Model>Civic</Model>
+        <HP>240</HP>
+        <Location>Misnk</Location>
+        <Luggage_capacity>3</Luggage_capacity>
+    </Car>
+</CarList>
