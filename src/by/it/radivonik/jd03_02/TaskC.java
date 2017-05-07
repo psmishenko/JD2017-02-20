@@ -30,7 +30,7 @@ public class TaskC {
         userCRUD.create(new User(0, "radivonik", "admin", "olsy@tut.by", roleAdmin.getId()));
         System.out.println("Пользователи созданы");
 
-        System.out.println("Пересоздание чистой базы данных");
+        System.out.println("Пересоздание чистой Базы данных");
         new C_Reset().run();
         new C_Init().run();
     }
