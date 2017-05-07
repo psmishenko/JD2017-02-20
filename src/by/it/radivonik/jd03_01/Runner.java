@@ -8,11 +8,7 @@ import java.sql.SQLException;
 public class Runner {
     public static void main(String[] args) {
         try {
-            System.out.println("Вариант C");
-            new C_Reset().run();
-            new C_Init().run();
-
-            System.out.println("\nВариант A");
+            System.out.println("Вариант A");
             new A_AddUser().run();
             new A_AddData().run();
 
@@ -20,6 +16,9 @@ public class Runner {
             new B_AddRoles().run();
             new B_ShowUsers().run();
 
+            System.out.println("\nВариант C");
+            new C_Reset().run();
+            new C_Init().run();
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -56,4 +56,19 @@ public class RoleCRUD {
             return statement.executeUpdate(sql) == 1;
         }
     }
+
+    public Role readByName(String name) throws SQLException  {
+        try (
+            Connection connection = ConnectionCreator.getConnection();
+            Statement statement = connection.createStatement()) {
+            String sql = String.format("SELECT * FROM role WHERE name = '%s'", name);
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+                return new Role(
+                        resultSet.getInt("id"),
+                        resultSet.getString("name"));
+            }
+        }
+        return null;
+    }
 }

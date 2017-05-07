@@ -12,15 +12,17 @@ import java.sql.SQLException;
  */
 public class Runner {
     public static void main(String[] args) throws SQLException {
-//        RoleCRUD roleCRUD = new RoleCRUD();
-//        Role role = new Role(0, "Admin");
-//        roleCRUD.create(role);
+        try {
+            System.out.println("Вариант A");
+            new TaskA().run();
 
-        UserCRUD userCRUD = new UserCRUD();
-//        userCRUD.create(new User(0, "alex", "1234", "alex@mail.by", 1));
+            System.out.println("\nВариант B");
+            new TaskB().run();
 
-        User user = new User();
-        user.setId(1);
-        System.out.println(userCRUD.read(user));
+            System.out.println("\nВариант C");
+            new TaskC().run();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
