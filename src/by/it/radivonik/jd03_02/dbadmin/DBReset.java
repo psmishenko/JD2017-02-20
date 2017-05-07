@@ -1,6 +1,6 @@
-package by.it.radivonik.jd03_01;
+package by.it.radivonik.jd03_02.dbadmin;
 
-import by.it.radivonik.jd03_01.connection.ConnectionCreator;
+import by.it.radivonik.jd03_02.connection.ConnectionCreator;
 
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -8,8 +8,8 @@ import java.sql.Statement;
 /**
  * Created by Radivonik on 07.05.2017.
  */
-public class C_Reset {
-    public void run() throws SQLException {
+public class DBReset {
+    public static void exec() throws SQLException {
         Statement statement = ConnectionCreator.getConnection().createStatement();
         statement.executeUpdate("DROP TABLE IF EXISTS `sklad`");
         statement.executeUpdate("DROP TABLE IF EXISTS `sostavnaklad`");

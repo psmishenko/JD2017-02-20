@@ -22,7 +22,7 @@ public class TaskA {
             System.out.printf("Роль: '%s', id: %d\n", role.getName(), role.getId());
 
         System.out.printf("Создание нового пользователя:\n");
-        User user = new User(0, "new_login", "new_password", "new_email", 2);
+        User user = new User(0, "new_login", "new_password", "new_email", new RoleCRUD().readByName("admin").getId());
         UserCRUD userCRUD = new UserCRUD();
         userCRUD.create(user);
         user = userCRUD.read(user);
