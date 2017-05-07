@@ -16,5 +16,6 @@ public class A_AddUser {
             "INSERT INTO user (id, login, password, email, id_role) VALUES (100, 'user1', 'password1', 'email1', 2)");
         statement.executeUpdate(
             "INSERT INTO user (id, login, password, email, id_role) VALUES (101, 'user2', 'password2', 'email1', 3)");
+        System.out.println("Добавлены пользователи");
     }
 }

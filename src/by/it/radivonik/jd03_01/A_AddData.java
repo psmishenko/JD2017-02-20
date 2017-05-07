@@ -19,5 +19,6 @@ public class A_AddData {
         statement.executeUpdate("INSERT INTO sklad (id, count, cena, id_tovar, id_user) VALUES (100, 20, 1.34, 100, 100)");
         statement.executeUpdate("INSERT INTO sklad (id, count, cena, id_tovar, id_user) VALUES (101, 30, 0.85, 101, 100)");
         statement.executeUpdate("INSERT INTO sklad (id, count, cena, id_tovar, id_user) VALUES (102, 40, 0.43, 102, 100)");
+        System.out.println("Добавлены данные");
     }
 }

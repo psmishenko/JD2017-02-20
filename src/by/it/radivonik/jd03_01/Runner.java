@@ -8,14 +8,18 @@ import java.sql.SQLException;
 public class Runner {
     public static void main(String[] args) {
         try {
-            System.out.println("Вариант A");
+            System.out.println("Вариант C");
+            new C_Reset().run();
+            new C_Init().run();
+
+            System.out.println("\nВариант A");
             new A_AddUser().run();
-            System.out.println("Добавлен пользователь");
             new A_AddData().run();
-            System.out.println("Добавлены данные");
 
             System.out.println("\nВариант B");
+            new B_AddRoles().run();
             new B_ShowUsers().run();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
