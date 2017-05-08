@@ -3,14 +3,14 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>Form Name</legend>
+<legend align="center">Member Login</legend>
 
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="login">Login</label>
   <div class="col-md-6">
   <input id="login" name="login" type="text" placeholder="Password" class="form-control input-md" required="">
-  <span class="help-block">min 5 symb</span>
+  <span class="help-block">Your login (min 5 symbols)</span>
   </div>
 </div>
 
@@ -19,7 +19,7 @@
   <label class="col-md-4 control-label" for="password">Password</label>
   <div class="col-md-6">
     <input id="password" name="password" type="password" placeholder="Password" class="form-control input-md" required="">
-    <span class="help-block">min 5 symb</span>
+    <span class="help-block">Your password (min 5 symbols)</span>
   </div>
 </div>
 
@@ -27,12 +27,10 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="submit"></label>
   <div class="col-md-4">
-    <button id="submit" name="submit" class="btn btn-success">Signup</button>
+    <button id="submit" name="submit" class="btn btn-success">Sign Up</button>
   </div>
 </div>
 
 </fieldset>
 </form>
-<p>Cmd Login: ${message}</p>
-
 <%@ include file="include/end-html.jsp" %>

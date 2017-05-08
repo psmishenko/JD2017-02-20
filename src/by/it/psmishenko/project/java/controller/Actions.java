@@ -21,6 +21,21 @@ enum  Actions {
             this.command = new CmdLogout();
         }
     },
+    ALLBOOKS {
+        {
+            this.command = new CmdAllbooks();
+        }
+    },
+    ADDBOOK {
+        {
+            this.command = new CmdAddbook();
+        }
+    },
+    ABOUTUS {
+        {
+            this.command = new CmdAboutus();
+        }
+    },
     ERROR {
         {
             this.command = new CmdError();
