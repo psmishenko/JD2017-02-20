@@ -1,4 +1,4 @@
-<%@ include file="include/begin-html.jsp" %>
+<%@ include file="inc_header.jsp" %>
 
 <form class="form-horizontal" action="do?command=signup" method="post">
 <fieldset>
@@ -45,6 +45,7 @@
 </form>
 <p>Cmd SIGN-UP: ${message}</p>
 
-<%@ include file="include/end-html.jsp" %>
+<%@ include file="inc_footer.jsp" %>
+
 
 

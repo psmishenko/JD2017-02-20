@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Radivonik on 03.05.2017.
@@ -57,6 +58,21 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
             }
         }
         return beans;
+    }
+
+    @Override
+    public List<T> getAll(Map<String, String> filter) throws SQLException {
+        String where = "";
+        String delimWhere = "WHERE ";
+        String delimAnd = "";
+        for (Map.Entry<String, String> fieldValue: filter.entrySet()) {
+            where =
+                delimWhere + where + delimAnd +
+                String.format("%s = '%s'", fieldValue.getKey(), fieldValue.getValue());
+            delimAnd = " AND ";
+            delimWhere = "";
+        }
+        return getAll(where);
     }
 
     @Override

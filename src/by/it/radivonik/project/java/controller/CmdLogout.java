@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by Radivonik on 05.05.2017.
  */
-public class CommandLogout extends Action {
+public class CmdLogout extends Action {
     @Override
     public Action execute(HttpServletRequest req) {
         return null;
