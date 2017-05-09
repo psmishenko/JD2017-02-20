@@ -1,6 +1,6 @@
 package by.it.ikavalenka.jd02_10;
 
-import by.it.ikavalenka.jd02_09.B.*;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 

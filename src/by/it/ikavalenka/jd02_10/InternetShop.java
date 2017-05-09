@@ -56,7 +56,7 @@ package by.it.ikavalenka.jd02_10;
  * Created by USER on 23.04.2017.
  */
 
-import by.it.ikavalenka.jd02_09.B.Administrator;
+
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -65,11 +65,11 @@ import java.util.ArrayList;
 @XmlRootElement
 public class InternetShop {
     @XmlElement(name = "InternetShop")
-    private ArrayList<by.it.ikavalenka.jd02_09.B.Administrator> administrators = new ArrayList<>();
+    private ArrayList<by.it.ikavalenka.jd02_10.Administrator> administrators = new ArrayList<>();
     public InternetShop(){
         super();
     }
-    public void setList(ArrayList<by.it.ikavalenka.jd02_09.B.Administrator> list) {
+    public void setList(ArrayList<by.it.ikavalenka.jd02_10.Administrator> list) {
         this.administrators = list;
     }
     public boolean add (Administrator adm){
