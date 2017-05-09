@@ -20,7 +20,7 @@ public class FrontController extends HttpServlet {
         process(req, resp);
 
         Action action=Actions.defineFrom(req);
-        action.execute(req);
+        action.execute(req,resp);
         dispatcher(action).forward(req,resp);
 
     }
@@ -30,7 +30,7 @@ public class FrontController extends HttpServlet {
         process(req, resp);
 
         Action action=Actions.defineFrom(req);
-        Action nextAction=action.execute(req);
+        Action nextAction=action.execute(req,resp);
         if ( nextAction!=null ){
             resp.sendRedirect("do?command="+nextAction);
         }

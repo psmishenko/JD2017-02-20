@@ -1,10 +1,11 @@
 package by.it.loktev.project.java.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public abstract class Action {
 
-    abstract Action execute(HttpServletRequest request);
+    abstract Action execute(HttpServletRequest request, HttpServletResponse response);
 
     @Override
     public String toString() {
