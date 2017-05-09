@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://TaskB.jd03_02.prigozhanov.it.by"
+        xmlns:tns="http://TaskB.jd03_02.prigozhanov.it.by"
+        elementFormDefault="qualified">
+
+    <element name="CarList">
+        <complexType>
+            <sequence>
+                <element name="Car"
+                         type="tns:Car"
+                         maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="Car">
+        <sequence>
+            <element name="Mark" type="string"/>
+            <element name="Model" type="string"/>
+            <element name="HP" type="int"></element>
+            <element name="Location" type="string"/>
+            <element name="Luggage_capacity" type="int"/>
+        </sequence>
+    </complexType>
+</schema>

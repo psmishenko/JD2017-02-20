@@ -4,23 +4,16 @@
         xmlns:tns="http://jd02_09.prigozhanov.it.by"
         elementFormDefault="qualified">
 
+
     <element name="CarList">
         <complexType>
-            <sequence>
-                <element name="SportCars"
-                         type="tns:SportCars"
-                         maxOccurs="1"/>
-            </sequence>
-        </complexType>
-    </element>
-
-    <complexType name="SportCars">
         <sequence>
             <element name="Car"
                      type="tns:Car"
                      maxOccurs="unbounded"/>
         </sequence>
-    </complexType>
+        </complexType>
+    </element>
 
     <complexType name="Car">
         <all>
