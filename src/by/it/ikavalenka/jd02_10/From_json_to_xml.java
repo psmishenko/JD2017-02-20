@@ -13,7 +13,7 @@ public class From_json_to_xml {
         {
             {
                 Administrator adm = new Administrator("zAds36", "CatalogAll", 12, "none", "Order#1", 123, "Normal", 123, "Single", "NONE");
-//                this.add(adm);
+                this.add(adm);
             }
         };
 
