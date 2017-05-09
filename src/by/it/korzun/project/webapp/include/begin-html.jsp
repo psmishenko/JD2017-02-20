@@ -35,14 +35,15 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href=do?command=CreateAd>create-ad</a></li>
-          <li><a href=do?command=ListAd>list-ad</a></li>
+          <li><a href=do?command=Staff>To staff form</a></li>
+          <li><a href=do?command=Admin>To admin form</a></li>
+          <li><a href=do?command=Dispatcher>To dispatcher form</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li><a href=do?command=Login>login</a></li>
-          <li><a href=do?command=SignUp>signup</a></li>
-          <li><a href=do?command=Logout>logout</a></li>
+          <li><a href=do?command=Login>Login</a></li>
+          <li><a href=do?command=SignUp>Signup</a></li>
+          <li><a href=do?command=Logout>Logout</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

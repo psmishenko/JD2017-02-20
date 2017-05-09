@@ -38,6 +38,21 @@ enum Actions {
             this.command = new CmdRemoveFlight();
         }
     },
+    STAFF{
+        {
+            this.command = new CmdStaff();
+        }
+    },
+    DISPATCHER{
+        {
+            this.command = new CmdDispatcher();
+        }
+    },
+    ADMIN{
+        {
+            this.command = new CmdAdmin();
+        }
+    },
     ERROR{
         {
             this.command = new CmdError();
