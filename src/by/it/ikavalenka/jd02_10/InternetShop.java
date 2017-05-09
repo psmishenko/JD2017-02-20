@@ -58,6 +58,7 @@ package by.it.ikavalenka.jd02_10;
 
 
 
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
@@ -65,21 +66,25 @@ import java.util.ArrayList;
 @XmlRootElement
 public class InternetShop {
     @XmlElement(name = "InternetShop")
-    private ArrayList<by.it.ikavalenka.jd02_10.Administrator> administrators = new ArrayList<>();
+    private ArrayList<Administrator> arrayList = new ArrayList<>();
     public InternetShop(){
         super();
     }
-    public void setList(ArrayList<by.it.ikavalenka.jd02_10.Administrator> list) {
-        this.administrators = list;
+    public void setList(ArrayList<Administrator> arrayList) {
+        this.arrayList = arrayList;
     }
     public boolean add (Administrator adm){
-        return administrators.add(adm);
+        return arrayList.add(adm);
     }
 
     @Override
     public String toString() {
-            return "InternetShop" + "array:" +
-                    administrators + "!";
+        String out = "";
+        for (Administrator adm:arrayList)
+            out += adm.toString() + "\n";
+        return out;
+//            return "InternetShop" + "array:" +
+//                    administrators + "!";
         }
 
 }
