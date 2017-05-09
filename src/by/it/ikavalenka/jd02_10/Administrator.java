@@ -76,7 +76,7 @@ public class Administrator {
     }
 
     public String toString() {
-        return "\nLogin: " + login + "\nCatalog:" + Catalog + "\nOrder:" + Order + "\nBlackList:" + BlackList.toString();
+        return "\nLogin: " + login + "\nCatalog:" + Catalog + "\nOrder:" + Order + "\nBlackList:" + BlackList;
     }
 
     @XmlRootElement
@@ -165,8 +165,8 @@ public class Administrator {
         private String Client_id;
         public BlackListStatus(){}
 
-    public void BlackListStatus(String Client_id) {
-        this.Client_id = Client_id;
+    public void BlackListStatus(String client_id) {
+        this.Client_id = client_id;
     }
 
         public String  getClient_id() {
