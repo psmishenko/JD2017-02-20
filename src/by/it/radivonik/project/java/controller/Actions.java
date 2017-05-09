@@ -8,22 +8,22 @@ import javax.servlet.http.HttpServletRequest;
 public enum Actions {
     SIGNUP {
         {
-            this.command = new CommandSignUp();
+            this.command = new CmdSignUp();
         }
     },
     LOGIN {
         {
-            this.command = new CommandLogin();
+            this.command = new CmdLogin();
         }
     },
     LOGOUT {
         {
-            this.command = new CommandLogout();
+            this.command = new CmdLogout();
         }
     },
     ERROR {
         {
-            this.command = new CommandError();
+            this.command = new CmdError();
 
         }
     };

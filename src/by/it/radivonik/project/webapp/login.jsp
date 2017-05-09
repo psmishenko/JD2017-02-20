@@ -1,48 +1,39 @@
-<%@ include file="include/begin-html.jsp" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 
-<form class="form-horizontal">
+<%@ include file="inc_header.jsp" %>
+
+<form class="form-horizontal" action="do?command=login" method="POST">
 <fieldset>
 
 <!-- Form Name -->
-<legend>Form Name</legend>
+<legend>Вход в систему</legend>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="login">Login</label>
+  <label class="col-md-4 control-label" for="login">Имя пользователя</label>
   <div class="col-md-4">
   <input id="login" name="login" type="text" placeholder="" class="form-control input-md" required="">
-  <span class="help-block">Login</span>
+  <span class="help-block">Ваш login (минимум 5 символов)</span>
   </div>
 </div>
 
 <!-- Password input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="password">Password</label>
+  <label class="col-md-4 control-label" for="password">Пароль</label>
   <div class="col-md-4">
     <input id="password" name="password" type="password" placeholder="" class="form-control input-md" required="">
-    <span class="help-block">Password</span>
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Email</label>
-  <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="" class="form-control input-md">
-  <span class="help-block">Email</span>
+    <span class="help-block">Минимум 5 символов</span>
   </div>
 </div>
 
 <!-- Button -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="submit">SignUp</label>
+  <label class="col-md-4 control-label" for="submitbutton"></label>
   <div class="col-md-4">
-    <button id="submit" name="submit" class="btn btn-success">Submit</button>
+    <button id="submitbutton" name="submitbutton" class="btn btn-primary">Вход</button>
   </div>
 </div>
 
 </fieldset>
 </form>
-<p>Cmd Login: ${message}</p>
-
-<%@ include file="include/end-html.jsp" %>
+<%@ include file="inc_footer.jsp" %>

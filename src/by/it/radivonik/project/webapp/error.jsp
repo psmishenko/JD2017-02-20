@@ -1,7 +1,9 @@
-<%@ include file="include/begin-html.jsp" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 
-<p>Cmd ERROR: ${message}</p>
+<%@ include file="inc_header.jsp" %>
 
-<%@ include file="include/end-html.jsp" %>
+<p>Ошибка: ${msg_error}</p>
+
+<%@ include file="inc_footer.jsp" %>
 
 

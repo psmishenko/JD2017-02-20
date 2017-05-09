@@ -19,6 +19,7 @@ public class FrontController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        process(req, resp);
         Action action = Actions.defineFrom(req);
         action.execute(req);
         getDispatcher(action).forward(req, resp);
@@ -26,9 +27,10 @@ public class FrontController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        process(req, resp);
         Action action = Actions.defineFrom(req);
         Action nextAction = action.execute(req);
-        if (action != null) {
+        if (nextAction != null) {
             resp.sendRedirect("do?command=" + nextAction);
         }
         else {
@@ -37,6 +39,8 @@ public class FrontController extends HttpServlet {
     }
 
     private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+        resp.setHeader("Cache-Control", "no-cache, no-store");
 //        ServletContext context = getServletContext();
 //        RequestDispatcher dispatcher = context.getRequestDispatcher("/index.jsp");
 //        dispatcher.forward(req, resp);
