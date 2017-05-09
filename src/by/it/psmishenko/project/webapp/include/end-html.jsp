@@ -1,5 +1,4 @@
    </div> <!-- container -->
-
     <footer class="footer">
         <div class="container">
         <p>Server messages: ${message}</p>
