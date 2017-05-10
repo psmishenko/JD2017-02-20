@@ -3,10 +3,10 @@ package by.it.kolenda.project.java.controller;
 import javax.servlet.http.HttpServletRequest;
 
 
-public class CommandLogout implements ActionComand{
+public class CommandLogout extends Action{
 
     @Override
-    public String execute(HttpServletRequest request) {
-        return "/index.jsp";
+    public Action execute(HttpServletRequest request) {
+        return null;
     }
 }

@@ -1,6 +1,5 @@
 package by.it.kolenda.project.java.controller;
 
-
 import javax.servlet.http.HttpServletRequest;
 
 enum Actions {
@@ -18,27 +17,24 @@ enum Actions {
     }};
 
     public String jsp = "/error.jsp";
-    public ActionComand command;
+    public Action command;
 
-    static Action defineFrom(HttpServletRequest request);
+    static Action defineFrom(HttpServletRequest request){
 
-    String command = request.getParameter("command");
-    Action res;
-    try
+        String command = request.getParameter("command");
+        Action res;
+        try
 
-            catch
+        {
+            res = Actions.valueOf(command.toUpperCase()).command;
+        }  catch
+                (
+                IllegalArgumentException e)
 
-            return res;
-
-
-
-//    public ActionComand getCurrentCommand()
-//
-//    {
-//        return command;
-//    }
-
-    ;
-
+        {
+            res = Actions.ERROR.command;
+        }
+        return res;
+    }
 
 }

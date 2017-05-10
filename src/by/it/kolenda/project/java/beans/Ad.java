@@ -5,11 +5,10 @@ package by.it.kolenda.project.java.beans;
  */
 public class Ad {
 
-
     private int id;
     private int roomCount;
-    private int flat;
-    private int flats;
+    private int floor;
+    private int floors;
     private double price;
     private double area;
     private String description;
@@ -32,20 +31,20 @@ public class Ad {
         this.roomCount = roomCount;
     }
 
-    public int getFlat() {
-        return flat;
+    public int getFloor() {
+        return floor;
     }
 
-    public void setFlat(int flat) {
-        this.flat = flat;
+    public void setFloor(int flat) {
+        this.floor = floor;
     }
 
-    public int getFlats() {
-        return flats;
+    public int getFloors() {
+        return floors;
     }
 
-    public void setFlats(int flats) {
-        this.flats = flats;
+    public void setFloors(int flats) {
+        this.floors = floors;
     }
 
     public double getPrice() {
@@ -98,8 +97,8 @@ public class Ad {
 
         if (id != ad.id) return false;
         if (roomCount != ad.roomCount) return false;
-        if (flat != ad.flat) return false;
-        if (flats != ad.flats) return false;
+        if (floor != ad.floor) return false;
+        if (floors != ad.floors) return false;
         if (Double.compare(ad.price, price) != 0) return false;
         if (Double.compare(ad.area, area) != 0) return false;
         if (fk_users != ad.fk_users) return false;
@@ -114,8 +113,8 @@ public class Ad {
         long temp;
         result = id;
         result = 31 * result + roomCount;
-        result = 31 * result + flat;
-        result = 31 * result + flats;
+        result = 31 * result + floor;
+        result = 31 * result + floors;
         temp = Double.doubleToLongBits(price);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         temp = Double.doubleToLongBits(area);
@@ -129,8 +128,8 @@ public class Ad {
     public Ad(int id, int roomCount, int flat, int flats, double price, double area, String description, String address, int fk_users) {
         this.id = id;
         this.roomCount = roomCount;
-        this.flat = flat;
-        this.flats = flats;
+        this.floor = flat;
+        this.floors = flats;
         this.price = price;
         this.area = area;
         this.description = description;
@@ -147,8 +146,8 @@ public class Ad {
         return "Ad{" +
                 "id=" + id +
                 ", roomCount=" + roomCount +
-                ", flat=" + flat +
-                ", flats=" + flats +
+                ", floor=" + floor +
+                ", floors=" + floors +
                 ", price=" + price +
                 ", area=" + area +
                 ", description='" + description + '\'' +

@@ -8,7 +8,7 @@ import java.sql.SQLException;
  */
 public class ConnectionCreator {
 
-    static private Connection connection;
+    public static  Connection connection;
 
     static {
         try {
@@ -18,7 +18,7 @@ public class ConnectionCreator {
         }
     }
 
-    static Connection getConnection() throws SQLException {
+    public static Connection getConnection() throws SQLException {
         if (connection==null || connection.isClosed())  {
             synchronized (CN.URL_DB){
                 if (connection==null || connection.isClosed())

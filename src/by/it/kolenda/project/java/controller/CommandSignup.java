@@ -1,26 +1,29 @@
 package by.it.kolenda.project.java.controller;
 
-import javax.servlet.http.HttpServletRequest;
+import by.it.kolenda.project.java.beans.User;
+import by.it.kolenda.project.java.dao.DAO;
 
+import javax.servlet.http.HttpServletRequest;
+import java.text.ParseException;
 
 public class CommandSignup extends Action{
-
     @Override
-    public Action execute(HttpServletRequest request)
-
-    {
+    public Action execute(HttpServletRequest request){
         User user = new User();
-        user.setId(0);
-        user.setLogin(Form.getString(request,"login",Pattern.LOGIN));
-        user.setLogin(Form.getString(request,"email",Pattern.EMAIL));
-        user.setLogin(Form.getString(request,"password",Pattern.PASSWORD));
-        user.setFk_Role(2);
-        DAO dao = DAO.getDAO();
-        if (dao.user.create(user))
-            return Actions.LOGIN.command;
-
-
-        return Actions.ERROR.command;
+        try {
+            user.setId(0);
+            user.setLogin(Form.getString(request, "login", Pattern.LOGIN));
+            user.setEmail(Form.getString(request, "email", Pattern.EMAIL));
+            user.setPassword(Form.getString(request, "password", Pattern.PASSWORD));
+            user.setFk_roles(2);
+            DAO dao = DAO.getDAO();
+            if (dao.user.create(user))
+                return Actions.LOGIN.command;
+            else
+                return null;
+        } catch (ParseException e){
+            return Actions.ERROR.command;}
     }
 }
+
 

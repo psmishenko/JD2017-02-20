@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class CommandError extends Action {
     @Override
-    public String execute(HttpServletRequest request) {
-        return "/index.jsp";
+    public Action execute(HttpServletRequest request) {
+        return null;
     }
 }

@@ -19,4 +19,14 @@
         <url-pattern>/do</url-pattern>
     </servlet-mapping>
 
+    <filter>
+        <filter-name>EncodingUTF-8</filter-name>
+        <filter-class>by.it.kolenda.project.java.filter.?????? </filter-class>
+
+
+    </filter>
+
+
+
+
 </web-app>
