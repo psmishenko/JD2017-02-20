@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -40,7 +41,7 @@
         <ul class="nav navbar-nav navbar-right">
            <li><a href=do?command=Login>login</a></li>
            <li><a href=do?command=SignUp>sign-up</a></li>
-           <li><a href=do?command=Logout>logout</a></li>
+           <li><a href=do?command=Profile>profile</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
 

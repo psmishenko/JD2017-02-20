@@ -15,6 +15,10 @@ public class CmdSignup extends Action {
 
         response.setHeader("Cache-Control","no-store");
 
+        if (!Form.isPost(request)){
+            return null;
+        }
+
         User user=new User();
         try {
             user.setId(0);
