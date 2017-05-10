@@ -1,7 +1,6 @@
 package by.it.zeynalov.jd02_04.ClassWork;
 
 public interface Patterns {
-    //возможные примеры регулярных выражений (конечно лучше составить свои).
     String exVal="((-?)([0-9.])+)";                       //числа
     String exVec="\\{((-?([0-9.])+),?)+}";                //вектора
     String exMat="\\{((\\{((-?([0-9.])+),?)+}),?)+}";     //матрицы

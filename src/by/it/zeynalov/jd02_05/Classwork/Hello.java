@@ -1,6 +1,5 @@
 package by.it.zeynalov.jd02_05.Classwork;
 
-import sun.misc.resources.Messages;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -12,9 +11,9 @@ public class Hello {
             Locale locale = new Locale(args[0], args[1]);
             Language.changeLocal(locale);
         }
-//        System.out.println(Language.getString(Messages.WELCOME));
-//        System.out.println(Language.getString(Messages.HOWDOYOUDO));
-//        System.out.println(Language.getString(Messages.MYNAME));
+        System.out.println(Language.getString(Messages.WELCOME));
+        System.out.println(Language.getString(Messages.HOWDOYOUDO));
+        System.out.println(Language.getString(Messages.MYNAME));
 
         Date d = new Date();
         DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.LONG, Language.getLocale());

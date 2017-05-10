@@ -2,9 +2,6 @@ package by.it.zeynalov.jd02_04.ClassWork;
 
 import java.io.*;
 
-/**
- * Класс содержит ститические методы записи и чтения карты переменных
- */
 class MapVars {
     private static String getFilename() {
         String src = System.getProperty("user.dir") + "/src/by/it/akhmelev/";
@@ -14,9 +11,6 @@ class MapVars {
     private MapVars() {
     } //запрет на создание экземпляра класса MapVars
 
-    /**
-     * запись в текстовый файл
-     */
     static void saveMapToFile() {
         try (PrintWriter out = new PrintWriter(new FileWriter(getFilename()))) {
             //Var.vars уже имеет анонимный класс с toString нужного формата (A=9 и т.д.)
@@ -26,9 +20,6 @@ class MapVars {
         }
     }
 
-    /**
-     * чтение из текстового файла
-     */
     static void loadMapFromFile() {
         File file = new File(getFilename());
         Parser parser = new Parser();

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CoffeeHouses>
+    <CoffeeHouse>
+        <Administrator>Sam</Administrator>
+        <Waitress>Kira</Waitress>
+        <Barista>Din</Barista>
+        <Menus>
+            <Menu>
+                <Description>Menu</Description>
+                <Latte>Latteе</Latte>
+                <Americano>Americano</Americano>
+                <Cappuccino>Cappuccino</Cappuccino>
+                <Espresso>Espresso</Espresso>
+            </Menu>
+        </Menus>
+    </CoffeeHouse>
+</CoffeeHouses>

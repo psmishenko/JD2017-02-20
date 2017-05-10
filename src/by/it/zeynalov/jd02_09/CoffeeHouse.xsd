@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://zeynalov.it-academy/xml/CoffeeHouses"
+        xmlns:tns="http://zeynalov.it-academy/xml/CoffeeHouses"
+        elementFormDefault="qualified">
+    <element name="CoffeeHouses">
+        <complexType>
+            <sequence>
+                <element name="CoffeHouse"
+                         type="tns:CoffeeHouse"
+                         maxOccurs="unbounded">
+                </element>
+            </sequence>
+        </complexType>
+    </element>
+    <complexType name="CoffeeHouse">
+        <sequence>
+            <element name="Administrator" type="string"/>
+            <element name="Waitress" type="string"/>
+            <element name="Barista" type="string"/>
+            <element name="Menus" type="tns:Menus"/>
+        </sequence>
+    </complexType>
+    <complexType name="Menus">
+        <sequence>
+            <element name="Menu" type="tns:Menu"
+                     minOccurs="1"
+                     maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    <complexType name="Menu">
+        <all>
+            <element name="Description" type="string"/>
+            <element name="Latte" type="string"/>
+            <element name="Americano" type="string"/>
+            <element name="Cappuccino" type="string"/>
+            <element name="Espresso" type="string"/>
+        </all>
+    </complexType>
+</schema>

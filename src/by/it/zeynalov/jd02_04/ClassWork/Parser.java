@@ -8,11 +8,8 @@ import java.util.regex.Pattern;
 
 public class Parser {
 
-    //приоритет операция определяется индексом в массиве (вообще, конечно правильнее будет сделать Map<String,Integer>)
     private static final List<String> priority = new ArrayList<>(Arrays.asList("=,+,-,*,/".split(",")));
-    //операции в выражении. Для A=2+3/4 тут будут = + /
     private List<String> operation = new ArrayList<>();
-    //операнды в выражении. Для A=2+3/4 тут будут A 2 3 4
     private List<String> operand;
 
     private int getPosOperation() {
@@ -31,21 +28,17 @@ public class Parser {
     }
 
     private Var oneOperationCalc(String v1, String op, String v2) throws MathExcepton {
-        //выполним одну операцию
         Var res = null;
         Var one = createVar(v1);
         Var two = createVar(v2);
-        //если это было присваивание, то сохраним переменную
         if (op.equals("=") && two!=null) {
             two.save(v1);
             return two;
         }
-        //иначе проверим переменные на существование
         if (one == null)
             throw new MathExcepton("Неизвеcтное значение " + v1);
         if (two == null)
             throw new MathExcepton("Неизвеcтное значение " + v2);
-        //и выполним арифметическую операцию
         switch (op) {
             case "+":
                 res = one.add(two);
@@ -77,15 +70,12 @@ public class Parser {
     Var calc(String expression) {
         Var res = null;
         try {
-            //получим операнды
             String[] part = expression.split(Patterns.exOper);
             operand = new ArrayList<>(Arrays.asList(part));
-            //получим операции
             Pattern p = Pattern.compile(Patterns.exOper);
             Matcher m = p.matcher(expression);
             while (m.find()) operation.add(m.group());
             if (debugOn) System.out.printf("\tDEBUG: %s operand=%s operation=%s\n",expression,operand,operation);
-            //пока есть операции найдем позицию приоритетной и выполним её
             while (operation.size() > 0) {
                 if (debugOn) debug();
                 int pos = getPosOperation();
@@ -101,7 +91,6 @@ public class Parser {
         return res;
     }
 
-    //отладка формирует и выводит в консоль оставшееся выражение
     private void debug() {
         StringBuilder sb = new StringBuilder("\t\tdebug: "+operand.get(0));
         for (int i = 0; i < operation.size(); i++) {
@@ -110,19 +99,15 @@ public class Parser {
         System.out.println(sb.toString());
     }
 
-    //внешнее управление отладкой парсера выполняется через конструктор
     enum Debug{
         ON,OFF
     }
-    //флаг вывода отладочной информации
     private boolean debugOn;
 
-    //конструктор с управляемой отладкой
     public Parser(Debug debugStatus) {
         this.debugOn = debugStatus==Debug.ON;
     }
 
-    //конструктор по умолчанию (отладка не выводится)
     public Parser() {
         this(Debug.OFF);
     }
