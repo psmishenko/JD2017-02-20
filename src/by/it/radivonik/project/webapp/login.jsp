@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="inc_header.jsp" %>
 
-<form class="form-horizontal" action="do?command=login" method="POST">
+<form class="form-horizontal" action="do?command=Login" method="POST">
 <fieldset>
 
 <!-- Form Name -->

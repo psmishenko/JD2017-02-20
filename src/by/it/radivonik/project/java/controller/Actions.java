@@ -16,6 +16,11 @@ public enum Actions {
             this.command = new CmdLogin();
         }
     },
+    PROFILE {
+        {
+            this.command = new CmdProfile();
+        }
+    },
     LOGOUT {
         {
             this.command = new CmdLogout();

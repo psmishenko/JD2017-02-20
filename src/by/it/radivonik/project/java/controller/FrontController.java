@@ -39,7 +39,8 @@ public class FrontController extends HttpServlet {
     }
 
     private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
+//        req.setCharacterEncoding("UTF-8");
+//        resp.setCharacterEncoding("UTF-8");
         resp.setHeader("Cache-Control", "no-cache, no-store");
 //        ServletContext context = getServletContext();
 //        RequestDispatcher dispatcher = context.getRequestDispatcher("/index.jsp");
