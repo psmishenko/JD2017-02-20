@@ -15,6 +15,16 @@ public class Form {
         }
     }
 
+    static int getInt(HttpServletRequest request, String parameter) throws ParseException {
+        String value=request.getParameter(parameter);
+        return Integer.parseInt(value);
+    }
+
+    static double getDouble(HttpServletRequest request, String parameter) throws ParseException {
+        String value=request.getParameter(parameter);
+        return Double.parseDouble(value);
+    }
+
     static boolean isPost(HttpServletRequest request){
         return request.getMethod().toUpperCase().equals("POST");
     }

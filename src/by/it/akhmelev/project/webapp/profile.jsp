@@ -3,7 +3,9 @@
 
 <p>User debug: ${user}</p>
 
-<form class="form-horizontal"  action="do?command=profile" method="POST">>
+<p>User ads: ${ads}</p>
+
+<form class="form-horizontal"  action="do?command=profile" method="POST">
 <fieldset>
 
 <!-- Form Name -->
