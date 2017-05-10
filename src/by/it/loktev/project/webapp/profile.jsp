@@ -3,14 +3,14 @@
 
 <p>User debug: ${user}</p>
 
-<form class="form-horizontal">
+<form class="form-horizontal" action="do?command=profile" method="POST">
 <fieldset>
 
 <!-- Form Name -->
 <legend>Form Name</legend>
 
 <!-- Button -->
-<div class="form-group" action="do?command=profile" method="POST">
+<div class="form-group">
   <label class="col-md-4 control-label" for="logout"></label>
   <div class="col-md-4">
     <button id="logout" name="logout" class="btn btn-danger">logout</button>
