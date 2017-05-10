@@ -3,7 +3,7 @@ package by.it.loktev.project.java.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class CmdLogout extends Action {
+public class CmdCreateAd extends Action {
 
     @Override
     public Action execute(HttpServletRequest request, HttpServletResponse response) {

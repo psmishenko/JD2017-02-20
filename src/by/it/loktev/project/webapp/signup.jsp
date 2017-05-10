@@ -1,10 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
 
 <form class="form-horizontal" action="do?command=signup" method="post">
 <fieldset>
 
 <!-- Form Name -->
-<legend>Login</legend>
+<legend>Signup</legend>
 
 <!-- Text input-->
 <div class="form-group">
