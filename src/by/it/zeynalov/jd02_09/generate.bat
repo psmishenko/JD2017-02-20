@@ -1,0 +1,1 @@
+"C:\Program Files\Java\jdk1.8.0_111\bin\xjc.exe" D:\JD2017-02-20\src\by\it\zeynalov\jd02_09\CoffeeHouse.xsd -d D:\JD2017-02-20\src

@@ -2,14 +2,14 @@ package by.it.akhmelev.jd03_03.custom_dao;
 
 public class DAO {
 
-    private static DAO dao; //синглтон для DAO
+    private static DAO dao; //синглтон для dao
 
-    public UserDAO user;    //DAO для пользователей
-    public RoleDAO role;    //DAO для ролей
-    public AdDAO ad;        //DAO для объявлений
+    public UserDAO user;    //dao для пользователей
+    public RoleDAO role;    //dao для ролей
+    public AdDAO ad;        //dao для объявлений
     //...
 
-    public static DAO getDAO() {   //метод, который создает DAO или возвращает существующий экземпляр
+    public static DAO getDAO() {   //метод, который создает dao или возвращает существующий экземпляр
         if (dao == null) {
             synchronized (DAO.class) {
                 if (dao == null) {
@@ -17,7 +17,7 @@ public class DAO {
                     dao.user = new UserDAO();
                     dao.role = new RoleDAO();
                     dao.ad = new AdDAO();
-                    //новые куски DAO добавляются аналогично при расширении DAO
+                    //новые куски dao добавляются аналогично при расширении dao
                     //dao.ad = new AdDAO();
                     //...
                 }
