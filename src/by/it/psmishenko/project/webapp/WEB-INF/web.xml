@@ -17,5 +17,16 @@
         <servlet-name>HelloWorld</servlet-name>
         <url-pattern>/do</url-pattern>
     </servlet-mapping>
-
+<filter>
+    <filter-name>EncodingUTF8</filter-name>
+    <filter-class>by.it.psmishenko.project.java.filter.EncodingUTF8</filter-class>
+    <init-param>
+        <param-name>encoding</param-name>
+        <param-value>UTF-8</param-value>
+    </init-param>
+</filter>
+    <filter-mapping>
+        <filter-name>EncodingUTF8</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 </web-app>

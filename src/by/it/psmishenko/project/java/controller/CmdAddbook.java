@@ -18,10 +18,10 @@ public class CmdAddbook extends Action {
             book.setLid(0);
             book.setAuthor(Form.getString(request,"author",Pattern.AUTHOR));
             book.setTitle(Form.getString(request,"title",Pattern.TITLE));
-            book.setYear(Integer.parseInt(Form.getString(request,"year",Pattern.YEAR)));
+            book.setYear(Form.getInt(request,"year"));
             book.setIsbn(Form.getString(request,"isbn",Pattern.ISBN));
-            book.setLid(Integer.parseInt(Form.getString(request,"lid",Pattern.LID)));
-            book.setFk_users(2); // пока будет на определённого пользователя, нужно потом добавить на залогиненного
+            book.setLid(Form.getInt(request,"lid"));
+
             DAO dao = DAO.getInstance();
             try {
                 if(dao.book.create(book)) return Actions.ALLBOOKS.command ;
