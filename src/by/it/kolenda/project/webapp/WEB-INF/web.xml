@@ -20,11 +20,17 @@
     </servlet-mapping>
 
     <filter>
-        <filter-name>EncodingUTF-8</filter-name>
-        <filter-class>by.it.kolenda.project.java.filter.?????? </filter-class>
-
-
+        <filter-name>EncodingUTF8</filter-name>
+        <filter-class>by.it.kolenda.project.java.filter.EncodingUTF8</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
     </filter>
+    <filter-mapping>
+        <filter-name>EncodingUTF8</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 
 
