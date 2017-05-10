@@ -18,29 +18,32 @@ public class FrontController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //возвращает null в случае успешной обработки, иначе по GET браузеру сообщает о том, чтобы он посылал новую команду
-        Action action = Actions.defineFrom(req);
-        Action nextAction = null;
+        Action action=Actions.defineFrom(req);
+        Action nextAction= null;
         try {
             nextAction = action.execute(req);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        if(nextAction != null) {
-            resp.sendRedirect("do?command = "+nextAction);
+        if (nextAction != null){
+            resp.sendRedirect("do?command="+nextAction);
+        }
+        else
+        {
+            dispatcher(action).forward(req,resp);
         }
 
-        else {
-            dispatcher(action).forward(req, resp);
-        }
-
-        process(req, resp);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         Action action = Actions.defineFrom(req);
-        action.equals(req);
+        try {
+            action.execute(req);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         dispatcher(action).forward(req, resp);
 
         process(req, resp);
