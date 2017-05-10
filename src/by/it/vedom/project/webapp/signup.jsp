@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+=======
+>>>>>>> origin/master
 <%@ include file="include/begin-html.jsp" %>
 
 <form class="form-horizontal">

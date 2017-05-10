@@ -1,6 +1,7 @@
 package by.it.vedom.project.java.dao;
 
 
+import by.it.vedom.jd03_03.UniversalDAO;
 import by.it.vedom.project.java.beans.Order;
 import by.it.vedom.project.java.beans.Product;
 import by.it.vedom.project.java.beans.Role;
@@ -9,10 +10,12 @@ import by.it.vedom.project.java.beans.User;
 public class DAO {
     private static DAO instance;
 
+
     public UniversalDAO<Role> role;
     public UniversalDAO<User> user;
     public UniversalDAO<Product> product;
     public UniversalDAO<Order> order;
+
 
     private DAO() {
     }
