@@ -18,6 +18,8 @@
    
    </tr>
   </table>
+  <p>All books: ${allbooks}</p>
+  <p>Если пользователь незалогинен - кнопки Add to My Books будут заблокированы или переводить на login</p>
 </div>
 
 <%@ include file="include/end-html.jsp" %>

@@ -31,18 +31,15 @@ public class CmdLogin extends Action {
                     HttpSession session = request.getSession();
                     user = users.get(0);
                     session.setAttribute("user",user);
-
+                    return Actions.PROFILE.command;
                 } else {
-
+                    request.setAttribute(Messages.MSG_MESSAGE,"Not found");
+                    return null;
                 }
-                user.setFk_roles(2);
-            } catch (ParseException e) {
-                e.printStackTrace();
-
-            } catch (SQLException e) {
+            } catch (ParseException | SQLException e) {
+                request.setAttribute(Messages.MSG_ERROR,e.toString());
                 e.printStackTrace();
             }
-
         }
         return null;
     }
