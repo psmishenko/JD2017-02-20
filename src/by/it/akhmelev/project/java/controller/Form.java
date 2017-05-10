@@ -15,4 +15,8 @@ public class Form {
         }
     }
 
+    static boolean isPost(HttpServletRequest request){
+        return request.getMethod().toUpperCase().equals("POST");
+    }
+
 }

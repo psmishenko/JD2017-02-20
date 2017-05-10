@@ -1,26 +1,30 @@
 package by.it.akhmelev.project.java.dao;
 
-import by.it.akhmelev.project.java.connection.ConnectionCreator;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
-public abstract class AbstractDAO{
-    //общая команда для Create Update Delete
-    protected int executeUpdate(String sql) {
-        int result = -1;
-        try (Connection connection = ConnectionCreator.getConnection();
+public abstract class AbstractDAO {
+
+    int executeCreate(String sql) throws SQLException {
+        try (Connection connection = ConnectorCreator.getConnection();
              Statement statement = connection.createStatement()) {
-            result = statement.executeUpdate(sql);
-            if (sql.trim().toUpperCase().startsWith("INSERT")) {
-                ResultSet resultSet = statement.executeQuery("SELECT LAST_INSERT_ID();");
-                if (resultSet.next()) result = resultSet.getInt(1);
+            if (1 == statement.executeUpdate(sql, Statement.RETURN_GENERATED_KEYS)) {
+                ResultSet keys = statement.getGeneratedKeys();
+                if (keys.next()) {
+                    return keys.getInt(1);
+                }
             }
-        } catch (Exception e) {
-            //тут нужно логгирование SQLException(e);
+            return -1;
         }
-        //System.out.println(result+":"+sql); //проверить SQL можно снимая комментарий с этой строки
-        return result;
     }
+
+    boolean executeUpdate(String sql) throws SQLException {
+        try (Connection connection = ConnectorCreator.getConnection();
+             Statement statement = connection.createStatement()) {
+             return (statement.executeUpdate(sql)>0);
+        }
+    }
+
 }
