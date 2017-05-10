@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:2016
--- Время создания: Май 10 2017 г., 12:30
+-- Время создания: Май 10 2017 г., 13:21
 -- Версия сервера: 10.1.10-MariaDB
 -- Версия PHP: 5.6.15
 
@@ -29,14 +29,23 @@ SET time_zone = "+00:00";
 CREATE TABLE `ads` (
   `ID` int(11) NOT NULL,
   `RoomCount` int(11) DEFAULT NULL,
-  `Flat` int(11) DEFAULT NULL,
-  `Flats` int(11) DEFAULT NULL,
+  `Floor` int(11) DEFAULT NULL,
+  `Floors` int(11) DEFAULT NULL,
   `Price` double DEFAULT NULL,
   `Area` double DEFAULT NULL,
   `Description` varchar(5000) DEFAULT NULL,
   `Address` varchar(200) DEFAULT NULL,
   `FK_users` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `ads`
+--
+
+INSERT INTO `ads` (`ID`, `RoomCount`, `Floor`, `Floors`, `Price`, `Area`, `Description`, `Address`, `FK_users`) VALUES
+(1, 2, 3, 5, 55555, 0.5, 'test', 'test', 2),
+(2, 2, 3, 5, 55555, 0.5, 'test', 'test', 2),
+(3, 2, 3, 5, 55555, 0.5, 'test', 'test', 2);
 
 -- --------------------------------------------------------
 
@@ -112,7 +121,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `ads`
 --
 ALTER TABLE `ads`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT для таблицы `roles`
 --
