@@ -14,4 +14,8 @@ public class FormUtils {
         else
             throw new ParseException("Некорректное значение: " + value, 1);
     }
+
+    static boolean isPost(HttpServletRequest req) {
+        return req.getMethod().toUpperCase().equals("POST");
+    }
 }

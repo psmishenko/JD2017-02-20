@@ -12,6 +12,9 @@ import java.text.ParseException;
 public class CmdSignUp extends Action {
     @Override
     public Action execute(HttpServletRequest req) {
+        if (!FormUtils.isPost(req))
+            return null;
+
         User user = new User();
         try {
             user.setId(0);
@@ -21,15 +24,16 @@ public class CmdSignUp extends Action {
             user.setIdRole(2);
             DAO dao = DAO.getInstance();
             if (dao.getUser().create(user))
-                return Actions.LOGIN.command;
+                return null;
             else
                 return  null;
         }
         catch (ParseException e) {
-            return Actions.ERROR.command;
+            req.setAttribute(Messages.MSG_ERROR, e.getMessage());
         }
         catch (SQLException e) {
-            return Actions.ERROR.command;
+            req.setAttribute(Messages.MSG_ERROR, e.getMessage());
         }
+        return  null;
     }
 }
