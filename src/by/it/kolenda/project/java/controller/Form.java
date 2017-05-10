@@ -14,5 +14,7 @@ public class Form {
             throw new ParseException("Incorrect String:"+parameter,-1);
         }
     }
-    static boolean isPost
+    static boolean isPost (HttpServletRequest request){
+        return request.getMethod().toUpperCase().equals("POST");
+    }
 }
