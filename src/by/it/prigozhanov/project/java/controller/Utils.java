@@ -11,6 +11,7 @@ public class Utils {
     static User getSessionUser(HttpServletRequest request) {
         HttpSession session = request.getSession();
         Object ob = session.getAttribute("user");
+        session.setMaxInactiveInterval(30);
         return ob != null && ob instanceof User?(User)ob:null;
     }
 }
