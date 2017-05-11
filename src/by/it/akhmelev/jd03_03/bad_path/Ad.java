@@ -140,7 +140,7 @@ public class Ad {
 
     @Override
     public String toString() {
-        return "Task{" +
+        return "Ad{" +
                 "id=" + id +
                 ", roomCount=" + roomCount +
                 ", flat=" + flat +
