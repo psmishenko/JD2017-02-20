@@ -45,14 +45,12 @@ public class UserDAO extends AbstractDAO implements InterfaceDAO<User> {
                         "`Password`='%s'," +
                         "`Email`='%s'," +
                         "`FK_Roles`='%d'," +
-                        "`FK_Cars`='%d'" +
                         " WHERE ID=%d",
                 user.getPassportData(),
                 user.getLogin(),
                 user.getPassword(),
                 user.getEmail(),
                 user.getFkRole(),
-                user.getFkCar(),
                 user.getId());
         return executeUpdate(sql);
     }
@@ -68,7 +66,7 @@ public class UserDAO extends AbstractDAO implements InterfaceDAO<User> {
         List<User> usersList = new ArrayList<>();
         try (Connection connection = ConnectorCreator.getConnection();
              Statement statement = connection.createStatement()) {
-            String sql = String.format("SELECT `ID`, `Passport_data`, `Login`, `Password`, `Email`, `FK_Roles`, `FK_Cars` FROM `users` %s", whereString);
+            String sql = String.format("SELECT `ID`, `Passport_data`, `Login`, `Password`, `Email`, `FK_Roles` FROM `users` %s", whereString);
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
                 usersList.add(new User(
@@ -77,8 +75,7 @@ public class UserDAO extends AbstractDAO implements InterfaceDAO<User> {
                         rs.getString("Login"),
                         rs.getString("Password"),
                         rs.getString("Email"),
-                        rs.getInt("FK_Roles"),
-                        rs.getInt("FK_Cars")
+                        rs.getInt("FK_Roles")
                 ));
             }
 

@@ -13,9 +13,9 @@ enum Actions {
             this.command = new CommandLogin();
         }
     },
-    LOGOUT {
+    PROFILE {
         {
-            this.command = new CommandLogout();
+            this.command = new CommandProfile();
         }
     },
     ERROR {
