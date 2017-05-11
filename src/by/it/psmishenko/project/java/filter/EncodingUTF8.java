@@ -16,11 +16,11 @@ public class EncodingUTF8 implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         String currentEncoding = servletRequest.getCharacterEncoding();
-        if(code!=null && code.equalsIgnoreCase(currentEncoding)){
+        if(code!=null && !code.equalsIgnoreCase(currentEncoding)){
             servletRequest.setCharacterEncoding(code);
         }
         currentEncoding = servletResponse.getCharacterEncoding();
-        if(code!=null && code.equalsIgnoreCase(currentEncoding)){
+        if(code!=null && !code.equalsIgnoreCase(currentEncoding)){
             servletRequest.setCharacterEncoding(code);
         }
         filterChain.doFilter(servletRequest,servletResponse);
