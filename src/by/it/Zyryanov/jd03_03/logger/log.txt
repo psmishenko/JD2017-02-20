@@ -1,0 +1,11 @@
+
+ ----------------------------------------Ошибка SQLException com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@mail.ru , fk_Roles = 2 WHERE ID = 2' at line 1 время ошибки: Mon May 08 13:24:54 MSK 2017
+ ----------------------------------------
+ ----------------------------------------Ошибка SQLException com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@mail.ru , fk_Roles = 2 WHERE ID = 3' at line 1 время ошибки: Mon May 08 13:26:09 MSK 2017
+ ----------------------------------------
+ ----------------------------------------Ошибка SQLException com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'first JAVA,`Description`= Nice book about JAVA,`Author`=Eoin Colfer,`Price`=20 W' at line 1 время ошибки: Thu May 11 19:29:57 MSK 2017
+ ----------------------------------------
+ ----------------------------------------Ошибка SQLException com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Fowl,`Description`= no description,`Author`=Eoin Colfer,`Price`=10 WHERE ID = 33' at line 1 время ошибки: Thu May 11 21:20:08 MSK 2017
+ ----------------------------------------
+ ----------------------------------------Ошибка SQLException com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@mail.ru , fk_Roles = 2 WHERE ID = 2' at line 1 время ошибки: Thu May 11 21:26:49 MSK 2017
+ ----------------------------------------

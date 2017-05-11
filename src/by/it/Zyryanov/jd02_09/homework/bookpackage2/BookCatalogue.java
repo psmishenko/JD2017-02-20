@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="Book" type="{http://homework.jd02_09.Zyryanov.it.by}Book" maxOccurs="unbounded"/>
+ *         &lt;element name="Books" type="{http://homework.jd02_09.Zyryanov.it.by}Books" maxOccurs="unbounded"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -41,7 +41,7 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class BookCatalogue {
 
-    @XmlElement(name = "Book", required = true)
+    @XmlElement(name = "Books", required = true)
     protected List<Book> book;
 
     /**

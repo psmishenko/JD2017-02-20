@@ -18,12 +18,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Book complex type.
+ * <p>Java class for Books complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Book">
+ * &lt;complexType name="Books">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -52,7 +52,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Book", propOrder = {
+@XmlType(name = "Books", propOrder = {
     "description",
     "publisher",
     "author",
@@ -277,7 +277,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return " Book { " +
+        return " Books { " +
                 "\n description = '" + description + '\'' +
                 "\n publisher = '" + publisher + '\'' +
                 "\n author = '" + author + '\'' +
