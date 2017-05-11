@@ -20,7 +20,7 @@
   </head>
   <body>
 <div class="container">
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -30,7 +30,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href=do?command=goHome>Car Rental</a>
+        <a class="navbar-brand" href=do?command=Home>Car Rental</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -39,14 +39,15 @@
 			<li><a href=do?command=Home>Home</a></li>
 			<li>  <a href=do?command=Cars>Cars</a></li>
         </ul>
-        <form class="navbar-form navbar-left">
+        <form class="navbar-form navbar-left" action="do?command=search">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" placeholder="Search" >
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
             <li><a href=do?command=Profile>Profile</a></li>
+            <li><a href=do?command=logout>Logout</a></li>
 	    	<li><a href=do?command=Login>Login</a></li>
             <li><a href=do?command=SignUp>Sign-up</a></li>
             </ul>
