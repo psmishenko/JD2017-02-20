@@ -5,35 +5,45 @@ import javax.servlet.http.HttpServletRequest;
 enum Actions {
     SIGNUP {
         {
-           this.command = new CmdSignUp();
+            this.command=new CmdSignUp();
         }
     },
     LOGIN {
         {
-            this.command = new CmdLogin();
+            this.command=new CmdLogin();
         }
     },
-    LOGOUT {
+    PROFILE {
         {
-            this.command = new CmdLogout();
+            this.command=new CmdProfile();
+        }
+    },
+    SEARCH {
+        {
+            this.command = new CmdSearch();
+        }
+    },
+    ADDPROD {
+        {
+            this.command=new CmdAddProd();
         }
     },
     ERROR {
         {
-            this.command = new CmdError();
+            this.command=new CmdError();
         }
     };
 
-    public String jsp = "/error.jsp";
     public Action command;
 
-    static Action defineFrom(HttpServletRequest request) {
-        String command = request.getParameter("command");
+    static Action defineFrom(HttpServletRequest request){
+        String command=request.getParameter("command");
         Action res;
         try {
-            res = Actions.valueOf(command.toUpperCase()).command;
-        } catch (IllegalArgumentException e) {
-            res = Actions.ERROR.command;
+            res=Actions.valueOf(command.toUpperCase()).command;
+        }
+        catch (IllegalArgumentException e) {
+            res=Actions.ERROR.command;
         }
         return res;
     }

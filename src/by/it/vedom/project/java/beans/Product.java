@@ -1,5 +1,7 @@
 package by.it.vedom.project.java.beans;
 
+import javax.servlet.http.HttpServletRequest;
+
 public class Product {
     private int id;
     private String name;
@@ -18,6 +20,10 @@ public class Product {
         return id;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -26,7 +32,7 @@ public class Product {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(HttpServletRequest request, String s, String name) {
         this.name = name;
     }
 
@@ -69,4 +75,6 @@ public class Product {
                 ", price=" + price +
                 '}';
     }
+
+
 }

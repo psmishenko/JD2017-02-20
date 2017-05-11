@@ -10,50 +10,50 @@ import java.sql.SQLException;
 
 public class FrontController extends HttpServlet {
 
-    private RequestDispatcher dispatcher(Action action) {
+    private RequestDispatcher dispatcher(Action action){
         return getServletContext().getRequestDispatcher(action.getJsp());
     }
 
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //возвращает null в случае успешной обработки, иначе по GET браузеру сообщает о том, чтобы он посылал новую команду
         Action action=Actions.defineFrom(req);
-        Action nextAction= null;
+        Action nextAction;
         try {
             nextAction = action.execute(req);
+            if (nextAction != null){
+                resp.sendRedirect("do?command="+nextAction);
+            }
+            else
+            {
+                dispatcher(action).forward(req,resp);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        if (nextAction != null){
-            resp.sendRedirect("do?command="+nextAction);
-        }
-        else
-        {
-            dispatcher(action).forward(req,resp);
-        }
-
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        Action action = Actions.defineFrom(req);
+        Action action=Actions.defineFrom(req);
+        Action nextAction;
         try {
-            action.execute(req);
+            nextAction = action.execute(req);
+            if (nextAction != null){
+                resp.sendRedirect("do?command="+nextAction);
+            }
+            else
+            {
+                dispatcher(action).forward(req,resp);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        dispatcher(action).forward(req, resp);
-
-        process(req, resp);
     }
 
 
-    private void process(HttpServletRequest req, HttpServletResponse resp)  throws ServletException, IOException {
-
-//        ServletContext servletContext = getServletContext();
-//        RequestDispatcher disp = servletContext.getRequestDispatcher("/index.jsp");
-//        disp.forward(req, resp);
+    private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//        ServletContext servletContext=getServletContext();
+//        RequestDispatcher disp=servletContext.getRequestDispatcher("/index.jsp");
+//        disp.forward(req,resp);
     }
 }

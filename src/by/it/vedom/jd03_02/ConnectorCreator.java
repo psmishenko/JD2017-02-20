@@ -17,7 +17,7 @@ public class ConnectorCreator {
 
     static Connection getConnection() throws SQLException {
         if (connection==null || connection.isClosed())  {
-            synchronized (by.it.akhmelev.jd03_02.classwork.crud.CN.URL_DB){
+            synchronized (CN.URL_DB){
                 if (connection==null || connection.isClosed())
                     connection= DriverManager.getConnection(CN.URL_DB, CN.USER_DB, CN.PASSWORD_DB);
             }

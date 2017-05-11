@@ -9,7 +9,6 @@ public abstract class Action {
 
     @Override
     public String toString() {
-
         String name = this.getClass().getSimpleName();
         name = name.replace("Cmd", "");
         return name;

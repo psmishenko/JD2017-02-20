@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,20 +26,21 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href=".">Home</a>
+        <a class="navbar-brand" href=".">Главная</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href=do?command=CreateAd>create-ad</a></li>
-          <li><a href=do?command=ListAd>list-ad</a></li>
+          <li><a href=do?command=CreateAd>Каталог товаров</a></li>
+          <li><a href=do?command=ListAd>Поиск товаров</a></li>
+          <li><a href=do?command=ListAd>Добавить товар</a></li>
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
-           <li><a href=do?command=Login>login</a></li>
-            <li><a href=do?command=SignUp>sign-up</a></li>
-            <li><a href=do?command=Logout>logout</a></li>
+           <li><a href=do?command=Login>Вход</a></li>
+            <li><a href=do?command=SignUp>Регистрация</a></li>
+            <li><a href=do?command=Profile>Профиль</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
