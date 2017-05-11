@@ -41,8 +41,8 @@ public class UserDAO extends AbstractDAO implements InterfaceDAO<User> {
                 User user=new User(
                         rs.getInt("id"),
                         rs.getString("login"),
-                        rs.getString("Password"),
-                        rs.getString("Email"),
+                        rs.getString("passhash"),
+                        rs.getString("email"),
                         rs.getInt("roleid")
                 );
                 list.add(user);
@@ -65,7 +65,7 @@ public class UserDAO extends AbstractDAO implements InterfaceDAO<User> {
     public boolean create(User user) throws SQLException {
         int id=user.getId();
         if (id==0) {
-            String SQL = "insert into users(login,password,email,roleid) values('" + user.getLogin() + "','" + user.getPassword() + "','" + user.getEmail() + "'," + user.getRoleId() + ");";
+            String SQL = "insert into users(login,passhash,email,roleid) values('" + user.getLogin() + "','" + user.getPassHash() + "','" + user.getEmail() + "'," + user.getRoleId() + ");";
             id=executeCreate(SQL);
             if ( id>=0 ) {
                 user.setId(id);
@@ -74,14 +74,14 @@ public class UserDAO extends AbstractDAO implements InterfaceDAO<User> {
             return false;
         }
         else {
-            String SQL = "insert into users(id,login,password,email,roleid) values("+id+",'" + user.getLogin() + "','" + user.getPassword() + "','" + user.getEmail() + "'," + user.getRoleId() + ");";
+            String SQL = "insert into users(id,login,passhash,email,roleid) values("+id+",'" + user.getLogin() + "','" + user.getPassHash() + "','" + user.getEmail() + "'," + user.getRoleId() + ");";
             return (1==executeUpdate(SQL));
         }
     }
 
     @Override
     public boolean update(User user) throws SQLException {
-        String SQL="update users set login='"+user.getLogin()+"',password='"+user.getPassword()+"',email='"+user.getEmail()+"',roleid='"+user.getRoleId()+"' where id="+user.getId()+";";
+        String SQL="update users set login='"+user.getLogin()+"',passhash='"+user.getPassHash()+"',email='"+user.getEmail()+"',roleid='"+user.getRoleId()+"' where id="+user.getId()+";";
         return (1==executeUpdate(SQL));
     }
 

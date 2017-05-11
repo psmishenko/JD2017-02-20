@@ -11,6 +11,10 @@ import java.io.PrintWriter;
 
 public class FrontController extends HttpServlet {
 
+    static {
+        Log.write("START");
+    }
+
     private RequestDispatcher dispatcher(Action action){
         return getServletContext().getRequestDispatcher(action.getJsp());
     }
@@ -19,15 +23,26 @@ public class FrontController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         process(req, resp);
 
+        Log.write("GET "+req.getRequestURL()+" "+req.getQueryString());
+
         Action action=Actions.defineFrom(req);
-        action.execute(req,resp);
-        dispatcher(action).forward(req,resp);
+        //action.execute(req,resp);
+        //dispatcher(action).forward(req,resp);
+        Action nextAction=action.execute(req,resp);
+        if ( nextAction!=null ){
+            resp.sendRedirect("do?command="+nextAction);
+        }
+        else {
+            dispatcher(action).forward(req,resp);
+        }
 
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         process(req, resp);
+
+        Log.write("POST "+req.getRequestURL()+" (command)="+req.getParameter("command"));
 
         Action action=Actions.defineFrom(req);
         Action nextAction=action.execute(req,resp);

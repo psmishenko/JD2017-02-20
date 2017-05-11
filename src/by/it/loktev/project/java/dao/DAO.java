@@ -6,7 +6,7 @@ public class DAO {
 
     private RoleDAO role;
     private UserDAO user;
-    private AdDAO ad;
+    private TaskDAO task;
 
 
     private DAO(){
@@ -20,7 +20,7 @@ public class DAO {
                     instance = new DAO();
                     instance.user= UserDAO.getInstance();
                     instance.role=RoleDAO.getInstance();
-                    instance.ad= AdDAO.getInstance();
+                    instance.task= TaskDAO.getInstance();
                 }
             }
         }
@@ -35,7 +35,7 @@ public class DAO {
         return user;
     }
 
-    public AdDAO getAd() {
-        return ad;
+    public TaskDAO getTask() {
+        return task;
     }
 }

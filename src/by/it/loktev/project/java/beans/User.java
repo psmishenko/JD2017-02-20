@@ -4,17 +4,17 @@ public class User {
 
     private int id;
     private String login;
-    private String password;
+    private String passHash;
     private String email;
     private int roleId;
 
     public User() {
     }
 
-    public User(int id, String login, String password, String email, int roleId) {
+    public User(int id, String login, String passHash, String email, int roleId) {
         this.id = id;
         this.login = login;
-        this.password = password;
+        this.passHash = passHash;
         this.email = email;
         this.roleId = roleId;
     }
@@ -35,12 +35,12 @@ public class User {
         this.login = login;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPassHash() {
+        return passHash;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassHash(String passHash) {
+        this.passHash = passHash;
     }
 
     public String getEmail() {
@@ -65,7 +65,7 @@ public class User {
         return "User{" +
                 "id=" + id +
                 ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
+                ", passhash='" + passHash + '\'' +
                 ", email='" + email + '\'' +
                 ", roleId=" + roleId +
                 '}';
@@ -81,7 +81,7 @@ public class User {
         if (id != user.id) return false;
         if (roleId != user.roleId) return false;
         if (login != null ? !login.equals(user.login) : user.login != null) return false;
-        if (password != null ? !password.equals(user.password) : user.password != null) return false;
+        if (passHash != null ? !passHash.equals(user.passHash) : user.passHash != null) return false;
         return email != null ? email.equals(user.email) : user.email == null;
     }
 
@@ -89,7 +89,7 @@ public class User {
     public int hashCode() {
         int result = id;
         result = 31 * result + (login != null ? login.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + (passHash != null ? passHash.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + roleId;
         return result;

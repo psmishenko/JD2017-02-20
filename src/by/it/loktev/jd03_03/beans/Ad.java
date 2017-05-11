@@ -81,7 +81,7 @@ public class Ad {
 
     @Override
     public String toString() {
-        return "Ad{" +
+        return "Task{" +
                 "id=" + id +
                 ", floor=" + floor +
                 ", floors=" + floors +

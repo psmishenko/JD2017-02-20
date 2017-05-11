@@ -1,10 +1,11 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
 
-<form class="form-horizontal" action="do?command=signup" method="post">
+<form class="form-horizontal" action="do?command=SignUp" method="post">
 <fieldset>
 
 <!-- Form Name -->
-<legend>Login</legend>
+<legend>Регистрация</legend>
 
 <!-- Text input-->
 <div class="form-group">
@@ -37,7 +38,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="signup"></label>
   <div class="col-md-4">
-    <button id="signup" name="signup" class="btn btn-primary">Login</button>
+    <button id="signup" name="signup" class="btn btn-primary">Sign Up</button>
   </div>
 </div>
 
