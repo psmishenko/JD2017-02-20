@@ -31,9 +31,7 @@ public class CmdLogin extends Action {
             }
             request.setAttribute(Messages.MSG_MESSAGE,"нет такого пользователя");
             return null;
-        } catch (ParseException e) {
-            request.setAttribute(Messages.MSG_ERROR,e.toString());
-        } catch (SQLException e) {
+        } catch (Exception e) {
             request.setAttribute(Messages.MSG_ERROR,e.toString());
         }
         return null;

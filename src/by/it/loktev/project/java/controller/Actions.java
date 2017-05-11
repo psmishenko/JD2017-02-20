@@ -24,9 +24,14 @@ enum Actions {
             this.command=new CmdError();
         }
     },
-    CREATETASK {
+    TASKLIST {
         {
-            this.command=new CmdCreateTask();
+            this.command=new CmdTaskList();
+        }
+    },
+    TASKCREATE {
+        {
+            this.command=new CmdTaskCreate();
         }
     };
 

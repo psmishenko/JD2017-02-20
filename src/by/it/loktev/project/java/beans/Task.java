@@ -66,7 +66,7 @@ public class Task {
         return "Task{" +
                 "id=" + id +
                 ", name=" + name +
-                ", endDate=" + endDate.toString() +
+                ", endDate=" + endDate +
                 ", price=" + price +
                 ", statusId=" + statusId +
                 '}';

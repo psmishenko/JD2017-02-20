@@ -33,9 +33,7 @@ public class CmdSignup extends Action {
             } else {
                 return null;
             }
-        } catch (ParseException e) {
-            return Actions.ERROR.command;
-        } catch (SQLException e) {
+        } catch (Exception e) {
             return Actions.ERROR.command;
         }
 

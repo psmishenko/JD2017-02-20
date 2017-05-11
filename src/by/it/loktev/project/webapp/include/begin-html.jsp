@@ -35,12 +35,12 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-           <li><a href=do?command=CreateTask>create new task</a></li>
-           <li><a href=do?command=ListTasks>list all tasks</a></li>
+           <li><a href=do?command=TaskCreate>Create new task</a></li>
+           <li><a href=do?command=TaskList>List all tasks</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
            <li><a href=do?command=Login>Login</a></li>
-           <li><a href=do?command=SignUp>Sign Up</a></li>
+           <li><a href=do?command=SignUp>Sign up</a></li>
            <li><a href=do?command=Profile>Profile</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
