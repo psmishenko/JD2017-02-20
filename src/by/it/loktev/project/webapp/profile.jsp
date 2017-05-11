@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
 
-<p>User debug: ${user}</p>
+<p>Authorized user: ${userlogin} ${userpasshash}</p>
 
 <form class="form-horizontal" action="do?command=profile" method="POST">
 <fieldset>
@@ -13,7 +13,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="logout"></label>
   <div class="col-md-4">
-    <button id="logout" name="logout" class="btn btn-danger">logout</button>
+    <button id="logout" name="logout" class="btn btn-primary">logout</button>
   </div>
 </div>
 

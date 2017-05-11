@@ -2,6 +2,7 @@ package by.it.loktev.project.java.controller;
 
 import by.it.loktev.project.java.beans.User;
 import by.it.loktev.project.java.dao.DAO;
+import org.apache.commons.codec.digest.DigestUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -32,7 +33,9 @@ public class CmdLogin extends Action {
             if ( list.size()==1 ){
                 HttpSession session=request.getSession();
                 user=list.get(0);
-                session.setAttribute("user",user);
+                session.setAttribute("userlogin",user.getLogin());
+                session.setAttribute("userpasshash", DigestUtils.md5Hex(user.getPassword()));
+                session.setMaxInactiveInterval(30);
                 return Actions.PROFILE.command;
             }
             request.setAttribute(Messages.MSG_MESSAGE,"нет такого пользователя");
