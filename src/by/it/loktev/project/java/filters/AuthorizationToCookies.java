@@ -9,11 +9,8 @@ import java.io.IOException;
 
 public class AuthorizationToCookies implements Filter {
 
-    private String code;
-
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        code=filterConfig.getInitParameter("encoding");
     }
 
     @Override
@@ -42,7 +39,6 @@ public class AuthorizationToCookies implements Filter {
 
     @Override
     public void destroy() {
-        code=null;
-    }
+            }
 
 }

@@ -24,18 +24,9 @@ public class CmdLogin extends Action {
 
         try {
             User user=new User();
-            user.setId(0);
-            user.setRoleId(2);
             user.setLogin(Form.getString(request,"login",Pattern.LOGIN));
-            user.setPassword(Form.getString(request,"password",Pattern.PASSWORD));
-            DAO dao=DAO.getInstance();
-            List<User> list=dao.getUser().getAll(" where login='"+user.getLogin()+"' and password='"+user.getPassword()+"' ");
-            if ( list.size()==1 ){
-                HttpSession session=request.getSession();
-                user=list.get(0);
-                session.setAttribute("userlogin",user.getLogin());
-                session.setAttribute("userpasshash", DigestUtils.md5Hex(user.getPassword()));
-                session.setMaxInactiveInterval(30);
+            user.setPassHash(DigestUtils.md5Hex(Form.getString(request,"password",Pattern.PASSWORD)));
+            if ( Lib.authorize(request,user) ) {
                 return Actions.PROFILE.command;
             }
             request.setAttribute(Messages.MSG_MESSAGE,"нет такого пользователя");

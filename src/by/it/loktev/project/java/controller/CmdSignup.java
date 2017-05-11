@@ -2,6 +2,7 @@ package by.it.loktev.project.java.controller;
 
 import by.it.loktev.project.java.beans.User;
 import by.it.loktev.project.java.dao.DAO;
+import org.apache.commons.codec.digest.DigestUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,7 +25,7 @@ public class CmdSignup extends Action {
             user.setId(0);
             user.setLogin(Form.getString(request,"login",Pattern.LOGIN));
             user.setEmail(Form.getString(request,"email",Pattern.EMAIL));
-            user.setPassword(Form.getString(request,"password",Pattern.PASSWORD));
+            user.setPassHash(DigestUtils.md5Hex(Form.getString(request,"password",Pattern.PASSWORD)));
             user.setRoleId(2);
             DAO dao=DAO.getInstance();
             if  ( dao.getUser().create(user) ){

@@ -38,7 +38,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="signup"></label>
   <div class="col-md-4">
-    <button id="signup" name="signup" class="btn btn-primary">Login</button>
+    <button id="signup" name="signup" class="btn btn-primary">Sign Up</button>
   </div>
 </div>
 
