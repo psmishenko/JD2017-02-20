@@ -7,7 +7,6 @@ public class DAO {
     private static DAO dao;
     private RoleDAO role;
     private UserDAO user;
-    private UserRoleDAO userRole;
     private TovarDAO tovar;
     private KlientDAO klient;
     private AvtoDAO avto;
@@ -25,7 +24,6 @@ public class DAO {
                     dao = new DAO();
                     dao.role = new RoleDAO();
                     dao.user = new UserDAO();
-                    dao.userRole = new UserRoleDAO();
                     dao.tovar = new TovarDAO();
                     dao.klient = new KlientDAO();
                     dao.avto = new AvtoDAO();
@@ -44,10 +42,6 @@ public class DAO {
 
     public UserDAO getUser() {
         return user;
-    }
-
-    public UserRoleDAO getUserRole() {
-        return userRole;
     }
 
     public TovarDAO getTovar() {

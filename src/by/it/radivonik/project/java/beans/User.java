@@ -9,16 +9,18 @@ public class User {
     private String password;
     private String email;
     private int idRole;
+    private String nameRole;
 
     public User() {
     }
 
-    public User(int id, String login, String password, String email, int idRole) {
+    public User(int id, String login, String password, String email, int idRole, String nameRole) {
         this.id = id;
         this.login = login;
         this.password = password;
         this.email = email;
         this.idRole = idRole;
+        this.nameRole = nameRole;
     }
 
     public int getId() {
@@ -61,10 +63,18 @@ public class User {
         this.idRole = idRole;
     }
 
+    public String getNameRole() {
+        return nameRole;
+    }
+
+    public void setNameRole(String nameRole) {
+        this.nameRole = nameRole;
+    }
+
     @Override
     public String toString() {
         return
             "User{id=" + id + ", login='" + login + "', password='" + password + "', " +
-            "email='" + email + "', idRole=" + idRole + "}";
+            "email='" + email + "', idRole=" + idRole  + ", nameRole='" + getNameRole() + "'}";
     }
 }
