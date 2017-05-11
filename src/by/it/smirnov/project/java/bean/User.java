@@ -1,5 +1,7 @@
 package by.it.smirnov.project.java.bean;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 import java.util.List;
 
 /**
@@ -32,7 +34,7 @@ public class User extends AbstractBaseClass {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = DigestUtils.md5Hex(password);
     }
 
     public List<String> getListRoles() {

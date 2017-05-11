@@ -1,7 +1,8 @@
 package by.it.smirnov.project.java.controller;
 
+import by.it.smirnov.project.java.log.SingleLogger;
+
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +22,7 @@ public class FrontController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         process (req,resp);
         Action action=Actions.defineFrom(req);
-        Action nextAction=action.execute(req);
+        Action nextAction=action.execute(req, resp);
         dispatcher(action).forward(req,resp);
     }
 
@@ -29,7 +30,7 @@ public class FrontController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         process (req,resp);
         Action action=Actions.defineFrom(req);
-        Action nextAction=action.execute(req);
+        Action nextAction=action.execute(req, resp);
         if (nextAction != null){
             resp.sendRedirect("do?command="+nextAction);
         } else {
@@ -38,8 +39,9 @@ public class FrontController extends HttpServlet {
     }
 
     private void process (HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        req.setCharacterEncoding("UTF-8");
+//        req.setCharacterEncoding("UTF-8");
         resp.setHeader("Cache-Control", "no-cache, no-store");
+
 //        ServletContext servletContext = getServletContext();
 //        RequestDispatcher disp = servletContext.getRequestDispatcher("/index.jsp");
 //        disp.forward(req, resp);

@@ -1,4 +1,4 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -7,16 +7,17 @@
 </div>
 <p></p>
 
-<div class="panel panel-default">
+<div class="panel panel-primary">
   <!-- Default panel contents -->
   <div class="panel-heading">Справочник банков</div>
   <!-- Table -->
-  <table class="table">
+  <table class="table table-striped">
     <tr>
       <td><b>Наименование банка</b></td>
       <td><b>БИК</b></td>
       <td><b>Страна</b></td>
       <td><b>Группа</b></td>
+      <td></td>
     </tr>
   <c:forEach items="${banks}" var="bank">
     <tr>
