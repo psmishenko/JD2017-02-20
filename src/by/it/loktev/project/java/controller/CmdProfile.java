@@ -10,6 +10,8 @@ public class CmdProfile extends Action {
     @Override
     public Action execute(HttpServletRequest request, HttpServletResponse response) {
 
+        response.setHeader("Cache-Control","no-store");
+
         if (!Form.isPost(request)){
             return null;
         }

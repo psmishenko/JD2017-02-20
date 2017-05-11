@@ -13,38 +13,17 @@
 
 
 -- Дамп структуры базы данных loktevalexey
+DROP DATABASE IF EXISTS `loktevalexey`;
 CREATE DATABASE IF NOT EXISTS `loktevalexey` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `loktevalexey`;
 
--- Дамп структуры для таблица loktevalexey.ads
-CREATE TABLE IF NOT EXISTS `ads` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `floor` int(11) NOT NULL DEFAULT '0',
-  `floors` int(11) NOT NULL DEFAULT '0',
-  `rooms` int(11) NOT NULL DEFAULT '0',
-  `address` varchar(200) NOT NULL DEFAULT '0',
-  `desc` varchar(2000) DEFAULT NULL,
-  `userid` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `FK_ad_user` (`userid`),
-  CONSTRAINT `FK_ad_user` FOREIGN KEY (`userid`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
-
--- Дамп данных таблицы loktevalexey.ads: ~3 rows (приблизительно)
-DELETE FROM `ads`;
-/*!40000 ALTER TABLE `ads` DISABLE KEYS */;
-INSERT INTO `ads` (`id`, `floor`, `floors`, `rooms`, `address`, `desc`, `userid`) VALUES
-	(7, 1, 5, 2, 'Мулявина 6', 'ЦА', 2),
-	(8, 1, 5, 2, 'Мулявина 7', 'СервисДеск', 3),
-	(9, 1, 5, 2, 'Мулявина 8', 'ШББ', 2);
-/*!40000 ALTER TABLE `ads` ENABLE KEYS */;
-
 -- Дамп структуры для таблица loktevalexey.roles
+DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- Дамп данных таблицы loktevalexey.roles: ~2 rows (приблизительно)
 DELETE FROM `roles`;
@@ -54,25 +33,67 @@ INSERT INTO `roles` (`id`, `name`) VALUES
 	(2, 'Пользователь');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 
+-- Дамп структуры для таблица loktevalexey.statuses
+DROP TABLE IF EXISTS `statuses`;
+CREATE TABLE IF NOT EXISTS `statuses` (
+  `id` smallint(6) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы loktevalexey.statuses: ~3 rows (приблизительно)
+DELETE FROM `statuses`;
+/*!40000 ALTER TABLE `statuses` DISABLE KEYS */;
+INSERT INTO `statuses` (`id`, `name`) VALUES
+	(1, 'новая'),
+	(2, 'выполняется'),
+	(3, 'выполнена');
+/*!40000 ALTER TABLE `statuses` ENABLE KEYS */;
+
+-- Дамп структуры для таблица loktevalexey.tasks
+DROP TABLE IF EXISTS `tasks`;
+CREATE TABLE IF NOT EXISTS `tasks` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL DEFAULT '',
+  `enddate` date DEFAULT NULL,
+  `price` double NOT NULL DEFAULT '0',
+  `statusid` smallint(6) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `FK_tasks_statuses` (`statusid`),
+  CONSTRAINT `FK_tasks_statuses` FOREIGN KEY (`statusid`) REFERENCES `statuses` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- Дамп данных таблицы loktevalexey.tasks: ~0 rows (приблизительно)
+DELETE FROM `tasks`;
+/*!40000 ALTER TABLE `tasks` DISABLE KEYS */;
+INSERT INTO `tasks` (`id`, `name`, `enddate`, `price`, `statusid`) VALUES
+	(1, 'aaa', NULL, 111, 1),
+	(3, 'привет пока 333', '2017-05-11', 0, 1),
+	(4, 'привет пока 444', NULL, 0, 1),
+	(5, 'sadfasfasdfasdf', '1111-01-20', 23.440000534057617, 1);
+/*!40000 ALTER TABLE `tasks` ENABLE KEYS */;
+
 -- Дамп структуры для таблица loktevalexey.users
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(50) DEFAULT NULL,
-  `password` varchar(50) DEFAULT NULL,
+  `passhash` varchar(32) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `roleid` int(11) DEFAULT '2',
   PRIMARY KEY (`id`),
   KEY `FK_user_roles` (`roleid`),
   CONSTRAINT `FK_user_roles` FOREIGN KEY (`roleid`) REFERENCES `roles` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы loktevalexey.users: ~6 rows (приблизительно)
+-- Дамп данных таблицы loktevalexey.users: ~4 rows (приблизительно)
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`id`, `login`, `password`, `email`, `roleid`) VALUES
-	(1, 'admin1', 'pass1', 'email1@gmail.com', 1),
-	(2, 'user2', 'pass2', 'email2@gmail.com', 2),
-	(3, 'user3', 'pass3', 'email3@gmail.com', 2);
+INSERT INTO `users` (`id`, `login`, `passhash`, `email`, `roleid`) VALUES
+	(1, 'admin1', '', 'email1@gmail.com', 1),
+	(2, 'user2', '', 'email2@gmail.com', 2),
+	(3, 'user3', '', 'email3@gmail.com', 2),
+	(5, 'loktev', 'f4049b90bd5b4d3711e916d456e051ee', 'loktev@tut.by', 2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

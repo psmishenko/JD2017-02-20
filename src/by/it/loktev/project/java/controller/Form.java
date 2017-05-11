@@ -10,7 +10,7 @@ public class Form {
         if ((value != null) && value.matches(pattern)) {
             return value;
         } else {
-            throw new ParseException("Incorrect string: " + parameter, -1);
+            throw new ParseException("Incorrect parameter value: " + parameter+" "+value, -1);
         }
     }
 

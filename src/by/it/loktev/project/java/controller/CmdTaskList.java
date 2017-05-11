@@ -16,6 +16,8 @@ public class CmdTaskList extends Action {
     @Override
     public Action execute(HttpServletRequest request, HttpServletResponse response) {
 
+        response.setHeader("Cache-Control","no-store");
+
         try {
             DAO dao=DAO.getInstance();
             List<Task> list= dao.getTask().getAll("");

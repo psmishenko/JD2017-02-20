@@ -3,7 +3,7 @@
 
 <p>Authorized user: ${userlogin} ${userpasshash}</p>
 
-<p>All tasks list:</p>
+<p>Список заданий:</p>
 <b>${taskslist}</b>
 
 

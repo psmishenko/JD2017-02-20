@@ -6,4 +6,9 @@ public interface Pattern {
     String EMAIL="[A-Za-z0-9.-_]+@([A-Za-z0-9.-_]+\\.)+[A-Za-z0-9.-_]+";
     String PASSWORD="[A-Za-z0-9]{8,}";
 
+    String FLOAT="\\d+(?:\\.\\d+)?";
+    String DATE="\\d{4}\\-\\d{2}\\-\\d{2}";
+
+    String TASKNAME=".{5,}";
+
 }

@@ -3,7 +3,7 @@
 
 <p>Authorized user: ${userlogin} ${userpasshash}</p>
 
-<form class="form-horizontal" action="do?command=profile" method="POST">
+<form class="form-horizontal" action="do?command=Profile" method="POST">
 <fieldset>
 
 <!-- Form Name -->
