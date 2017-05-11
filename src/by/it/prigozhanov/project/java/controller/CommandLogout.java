@@ -1,6 +1,7 @@
 package by.it.prigozhanov.project.java.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 
 /**
@@ -9,6 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 public class CommandLogout extends Action{
     @Override
     public Action execute(HttpServletRequest request) {
-        return null;
+        if(Form.isPost(request) && request.getParameter("logout") != null) {
+            HttpSession user1 = request.getSession();
+            user1.invalidate();
+            return Actions.LOGIN.command;
+        }
+        else return Actions.ERROR.command;
     }
 }

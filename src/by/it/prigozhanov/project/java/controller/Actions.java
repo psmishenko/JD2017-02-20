@@ -27,6 +27,21 @@ enum Actions {
         {
             this.command = new CommandRentCar();
         }
+    },
+    SEARCH {
+        {
+            this.command = new CommandSearch();
+        }
+    },
+    HOME {
+        {
+            this.command = new CommandHome();
+        }
+    },
+    CARS {
+        {
+            this.command = new CommandCars();
+        }
     };
     public Action command;
 

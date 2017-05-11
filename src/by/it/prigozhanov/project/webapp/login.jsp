@@ -27,9 +27,9 @@
 
 <!-- Button -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for=""></label>
+  <label class="col-md-4 control-label" for="submitbutton"></label>
   <div class="col-md-4">
-    <button id="" name="" class="btn btn-success">Login</button>
+    <button id="submitbutton" name="submitbutton" class="btn btn-success">Login</button>
   </div>
 </div>
 
