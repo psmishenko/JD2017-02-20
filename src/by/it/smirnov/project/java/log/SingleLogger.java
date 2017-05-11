@@ -73,7 +73,7 @@ public class SingleLogger implements ILog {
         SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         synchronized (SingleLogger.class){
             try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName,true))){
-                bw.write(String.format("%s [%s] %s",sdf.format(System.currentTimeMillis()), prefix, message)+"\n");
+                bw.write(String.format("%s [%s] %s %n",sdf.format(System.currentTimeMillis()), prefix, message));
                 bw.flush();
             } catch (IOException e) {
                 SingleLogger.getInstance().error(e.toString());

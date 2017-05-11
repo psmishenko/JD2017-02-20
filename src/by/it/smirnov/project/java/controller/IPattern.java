@@ -9,4 +9,5 @@ public interface IPattern {
     String PASSWORD="[a-zA-Z0-9]{8,}";
     String BIC = "[0-9]{9}";
     String VALUT = "[A-Z]{3}";
+    String NAME = "[а-яА-ЯёЁa-zA-Z0-9\\s\\\"-\\.]{1,}";
 }

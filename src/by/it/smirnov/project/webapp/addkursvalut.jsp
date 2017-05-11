@@ -1,18 +1,20 @@
-<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <form class="form-horizontal" action="do?command=addKursValut" method="POST">
 <fieldset>
 
 <!-- Form Name -->
 <legend>Добавление нового курса</legend>
+<c:set var="now" value="<%=new java.util.Date()%>" />
 
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="login">Дата</label>
   <div class="col-md-4">
-  <input id="datekurs" name="datekurs" type="date" placeholder="дата" class="form-control input-md">
+  <input id="datekurs" name="datekurs" type="date" placeholder="дата" class="form-control input-md" value="<fmt:formatDate pattern="yyyy-MM-dd" value="${now}" />">
   </div>
 </div>
 

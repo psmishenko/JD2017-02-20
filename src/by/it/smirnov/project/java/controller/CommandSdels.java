@@ -5,6 +5,7 @@ import by.it.smirnov.project.java.bean.Sdel;
 import by.it.smirnov.project.java.log.SingleLogger;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
  */
 public class CommandSdels extends Action{
     @Override
-    public Action execute(HttpServletRequest request) {
+    public Action execute(HttpServletRequest request, HttpServletResponse response) {
         DAO dao= DAO.getInstance();
         List<Sdel> list = null;
         try {
