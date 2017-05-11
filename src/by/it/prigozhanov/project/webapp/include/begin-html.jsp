@@ -37,7 +37,6 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
 			<li><a href=do?command=Home>Home</a></li>
-			<li><a href=do?command=Profile>Profile</a></li>
 			<li>  <a href=do?command=Cars>Cars</a></li>
         </ul>
         <form class="navbar-form navbar-left">
@@ -47,9 +46,9 @@
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href=do?command=Logout>Logout</a></li>
-			<li><a href=do?command=Login>Login</a></li>
-           <li><a href=do?command=SignUp>Sign-up</a></li>
+            <li><a href=do?command=Profile>Profile</a></li>
+	    	<li><a href=do?command=Login>Login</a></li>
+            <li><a href=do?command=SignUp>Sign-up</a></li>
             </ul>
           </li>
         </ul>
