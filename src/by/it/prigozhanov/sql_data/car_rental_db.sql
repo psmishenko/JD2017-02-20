@@ -30,6 +30,9 @@ CREATE TABLE IF NOT EXISTS `prigozhanov`.`cars` (
   `HP` INT(11) NOT NULL,
   `Location` VARCHAR(100) NOT NULL,
   `Luggage_capacity` INT(11) NOT NULL,
+  `Price` INT(11) NOT NULL,
+  `Seats` INT(11) NOT NULL,
+  `Fuel_consumption` INT(11) NOT NULL,
   PRIMARY KEY (`ID`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
@@ -61,21 +64,39 @@ CREATE TABLE IF NOT EXISTS `prigozhanov`.`users` (
   `Login` VARCHAR(100) NOT NULL,
   `Password` VARCHAR(100) NOT NULL,
   `Email` VARCHAR(100) NOT NULL,
-  `FK_Roles` INT(11) NOT NULL DEFAULT 2,
-  `FK_Cars` INT(11) NULL DEFAULT NULL,
+  `FK_Roles` INT(11) NOT NULL DEFAULT '2',
   PRIMARY KEY (`ID`),
   INDEX `fk_users_roles_idx` (`FK_Roles` ASC),
-  INDEX `fk_users_cars1_idx` (`FK_Cars` ASC),
   CONSTRAINT `fk_users_roles`
     FOREIGN KEY (`FK_Roles`)
-    REFERENCES `prigozhanov`.`roles` (`ID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_users_cars1`
+    REFERENCES `prigozhanov`.`roles` (`ID`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
+-- Table `prigozhanov`.`orders`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `prigozhanov`.`orders` ;
+
+CREATE TABLE IF NOT EXISTS `prigozhanov`.`orders` (
+  `ID` INT(11) NOT NULL AUTO_INCREMENT,
+  `Passport_data` VARCHAR(45) NOT NULL,
+  `Card_number` VARCHAR(45) NOT NULL,
+  `Order_duration` INT(11) NOT NULL,
+  `Telephone` VARCHAR(45) NOT NULL,
+  `FK_Users` INT(11) NULL DEFAULT NULL,
+  `FK_Cars` INT(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  INDEX `fk_Orders_users1_idx` (`FK_Users` ASC),
+  INDEX `fk_Orders_cars1_idx` (`FK_Cars` ASC),
+  CONSTRAINT `fk_Orders_cars1`
     FOREIGN KEY (`FK_Cars`)
-    REFERENCES `prigozhanov`.`cars` (`ID`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    REFERENCES `prigozhanov`.`cars` (`ID`),
+  CONSTRAINT `fk_Orders_users1`
+    FOREIGN KEY (`FK_Users`)
+    REFERENCES `prigozhanov`.`users` (`ID`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8;
