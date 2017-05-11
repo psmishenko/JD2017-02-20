@@ -1,26 +1,20 @@
 package by.it.prigozhanov.project.java.beans;
 
-/**
- * Created by v-omf on 4/29/2017!
- */
 public class User {
-
     private int id;
     private String passportData;
     private String login;
     private String password;
     private String email;
     private Integer fkRole;
-    private Integer fkCar;
 
-    public User(int id, String passportData, String login, String password, String email, Integer fkRole, Integer fkCar) {
+    public User(int id, String passportData, String login, String password, String email, Integer fkRole) {
         this.id = id;
         this.passportData = passportData;
         this.login = login;
         this.password = password;
         this.email = email;
         this.fkRole = fkRole;
-        this.fkCar = fkCar;
     }
 
     public User() {
@@ -66,20 +60,12 @@ public class User {
         this.email = email;
     }
 
-    public int getFkRole() {
+    public Integer getFkRole() {
         return fkRole;
     }
 
-    public void setFkRole(int fkRole) {
+    public void setFkRole(Integer fkRole) {
         this.fkRole = fkRole;
-    }
-
-    public int getFkCar() {
-        return fkCar;
-    }
-
-    public void setFkCar(int fkCar) {
-        this.fkCar = fkCar;
     }
 
     @Override
@@ -90,12 +76,11 @@ public class User {
         User user = (User) o;
 
         if (id != user.id) return false;
-        if (fkRole != user.fkRole) return false;
-        if (fkCar != user.fkCar) return false;
         if (passportData != null ? !passportData.equals(user.passportData) : user.passportData != null) return false;
         if (login != null ? !login.equals(user.login) : user.login != null) return false;
         if (password != null ? !password.equals(user.password) : user.password != null) return false;
-        return email != null ? email.equals(user.email) : user.email == null;
+        if (email != null ? !email.equals(user.email) : user.email != null) return false;
+        return fkRole != null ? fkRole.equals(user.fkRole) : user.fkRole == null;
     }
 
     @Override
@@ -105,8 +90,7 @@ public class User {
         result = 31 * result + (login != null ? login.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + fkRole;
-        result = 31 * result + fkCar;
+        result = 31 * result + (fkRole != null ? fkRole.hashCode() : 0);
         return result;
     }
 
@@ -119,7 +103,6 @@ public class User {
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", fkRole=" + fkRole +
-                ", fkCar=" + fkCar +
                 '}';
     }
 }

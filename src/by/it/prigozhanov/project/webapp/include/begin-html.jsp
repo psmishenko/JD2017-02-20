@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!doctype html>
 <html>
 <head>
@@ -35,9 +36,9 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-			<li><a href=do?command=goHome>Home</a></li>
-			<li><a href=do?command=goProfile>Profile</a></li>
-			<li>  <a href=do?command=goCars>Cars</a></li>
+			<li><a href=do?command=Home>Home</a></li>
+			<li><a href=do?command=Profile>Profile</a></li>
+			<li>  <a href=do?command=Cars>Cars</a></li>
         </ul>
         <form class="navbar-form navbar-left">
           <div class="form-group">
