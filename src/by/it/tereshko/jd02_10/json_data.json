@@ -1,0 +1,27 @@
+{
+  "person": [
+    {
+      "email": "flatsale@mail.ru",
+      "nickname": "myname",
+      "password": "password",
+      "ads": {
+        "ad": [
+          {
+            "description": "A good flat",
+            "address": "Minsk, Timoshenko Street, 5-15",
+            "floor": 4,
+            "floors": 9,
+            "square": 60.5
+          },
+          {
+            "description": "Another good flat",
+            "address": "Minsk, Timoshenko Street, 3-18",
+            "floor": 2,
+            "floors": 10,
+            "square": 56.8
+          }
+        ]
+      }
+    }
+  ]
+}
