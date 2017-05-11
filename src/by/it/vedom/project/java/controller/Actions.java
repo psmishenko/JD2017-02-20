@@ -18,14 +18,14 @@ enum Actions {
             this.command=new CmdProfile();
         }
     },
-    SEARCH {
-        {
-            this.command = new CmdSearch();
-        }
-    },
     ADDPROD {
         {
             this.command=new CmdAddProd();
+        }
+    },
+    SEARCH {
+        {
+            this.command=new CmdSearch();
         }
     },
     ERROR {

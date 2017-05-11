@@ -1,6 +1,7 @@
 package by.it.vedom.project.java.dao;
 
 
+import by.it.akhmelev.project.java.dao.InterfaceDAO;
 import by.it.vedom.project.java.connection.ConnectionCreator;
 
 import java.lang.reflect.Field;
@@ -28,7 +29,7 @@ public class UniversalDAO<TypeBean> implements InterfaceDAO<TypeBean> {
     private String table; //это его таблица в базе
     private Field[] fields; //это поля bean
 
-    //конструктор dao
+    //конструктор DAO
     public UniversalDAO(TypeBean bean, String sqlTableName) {
         this.bean = bean;
         this.table = sqlTableName;

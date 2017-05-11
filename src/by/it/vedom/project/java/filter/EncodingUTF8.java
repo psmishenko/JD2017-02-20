@@ -29,5 +29,4 @@ public class EncodingUTF8 implements Filter{
     public void destroy() {
         code=null;
     }
-
 }

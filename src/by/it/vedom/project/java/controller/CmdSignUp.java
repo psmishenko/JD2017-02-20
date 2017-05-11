@@ -5,14 +5,14 @@ import by.it.vedom.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
 
+
 public class CmdSignUp extends Action {
 
     @Override
     public Action execute(HttpServletRequest request) {
         if (!Form.isPost(request)) {
             return null;
-        }
-        else {
+        } else {
             User user = new User();
             try {
                 user.setId(0);
@@ -20,7 +20,7 @@ public class CmdSignUp extends Action {
                 user.setEmail(Form.getString(request, "email", Pattern.EMAIL));
                 user.setPassword(Form.getString(request, "password", Pattern.PASSWORD));
                 user.setFk_roles(2);
-                DAO dao = DAO.getDAO();
+                DAO dao = DAO.getInstance();
                 if (dao.user.create(user))
                     return Actions.LOGIN.command;
                 else

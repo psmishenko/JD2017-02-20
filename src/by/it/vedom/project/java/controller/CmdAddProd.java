@@ -29,7 +29,7 @@ public class CmdAddProd extends Action {
                // product.setPrice(request, "product");
                 request.setAttribute(Messages.MSG_MESSAGE, "hi");
 
-                DAO dao = DAO.getDAO();
+                DAO dao = DAO.getInstance();
                 if (dao.product.create(product)) {
                     return Actions.PROFILE.command;
                 } else

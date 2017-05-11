@@ -17,7 +17,7 @@ public class CmdProfile extends Action {
         }
         User user= Utils.getSessionUser(request);
         if (user!=null) {
-//            DAO dao= DAO.getDAO();
+//            DAO dao= DAO.getInstance();
 //            try {
 //                List<Ad> ads=dao.ad.getAll("WHERE FK_users="+user.getId());
 //                request.setAttribute("ads",ads);

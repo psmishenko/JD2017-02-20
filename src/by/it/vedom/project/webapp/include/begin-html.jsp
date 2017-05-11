@@ -33,8 +33,8 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href=do?command=CreateAd>Каталог товаров</a></li>
-          <li><a href=do?command=ListAd>Поиск товаров</a></li>
-          <li><a href=do?command=ListAd>Добавить товар</a></li>
+          <li><a href=do?command=Search>Поиск товаров</a></li>
+          <li><a href=do?command=Addprod>Добавить товары</a></li>
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
