@@ -12,6 +12,9 @@ enum Actions {
     LOGOUT {{
         this.command = new CommandLogout();
     }},
+    INDEX {{
+        this.command = new CommandIndex();
+    }},
     ERROR {{
         this.command = new CommandError();
     }};
