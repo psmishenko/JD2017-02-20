@@ -1,0 +1,185 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+CREATE TABLE `Books` (
+  `id` int(11) NOT NULL,
+  `BookTitle` varchar(45) DEFAULT NULL,
+  `Description` varchar(1000) DEFAULT NULL,
+  `Author` varchar(45) NOT NULL,
+  `Price` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Books`
+--
+
+INSERT INTO `Books` (`id`, `BookTitle`, `Description`, `Author`, `Price`) VALUES
+(19, 'Artemis Fowl', 'no description', 'no author', 10),
+(20, 'Harry Potter', 'no description', 'J.K. Rowling', 5),
+(21, 'Artemis Fowl', 'no description', 'no author', 10),
+(22, 'Harry Potter', 'no description', 'J.K. Rowling', 5),
+(23, 'Artemis Fowl', 'no description', 'no author', 10),
+(24, 'Harry Potter', 'no description', 'J.K. Rowling', 5),
+(25, 'Artemis Fowl', 'no description', 'no author', 10),
+(26, 'Harry Potter', 'no description', 'J.K. Rowling', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Orders`
+--
+
+CREATE TABLE `Orders` (
+  `id` int(11) NOT NULL,
+  `fk_Book` int(11) NOT NULL,
+  `fk_Users` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Roles`
+--
+
+CREATE TABLE `Roles` (
+  `id` int(11) NOT NULL,
+  `Role` varchar(100) DEFAULT '2'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Roles`
+--
+
+INSERT INTO `Roles` (`id`, `Role`) VALUES
+(1, 'Admin'),
+(2, 'User'),
+(5, 'Administrator'),
+(6, 'Administrator'),
+(7, 'Administrator');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `Users`
+--
+
+CREATE TABLE `Users` (
+  `id` int(11) NOT NULL,
+  `Login` varchar(45) NOT NULL,
+  `Password` varchar(45) NOT NULL,
+  `Email` varchar(45) NOT NULL,
+  `fk_Roles` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Users`
+--
+
+INSERT INTO `Users` (`id`, `Login`, `Password`, `Email`, `fk_Roles`) VALUES
+(1, 'ivan', 'password', 'ivan@mail.ru', 2);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `Books`
+--
+ALTER TABLE `Books`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `Orders`
+--
+ALTER TABLE `Orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_Book` (`fk_Book`),
+  ADD KEY `fk_Users` (`fk_Users`);
+
+--
+-- Indexes for table `Roles`
+--
+ALTER TABLE `Roles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `Users`
+--
+ALTER TABLE `Users`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_Roles(sql)_idx` (`fk_Roles`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `Books`
+--
+ALTER TABLE `Books`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+--
+-- AUTO_INCREMENT for table `Orders`
+--
+ALTER TABLE `Orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `Roles`
+--
+ALTER TABLE `Roles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `Users`
+--
+ALTER TABLE `Users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `Orders`
+--
+ALTER TABLE `Orders`
+  ADD CONSTRAINT `fk_Book` FOREIGN KEY (`fk_Book`) REFERENCES `Book` (`id`),
+  ADD CONSTRAINT `fk_Users` FOREIGN KEY (`fk_Users`) REFERENCES `Users` (`id`);
+
+--
+-- Constraints for table `Users`
+--
+ALTER TABLE `Users`
+  ADD CONSTRAINT `fk_Roles(sql)` FOREIGN KEY (`fk_Roles`) REFERENCES `Roles` (`id`);
+
+
+
+
+
+
+
+
+
+  CREATE TABLE `Books` (
+    `id` int(11) NOT NULL,
+    `BookTitle` varchar(45) DEFAULT NULL,
+    `Description` varchar(1000) DEFAULT NULL,
+    `Author` varchar(45) NOT NULL,
+    `Price` double DEFAULT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CREATE TABLE `Orders` (
+    `id` int(11) NOT NULL,
+    `fk_Book` int(11) NOT NULL,
+    `fk_Users` int(11) NOT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CREATE TABLE `Roles` (
+    `id` int(11) NOT NULL,
+    `Role` varchar(100) DEFAULT '2'
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  CREATE TABLE `Users` (
+    `id` int(11) NOT NULL,
+    `Login` varchar(45) NOT NULL,
+    `Password` varchar(45) NOT NULL,
+    `Email` varchar(45) NOT NULL,
+    `fk_Roles` int(11) DEFAULT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
