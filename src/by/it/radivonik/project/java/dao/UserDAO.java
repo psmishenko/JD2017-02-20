@@ -11,7 +11,7 @@ import java.sql.SQLException;
 public class UserDAO extends AbstractDAO<User> {
     @Override
     protected String sqlSelect() {
-        return "SELECT * FROM user";
+        return "SELECT user.*, role.name AS name_role FROM user INNER JOIN role ON user.id_role = role.id";
     }
 
     @Override
@@ -49,7 +49,8 @@ public class UserDAO extends AbstractDAO<User> {
             resultSet.getString("login"),
             resultSet.getString("password"),
             resultSet.getString("email"),
-            resultSet.getInt("id_role"));
+            resultSet.getInt("id_role"),
+            resultSet.getString("name_role"));
         return user;
     }
 }

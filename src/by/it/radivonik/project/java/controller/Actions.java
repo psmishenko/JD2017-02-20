@@ -6,31 +6,23 @@ import javax.servlet.http.HttpServletRequest;
  * Created by Radivonik on 05.05.2017.
  */
 public enum Actions {
-    SIGNUP {
-        {
-            this.command = new CmdSignUp();
-        }
+    ERROR {
+        { this.command = new CmdError(); }
     },
     LOGIN {
-        {
-            this.command = new CmdLogin();
-        }
+        { this.command = new CmdLogin(); }
     },
     PROFILE {
-        {
-            this.command = new CmdProfile();
-        }
+        { this.command = new CmdProfile(); }
     },
     LOGOUT {
-        {
-            this.command = new CmdLogout();
-        }
+        { this.command = new CmdLogout(); }
     },
-    ERROR {
-        {
-            this.command = new CmdError();
-
-        }
+    USERLIST {
+        { this.command = new CmdUserList(); }
+    },
+    USEREDIT {
+        { this.command = new CmdUserEdit(); }
     };
 
     public Action command;

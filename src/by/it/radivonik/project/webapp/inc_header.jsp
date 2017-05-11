@@ -38,7 +38,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href=do?command=SignUp>Тест</a></li>
-            <li><a href=do?command=ListUser>Пользователи</a></li>
+            <li><a href=do?command=UserList>Пользователи</a></li>
             <li><a href=do?command=ListTovar>Справочник товаров</a></li>
             <li><a href=do?command=ListNaklad>Товарные накладные</a></li>
             <li><a href=do?command=ListSklad>Склад</a></li>
