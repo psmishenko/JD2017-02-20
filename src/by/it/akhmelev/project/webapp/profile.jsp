@@ -1,10 +1,36 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
 
-<p>User debug: ${user}</p>
+<div class="page-header">
+  <h1>Данные профиля</h1>
+  <div class="row">
+    <div class="col-md-1">Ваш логин: ${user.login}</div>
+    <div class="col-md-1">Ваш Email: ${user.email}</div>
+  </div>
+</div>
 
-<p>User ads: ${ads}</p>
-
+<h1>Ваши объявления</h1>
+<div class="row">
+  <div class="col-md-1">Цена</div>
+  <div class="col-md-3">Адрес</div>
+  <div class="col-md-4">Описание</div>
+  <div class="col-md-1">Число комнат</div>
+  <div class="col-md-1">Площадь</div>
+  <div class="col-md-1">Этаж</div>
+  <div class="col-md-1">Этажность</div>
+</div>
+<c:forEach items="${ads}" var="ad">
+  <br><div class="row">
+  <div class="col-md-1">${ad.price} </div>
+  <div class="col-md-3">${ad.address}</div>
+  <div class="col-md-4">${ad.description}</div>
+  <div class="col-md-1">${ad.roomCount}</div>
+  <div class="col-md-1">${ad.area}</div>
+  <div class="col-md-1">${ad.floor}</div>
+  <div class="col-md-1">${ad.floors}</div>
+</div>
+</c:forEach>
+<br><br>
 <form class="form-horizontal"  action="do?command=profile" method="POST">
 <fieldset>
 
