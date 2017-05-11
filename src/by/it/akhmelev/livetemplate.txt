@@ -1,70 +1,49 @@
-<template name="&lt;%@taglib"
-          value="&lt;c:forEach items=&quot;${s}&quot; var=&quot;ad&quot;&gt;&#10;    $END$&#10;&lt;/c:forEach&gt;&#10;"
-          description="&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;"
-          toReformat="false" toShortenFQNames="true">
-    <context>
-        <option name="JSP" value="true"/>
-    </context>
+<template name="&lt;%@taglib" value="&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;" description="&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot; %&gt;" toReformat="false" toShortenFQNames="true">
+  <context>
+    <option name="JSP" value="true" />
+  </context>
 </template>
-<template name="&lt;%@utf"
-          value="&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; pageEncoding=&quot;UTF-8&quot; %&gt;"
-          description="&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; pageEncoding=&quot;UTF-8&quot; %&gt;"
-          toReformat="false" toShortenFQNames="true">
-<context>
-    <option name="JSP" value="true"/>
-</context>
+<template name="&lt;%@utf" value="&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; pageEncoding=&quot;UTF-8&quot; %&gt;" description="&lt;%@ page contentType=&quot;text/html;charset=UTF-8&quot; language=&quot;java&quot; pageEncoding=&quot;UTF-8&quot; %&gt;" toReformat="false" toShortenFQNames="true">
+  <context>
+    <option name="JSP" value="true" />
+  </context>
 </template>
-<template name="&lt;c:forEach"
-          value="&lt;c:forEach items=&quot;${$BEAN$s}&quot; var=&quot;$BEAN$&quot;&gt;&#10;    &lt;div class=&quot;row&quot;&gt;&#10;        &lt;div class=&quot;col-md-1&quot;&gt;${$BEAN$.id} &lt;/div&gt;&#10;        $END$&#10;    &lt;/div&gt;&#10;    &lt;!-- ${$BEAN$.field} --&gt;&#10;&lt;/c:forEach&gt;&#10;"
-          description="&lt;c:forEach ..." toReformat="false" toShortenFQNames="true">
-<variable name="BEAN" expression="" defaultValue="" alwaysStopAt="true"/>
-<context>
-    <option name="JSP" value="true"/>
-</context>
+<template name="&lt;c:forEach" value="&lt;c:forEach items=&quot;${$BEAN$s}&quot; var=&quot;$BEAN$&quot;&gt;&#10;    &lt;div class=&quot;row&quot;&gt;&#10;        &lt;div class=&quot;col-md-1&quot;&gt;${$BEAN$.id} &lt;/div&gt;&#10;        $END$&#10;    &lt;/div&gt;&#10;    &lt;!-- ${$BEAN$.field} --&gt;&#10;&lt;/c:forEach&gt;&#10;" description="&lt;c:forEach ..." toReformat="false" toShortenFQNames="true">
+  <variable name="BEAN" expression="" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="JSP" value="true" />
+  </context>
 </template>
-<template name="bootstrap delete form"
-          value="&lt;form class=&quot;form-$bean$-${$bean$.id}&quot; action=&quot;do?command=????&quot; method=POST&gt;&#10;    &lt;input type=&quot;hidden&quot; name=&quot;id&quot; value=&quot;${$bean$.id}&quot;/&gt;&#10;    &lt;div class=col-md-1&gt;&#10;        &lt;button id=&quot;Delete&quot; name=&quot;Delete&quot; class=&quot;btn btn-danger&quot;&gt;&#10;            Удалить&#10;        &lt;/button&gt;&#10;    &lt;/div&gt;&#10;&lt;/form&gt;&#10;"
-          description="&lt;form class=... delete" toReformat="false" toShortenFQNames="true">
-<variable name="bean" expression="" defaultValue="" alwaysStopAt="true"/>
-<context>
-    <option name="JSP" value="true"/>
-</context>
+<template name="bootstrap delete form" value="&lt;form class=&quot;form-$bean$-${$bean$.id}&quot; action=&quot;do?command=????&quot; method=POST&gt;&#10;    &lt;input type=&quot;hidden&quot; name=&quot;id&quot; value=&quot;${$bean$.id}&quot;/&gt;&#10;    &lt;div class=col-md-1&gt;&#10;        &lt;button id=&quot;Delete&quot; name=&quot;Delete&quot; class=&quot;btn btn-danger&quot;&gt;&#10;            Удалить&#10;        &lt;/button&gt;&#10;    &lt;/div&gt;&#10;&lt;/form&gt;&#10;" description="&lt;form class=... delete" toReformat="false" toShortenFQNames="true">
+  <variable name="bean" expression="" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="JSP" value="true" />
+  </context>
 </template>
-<template name="bootstrap input"
-          value="&lt;div class=col-md-2&gt;&#10;    &lt;input id=&quot;$login$&quot; class=&quot;form-control input-md&quot; &#10;    name=&quot;$login$&quot;  value=&quot;${bean.$login$}&quot;/&gt;&#10;&lt;/div&gt;&#10;"
-          toReformat="false" toShortenFQNames="true">
-<variable name="login" expression="" defaultValue="" alwaysStopAt="true"/>
-<context>
-    <option name="JSP" value="true"/>
-</context>
+<template name="bootstrap input" value="&lt;div class=col-md-2&gt;&#10;    &lt;input id=&quot;$login$&quot; class=&quot;form-control input-md&quot; &#10;    name=&quot;$login$&quot;  value=&quot;${bean.$login$}&quot;/&gt;&#10;&lt;/div&gt;&#10;" toReformat="false" toShortenFQNames="true">
+  <variable name="login" expression="" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="JSP" value="true" />
+  </context>
 </template>
-<template name="bootstrap select"
-          value="&lt;div class=col-md-2&gt;&#10;    &lt;select id=&quot;$role$&quot; name=&quot;fk_$role$&quot; class=&quot;form-control&quot;&gt;&#10;        &lt;c:forEach items=&quot;${$role$s}&quot; var=&quot;$role$&quot;&gt;&#10;            &lt;option value=&quot;${$role$.id}&quot; role=${$role$.id} ${$role$.id==user.fk_$role$?&quot;selected&quot;:&quot;&quot;}&gt;&#10;            ${$role$.value}&#10;            &lt;/option&gt;&#10;        &lt;/c:forEach&gt;&#10;    &lt;/select&gt;&#10;&lt;/div&gt;&#10;"
-          description="&lt;select id=&quot;..." toReformat="false" toShortenFQNames="true">
-<variable name="role" expression="" defaultValue="" alwaysStopAt="true"/>
-<context>
-    <option name="JSP" value="true"/>
-</context>
+<template name="bootstrap select" value="&lt;div class=col-md-2&gt;&#10;    &lt;select id=&quot;$role$&quot; name=&quot;fk_$role$&quot; class=&quot;form-control&quot;&gt;&#10;        &lt;c:forEach items=&quot;${$role$s}&quot; var=&quot;$role$&quot;&gt;&#10;            &lt;option value=&quot;${$role$.id}&quot; role=${$role$.id} ${$role$.id==user.fk_$role$?&quot;selected&quot;:&quot;&quot;}&gt;&#10;            ${$role$.value}&#10;            &lt;/option&gt;&#10;        &lt;/c:forEach&gt;&#10;    &lt;/select&gt;&#10;&lt;/div&gt;&#10;" description="&lt;select id=&quot;..." toReformat="false" toShortenFQNames="true">
+  <variable name="role" expression="" defaultValue="" alwaysStopAt="true" />
+  <context>
+    <option name="JSP" value="true" />
+  </context>
 </template>
-<template name="bootstrap update button"
-          value="&lt;div class=col-md-1&gt;&#10;    &lt;button id=&quot;Update&quot; name=&quot;Update&quot; class=&quot;btn btn-success&quot;&gt;&#10;        Обновить&#10;    &lt;/button&gt;&#10;&lt;/div&gt;&#10;"
-          description="&lt;button id=&quot;Update&quot; name=&quot;Update&quot;" toReformat="false"
-          toShortenFQNames="true">
-<context>
-    <option name="JSP" value="true"/>
-</context>
+<template name="bootstrap update button" value="&lt;div class=col-md-1&gt;&#10;    &lt;button id=&quot;Update&quot; name=&quot;Update&quot; class=&quot;btn btn-success&quot;&gt;&#10;        Обновить&#10;    &lt;/button&gt;&#10;&lt;/div&gt;&#10;" description="&lt;button id=&quot;Update&quot; name=&quot;Update&quot;" toReformat="false" toShortenFQNames="true">
+  <context>
+    <option name="JSP" value="true" />
+  </context>
 </template>
-<template name="mysql.jdbc.Driver"
-          value="    static {&#10;        Driver driver;&#10;        try {&#10;            Class.forName(&quot;com.mysql.jdbc.Driver&quot;);&#10;            driver = new FabricMySQLDriver();&#10;            DriverManager.registerDriver(driver);&#10;        } catch (ClassNotFoundException e) {&#10;            System.out.println(&quot;Error loading driver: &quot; + e);&#10;        } catch (SQLException e) {&#10;            System.out.println(&quot;Error: not register driver: &quot;+e);&#10;        }&#10;    }&#10;"
-          description="Class.forName(&quot;com.mysql.jdbc.Driver&quot;);" toReformat="false" toShortenFQNames="true">
-<context>
-    <option name="JAVA_CODE" value="true"/>
-</context>
+<template name="mysql.jdbc.Driver" value="    static {&#10;        Driver driver;&#10;        try {&#10;            Class.forName(&quot;com.mysql.jdbc.Driver&quot;);&#10;            driver = new FabricMySQLDriver();&#10;            DriverManager.registerDriver(driver);&#10;        } catch (ClassNotFoundException e) {&#10;            System.out.println(&quot;Error loading driver: &quot; + e);&#10;        } catch (SQLException e) {&#10;            System.out.println(&quot;Error: not register driver: &quot;+e);&#10;        }&#10;    }&#10;" description="Class.forName(&quot;com.mysql.jdbc.Driver&quot;);" toReformat="false" toShortenFQNames="true">
+  <context>
+    <option name="JAVA_CODE" value="true" />
+  </context>
 </template>
-<template name="mysqlConn"
-          value="Connection connection = DriverManager.getConnection(CN.URL_DB, CN.USER_DB, CN.PASSWORD_DB);"
-          description="DriverManager.getConnection" toReformat="false" toShortenFQNames="true">
-<context>
-    <option name="JAVA_CODE" value="true"/>
-</context>
+<template name="mysqlConn" value="Connection connection = DriverManager.getConnection(CN.URL_DB, CN.USER_DB, CN.PASSWORD_DB);" description="DriverManager.getConnection" toReformat="false" toShortenFQNames="true">
+  <context>
+    <option name="JAVA_CODE" value="true" />
+  </context>
 </template>
