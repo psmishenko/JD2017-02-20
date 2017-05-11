@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
  <html lang="en">
    <head>
@@ -40,7 +41,7 @@
           <li><a href=do?command=AllBooks>All books</a></li>
            <li><a href=do?command=AboutUs>About us</a></li>
         </ul>
-         <form class="navbar-form navbar-left" action="do?command=allbooks" >
+         <form class="navbar-form navbar-left">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search book">
         </div>
@@ -49,7 +50,7 @@
         <ul class="nav navbar-nav navbar-right">
            <li><a href=do?command=Login>login</a></li>
             <li><a href=do?command=SignUp>sign-up</a></li>
-            <li><a href=do?command=Logout>logout</a></li>
+            <li><a href=do?command=Profile>Profile</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

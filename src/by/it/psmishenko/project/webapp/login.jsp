@@ -1,5 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
-<form class="form-horizontal">
+<form class="form-horizontal" action="do?command=login" method="POST">
 <fieldset>
 
 <!-- Form Name -->
@@ -9,7 +10,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="login">Login</label>
   <div class="col-md-6">
-  <input id="login" name="login" type="text" placeholder="Password" class="form-control input-md" required="">
+  <input id="login" name="login" type="text" placeholder="login" class="form-control input-md" required="">
   <span class="help-block">Your login (min 5 symbols)</span>
   </div>
 </div>
