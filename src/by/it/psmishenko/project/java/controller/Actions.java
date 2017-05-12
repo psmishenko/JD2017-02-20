@@ -6,6 +6,16 @@ import javax.servlet.http.HttpServletRequest;
  * Created by user on 05.05.2017.
  */
 enum  Actions {
+    INDEX {
+        {
+            this.command = new CmdIndex();
+        }
+    },
+    EDITUSERS {
+        {
+            this.command = new CmdEditusers();
+        }
+    },
     SIGNUP {
         {
             this.command = new CmdSignup();
@@ -45,6 +55,9 @@ enum  Actions {
     public Action command;
     static  Action defineFrom(HttpServletRequest request){
         String command = request.getParameter("command");
+        if(command==null){
+            command = "index";
+        }
         Action res;
         try {
             res = Actions.valueOf(command.toUpperCase()).command;

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
  <html lang="en">
@@ -48,6 +49,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
         <ul class="nav navbar-nav navbar-right">
+           <li><a href=do?command=editusers>All users</a></li>
            <li><a href=do?command=Login>login</a></li>
             <li><a href=do?command=SignUp>sign-up</a></li>
             <li><a href=do?command=Profile>Profile</a></li>
