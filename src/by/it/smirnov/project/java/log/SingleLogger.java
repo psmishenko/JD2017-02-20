@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 public class SingleLogger implements ILog {
     private static SingleLogger instance = null;
     //private static final String fileName = System.getProperty("user.dir") + "/src/by/it/smirnov/project/log.txt";
-    private static final String fileName = "D:/log.txt";
+    private static final String fileName = "log.txt";
     private static boolean isDebug;
 
     private SingleLogger() {
