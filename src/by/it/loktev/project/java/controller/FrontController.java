@@ -1,6 +1,10 @@
 package by.it.loktev.project.java.controller;
 
+import by.it.loktev.project.java.beans.Role;
+import by.it.loktev.project.java.dao.DAO;
+
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -8,11 +12,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
 
 public class FrontController extends HttpServlet {
 
     static {
         Log.write("START");
+    }
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+
+        try {
+            DAO dao=DAO.getInstance();
+            List<Role> roles= dao.getRole().getAll("");
+            config.getServletContext().setAttribute("roles",roles);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 
     private RequestDispatcher dispatcher(Action action){

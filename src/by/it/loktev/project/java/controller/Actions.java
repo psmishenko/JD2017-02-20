@@ -40,6 +40,9 @@ enum Actions {
 
     static Action defineFrom(HttpServletRequest request){
         String command=request.getParameter("command");
+        if ( command==null ){
+            command="index";
+        }
         Action res;
         try {
             res = Actions.valueOf(command.toUpperCase()).command;
