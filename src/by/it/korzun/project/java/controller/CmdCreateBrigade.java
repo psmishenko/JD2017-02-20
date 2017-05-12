@@ -16,18 +16,18 @@ public class CmdCreateBrigade extends Action{
         try {
             brigade.setId(0);
             brigade.setFirstPilotID(Integer.parseInt(Form.getString(request, "firstpilot",
-                    Pattern.SPECIALIZATION)));
+                    Pattern.ID)));
             brigade.setSecondPilotID(Integer.parseInt(Form.getString(request, "secondpilot",
-                    Pattern.SPECIALIZATION)));
+                    Pattern.ID)));
             brigade.setNavigatorID(Integer.parseInt(Form.getString(request, "navigator",
-                    Pattern.SPECIALIZATION)));
+                    Pattern.ID)));
             brigade.setRadio_operatorID(Integer.parseInt(Form.getString(request, "radio_operator",
-                    Pattern.SPECIALIZATION)));
+                    Pattern.ID)));
             brigade.setStewardessID(Integer.parseInt(Form.getString(request, "stewardess",
-                    Pattern.SPECIALIZATION)));
+                    Pattern.ID)));
             DAO dao = DAO.getInstance();
             if(dao.brigade.create(brigade)){
-                return Actions.LOGIN.command;
+                return Actions.DISPATCHER.command;
             }else
                 return null;
         } catch (ParseException e) {
@@ -35,6 +35,6 @@ public class CmdCreateBrigade extends Action{
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return Actions.LOGIN.command;
+        return Actions.DISPATCHER.command;
     }
 }

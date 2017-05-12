@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
 
 <form class="form-horizontal" action="do?command=login" method="POST">
@@ -8,9 +9,9 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Login</label>
+  <label class="col-md-4 control-label" for="login">Login</label>
   <div class="col-md-4">
-  <input id="textinput" name="textinput" type="text" placeholder="Login" class="form-control input-md">
+  <input id="login" name="login" type="text" placeholder="Login" class="form-control input-md">
 
   </div>
 </div>

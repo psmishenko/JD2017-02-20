@@ -20,7 +20,7 @@ public class CmdCreateFlight extends Action{
                     Pattern.SPECIALIZATION)));
             DAO dao = DAO.getInstance();
             if(dao.flight.create(flight)){
-                return Actions.LOGIN.command;
+                return Actions.ADMIN.command;
             }else
                 return null;
         } catch (ParseException e) {
@@ -28,7 +28,7 @@ public class CmdCreateFlight extends Action{
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return Actions.LOGIN.command;
+        return Actions.ADMIN.command;
     }
 
 }

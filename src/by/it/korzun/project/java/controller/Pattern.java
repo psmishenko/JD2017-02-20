@@ -6,5 +6,6 @@ public interface Pattern {
     String PASSWORD = "[a-zA-Z0-9]{5,}";
     String SPECIALIZATION = "[1-6]";
     String DESTINATION = "[a-zA-Z]+";
+    String ID = "[\\d]{1,}";
 
 }

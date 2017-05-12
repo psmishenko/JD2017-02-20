@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
 
 <form class="form-horizontal" action="do?command=createflight" method="POST">
@@ -86,11 +87,17 @@
   </div>
 </div>
 
+</fieldset>
+</form>
+
+<form class="form-horizontal" action="do?command=admin" method="POST">
+<fieldset>
+
 <!-- Button -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="logoutbutton"></label>
+  <label class="col-md-4 control-label" for="logout"></label>
   <div class="col-md-4">
-    <button id="logoutbutton" name="logoutbutton" class="btn btn-danger">Logout</button>
+    <button id="logout" name="logout" class="btn btn-danger">Logout</button>
   </div>
 </div>
 
