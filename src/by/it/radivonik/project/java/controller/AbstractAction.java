@@ -5,8 +5,8 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by Radivonik on 06.05.2017.
  */
-public abstract class Action {
-    abstract Action execute(HttpServletRequest req);
+public abstract class AbstractAction {
+    abstract AbstractAction execute(HttpServletRequest req);
 
     @Override
     public String toString() {
