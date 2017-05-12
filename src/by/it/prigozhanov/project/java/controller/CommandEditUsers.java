@@ -18,26 +18,30 @@ public class CommandEditUsers extends Action {
     @Override
     public Action execute(HttpServletRequest request) {
         DAO dao = DAO.getInstance();
+        try {
         if (Form.isPost(request)) {
             if (request.getParameter("Update")!=null) {
-                try {
-                    User user = new User(
-                            Integer.parseInt(Form.getString(request, "id", Pattern.INTEGER)),
-                            Form.getString(request, "Login", Pattern.LOGIN),
-                            Form.getString(request, "Passportdata", Pattern.PASSPORT),
-                            Form.getString(request, "Password", Pattern.PASSWORD),
-                            Form.getString(request, "Email", Pattern.EMAIL),
-                            Integer.parseInt(Form.getString(request, "fkrole", Pattern.INTEGER))
-                    );
-                    dao.user.update(user);
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+                User user = new User(
+                        Form.getInt(request, "id"),
+                        Form.getString(request, "passportdata", Pattern.PASSPORT),
+                        Form.getString(request, "login", Pattern.LOGIN),
+                        Form.getString(request, "password", Pattern.PASSWORD),
+                        Form.getString(request, "email", Pattern.EMAIL),
+                        Form.getInt(request, "fk_role")
+                );
+                dao.user.update(user);
             }
+            if (request.getParameter("Delete")!=null) {
+                User user = new User();
+                user.setId(Form.getInt(request, "id"));
+                dao.user.delete(user);
+            }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
-
 
 
         try {

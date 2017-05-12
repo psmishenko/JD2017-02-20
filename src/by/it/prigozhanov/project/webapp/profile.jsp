@@ -6,11 +6,24 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>Profile</legend>
+<legend>Пользователь ${user.login}</legend>
 
-<p>Логин: ${user.login}</p>
-<p>: ${user}</p>
-<p>Заказы: ${orders}</p>
+<p>Ваш логин: <b>${user.login}</b></p>
+<p>Ваши пасспортные данные: <b>${user.passportData}</b></p>
+<p>Ваш E-mail: <b>${user.email}</b></p>
+
+<legend>Арендованные машины</legend>
+
+<c:forEach items="${orders}" var="order">
+ <h4>Арендованная машина: ${order.fk_Cars}</h4>
+    <div class="row">
+        <div class="col-md-2">ID заказа: <b>${order.id}</b></div>
+        <div class="col-md-3">Срок аренды: <b>${order.orderDuration} дней</b> </div>
+        <div class="col-md-4">Номер карты: <b>${order.cardNumber}</b></div>
+        <div class="col-md-3">Телефон: <b>${order.telephone}</b></div>
+    </div>
+
+</c:forEach>
 
 
 <!-- Button -->

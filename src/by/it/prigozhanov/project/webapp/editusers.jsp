@@ -6,7 +6,9 @@
         <div class=col-md-1>ID</div>
         <div class=col-md-2>Имя</div>
         <div class=col-md-2>Пароль</div>
-        <div class=col-md-7>Email</div>
+        <div class=col-md-2>Пасспортные данные</div>
+        <div class=col-md-2>Email</div>
+        <div class=col-md-2>Роль</div>
     </b>
 </div>
 <br>
@@ -29,13 +31,19 @@
                     <input id="password" class="form-control input-md" name="password"
                            value="${user.password}"/>
                 </div>
+
+                <div class=col-md-2>
+                                    <input id="password" class="form-control input-md" name="passportdata"
+                                           value="${user.passportData}"/>
+                                </div>
+
                 <div class=col-md-2>
                     <input id="email" class="col-md-2 form-control input-md" name="email"
                            value="${user.email}"/>
                 </div>
 
-                <div class=col-md-2>
-                    <select id="role" name="fk_Role" class="form-control">
+                <div class=col-md-1>
+                    <select id="role" name="fk_role" class="form-control">
                         <c:forEach items="${roles}" var="role">
                             <option value="${role.id}" role=${role.id} ${role.id==user.fkRole?"selected":""}>
                                     ${role.role}

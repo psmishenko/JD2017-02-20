@@ -44,7 +44,7 @@ public class UserDAO extends AbstractDAO implements InterfaceDAO<User> {
                         "`Login`='%s'," +
                         "`Password`='%s'," +
                         "`Email`='%s'," +
-                        "`FK_Roles`='%d'," +
+                        "`FK_Roles`=%d " +
                         " WHERE ID=%d",
                 user.getPassportData(),
                 user.getLogin(),

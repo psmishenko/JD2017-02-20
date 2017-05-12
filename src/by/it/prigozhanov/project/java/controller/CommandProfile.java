@@ -1,11 +1,8 @@
 package by.it.prigozhanov.project.java.controller;
 
+import by.it.prigozhanov.project.java.beans.Car;
 import by.it.prigozhanov.project.java.beans.Order;
 import by.it.prigozhanov.project.java.beans.User;
-import by.it.prigozhanov.project.java.controller.Action;
-import by.it.prigozhanov.project.java.controller.Actions;
-import by.it.prigozhanov.project.java.controller.Form;
-import by.it.prigozhanov.project.java.controller.Utils;
 import by.it.prigozhanov.project.java.dao.DAO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -27,7 +24,9 @@ public class CommandProfile extends Action {
             if(user != null) {
                 DAO dao = DAO.getInstance();
                 try {
-                    List<Order> orders = dao.order.getAll("WHERE ID="+user.getId());
+                    List<Order> orders = dao.order.getAll("WHERE FK_Users="+user.getId());
+                    List<Car> cars = dao.car.getAll("");
+                    request.setAttribute("cars", cars);
                     request.setAttribute("orders", orders);
                 } catch (SQLException e) {
                     e.printStackTrace();
