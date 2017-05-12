@@ -16,6 +16,7 @@
     <servlet-mapping>
         <servlet-name>HelloWorld</servlet-name>
         <url-pattern>/do</url-pattern>
+        <url-pattern></url-pattern>
     </servlet-mapping>
 <filter>
     <filter-name>EncodingUTF8</filter-name>

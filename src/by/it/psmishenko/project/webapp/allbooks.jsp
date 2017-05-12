@@ -14,12 +14,21 @@
    	<th>LID</th>
    	<th>Add to My Books</th>
    </tr>
+    <c:forEach  items="${allbooks}" var="book"  >
    <tr>
-   
+ <td>${book.author}</td>
+ <td>${book.title}</td>
+ <td>${book.year}</td>
+ <td>${book.isbn}</td>
+ <td>${book.lid}</td>
+<td><div class="form-group">
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Add to My books</button>
+  </div>
+</div></td>
+</c:forEach>
    </tr>
   </table>
-  <p>All books: ${allbooks}</p>
-  <p>Если пользователь незалогинен - кнопки Add to My Books будут заблокированы или переводить на login</p>
 </div>
 
 <%@ include file="include/end-html.jsp" %>
