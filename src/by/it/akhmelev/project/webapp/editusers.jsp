@@ -6,7 +6,8 @@
         <div class=col-md-1>ID</div>
         <div class=col-md-2>Имя</div>
         <div class=col-md-2>Пароль</div>
-        <div class=col-md-7>Email</div>
+        <div class=col-md-2>Email</div>
+        <div class=col-md-2>Роль</div>
     </b>
 </div>
 <br>

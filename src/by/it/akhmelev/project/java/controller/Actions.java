@@ -3,6 +3,16 @@ package by.it.akhmelev.project.java.controller;
 import javax.servlet.http.HttpServletRequest;
 
 enum Actions {
+    INDEX {
+        {
+            this.command=new CmdIndex();
+        }
+    },
+    EDITUSERS {
+        {
+            this.command=new CmdEditUsers();
+        }
+    },
     SIGNUP {
         {
             this.command=new CmdSignup();
@@ -33,6 +43,9 @@ enum Actions {
 
     static Action defineFrom(HttpServletRequest request){
         String command=request.getParameter("command");
+        if (command==null){
+            command="index";
+        }
         Action res;
         try {
             res=Actions.valueOf(command.toUpperCase()).command;
