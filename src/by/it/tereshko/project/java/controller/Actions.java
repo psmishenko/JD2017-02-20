@@ -14,9 +14,14 @@ enum Actions {
             this.command = new CmdLogin();
         }
     },
-    LOGOUT {
+    PROFILE {
         {
-            this.command = new CmdLogout();
+            this.command = new CmdProfile();
+        }
+    },
+    CREATEAD {
+        {
+            this.command = new CmdCreateAd();
         }
     },
     ERROR {
