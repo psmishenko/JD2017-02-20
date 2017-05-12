@@ -31,16 +31,18 @@ public class CmdLogin extends Action{
                 if(list.size() == 1){
                     HttpSession session = request.getSession();
                     staff = list.get(0);
-                    session.setAttribute("staff", staff);
                     if(staff.getFk_specialization() == 1 ||
                             staff.getFk_specialization() == 2 ||
                             staff.getFk_specialization() == 3 ||
                             staff.getFk_specialization() == 4
                             ) {
+                        session.setAttribute("staff", staff);
                         return Actions.STAFF.command;
                     }else if(staff.getFk_specialization() == 5){
+                        session.setAttribute("staff", staff);
                         return Actions.DISPATCHER.command;
                     }else if(staff.getFk_specialization() == 6){
+                        session.setAttribute("staff", staff);
                         return Actions.ADMIN.command;
                     }
                 }else{

@@ -28,8 +28,22 @@ public class BrigadeDAO extends AbstractDAO implements InterfaceDAO<Brigade>{
         return false;
     }
 
-    public boolean update(Brigade brigade){
-        return false;
+    public boolean update(Brigade brigade)throws SQLException {
+        String sql = String.format("UPDATE `Brigades` SET "+
+                        "`firstpilotid` = '%d', " +
+                        "`secondpilotid` = '%d', " +
+                        "`navigatorid` = '%d', " +
+                        "`radio_operatorid` = '%d', " +
+                        "`stewardessid` = '%d' " +
+                        "WHERE ID = %d",
+                brigade.getFirstPilotID(),
+                brigade.getSecondPilotID(),
+                brigade.getNavigatorID(),
+                brigade.getRadio_operatorID(),
+                brigade.getStewardessID(),
+                brigade.getId()
+        );
+        return executeUpdate(sql);
     }
 
     public Brigade read(int id)throws SQLException{
@@ -40,8 +54,8 @@ public class BrigadeDAO extends AbstractDAO implements InterfaceDAO<Brigade>{
             return null;
     }
 
-    public boolean delete(Brigade bigade)throws SQLException {
-        String sql = String.format("DELETE FROM `Brigades` WHERE ID = %d", bigade.getId());
+    public boolean delete(Brigade brigade)throws SQLException {
+        String sql = String.format("DELETE FROM `Brigades` WHERE ID = %d", brigade.getId());
 
         return executeUpdate(sql);
     }

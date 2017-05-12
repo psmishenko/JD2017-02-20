@@ -4,8 +4,27 @@
 <form class="form-horizontal" action="do?command=staff" method="POST">
 <fieldset>
 
-<!-- Form Name -->
-<legend>Profile</legend>
+<legend><h3>Profile</h3></legend>
+<div>Name: ${staff.name}</div>
+<div>Login: ${staff.login}</div>
+<c:set var = "spec" value = "${staff.fk_specialization}"/>
+<c:choose>
+    <c:when test = "${spec == 1}">
+        Specialization: Pilot
+                </c:when>
+    <c:when test = "${spec == 2}">
+        Specialization: Navigator
+                </c:when>
+    <c:when test = "${spec == 3}">
+        Specialization: Radio-operator
+                </c:when>
+    <c:when test = "${spec == 4}">
+        Specialization: Stewardess
+    </c:when>
+</c:choose>
+<br>
+<br>
+<legend></legend>
 
 <!-- Text input-->
 <div class="form-group">

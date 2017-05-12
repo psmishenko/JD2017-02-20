@@ -12,18 +12,14 @@ public class CmdRemoveBrigade extends Action{
     Action execute(HttpServletRequest request) {
         try {
             DAO dao = DAO.getInstance();
-            Brigade brigade = dao.brigade.read(Integer.parseInt(Form.getString(request, "removebrigade", Pattern.SPECIALIZATION)));
+            Brigade brigade = dao.brigade.read(Integer.parseInt(Form.getString(request, "id", Pattern.ID)));
 
             if(dao.brigade.delete(brigade)){
-                return null;
+                return Actions.DISPATCHER.command;
             }else
-                return null;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
+                return Actions.DISPATCHER.command;
+        } catch (SQLException | ParseException e) {
+            return Actions.DISPATCHER.command;
         }
-
-        return null;
     }
 }

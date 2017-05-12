@@ -25,8 +25,16 @@ public class FlightDAO extends AbstractDAO implements InterfaceDAO<Flight>{
         return false;
     }
 
-    public boolean update(Flight flight){
-        return false;
+    public boolean update(Flight flight)throws SQLException {
+        String sql = String.format("UPDATE `Flights` SET "+
+                        "`destination` = '%s', " +
+                        "`brigades_id` = '%d' " +
+                        "WHERE ID = %d",
+                flight.getDestination(),
+                flight.getBrigadeID(),
+                flight.getId()
+        );
+        return executeUpdate(sql);
     }
 
     public Flight read(int id)throws SQLException{

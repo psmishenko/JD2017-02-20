@@ -40,7 +40,7 @@ public class StaffDAO extends AbstractDAO implements InterfaceDAO<Staff>{
                     staff.getId()
             );
             return executeUpdate(sql);
-        }
+    }
 
     public Staff read(int id) throws SQLException {
         List<Staff> list = getAll("WHERE ID = " + id + " LIMIT 0,1");

@@ -11,6 +11,9 @@ public class CmdStaff extends Action{
             session.invalidate();
             return Actions.LOGIN.command;
         }
+
+
+
         return null;
     }
 }

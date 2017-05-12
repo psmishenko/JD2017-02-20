@@ -37,7 +37,7 @@ public class Test {
 //        } catch (SQLException e) {
 //            e.printStackTrace();
 //        }
-
+//
 //        Flight flight = new Flight();
 //        try {
 //            flight.setId(0);
@@ -66,7 +66,6 @@ public class Test {
 //        } catch (SQLException e) {
 //            e.printStackTrace();
 //        }
-
 
     }
 }

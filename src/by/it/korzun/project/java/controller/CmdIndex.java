@@ -4,22 +4,14 @@ import by.it.korzun.project.java.beans.Flight;
 import by.it.korzun.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.List;
 
-public class CmdAdmin extends Action{
+public class CmdIndex extends Action{
     @Override
     public Action execute(HttpServletRequest request) {
-        if(Form.isPost(request) && (request.getParameter("logout") != null)){
-            HttpSession session = request.getSession();
-            session.invalidate();
-            return Actions.LOGIN.command;
-        }
-
         DAO dao = DAO.getInstance();
         List<Flight> flights = dao.flight.getAll("");
         request.setAttribute("flights", flights);
-
         return null;
     }
 }

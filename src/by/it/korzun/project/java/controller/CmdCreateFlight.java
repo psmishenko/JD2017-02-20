@@ -17,7 +17,7 @@ public class CmdCreateFlight extends Action{
             flight.setDestination(Form.getString(request, "destination",
                     Pattern.DESTINATION));
             flight.setBrigadeID(Integer.parseInt(Form.getString(request, "brigade",
-                    Pattern.SPECIALIZATION)));
+                    Pattern.ID)));
             DAO dao = DAO.getInstance();
             if(dao.flight.create(flight)){
                 return Actions.ADMIN.command;
