@@ -38,6 +38,16 @@ enum Actions {
             this.command = new CommandHome();
         }
     },
+    INDEX {
+        {
+            this.command = new CommandIndex();
+        }
+    },
+    EDITUSERS {
+        {
+            this.command = new CommandEditUsers();
+        }
+    },
     CARS {
         {
             this.command = new CommandCars();
@@ -47,6 +57,9 @@ enum Actions {
 
     static Action defineFrom(HttpServletRequest request) {
         String command = request.getParameter("command");
+        if (command==null) {
+            command="index";
+        }
         Action res;
         try {
 

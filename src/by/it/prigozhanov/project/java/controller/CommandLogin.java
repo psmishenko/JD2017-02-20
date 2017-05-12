@@ -38,12 +38,12 @@ public class CommandLogin extends Action {
                     session.setAttribute("user", user);
                     return Actions.PROFILE.command;
                 } else {
-                    request.setAttribute(Messages.MSG_ERROR, "Нет такого пользователя");
+                    request.setAttribute(Messages.MSG_MESSAGE, "Нет такого пользователя");
                     return null;
                 }
 
             } catch (Exception e) {
-                request.setAttribute(Messages.MSG_ERROR, "Нет такого пользователя" + "\n" + e);
+                e.getMessage();
             }
         }
         return null;
