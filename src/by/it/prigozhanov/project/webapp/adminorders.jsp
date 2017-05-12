@@ -55,9 +55,9 @@
 
             </b>
         </form>
-        <form class="form-user-${user.id}" action="do?command=EditUsers" method=POST>
+        <form class="form-order-${order.id}" action="do?command=adminorders" method=POST>
             <b>
-                 <input type="hidden" name="id" value="${user.id}"/>
+                 <input type="hidden" name="id" value="${order.id}"/>
                 <div class=col-md-1>
                     <button id="Delete" name="Delete" class="btn btn-danger">
                         Удалить

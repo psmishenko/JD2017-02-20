@@ -24,15 +24,15 @@
         <div class="col-md-3">Телефон: <b>${order.telephone}</b></div>
     </div>
 
+
+</c:forEach>
+
 <!-- Button -->
 <div class="form-group">
   <div class="col-md-4">
     <button id="logout" name="logout" class="btn btn-danger">Logout</button>
   </div>
 </div>
-</c:forEach>
-
-
 
 
 </fieldset>

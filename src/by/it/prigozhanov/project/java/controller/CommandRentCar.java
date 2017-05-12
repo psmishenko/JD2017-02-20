@@ -24,14 +24,17 @@ public class CommandRentCar extends Action {
             DAO dao = DAO.getInstance();
             try {
                 HttpSession session = request.getSession();
-                order.setCardNumber(Form.getString(request, "cardnumber", Pattern.CARDNUMBER));
-                order.setFk_Users(Utils.getSessionUser(request).getId());
-                order.setFk_Cars(Integer.parseInt(String.valueOf(session.getAttribute("id"))));
-                order.setPassportData(Form.getString(request, "passportdata", Pattern.PASSPORT));
-                order.setTelephone(Form.getString(request, "telephone", Pattern.TELEPHONE));
-                order.setOrderDuration(Integer.parseInt(Form.getString(request, "duration", Pattern.INTEGER)));
-                dao.order.create(order);
-                return Actions.PROFILE.command;
+                if (Utils.getSessionUser(request) != null) {
+                    order.setCardNumber(Form.getString(request, "cardnumber", Pattern.CARDNUMBER));
+                    order.setFk_Users(Utils.getSessionUser(request).getId());
+                    order.setFk_Cars(Integer.parseInt(String.valueOf(session.getAttribute("id"))));
+                    order.setPassportData(Form.getString(request, "passportdata", Pattern.PASSPORT));
+                    order.setTelephone(Form.getString(request, "telephone", Pattern.TELEPHONE));
+                    order.setOrderDuration(Integer.parseInt(Form.getString(request, "duration", Pattern.INTEGER)));
+                    dao.order.create(order);
+                    return Actions.PROFILE.command;
+                } else
+                    return Actions.LOGIN.command;
             } catch (ParseException e) {
                 return Actions.ERROR.command;
             } catch (SQLException e) {
