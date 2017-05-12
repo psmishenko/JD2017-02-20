@@ -13,6 +13,47 @@
 </div>
 <br>
 
+ <div class="row">
+        <form class="update-user-${user.id}" action="do?command=EditUsers" method=POST>
+            <b>
+                <div class=col-md-1>
+
+                </div>
+                <div class=col-md-2>
+                    <input id="login" class="form-control input-md" name="login"/>
+                </div>
+                <div class=col-md-2>
+                    <input id="password" class="form-control input-md" name="password"/>
+                </div>
+
+                <div class=col-md-2>
+                    <input id="password" class="form-control input-md" name="passportdata"/>
+                </div>
+
+                <div class=col-md-2>
+                    <input id="email" class="col-md-2 form-control input-md" name="email"/>
+                </div>
+
+                <div class=col-md-1>
+                    <select id="role" name="fk_role" class="form-control">
+                        <c:forEach items="${roles}" var="role">
+                            <option value="${role.id}" role=${role.id} ${role.id==user.fkRole?"selected":""}>
+                                    ${role.role}
+                            </option>
+                        </c:forEach>
+                    </select>
+                    </div>
+                     <div class=col-md-1>
+                                        <button id="Create" name="Create" class="btn btn-success">
+                                            Добавить <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                        </button>
+                                        </b>
+                                        </form>
+                                    </div>
+
+                                    </div>
+
+
 
 <c:forEach items="${users}" var="user">
     <hr>
@@ -54,7 +95,7 @@
 
 
                 <div class=col-md-1>
-                    <button id="Update" name="Update" class="btn btn-success">
+                    <button id="Update" name="Update" class="btn btn-info">
                         Обновить
                     </button>
                 </div>
@@ -66,7 +107,7 @@
                  <input type="hidden" name="id" value="${user.id}"/>
                 <div class=col-md-1>
                     <button id="Delete" name="Delete" class="btn btn-danger">
-                        Удалить
+                        Удалить<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                     </button>
                 </div>
 
@@ -75,6 +116,7 @@
     </div>
 
 </c:forEach>
+${message}
 
 <%@ include file="include/end-html.jsp" %>
 

@@ -20,6 +20,17 @@ public class CommandEditUsers extends Action {
         DAO dao = DAO.getInstance();
         try {
         if (Form.isPost(request)) {
+            if (request.getParameter("Create") != null) {
+                User user = new User(
+                        0,
+                        Form.getString(request,"passportdata", Pattern.PASSPORT),
+                        Form.getString(request, "login", Pattern.LOGIN),
+                        Form.getString(request, "password", Pattern.PASSWORD),
+                        Form.getString(request, "email", Pattern.EMAIL),
+                        Form.getInt(request, "fk_role")
+                );
+                dao.user.create(user);
+            }
             if (request.getParameter("Update")!=null) {
                 User user = new User(
                         Form.getInt(request, "id"),
@@ -38,7 +49,7 @@ public class CommandEditUsers extends Action {
             }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            request.setAttribute(Messages.MSG_MESSAGE, "Ошибка базы данных, Не удаётся произвести действие, проверьте активные заказы пользователя");
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -51,7 +62,7 @@ public class CommandEditUsers extends Action {
             request.setAttribute("users", users);
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            request.setAttribute(Messages.MSG_MESSAGE, "Ошибка базы данных");
         }
         return null;
 

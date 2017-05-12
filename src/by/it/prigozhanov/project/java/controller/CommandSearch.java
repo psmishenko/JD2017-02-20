@@ -21,12 +21,14 @@ public class CommandSearch extends Action {
         if (s != null) {
             try {
                 cars = dao.car.getAll(String.format("WHERE Mark='%s' OR Model='%s' OR Location='%s'", s, s, s));
+                if (cars.size()==0) {
+                    request.setAttribute(Messages.MSG_MESSAGE, "Ничего не найдено");
+                }
                 request.setAttribute("cars", cars);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-
         return null;
     }
 }

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
-<p>Cmd SEARCH: ${message}</p>
+<h2>${message}</h2>
 <div class="row">
 <c:forEach items="${cars}" var="car">
 
