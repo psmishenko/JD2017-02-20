@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="btn-group" role="group">
-  <a href="do?command=AddOperType" class="btn btn-primary" role="button">Добавить тип операции</a>
+  <a href="do?command=actionOperType" class="btn btn-primary" role="button">Добавить тип операции</a>
 </div>
 <p></p>
 
@@ -20,8 +20,11 @@
     <tr>
       <td><c:out value="${operType.name}" /></td>
       <td align="right">
-          <button type="button" class="btn btn-primary btn-xs">Редактировать</button>
-          <button type="button" class="btn btn-primary btn-xs">Удалить</button>
+      <form class="form-horizontal" action="do?command=ActionOperType" method="POST">
+          <input type="hidden" name="id" value="${opertype.id}" />
+          <button type="submit" class="btn btn-primary btn-xs" name="btnEdit">Редактировать</button>
+          <button type="submit" class="btn btn-primary btn-xs" name="btnDelete">Удалить</button>
+      </form>
       </td>
     </tr>
   </c:forEach>

@@ -68,7 +68,7 @@ public class FormUtils {
             session=request.getSession();
             session.setMaxInactiveInterval(SessionMaxAgeSec);
             User user=list.get(0);
-            session.setAttribute("user",user);
+            session.setAttribute("currentuser",user);
         }
         return session;
     }

@@ -12,8 +12,8 @@
   <label class="col-md-4 control-label" for="logout"></label>
   <div class="col-md-4">
     <button id="logout" name="logout" class="btn btn-warning">
-      <c:if test="${user != null}" >
-        <c:out value="${user.name}" /><span>, <span>
+      <c:if test="${currentuser != null}" >
+        <c:out value="${currentuser.name}" /><span>, <span>
       </c:if>
     Вы нас покидаете?
     </button>

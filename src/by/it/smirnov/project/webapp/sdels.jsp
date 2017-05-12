@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="btn-group" role="group">
-  <a href="do?command=AddSdel" class="btn btn-primary" role="button">Добавить сделку</a>
+  <a href="do?command=ActionSdel" class="btn btn-primary" role="button">Добавить сделку</a>
 </div>
 <p></p>
 
@@ -30,8 +30,11 @@
       <td><c:out value="${sdel.fromdate}" /></td>
       <td><c:out value="${sdel.todate}" /></td>
       <td align="right">
-          <button type="button" class="btn btn-primary btn-xs">Редактировать</button>
-          <button type="button" class="btn btn-primary btn-xs">Удалить</button>
+      <form class="form-horizontal" action="do?command=ActionSdel" method="POST">
+          <input type="hidden" name="id" value="${sdel.id}" />
+          <button type="submit" class="btn btn-primary btn-xs" name="btnEdit">Редактировать</button>
+          <button type="submit" class="btn btn-primary btn-xs" name="btnDelete">Удалить</button>
+      </form>
       </td>
     </tr>
   </c:forEach>
