@@ -1,4 +1,5 @@
 ﻿<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,8 +44,13 @@
             <li><a href=do?command=SkladList>Склад</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            <c:if test="${userActive == null}">
             <li><a href=do?command=Login>Вход</a></li>
+            </c:if>
+            <c:if test="${userActive != null}">
+            <p class="navbar-text">Пользователь ${userActive.login} (${userActive.nameRole})</p>
             <li><a href=do?command=Logout>Выход</a></li>
+            </c:if>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
