@@ -1,14 +1,11 @@
 package by.it.smirnov.project;
 
 import by.it.smirnov.project.java.DAO.DAO;
-import by.it.smirnov.project.java.DAO.UserDAO;
-import by.it.smirnov.project.java.DAO.UserRoleDAO;
 import by.it.smirnov.project.java.bean.OperType;
 import by.it.smirnov.project.java.bean.User;
 import by.it.smirnov.project.java.bean.UserRole;
 import by.it.smirnov.project.java.bean.Valut;
 
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -39,10 +36,15 @@ public class Runner {
             user.setPassword(UserPassword);
             dao.getUser().update(user);
         }
-        DAO.getInstance().getValut().create(new Valut(0,"USD", "Доллар США"));
-        DAO.getInstance().getValut().create(new Valut(0,"BYN", "Белорусский рубль"));
-
-        DAO.getInstance().getOperType().create(new OperType(0,"FX"));
-        DAO.getInstance().getOperType().create(new OperType(0,"MM"));
+        List<Valut> listValut = DAO.getInstance().getValut().getAll("");
+        if (listValut.size() == 0) {
+            DAO.getInstance().getValut().create(new Valut(0, "USD", "Доллар США"));
+            DAO.getInstance().getValut().create(new Valut(0, "BYN", "Белорусский рубль"));
+        }
+        List<OperType> listOperType = DAO.getInstance().getOperType().getAll("");
+        if (listOperType.size() == 0) {
+            DAO.getInstance().getOperType().create(new OperType(0, "FX"));
+            DAO.getInstance().getOperType().create(new OperType(0, "MM"));
+        }
     }
 }

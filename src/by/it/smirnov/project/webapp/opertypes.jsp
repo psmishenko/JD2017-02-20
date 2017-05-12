@@ -21,7 +21,7 @@
       <td><c:out value="${operType.name}" /></td>
       <td align="right">
       <form class="form-horizontal" action="do?command=ActionOperType" method="POST">
-          <input type="hidden" name="id" value="${opertype.id}" />
+          <input type="hidden" name="id" value="${operType.id}" />
           <button type="submit" class="btn btn-primary btn-xs" name="btnEdit">Редактировать</button>
           <button type="submit" class="btn btn-primary btn-xs" name="btnDelete">Удалить</button>
       </form>

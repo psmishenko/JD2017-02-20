@@ -2,9 +2,26 @@
 <%@ include file="include/begin-html.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<div class="btn-group" role="group">
-  <a href="do?command=actionUser" class="btn btn-primary" role="button">Добавить пользователя</a>
+<div class="row">
+  <div class="col-sm-2">
+      <div class="btn-group" role="group">
+        <a href="do?command=actionUser" class="btn btn-primary" role="button">Добавить пользователя</a>
+      </div>
+  </div>
+  <div class="col-sm-4">
+    <form action="do?command=Users" method="POST">
+      <div class="input-group">
+          <input name="searchText" class="form-control" placeholder="Поиск по имени пользователя..."
+           value="<c:if test="${searchText != null}" >${searchText}</c:if>"
+          >
+          <span class="input-group-btn">
+            <button name="btnSearch" class="btn btn-default" type="submit">Поиск</button>
+          </span>
+      </div>
+    </form>
+  </div>
 </div>
+
 <p></p>
 
 <div class="panel panel-primary">
