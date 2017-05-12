@@ -1,20 +1,18 @@
 package by.it.tereshko.project.java.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
-interface InterfaceDAO<TYPE> {
-    //READ чтение отдельной сущности
-    TYPE read(int id);
+public interface InterfaceDAO<T> {
 
-    //CREATE,UPDATE,DELETE обновление сущности
-    boolean create(TYPE entity);
+    boolean create(T entity) throws SQLException;
 
-    boolean update(TYPE entity);
+    T read(int id) throws SQLException;
 
-    boolean delete(TYPE entity);
+    boolean update(T entity) throws SQLException;
 
-    //READ - чтение всех элементов по условию
-    List<TYPE> getAll(String WhereAndOrder);
-    //и другие необходимые системе операции
+    boolean delete(T entity) throws SQLException;
+
+    List<T> getAll(String whereString) throws SQLException;
 
 }
