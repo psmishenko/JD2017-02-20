@@ -1,13 +1,17 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
-
-<p>cmd PROFILE: ${user}</p>
 
 <form class="form-horizontal" action="do?command=profile" method="POST">
 <fieldset>
 
 <!-- Form Name -->
 <legend>Profile</legend>
+
+<p>Логин: ${user.login}</p>
+<p>: ${user}</p>
+<p>Заказы: ${orders}</p>
+
 
 <!-- Button -->
 <div class="form-group">
