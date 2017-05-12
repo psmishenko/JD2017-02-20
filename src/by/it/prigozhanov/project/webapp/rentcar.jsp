@@ -20,7 +20,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Passport data</label>
   <div class="col-md-4">
-  <input id="passportdata" name="passportdata" type="text" placeholder="example: MP2931234" class="form-control input-md" required="" pattern="[A-Z]{2,}[0-9]{7,}">
+  <input id="passportdata" value="${user.passportData}" name="passportdata" type="text" placeholder="example: MP2931234" class="form-control input-md" required="" pattern="[A-Z]{2,}[0-9]{7,}">
 
   </div>
 </div>

@@ -2,6 +2,7 @@ package by.it.prigozhanov.project.java.controller;
 
 
 import by.it.prigozhanov.project.java.beans.Order;
+import by.it.prigozhanov.project.java.beans.User;
 import by.it.prigozhanov.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +25,9 @@ public class CommandRentCar extends Action {
             DAO dao = DAO.getInstance();
             try {
                 HttpSession session = request.getSession();
-                if (Utils.getSessionUser(request) != null) {
+                User user = Utils.getSessionUser(request);
+                if (user != null) {
+                    request.setAttribute("user", user);
                     order.setCardNumber(Form.getString(request, "cardnumber", Pattern.CARDNUMBER));
                     order.setFk_Users(Utils.getSessionUser(request).getId());
                     order.setFk_Cars(Integer.parseInt(String.valueOf(session.getAttribute("id"))));

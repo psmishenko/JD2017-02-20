@@ -20,9 +20,14 @@
         <div class=col-md-1>Срок аренды</div>
         <div class=col-md-2>Телефон</div>
         <div class=col-md-1>ID Клиента</div>
+        <div class=col-md-1>ID Автомобиля</div>
     </b>
 </div>
-        <form class="update-order-${order.id}" action="do?command=AdminOrders" method=POST>
+        <form class="update-order-${order.id}" action="do?command=adminorders" method=POST>
+             <div>
+                            <input id="id" type="hidden" name="id"
+                                   value="${order.id}"/>
+                        </div>
 
             <b> <div class=col-md-2>
                     <input id="passportdata" class="form-control input-md" name="passportdata"
@@ -45,6 +50,10 @@
                 <div class=col-md-1>
                     <input id="fk_users" class="col-md-2 form-control input-md" name="fk_users"
                            value="${order.fk_Users}"/>
+                </div>
+                  <div class=col-md-1>
+                    <input id="fk_users" class="col-md-2 form-control input-md" name="fk_cars"
+                           value="${order.fk_Cars}"/>
                 </div>
 
                 <div class=col-md-1>
