@@ -15,7 +15,7 @@
 
 
 <c:forEach items="${users}" var="user">
-    <br>
+    <hr>
     <div class="row">
         <form class="update-user-${user.id}" action="do?command=EditUsers" method=POST>
             <b>

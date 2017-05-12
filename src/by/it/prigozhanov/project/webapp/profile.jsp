@@ -8,6 +8,7 @@
 <!-- Form Name -->
 <legend>Пользователь ${user.login}</legend>
 
+
 <p>Ваш логин: <b>${user.login}</b></p>
 <p>Ваши пасспортные данные: <b>${user.passportData}</b></p>
 <p>Ваш E-mail: <b>${user.email}</b></p>
@@ -23,16 +24,16 @@
         <div class="col-md-3">Телефон: <b>${order.telephone}</b></div>
     </div>
 
-</c:forEach>
-
-
 <!-- Button -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="logout"></label>
   <div class="col-md-4">
     <button id="logout" name="logout" class="btn btn-danger">Logout</button>
   </div>
 </div>
+</c:forEach>
+
+
+
 
 </fieldset>
 </form>
