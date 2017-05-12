@@ -23,13 +23,21 @@ public enum Actions {
     },
     USEREDIT {
         { this.command = new CmdUserEdit(); }
+    },
+    TOVARLIST {
+        { this.command = new CmdTovarList(); }
+    },
+    TOVAREDIT {
+        { this.command = new CmdTovarEdit(); }
     };
 
-    public Action command;
+    public AbstractAction command;
 
-    static Action defineFrom(HttpServletRequest req) {
+    static AbstractAction defineFrom(HttpServletRequest req) {
         String command = req.getParameter("command").toUpperCase();
-        Action res;
+        if (command == null)
+            command = "index";
+        AbstractAction res;
 
         try {
             res = Actions.valueOf(command).command;

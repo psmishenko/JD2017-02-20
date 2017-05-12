@@ -37,11 +37,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href=do?command=SignUp>Тест</a></li>
             <li><a href=do?command=UserList>Пользователи</a></li>
-            <li><a href=do?command=ListTovar>Справочник товаров</a></li>
-            <li><a href=do?command=ListNaklad>Товарные накладные</a></li>
-            <li><a href=do?command=ListSklad>Склад</a></li>
+            <li><a href=do?command=TovarList>Справочник товаров</a></li>
+            <li><a href=do?command=NakladList>Товарные накладные</a></li>
+            <li><a href=do?command=SkladList>Склад</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href=do?command=Login>Вход</a></li>

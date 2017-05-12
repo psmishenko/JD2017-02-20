@@ -1,26 +1,40 @@
 package by.it.radivonik.project.java.controller;
 
+import by.it.radivonik.project.java.beans.Role;
+import by.it.radivonik.project.java.dao.DAO;
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
 
 /**
  * Created by Radivonik on 05.05.2017.
  */
 public class FrontController extends HttpServlet {
-    private RequestDispatcher getDispatcher(Action action) {
+    private RequestDispatcher getDispatcher(AbstractAction action) {
         return getServletContext().getRequestDispatcher(action.getJsp());
+    }
+
+    @Override
+    public void init() throws ServletException {
+        DAO dao = DAO.getInstance();
+        try {
+            List<Role> roles = dao.getRole().getAll("");
+            getServletContext().setAttribute("roles", roles);
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         process(req, resp);
-        Action action = Actions.defineFrom(req);
+        AbstractAction action = Actions.defineFrom(req);
         action.execute(req);
         getDispatcher(action).forward(req, resp);
     }
@@ -28,8 +42,8 @@ public class FrontController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         process(req, resp);
-        Action action = Actions.defineFrom(req);
-        Action nextAction = action.execute(req);
+        AbstractAction action = Actions.defineFrom(req);
+        AbstractAction nextAction = action.execute(req);
         if (nextAction != null) {
             resp.sendRedirect("do?command=" + nextAction);
         }

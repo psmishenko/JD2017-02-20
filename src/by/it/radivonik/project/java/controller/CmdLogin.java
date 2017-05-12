@@ -14,15 +14,15 @@ import java.util.Map;
 /**
  * Created by Radivonik on 05.05.2017.
  */
-public class CmdLogin extends Action {
+public class CmdLogin extends AbstractAction {
     @Override
-    public Action execute(HttpServletRequest req) {
+    public AbstractAction execute(HttpServletRequest req) {
         if (!FormUtils.isPost(req))
             return null;
 
         try {
-            String login = FormUtils.getString(req, "login", IPattern.LOGIN);
-            String password = FormUtils.getString(req, "password", IPattern.PASSWORD);
+            String login = FormUtils.getString(req, "login", IPatterns.LOGIN);
+            String password = FormUtils.getString(req, "password", IPatterns.PASSWORD);
             Map<String, String> filter = new HashMap<>();
             filter.put("login", login);
             filter.put("password", password);

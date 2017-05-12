@@ -5,9 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by Radivonik on 05.05.2017.
  */
-public class CmdError extends Action {
+public class CmdError extends AbstractAction {
     @Override
-    public Action execute(HttpServletRequest req) {
+    public AbstractAction execute(HttpServletRequest req) {
         return null;
     }
 }
