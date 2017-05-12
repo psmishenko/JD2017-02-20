@@ -5,6 +5,7 @@ import by.it.prigozhanov.project.java.beans.Order;
 import by.it.prigozhanov.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.text.ParseException;
 
@@ -22,9 +23,10 @@ public class CommandRentCar extends Action {
             Order order = new Order();
             DAO dao = DAO.getInstance();
             try {
+                HttpSession session = request.getSession();
                 order.setCardNumber(Form.getString(request, "cardnumber", Pattern.CARDNUMBER));
                 order.setFk_Users(Utils.getSessionUser(request).getId());
-                order.setFk_Cars(1);
+                order.setFk_Cars(Integer.parseInt(String.valueOf(session.getAttribute("id"))));
                 order.setPassportData(Form.getString(request, "passportdata", Pattern.PASSPORT));
                 order.setTelephone(Form.getString(request, "telephone", Pattern.TELEPHONE));
                 order.setOrderDuration(Integer.parseInt(Form.getString(request, "duration", Pattern.INTEGER)));
