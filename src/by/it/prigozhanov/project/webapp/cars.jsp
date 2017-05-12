@@ -7,7 +7,6 @@
         <div class="col-md-1">${car.id} </div>
 
     </div>
-    <!-- ${car.field} -->
 </c:forEach>
 
 
