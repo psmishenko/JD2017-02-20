@@ -14,6 +14,7 @@ import java.util.Map;
 public class StatusDAO extends AbstractDAO implements InterfaceDAO<Status> {
 
     static private StatusDAO instance;
+    static private Map<Integer, Status> map;
 
     private StatusDAO(){
     }
@@ -64,6 +65,17 @@ public class StatusDAO extends AbstractDAO implements InterfaceDAO<Status> {
             e.printStackTrace();
         }
         return map;
+    }
+
+    public Status getById(int Id){
+        if ( map==null ) {
+            synchronized (StatusDAO.class) {
+                if (map == null) {
+                    map = getMap();
+                }
+            }
+        }
+        return map.get(Id);
     }
 
     @Override

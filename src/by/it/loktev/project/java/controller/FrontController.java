@@ -21,6 +21,7 @@ public class FrontController extends HttpServlet {
         Log.write("START");
     }
 
+    /*
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
@@ -34,6 +35,7 @@ public class FrontController extends HttpServlet {
         }
 
     }
+*/
 
     private RequestDispatcher dispatcher(Action action){
         return getServletContext().getRequestDispatcher(action.getJsp());

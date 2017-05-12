@@ -17,7 +17,6 @@ public class TaskDAO extends AbstractDAO implements InterfaceDAO<Task> {
 
     static private TaskDAO instance;
 
-
     //static SimpleDateFormat sdf=new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
     static String MySQLDate(Date value){
         if ( value==null )

@@ -12,12 +12,6 @@ public class Task {
 
     static SimpleDateFormat dateFormat=new SimpleDateFormat("dd.MM.yyyy");
 
-    static Map<Integer,Status> statusesMap;
-
-    static {
-        DAO dao=DAO.getInstance();
-        statusesMap=dao.getStatus().getMap();
-    }
 
     private int id;
     private String name;
@@ -87,7 +81,11 @@ public class Task {
     }
 
     public String getStatusName(){
-        Status status=statusesMap.get(statusId);
+        DAO dao=DAO.getInstance();
+        //Map<Integer,Status> statusesMap=dao.getStatus().getMap();
+
+        //Status status=statusesMap.get(statusId);
+        Status status=dao.getStatus().getById(statusId);
         return status.getName();
     }
 
