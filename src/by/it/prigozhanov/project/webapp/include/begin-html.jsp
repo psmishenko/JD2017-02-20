@@ -40,9 +40,9 @@
 			<li><a href=do?command=Home>Home</a></li>
 			<li>  <a href=do?command=Cars>Cars</a></li>
         </ul>
-        <form class="navbar-form navbar-left" action="do?command=search">
+        <form class="navbar-form navbar-left" action="do?command=search" method="POST">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search" >
+            <input type="text" name="search" class="form-control" placeholder="Search car" >
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
