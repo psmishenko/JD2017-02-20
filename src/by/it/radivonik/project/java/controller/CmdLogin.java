@@ -32,7 +32,7 @@ public class CmdLogin extends AbstractAction {
                 HttpSession session = req.getSession();
                 User user = users.get(0);
                 session.setAttribute("userActive", user);
-                return Actions.PROFILE.command;
+                return Actions.LOGIN.command;
 //              req.setAttribute(IMessages.MSG_INFO, String.format("Вход пользователя %s произведен", login));
             }
             else {

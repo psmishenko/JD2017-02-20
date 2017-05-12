@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 public class CmdProfile extends AbstractAction {
     @Override
     public AbstractAction execute(HttpServletRequest req) {
-        if (FormUtils.isPost(req) && req.getParameter("logout")!= null) {
+        if (FormUtils.isPost(req) && req.getParameter("logout") != null) {
             HttpSession session = req.getSession();
             session.invalidate();
             return Actions.LOGIN.command;

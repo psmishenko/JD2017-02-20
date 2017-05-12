@@ -1,6 +1,7 @@
 package by.it.radivonik.project.java.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by Radivonik on 05.05.2017.
@@ -8,6 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 public class CmdLogout extends AbstractAction {
     @Override
     public AbstractAction execute(HttpServletRequest req) {
-        return null;
+        HttpSession session = req.getSession();
+        session.removeAttribute("userActive");
+        session.invalidate();
+        return Actions.LOGIN.command;
     }
 }
