@@ -16,7 +16,7 @@ public class CommandCars extends Action{
     @Override
     Action execute(HttpServletRequest request) {
         DAO dao = DAO.getInstance();
-        List<Car> cars = null;
+        List<Car> cars;
         try {
             cars = dao.car.getAll("");
             request.setAttribute("cars", cars);

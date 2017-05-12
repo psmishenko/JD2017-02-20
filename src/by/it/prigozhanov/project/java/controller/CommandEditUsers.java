@@ -17,6 +17,7 @@ import java.util.List;
 public class CommandEditUsers extends Action {
     @Override
     public Action execute(HttpServletRequest request) {
+        DAO dao = DAO.getInstance();
         if (Form.isPost(request)) {
             if (request.getParameter("Update")!=null) {
                 try {
@@ -26,15 +27,18 @@ public class CommandEditUsers extends Action {
                             Form.getString(request, "Passportdata", Pattern.PASSPORT),
                             Form.getString(request, "Password", Pattern.PASSWORD),
                             Form.getString(request, "Email", Pattern.EMAIL),
-                            Integer.parseInt(Form.getString(request, "fk_role", Pattern.INTEGER))
+                            Integer.parseInt(Form.getString(request, "fkrole", Pattern.INTEGER))
                     );
+                    dao.user.update(user);
                 } catch (ParseException e) {
+                    e.printStackTrace();
+                } catch (SQLException e) {
                     e.printStackTrace();
                 }
             }
         }
 
-        DAO dao = DAO.getInstance();
+
 
         try {
             List<Role> roles = dao.role.getAll("");
