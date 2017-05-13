@@ -46,7 +46,7 @@ public class CmdLogin extends Action{
                         return Actions.ADMIN.command;
                     }
                 }else{
-                    request.setAttribute(Messages.MSG_MESSAGE, "Нет такого пользователя");
+                    request.setAttribute(Messages.MSG_MESSAGE, "Wrong login or password");
                     return null;
                 }
 

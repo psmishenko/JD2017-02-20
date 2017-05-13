@@ -82,6 +82,18 @@
 <form class="form-horizontal" action="do?command=admin" method="POST">
 <fieldset>
 
+<h3>Brigades</h3>
+<font size = "3">
+    <b>
+    <div class=col-md-1>ID</div>
+    </b>
+</font>
+
+<c:forEach items = "${brigades}" var = "brigade">
+        <br>
+        <div class = col-md-1>${brigade.id}</div>
+</c:forEach>
+
 <br>
 <!-- Button -->
 <div class="form-group">
@@ -93,8 +105,5 @@
 
 </fieldset>
 </form>
-
-
-<p>Main: ${message}</p>
 
 <%@ include file="include/end-html.jsp" %>

@@ -18,6 +18,4 @@
     </fieldset>
 </form>
 
-<p>INDEX: ${message}</p>
-
 <%@ include file="include/end-html.jsp" %>

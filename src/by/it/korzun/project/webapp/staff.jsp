@@ -26,6 +26,9 @@
 <br>
 <legend></legend>
 
+${brigade}<br>
+${flight}<br>
+
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="login">Change login</label>
@@ -70,7 +73,5 @@
 
 </fieldset>
 </form>
-
-<p>Main: ${message}</p>
 
 <%@ include file="include/end-html.jsp" %>

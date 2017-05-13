@@ -30,7 +30,8 @@ public class CmdSignUp extends Action{
                 } else
                     return null;
             } catch (ParseException e) {
-                return Actions.ERROR.command;
+                request.setAttribute(Messages.MSG_MESSAGE, "Incorrect input");
+                return null;
             } catch (SQLException e) {
                 e.printStackTrace();
             }

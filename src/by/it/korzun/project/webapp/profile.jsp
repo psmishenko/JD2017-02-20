@@ -18,6 +18,4 @@
 </fieldset>
 </form>
 
-<p>Cmd Logout: ${message}</p>
-
 <%@ include file="include/end-html.jsp" %>

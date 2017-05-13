@@ -1,5 +1,6 @@
 package by.it.korzun.project.java.controller;
 
+import by.it.korzun.project.java.beans.Brigade;
 import by.it.korzun.project.java.beans.Flight;
 import by.it.korzun.project.java.dao.DAO;
 
@@ -19,6 +20,9 @@ public class CmdAdmin extends Action{
         DAO dao = DAO.getInstance();
         List<Flight> flights = dao.flight.getAll("");
         request.setAttribute("flights", flights);
+
+        List<Brigade> brigades = dao.brigade.getAll("");
+        request.setAttribute("brigades", brigades);
 
         return null;
     }

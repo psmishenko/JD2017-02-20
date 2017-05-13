@@ -119,17 +119,16 @@
         <br>
         <div class = col-md-1>${staff.id}</div>
         <div class = col-md-2>${staff.name}</div>
-        <c:set var = "spec" value = "${staff.fk_specialization}"/>
         <c:choose>
             <c:when test = "${spec == 1}">
                 <div class = col-md-2>Pilot</div>
-                        </c:when>
+            </c:when>
             <c:when test = "${spec == 2}">
                 <div class = col-md-2>Navigator</div>
-                        </c:when>
+            </c:when>
             <c:when test = "${spec == 3}">
                 <div class = col-md-2>Radio-operator</div>
-                        </c:when>
+            </c:when>
             <c:when test = "${spec == 4}">
                 <div class = col-md-2>Stewardess</div>
             </c:when>
@@ -151,8 +150,5 @@
 
 </fieldset>
 </form>
-
-
-<p>Main: ${message}</p>
 
 <%@ include file="include/end-html.jsp" %>
