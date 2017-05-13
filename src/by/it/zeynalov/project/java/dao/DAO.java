@@ -8,6 +8,7 @@ public class DAO {
     public MenuDAO menu;
     public RolesDAO roles;
     public UsersDAO users;
+    public OrdersDAO orders;
 
     private DAO() {
     }
@@ -20,6 +21,7 @@ public class DAO {
                     instance.menu = new MenuDAO();
                     instance.roles = new RolesDAO();
                     instance.users = new UsersDAO();
+                    instance.orders = new OrdersDAO();
                 }
             }
         }

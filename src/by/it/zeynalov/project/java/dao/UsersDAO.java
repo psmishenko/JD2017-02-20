@@ -15,7 +15,7 @@ import java.util.List;
 public class UsersDAO extends AbstractDAO implements InterfaceDAO<User> {
     public boolean create(User user) throws SQLException {
         String sql = String.format(
-                "INSERT INTO `user`(`Login`, `Password`, `Email`, `FC_rolles`) " +
+                "INSERT INTO `users`(`Login`, `Password`, `Email`, `FC_rolles`) " +
                         "VALUES ('%s','%s','%s',%d);",
                 user.getLogin(), user.getPassword(), user.getEmail(), user.getFc_rolles()
         );
@@ -38,7 +38,7 @@ public class UsersDAO extends AbstractDAO implements InterfaceDAO<User> {
 
     public boolean update(User user) throws SQLException {
         String sql = String.format(
-                "UPDATE `user` SET " +
+                "UPDATE `users` SET " +
                         "`Login`='%s'," +
                         "`Password`='%s'," +
                         "`Email`='%s'," +
@@ -55,7 +55,7 @@ public class UsersDAO extends AbstractDAO implements InterfaceDAO<User> {
 
     public boolean delete(User user) throws SQLException {
         String sql = String.format(
-                "DELETE FORM `user` WHERE ID=%d",
+                "DELETE FORM `users` WHERE ID=%d",
                 user.getId()
         );
         return executeUpdate(sql);
@@ -67,7 +67,7 @@ public class UsersDAO extends AbstractDAO implements InterfaceDAO<User> {
         try (Connection connection = ConnectorCreator.getConnection();
              Statement statement = connection.createStatement()) {
             String sql = String.format(
-                    "SELECT `ID`, `Login`, `Password`, `Email`, `FC_rolles` FROM `user` %s;",
+                    "SELECT `ID`, `Login`, `Password`, `Email`, `FC_rolles` FROM `users` %s;",
                     whereString
             );
             ResultSet rs = statement.executeQuery(sql);

@@ -42,6 +42,14 @@ public class TableGenerator {
                     "    email      VARCHAR (500),\n" +
                     "    fc_rolles  INTEGER (11))";
             statement.executeUpdate(sql);
+
+            sql = "CREATE TABLE orders (\n" +
+                    "    id         INTEGER  PRIMARY KEY AUTO_INCREMENT,\n" +
+                    "    latte      VARCHAR (100),\n" +
+                    "    americano  VARCHAR (100),\n" +
+                    "    cappuccino VARCHAR (100),\n" +
+                    "    espresso   VARCHAR (100))";
+            statement.executeUpdate(sql);
         }
     }
 
