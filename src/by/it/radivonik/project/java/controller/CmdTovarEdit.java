@@ -17,25 +17,25 @@ public class CmdTovarEdit extends AbstractActionEdit<Tovar> {
 
     @Override
     protected AbstractDAO<Tovar> getDAO() {
-        DAO dao = DAO.getInstance();
-        return dao.getTovar();
+        return DAO.getInstance().getTovar();
     }
 
     @Override
-    protected String getParamName() {
+    protected String getName() {
         return "tovar";
     }
 
     @Override
-    protected boolean needCreate(Tovar tovar) {
-        return tovar.getId() == 0;
+    protected Tovar initBean(HttpServletRequest req) throws ParseException {
+        return new Tovar(
+            FormUtils.getId(req),
+            FormUtils.getString(req, "name", IPatterns.TEXT, false, "Наименование товара"),
+            FormUtils.getString(req, "edizm", IPatterns.TEXT, false, "Единица измерения"));
     }
 
     @Override
-    protected void initBean(Tovar tovar, int id, HttpServletRequest req) throws ParseException {
-        tovar.setId(id);
-        tovar.setName(FormUtils.getString(req, "name", IPatterns.TEXT));
-        tovar.setEdizm(FormUtils.getString(req, "edizm", IPatterns.TEXT));
+    protected int getId(Tovar tovar) {
+        return tovar.getId();
     }
 
     @Override

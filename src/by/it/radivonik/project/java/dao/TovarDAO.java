@@ -1,7 +1,6 @@
 package by.it.radivonik.project.java.dao;
 
 import by.it.radivonik.project.java.beans.Tovar;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -16,14 +15,14 @@ public class TovarDAO extends AbstractDAO<Tovar> {
 
     @Override
     protected String sqlInsert(Tovar tovar) {
-        String sql = "INSERT INTO tovar (name, edizm) VALUES ('%s', '%s')";
-        return String.format(sql, tovar.getName(), tovar.getEdizm());
+        String sql = "INSERT INTO tovar (name, edizm) VALUES (%s, %s)";
+        return String.format(sql, dbVal(tovar.getName()), dbVal(tovar.getEdizm()));
     }
 
     @Override
     protected String sqlUpdate(Tovar tovar) {
-        String sql = "UPDATE tovar SET name = '%s', edizm = '%s' WHERE id = %d";
-        return String.format(sql, tovar.getName(), tovar.getEdizm(), tovar.getId());
+        String sql = "UPDATE tovar SET name = %s, edizm = %s WHERE id = %d";
+        return String.format(sql, dbVal(tovar.getName()), dbVal(tovar.getEdizm()), tovar.getId());
     }
 
     @Override
@@ -46,3 +45,4 @@ public class TovarDAO extends AbstractDAO<Tovar> {
         return tovar;
     }
 }
+

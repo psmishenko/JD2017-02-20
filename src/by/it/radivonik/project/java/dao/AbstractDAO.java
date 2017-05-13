@@ -1,6 +1,7 @@
 package by.it.radivonik.project.java.dao;
 
 import by.it.radivonik.project.java.connection.ConnectionCreator;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -92,7 +93,7 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
     protected abstract String sqlUpdate(T bean);
     protected abstract String sqlDelete(T bean);
     protected abstract void setId(T bean, int id);
-    protected abstract T newBean(ResultSet resultSet) throws SQLException ;
+    protected abstract T newBean(ResultSet resultSet) throws SQLException;
 
     int executeUpdate(String sql) throws SQLException {
         int res;
@@ -116,5 +117,11 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
             }
         }
         return res;
+    }
+
+    String dbVal(String value) {
+        if (value == null || value.isEmpty())
+            return "null";
+        return "'" + value.replaceAll("'","''") + "'";
     }
 }

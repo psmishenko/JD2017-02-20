@@ -21,8 +21,8 @@ public class CmdLogin extends AbstractAction {
             return null;
 
         try {
-            String login = FormUtils.getString(req, "login", IPatterns.LOGIN);
-            String password = FormUtils.getString(req, "password", IPatterns.PASSWORD);
+            String login = FormUtils.getString(req, "login", IPatterns.LOGIN, false, "Имя пользователя");
+            String password = FormUtils.getString(req, "password", IPatterns.PASSWORD, false, "Пароль");
             Map<String, String> filter = new HashMap<>();
             filter.put("login", login);
             filter.put("password", password);

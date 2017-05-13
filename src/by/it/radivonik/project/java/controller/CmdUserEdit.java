@@ -17,27 +17,29 @@ public class CmdUserEdit extends AbstractActionEdit<User> {
 
     @Override
     protected AbstractDAO<User> getDAO() {
-        DAO dao = DAO.getInstance();
-        return dao.getUser();
+        return DAO.getInstance().getUser();
     }
 
     @Override
-    protected String getParamName() {
+    protected String getName() {
         return "user";
     }
 
+
     @Override
-    protected boolean needCreate(User user) {
-        return user.getId() == 0;
+    protected User initBean(HttpServletRequest req) throws ParseException {
+        return new User(
+            FormUtils.getId(req),
+            FormUtils.getString(req, "login", IPatterns.LOGIN, false, "Имя пользователя"),
+            FormUtils.getString(req, "password", IPatterns.PASSWORD, false, "Пароль"),
+            FormUtils.getString(req, "email", IPatterns.EMAIL, true, "Адрес электронной почты"),
+            FormUtils.getInteger(req, "id_role", false, "Роль"),
+            "");
     }
 
     @Override
-    protected void initBean(User user, int id, HttpServletRequest req) throws ParseException {
-        user.setId(id);
-        user.setLogin(FormUtils.getString(req, "login", IPatterns.LOGIN));
-        user.setPassword(FormUtils.getString(req, "password", IPatterns.PASSWORD));
-        user.setEmail(FormUtils.getString(req, "email", IPatterns.EMAIL));
-        user.setIdRole(Integer.parseInt(req.getParameter("id_role")));
+    protected int getId(User user) {
+        return user.getId();
     }
 
     @Override

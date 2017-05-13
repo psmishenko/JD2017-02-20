@@ -11,8 +11,7 @@ import java.util.List;
 public class CmdTovarList extends AbstractActionList<Tovar> {
     @Override
     protected List<Tovar> getBeans() throws SQLException {
-        DAO dao = DAO.getInstance();
-        return dao.getTovar().getAll("");
+        return DAO.getInstance().getTovar().getAll("");
     }
 
     @Override

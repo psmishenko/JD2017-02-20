@@ -31,7 +31,16 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="action"></label>
   <div class="col-md-4">
-    <button class="btn btn-primary" type="submit" id="action" name="action" value="save">Сохранить</button>
+    <c:if test='${param.action.equals("create") || param.action.equals("update")}'>
+    <button class="btn btn-success" type="submit" id="action" name="action" value="${param.action}_exec">
+    Сохранить
+    </button>
+    </c:if>
+    <c:if test='${param.action.equals("delete")}'>
+    <button class="btn btn-danger" type="submit" id="action" name="action" value="${param.action}_exec">
+    Удалить
+    </button>
+    </c:if>
   </div>
 </div>
 
