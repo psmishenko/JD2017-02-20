@@ -13,4 +13,14 @@ public class Form {
             throw new ParseException("Incorrect String:"+parameter,-1);
         }
     }
+    static int getInt(HttpServletRequest request, String parameter) throws ParseException {
+        String value=request.getParameter(parameter);
+        return Integer.parseInt(value);
+    }
+
+
+
+    static boolean isPost(HttpServletRequest request){
+        return request.getMethod().toUpperCase().equals("POST");
+    }
 }

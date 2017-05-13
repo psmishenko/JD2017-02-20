@@ -18,9 +18,19 @@
         <url-pattern>/do</url-pattern>
     </servlet-mapping>
 
-    <!--
-    Подключим точно так же второй сервлета-контроллер с именем FrontControllerServlet
-    -->
+    <filter>
+        <filter-name>EncogingUTF8</filter-name>
+        <filter-class>by.it.sorokoee.project.java.filters.EncodingUTF8</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>EncogingUTF8</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 
 </web-app>

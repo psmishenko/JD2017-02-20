@@ -1,6 +1,8 @@
-package by.it.sorokoee.jd03_03.dao;
+package by.it.sorokoee.project.java.daouniv;
 
-import by.it.sorokoee.jd03_03.beans.User;
+
+
+import by.it.sorokoee.project.java.beans.User;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
