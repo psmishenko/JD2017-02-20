@@ -53,6 +53,11 @@ enum Actions {
             this.command = new CommandAdminOrders();
         }
     },
+    EDITCARS {
+        {
+            this.command = new CommandEditCars();
+        }
+    },
     CARS {
         {
             this.command = new CommandCars();

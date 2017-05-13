@@ -49,6 +49,7 @@
         <ul class="nav navbar-nav navbar-right">
             <li><a href=do?command=Profile>Profile</a></li>
             <li><a href=do?command=editusers>Edit Users</a></li>
+            <li><a href=do?command=editcars>Edit Cars</a></li>
             <li><a href=do?command=adminorders>Admin Orders</a></li>
 	    	<li><a href=do?command=Login>Login</a></li>
             <li><a href=do?command=SignUp>Sign-up</a></li>
