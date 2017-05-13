@@ -2,12 +2,20 @@
 <%@ include file="include/begin-html.jsp" %>
 
 <div class="page-header">
-  <h1>Данные профиля</h1>
+  <h2 align="center">My profile</h2>
   <div class="row">
-    <div class="col-md-1">Ваш логин: ${user.login}</div>
-    <div class="col-md-1">Ваш Email: ${user.email}</div>
+    <div class="col-md-2">Login: ${user.login}</div>
+    <div class="col-md-2">Email: ${user.email}</div>
+   <div class="col-md-2"> 
+    <form class="form-horizontal"  action="do?command=profile" method="POST">
+  <div class="col-md-4">
+    <button id="logout" name="logout" class="btn btn-danger">Logout</button>
+  </div>
+</form>
+</div>
   </div>
 </div>
+<div class="panel panel-default">
 <div class="panel-heading">My Books</div>
  <!-- Table -->
   <table class="table">
@@ -28,19 +36,5 @@
 </c:forEach>
    </tr>
   </table>
-
-<form class="form-horizontal"  action="do?command=profile" method="POST">
-<fieldset>
-<legend>Выход</legend>
-<div class="form-group">
-  <label class="col-md-4 control-label" for="logout"></label>
-  <div class="col-md-4">
-    <button id="logout" name="logout" class="btn btn-danger">Logout</button>
-  </div>
 </div>
-
-</fieldset>
-</form>
-
-
 <%@ include file="include/end-html.jsp" %>

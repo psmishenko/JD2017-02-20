@@ -32,7 +32,14 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href=".">Home</a>
+        <c:choose>
+        <c:when test="${user!=null}"> 
+        <a class="navbar-brand" href=do?command=Home>Home</a>
+      </c:when>
+    <c:otherwise>
+            <a class="navbar-brand" href=do?command=Index>Home</a>
+    </c:otherwise>
+      </c:choose>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,17 +49,18 @@
           <li><a href=do?command=AllBooks>All books</a></li>
            <li><a href=do?command=AboutUs>About us</a></li>
         </ul>
-         <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search book">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
+         
         <ul class="nav navbar-nav navbar-right">
+            <c:if test="${user.fk_roles==1}">
            <li><a href=do?command=editusers>All users</a></li>
-           <li><a href=do?command=Login>login</a></li>
-            <li><a href=do?command=SignUp>sign-up</a></li>
+            </c:if>
+             <c:if test="${user==null}">
+           <li><a href=do?command=Login>Log in</a></li>
+            <li><a href=do?command=SignUp>Sign up</a></li>
+            </c:if>
+              <c:if test="${user!=null}">
             <li><a href=do?command=Profile>Profile</a></li>
+             </c:if>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

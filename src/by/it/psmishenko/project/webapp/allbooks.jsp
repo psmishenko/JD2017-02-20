@@ -7,25 +7,25 @@
   <!-- Table -->
   <table class="table">
    <tr>
+    <th>ID</th>
    	<th>Author</th>
    	<th>Title</th>
    	<th>Year</th>
    	<th>ISBN</th>
    	<th>LID</th>
-   	<th>Add to My Books</th>
+   	<th></th>
    </tr>
     <c:forEach  items="${allbooks}" var="book"  >
    <tr>
+  <td>${book.id}</td>
  <td>${book.author}</td>
  <td>${book.title}</td>
  <td>${book.year}</td>
  <td>${book.isbn}</td>
  <td>${book.lid}</td>
-<td><div class="form-group">
-  <div class="col-md-4">
+<td>
     <button id="singlebutton" name="singlebutton" class="btn btn-primary">Add to My books</button>
-  </div>
-</div></td>
+  </td>
 </c:forEach>
    </tr>
   </table>

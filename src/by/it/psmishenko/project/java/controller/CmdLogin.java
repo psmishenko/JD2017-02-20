@@ -9,9 +9,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.List;
 
-/**
- * Created by user on 05.05.2017.
- */
+
 public class CmdLogin extends Action {
     @Override
     public Action execute(HttpServletRequest request) {

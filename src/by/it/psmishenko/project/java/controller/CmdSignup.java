@@ -7,9 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 import java.text.ParseException;
 
-/**
- * Created by user on 05.05.2017.
- */
+
 public class CmdSignup extends Action {
     @Override
     public Action execute(HttpServletRequest request) {

@@ -9,9 +9,7 @@ package by.it.psmishenko.project.java.controller;
          import java.sql.SQLException;
          import java.util.List;
 
-/**
- * Created by user on 05.05.2017.
- */
+
 public class CmdProfile extends Action {
     @Override
     public Action execute(HttpServletRequest request) {

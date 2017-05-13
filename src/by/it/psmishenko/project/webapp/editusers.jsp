@@ -1,15 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
-
+<h2 align="center">Admin page</h2>
 <div class="row">
     <b>
         <div class=col-md-1>ID</div>
-        <div class=col-md-2>Имя</div>
-        <div class=col-md-2>Пароль</div>
+        <div class=col-md-2>Login</div>
+        <div class=col-md-2>Password</div>
         <div class=col-md-7>Email</div>
     </b>
 </div>
-<br>
 
 
 <c:forEach items="${allusers}" var="user">
@@ -34,10 +33,10 @@
                            value="${user.email}"/>
                 </div>
 
-                <div class=col-md-2>
+              <div class=col-md-2>
                     <select id="role" name="fk_Role" class="form-control">
                         <c:forEach items="${roles}" var="role">
-                            <option value="${role.id}" role=${role.id} ${role.id==user.fk_Role?"selected":""}>
+                            <option value="${role.id}" role=${role.id} ${role.id==user.fk_roles?"selected":""}>
                                     ${role.role}
                             </option>
                         </c:forEach>

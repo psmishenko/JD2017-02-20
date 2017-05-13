@@ -8,9 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 import java.text.ParseException;
 
-/**
- * Created by GN on 08.05.2017.
- */
+
 public class CmdAddbook extends Action {
     @Override
     public Action execute(HttpServletRequest request) {
