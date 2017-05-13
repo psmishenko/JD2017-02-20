@@ -44,13 +44,10 @@
           <div class="form-group">
             <input type="text" name="search" class="form-control" placeholder="Search car" >
           </div>
-          <button type="submit" class="btn btn-default">Search</button>
+          <button type="submit" class="btn btn-default">Search <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
         </form>
         <ul class="nav navbar-nav navbar-right">
             <li><a href=do?command=Profile>Profile</a></li>
-            <li><a href=do?command=editusers>Edit Users</a></li>
-            <li><a href=do?command=editcars>Edit Cars</a></li>
-            <li><a href=do?command=adminorders>Admin Orders</a></li>
 	    	<li><a href=do?command=Login>Login</a></li>
             <li><a href=do?command=SignUp>Sign-up</a></li>
             </ul>

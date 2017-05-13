@@ -61,7 +61,7 @@
         <form class="update-user-${user.id}" action="do?command=EditUsers" method=POST>
             <b>
                 <div class=col-md-1>
-                    <input id="id1" class="form-control input-md" name="id"
+                    <input disabled id="id1" class="form-control input-md" name="id"
                            value="${user.id}"/>
                 </div>
                 <div class=col-md-2>

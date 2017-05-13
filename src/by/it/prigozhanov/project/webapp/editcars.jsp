@@ -8,7 +8,7 @@
         <div class=col-md-1>Horse Power</div>
         <div class=col-md-2>Месторасположение</div>
         <div class=col-md-1>Вместимость багажника</div>
-        <div class=col-md-2>Цена $</div>
+        <div class=col-md-1>Цена $</div>
         <div class=col-md-1>Мест для сидения</div>
         <div class=col-md-1>Средний расход</div>
     </b>
@@ -48,7 +48,7 @@
 <br><br>
                 <div class=col-md-2>
                     <button id="Create" name="Create" class="btn btn-success">
-                        Create
+                        Create <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     </button>
                 </div>
 
@@ -61,9 +61,10 @@
     <div class="row">
         <form class="update-cars-${car.id}" action="do?command=EditCars" method=POST>
             <b>
-                <div>
-                    <input type="hidden" id="id" class="form-control input-md" name="id"
+                <div class=col-md-1>
+                    <input disabled id="id" class="form-control input-md" name="id"
                            value="${car.id}"/>
+
                 </div>
                 <div class=col-md-2>
                     <input id="mark" class="form-control input-md" name="mark"
@@ -87,7 +88,7 @@
                     <input id="luggagecapacity" class="col-md-2 form-control input-md" name="luggagecapacity"
                            value="${car.luggageCapacity}"/>
                 </div>
-                <div class=col-md-2>
+                <div class=col-md-1>
                     <input id="price" class="col-md-2 form-control input-md" name="price"
                            value="${car.price}"/>
                 </div>
@@ -103,7 +104,7 @@
 <br><br>
                 <div class=col-md-2>
                     <button id="Update" name="Update" class="btn btn-info">
-                        Обновить
+                        Обновить <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
                     </button>
                 </div>
 
@@ -114,7 +115,7 @@
                  <input type="hidden" name="id" value="${car.id}"/>
                 <div class=col-md-2>
                     <button id="Delete" name="Delete" class="btn btn-danger">
-                        Удалить<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        Удалить <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                     </button>
                 </div>
 
