@@ -18,6 +18,9 @@ public class CmdProfile extends Action {
                         session.invalidate();
                         return Actions.LOGIN.command;
                     }
+                 /*   if (Form.isPost(request)&&(request.getParameter("edituserbook") != null)){
+                   return Actions.EDITUSERBOOK.command;
+                    }*/
                 User user = Utils.getSessionUser(request);
                 if (user!=null){
                        DAO dao= DAO.getInstance();

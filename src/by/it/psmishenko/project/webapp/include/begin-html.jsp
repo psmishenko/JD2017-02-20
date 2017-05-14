@@ -52,7 +52,7 @@
          
         <ul class="nav navbar-nav navbar-right">
             <c:if test="${user.fk_roles==1}">
-           <li><a href=do?command=editusers>All users</a></li>
+           <li><a href=do?command=editusers>Edit users (admin)</a></li>
             </c:if>
              <c:if test="${user==null}">
            <li><a href=do?command=Login>Log in</a></li>

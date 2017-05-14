@@ -25,6 +25,8 @@
    	<th>Year</th>
    	<th>ISBN</th>
    	<th>LID</th>
+    <th></th>
+    <th></th>
    </tr>
     <c:forEach  items="${books}" var="book"  >
    <tr>
@@ -33,6 +35,26 @@
  <td>${book.year}</td>
  <td>${book.isbn}</td>
  <td>${book.lid}</td>
+<td>
+ <form class="form-upd-userbook-${book.id}" action="do?command=profile" >
+       <input type="hidden" name="id" value="${book.id}"/>
+                <div class=col-md-1>
+                    <button id="edituserbook" name="edituserbook" class="btn btn-success">
+                      Edit (Пока не работает)
+                    </button>
+                </div>
+    </form>
+ </td>
+ <td>
+ <form class="form-del-userbook-${book.id}" action="do?command=DeleteUserBook" method=POST>
+       <input type="hidden" name="id" value="${book.id}"/>
+                <div class=col-md-1>
+                    <button id="Del" name="DelBook" class="btn btn-danger">
+                      Delete
+                    </button>
+                </div>
+    </form>
+ </td>
 </c:forEach>
    </tr>
   </table>

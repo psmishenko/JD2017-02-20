@@ -39,6 +39,16 @@ enum  Actions {
             this.command = new CmdAllbooks();
         }
     },
+    DELETEUSERBOOK {
+        {
+            this.command = new CmdDeleteUserBook();
+        }
+    },
+    EDITUSERBOOK {
+        {
+            this.command = new CmdEditUserBook();
+        }
+    },
     ADDBOOK {
         {
             this.command = new CmdAddbook();

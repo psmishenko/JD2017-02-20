@@ -16,19 +16,19 @@ public class CmdAllbooks extends Action {
         try {
             DAO dao = DAO.getInstance();
             List<Book> books = dao.book.getAll("");
-             User user = Utils.getSessionUser(request);
+            List<User> users = dao.user.getAll("");
+             User sessionUser = Utils.getSessionUser(request);
             if(Form.isPost(request)){
-                if(user==null) return Actions.LOGIN.command;
-                Book book = new Book(Form.getInt(request,"id"),
-                        Form.getString(request,"author",Pattern.AUTHOR),
-                        Form.getString(request,"title",Pattern.TITLE),
-                        Form.getInt(request,"year"),  Form.getString(request,"isbn",Pattern.ISBN),
-                        Form.getInt(request,"lid"),user.getId());
-                dao.book.create(book);
+                if(sessionUser==null) return Actions.LOGIN.command;
+                Book book = dao.book.read(Form.getInt(request,"id"));
+                   book.setFk_users(sessionUser.getId());
+                   if (dao.book.create(book)) return Actions.PROFILE.command;
             }
+                request.setAttribute("users",users);
                 request.setAttribute("allbooks",books);
             } catch (SQLException | ParseException e) {
                 e.printStackTrace();
+                request.setAttribute(Messages.MSG_ERROR,e.toString());
             }
         return null;
     }
