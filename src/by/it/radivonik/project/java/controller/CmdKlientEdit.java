@@ -23,7 +23,7 @@ public class CmdKlientEdit extends AbstractActionEdit<Klient> {
 
     @Override
     protected String getName() {
-        return "клиент";
+        return "klient";
     }
 
     @Override
