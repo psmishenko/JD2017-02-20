@@ -1,7 +1,10 @@
 package by.it.zeynalov.project.java.Controller;
 
 
+import by.it.zeynalov.project.java.dao.DAO;
+
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,11 +12,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 public class FrontController extends HttpServlet {
-//    ServletContext servletContext = getServletContext();
-//    RequestDispatcher disp = servletContext.getRequestDispatcher("/index.jsp");
-//        disp.forward(req, resp);
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        try {
+       config.getServletContext().setAttribute(
+               "roles",
+               DAO.getInstance().roles.getAll("")
+       );
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+        super.init(config);
+    }
 
     private RequestDispatcher dispatcher(Action action) {
         return getServletContext().getRequestDispatcher(action.getJsp());

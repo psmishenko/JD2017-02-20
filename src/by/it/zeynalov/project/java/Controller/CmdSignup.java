@@ -8,6 +8,18 @@ import java.sql.SQLException;
 import java.text.ParseException;
 
 public class CmdSignup extends Action {
+
+    public static void main(String[] args) {
+        User user = new User(0, "werty", "werty", "werty", 1);
+        DAO dao = DAO.getInstance();
+        try {
+            dao.users.create(user);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     @Override
     public Action execute(HttpServletRequest request) {
         if (!Form.isPost(request)) {
@@ -22,15 +34,19 @@ public class CmdSignup extends Action {
                 user.setFc_rolles(2);
                 DAO dao = DAO.getInstance();
                 try {
-                    if (dao.users.create(user))
-                        return Actions.LOGIN.command;
-                    else
+                    if (dao.users.create(user)) {
+                        request.setAttribute(Messages.MSG_MESSAGE, "create");
                         return null;
+                    } else {
+                        request.setAttribute(Messages.MSG_MESSAGE, "bad create");
+                        return null;
+                    }
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
             } catch (ParseException e) {
-                return Actions.ERROR.command;
+                request.setAttribute(Messages.MSG_ERROR, e);
+                return null;
             }
             return Actions.LOGIN.command;
         }

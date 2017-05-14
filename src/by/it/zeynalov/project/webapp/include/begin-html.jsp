@@ -32,14 +32,14 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href=do?command=Orders>Orders</a></li>
-          <li><a href=do?command=ListAd>list-ad</a></li>
+          <li><a href=do?command=Orders>Создать заказ</a></li>
+          <li><a href=do?command=EditUsers>Пользователи</a></li>
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
-           <li><a href=do?command=Login>login</a></li>
-            <li><a href=do?command=SignUp>sign-up</a></li>
-            <li><a href=do?command=Profile>Profile</a></li>
+           <li><a href=do?command=Login>Логин</a></li>
+            <li><a href=do?command=SignUp>Регистрация</a></li>
+            <li><a href=do?command=Profile>Профиль</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

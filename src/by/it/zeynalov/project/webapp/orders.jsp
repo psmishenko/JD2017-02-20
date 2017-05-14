@@ -8,7 +8,7 @@
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic">Your Coffee</label>
+  <label class="col-md-4 control-label" for="selectbasic">Выберите свой кофе</label>
   <div class="col-md-5">
     <select id="selectbasic" name="selectbasic" class="form-control">
       <option value="1">Latte 2.5$</option>
@@ -19,13 +19,27 @@
   </div>
 </div>
 
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Объем</label>
+  <div class="col-md-4">
+    <select name="selectbasic" class="form-control" id="selectbasic">
+      <option value="1">150 мл</option>
+      <option value="2">250 мл</option>
+      <option value="3">350 мл</option>
+    </select>
+  </div>
+</div>
+
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-success">Order</button>
+    <button name="singlebutton" class="btn btn-success" id="singlebutton">Заказать</button>
   </div>
 </div>
 
 </fieldset>
 </form>
+
+<%@ include file="include/end-html.jsp" %>

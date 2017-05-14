@@ -3,6 +3,16 @@ package by.it.zeynalov.project.java.Controller;
 import javax.servlet.http.HttpServletRequest;
 
 enum Actions {
+    INDEX {
+        {
+            this.command = new CmdIndex();
+        }
+    },
+    EDITUSERS {
+        {
+            this.command = new CmdEditUsers();
+        }
+    },
     SIGNUP {
         {
             this.command = new CmdSignup();
@@ -13,9 +23,14 @@ enum Actions {
             this.command = new CmdLogin();
         }
     },
-    PROFILE{
+    PROFILE {
         {
             this.command = new CmdProfile();
+        }
+    },
+    ORDERS {
+        {
+            this.command = new CmdOrders();
         }
     },
     ERROR {
@@ -28,6 +43,9 @@ enum Actions {
 
     static Action defineForm(HttpServletRequest request) {
         String command = request.getParameter("command");
+        if (command == null) {
+            command = "index";
+        }
         Action res;
         try {
             res = Actions.valueOf(command.toUpperCase()).command;

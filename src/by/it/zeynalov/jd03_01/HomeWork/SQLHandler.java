@@ -58,6 +58,22 @@ public class SQLHandler {
         });
         stmt.executeUpdate(sb.toString());
         sb.setLength(0);
+        Files.readAllLines(Paths.get(System.getProperty("user.dir") + "/src/by/it/zeynalov/jd03_01/HomeWork/db/prepare_tables_2.sql")).stream().forEach(new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                sb.append(s + "\n");
+            }
+        });
+        stmt.executeUpdate(sb.toString());
+        sb.setLength(0);
+        Files.readAllLines(Paths.get(System.getProperty("user.dir") + "/src/by/it/zeynalov/jd03_01/HomeWork/db/prepare_tables_3.sql")).stream().forEach(new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                sb.append(s + "\n");
+            }
+        });
+        stmt.executeUpdate(sb.toString());
+        sb.setLength(0);
         Files.readAllLines(Paths.get(System.getProperty("user.dir") + "/src/by/it/zeynalov/jd03_01/HomeWork/db/init_data.sql")).stream().forEach(new Consumer<String>() {
             @Override
             public void accept(String s) {
