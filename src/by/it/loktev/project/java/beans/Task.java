@@ -1,5 +1,6 @@
 package by.it.loktev.project.java.beans;
 
+import by.it.loktev.project.java.controller.Log;
 import by.it.loktev.project.java.dao.DAO;
 
 import java.sql.SQLException;
@@ -10,7 +11,8 @@ import java.util.Map;
 
 public class Task {
 
-    static private SimpleDateFormat dateFormat=new SimpleDateFormat("dd.MM.yyyy");
+    static private SimpleDateFormat displayDateFormat=new SimpleDateFormat("dd.MM.yyyy");
+    static private SimpleDateFormat htmlDateFormat=new SimpleDateFormat("yyyy-MM-dd");
 
     private int id;
     private String name;
@@ -58,7 +60,13 @@ public class Task {
     public String getFormattedEndDate() {
         if ( endDate==null )
             return "";
-        return dateFormat.format(endDate);
+        return displayDateFormat.format(endDate);
+    }
+
+    public String getHtmlEndDate() {
+        if ( endDate==null )
+            return "";
+        return htmlDateFormat.format(endDate);
     }
 
     public double getPrice() {
@@ -69,8 +77,12 @@ public class Task {
         this.price = price;
     }
 
+    public String getHtmlPrice() {
+        return String.format("%10.2f",price).trim().replace(",",".");
+    }
+
     public String getFormattedPrice() {
-        return String.format("%10.2f",price);
+        return String.format("%10.2f",price).trim().replace(",",".");
     }
 
     public int getStatusId() {

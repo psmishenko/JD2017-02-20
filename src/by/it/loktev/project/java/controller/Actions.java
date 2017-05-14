@@ -33,6 +33,11 @@ enum Actions {
         {
             this.command=new CmdTaskCreate();
         }
+    },
+    TASKEDIT {
+        {
+            this.command=new CmdTaskEdit();
+        }
     };
 
 

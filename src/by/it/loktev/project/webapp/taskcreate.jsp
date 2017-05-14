@@ -2,10 +2,13 @@
 <%@ include file="include/begin-html.jsp" %>
 
 <form class="form-horizontal" action="do?command=TaskCreate" method="post">
+
+<input type=hidden name="taskid" value="${taskid}">
+
 <fieldset>
 
 <!-- Form Name -->
-<legend>Новое задание</legend>
+<legend>Добавление задачи</legend>
 
 <!-- Text input-->
 <div class="form-group">
@@ -34,28 +37,15 @@
   </div>
 </div>
 
-<!-- Select Basic -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="status">Состояние</label>
-  <div class="col-md-4">
-    <select id="status" name="status" class="form-control">
-      <option value="1">Option one</option>
-      <option value="2">Option two</option>
-    </select>
-  </div>
-</div>
-
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label" for=""></label>
   <div class="col-md-4">
-    <button id="" name="" class="btn btn-primary">Добавить</button>
+    <button id="" type=submit name="actioncreate" class="btn btn-primary">Добавить задачу</button>
   </div>
 </div>
 
 </fieldset>
 </form>
-
-<p>INDEX: ${message}</p>
 
 <%@ include file="include/end-html.jsp" %>
