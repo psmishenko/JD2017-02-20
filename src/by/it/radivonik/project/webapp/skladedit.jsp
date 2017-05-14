@@ -18,7 +18,7 @@
   <div class="col-md-4">
     <select class="form-control" id="tovar" name="id_tovar">
       <c:forEach var="tovar" items="${tovars_spr}">
-        <option value="${tovar.id}" >${tovar.name}</option>
+        <option value="${tovar.id}" <c:if test="${tovar.id == sklad.tovar.id}">selected</c:if>>${tovar.name}</option>
       </c:forEach>
     </select>
   </div>
