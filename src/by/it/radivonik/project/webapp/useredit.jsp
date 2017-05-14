@@ -70,6 +70,3 @@
 </form>
 
 <%@ include file="inc_footer.jsp" %>
-
-
-

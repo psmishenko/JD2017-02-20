@@ -4,7 +4,9 @@ import by.it.radivonik.project.java.beans.Tovar;
 import by.it.radivonik.project.java.dao.AbstractDAO;
 import by.it.radivonik.project.java.dao.DAO;
 import javax.servlet.http.HttpServletRequest;
+import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.List;
 
 /**
  * Created by Radivonik on 12.05.2017.
@@ -26,7 +28,7 @@ public class CmdTovarEdit extends AbstractActionEdit<Tovar> {
     }
 
     @Override
-    protected Tovar initBean(HttpServletRequest req) throws ParseException {
+    protected Tovar initBean(HttpServletRequest req) throws ParseException, SQLException {
         return new Tovar(
             FormUtils.getId(req),
             FormUtils.getString(req, "name", IPatterns.TEXT, false, "Наименование товара"),
@@ -41,5 +43,11 @@ public class CmdTovarEdit extends AbstractActionEdit<Tovar> {
     @Override
     protected AbstractAction getActionReturn() {
         return Actions.TOVARLIST.command;
+    }
+
+    @Override
+    protected void execAfter(HttpServletRequest req) throws SQLException {
+        List<Tovar> tovars = getDAO().getAll("");
+        req.getServletContext().setAttribute("tovars_spr", tovars);
     }
 }

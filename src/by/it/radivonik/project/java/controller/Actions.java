@@ -17,7 +17,9 @@ public enum Actions {
     KLIENTLIST { { this.command = new CmdKlientList(); } },
     KLIENTEDIT { { this.command = new CmdKlientEdit(); } },
     AVTOLIST { { this.command = new CmdAvtoList(); } },
-    AVTOEDIT { { this.command = new CmdAvtoEdit(); } };
+    AVTOEDIT { { this.command = new CmdAvtoEdit(); } },
+    SKLADLIST { { this.command = new CmdSkladList(); } },
+    SKLADEDIT { { this.command = new CmdSkladEdit(); } };
 
     public AbstractAction command;
 

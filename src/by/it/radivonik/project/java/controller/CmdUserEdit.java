@@ -4,6 +4,7 @@ import by.it.radivonik.project.java.beans.User;
 import by.it.radivonik.project.java.dao.AbstractDAO;
 import by.it.radivonik.project.java.dao.DAO;
 import javax.servlet.http.HttpServletRequest;
+import java.sql.SQLException;
 import java.text.ParseException;
 
 /**
@@ -27,7 +28,7 @@ public class CmdUserEdit extends AbstractActionEdit<User> {
 
 
     @Override
-    protected User initBean(HttpServletRequest req) throws ParseException {
+    protected User initBean(HttpServletRequest req) throws ParseException, SQLException {
         return new User(
             FormUtils.getId(req),
             FormUtils.getString(req, "login", IPatterns.LOGIN, false, "Имя пользователя"),

@@ -41,6 +41,7 @@ public abstract class AbstractActionEdit<T> extends AbstractAction {
             else
                 req.getSession().removeAttribute(getName() + "_id");
 
+            execAfter(req);
             return getActionReturn();
         }
         catch (ParseException e) {
@@ -55,7 +56,10 @@ public abstract class AbstractActionEdit<T> extends AbstractAction {
     protected abstract T newBean();
     protected abstract InterfaceDAO<T> getDAO();
     protected abstract String getName();
-    protected abstract T initBean(HttpServletRequest req) throws ParseException;
+    protected abstract T initBean(HttpServletRequest req) throws ParseException, SQLException;
     protected abstract int getId(T bean);
     protected abstract AbstractAction getActionReturn();
+    protected void execAfter(HttpServletRequest req) throws SQLException {
+
+    };
 }

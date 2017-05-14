@@ -3,6 +3,7 @@ package by.it.radivonik.project.java.controller;
 import by.it.radivonik.project.java.beans.Avto;
 import by.it.radivonik.project.java.beans.Klient;
 import by.it.radivonik.project.java.beans.Role;
+import by.it.radivonik.project.java.beans.Tovar;
 import by.it.radivonik.project.java.dao.DAO;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -26,7 +27,13 @@ public class FrontController extends HttpServlet {
         DAO dao = DAO.getInstance();
         try {
             List<Role> roles = dao.getRole().getAll("");
+            List<Tovar> tovars = dao.getTovar().getAll("");
+            List<Klient> klients = dao.getKlient().getAll("");
+            List<Avto> avtos = dao.getAvto().getAll("");
             getServletContext().setAttribute("roles_spr", roles);
+            getServletContext().setAttribute("tovars_spr", tovars);
+            getServletContext().setAttribute("klients_spr", klients);
+            getServletContext().setAttribute("avtos_spr", avtos);
         }
         catch (SQLException e) {
             e.printStackTrace();

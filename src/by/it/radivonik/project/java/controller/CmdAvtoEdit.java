@@ -5,7 +5,9 @@ import by.it.radivonik.project.java.dao.AbstractDAO;
 import by.it.radivonik.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
+import java.sql.SQLException;
 import java.text.ParseException;
+import java.util.List;
 
 /**
  * Created by Radivonik on 14.05.2017.
@@ -27,7 +29,7 @@ public class CmdAvtoEdit extends AbstractActionEdit<Avto> {
     }
 
     @Override
-    protected Avto initBean(HttpServletRequest req) throws ParseException {
+    protected Avto initBean(HttpServletRequest req) throws ParseException, SQLException {
         return new Avto(
             FormUtils.getId(req),
             FormUtils.getString(req, "numgos", IPatterns.NUMGOS, false, "Гос. номер"),
@@ -42,5 +44,11 @@ public class CmdAvtoEdit extends AbstractActionEdit<Avto> {
     @Override
     protected AbstractAction getActionReturn() {
         return Actions.AVTOLIST.command;
+    }
+
+    @Override
+    protected void execAfter(HttpServletRequest req) throws SQLException {
+        List<Avto> avtos = getDAO().getAll("");
+        req.getServletContext().setAttribute("avtos_spr", avtos);
     }
 }

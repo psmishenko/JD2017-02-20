@@ -2,6 +2,7 @@ package by.it.radivonik.project.java.dao;
 
 import by.it.radivonik.project.java.connection.ConnectionCreator;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -123,5 +124,11 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
         if (value == null || value.isEmpty())
             return "null";
         return "'" + value.replaceAll("'","''") + "'";
+    }
+
+    String dbVal(BigDecimal value) {
+        if (value == null)
+            return "null";
+        return value.toString();
     }
 }

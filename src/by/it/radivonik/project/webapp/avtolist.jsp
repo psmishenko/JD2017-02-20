@@ -53,6 +53,7 @@
       </tr>
       </c:forEach>
       <c:remove var="selectChecked" scope="page" />
+      <c:remove var="id" scope="page" />
     </tbody>
   </table>
 </form>
