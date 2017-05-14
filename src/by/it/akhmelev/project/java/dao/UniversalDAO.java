@@ -48,30 +48,30 @@ public class UniversalDAO<TypeBean> implements InterfaceDAO<TypeBean> {
             while (rs.next()) {
                 //создаем копию бина, в который будем складывать запись из Recordset
                 TypeBean newBean = newBean();
-                for (int i = 1; i < fields.length + 1; i++) {
+                for (int i = 1; i < fields.length+1; i++) {
                     //перебирая поля бина по очереди извлекаем значения в соответствии с их типом
                     Field f = fields[i - 1];
                     f.setAccessible(true);
                     String strType = f.getType().toString();
                     try {
                         if (f.getType() == Boolean.class || strType.equals("boolean"))
-                            f.set(newBean, rs.getBoolean(i));
+                            f.set(newBean, rs.getBoolean(f.getName()));
                         if (f.getType() == Byte.class || strType.equals("byte"))
-                            f.set(newBean, rs.getByte(i));
+                            f.set(newBean, rs.getByte(f.getName()));
                         if (f.getType() == Integer.class || strType.equals("int"))
-                            f.set(newBean, rs.getInt(i));
+                            f.set(newBean, rs.getInt(f.getName()));
                         if (f.getType() == Double.class || strType.equals("double"))
-                            f.set(newBean, rs.getDouble(i));
+                            f.set(newBean, rs.getDouble(f.getName()));
                         if (f.getType() == Float.class || strType.equals("float"))
-                            f.set(newBean, rs.getFloat(i));
+                            f.set(newBean, rs.getFloat(f.getName()));
                         if (f.getType() == Long.class || strType.equals("long"))
-                            f.set(newBean, rs.getLong(i));
+                            f.set(newBean, rs.getLong(f.getName()));
                         if (f.getType() == Short.class || strType.equals("short"))
-                            f.set(newBean, rs.getShort(i));
+                            f.set(newBean, rs.getShort(f.getName()));
                         if (f.getType() == String.class)
-                            f.set(newBean, rs.getString(i));
+                            f.set(newBean, rs.getString(f.getName()));
                         if (f.getType() == Date.class)
-                            f.set(newBean, rs.getDate(i));
+                            f.set(newBean, rs.getDate(f.getName()));
                         //... и т.д. Но учтите, что протестированы только String int и Integer
                     } catch (IllegalAccessException e) {
                         e.printStackTrace();
