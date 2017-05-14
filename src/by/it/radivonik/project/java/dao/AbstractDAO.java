@@ -1,12 +1,15 @@
 package by.it.radivonik.project.java.dao;
 
 import by.it.radivonik.project.java.connection.ConnectionCreator;
+
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Radivonik on 03.05.2017.
@@ -47,9 +50,7 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
             }
         };
 
-        try (
-            Connection connection = ConnectionCreator.getConnection();
-            Statement statement = connection.createStatement();) {
+        try (Statement statement = ConnectionCreator.getConnection().createStatement()) {
             ResultSet resultSet = statement.executeQuery(sqlSelect()+ " " + where);
             while (resultSet.next()) {
                 T bean = newBean(resultSet);
@@ -57,6 +58,21 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
             }
         }
         return beans;
+    }
+
+    @Override
+    public List<T> getAll(Map<String, String> filter) throws SQLException {
+        String where = "";
+        String delimWhere = "WHERE ";
+        String delimAnd = "";
+        for (Map.Entry<String, String> fieldValue: filter.entrySet()) {
+            where =
+                delimWhere + where + delimAnd +
+                String.format("%s = '%s'", fieldValue.getKey(), fieldValue.getValue());
+            delimAnd = " AND ";
+            delimWhere = "";
+        }
+        return getAll(where);
     }
 
     @Override
@@ -76,13 +92,11 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
     protected abstract String sqlUpdate(T bean);
     protected abstract String sqlDelete(T bean);
     protected abstract void setId(T bean, int id);
-    protected abstract T newBean(ResultSet resultSet) throws SQLException ;
+    protected abstract T newBean(ResultSet resultSet) throws SQLException;
 
     int executeUpdate(String sql) throws SQLException {
         int res;
-        try (
-            Connection connection = ConnectionCreator.getConnection();
-            Statement statement = connection.createStatement()) {
+        try (Statement statement = ConnectionCreator.getConnection().createStatement()) {
             res = statement.executeUpdate(sql);
         }
         return res;
@@ -90,9 +104,7 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
 
     int executeCreate(String sql) throws SQLException {
         int res = -1;
-        try (
-            Connection connection = ConnectionCreator.getConnection();
-            Statement statement = connection.createStatement()) {
+        try (Statement statement = ConnectionCreator.getConnection().createStatement()) {
             if (statement.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS) == 1) {
                 ResultSet keys = statement.getGeneratedKeys();
                 if (keys.next())
@@ -100,5 +112,17 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
             }
         }
         return res;
+    }
+
+    String dbVal(String value) {
+        if (value == null || value.isEmpty())
+            return "null";
+        return "'" + value.replaceAll("'","''") + "'";
+    }
+
+    String dbVal(BigDecimal value) {
+        if (value == null)
+            return "null";
+        return value.toString();
     }
 }

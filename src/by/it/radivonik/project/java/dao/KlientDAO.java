@@ -16,14 +16,14 @@ public class KlientDAO extends AbstractDAO<Klient> {
 
     @Override
     protected String sqlInsert(Klient klient) {
-        String sql = "INSERT INTO klient (name, unp, adres) VALUES ('%s', '%s', '%s')";
-        return String.format(sql, klient.getName(), klient.getUnp(), klient.getAdres());
+        String sql = "INSERT INTO klient (name, unp, adres) VALUES (%s, %s, %s)";
+        return String.format(sql, dbVal(klient.getName()), dbVal(klient.getUnp()), dbVal(klient.getAdres()));
     }
 
     @Override
     protected String sqlUpdate(Klient klient) {
-        String sql = "UPDATE klient SET name = '%s', unp = '%s', adres = '%s' WHERE id = %d";
-        return String.format(sql, klient.getName(), klient.getUnp(), klient.getAdres(), klient.getId());
+        String sql = "UPDATE klient SET name = %s, unp = %s, adres = %s WHERE id = %d";
+        return String.format(sql, dbVal(klient.getName()), dbVal(klient.getUnp()), dbVal(klient.getAdres()), klient.getId());
     }
 
     @Override

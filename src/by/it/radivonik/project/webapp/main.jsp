@@ -1,5 +1,6 @@
-<%@ include file="include/begin-html.jsp" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ include file="inc_header.jsp" %>
 
-<p>Main: ${message}</p>
+<p>Cmd Logout: ${msg_info}</p>
 
-<%@ include file="include/end-html.jsp" %>
+<%@ include file="inc_footer.jsp" %>

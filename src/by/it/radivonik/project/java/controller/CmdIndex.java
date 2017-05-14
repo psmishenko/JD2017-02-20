@@ -3,11 +3,11 @@ package by.it.radivonik.project.java.controller;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * Created by Radivonik on 05.05.2017.
+ * Created by Radivonik on 14.05.2017.
  */
-public class CommandLogout extends Action {
+public class CmdIndex extends AbstractAction {
     @Override
-    public Action execute(HttpServletRequest req) {
+    AbstractAction execute(HttpServletRequest req) {
         return null;
     }
 }

@@ -1,6 +1,7 @@
 package by.it.radivonik.project.java.beans;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 
 /**
  * Created by Radivonik on 04.05.2017.
@@ -9,18 +10,29 @@ public class Sklad {
     private int id;
     private BigDecimal count;
     private BigDecimal cena;
-    private int idTovar;
-    private int idUser;
+    private Tovar tovar;
+    private User user;
+    private BigDecimal stoim;
 
     public Sklad() {
     }
 
-    public Sklad(int id, BigDecimal count, BigDecimal cena, int idTovar, int idUser) {
+    public Sklad(int id, BigDecimal count, BigDecimal cena, Tovar tovar, User user) {
         this.id = id;
         this.count = count;
         this.cena = cena;
-        this.idTovar = idTovar;
-        this.idUser = idUser;
+        this.tovar = tovar;
+        this.user = user;
+        this.stoim = count.multiply(cena).round(new MathContext(2));
+    }
+
+    public Sklad(int id, BigDecimal count, BigDecimal cena, Tovar tovar, User user, BigDecimal stoim) {
+        this.id = id;
+        this.count = count;
+        this.cena = cena;
+        this.tovar = tovar;
+        this.user = user;
+        this.stoim = stoim;
     }
 
     public int getId() {
@@ -47,26 +59,34 @@ public class Sklad {
         this.cena = cena;
     }
 
-    public int getIdTovar() {
-        return idTovar;
+    public Tovar getTovar() {
+        return tovar;
     }
 
-    public void setIdTovar(int idTovar) {
-        this.idTovar = idTovar;
+    public void setTovar(Tovar tovar) {
+        this.tovar = tovar;
     }
 
-    public int getIdUser() {
-        return idUser;
+    public User getUser() {
+        return user;
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public BigDecimal getStoim() {
+        return stoim;
+    }
+
+    public void setStoim(BigDecimal stoim) {
+        this.stoim = stoim;
     }
 
     @Override
     public String toString() {
         return
-            "SostavNaklad{id=" + id + ", count=" + count + ", cena=" + cena + ", " +
-            "idTovar=" + idTovar + ", idUser=" + idUser + "}";
+            "Sklad{id=" + id + ", count=" + count + ", cena=" + cena + ", " +
+            "tovar=" + tovar.toString() + ", user=" + user.toString() + "}";
     }
 }
