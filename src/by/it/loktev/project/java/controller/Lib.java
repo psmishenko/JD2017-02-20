@@ -31,4 +31,13 @@ public class Lib {
         return false;
     }
 
+    public static int getUserId(HttpServletRequest request)  {
+
+        HttpSession session=request.getSession();
+        Object userIdStr=session.getAttribute("userid");
+        if ( userIdStr==null )
+            return -1;
+        return Integer.parseInt(userIdStr.toString());
+    }
+
 }

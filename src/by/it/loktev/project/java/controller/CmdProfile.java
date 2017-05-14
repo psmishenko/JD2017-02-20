@@ -1,9 +1,14 @@
 package by.it.loktev.project.java.controller;
 
+import by.it.loktev.project.java.beans.Task;
+import by.it.loktev.project.java.dao.DAO;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.sql.SQLException;
+import java.util.List;
 
 public class CmdProfile extends Action {
 
@@ -13,6 +18,15 @@ public class CmdProfile extends Action {
         response.setHeader("Cache-Control","no-store");
 
         if (!Form.isPost(request)){
+
+            try {
+                DAO dao=DAO.getInstance();
+                List<Task> list= dao.getTask().getAll(" where execuserid="+Lib.getUserId(request)+" and statusid in (2,3) ");
+                request.setAttribute("tasks",list);
+            } catch (SQLException e) {
+                request.setAttribute(Messages.MSG_ERROR,e.toString());
+            }
+
             return null;
         }
 

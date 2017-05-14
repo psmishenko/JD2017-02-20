@@ -47,16 +47,10 @@
         <c:if test="${userauthorized}">
         <td>
           <c:if test="${task.statusId==1}">
-          <form action="do?command=TaskGet" method="post">
-            <input type=hidden name="taskid" value="${task.id}">
-            <input type=submit class="btn btn-info" value="взять в работу">
-          </form>
+            <input type=button class="btn btn-info" value="взять в работу" onclick="javascript:TaskGet(${task.id},'${task.name}')">
           </c:if>
           <c:if test="${task.statusId==2 && task.execUserId==userid}">
-          <form action="do?command=TaskReady" method="post">
-            <input type=hidden name="taskid" value="${task.id}">
-            <input type=submit class="btn btn-info" value="исполнено">
-          </form>
+            <input type=button class="btn btn-success" value="исполнить" onclick="javascript:TaskReady(${task.id},'${task.name}')">
           </c:if>
         </td>
         </c:if>
@@ -68,10 +62,7 @@
           </form>
         </td>
         <td>
-          <form action="do?command=TaskDelete" method="post">
-            <input type=hidden name="taskid" value="${task.id}">
-            <input type=submit class="btn btn-danger" value="удалить">
-          </form>
+           <input type=button class="btn btn-danger" value="удалить" onclick="javascript:TaskDelete(${task.id},'${task.name}')">
         </td>
         </c:if>
     </tr>
@@ -84,5 +75,51 @@
     </tr>
     </c:if>
 </table>
+
+<form name=FTaskDelete action="do?command=TaskDelete" method="post">
+  <input type=hidden name="taskid">
+</form>
+
+<form name=FTaskGet action="do?command=TaskGet" method="post">
+  <input type=hidden name="taskid">
+</form>
+
+<form name=FTaskReady action="do?command=TaskReady" method="post">
+  <input type=hidden name="taskid">
+</form>
+
+<script>
+
+  function TaskDelete(TaskId,TaskName)
+  {
+    if ( confirm("Вы уверены, что хотите удалить задачу:\n"+TaskName) )
+    {
+      var Form=document.forms.FTaskDelete;
+      Form.elements.taskid.value=TaskId;
+      Form.submit();
+    }
+  }
+
+  function TaskGet(TaskId,TaskName)
+  {
+    if ( confirm("Вы уверены, что хотите взять в работу задачу:\n"+TaskName) )
+    {
+      var Form=document.forms.FTaskGet;
+      Form.elements.taskid.value=TaskId;
+      Form.submit();
+    }
+  }
+
+  function TaskReady(TaskId,TaskName)
+  {
+    if ( confirm("Вы уверены, что исполнена задача:\n"+TaskName) )
+    {
+      var Form=document.forms.FTaskReady;
+      Form.elements.taskid.value=TaskId;
+      Form.submit();
+    }
+  }
+
+</script>
 
 <%@ include file="include/end-html.jsp" %>

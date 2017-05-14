@@ -34,6 +34,21 @@ enum Actions {
             this.command=new CmdTaskCreate();
         }
     },
+    TASKDELETE {
+        {
+            this.command=new CmdTaskDelete();
+        }
+    },
+    TASKGET {
+        {
+            this.command=new CmdTaskGet();
+        }
+    },
+    TASKREADY {
+        {
+            this.command=new CmdTaskReady();
+        }
+    },
     TASKEDIT {
         {
             this.command=new CmdTaskEdit();
