@@ -65,6 +65,10 @@ public class User {
     }
 
     public String getRoleName(){
+        DAO dao=DAO.getInstance();
+        Role role=dao.getRole().getById(roleId);
+        return role.getName();
+        /*
         try {
             DAO dao=DAO.getInstance();
             List<Role> roles= dao.getRole().getAll(" id="+roleId+" ");
@@ -74,6 +78,7 @@ public class User {
             e.printStackTrace();
         }
         return "???";
+        */
     }
 
 

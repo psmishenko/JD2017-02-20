@@ -30,6 +30,9 @@
              <li><a href=do?command=TaskCreate>Добавить задачу</a></li>
            </c:if>
            <li><a href=do?command=TaskList>Список задач</a></li>
+           <c:if test="${userroleid==1}">
+             <li><a href=do?command=UserList>Список пользователей</a></li>
+           </c:if>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <c:if test="${!userauthorized}">

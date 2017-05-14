@@ -24,6 +24,26 @@ enum Actions {
             this.command=new CmdError();
         }
     },
+    USERLIST {
+        {
+            this.command=new CmdUserList();
+        }
+    },
+    USEREDIT {
+        {
+            this.command=new CmdUserEdit();
+        }
+    },
+    USERSETPASS {
+        {
+            this.command=new CmdUserSetPass();
+        }
+    },
+    USERDELETE {
+        {
+            this.command=new CmdUserDelete();
+        }
+    },
     TASKLIST {
         {
             this.command=new CmdTaskList();

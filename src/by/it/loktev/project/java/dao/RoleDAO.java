@@ -7,11 +7,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class RoleDAO extends AbstractDAO implements InterfaceDAO<Role> {
 
     static private RoleDAO instance;
+    static private Map<Integer, Role> map;
 
     private RoleDAO(){
     }
@@ -48,6 +51,30 @@ public class RoleDAO extends AbstractDAO implements InterfaceDAO<Role> {
             return list;
         }
 
+    }
+
+    public Map<Integer, Role> getMap()  {
+        Map<Integer,Role> map=new HashMap<>();
+        try {
+            List<Role> list= getAll("");
+            for ( Role role : list ){
+                map.put(role.getId(),role);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return map;
+    }
+
+    public Role getById(int Id){
+        if ( map==null ) {
+            synchronized (StatusDAO.class) {
+                if (map == null) {
+                    map = getMap();
+                }
+            }
+        }
+        return map.get(Id);
     }
 
     @Override
