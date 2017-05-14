@@ -2,9 +2,26 @@
 <%@ include file="include/begin-html.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<div class="btn-group" role="group">
-  <a href="do?command=AddUser" class="btn btn-primary" role="button">Добавить пользователя</a>
+<div class="row">
+  <div class="col-sm-2">
+      <div class="btn-group" role="group">
+        <a href="do?command=actionUser" class="btn btn-primary" role="button">Добавить пользователя</a>
+      </div>
+  </div>
+  <div class="col-sm-4">
+    <form action="do?command=Users" method="POST">
+      <div class="input-group">
+          <input name="searchText" class="form-control" placeholder="Поиск по имени пользователя..."
+           value="<c:if test="${searchText != null}" >${searchText}</c:if>"
+          >
+          <span class="input-group-btn">
+            <button name="btnSearch" class="btn btn-default" type="submit">Поиск</button>
+          </span>
+      </div>
+    </form>
+  </div>
 </div>
+
 <p></p>
 
 <div class="panel panel-primary">
@@ -29,8 +46,11 @@
         </c:forEach>
       </td>
       <td align="right">
-         <button type="button" class="btn btn-primary btn-xs">Редактировать</button>
-         <button type="button" class="btn btn-primary btn-xs">Удалить</button>
+      <form class="form-horizontal" action="do?command=ActionUser" method="POST">
+          <input type="hidden" name="id" value="${user.id}" />
+          <button type="submit" class="btn btn-primary btn-xs" name="btnEdit">Редактировать</button>
+          <button type="submit" class="btn btn-primary btn-xs" name="btnDelete">Удалить</button>
+      </form>
       </td>
 
     </tr>

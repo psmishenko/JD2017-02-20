@@ -38,9 +38,9 @@ public class AddCookies implements Filter {
 
         HttpSession session = httpReq.getSession(false);
         if (session != null &&
-                session.getAttribute("user") != null &&
-                session.getAttribute("user") instanceof User) {
-            User user = (User) session.getAttribute("user");
+                session.getAttribute("currentuser") != null &&
+                session.getAttribute("currentuser") instanceof User) {
+            User user = (User) session.getAttribute("currentuser");
             addCookie(ICookies.LOGIN, user.getLogin(), httpResp, CookieMaxAgeSec);
             addCookie(ICookies.PASSWORD, user.getPassword(), httpResp, CookieMaxAgeSec);
         }

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="btn-group" role="group">
-  <a href="do?command=AddValut" class="btn btn-primary" role="button">Добавить валюту</a>
+  <a href="do?command=actionValut" class="btn btn-primary" role="button">Добавить валюту</a>
 </div>
 <p></p>
 
@@ -24,8 +24,11 @@
       <td><c:out value="${valut.namesokr}" /></td>
       <td><c:out value="${valut.namefull}" /></td>
       <td align="right">
-          <button type="button" class="btn btn-primary btn-xs">Редактировать</button>
-          <button type="button" class="btn btn-primary btn-xs">Удалить</button>
+      <form class="form-horizontal" action="do?command=ActionValut" method="POST">
+          <input type="hidden" name="id" value="${valut.id}" />
+          <button type="submit" class="btn btn-primary btn-xs" name="btnEdit">Редактировать</button>
+          <button type="submit" class="btn btn-primary btn-xs" name="btnDelete">Удалить</button>
+      </form>
       </td>
     </tr>
   </c:forEach>

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="btn-group" role="group">
-  <a href="do?command=AddLimit" class="btn btn-primary" role="button">Добавить лимит</a>
+  <a href="do?command=actionLimit" class="btn btn-primary" role="button">Добавить лимит</a>
 </div>
 <p></p>
 
@@ -28,8 +28,11 @@
       <td><c:out value="${limit.summa}" /></td>
       <td><c:out value="${limit.valut.namesokr}" /></td>
       <td align="right">
-          <button type="button" class="btn btn-primary btn-xs">Редактировать</button>
-          <button type="button" class="btn btn-primary btn-xs">Удалить</button>
+      <form class="form-horizontal" action="do?command=ActionLimit" method="POST">
+          <input type="hidden" name="id" value="${limit.id}" />
+          <button type="submit" class="btn btn-primary btn-xs" name="btnEdit">Редактировать</button>
+          <button type="submit" class="btn btn-primary btn-xs" name="btnDelete">Удалить</button>
+      </form>
       </td>
     </tr>
   </c:forEach>

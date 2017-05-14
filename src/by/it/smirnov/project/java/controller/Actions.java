@@ -6,35 +6,34 @@ import by.it.smirnov.project.java.log.SingleLogger;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.Enumeration;
 
 /**
  * Created by aleksey.smirnov on 05.05.2017.
  */
 enum Actions {
-    SIGNUP {{this.command = new CommandAddUser();}},
+    SIGNUP {{this.command = new CommandActionUser();}},
     LOGIN {{this.command = new CommandLogin();}},
     LOGOUT {{this.command = new CommandLogout();}},
     BANKS {{this.command = new CommandBanks();}},
-    ADDBANK {{this.command = new CommandAddBank();}},
+    ACTIONBANK {{this.command = new CommandActionBank();}},
     USERS {{this.command = new CommandUsers();}},
-    ADDUSER {{this.command = new CommandAddUser();}},
+    ACTIONUSER {{this.command = new CommandActionUser();}},
     SDELS {{this.command = new CommandSdels();}},
-    ADDSDEL {{this.command = new CommandAddSdel();}},
+    ACTIONSDEL {{this.command = new CommandActionSdel();}},
     VALUTS {{this.command = new CommandValuts();}},
-    ADDVALUT {{this.command = new CommandAddValut();}},
+    ACTIONVALUT {{this.command = new CommandActionValut();}},
     COUNTRYS {{this.command = new CommandCountrys();}},
-    ADDCOUNTRY {{this.command = new CommandAddCountry();}},
+    ACTIONCOUNTRY {{this.command = new CommandActionCountry();}},
     OPERTYPES {{this.command = new CommandOperTypes();}},
-    ADDOPERTYPE {{this.command = new CommandAddOperType();}},
+    ACTIONOPERTYPE {{this.command = new CommandActionOperType();}},
     ROLES {{this.command = new CommandRoles();}},
-    ADDROLE {{this.command = new CommandAddRole();}},
+    ACTIONROLE {{this.command = new CommandActionRole();}},
     GROUPBANKS {{this.command = new CommandGroupBanks();}},
-    ADDGROUPBANK {{this.command = new CommandAddGroupBank();}},
+    ACTIONGROUPBANK {{this.command = new CommandActionGroupBank();}},
     LIMITS {{this.command = new CommandLimits();}},
-    ADDLIMIT {{this.command = new CommandAddLimit();}},
+    ACTIONLIMIT {{this.command = new CommandActionLimit();}},
     KURSVALUTS {{this.command = new CommandKursValuts();}},
-    ADDKURSVALUT {{this.command = new CommandAddKursValut();}},
+    ACTIONKURSVALUT {{this.command = new CommandActionKursValut();}},
     MAIN {{this.command = new CommandMain();}},
     ERROR {{this.command = new CommandError();}};
 
@@ -57,7 +56,7 @@ enum Actions {
                 }
             }
             if ((Actions.valueOf(command.toUpperCase())!=LOGIN) &&
-                (session == null || session.getAttribute("user") == null)) {
+                (session == null || session.getAttribute("currentuser") == null)) {
                 res = Actions.LOGIN.command;
                 request.setAttribute("clearform",Boolean.TRUE);
             } else {

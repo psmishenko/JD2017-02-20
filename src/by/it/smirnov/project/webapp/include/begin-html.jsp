@@ -55,11 +55,11 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-      <c:if test="${user == null}" >
+      <c:if test="${currentuser == null}" >
         <li><a href="do?command=Login"><span class="glyphicon glyphicon-log-in"></span> Вход</a></li>
       </c:if>
-      <c:if test="${user != null}" >
-        <p class="navbar-text">Пользователь: <strong><c:out value="${user.name}" /></strong></p>
+      <c:if test="${currentuser != null}" >
+        <p class="navbar-text">Пользователь: <strong><c:out value="${currentuser.name}" /></strong></p>
         <li><a href="do?command=Logout"><span class="glyphicon glyphicon-log-out"></span> Выход</a></li>
       </c:if>
       </ul>
