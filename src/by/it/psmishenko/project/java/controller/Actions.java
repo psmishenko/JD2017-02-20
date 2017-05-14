@@ -2,10 +2,23 @@ package by.it.psmishenko.project.java.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * Created by user on 05.05.2017.
- */
+
 enum  Actions {
+    INDEX {
+        {
+            this.command = new CmdIndex();
+        }
+    },
+    HOME {
+        {
+            this.command = new CmdHome();
+        }
+    },
+    EDITUSERS {
+        {
+            this.command = new CmdEditusers();
+        }
+    },
     SIGNUP {
         {
             this.command = new CmdSignup();
@@ -24,6 +37,16 @@ enum  Actions {
     ALLBOOKS {
         {
             this.command = new CmdAllbooks();
+        }
+    },
+    DELETEUSERBOOK {
+        {
+            this.command = new CmdDeleteUserBook();
+        }
+    },
+    EDITUSERBOOK {
+        {
+            this.command = new CmdEditUserBook();
         }
     },
     ADDBOOK {
@@ -45,6 +68,9 @@ enum  Actions {
     public Action command;
     static  Action defineFrom(HttpServletRequest request){
         String command = request.getParameter("command");
+        if(command==null){
+            command = "index";
+        }
         Action res;
         try {
             res = Actions.valueOf(command.toUpperCase()).command;

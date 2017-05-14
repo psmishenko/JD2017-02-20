@@ -10,12 +10,13 @@
     и имя сервлета в них было одинаковым!!! Здесь это имя HelloWorld
     -->
     <servlet>
-        <servlet-name>HelloWorld</servlet-name>
+        <servlet-name>FrontController</servlet-name>
         <servlet-class>by.it.psmishenko.project.java.controller.FrontController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>HelloWorld</servlet-name>
+        <servlet-name>FrontController</servlet-name>
         <url-pattern>/do</url-pattern>
+        <url-pattern></url-pattern>
     </servlet-mapping>
 <filter>
     <filter-name>EncodingUTF8</filter-name>

@@ -2,9 +2,7 @@ package by.it.psmishenko.project.java.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * Created by GN on 06.05.2017.
- */
+
  abstract class Action {
     abstract Action execute(HttpServletRequest request);
 

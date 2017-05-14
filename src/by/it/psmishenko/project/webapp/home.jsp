@@ -2,7 +2,9 @@
 <%@ include file="include/begin-html.jsp" %>
 
 <h1 align="center">Welcome to our service!</h1>
-<h2 align="center"><a href=do?command=SignUp>Register</a> or <a href=do?command=Login>log in</a> to your account.</h2>
+<h2 align="center">Look at <a href=do?command=profile>your profile</a> or  
+<a href=do?command=allbooks>all books</a> on our service.Also <a href=do?command=AddBook>add books</a> and share it!
+</h2>
 <div class="row">
   <div class="col-md-4"><img width="400" height="400" src="fonts/book_guide_hero_books.png">
 </div>

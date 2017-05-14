@@ -9,9 +9,7 @@ package by.it.psmishenko.project.java.controller;
          import java.sql.SQLException;
          import java.util.List;
 
-/**
- * Created by user on 05.05.2017.
- */
+
 public class CmdProfile extends Action {
     @Override
     public Action execute(HttpServletRequest request) {
@@ -20,6 +18,9 @@ public class CmdProfile extends Action {
                         session.invalidate();
                         return Actions.LOGIN.command;
                     }
+                 /*   if (Form.isPost(request)&&(request.getParameter("edituserbook") != null)){
+                   return Actions.EDITUSERBOOK.command;
+                    }*/
                 User user = Utils.getSessionUser(request);
                 if (user!=null){
                        DAO dao= DAO.getInstance();
