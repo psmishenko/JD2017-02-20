@@ -6,6 +6,7 @@ import by.it.radivonik.project.java.dao.DAO;
 
 import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;
+import java.util.List;
 
 /**
  * Created by Radivonik on 14.05.2017.
@@ -44,5 +45,4 @@ public class CmdKlientEdit extends AbstractActionEdit<Klient> {
     protected AbstractAction getActionReturn() {
         return Actions.KLIENTLIST.command;
     }
-
 }

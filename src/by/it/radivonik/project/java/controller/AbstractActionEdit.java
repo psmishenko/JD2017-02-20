@@ -40,6 +40,7 @@ public abstract class AbstractActionEdit<T> extends AbstractAction {
                 req.getSession().setAttribute(getName() + "_id", getId(bean));
             else
                 req.getSession().removeAttribute(getName() + "_id");
+
             return getActionReturn();
         }
         catch (ParseException e) {

@@ -8,6 +8,7 @@ public interface IPatterns {
     String EMAIL = "[a-zA-Z0-9.-_]+@[a-zA-Z0-9.-_]+\\.[a-zA-Z0-9.-_]+";
     String PASSWORD = "[a-zA-Z0-9]{5,}";
     String TEXT = ".+";
-    String UNP = "[0-9]{9,10}";
+    String UNP = "\\d{9,10}";
+    String NUMGOS = "\\d{4} [A-Z]{2}-\\d";
 }
 

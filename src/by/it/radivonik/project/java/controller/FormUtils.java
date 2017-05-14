@@ -16,7 +16,7 @@ public class FormUtils {
             return null;
         if (value != null && (pattern.isEmpty() || value.matches(pattern)))
             return value;
-        throw new ParseException(errorMsg(value, name), 1);
+        throw new ParseException(errorMsg(value, name, pattern), 1);
     }
 
     public static int getId(HttpServletRequest req) {
@@ -33,7 +33,7 @@ public class FormUtils {
             return Integer.valueOf(value);
         }
         catch (Exception e) {
-            throw new ParseException(errorMsg(value, name), 1);
+            throw new ParseException(errorMsg(value, name, ""), 1);
         }
     }
 
@@ -46,7 +46,7 @@ public class FormUtils {
             return Date.valueOf(value);
         }
         catch (Exception e) {
-            throw new ParseException(errorMsg(value, name), 1);
+            throw new ParseException(errorMsg(value, name, ""), 1);
         }
     }
 
@@ -59,12 +59,15 @@ public class FormUtils {
             return new BigDecimal(value);
         }
         catch (Exception e) {
-            throw new ParseException(errorMsg(value, name), 1);
+            throw new ParseException(errorMsg(value, name, ""), 1);
         }
     }
 
-    static String errorMsg(String value, String name) {
-        return String.format("Некорректное значение в поле '%s': %s", name, value);
+    static String errorMsg(String value, String name, String pattern) {
+        String msg = String.format("Некорректное значение в поле '%s': %s", name, value);
+        if (pattern != null && !pattern.isEmpty())
+            msg = msg + String.format("(шаблон '%s')", pattern);
+        return msg;
     }
 
     static boolean isPost(HttpServletRequest req) {

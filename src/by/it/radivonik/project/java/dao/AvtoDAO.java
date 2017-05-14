@@ -16,14 +16,14 @@ public class AvtoDAO extends AbstractDAO<Avto> {
 
     @Override
     protected String sqlInsert(Avto avto) {
-        String sql = "INSERT INTO avto (numgos, voditel) VALUES ('%s', '%s')";
-        return String.format(sql, avto.getNumgos(), avto.getVoditel());
+        String sql = "INSERT INTO avto (numgos, voditel) VALUES (%s, %s)";
+        return String.format(sql, dbVal(avto.getNumgos()), dbVal(avto.getVoditel()));
     }
 
     @Override
     protected String sqlUpdate(Avto avto) {
-        String sql = "UPDATE avto SET numgos = '%s', voditel = '%s' WHERE id = %d";
-        return String.format(sql, avto.getNumgos(), avto.getVoditel(), avto.getId());
+        String sql = "UPDATE avto SET numgos = %s, voditel = %s WHERE id = %d";
+        return String.format(sql, dbVal(avto.getNumgos()), dbVal(avto.getVoditel()), avto.getId());
     }
 
     @Override

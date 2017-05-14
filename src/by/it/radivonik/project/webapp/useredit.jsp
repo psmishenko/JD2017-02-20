@@ -42,7 +42,7 @@
   <label class="col-md-4 control-label" for="role">Роль</label>
   <div class="col-md-4">
     <select class="form-control" id="role" name="id_role">
-      <c:forEach var="role" items="${roles}">
+      <c:forEach var="role" items="${roles_spr}">
         <option value="${role.id}" <c:if test="${role.id == user.idRole}">selected</c:if>>${role.name}</option>
       </c:forEach>
     </select>

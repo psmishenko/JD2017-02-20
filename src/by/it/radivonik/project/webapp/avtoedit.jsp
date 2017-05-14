@@ -6,24 +6,24 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>Товар</legend>
+<legend>Автомобиль</legend>
 
-<input type="hidden" name="command" value="TovarEdit" />
-<input type="hidden" name="id" value="${tovar.id}">
+<input type="hidden" name="command" value="AvtoEdit" />
+<input type="hidden" name="id" value="${avto.id}">
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="name">Наименование</label>
+  <label class="col-md-4 control-label" for="numgos">Гос. номер</label>
   <div class="col-md-4">
-    <input class="form-control input-md" type="text" id="name" name="name" value="${tovar.name}" placeholder="" required="true">
+    <input class="form-control input-md" type="text" id="numgos" name="numgos" value="${avto.numgos}" placeholder="" required="true">
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="edizm">Единица измерения</label>
+  <label class="col-md-4 control-label" for="voditel">Водитель (ФИО)</label>
   <div class="col-md-4">
-    <input class="form-control input-md" type="text" id="edizm" name="edizm" value="${tovar.edizm}" placeholder="" required="true">
+    <input class="form-control input-md" type="text" id="voditel" name="voditel" value="${avto.voditel}" placeholder="" required="true">
   </div>
 </div>
 
