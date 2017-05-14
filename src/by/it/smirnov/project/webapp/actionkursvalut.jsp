@@ -30,30 +30,36 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="za">Сумма</label>
   <div class="col-md-4">
+    <span class="input-group-btn">
   <input id="za" name="za" type="number" step="0.01" required=""
     value="<c:if test="${kursvalut == null}" >0</c:if><c:if test="${kursvalut != null}" >${kursvalut.za}</c:if>"
     placeholder="Сумма" class="form-control input-md">
+    </span>
+    <span class="input-group-btn">
       <select id="zavalut" name="zavalut" class="form-control">
         <c:forEach items="${valuts}" var="valut">
             <option <c:if test="${kursvalut != null && valut.id==kursvalut.zavalut.id}" >selected</c:if> value="${valut.id}">${valut.namesokr}</option>
         </c:forEach>
       </select>
-
+    </span>
   </div>
 </div>
 
 <div class="form-group">
   <label class="col-md-4 control-label" for="dat">Сумма</label>
   <div class="col-md-4">
+    <span class="input-group-btn">
   <input id="dat" name="dat" type="number" step="0.01" required=""
     value="<c:if test="${kursvalut == null}" >0</c:if><c:if test="${kursvalut != null}" >${kursvalut.dat}</c:if>"
     placeholder="Сумма" class="form-control input-md">
+    </span>
+    <span class="input-group-btn">
       <select id="datvalut" name="datvalut" class="form-control">
         <c:forEach items="${valuts}" var="valut">
             <option <c:if test="${kursvalut != null && valut.id==kursvalut.datvalut.id}" >selected</c:if> value="${valut.id}">${valut.namesokr}</option>
         </c:forEach>
       </select>
-
+    </span>
   </div>
 </div>
 

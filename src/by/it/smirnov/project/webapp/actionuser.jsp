@@ -15,7 +15,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="login">Имя пользователя</label>
+  <label class="col-md-4 control-label" for="name">Имя пользователя</label>
   <div class="col-md-4">
   <input id="name" name="name" type="text" placeholder="Имя пользователя" required="" class="form-control input-md"
     value="<c:if test="${user != null}" >${user.name}</c:if>"

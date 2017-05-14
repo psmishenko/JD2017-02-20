@@ -30,13 +30,16 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="summa">Сумма</label>
   <div class="col-md-4">
+    <span class="input-group-btn">
   <input id="summa" name="summa" type="number" step="0.01" required="" value="<c:if test="${sdel == null}" >0</c:if><c:if test="${sdel != null}" >${sdel.summa}</c:if>" placeholder="Сумма" class="form-control input-md">
+    </span>
+    <span class="input-group-btn">
       <select id="idvalut" name="idvalut" class="form-control">
         <c:forEach items="${valuts}" var="valut">
             <option <c:if test="${sdel != null && valut.id==sdel.valut.id}" >selected</c:if> value="${valut.id}">${valut.namesokr}</option>
         </c:forEach>
       </select>
-
+    </span>
   </div>
 </div>
 

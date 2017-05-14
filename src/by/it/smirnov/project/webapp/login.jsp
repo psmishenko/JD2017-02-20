@@ -31,7 +31,5 @@
   </div>
 </div>
 
-</fieldset>
-</form>
 
 <%@ include file="include/end-html.jsp" %>

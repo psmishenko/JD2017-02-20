@@ -52,17 +52,21 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="summa">Сумма</label>
   <div class="col-md-4">
+    <span class="input-group-btn">
   <input id="summa" name="summa" type="number" step="0.01" required=""
       value="<c:if test="${limit != null}" >${limit.summa}</c:if><c:if test="${limit == null}" >0.00</c:if>"
       placeholder="Сумма" class="form-control input-md">
+    </span>
+    <span class="input-group-btn">
       <select id="idvalut" name="idvalut" class="form-control">
         <c:forEach items="${valuts}" var="valut">
             <option <c:if test="${limit != null && valut.id==limit.valut.id}" >selected</c:if> value="${valut.id}">${valut.namesokr}</option>
         </c:forEach>
       </select>
-
+    </span>
   </div>
 </div>
+
 
 
 <!-- Button -->
