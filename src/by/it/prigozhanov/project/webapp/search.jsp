@@ -11,10 +11,10 @@
         <h4>${car.price}$ за день</h4>
         <p>${car.hp} HP</p>
         <p><a href="#" class="btn btn-success" role="button">Rent car</a></p>
-        <p>Месторасположение: ${car.location}</p>
-        <p>Объем багажника: ${car.luggageCapacity} сумки</p>
-        <p>Колличество мест для пассажиров: ${car.seats}</p>
-        <p>Средний расход: ${car.fuelConsumption} литров/100км</p>
+        <p>Месторасположение: ${car.location} <span class="glyphicon glyphicon-globe" aria-hidden="true"></span></p>
+        <p>Объем багажника: ${car.luggageCapacity}  <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></p>
+        <p>Колличество мест для пассажиров: ${car.seats}  <span class="glyphicon glyphicon-user" aria-hidden="true"></span></p>
+        <p>Средний расход: ${car.fuelConsumption} литров/100км  <span class="glyphicon glyphicon-filter" aria-hidden="true"></span></p>
       </div>
     </div>
   </div>
