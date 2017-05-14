@@ -15,8 +15,8 @@ public abstract class AbstractActionEdit<T> extends AbstractAction {
         if (!FormUtils.isPost(req) || action == null)
             return Actions.ERROR.command;
 
+        T bean = null;
         try {
-            T bean;
             if (action.equals("create"))
                 bean = newBean();
             else
@@ -45,9 +45,13 @@ public abstract class AbstractActionEdit<T> extends AbstractAction {
             return getActionReturn();
         }
         catch (ParseException e) {
+            req.setAttribute(getName(), bean);
+            req.setAttribute("action", action);
             req.setAttribute(IMessages.MSG_ERROR, e.getMessage());
         }
         catch (SQLException e) {
+            req.setAttribute(getName(), bean);
+            req.setAttribute("action", action);
             req.setAttribute(IMessages.MSG_ERROR, e.getMessage());
         }
         return  null;

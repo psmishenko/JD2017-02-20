@@ -66,7 +66,7 @@ public class FormUtils {
     static String errorMsg(String value, String name, String pattern) {
         String msg = String.format("Некорректное значение в поле '%s': %s", name, value);
         if (pattern != null && !pattern.isEmpty())
-            msg = msg + String.format("(шаблон '%s')", pattern);
+            msg = msg + String.format(" (шаблон '%s')", pattern);
         return msg;
     }
 

@@ -58,8 +58,18 @@
     Сохранить
     </button>
     </c:if>
-    <c:if test='${param.action.equals("delete")}'>
+    <c:if test='${action.equals("create_exec") || param.action.equals("update_exec")}'>
+    <button class="btn btn-success" type="submit" id="action" name="action" value="${action}">
+    Сохранить
+    </button>
+    </c:if>
+    <c:if test='${param.action.equals("delete") || action.equals("delete")}'>
     <button class="btn btn-danger" type="submit" id="action" name="action" value="${param.action}_exec">
+    Удалить
+    </button>
+    </c:if>
+    <c:if test='${param.action.equals("delete_exec") || action.equals("delete_exec")}'>
+    <button class="btn btn-danger" type="submit" id="action" name="action" value="${action}">
     Удалить
     </button>
     </c:if>
