@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
 
-<form class="form-horizontal" action="do?command=login" method="POST">
+<form class="form-horizontal" action="do?command=product" method="POST">
 
 <form class="form-horizontal">
 <fieldset>
@@ -45,7 +45,6 @@
 
 </fieldset>
 </form>
-
 
 
 <p>Cmd Login: ${message}</p>

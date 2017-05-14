@@ -37,7 +37,7 @@ enum Actions {
     public Action command;
 
     static Action defineFrom(HttpServletRequest request){
-        String command=request.getParameter("command");
+        String command = request.getParameter("command");
         Action res;
         try {
             res=Actions.valueOf(command.toUpperCase()).command;
