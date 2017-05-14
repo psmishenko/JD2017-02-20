@@ -19,13 +19,25 @@ public class Lib {
         if ( list.size()==1 ){
             HttpSession session=request.getSession();
             user=list.get(0);
+            session.setAttribute("userauthorized",true);
+            session.setAttribute("userid",user.getId());
             session.setAttribute("userlogin",user.getLogin());
             session.setAttribute("userpasshash", user.getPassHash());
+            session.setAttribute("userroleid", user.getRoleId());
             session.setMaxInactiveInterval(30);
             return true;
         }
 
         return false;
+    }
+
+    public static int getUserId(HttpServletRequest request)  {
+
+        HttpSession session=request.getSession();
+        Object userIdStr=session.getAttribute("userid");
+        if ( userIdStr==null )
+            return -1;
+        return Integer.parseInt(userIdStr.toString());
     }
 
 }

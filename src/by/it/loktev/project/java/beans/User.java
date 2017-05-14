@@ -1,5 +1,10 @@
 package by.it.loktev.project.java.beans;
 
+import by.it.loktev.project.java.dao.DAO;
+
+import java.sql.SQLException;
+import java.util.List;
+
 public class User {
 
     private int id;
@@ -57,6 +62,23 @@ public class User {
 
     public void setRoleId(int roleId) {
         this.roleId = roleId;
+    }
+
+    public String getRoleName(){
+        DAO dao=DAO.getInstance();
+        Role role=dao.getRole().getById(roleId);
+        return role.getName();
+        /*
+        try {
+            DAO dao=DAO.getInstance();
+            List<Role> roles= dao.getRole().getAll(" id="+roleId+" ");
+            if ( roles.size()==1 )
+                return roles.get(0).getName();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return "???";
+        */
     }
 
 

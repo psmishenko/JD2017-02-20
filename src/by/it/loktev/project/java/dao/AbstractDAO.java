@@ -1,9 +1,12 @@
 package by.it.loktev.project.java.dao;
 
+import by.it.loktev.project.java.beans.Status;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 public abstract class AbstractDAO {
 
@@ -24,7 +27,7 @@ public abstract class AbstractDAO {
         try (Connection connection = ConnectorCreator.getConnection();
              Statement statement = connection.createStatement()) {
             return statement.executeUpdate(SQL);
-            }
+        }
 
     }
 

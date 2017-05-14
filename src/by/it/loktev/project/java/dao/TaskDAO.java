@@ -1,5 +1,6 @@
 package by.it.loktev.project.java.dao;
 
+import by.it.loktev.project.java.beans.Status;
 import by.it.loktev.project.java.beans.Task;
 
 import java.sql.Connection;
@@ -10,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public class TaskDAO extends AbstractDAO implements InterfaceDAO<Task> {
 
@@ -53,7 +55,8 @@ public class TaskDAO extends AbstractDAO implements InterfaceDAO<Task> {
                         rs.getString("name"),
                         rs.getDate("enddate"),
                         rs.getDouble("price"),
-                        rs.getInt("statusid")
+                        rs.getInt("statusid"),
+                        rs.getInt("execuserid")
                 );
                 list.add(task);
             }
@@ -75,7 +78,7 @@ public class TaskDAO extends AbstractDAO implements InterfaceDAO<Task> {
     public boolean create(Task task) throws SQLException {
         int id=task.getId();
         if (id==0) {
-            String SQL = "insert into tasks(name,enddate,price,statusid) values('" + task.getName() + "'," + MySQLDate(task.getEndDate()) + "," + task.getPrice() + "," + task.getStatusId() + ");";
+            String SQL = "insert into tasks(name,enddate,price,statusid,execuserid) values('" + task.getName() + "'," + MySQLDate(task.getEndDate()) + "," + task.getPrice() + "," + task.getStatusId() + "," + task.getExecUserId() + ");";
             id=executeCreate(SQL);
             if ( id>=0 ) {
                 task.setId(id);
@@ -84,14 +87,14 @@ public class TaskDAO extends AbstractDAO implements InterfaceDAO<Task> {
             return false;
         }
         else {
-            String SQL = "insert into tasks(id,name,enddate,price,statusid) values("+id+",'" + task.getName() + "'," + MySQLDate(task.getEndDate()) + "," + task.getPrice() + "," + task.getStatusId() + ");";
+            String SQL = "insert into tasks(id,name,enddate,price,statusid,execuserid) values("+id+",'" + task.getName() + "'," + MySQLDate(task.getEndDate()) + "," + task.getPrice() + "," + task.getStatusId() + "," + task.getExecUserId() + ");";
             return (1==executeUpdate(SQL));
         }
     }
 
     @Override
     public boolean update(Task task) throws SQLException {
-        String SQL="update tasks set name='"+task.getName()+"',enddate="+MySQLDate(task.getEndDate())+",price="+task.getPrice()+",statusid="+task.getStatusId()+" where id="+task.getId()+";";
+        String SQL="update tasks set name='"+task.getName()+"',enddate="+MySQLDate(task.getEndDate())+",price="+task.getPrice()+",statusid="+task.getStatusId()+",execuserid="+task.getExecUserId()+" where id="+task.getId()+";";
         return (1==executeUpdate(SQL));
     }
 

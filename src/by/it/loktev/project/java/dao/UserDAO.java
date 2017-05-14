@@ -7,11 +7,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class UserDAO extends AbstractDAO implements InterfaceDAO<User> {
 
     static private UserDAO instance;
+    static private Map<Integer, User> map;
 
     private UserDAO(){
     }
@@ -50,6 +53,30 @@ public class UserDAO extends AbstractDAO implements InterfaceDAO<User> {
             return list;
         }
 
+    }
+
+    public Map<Integer, User> getMap()  {
+        Map<Integer,User> map=new HashMap<>();
+        try {
+            List<User> list= getAll("");
+            for ( User user : list ){
+                map.put(user.getId(),user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return map;
+    }
+
+    public User getById(int Id){
+        if ( map==null ) {
+            synchronized (StatusDAO.class) {
+                if (map == null) {
+                    map = getMap();
+                }
+            }
+        }
+        return map.get(Id);
     }
 
     @Override

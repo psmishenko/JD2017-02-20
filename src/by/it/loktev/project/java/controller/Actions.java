@@ -24,6 +24,26 @@ enum Actions {
             this.command=new CmdError();
         }
     },
+    USERLIST {
+        {
+            this.command=new CmdUserList();
+        }
+    },
+    USEREDIT {
+        {
+            this.command=new CmdUserEdit();
+        }
+    },
+    USERSETPASS {
+        {
+            this.command=new CmdUserSetPass();
+        }
+    },
+    USERDELETE {
+        {
+            this.command=new CmdUserDelete();
+        }
+    },
     TASKLIST {
         {
             this.command=new CmdTaskList();
@@ -33,6 +53,26 @@ enum Actions {
         {
             this.command=new CmdTaskCreate();
         }
+    },
+    TASKDELETE {
+        {
+            this.command=new CmdTaskDelete();
+        }
+    },
+    TASKGET {
+        {
+            this.command=new CmdTaskGet();
+        }
+    },
+    TASKREADY {
+        {
+            this.command=new CmdTaskReady();
+        }
+    },
+    TASKEDIT {
+        {
+            this.command=new CmdTaskEdit();
+        }
     };
 
 
@@ -40,6 +80,9 @@ enum Actions {
 
     static Action defineFrom(HttpServletRequest request){
         String command=request.getParameter("command");
+        if ( command==null ){
+            command="index";
+        }
         Action res;
         try {
             res = Actions.valueOf(command.toUpperCase()).command;

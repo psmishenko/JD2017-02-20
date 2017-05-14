@@ -1,6 +1,6 @@
 package by.it.loktev.project.java.dao;
 
-import by.it.loktev.project.java.beans.Role;
+import by.it.loktev.project.java.beans.Status;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -11,19 +11,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class RoleDAO extends AbstractDAO implements InterfaceDAO<Role> {
+public class StatusDAO extends AbstractDAO implements InterfaceDAO<Status> {
 
-    static private RoleDAO instance;
-    static private Map<Integer, Role> map;
+    static private StatusDAO instance;
+    static private Map<Integer, Status> map;
 
-    private RoleDAO(){
+    private StatusDAO(){
     }
 
-    static RoleDAO getInstance(){
+    static StatusDAO getInstance(){
         if ( instance==null ) {
-            synchronized (UserDAO.class) {
+            synchronized (StatusDAO.class) {
                 if (instance == null) {
-                    instance = new RoleDAO();
+                    instance = new StatusDAO();
                 }
             }
         }
@@ -32,33 +32,34 @@ public class RoleDAO extends AbstractDAO implements InterfaceDAO<Role> {
 
 
     @Override
-    public List<Role> getAll(String whereString) throws SQLException {
-        List<Role> list=new ArrayList<Role>();
+    public List<Status> getAll(String whereString) throws SQLException {
+        List<Status> list=new ArrayList<Status>();
         try (
                 Connection connection= ConnectorCreator.getConnection();
                 Statement statement=connection.createStatement();
 
         ){
-            String SQL="select * from roles "+whereString+";";
+            String SQL="select * from statuses "+whereString+";";
             ResultSet rs=statement.executeQuery(SQL);
             while ( rs.next() ) {
-                Role role=new Role(
+                Status status=new Status(
                         rs.getInt("id"),
                         rs.getString("name")
                 );
-                list.add(role);
+                list.add(status);
             }
             return list;
         }
 
     }
 
-    public Map<Integer, Role> getMap()  {
-        Map<Integer,Role> map=new HashMap<>();
+    //@Override
+    public Map<Integer, Status> getMap()  {
+        Map<Integer,Status> map=new HashMap<>();
         try {
-            List<Role> list= getAll("");
-            for ( Role role : list ){
-                map.put(role.getId(),role);
+            List<Status> list= getAll("");
+            for ( Status status : list ){
+                map.put(status.getId(),status);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -66,7 +67,7 @@ public class RoleDAO extends AbstractDAO implements InterfaceDAO<Role> {
         return map;
     }
 
-    public Role getById(int Id){
+    public Status getById(int Id){
         if ( map==null ) {
             synchronized (StatusDAO.class) {
                 if (map == null) {
@@ -78,8 +79,8 @@ public class RoleDAO extends AbstractDAO implements InterfaceDAO<Role> {
     }
 
     @Override
-    public Role read(int id) throws SQLException {
-        List<Role> list=getAll(" where id="+id+" ");
+    public Status read(int id) throws SQLException {
+        List<Status> list=getAll(" where id="+id+" ");
         if ( list.size()==1 ){
             return list.get(0);
         }
@@ -87,32 +88,32 @@ public class RoleDAO extends AbstractDAO implements InterfaceDAO<Role> {
     }
 
     @Override
-    public boolean create(Role role) throws SQLException {
-        int id=role.getId();
+    public boolean create(Status status) throws SQLException {
+        int id=status.getId();
         if (id==0) {
-            String SQL = "insert into roles(name) values('" + role.getName() + "');";
+            String SQL = "insert into statuses(name) values('" + status.getName() + "');";
             id=executeCreate(SQL);
             if ( id>=0 ) {
-                role.setId(id);
+                status.setId(id);
                 return true;
             }
             return false;
         }
         else {
-            String SQL = "insert into roles(id,name) values("+id+",'" + role.getName() + "');";
+            String SQL = "insert into statuses(id,name) values("+id+",'" + status.getName() + "');";
             return (1==executeUpdate(SQL));
         }
     }
 
     @Override
-    public boolean update(Role role) throws SQLException {
-        String SQL="update roles set name='"+role.getName()+"' where id="+role.getId()+";";
+    public boolean update(Status status) throws SQLException {
+        String SQL="update statuses set name='"+status.getName()+"' where id="+status.getId()+";";
         return (1==executeUpdate(SQL));
     }
 
     @Override
-    public boolean delete(Role entity) throws SQLException {
-        String SQL="delete from roles where id="+entity.getId()+";";
+    public boolean delete(Status status) throws SQLException {
+        String SQL="delete from statuses where id="+status.getId()+";";
         return (1==executeUpdate(SQL));
     }
 }
