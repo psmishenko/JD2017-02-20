@@ -27,7 +27,6 @@ public class User {
         this.id = id;
     }
 
-
     public Integer getFk_Role() {
         return fk_Role;
     }

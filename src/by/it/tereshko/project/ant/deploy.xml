@@ -75,7 +75,6 @@
         <delete dir="${build.dir}"/>
     </target>
 
-
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  - - -  -->
     <!-- поиск tomcat т.е. ставим флаг has.tomcat -->
     <target name="07if-has-tomcat" depends="06finalize">
@@ -85,7 +84,6 @@
             <http url="${tomcat.base.url}" />
         </condition>
     </target>
-
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  - - -  -->
     <!-- проверка, есть ли старый вариант приложения в tomcat
@@ -101,12 +99,12 @@
                 <include name="khmelov_tomcat_lib.jar"/>
             </fileset>
             <!--<fileset dir="ant/lib_tomcat">-->
-                <!--<include name="catalina-ant.jar"/>-->
-                <!--<include name="tomcat-coyote.jar"/>-->
-                <!--<include name="tomcat-util.jar"/>-->
+            <!--<include name="catalina-ant.jar"/>-->
+            <!--<include name="tomcat-coyote.jar"/>-->
+            <!--<include name="tomcat-util.jar"/>-->
             <!--</fileset>-->
             <!--<fileset dir="ant/lib_tomcat">-->
-                <!--<include name="tomcat-juli.jar"/>-->
+            <!--<include name="tomcat-juli.jar"/>-->
             <!--</fileset>-->
         </path>
 
@@ -152,7 +150,6 @@
                 path="/${web.root}"
         />
     </target>
-
 
     <!-- - - - - - - - - - - - - - - - - - - - - - - - - -  - - -  -->
     <!-- ставим новое приложение. Аналог кнопки deploy в

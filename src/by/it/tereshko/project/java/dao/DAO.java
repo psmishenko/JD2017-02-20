@@ -1,29 +1,31 @@
 package by.it.tereshko.project.java.dao;
 
+import by.it.tereshko.project.java.beans.Ad;
+import by.it.tereshko.project.java.beans.Role;
+
 public class DAO {
 
-    private static DAO dao; //синглтон для DAO
+    private static DAO instance;
 
-    public UserDAO user;    //DAO для пользователей
-    public RoleDAO role;    //DAO для ролей
-    public AdDAO ad;        //DAO для объявлений
-    //...
+    public UniversalDAO<Role> role;
+    public UserDAO user;
+    public UniversalDAO<Ad> ad;
 
-    public static DAO getDAO() {   //метод, который создает DAO или возвращает существующий экземпляр
-        if (dao == null) {
+    private DAO() {
+    }
+
+    public static DAO getInstance() {
+        if (instance == null) {
             synchronized (DAO.class) {
-                if (dao == null) {
-                    dao = new DAO();
-                    dao.user = new UserDAO();
-                    dao.role = new RoleDAO();
-                    dao.ad = new AdDAO();
-                    //новые куски DAO добавляются аналогично при расширении DAO
-                    //dao.ad = new AdDAO();
-                    //...
+                if (instance == null) {
+                    instance = new DAO();
+                    instance.user = new UserDAO();
+                    instance.role = new UniversalDAO<>(new Role(), "roles");
+                    instance.ad = new UniversalDAO<>(new Ad(), "ads");
                 }
             }
         }
-        return dao;
+        return instance;
     }
 
 }

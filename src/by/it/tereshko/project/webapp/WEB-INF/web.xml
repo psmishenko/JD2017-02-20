@@ -7,8 +7,9 @@
     <!--
     Для любого сервлета нужно определить два тега servlet и servlet-mapping.
     Важно чтобы внутри каждого из этих тегов были теги servlet-name
-    и имя сервлета в них было одинаковым!!! Здесь это имя HelloWeb
+    и имя сервлета в них было одинаковым!!! Здесь это имя HelloWorld
     -->
+
     <servlet>
         <servlet-name>FrontController</servlet-name>
         <servlet-class>by.it.tereshko.project.java.controller.FrontController</servlet-class>
@@ -16,10 +17,21 @@
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
         <url-pattern>/do</url-pattern>
+        <url-pattern></url-pattern>
     </servlet-mapping>
 
-    <!--
-    Подключим точно так же второй сервлета-контроллер с именем FrontControllerServlet
-    -->
+    <filter>
+        <filter-name>EncodingUTF8</filter-name>
+        <filter-class>by.it.tereshko.project.java.filters.EncodingUTF8</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>EncodingUTF8</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 </web-app>

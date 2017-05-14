@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,14 +33,14 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href=do?command=CreateAd>create-ad</a></li>
-          <li><a href=do?command=ListAd>list-ad</a></li>
+          <li><a href=do?command=CreateAd>Создать объявление</a></li>
+          <li><a href=do?command=EditUsers>Пользователи</a></li>
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
-           <li><a href=do?command=Login>login</a></li>
-            <li><a href=do?command=SignUp>sign-up</a></li>
-            <li><a href=do?command=Logout>logout</a></li>
+           <li><a href=do?command=Login>Логин</a></li>
+            <li><a href=do?command=SignUp>Регистрация</a></li>
+            <li><a href=do?command=Profile>Профиль</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
