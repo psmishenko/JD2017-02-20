@@ -52,17 +52,12 @@ public class SkladDAO extends AbstractDAO<Sklad> {
 
     @Override
     protected Sklad newBean(ResultSet resultSet) throws SQLException {
-        int idTovar = resultSet.getInt("id_tovar");
-        int idUser = resultSet.getInt("id_user");
-        Sklad sklad = new Sklad(
+        return new Sklad(
             resultSet.getInt("id"),
             resultSet.getBigDecimal("count"),
             resultSet.getBigDecimal("cena"),
-            null,
-            null,
+            DAO.getInstance().getTovar().read( resultSet.getInt("id_tovar")),
+            DAO.getInstance().getUser().read(resultSet.getInt("id_user")),
             resultSet.getBigDecimal("stoim"));
-        sklad.setTovar(DAO.getInstance().getTovar().read(idTovar));
-        sklad.setUser(DAO.getInstance().getUser().read(idUser));
-        return sklad;
     }
 }
