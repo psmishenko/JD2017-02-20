@@ -53,9 +53,9 @@ public class FrontController extends HttpServlet {
     }
 
     private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        ServletContext servletContext=getServletContext();
-//        RequestDispatcher disp=servletContext.getRequestDispatcher("/index.jsp");
-//        disp.forward(req,resp);
+//        ServletContext servletContext = getServletContext();
+//        RequestDispatcher disp = servletContext.getRequestDispatcher("/index.jsp");
+//        disp.forward(req, resp);
     }
 
 }
