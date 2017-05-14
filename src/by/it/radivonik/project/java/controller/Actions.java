@@ -1,14 +1,16 @@
 package by.it.radivonik.project.java.controller;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
  * Created by Radivonik on 05.05.2017.
  */
 public enum Actions {
+    INDEX { { this.command = new CmdIndex(); } },
     ERROR { { this.command = new CmdError(); } },
     LOGIN { { this.command = new CmdLogin(); } },
-    PROFILE { { this.command = new CmdProfile(); } },
     LOGOUT { { this.command = new CmdLogout(); } },
     USERLIST { { this.command = new CmdUserList(); } },
     USEREDIT { { this.command = new CmdUserEdit(); } },
@@ -28,11 +30,12 @@ public enum Actions {
         if (command == null)
             command = "index";
         AbstractAction res;
-
         try {
+            HttpSession session = req.getSession(false);
             res = Actions.valueOf(command.toUpperCase()).command;
-        }
-        catch (IllegalArgumentException e) {
+            if (res != LOGIN.command && (session == null || session.getAttribute("userActive") == null))
+                res = Actions.LOGIN.command;
+        } catch (IllegalArgumentException e) {
             res = Actions.ERROR.command;
         }
         return res;

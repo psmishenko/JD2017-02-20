@@ -50,7 +50,7 @@
             <li><a href=do?command=Login>Вход</a></li>
             </c:if>
             <c:if test="${userActive != null}">
-            <p class="navbar-text">Пользователь ${userActive.login} (${userActive.nameRole})</p>
+            <p class="navbar-text"><b>${userActive.login} (${userActive.nameRole})</b></p>
             <li><a href=do?command=Logout>Выход</a></li>
             </c:if>
           </ul>

@@ -12,6 +12,6 @@ public class CmdLogout extends AbstractAction {
         HttpSession session = req.getSession();
         session.removeAttribute("userActive");
         session.invalidate();
-        return Actions.LOGIN.command;
+        return Actions.INDEX.command;
     }
 }

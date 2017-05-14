@@ -28,7 +28,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="count">Количество</label>
   <div class="col-md-4">
-    <input class="form-control input-md" type="text" id="count" name="count" value="${sklad.count}" placeholder="" required="true">
+    <input class="form-control input-md" type="number" step="any" id="count" name="count" value="${sklad.count}" placeholder="" required="true">
   </div>
 </div>
 
@@ -36,7 +36,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="cena">Цена</label>
   <div class="col-md-4">
-    <input class="form-control input-md" type="text" id="cena" name="cena" value="${sklad.cena}" placeholder="" required="true">
+    <input class="form-control input-md" type="number" step="any" id="cena" name="cena" value="${sklad.cena}" placeholder="" required="true">
   </div>
 </div>
 

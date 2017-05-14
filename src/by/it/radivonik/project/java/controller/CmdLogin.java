@@ -32,8 +32,7 @@ public class CmdLogin extends AbstractAction {
                 HttpSession session = req.getSession();
                 User user = users.get(0);
                 session.setAttribute("userActive", user);
-                return Actions.LOGIN.command;
-//              req.setAttribute(IMessages.MSG_INFO, String.format("Вход пользователя %s произведен", login));
+                return Actions.INDEX.command;
             }
             else {
                 req.setAttribute(IMessages.MSG_ERROR, String.format("У пользователя %s с введенным паролем нет доступа", login));

@@ -33,7 +33,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="email">Адрес электронной почты</label>
   <div class="col-md-4">
-    <input class="form-control input-md" type="text" id="email" name="email" value="${user.email}" placeholder="">
+    <input class="form-control input-md" type="email" id="email" name="email" value="${user.email}" placeholder="">
   </div>
 </div>
 
@@ -49,32 +49,7 @@
   </div>
 </div>
 
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="action"></label>
-  <div class="col-md-4">
-    <c:if test='${param.action.equals("create") || param.action.equals("update")}'>
-    <button class="btn btn-success" type="submit" id="action" name="action" value="${param.action}_exec">
-    Сохранить
-    </button>
-    </c:if>
-    <c:if test='${action.equals("create_exec") || param.action.equals("update_exec")}'>
-    <button class="btn btn-success" type="submit" id="action" name="action" value="${action}">
-    Сохранить
-    </button>
-    </c:if>
-    <c:if test='${param.action.equals("delete") || action.equals("delete")}'>
-    <button class="btn btn-danger" type="submit" id="action" name="action" value="${param.action}_exec">
-    Удалить
-    </button>
-    </c:if>
-    <c:if test='${param.action.equals("delete_exec") || action.equals("delete_exec")}'>
-    <button class="btn btn-danger" type="submit" id="action" name="action" value="${action}">
-    Удалить
-    </button>
-    </c:if>
-  </div>
-</div>
+<%@ include file="inc_editbutton.jsp" %>
 
 </fieldset>
 </form>

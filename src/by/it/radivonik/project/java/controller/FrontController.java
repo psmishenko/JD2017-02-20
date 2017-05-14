@@ -53,20 +53,13 @@ public class FrontController extends HttpServlet {
         process(req, resp);
         AbstractAction action = Actions.defineFrom(req);
         AbstractAction nextAction = action.execute(req);
-        if (nextAction != null) {
+        if (nextAction != null)
             resp.sendRedirect("do?command=" + nextAction);
-        }
-        else {
+        else
             getDispatcher(action).forward(req, resp);
-        }
     }
 
     private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setHeader("Cache-Control", "no-cache, no-store");
-//        req.setCharacterEncoding("UTF-8");
-//        resp.setCharacterEncoding("UTF-8");
-//        ServletContext context = getServletContext();
-//        RequestDispatcher dispatcher = context.getRequestDispatcher("/index.jsp");
-//        dispatcher.forward(req, resp);
     }
 }
