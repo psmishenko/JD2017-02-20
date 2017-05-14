@@ -39,9 +39,11 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href=do?command=UserList>Пользователи</a></li>
-            <li><a href=do?command=TovarList>Справочник товаров</a></li>
-            <li><a href=do?command=NakladList>Товарные накладные</a></li>
+            <li><a href=do?command=TovarList>Товары</a></li>
+            <li><a href=do?command=KlientList>Клиенты</a></li>
+            <li><a href=do?command=AvtoList>Автомобили</a></li>
             <li><a href=do?command=SkladList>Склад</a></li>
+            <li><a href=do?command=NakladList>Товарные накладные</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <c:if test="${userActive == null}">

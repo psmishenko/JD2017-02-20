@@ -3,7 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <form class="form-inline" action="do" method="post">
-  <input type="hidden" name="command" value="TovarEdit" />
+ <legend>Товары</legend>
+ <input type="hidden" name="command" value="TovarEdit" />
   <div class="btn-toolbar navbar-form navbar-left">
     <button class="btn btn-xs btn-primary" type="submit" name="action" value="create" >
       <span class="glyphicon glyphicon-plus" aria-hidden="true" title="Добавить"/>

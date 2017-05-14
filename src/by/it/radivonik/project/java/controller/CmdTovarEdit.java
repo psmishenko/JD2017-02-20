@@ -42,5 +42,4 @@ public class CmdTovarEdit extends AbstractActionEdit<Tovar> {
     protected AbstractAction getActionReturn() {
         return Actions.TOVARLIST.command;
     }
-
 }

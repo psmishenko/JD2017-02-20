@@ -13,7 +13,9 @@ public enum Actions {
     USERLIST { { this.command = new CmdUserList(); } },
     USEREDIT { { this.command = new CmdUserEdit(); } },
     TOVARLIST { { this.command = new CmdTovarList(); } },
-    TOVAREDIT { { this.command = new CmdTovarEdit(); } };
+    TOVAREDIT { { this.command = new CmdTovarEdit(); } },
+    KLIENTLIST { { this.command = new CmdKlientList(); } },
+    KLIENTEDIT { { this.command = new CmdKlientEdit(); } };
 
     public AbstractAction command;
 
