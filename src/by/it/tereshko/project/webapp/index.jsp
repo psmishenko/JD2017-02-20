@@ -16,7 +16,6 @@
     <div class="col-md-1">Площадь</div>
     <div class="col-md-1">Этаж</div>
     <div class="col-md-1">Этажность</div>
-
 </div>
 
 <c:forEach items="${ads}" var="ad">

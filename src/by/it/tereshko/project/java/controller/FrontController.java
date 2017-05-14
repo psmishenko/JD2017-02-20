@@ -1,13 +1,30 @@
 package by.it.tereshko.project.java.controller;
 
+import by.it.tereshko.project.java.dao.DAO;
+
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class FrontController extends HttpServlet {
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        try {
+            config.getServletContext().setAttribute(
+                    "roles",
+                    DAO.getInstance().role.getAll("")
+            );
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        super.init(config);
+    }
 
     private RequestDispatcher dispatcher(Action action) {
         return getServletContext().getRequestDispatcher(action.getJsp());
@@ -36,9 +53,9 @@ public class FrontController extends HttpServlet {
     }
 
     private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        ServletContext servletContext = getServletContext();
-//        RequestDispatcher disp = servletContext.getRequestDispatcher("/index.jsp");
-//        disp.forward(req, resp);
+//        ServletContext servletContext=getServletContext();
+//        RequestDispatcher disp=servletContext.getRequestDispatcher("/index.jsp");
+//        disp.forward(req,resp);
     }
 
 }

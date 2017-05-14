@@ -6,7 +6,8 @@
         <div class=col-md-1>ID</div>
         <div class=col-md-2>Имя</div>
         <div class=col-md-2>Пароль</div>
-        <div class=col-md-7>Email</div>
+        <div class=col-md-2>Email</div>
+        <div class=col-md-2>Роль</div>
     </b>
 </div>
 <br>
@@ -45,10 +46,8 @@
 
                 <div class=col-md-1>
                     <button id="Update" name="Update" class="btn btn-success">
-                        Обновить
-                    </button>
+                    Обновить</button>
                 </div>
-
             </b>
         </form>
         <form class="form-user-${user.id}" action="do?command=EditUsers" method=POST>
@@ -56,10 +55,8 @@
                  <input type="hidden" name="id" value="${user.id}"/>
                 <div class=col-md-1>
                     <button id="Delete" name="Delete" class="btn btn-danger">
-                        Удалить
-                    </button>
+                    Удалить</button>
                 </div>
-
             </b>
         </form>
     </div>

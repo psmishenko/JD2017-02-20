@@ -4,5 +4,3 @@
 <p>Cmd ERROR: ${message}</p>
 
 <%@ include file="include/end-html.jsp" %>
-
-

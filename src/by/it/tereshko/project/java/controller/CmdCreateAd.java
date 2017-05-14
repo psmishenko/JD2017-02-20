@@ -14,7 +14,6 @@ public class CmdCreateAd extends Action {
         if (user == null) { //не нашли пользователя в сессии
             return Actions.LOGIN.command;
         }
-
         if (!Form.isPost(request)) {
             return null;
         }

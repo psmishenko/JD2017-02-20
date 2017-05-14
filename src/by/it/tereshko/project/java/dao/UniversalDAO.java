@@ -93,7 +93,6 @@ public class UniversalDAO<TypeBean> implements InterfaceDAO<TypeBean> {
             return null;
     }
 
-
     //=======================================================================================================
     //команда обновления
     public boolean update(TypeBean bean) throws SQLException {
