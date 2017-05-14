@@ -1,8 +1,17 @@
 package by.it.loktev.project.java.beans;
 
+import by.it.loktev.project.java.dao.DAO;
+
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 public class Task {
+
+    static SimpleDateFormat dateFormat=new SimpleDateFormat("dd.MM.yyyy");
+
 
     private int id;
     private String name;
@@ -45,6 +54,12 @@ public class Task {
         this.endDate = endDate;
     }
 
+    public String getFormattedEndDate() {
+        if ( endDate==null )
+            return "";
+        return dateFormat.format(endDate);
+    }
+
     public double getPrice() {
         return price;
     }
@@ -53,12 +68,25 @@ public class Task {
         this.price = price;
     }
 
+    public String getFormattedPrice() {
+        return String.format("%10.2f",price);
+    }
+
     public int getStatusId() {
         return statusId;
     }
 
-    public void setStatusId(int stateId) {
-        this.statusId = stateId;
+    public void setStatusId(int statusId) {
+        this.statusId = statusId;
+    }
+
+    public String getStatusName(){
+        DAO dao=DAO.getInstance();
+        //Map<Integer,Status> statusesMap=dao.getStatus().getMap();
+
+        //Status status=statusesMap.get(statusId);
+        Status status=dao.getStatus().getById(statusId);
+        return status.getName();
     }
 
     @Override

@@ -1,5 +1,6 @@
 package by.it.loktev.project.java.dao;
 
+import by.it.loktev.project.java.beans.Status;
 import by.it.loktev.project.java.beans.Task;
 
 import java.sql.Connection;
@@ -10,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public class TaskDAO extends AbstractDAO implements InterfaceDAO<Task> {
 

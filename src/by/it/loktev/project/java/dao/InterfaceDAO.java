@@ -2,6 +2,7 @@ package by.it.loktev.project.java.dao;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 public interface InterfaceDAO<TYPE> {
 
@@ -11,4 +12,5 @@ public interface InterfaceDAO<TYPE> {
     boolean delete(TYPE entity) throws SQLException;
 
     List<TYPE> getAll(String whereString) throws SQLException;
+    //Map<Integer,TYPE> getMap(String whereString) throws SQLException;
 }
