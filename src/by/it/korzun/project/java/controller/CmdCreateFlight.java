@@ -17,18 +17,21 @@ public class CmdCreateFlight extends Action{
             flight.setDestination(Form.getString(request, "destination",
                     Pattern.DESTINATION));
             flight.setBrigadeID(Integer.parseInt(Form.getString(request, "brigade",
-                    Pattern.SPECIALIZATION)));
+                    Pattern.ID)));
+
+            String sql = String.format("WHERE `Brigades_ID` = %d", flight.getBrigadeID());
+
             DAO dao = DAO.getInstance();
-            if(dao.flight.create(flight)){
-                return Actions.LOGIN.command;
+            if(dao.flight.getAll(sql).size() == 0 && dao.flight.create(flight)){
+                return Actions.ADMIN.command;
             }else
-                return null;
+                return Actions.ADMIN.command;
         } catch (ParseException e) {
             return Actions.ERROR.command;
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return Actions.LOGIN.command;
+        return Actions.ADMIN.command;
     }
 
 }

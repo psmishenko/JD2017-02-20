@@ -12,12 +12,12 @@ public class CmdRemoveFlight extends Action{
     Action execute(HttpServletRequest request) {
         try {
             DAO dao = DAO.getInstance();
-            Flight flight = dao.flight.read(Integer.parseInt(Form.getString(request, "removeflight", Pattern.SPECIALIZATION)));
+            Flight flight = dao.flight.read(Integer.parseInt(Form.getString(request, "id", Pattern.ID)));
 
             if(dao.flight.delete(flight)){
-                return null;
+                return Actions.ADMIN.command;
             }else
-                return null;
+                return Actions.ADMIN.command;
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ParseException e) {

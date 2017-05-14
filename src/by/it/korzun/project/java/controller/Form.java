@@ -12,4 +12,8 @@ public class Form {
             throw new ParseException("Incorrect String: " + parameter, -1);
         }
     }
+
+    static boolean isPost(HttpServletRequest request){
+        return request.getMethod().toUpperCase().equalsIgnoreCase("POST");
+    }
 }
