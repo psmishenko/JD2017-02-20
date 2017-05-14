@@ -1,25 +1,44 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
 
-<p>Authorized user: ${userlogin} ${userpasshash}</p>
-
 <p>Список заданий:</p>
 
-<div class="row">
-    <div class="col-md-7">Наименование</div>
-    <div class="col-md-2">Срок исполнения</div>
-    <div class="col-md-1">Стоимость</div>
-    <div class="col-md-2">Состояние</div>
-</div>
+<style>
 
-<c:forEach items="${tasks}" var="task">
-    <div class="row">
-        <div class="col-md-7">${task.name} </div>
-        <div class="col-md-2">${task.formattedEndDate} </div>
-        <div class="col-md-1">${task.formattedPrice} </div>
-        <div class="col-md-2">${task.statusName} </div>
-    </div>
-</c:forEach>
+  .STasksTable th
+  {
+    text-align: center;
+  }
 
+  .STasksTable td.C
+  {
+    text-align: center;
+  }
+
+  .STasksTable td.R
+  {
+    text-align: right;
+  }
+
+</style>
+
+<table class="table table-bordered STasksTable">
+    <tr>
+        <th>Наименование</th>
+        <th style="width: 10em">Срок исполнения</th>
+        <th style="width: 6em">Стоимость</th>
+        <th style="width: 7em">Состояние</th>
+        <th style="width: 7em">Исполнитель</th>
+    </tr>
+    <c:forEach items="${tasks}" var="task">
+    <tr>
+        <td>${task.name}</td>
+        <td class="C">${task.formattedEndDate}</td>
+        <td class="R" style="padding-right: 1em">${task.formattedPrice}</td>
+        <td>${task.statusName}</td>
+        <td>${task.execUserName}</td>
+    </tr>
+    </c:forEach>
+</table>
 
 <%@ include file="include/end-html.jsp" %>

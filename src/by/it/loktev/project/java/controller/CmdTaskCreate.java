@@ -32,6 +32,7 @@ public class CmdTaskCreate extends Action {
             task.setEndDate(enterDateFormat.parse(Form.getString(request,"enddate",Pattern.DATE)));
             task.setPrice(Float.parseFloat(Form.getString(request,"price",Pattern.FLOAT)));
             task.setStatusId(1);
+            task.setExecUserId(1);
 
             DAO dao=DAO.getInstance();
             dao.getTask().create(task);

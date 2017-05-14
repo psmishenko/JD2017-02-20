@@ -3,8 +3,7 @@
 
 <div class="navbar-fixed-bottom row-fluid">
   <div class="container">
-    <p>Server messages: <b>${message}</b></p>
-    <p>Server messages: <b>${msg_error}</b></p>
+    <p><b>${message}</b><b style="color: red">${msg_error}</b></p>
     <p>&copy; IT-Academy / Loktev</p>
   </div>
 </div>

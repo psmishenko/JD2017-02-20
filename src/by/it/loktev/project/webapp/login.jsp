@@ -9,7 +9,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="login">Login</label>
+  <label class="col-md-4 control-label" for="login">Имя пользователя</label>
   <div class="col-md-4">
   <input id="login" name="login" type="text" placeholder="enter login name" class="form-control input-md">
 
@@ -18,7 +18,7 @@
 
 <!-- Password input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="password">Password</label>
+  <label class="col-md-4 control-label" for="password">Пароль</label>
   <div class="col-md-4">
     <input id="password" name="password" type="password" placeholder="enter your password" class="form-control input-md">
 
@@ -29,7 +29,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="signup"></label>
   <div class="col-md-4">
-    <button id="signup" name="signup" class="btn btn-primary">Login</button>
+    <button id="signup" name="signup" class="btn btn-primary">Авторизация</button>
   </div>
 </div>
 

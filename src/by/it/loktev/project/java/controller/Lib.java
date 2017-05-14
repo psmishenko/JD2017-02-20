@@ -19,6 +19,7 @@ public class Lib {
         if ( list.size()==1 ){
             HttpSession session=request.getSession();
             user=list.get(0);
+            session.setAttribute("userauthorized",true);
             session.setAttribute("userlogin",user.getLogin());
             session.setAttribute("userpasshash", user.getPassHash());
             session.setMaxInactiveInterval(30);
