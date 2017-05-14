@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!doctype html>
 <html>
 <head>
@@ -19,7 +21,7 @@
   </head>
   <body>
 <div class="container">
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -29,26 +31,25 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href=do?command=goHome>Car Rental</a>
+        <a class="navbar-brand" href=do?command=Home>Car Rental</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-			<li><a href=do?command=goHome>Home</a></li>
-			<li><a href=do?command=goProfile>Profile</a></li>
-			<li>  <a href=do?command=goCars>Cars</a></li>
+			<li><a href=do?command=Home>Home</a></li>
+			<li>  <a href=do?command=Cars>Cars</a></li>
         </ul>
-        <form class="navbar-form navbar-left">
+        <form class="navbar-form navbar-left" action="do?command=search" method="POST">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" name="search" class="form-control" placeholder="Search car" >
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-default">Search <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href=do?command=Logout>Logout</a></li>
-			<li><a href=do?command=Login>Login</a></li>
-           <li><a href=do?command=SignUp>Sign-up</a></li>
+            <li><a href=do?command=Profile>Profile</a></li>
+	    	<li><a href=do?command=Login>Login</a></li>
+            <li><a href=do?command=SignUp>Sign-up</a></li>
             </ul>
           </li>
         </ul>

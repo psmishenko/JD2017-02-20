@@ -13,9 +13,9 @@ enum Actions {
             this.command = new CommandLogin();
         }
     },
-    LOGOUT {
+    PROFILE {
         {
-            this.command = new CommandLogout();
+            this.command = new CommandProfile();
         }
     },
     ERROR {
@@ -27,11 +27,49 @@ enum Actions {
         {
             this.command = new CommandRentCar();
         }
+    },
+    SEARCH {
+        {
+            this.command = new CommandSearch();
+        }
+    },
+    HOME {
+        {
+            this.command = new CommandHome();
+        }
+    },
+    INDEX {
+        {
+            this.command = new CommandIndex();
+        }
+    },
+    EDITUSERS {
+        {
+            this.command = new CommandEditUsers();
+        }
+    },
+    ADMINORDERS {
+        {
+            this.command = new CommandAdminOrders();
+        }
+    },
+    EDITCARS {
+        {
+            this.command = new CommandEditCars();
+        }
+    },
+    CARS {
+        {
+            this.command = new CommandCars();
+        }
     };
     public Action command;
 
     static Action defineFrom(HttpServletRequest request) {
         String command = request.getParameter("command");
+        if (command==null) {
+            command="index";
+        }
         Action res;
         try {
 

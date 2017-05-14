@@ -14,21 +14,25 @@ import java.text.ParseException;
 public class CommandSignup extends Action {
     @Override
     public Action execute(HttpServletRequest request) {
-        User user = new User();
-        try {
-            user.setLogin(Form.getString(request, "login", Pattern.LOGIN));
-            user.setEmail(Form.getString(request, "email", Pattern.EMAIL));
-            user.setPassportData(Form.getString(request, "passport_data", ""));
-            user.setPassword(Form.getString(request, "password", Pattern.PASSWORD));
-            DAO dao = DAO.getInstance();
-            dao.user.create(user);
-            if (dao.user.create(user)) return Actions.LOGIN.command;
-        } catch (ParseException e) {
-            return Actions.ERROR.command;
-        } catch (SQLException e) {
-            return Actions.ERROR.command;
-        }
+        if (!Form.isPost(request)) {
+            return null;
+        } else {
+            User user = new User();
 
-        return Actions.LOGIN.command;
+            try {
+                user.setLogin(Form.getString(request, "login", Pattern.LOGIN));
+                user.setEmail(Form.getString(request, "email", Pattern.EMAIL));
+                user.setPassportData(Form.getString(request, "passport_data", Pattern.PASSPORT));
+                user.setPassword(Form.getString(request, "password", Pattern.PASSWORD));
+                DAO dao = DAO.getInstance();
+                if (dao.user.create(user)) return Actions.LOGIN.command;
+                else return null;
+            } catch (ParseException e) {
+                return Actions.ERROR.command;
+            } catch (SQLException e) {
+                return Actions.ERROR.command;
+            }
+
+        }
     }
 }
