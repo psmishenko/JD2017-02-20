@@ -2,9 +2,9 @@ package by.it.sorokoee.project.java.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class CmdLogout extends Action {
+public class CmdIndex extends Action {
     @Override
-    public Action execute(HttpServletRequest request) {
+    Action execute(HttpServletRequest request) {
         return null;
     }
 }

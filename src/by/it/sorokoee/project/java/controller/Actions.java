@@ -3,6 +3,27 @@ package by.it.sorokoee.project.java.controller;
 import javax.servlet.http.HttpServletRequest;
 
 enum Actions {
+    EDITGOODS{
+        {
+            this.command=new CmdEditGoods();
+        }
+    },
+    CATALOGGOOD{
+        {
+            this.command=new CmdCatalogGood();
+        }
+    },
+
+    EDITUSERS {
+        {
+            this.command=new CmdEditUsers();
+        }
+    },
+    INDEX {
+        {
+            this.command=new CmdIndex();
+        }
+    },
      SIGNUP{
          {
              this.command=new CmdSignup();
@@ -13,11 +34,17 @@ enum Actions {
              this.command=new CmdLogin();
          }
      },
-     LOGOUT{
-         {
-             this.command=new CmdLogout();
-         }
-     },
+    PROFILE {
+        {
+            this.command=new CmdProfile();
+        }
+    },
+    CREATEGOOD {
+        {
+            this.command=new CmdCreateGood();
+        }
+    },
+
      ERROR{
          {
              this.command=new CmdError();
@@ -26,6 +53,9 @@ enum Actions {
      public Action command;
      static Action defineFrom(HttpServletRequest request){
          String command=request.getParameter("command");
+         if (command==null){
+             command="index";
+         }
          Action res;
          try {
              res=Actions.valueOf(command.toUpperCase()).command;

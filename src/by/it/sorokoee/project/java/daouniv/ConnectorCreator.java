@@ -1,4 +1,4 @@
-package by.it.sorokoee.jd03_03.dao;
+package by.it.sorokoee.project.java.daouniv;
 
 
 

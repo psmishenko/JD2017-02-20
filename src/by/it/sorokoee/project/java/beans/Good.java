@@ -105,6 +105,15 @@ public class Good {
         this.fk_users = fk_users;
     }
 
+    public Good(int id, String modelCar, int yearOfIssue, String spare, String typeEngine, int capacityEngine) {
+        this.id = id;
+        this.modelCar = modelCar;
+        this.yearOfIssue = yearOfIssue;
+        this.spare = spare;
+        this.typeEngine = typeEngine;
+        this.capacityEngine = capacityEngine;
+    }
+
     public Good() {
     }
 
