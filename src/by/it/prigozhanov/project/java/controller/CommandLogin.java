@@ -32,6 +32,7 @@ public class CommandLogin extends Action {
                 String where = String.format(" WHERE Login='%s' AND Password='%s'",
                         user.getLogin(), user.getPassword());
                 List<User> list = dao.user.getAll(where);
+
                 if (list.size()==1) {
                     HttpSession session = request.getSession();
                     user = list.get(0);

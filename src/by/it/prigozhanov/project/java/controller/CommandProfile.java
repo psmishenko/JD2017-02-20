@@ -17,6 +17,7 @@ public class CommandProfile extends Action {
         if(Form.isPost(request) && request.getParameter("logout") != null) {
             HttpSession user1 = request.getSession();
             user1.invalidate();
+            user1.setMaxInactiveInterval(1);
             return Actions.LOGIN.command;
         } else {
             User user = Utils.getSessionUser(request);
