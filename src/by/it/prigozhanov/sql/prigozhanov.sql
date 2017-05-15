@@ -75,8 +75,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`ID`, `Passport_data`, `Card_number`, `Order_duration`, `Telephone`, `FK_Users`, `FK_Cars`) VALUES
-(8, 'MP77777777', 'TEST-TEST-TEST-TEST', 6, '+375333538090', 7, 2),
-(9, 'MP7777777', 'TEST-TEST-TEST-TEST', 3, '+375333538090', 5, 3);
+(1, 'MP77777777', 'TEST-TEST-TEST-TEST', 6, '+375333538090', 7, 2),
+(2, 'MP7777777', 'TEST-TEST-TEST-TEST', 3, '+375333538090', 5, 3);
 
 -- --------------------------------------------------------
 
@@ -117,12 +117,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `Passport_data`, `Login`, `Password`, `Email`, `FK_Roles`) VALUES
-(5, 'MP7777777', 'Administrator', 'Administrator', 'Administrator@mail.com', 1),
-(6, 'MP884727263', 'Ivanov', 'Ivanov123', 'Ivanov1@gmail.com', 2),
-(7, 'MP77777777', 'TestUser', 'TestUser', 'TestUser@mail.ru', 2),
-(10, 'MP2683134', 'Prigozhanov', '12345678', 'prigozhanov@gmail.com', 1),
-(11, 'MP2394563', 'Petrov1994', '2939132KWleex', 'petrov1994@gmail.com', 2),
-(12, 'MP7777777', 'TestAdministrator', 'Administrator', 'Administrator@mail.com', 2);
+(1, 'MP7777777', 'Administrator', 'Administrator', 'Administrator@mail.com', 1),
+(2, 'MP884727263', 'Ivanov', 'Ivanov123', 'Ivanov1@gmail.com', 2),
+(3, 'MP77777777', 'TestUser', 'TestUser', 'TestUser@mail.ru', 2),
+(4, 'MP2683134', 'Prigozhanov', '12345678', 'prigozhanov@gmail.com', 1),
+(5, 'MP2394563', 'Petrov1994', '2939132KWleex', 'petrov1994@gmail.com', 2),
+(6, 'MP7777777', 'TestAdministrator', 'Administrator', 'Administrator@mail.com', 2);
 
 --
 -- Индексы сохранённых таблиц
