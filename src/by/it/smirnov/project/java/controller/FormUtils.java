@@ -2,6 +2,7 @@ package by.it.smirnov.project.java.controller;
 
 import by.it.smirnov.project.java.DAO.DAO;
 import by.it.smirnov.project.java.bean.User;
+import by.it.smirnov.project.java.bean.UserRole;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -31,6 +32,14 @@ public class FormUtils {
             return Integer.parseInt(value);
         } catch (Exception e) {
             throw new ParseException("Incorrect Int:"+parameter,-1);
+        }
+    }
+
+    static int getIntDef(HttpServletRequest request, String parameter, int defValue){
+        try {
+            return getInt(request, parameter);
+        } catch (Exception e) {
+            return defValue;
         }
     }
 
@@ -69,7 +78,28 @@ public class FormUtils {
             session.setMaxInactiveInterval(SessionMaxAgeSec);
             User user=list.get(0);
             session.setAttribute("currentuser",user);
+
+            session.removeAttribute("admin");
+            String whereRole=String.format(" WHERE iduser=%d",user.getId());
+            List<UserRole> listRoles=dao.getUserRole().getAll(whereRole);
+            for (UserRole listRole:listRoles) {
+                if (listRole.getIdrole() == 1) {
+                    session.setAttribute("admin",1);
+                }
+            }
         }
         return session;
     }
+
+    static User getSessionUser(HttpServletRequest request){
+        HttpSession session=request.getSession(false);
+        if (session != null) {
+            Object ob=session.getAttribute("currentuser");
+            if (ob!=null && ob instanceof User){
+                return (User)ob;
+            }
+        }
+        return null;
+    }
+
 }

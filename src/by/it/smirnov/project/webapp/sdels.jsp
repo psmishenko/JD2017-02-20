@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <div class="btn-group" role="group">
   <a href="do?command=ActionSdel" class="btn btn-primary" role="button">Добавить сделку</a>
@@ -24,11 +25,15 @@
   <c:forEach items="${sdels}" var="sdel">
     <tr>
       <td><c:out value="${sdel.bank.name}" /></td>
-      <td><c:out value="${sdel.summa}" /></td>
+      <td>
+        <fmt:setLocale value = "ru_RU"/>
+        <fmt:formatNumber value = "${sdel.summa}" type = "number"/>
+      </td>
       <td><c:out value="${sdel.valut.namesokr}" /></td>
       <td><c:out value="${sdel.operType.name}" /></td>
-      <td><c:out value="${sdel.fromdate}" /></td>
-      <td><c:out value="${sdel.todate}" /></td>
+      <td><fmt:formatDate pattern = "dd.MM.yyyy" value = "${sdel.fromdate}" /></td>
+      <td><fmt:formatDate pattern = "dd.MM.yyyy" value = "${sdel.todate}" /></td>
+
       <td align="right">
       <form class="form-horizontal" action="do?command=ActionSdel" method="POST">
           <input type="hidden" name="id" value="${sdel.id}" />
@@ -40,5 +45,11 @@
   </c:forEach>
   </table>
 </div>
+
+<p></p>
+
+<t:paginator prefix="Страница: " currstart="${param.start}" count="${countRec}" step="5" urlprefix="?command=Sdels&start="/>
+
+
 
 <%@ include file="include/end-html.jsp" %>

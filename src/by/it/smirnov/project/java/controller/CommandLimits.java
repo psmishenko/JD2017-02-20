@@ -18,7 +18,13 @@ public class CommandLimits extends Action{
         DAO dao= DAO.getInstance();
         List<Limit> list = null;
         try {
-            list = dao.getLimit().getAll("");
+            String where = "";
+            int countRec = dao.getLimit().getCount(where);
+            request.setAttribute("countRec", countRec);
+            int start = FormUtils.getIntDef(request, "start", 0);
+            int step = FormUtils.getIntDef(request, "step", 10);
+            String limit=String.format(" ORDER BY ID LIMIT %d,%d ", start, step);
+            list = dao.getLimit().getAll(where+limit);
         } catch (SQLException e) {
             SingleLogger.getInstance().error(e.toString());
         }

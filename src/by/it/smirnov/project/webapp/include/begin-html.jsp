@@ -19,6 +19,8 @@
 <body>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib tagdir="/WEB-INF/tags/menu" prefix="menu" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="t" %>
 
 <div class="container">
 <nav class="navbar navbar-default">
@@ -37,30 +39,30 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="do?command=Banks"><span class="glyphicon glyphicon-map-marker"></span> Банки</a></li>
-        <li><a href="do?command=Limits"><span class="glyphicon glyphicon-flash"></span> Лимиты</a></li>
-        <li><a href="do?command=KursValuts"><span class="glyphicon glyphicon-usd"></span> Курсы валют</a></li>
-        <li><a href="do?command=Sdels"><span class="glyphicon glyphicon-retweet"></span> Сделки</a></li>
-        <li><a href="do?command=Users"><span class="glyphicon glyphicon-user"></span> Пользователи</a></li>
+        <menu:li command="Banks" spanclass="glyphicon glyphicon-map-marker" text=" Банки" />
+        <menu:li command="Limits" spanclass="glyphicon glyphicon-flash" text=" Лимиты" />
+        <menu:li command="KursValuts" spanclass="glyphicon glyphicon-usd" text=" Курсы валют" />
+        <menu:li command="Sdels" spanclass="glyphicon glyphicon-retweet" text=" Сделки" />
+        <menu:li command="Users" spanclass="glyphicon glyphicon-user" text=" Пользователи" />
         <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-cog"></span> Справочники
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href="do?command=Valuts">Валют</a></li>
-                  <li><a href="do?command=Roles">Ролей</a></li>
-                  <li><a href="do?command=OperTypes">Типов операций</a></li>
-                  <li><a href="do?command=Countrys">Стран</a></li>
-                  <li><a href="do?command=GroupBanks">Групп банков</a></li>
+                  <menu:li command="Valuts" spanclass="" text="Валют" />
+                  <menu:li command="Roles" spanclass="" text="Ролей" />
+                  <menu:li command="OperTypes" spanclass="" text="Типов операций" />
+                  <menu:li command="Countrys" spanclass="" text="Стран" />
+                  <menu:li command="GroupBanks" spanclass="" text="Групп банков" />
                 </ul>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <c:if test="${currentuser == null}" >
-        <li><a href="do?command=Login"><span class="glyphicon glyphicon-log-in"></span> Вход</a></li>
+        <menu:li command="Login" spanclass="glyphicon glyphicon-log-in" text=" Вход" />
       </c:if>
       <c:if test="${currentuser != null}" >
         <p class="navbar-text">Пользователь: <strong><c:out value="${currentuser.name}" /></strong></p>
-        <li><a href="do?command=Logout"><span class="glyphicon glyphicon-log-out"></span> Выход</a></li>
+        <menu:li command="Logout" spanclass="glyphicon glyphicon-log-out" text=" Выход" />
       </c:if>
       </ul>
     </div><!-- /.navbar-collapse -->

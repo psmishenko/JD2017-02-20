@@ -3,6 +3,7 @@ package by.it.smirnov.project.java.DAO;
 import by.it.smirnov.project.java.Connection.ConnectorCreator;
 import by.it.smirnov.project.java.bean.KursValut;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,6 +15,7 @@ import static java.sql.Statement.RETURN_GENERATED_KEYS;
  */
 public class KursValutDAO extends AbstractDAO<KursValut> {
     private static final String selectSQL = "SELECT `id`,`datekurs`,`za`,`idzavalut`,`dat`,`iddatvalut` FROM `kursvaluts`";
+    private static final String countSQL = "SELECT count(*) FROM `kursvaluts`";
     private static final String insertSQL = "INSERT INTO `kursvaluts`(`id`,`datekurs`,`za`,`idzavalut`,`dat`,`iddatvalut`) VALUES (?,?,?,?,?,?);";
     private static final String updateSQL = "UPDATE `kursvaluts` SET `datekurs`=?,`za`=?,`idzavalut`=?,`dat`=?,`iddatvalut`=? WHERE ID=?";
     private static final String deleteSQL = "DELETE FROM `kursvaluts` WHERE ID=?";
@@ -38,8 +40,8 @@ public class KursValutDAO extends AbstractDAO<KursValut> {
     }
 
     @Override
-    PreparedStatement getStatementInsertSQL(KursValut kursValut) throws SQLException {
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(insertSQL, RETURN_GENERATED_KEYS);
+    PreparedStatement getStatementInsertSQL(Connection connection, KursValut kursValut) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(insertSQL, RETURN_GENERATED_KEYS);
         ps.setInt(1,kursValut.getId());
         ps.setDate(2,kursValut.getDatekurs());
         ps.setDouble(3,kursValut.getZa());
@@ -50,8 +52,8 @@ public class KursValutDAO extends AbstractDAO<KursValut> {
     }
 
     @Override
-    PreparedStatement getStatementUpdateSQL(KursValut kursValut) throws SQLException {
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(updateSQL);
+    PreparedStatement getStatementUpdateSQL(Connection connection, KursValut kursValut) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(updateSQL);
         ps.setDate(1,kursValut.getDatekurs());
         ps.setDouble(2,kursValut.getZa());
         ps.setInt(3,kursValut.getZavalut().getId());
@@ -62,16 +64,23 @@ public class KursValutDAO extends AbstractDAO<KursValut> {
     }
 
     @Override
-    PreparedStatement getStatementDeleteSQL(KursValut kursValut) throws SQLException {
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(deleteSQL);
+    PreparedStatement getStatementDeleteSQL(Connection connection, KursValut kursValut) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(deleteSQL);
         ps.setInt(1,kursValut.getId());
         return ps;
     }
 
     @Override
-    PreparedStatement getStatementSelectSQL(String whereExpression) throws SQLException{
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(selectSQL.concat(whereExpression));
+    PreparedStatement getStatementSelectSQL(Connection connection, String whereExpression) throws SQLException{
+        PreparedStatement ps = connection.prepareStatement(selectSQL.concat(whereExpression));
         return ps;
     }
+
+    @Override
+    PreparedStatement getStatementCountSQL(Connection connection, String whereExpression) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(countSQL.concat(whereExpression));
+        return ps;
+    }
+
 
 }

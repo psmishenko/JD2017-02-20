@@ -3,6 +3,7 @@ package by.it.smirnov.project.java.DAO;
 import by.it.smirnov.project.java.Connection.ConnectorCreator;
 import by.it.smirnov.project.java.bean.Country;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,6 +15,7 @@ import static java.sql.Statement.RETURN_GENERATED_KEYS;
  */
 public class CountryDAO extends AbstractDAO<Country> {
     private static final String selectSQL = "SELECT `id`, `name` FROM `countrys`";
+    private static final String countSQL = "SELECT count(*) FROM `countrys`";
     private static final String insertSQL = "INSERT INTO `countrys`(`id`, `name`) VALUES (?,?);";
     private static final String updateSQL = "UPDATE `countrys` SET `name`=? WHERE ID=?";
     private static final String deleteSQL = "DELETE FROM `countrys` WHERE ID=?";
@@ -34,32 +36,37 @@ public class CountryDAO extends AbstractDAO<Country> {
     }
 
     @Override
-    PreparedStatement getStatementInsertSQL(Country country) throws SQLException {
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(insertSQL, RETURN_GENERATED_KEYS);
+    PreparedStatement getStatementInsertSQL(Connection connection, Country country) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(insertSQL, RETURN_GENERATED_KEYS);
         ps.setInt(1,country.getId());
         ps.setString(2,country.getName());
         return ps;
     }
 
     @Override
-    PreparedStatement getStatementUpdateSQL(Country country) throws SQLException {
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(updateSQL);
+    PreparedStatement getStatementUpdateSQL(Connection connection, Country country) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(updateSQL);
         ps.setString(1,country.getName());
         ps.setInt(2,country.getId());
         return ps;
     }
 
     @Override
-    PreparedStatement getStatementDeleteSQL(Country country) throws SQLException {
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(deleteSQL);
+    PreparedStatement getStatementDeleteSQL(Connection connection, Country country) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(deleteSQL);
         ps.setInt(1,country.getId());
         return ps;
     }
 
     @Override
-    PreparedStatement getStatementSelectSQL(String whereExpression) throws SQLException{
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(selectSQL.concat(whereExpression));
+    PreparedStatement getStatementSelectSQL(Connection connection, String whereExpression) throws SQLException{
+        PreparedStatement ps = connection.prepareStatement(selectSQL.concat(whereExpression));
         return ps;
     }
 
+    @Override
+    PreparedStatement getStatementCountSQL(Connection connection, String whereExpression) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(countSQL.concat(whereExpression));
+        return ps;
+    }
 }

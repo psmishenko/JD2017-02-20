@@ -1,18 +1,18 @@
 package by.it.smirnov.project.java.controller;
 
 import by.it.smirnov.project.java.DAO.DAO;
-import by.it.smirnov.project.java.bean.Bank;
-import by.it.smirnov.project.java.bean.OperType;
-import by.it.smirnov.project.java.bean.Sdel;
-import by.it.smirnov.project.java.bean.Valut;
+import by.it.smirnov.project.java.bean.*;
 import by.it.smirnov.project.java.log.SingleLogger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.text.ParseException;
 import java.util.List;
+
+import static by.it.smirnov.project.java.controller.FormUtils.getSessionUser;
 
 /**
  * Created by aleksey.smirnov on 05.05.2017.
@@ -66,7 +66,14 @@ public class CommandActionSdel extends Action{
                     sdel.setOperType(DAO.getInstance().getOperType().read(FormUtils.getInt(request, "idopertype")));
                     sdel.setFromdate(FormUtils.getDate(request, "fromdate"));
                     sdel.setTodate(FormUtils.getDate(request, "todate"));
-                    sdel.setIdsysoper(1);
+                    int idSysoper = 1;
+                    User currentUser = getSessionUser(request);
+                    if (currentUser != null) {
+                        SysOper sysOper = new SysOper(0,currentUser.getId(), new Timestamp(System.currentTimeMillis()));
+                        dao.getSysOper().save(sysOper);
+                        idSysoper = sysOper.getId();
+                    }
+                    sdel.setIdsysoper(idSysoper);
                     sdel.setIdsysoperedit(1);
                     if (dao.getSdel().save(sdel))
                         return Actions.SDELS.command;

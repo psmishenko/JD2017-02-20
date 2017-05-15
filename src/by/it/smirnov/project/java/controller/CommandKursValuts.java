@@ -18,7 +18,13 @@ public class CommandKursValuts extends Action{
         DAO dao= DAO.getInstance();
         List<KursValut> list = null;
         try {
-            list = dao.getKursValut().getAll("");
+            String where = "";
+            int countRec = dao.getKursValut().getCount(where);
+            request.setAttribute("countRec", countRec);
+            int start = FormUtils.getIntDef(request, "start", 0);
+            int step = FormUtils.getIntDef(request, "step", 10);
+            String limit=String.format(" ORDER BY ID LIMIT %d,%d ", start, step);
+            list = dao.getKursValut().getAll(where+limit);
         } catch (SQLException e) {
             SingleLogger.getInstance().error(e.toString());
         }
