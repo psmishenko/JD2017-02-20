@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Clients xmlns="http://jd02_07.kolenda.it.by"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://jd02_07.kolenda.it.by Clients.xsd">
+<?xml version="1.0" encoding="utf-8"?>
+
+<Clients>
     <ClientFL>
         <PersonalData>
             <Name>Иванов Иван Иванович</Name>
@@ -14,7 +13,6 @@
             <Depo>true</Depo>
             <Credit>false</Credit>
         </AcctType>
-
         <Actions>
             <Pay>100</Pay>
             <Refill>2000</Refill>
