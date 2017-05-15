@@ -20,15 +20,20 @@ public class CommandCars extends Action{
     Action execute(HttpServletRequest request) {
         DAO dao = DAO.getInstance();
         List<Car> cars;
-        List<Order> orders;
+        List<Order> listOrders;
+
+
         try {
             cars = dao.car.getAll("");
+            List<Order> orders = dao.order.getAll("");
             request.setAttribute("cars", cars);
+            request.setAttribute("orders", orders);
             if (request.getParameter("id") != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("id", request.getParameter("id"));
-                orders = dao.order.getAll("WHERE FK_Cars="+request.getParameter("id"));
-                if (orders.size() >= 1) {
+                listOrders = dao.order.getAll("WHERE FK_Cars="+request.getParameter("id"));
+
+                if (listOrders.size() >= 1) {
                     return Actions.CARS.command;
                 }
                    return Actions.RENTCAR.command;
