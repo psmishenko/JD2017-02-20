@@ -52,4 +52,10 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <description>MySQL my_sql_loktev</description>
+    <resource-ref>
+        <description>my_sql_loktev</description>
+        <res-ref-name>jdbc/my_sql_loktev</res-ref-name>
+    </resource-ref>
+
 </web-app>

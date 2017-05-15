@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 </div>
 
-<div class="navbar-fixed-bottom row-fluid">
+<div class="navbar-bottom row-fluid">
   <div class="container">
     <p><b>${message}</b><b style="color: red">${msg_error}</b></p>
     <p>&copy; IT-Academy / Loktev</p>
