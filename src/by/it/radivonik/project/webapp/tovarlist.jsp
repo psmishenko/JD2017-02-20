@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="inc_header.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="t" %>
 
 <form class="form-inline" action="do" method="post">
  <legend>Товары</legend>
@@ -57,5 +58,8 @@
     </tbody>
   </table>
 </form>
+
+<br><br>
+<t:paginator count="100" step="10" urlprefix="?start="/>
 
 <%@ include file="inc_footer.jsp" %>

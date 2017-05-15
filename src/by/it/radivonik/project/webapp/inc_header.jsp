@@ -1,5 +1,8 @@
 ﻿<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib tagdir="/WEB-INF/tags/menu" prefix="menu" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="t" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +44,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li><a href=do?command=UserList>Пользователи</a></li>
-            <li><a href=do?command=TovarList>Товары</a></li>
+            <li class ="active"><a href=do?command=TovarList>Товары</a></li>
             <li><a href=do?command=KlientList>Клиенты</a></li>
             <li><a href=do?command=AvtoList>Автомобили</a></li>
             <li><a href=do?command=SkladList>Склад</a></li>
