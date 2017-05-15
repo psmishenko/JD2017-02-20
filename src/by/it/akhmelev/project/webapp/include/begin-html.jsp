@@ -1,3 +1,6 @@
+<%@ taglib tagdir="/WEB-INF/tags/menu" prefix="menu" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="t" %>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
