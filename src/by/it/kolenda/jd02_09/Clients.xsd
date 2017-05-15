@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-    targetNamespace="http://kolenda.it-academy.by/xml/Clients"
-        xmlns:tns="http://kolenda.it-academy.by/xml/Clients"
+        targetNamespace="http://jd02_09.kolenda.it.by"
+        xmlns:tns="http://jd02_09.kolenda.it.by"
         elementFormDefault="qualified">
         <element name="Clients">
             <complexType>
