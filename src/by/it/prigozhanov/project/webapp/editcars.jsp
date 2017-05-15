@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
-
+<c:choose>
+<c:when test="${admin.fkRole==1}">
 <div class="row">
     <b>
         <div class=col-md-2>Марка</div>
@@ -129,6 +130,11 @@
     </div>
 
 </c:forEach>
+</c:when>
+<c:otherwise>
+<h1>Доступ запрещён</h1>
+</c:otherwise>
+</c:choose>
 ${message}
 
 <%@ include file="include/end-html.jsp" %>

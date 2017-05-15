@@ -35,6 +35,7 @@ public class CommandLogin extends Action {
 
                 if (list.size()==1) {
                     HttpSession session = request.getSession();
+                    session.setMaxInactiveInterval(99999);
                     user = list.get(0);
                     session.setAttribute("user", user);
                     return Actions.PROFILE.command;

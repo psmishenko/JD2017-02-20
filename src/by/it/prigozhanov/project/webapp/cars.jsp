@@ -13,7 +13,7 @@
         <p>${car.hp} HP</p>
         <form action="do?command=cars" method="POST">
          <input type="hidden" name="id" value="${car.id}"/>
-        <p><button class="btn btn-success" name="choosecars">Rent car</button></p>
+        <p><button class="btn btn-success" name="choosecars">Арендовать</button></p>
         </form>
         <p>Месторасположение: ${car.location}  <span class="glyphicon glyphicon-globe" aria-hidden="true"></span></p>
         <p>Объем багажника: ${car.luggageCapacity} <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></p>

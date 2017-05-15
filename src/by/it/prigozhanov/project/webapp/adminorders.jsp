@@ -2,7 +2,8 @@
 <%@ include file="include/begin-html.jsp" %>
 
 
-
+<c:choose>
+<c:when test="${admin.fkRole==1}">
 
 <c:forEach items="${orders}" var="order">
 <div class="well well-lg">
@@ -75,12 +76,39 @@
 
             </b>
         </form>
+
     </div>
+    <hr>
+     <b>Данные автомобиля</b>
+     <div class="row">
+         <b>
+             <div class=col-md-1>ID</div>
+             <div class=col-md-3>Марка</div>
+             <div class=col-md-3>Модель</div>
+             <div class=col-md-2>Цена</div>
+             <div class=col-md-2>HP</div>
+         </b>
+     </div>
+    <c:forEach items="${cars}" var="car">
+    <c:if test="${order.fk_Cars==car.id}">
+    <div class="row">
+     <div class=col-md-1>${car.id}</div>
+     <div class=col-md-3>${car.mark}</div>
+     <div class=col-md-3>${car.model}</div>
+     <div class=col-md-2>${car.price}</div>
+     <div class=col-md-2>${car.hp}</div>
+     </div>
+     </c:if>
+     </c:forEach>
+
+
 </div>
 </c:forEach>
-
-
-<p>Cmd ADMINORDERS: ${message}</p>
+</c:when>
+<c:otherwise>
+<h1>Доступ запрещён</h1>
+</c:otherwise>
+</c:choose>
 
 <%@ include file="include/end-html.jsp" %>
 
