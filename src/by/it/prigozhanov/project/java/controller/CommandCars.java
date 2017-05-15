@@ -34,7 +34,8 @@ public class CommandCars extends Action{
                 request.setAttribute("orders", orders);
 
                 if (orders.size() >= 1) {
-                    return Actions.CARS.command;
+                    request.setAttribute(Messages.MSG_MESSAGE, "Этот автомобиль забронирован, выберите другой");
+                    return null;
                 }
                    return Actions.RENTCAR.command;
             }
