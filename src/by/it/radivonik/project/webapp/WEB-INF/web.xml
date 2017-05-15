@@ -39,4 +39,7 @@
         <res-auth>Container</res-auth>
     </resource-ref>
 
+    <listener>
+        <listener-class>by.it.radivonik.project.java.filters.SessionAttributeListener</listener-class>
+    </listener>
 </web-app>
