@@ -31,6 +31,8 @@
 </div>
 </c:forEach>
 <br><br>
+<t:paginator count="${adCount}" step="5" urlprefix="?command=Profile&start="/>
+<br>
 <form class="form-horizontal"  action="do?command=profile" method="POST">
 <fieldset>
 
