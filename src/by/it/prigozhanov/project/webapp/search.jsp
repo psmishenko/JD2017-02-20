@@ -10,7 +10,14 @@
         <h2>${car.mark} ${car.model}</h2>
         <h4>${car.price}$ за день</h4>
         <p>${car.hp} HP</p>
-        <p><a href="#" class="btn btn-success" role="button">Арендовать</a></p>
+        <form action="do?command=cars" method="POST">
+                 <input type="hidden" name="id" value="${car.id}"/>
+
+
+                <p><button class="btn btn-success" name="choosecars">Арендовать</button></p>
+
+
+                </form>
         <p>Месторасположение: ${car.location} <span class="glyphicon glyphicon-globe" aria-hidden="true"></span></p>
         <p>Объем багажника: ${car.luggageCapacity}  <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></p>
         <p>Колличество мест для пассажиров: ${car.seats}  <span class="glyphicon glyphicon-user" aria-hidden="true"></span></p>
