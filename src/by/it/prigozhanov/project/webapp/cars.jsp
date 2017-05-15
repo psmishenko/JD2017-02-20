@@ -14,16 +14,11 @@
         <p>${car.hp} HP</p>
         <form action="do?command=cars" method="POST">
          <input type="hidden" name="id" value="${car.id}"/>
-         <c:forEach items="${orders}" var="order">
-         <c:choose>
-         <c:when test="${car.id!=order.fk_Cars}">
+
+
         <p><button class="btn btn-success" name="choosecars">Арендовать</button></p>
-        </c:when>
-        <c:otherwise>
-        <p><button class="btn btn-danger" name="choosecars">Забронирована</button></p>
-        </c:otherwise>
-        </c:choose>
-</c:forEach>
+
+
         </form>
         <p>Месторасположение: ${car.location}  <span class="glyphicon glyphicon-globe" aria-hidden="true"></span></p>
         <p>Объем багажника: ${car.luggageCapacity} <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></p>
