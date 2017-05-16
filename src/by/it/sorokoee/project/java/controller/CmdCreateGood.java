@@ -20,7 +20,7 @@ public class CmdCreateGood extends Action {
 
             Good good = new Good();
             try {
-//                if (user.getFk_roles()==1) {
+
 
                     good.setId((0));
                     good.setModelCar(Form.getString(request, "modelCar", Pattern.ANYSTRING));
@@ -30,7 +30,6 @@ public class CmdCreateGood extends Action {
                     good.setTypeEngine(Form.getString(request, "typeEngine", Pattern.ANYSTRING));
                     good.setCapacityEngine(Form.getInt(request, "capacityEngine"));
                     good.setFk_users(user.getId());
-//                }
                     DAO dao = DAO.getInstance();
 
                 if (dao.good.create(good))

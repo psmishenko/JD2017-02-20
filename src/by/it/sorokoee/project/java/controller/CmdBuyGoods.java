@@ -9,13 +9,17 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.List;
 
-public class CmdEditGoods extends Action {
+public class CmdBuyGoods extends Action {
     @Override
     public Action execute(HttpServletRequest request) {
+        User user = Utils.getSessionUser(request);
+        if (user == null) {
+            return Actions.LOGIN.command;
+        }
         DAO dao = DAO.getInstance();
         try {
             if (Form.isPost(request)) {
-                if (request.getParameter("Update") != null) {
+                if (request.getParameter("Delete") != null) {
                     Good good = new Good(
                             Form.getInt(request, "id"),
                             Form.getString(request, "modelCar", Pattern.ANYSTRING),
@@ -24,17 +28,15 @@ public class CmdEditGoods extends Action {
                     Form.getString(request, "typeEngine", Pattern.ANYSTRING),
                             Form.getInt(request, "capacityEngine")
                     );
-                    dao.good.update(good);
-                }
-                if (request.getParameter("Delete") != null) {
-                    Good good = new Good();
-                    good.setId(Form.getInt(request, "id"));
                     dao.good.delete(good);
+//
                 }
+
+
             }
 
+
             List<Good> goods = dao.good.getAll("");
-//            request.getServletContext().setAttribute("roles", roles);
             request.setAttribute("goods", goods);
         } catch (ParseException e) {
             request.setAttribute(Messages.MSG_ERROR,e);
