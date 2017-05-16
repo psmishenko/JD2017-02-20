@@ -36,11 +36,11 @@
  <td>${book.isbn}</td>
  <td>${book.lid}</td>
 <td>
- <form class="form-edit-userbook-${book.id}" action="edituserbook.jsp">
+ <form class="form-edit-userbook-${book.id}" action="do?command=EditUserBook" method=GET>
        <input type="hidden" name="id" value="${book.id}"/>
                 <div class=col-md-1>
                     <button id="edituserbook" class="btn btn-success">
-                      Edit
+                      Edit (doesn't work)
                     </button>
                 </div>
     </form>
@@ -58,5 +58,8 @@
 </c:forEach>
    </tr>
   </table>
+</div>
+<div align="center">
+<t:paginator count="${bookCount}" step="5" urlprefix="?command=Profile&start="/>
 </div>
 <%@ include file="include/end-html.jsp" %>
