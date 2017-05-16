@@ -37,7 +37,7 @@ public enum Actions {
             res = Actions.valueOf(command.toUpperCase()).command;
             if (res != LOGIN.command && (session == null || session.getAttribute("userActive") == null)) {
                 if (session != null)
-                    session.setAttribute(FormUtils.actionPrev, res);
+                    session.setAttribute(FormUtils.actionPrevName, res);
                 res = Actions.LOGIN.command;
             }
         } catch (IllegalArgumentException e) {

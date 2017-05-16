@@ -39,6 +39,11 @@ public class RoleDAO extends AbstractDAO<Role> {
     }
 
     @Override
+    protected Role newBean() {
+        return new Role();
+    }
+
+    @Override
     protected Role newBean(ResultSet resultSet) throws SQLException {
         Role role = new Role(
             resultSet.getInt("id"),

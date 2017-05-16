@@ -44,7 +44,7 @@ public class CmdUserEdit extends AbstractActionEdit<User> {
     }
 
     @Override
-    protected AbstractAction getActionReturn() {
+    protected AbstractAction getActionPrevDefault() {
         return Actions.USERLIST.command;
     }
 }

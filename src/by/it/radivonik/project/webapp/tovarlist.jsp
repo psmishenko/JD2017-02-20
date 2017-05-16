@@ -29,7 +29,4 @@
   </table>
 </form>
 
-<br><br>
-<t:paginator count="100" step="10" urlprefix="?start="/>
-
 <%@ include file="include/inc_footer.jsp" %>

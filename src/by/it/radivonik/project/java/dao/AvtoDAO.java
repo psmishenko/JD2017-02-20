@@ -39,6 +39,11 @@ public class AvtoDAO extends AbstractDAO<Avto> {
     }
 
     @Override
+    protected Avto newBean() {
+        return new Avto();
+    }
+
+    @Override
     protected Avto newBean(ResultSet resultSet) throws SQLException {
         Avto avto = new Avto(
                 resultSet.getInt("id"),

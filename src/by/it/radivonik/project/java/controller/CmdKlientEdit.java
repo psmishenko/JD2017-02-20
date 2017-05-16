@@ -44,7 +44,7 @@ public class CmdKlientEdit extends AbstractActionEdit<Klient> {
     }
 
     @Override
-    protected AbstractAction getActionReturn() {
+    protected AbstractAction getActionPrevDefault() {
         return Actions.KLIENTLIST.command;
     }
 

@@ -1,6 +1,7 @@
 package by.it.radivonik.project.java.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.List;
@@ -11,21 +12,22 @@ import java.util.List;
 public abstract class AbstractActionList<T> extends AbstractAction {
     @Override
     AbstractAction execute(HttpServletRequest req) {
-        int start = 0;
         try {
-            if (req.getParameter("start") != null)
-                start = FormUtils.getInteger(req, "start", true, "");
             List<T> beans = getBeans();
             req.setAttribute(getParamName(), beans);
+            HttpSession session = req.getSession();
+            if (session != null)
+                session.setAttribute(FormUtils.actionPrevName, this);
         }
-        catch (ParseException e) {
-            req.setAttribute(IMessages.MSG_ERROR, e.getMessage());
-        }
+//        catch (ParseException e) {
+//            req.setAttribute(IMessages.MSG_ERROR, e.getMessage());
+//        }
         catch (SQLException e) {
             req.setAttribute(IMessages.MSG_ERROR, e.getMessage());
         }
+
         return null;
-    }
+    }                ;
 
     protected abstract List<T> getBeans() throws SQLException;
     protected abstract String getParamName();

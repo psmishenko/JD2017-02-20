@@ -3,10 +3,7 @@ package by.it.radivonik.project.java.dao;
 import by.it.radivonik.project.java.connection.ConnectionCreator;
 
 import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -37,16 +34,16 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
         final List<T> beans = new ArrayList<T>(){
             @Override
             public String toString() {
-                StringBuilder res = new StringBuilder("");
-                int c = 0;
-                String delim = "";
-                for (T bean: this) {
-                    res.append(delim).append(bean);
-                    delim = "\n";
-                    c++;
-                };
-                res.append(delim).append("Итого записей: ").append(c);
-                return res.toString();
+            StringBuilder res = new StringBuilder("");
+            int c = 0;
+            String delim = "";
+            for (T bean: this) {
+                res.append(delim).append(bean);
+                delim = "\n";
+                c++;
+            };
+            res.append(delim).append("Итого записей: ").append(c);
+            return res.toString();
             }
         };
 
@@ -83,7 +80,7 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
         if (beans.size() > 0)
             return beans.get(0);
         else
-            return null;
+            return newBean();
     }
 
     protected abstract String sqlSelect();
@@ -94,6 +91,7 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
     protected abstract String sqlUpdate(T bean);
     protected abstract String sqlDelete(T bean);
     protected abstract void setId(T bean, int id);
+    protected abstract T newBean();
     protected abstract T newBean(ResultSet resultSet) throws SQLException;
 
     int executeUpdate(String sql) throws SQLException {
@@ -130,5 +128,17 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
         if (value == null)
             return "null";
         return value.toString();
+    }
+
+    String dbVal(Date value) {
+        if (value == null)
+            return "null";
+        return "'" + value.toString() + "'";
+    }
+
+    String dbVal(int value) {
+        if (value <= 0)
+            return "null";
+        return String.valueOf(value);
     }
 }

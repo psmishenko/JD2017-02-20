@@ -39,6 +39,11 @@ public class KlientDAO extends AbstractDAO<Klient> {
     }
 
     @Override
+    protected Klient newBean() {
+        return new Klient();
+    }
+
+    @Override
     protected Klient newBean(ResultSet resultSet) throws SQLException {
         Klient klient = new Klient(
             resultSet.getInt("id"),

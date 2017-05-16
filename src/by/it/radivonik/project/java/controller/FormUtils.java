@@ -10,7 +10,7 @@ import java.text.ParseException;
  * Created by Radivonik on 06.05.2017.
  */
 public class FormUtils {
-    static final String actionPrev = "actionPrev";
+    static final String actionPrevName = "actionPrev";
 
     public static String getString(
         HttpServletRequest req, String param, String pattern, boolean empty, String name) throws ParseException  {
@@ -81,9 +81,9 @@ public class FormUtils {
         HttpSession session = req.getSession();
         if (session == null)
             return null;
-        if (session.getAttribute(actionPrev) != null) {
-            AbstractAction action = (AbstractAction)session.getAttribute(actionPrev);
-            session.removeAttribute(actionPrev);
+        if (session.getAttribute(actionPrevName) != null) {
+            AbstractAction action = (AbstractAction)session.getAttribute(actionPrevName);
+            session.removeAttribute(actionPrevName);
             return action;
         }
         return actionDefault;

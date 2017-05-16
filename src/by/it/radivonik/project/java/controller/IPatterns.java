@@ -10,5 +10,7 @@ public interface IPatterns {
     String TEXT = ".+";
     String UNP = "\\d{9,10}";
     String NUMGOS = "\\d{4} [A-Z]{2}-\\d";
+    String NUM = "\\d{1,7}";
+    String SERIA = "[A-Z]{2}";
 }
 

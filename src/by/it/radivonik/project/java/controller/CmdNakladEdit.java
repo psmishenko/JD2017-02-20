@@ -1,6 +1,6 @@
 package by.it.radivonik.project.java.controller;
 
-import by.it.radivonik.project.java.beans.Naklad;
+import by.it.radivonik.project.java.beans.*;
 import by.it.radivonik.project.java.dao.AbstractDAO;
 import by.it.radivonik.project.java.dao.DAO;
 
@@ -29,11 +29,20 @@ public class CmdNakladEdit extends AbstractActionEdit<Naklad> {
 
     @Override
     protected Naklad initBean(HttpServletRequest req) throws ParseException, SQLException {
-        return null;
-//        return new Naklad(
-//            FormUtils.getId(req),
-//            FormUtils.getString(req, "name", IPatterns.TEXT, false, "Наименование товара"),
-//            FormUtils.getString(req, "edizm", IPatterns.TEXT, false, "Единица измерения"));
+        User user = DAO.getInstance().getUser().read(FormUtils.getInteger(req, "id_user", false, "Пользователь"));
+        TypeNaklad type = DAO.getInstance().getTypeNaklad().read(FormUtils.getInteger(req, "id_type", false, "Тип накладной"));
+        Klient klient = DAO.getInstance().getKlient().read(FormUtils.getInteger(req, "id_klient", false, "Клиент"));
+        Integer idAvto = FormUtils.getInteger(req, "id_avto", true, "Автомобиль");
+        Avto avto = DAO.getInstance().getAvto().read(idAvto==null?0:idAvto);
+        return new Naklad(
+            FormUtils.getId(req),
+            FormUtils.getDate(req, "date", false, "Дата товарной накладной"),
+            FormUtils.getString(req, "num", IPatterns.NUM, false, "Номер товарной накладной"),
+            FormUtils.getString(req, "seria", IPatterns.SERIA, false, "Серия товарной накладной"),
+            user,
+            type,
+            klient,
+            avto);
     }
 
     @Override
@@ -42,7 +51,7 @@ public class CmdNakladEdit extends AbstractActionEdit<Naklad> {
     }
 
     @Override
-    protected AbstractAction getActionReturn() {
+    protected AbstractAction getActionPrevDefault() {
         return Actions.NAKLADLIST.command;
     }
 }

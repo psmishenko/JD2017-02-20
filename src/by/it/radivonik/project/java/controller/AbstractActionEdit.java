@@ -42,7 +42,7 @@ public abstract class AbstractActionEdit<T> extends AbstractAction {
                 req.getSession().removeAttribute(getName() + "_id");
 
             execAfter(req);
-            return getActionReturn();
+            return FormUtils.actionPrev(req, getActionPrevDefault());
         }
         catch (ParseException e) {
             req.setAttribute(getName(), bean);
@@ -62,7 +62,7 @@ public abstract class AbstractActionEdit<T> extends AbstractAction {
     protected abstract String getName();
     protected abstract T initBean(HttpServletRequest req) throws ParseException, SQLException;
     protected abstract int getId(T bean);
-    protected abstract AbstractAction getActionReturn();
+    protected abstract AbstractAction getActionPrevDefault();
     protected void execAfter(HttpServletRequest req) throws SQLException {
 
     };
