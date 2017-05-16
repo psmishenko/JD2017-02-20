@@ -1,7 +1,5 @@
 package by.it.vedom.project.java.dao;
 
-
-import by.it.akhmelev.project.java.dao.InterfaceDAO;
 import by.it.vedom.project.java.connection.ConnectionCreator;
 
 import java.lang.reflect.Field;

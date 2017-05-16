@@ -38,7 +38,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="submitbutton"></label>
   <div class="col-md-4">
-    <button id="submitbutton" name="submitbutton" class="btn btn-primary">Signup</button>
+    <button id="submitbutton" name="submitbutton" class="btn btn-primary">Регистрация</button>
   </div>
 </div>
 
@@ -47,7 +47,7 @@
 
 
 
-<p>Cmd SIGN-UP: ${message}</p>
+
 
 <%@ include file="include/end-html.jsp" %>
 

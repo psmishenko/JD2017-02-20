@@ -2,8 +2,10 @@ package by.it.vedom.project.java.controller;
 
 import by.it.vedom.project.java.beans.User;
 import by.it.vedom.project.java.dao.DAO;
+import org.junit.Test;
 
 import javax.servlet.http.HttpServletRequest;
+import java.sql.SQLException;
 
 
 public class CmdSignUp extends Action {
@@ -30,4 +32,18 @@ public class CmdSignUp extends Action {
             }
         }
     }
+
+    @Test
+    public static void main(String[] args) {
+        User user=new User(0,"q","p","e",1);
+        DAO dao = DAO.getInstance();
+        try {
+            dao.user.create(user);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
 }

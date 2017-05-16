@@ -3,7 +3,6 @@ package by.it.vedom.project.java.controller;
 import by.it.vedom.project.java.beans.Product;
 import by.it.vedom.project.java.beans.User;
 import by.it.vedom.project.java.dao.DAO;
-
 import javax.servlet.http.HttpServletRequest;
 import java.sql.SQLException;
 
@@ -26,10 +25,9 @@ public class CmdAddProd extends Action {
             try {
                 product.setId(0);
                 product.setName(request, "name", Pattern.ANYSTRING);
-               // product.setPrice(request, "product");
-                request.setAttribute(Messages.MSG_MESSAGE, "hi");
-
+              //  product.setPrice(request, "product");
                 DAO dao = DAO.getInstance();
+                request.setAttribute(Messages.MSG_MESSAGE, "hi");
                 if (dao.product.create(product)) {
                     return Actions.PROFILE.command;
                 } else
