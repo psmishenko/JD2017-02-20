@@ -3,6 +3,7 @@ package by.it.smirnov.project.java.DAO;
 import by.it.smirnov.project.java.Connection.ConnectorCreator;
 import by.it.smirnov.project.java.bean.SysOper;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,6 +15,7 @@ import static java.sql.Statement.RETURN_GENERATED_KEYS;
  */
 public class SysOperDAO extends AbstractDAO<SysOper> {
     private static final String selectSQL = "SELECT `id`, `iduser`, `datetime` FROM `sysopers`";
+    private static final String countSQL = "SELECT count(*) FROM `sysopers`";
     private static final String insertSQL = "INSERT INTO `sysopers`(`id`, `iduser`, `datetime`) VALUES (?,?,?);";
     private static final String updateSQL = "UPDATE `sysopers` SET `iduser`=?, `datetime`=? WHERE ID=?";
     private static final String deleteSQL = "DELETE FROM `sysopers` WHERE ID=?";
@@ -35,8 +37,8 @@ public class SysOperDAO extends AbstractDAO<SysOper> {
     }
 
     @Override
-    PreparedStatement getStatementInsertSQL(SysOper sysOper) throws SQLException {
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(insertSQL, RETURN_GENERATED_KEYS);
+    PreparedStatement getStatementInsertSQL(Connection connection, SysOper sysOper) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(insertSQL, RETURN_GENERATED_KEYS);
         ps.setInt(1,sysOper.getId());
         ps.setInt(2,sysOper.getIduser());
         ps.setTimestamp(3,sysOper.getDatetime());
@@ -44,8 +46,8 @@ public class SysOperDAO extends AbstractDAO<SysOper> {
     }
 
     @Override
-    PreparedStatement getStatementUpdateSQL(SysOper sysOper) throws SQLException {
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(updateSQL);
+    PreparedStatement getStatementUpdateSQL(Connection connection, SysOper sysOper) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(updateSQL);
         ps.setInt(1,sysOper.getIduser());
         ps.setTimestamp(2,sysOper.getDatetime());
         ps.setInt(3,sysOper.getId());
@@ -53,16 +55,23 @@ public class SysOperDAO extends AbstractDAO<SysOper> {
     }
 
     @Override
-    PreparedStatement getStatementDeleteSQL(SysOper sysOper) throws SQLException {
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(deleteSQL);
+    PreparedStatement getStatementDeleteSQL(Connection connection, SysOper sysOper) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(deleteSQL);
         ps.setInt(1,sysOper.getId());
         return ps;
     }
 
     @Override
-    PreparedStatement getStatementSelectSQL(String whereExpression) throws SQLException{
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(selectSQL.concat(whereExpression));
+    PreparedStatement getStatementSelectSQL(Connection connection, String whereExpression) throws SQLException{
+        PreparedStatement ps = connection.prepareStatement(selectSQL.concat(whereExpression));
         return ps;
     }
+
+    @Override
+    PreparedStatement getStatementCountSQL(Connection connection, String whereExpression) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(countSQL.concat(whereExpression));
+        return ps;
+    }
+
 
 }

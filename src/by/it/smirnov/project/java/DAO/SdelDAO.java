@@ -3,6 +3,7 @@ package by.it.smirnov.project.java.DAO;
 import by.it.smirnov.project.java.Connection.ConnectorCreator;
 import by.it.smirnov.project.java.bean.Sdel;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,6 +15,7 @@ import static java.sql.Statement.RETURN_GENERATED_KEYS;
  */
 public class SdelDAO extends AbstractDAO<Sdel> {
     private static final String selectSQL = "SELECT `id`,`idbank`,`summa`,`idvalut`,`idopertype`,`fromdate`,`todate`,`idsysoper`,`idsysoperedit` FROM `sdels`";
+    private static final String countSQL = "SELECT count(*) FROM `sdels`";
     private static final String insertSQL = "INSERT INTO `sdels`(`id`,`idbank`,`summa`,`idvalut`,`idopertype`,`fromdate`,`todate`,`idsysoper`,`idsysoperedit`) VALUES (?,?,?,?,?,?,?,?,?);";
     private static final String updateSQL = "UPDATE `sdels` SET `idbank`=?,`summa`=?,`idvalut`=?,`idopertype`=?,`fromdate`=?,`todate`=?,`idsysoper`=?,`idsysoperedit`=? WHERE ID=?";
     private static final String deleteSQL = "DELETE FROM `sdels` WHERE ID=?";
@@ -41,8 +43,8 @@ public class SdelDAO extends AbstractDAO<Sdel> {
     }
 
     @Override
-    PreparedStatement getStatementInsertSQL(Sdel sdel) throws SQLException {
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(insertSQL, RETURN_GENERATED_KEYS);
+    PreparedStatement getStatementInsertSQL(Connection connection, Sdel sdel) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(insertSQL, RETURN_GENERATED_KEYS);
         ps.setInt(1,sdel.getId());
         ps.setInt(2,sdel.getBank().getId());
         ps.setDouble(3,sdel.getSumma());
@@ -56,8 +58,8 @@ public class SdelDAO extends AbstractDAO<Sdel> {
     }
 
     @Override
-    PreparedStatement getStatementUpdateSQL(Sdel sdel) throws SQLException {
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(updateSQL);
+    PreparedStatement getStatementUpdateSQL(Connection connection, Sdel sdel) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(updateSQL);
         ps.setInt(1,sdel.getBank().getId());
         ps.setDouble(2,sdel.getSumma());
         ps.setInt(3,sdel.getValut().getId());
@@ -71,16 +73,23 @@ public class SdelDAO extends AbstractDAO<Sdel> {
     }
 
     @Override
-    PreparedStatement getStatementDeleteSQL(Sdel sdel) throws SQLException {
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(deleteSQL);
+    PreparedStatement getStatementDeleteSQL(Connection connection, Sdel sdel) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(deleteSQL);
         ps.setInt(1,sdel.getId());
         return ps;
     }
 
     @Override
-    PreparedStatement getStatementSelectSQL(String whereExpression) throws SQLException{
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(selectSQL.concat(whereExpression));
+    PreparedStatement getStatementSelectSQL(Connection connection, String whereExpression) throws SQLException{
+        PreparedStatement ps = connection.prepareStatement(selectSQL.concat(whereExpression));
         return ps;
     }
+
+    @Override
+    PreparedStatement getStatementCountSQL(Connection connection, String whereExpression) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(countSQL.concat(whereExpression));
+        return ps;
+    }
+
 
 }

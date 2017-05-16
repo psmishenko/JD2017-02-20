@@ -16,4 +16,5 @@ public interface IDAO<T> {
     boolean save(T t) throws SQLException;
 
     List<T> getAll(String whereExpression) throws SQLException;
+    int getCount(String whereExpression) throws SQLException;
 }

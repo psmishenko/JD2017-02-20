@@ -3,6 +3,7 @@ package by.it.smirnov.project.java.DAO;
 import by.it.smirnov.project.java.Connection.ConnectorCreator;
 import by.it.smirnov.project.java.bean.Limit;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,6 +15,7 @@ import static java.sql.Statement.RETURN_GENERATED_KEYS;
  */
 public class LimitDAO extends AbstractDAO<Limit> {
     private static final String selectSQL = "SELECT `id`,`idgroupbank`,`fromdate`,`idopertype`,`summa`,`idvalut`,`idsysoper` FROM `limits`";
+    private static final String countSQL = "SELECT count(*) FROM `limits`";
     private static final String insertSQL = "INSERT INTO `limits`(`id`,`idgroupbank`,`fromdate`,`idopertype`,`summa`,`idvalut`,`idsysoper`) VALUES (?,?,?,?,?,?,?);";
     private static final String updateSQL = "UPDATE `limits` SET `idgroupbank`=?,`fromdate`=?,`idopertype`=?,`summa`=?,`idvalut`=?,`idsysoper`=? WHERE ID=?";
     private static final String deleteSQL = "DELETE FROM `limits` WHERE ID=?";
@@ -39,8 +41,8 @@ public class LimitDAO extends AbstractDAO<Limit> {
     }
 
     @Override
-    PreparedStatement getStatementInsertSQL(Limit limit) throws SQLException {
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(insertSQL, RETURN_GENERATED_KEYS);
+    PreparedStatement getStatementInsertSQL(Connection connection, Limit limit) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(insertSQL, RETURN_GENERATED_KEYS);
         ps.setInt(1,limit.getId());
         ps.setInt(2,limit.getGroupbank().getId());
         ps.setDate(3,limit.getFromdate());
@@ -52,8 +54,8 @@ public class LimitDAO extends AbstractDAO<Limit> {
     }
 
     @Override
-    PreparedStatement getStatementUpdateSQL(Limit limit) throws SQLException {
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(updateSQL);
+    PreparedStatement getStatementUpdateSQL(Connection connection, Limit limit) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(updateSQL);
         ps.setInt(1,limit.getGroupbank().getId());
         ps.setDate(2,limit.getFromdate());
         ps.setInt(3,limit.getOpertype().getId());
@@ -65,16 +67,23 @@ public class LimitDAO extends AbstractDAO<Limit> {
     }
 
     @Override
-    PreparedStatement getStatementDeleteSQL(Limit limit) throws SQLException {
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(deleteSQL);
+    PreparedStatement getStatementDeleteSQL(Connection connection, Limit limit) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(deleteSQL);
         ps.setInt(1,limit.getId());
         return ps;
     }
 
     @Override
-    PreparedStatement getStatementSelectSQL(String whereExpression) throws SQLException{
-        PreparedStatement ps = ConnectorCreator.getConnection().prepareStatement(selectSQL.concat(whereExpression));
+    PreparedStatement getStatementSelectSQL(Connection connection, String whereExpression) throws SQLException{
+        PreparedStatement ps = connection.prepareStatement(selectSQL.concat(whereExpression));
         return ps;
     }
+
+    @Override
+    PreparedStatement getStatementCountSQL(Connection connection, String whereExpression) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(countSQL.concat(whereExpression));
+        return ps;
+    }
+
 
 }

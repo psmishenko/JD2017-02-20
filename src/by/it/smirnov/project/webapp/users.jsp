@@ -3,11 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="row">
+<c:if test="${admin == 1}" >
   <div class="col-sm-2">
       <div class="btn-group" role="group">
         <a href="do?command=actionUser" class="btn btn-primary" role="button">Добавить пользователя</a>
       </div>
   </div>
+</c:if>
   <div class="col-sm-4">
     <form action="do?command=Users" method="POST">
       <div class="input-group">
@@ -34,7 +36,9 @@
       <td><b>Пользователь</b></td>
       <td><b>Логин</b></td>
       <td><b>Роли</b></td>
+<c:if test="${admin == 1}" >
       <td></td>
+</c:if>
     </tr>
   <c:forEach items="${users}" var="user">
     <tr>
@@ -45,6 +49,7 @@
           <p><c:out value="${role}" /></p>
         </c:forEach>
       </td>
+<c:if test="${admin == 1}" >
       <td align="right">
       <form class="form-horizontal" action="do?command=ActionUser" method="POST">
           <input type="hidden" name="id" value="${user.id}" />
@@ -52,6 +57,7 @@
           <button type="submit" class="btn btn-primary btn-xs" name="btnDelete">Удалить</button>
       </form>
       </td>
+</c:if>
 
     </tr>
   </c:forEach>

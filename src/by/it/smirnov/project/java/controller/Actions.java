@@ -7,6 +7,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import static by.it.smirnov.project.java.controller.ActionsOnlyAdmin.getActionLaw;
+
 /**
  * Created by aleksey.smirnov on 05.05.2017.
  */
@@ -60,7 +62,11 @@ enum Actions {
                 res = Actions.LOGIN.command;
                 request.setAttribute("clearform",Boolean.TRUE);
             } else {
-                res = Actions.valueOf(command.toUpperCase()).command;
+                if (getActionLaw(session,Actions.valueOf(command.toUpperCase()))) {
+                    res = Actions.valueOf(command.toUpperCase()).command;
+                } else {
+                    res = Actions.LOGOUT.command;
+                }
             }
 
         } catch (Exception e) {
