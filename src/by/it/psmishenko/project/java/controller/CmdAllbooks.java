@@ -15,7 +15,6 @@ public class CmdAllbooks extends Action {
     public Action execute(HttpServletRequest request) {
         try {
             DAO dao = DAO.getInstance();
-            List<Book> books = dao.book.getAll("");
             List<User> users = dao.user.getAll("");
              User sessionUser = Utils.getSessionUser(request);
             if(Form.isPost(request)){
@@ -24,6 +23,18 @@ public class CmdAllbooks extends Action {
                    book.setFk_users(sessionUser.getId());
                    if (dao.book.create(book)) return Actions.PROFILE.command;
             }
+            int start=0;
+            if (request.getParameter("start")!=null){
+                try {
+                    start=Form.getInt(request,"start");
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+            int bookCount=dao.book.getAll("").size();
+            request.setAttribute("bookCount",bookCount);
+            String limit=String.format(" ORDER BY ID LIMIT %d,8 ",start);
+            List<Book> books = dao.book.getAll(limit);
                 request.setAttribute("users",users);
                 request.setAttribute("allbooks",books);
             } catch (SQLException | ParseException e) {

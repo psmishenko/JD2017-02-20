@@ -13,11 +13,14 @@ import java.util.List;
  class CmdEditusers extends Action {
     @Override
     public Action execute(HttpServletRequest request) {
+        User cUser = Utils.getSessionUser(request);
+        if (cUser!=null) {
+            if(cUser.getFk_roles() == 1) {
         try {
         DAO dao = DAO.getInstance();
-        User cUser = Utils.getSessionUser(request);
-       if(Form.isPost(request)&&cUser!=null){
-        if(cUser.getFk_roles() == 1) {
+
+       if(Form.isPost(request)){
+
             if (request.getParameter("Update") != null) {
                 User user = new User(
                         Form.getInt(request, "id"),
@@ -26,14 +29,14 @@ import java.util.List;
                         Form.getString(request, "email", Pattern.EMAIL),
                         Form.getInt(request, "fk_Role")
                 );
-               if(dao.user.update(user)) request.setAttribute(Messages.MSG_MESSAGE,"user updated");
+                if (dao.user.update(user)) request.setAttribute(Messages.MSG_MESSAGE, "user updated");
             }
             if (request.getParameter("Delete") != null) {
                 User user = new User();
                 user.setId(Form.getInt(request, "id"));
-                if(dao.user.delete(user)) request.setAttribute(Messages.MSG_MESSAGE,"user deleted");
+                if (dao.user.delete(user)) request.setAttribute(Messages.MSG_MESSAGE, "user deleted");
             }
-        } else request.setAttribute(Messages.MSG_ERROR, "access denied");
+
            }
             List<User> users = dao.user.getAll("");
             request.setAttribute("allusers",users);
@@ -41,6 +44,9 @@ import java.util.List;
             request.setAttribute(Messages.MSG_ERROR,e.toString());
             e.printStackTrace();
         }
+            } else return Actions.ERROR.command;
+
+        } else return Actions.LOGIN.command;
         return null;
     }
 }

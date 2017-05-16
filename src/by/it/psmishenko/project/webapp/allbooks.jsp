@@ -52,5 +52,6 @@
    </tr>
   </table>
 </div>
-
+<div align="center">
+<t:paginator count="${bookCount}" step="8" urlprefix="?command=AllBooks&start="/></div>
 <%@ include file="include/end-html.jsp" %>

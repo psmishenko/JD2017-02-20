@@ -1,3 +1,4 @@
+<%@ taglib tagdir="/WEB-INF/tags" prefix="t" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -32,14 +33,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <c:choose>
-        <c:when test="${user!=null}"> 
         <a class="navbar-brand" href=do?command=Home>Home</a>
-      </c:when>
-    <c:otherwise>
-            <a class="navbar-brand" href=do?command=Index>Home</a>
-    </c:otherwise>
-      </c:choose>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->

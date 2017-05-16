@@ -7,7 +7,8 @@ package by.it.psmishenko.project.java.controller;
          import javax.servlet.http.HttpServletRequest;
          import javax.servlet.http.HttpSession;
          import java.sql.SQLException;
-         import java.util.List;
+ import java.text.ParseException;
+ import java.util.List;
 
 
 public class CmdProfile extends Action {
@@ -18,16 +19,26 @@ public class CmdProfile extends Action {
                         session.invalidate();
                         return Actions.LOGIN.command;
                     }
-                 /*   if (Form.isPost(request)&&(request.getParameter("edituserbook") != null)){
-                   return Actions.EDITUSERBOOK.command;
-                    }*/
+
+        int start=0;
+        if (request.getParameter("start")!=null){
+            try {
+                start=Form.getInt(request,"start");
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+
                 User user = Utils.getSessionUser(request);
                 if (user!=null){
+                    try {
                        DAO dao= DAO.getInstance();
                         String where = "WHERE FK_users="+user.getId();
-                        try {
-                                List<Book> books = dao.book.getAll(where);
-                                request.setAttribute("books",books);
+                    int bookCount=dao.book.getAll(where).size();
+                        request.setAttribute("bookCount",bookCount);
+                        String limit=String.format(" ORDER BY ID LIMIT %d,5 ",start);
+                        List<Book> books = dao.book.getAll(where+limit);
+                        request.setAttribute("books",books);
                             } catch (SQLException e) {
                                 e.printStackTrace();
                             }
