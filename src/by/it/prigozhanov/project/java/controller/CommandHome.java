@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 public class CommandHome extends Action {
     @Override
     Action execute(HttpServletRequest request) {
-        return null;
+        if (request.getParameter("findcars") !=null) {
+            return Actions.CARS.command;
+        } else return Actions.HOME.command;
+
     }
 }

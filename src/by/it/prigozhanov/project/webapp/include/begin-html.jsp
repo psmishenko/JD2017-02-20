@@ -1,4 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib tagdir="/WEB-INF/tags/menu" prefix="menu" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="t" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!doctype html>
 <html>
@@ -37,19 +39,25 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-			<li><a href=do?command=Home>Home</a></li>
-			<li>  <a href=do?command=Cars>Cars</a></li>
+        <menu:li command="home" text="Домой" />
+        <menu:li command="cars" text="Арендовать машину" />
         </ul>
         <form class="navbar-form navbar-left" action="do?command=search" method="POST">
           <div class="form-group">
-            <input type="text" name="search" class="form-control" placeholder="Search car" >
+            <input type="text" name="search" class="form-control" placeholder="Найти машину" >
           </div>
-          <button type="submit" class="btn btn-default">Search <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          <button type="submit" class="btn btn-default">Поиск <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href=do?command=Profile>Profile</a></li>
-	    	<li><a href=do?command=Login>Login</a></li>
-            <li><a href=do?command=SignUp>Sign-up</a></li>
+        <c:choose>
+            <c:when test="${user==null}" >
+	    	<menu:li command="login" text="Войти" />
+            <menu:li command="signup" text="Регистрация" />
+            </c:when>
+            <c:otherwise>
+            <menu:li command="profile" text="Профиль" />
+            </c:otherwise>
+            </c:choose>
             </ul>
           </li>
         </ul>

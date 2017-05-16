@@ -1,8 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 </div> <!-- container -->
+<br><br><br><br><br><br>
 <div class="navbar-fixed-bottom row">
 <div class="container">
-<nav class="navbar navbar-default">
+<c:if test="${user!=null}">
+<c:if test="${user.fkRole==1}">
+<nav class="navbar navbar-inverse">
   <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
@@ -21,5 +24,7 @@
 </nav>
 </div>
 </div>
+</c:if>
+</c:if>
 </body>
 </html>

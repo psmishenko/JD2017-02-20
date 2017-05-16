@@ -9,7 +9,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="">Login</label>
+  <label class="col-md-4 control-label" for="">Имя</label>
   <div class="col-md-4">
   <input id="login" name="login" type="text" placeholder="" class="form-control input-md">
   <span class="help-block">16 characters</span>
@@ -18,7 +18,7 @@
 
 <!-- Password input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="">Password</label>
+  <label class="col-md-4 control-label" for="">Пароль</label>
   <div class="col-md-4">
     <input id="password" name="password" type="password" placeholder="" class="form-control input-md">
     <span class="help-block">8 characters</span>
@@ -29,7 +29,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="submitbutton"></label>
   <div class="col-md-4">
-    <button id="submitbutton" name="submitbutton" class="btn btn-success">Login</button>
+    <button id="submitbutton" name="submitbutton" class="btn btn-success">Войти</button>
   </div>
 </div>
 
@@ -38,6 +38,6 @@
 
 
 
-<p>Cmd Login: ${message}</p>
+<p>${message}</p>
 
 <%@ include file="include/end-html.jsp" %>

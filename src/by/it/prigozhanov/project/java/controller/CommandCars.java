@@ -21,15 +21,21 @@ public class CommandCars extends Action{
         DAO dao = DAO.getInstance();
         List<Car> cars;
         List<Order> orders;
+
+
         try {
             cars = dao.car.getAll("");
             request.setAttribute("cars", cars);
+
             if (request.getParameter("id") != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("id", request.getParameter("id"));
                 orders = dao.order.getAll("WHERE FK_Cars="+request.getParameter("id"));
+                request.setAttribute("orders", orders);
+
                 if (orders.size() >= 1) {
-                    return Actions.CARS.command;
+                    request.setAttribute(Messages.MSG_MESSAGE, "Этот автомобиль забронирован, выберите другой");
+                    return null;
                 }
                    return Actions.RENTCAR.command;
             }

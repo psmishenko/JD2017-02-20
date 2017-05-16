@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author v-omf
  */
-public class CommandSearch extends Action {
+public class CommandAdvancedSearch extends Action {
     @Override
     Action execute(HttpServletRequest request) {
         DAO dao = DAO.getInstance();

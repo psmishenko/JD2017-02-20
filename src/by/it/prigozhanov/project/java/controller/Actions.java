@@ -58,6 +58,11 @@ enum Actions {
             this.command = new CommandEditCars();
         }
     },
+    ADVANCEDSEARCH {
+        {
+            this.command = new CommandAdvancedSearch();
+        }
+    },
     CARS {
         {
             this.command = new CommandCars();
