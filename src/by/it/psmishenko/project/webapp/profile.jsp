@@ -36,11 +36,11 @@
  <td>${book.isbn}</td>
  <td>${book.lid}</td>
 <td>
- <form class="form-upd-userbook-${book.id}" action="do?command=profile" >
+ <form class="form-edit-userbook-${book.id}" action="edituserbook.jsp">
        <input type="hidden" name="id" value="${book.id}"/>
                 <div class=col-md-1>
-                    <button id="edituserbook" name="edituserbook" class="btn btn-success">
-                      Edit (Пока не работает)
+                    <button id="edituserbook" class="btn btn-success">
+                      Edit
                     </button>
                 </div>
     </form>
