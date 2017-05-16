@@ -11,10 +11,10 @@
 <c:forEach items="${goods}" var="good">
     <div class="row">
         <div class="col-md-2">${good.modelCar} </div>
-        <div class="col-md-1">${good.yearOfIssue} </div>
+        <div class="col-md-2">${good.yearOfIssue} </div>
         <div class="col-md-2">${good.spare} </div>
         <div class="col-md-2">${good.typeEngine} </div>
-        <div class="col-md-1">${good.capacityEngine} </div>
+        <div class="col-md-2">${good.capacityEngine} </div>
 </div>
 </c:forEach>
 <br><br>

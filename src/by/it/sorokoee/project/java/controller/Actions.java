@@ -3,9 +3,9 @@ package by.it.sorokoee.project.java.controller;
 import javax.servlet.http.HttpServletRequest;
 
 enum Actions {
-    EDITGOODS{
+    BUYGOODS{
         {
-            this.command=new CmdEditGoods();
+            this.command=new CmdBuyGoods();
         }
     },
     CATALOGGOOD{

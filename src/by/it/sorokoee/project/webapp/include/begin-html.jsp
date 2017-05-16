@@ -1,3 +1,5 @@
+
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -33,16 +35,17 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href=do?command=CreateGood>Создать товар</a></li>
-          <li><a href=do?command=CatalogGood>Каталог запчастей</a></li>
-          <li><a href=do?command=EditGoods>Товары</a></li>
-          <li><a href=do?command=EditUsers>Пользователи</a></li>
+        <li><a href=do?command=CreateGood>Создать товар</a></li>
+        <li><a href=do?command=BuyGoods>Купить запчасть</a></li>
+        <li><a href=do?command=CatalogGood>Каталог запчастей</a></li>
+        <li><a href=do?command=EditUsers>Пользователи</a></li>
 
         </ul>
         <ul class="nav navbar-nav navbar-right">
-           <li><a href=do?command=Login>Вход</a></li>
-            <li><a href=do?command=SignUp>Регистрация</a></li>
-            <li><a href=do?command=Profile>Профиль</a></li>
+           <li><a href=do?command=Login>Логин</a></li>
+           <li><a href=do?command=SignUp>Регистрация</a></li>
+           <li><a href=do?command=Profile>Профиль</a></li>
+
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
