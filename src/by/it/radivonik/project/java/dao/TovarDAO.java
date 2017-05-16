@@ -37,6 +37,11 @@ public class TovarDAO extends AbstractDAO<Tovar> {
     }
 
     @Override
+    protected Tovar newBean() {
+        return new Tovar();
+    }
+
+    @Override
     protected Tovar newBean(ResultSet resultSet) throws SQLException {
         Tovar tovar = new Tovar(
             resultSet.getInt("id"),

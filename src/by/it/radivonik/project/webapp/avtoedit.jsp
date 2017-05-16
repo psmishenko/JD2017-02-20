@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<%@ include file="inc_header.jsp" %>
+<%@ include file="include/inc_header.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <form class="form-horizontal" action="do" method="post">
@@ -27,9 +27,9 @@
   </div>
 </div>
 
-<%@ include file="inc_editbutton.jsp" %>
+<%@ include file="include/inc_editbutton.jsp" %>
 
 </fieldset>
 </form>
 
-<%@ include file="inc_footer.jsp" %>
+<%@ include file="include/inc_footer.jsp" %>

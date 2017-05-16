@@ -21,7 +21,9 @@ public enum Actions {
     AVTOLIST { { this.command = new CmdAvtoList(); } },
     AVTOEDIT { { this.command = new CmdAvtoEdit(); } },
     SKLADLIST { { this.command = new CmdSkladList(); } },
-    SKLADEDIT { { this.command = new CmdSkladEdit(); } };
+    SKLADEDIT { { this.command = new CmdSkladEdit(); } },
+    NAKLADLIST { { this.command = new CmdNakladList(); } },
+    NAKLADEDIT { { this.command = new CmdNakladEdit(); } };
 
     public AbstractAction command;
 
@@ -33,8 +35,11 @@ public enum Actions {
         try {
             HttpSession session = req.getSession(false);
             res = Actions.valueOf(command.toUpperCase()).command;
-            if (res != LOGIN.command && (session == null || session.getAttribute("userActive") == null))
+            if (res != LOGIN.command && (session == null || session.getAttribute("userActive") == null)) {
+                if (session != null)
+                    session.setAttribute(FormUtils.actionPrevName, res);
                 res = Actions.LOGIN.command;
+            }
         } catch (IllegalArgumentException e) {
             res = Actions.ERROR.command;
         }

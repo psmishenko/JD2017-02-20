@@ -51,6 +51,11 @@ public class SkladDAO extends AbstractDAO<Sklad> {
     }
 
     @Override
+    protected Sklad newBean() {
+        return new Sklad();
+    }
+
+    @Override
     protected Sklad newBean(ResultSet resultSet) throws SQLException {
         return new Sklad(
             resultSet.getInt("id"),

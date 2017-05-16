@@ -10,23 +10,23 @@ public class Naklad {
     private Date date;
     private String num;
     private String seria;
-    private int idUser;
-    private int idType;
-    private int idKlient;
-    private int idAvto;
+    private User user;
+    private TypeNaklad type;
+    private Klient klient;
+    private Avto avto;
 
     public Naklad() {
     }
 
-    public Naklad(int id, Date date, String num, String seria, int idUser, int idType, int idKlient, int idAvto) {
+    public Naklad(int id, Date date, String num, String seria, User user, TypeNaklad type, Klient klient, Avto avto) {
         this.id = id;
         this.date = date;
         this.num = num;
         this.seria = seria;
-        this.idUser = idUser;
-        this.idType = idType;
-        this.idKlient = idKlient;
-        this.idAvto = idAvto;
+        this.user = user;
+        this.type = type;
+        this.klient = klient;
+        this.avto = avto;
     }
 
     public int getId() {
@@ -61,42 +61,42 @@ public class Naklad {
         this.seria = seria;
     }
 
-    public int getIdUser() {
-        return idUser;
+    public User getUser() {
+        return user;
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public int getIdType() {
-        return idType;
+    public TypeNaklad getType() {
+        return type;
     }
 
-    public void setIdType(int idType) {
-        this.idType = idType;
+    public void setType(TypeNaklad type) {
+        this.type = type;
     }
 
-    public int getIdKlient() {
-        return idKlient;
+    public Klient getKlient() {
+        return klient;
     }
 
-    public void setIdKlient(int idKlient) {
-        this.idKlient = idKlient;
+    public void setKlient(Klient idKlient) {
+        this.klient = klient;
     }
 
-    public int getIdAvto() {
-        return idAvto;
+    public Avto getAvto() {
+        return avto;
     }
 
-    public void setIdAvto(int idAvto) {
-        this.idAvto = idAvto;
+    public void setAvto(Avto avto) {
+        this.avto = avto;
     }
 
     @Override
     public String toString() {
         return
             "Naklad{id=" + id + ", date=" + date + ", num='" + num + "', seria='" + seria + "', " +
-            "idUser=" + idUser + ", idType=" + idType + ", idKlient=" + idKlient + ", idAvto=" + idAvto + "}";
+            "user=" + user + ", type=" + type + ", klient=" + klient + ", avto=" + avto + "}";
     }
 }

@@ -47,7 +47,7 @@ public class CmdSkladEdit extends AbstractActionEdit<Sklad> {
     }
 
     @Override
-    protected AbstractAction getActionReturn() {
+    protected AbstractAction getActionPrevDefault() {
         return Actions.SKLADLIST.command;
     }
 }

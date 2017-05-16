@@ -1,5 +1,7 @@
 ﻿<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="t" tagdir="/WEB-INF/tags"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,20 +42,20 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href=do?command=UserList>Пользователи</a></li>
-            <li><a href=do?command=TovarList>Товары</a></li>
-            <li><a href=do?command=KlientList>Клиенты</a></li>
-            <li><a href=do?command=AvtoList>Автомобили</a></li>
-            <li><a href=do?command=SkladList>Склад</a></li>
-            <li><a href=do?command=NakladList>Товарные накладные</a></li>
+            <t:menuli command="UserList" text="Пользователи"/>
+            <t:menuli command="TovarList" text="Товары"/>
+            <t:menuli command="KlientList" text="Клиенты"/>
+            <t:menuli command="AvtoList" text="Автомобили"/>
+            <t:menuli command="SkladList" text="Склад"/>
+            <t:menuli command="NakladList" text="Товарные накладные"/>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <c:if test="${userActive == null}">
-            <li><a href=do?command=Login>Вход</a></li>
+            <t:menuli command="Login" text="Вход"/>
             </c:if>
             <c:if test="${userActive != null}">
             <p class="navbar-text"><b>${userActive.login} (${userActive.nameRole})</b></p>
-            <li><a href=do?command=Logout>Выход</a></li>
+            <t:menuli command="Logout" text="Выход"/>
             </c:if>
           </ul>
         </div><!-- /.navbar-collapse -->

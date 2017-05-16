@@ -42,7 +42,7 @@ public class CmdAvtoEdit extends AbstractActionEdit<Avto> {
     }
 
     @Override
-    protected AbstractAction getActionReturn() {
+    protected AbstractAction getActionPrevDefault() {
         return Actions.AVTOLIST.command;
     }
 

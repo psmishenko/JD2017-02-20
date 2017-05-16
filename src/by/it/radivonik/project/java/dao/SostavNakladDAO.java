@@ -40,10 +40,14 @@ public class SostavNakladDAO extends AbstractDAO<SostavNaklad> {
         return String.format(sql, sostavnaklad.getId());
     }
 
-
     @Override
     protected void setId(SostavNaklad sostavnaklad, int id) {
         sostavnaklad.setId(id);
+    }
+
+    @Override
+    protected SostavNaklad newBean() {
+        return new SostavNaklad();
     }
 
     @Override

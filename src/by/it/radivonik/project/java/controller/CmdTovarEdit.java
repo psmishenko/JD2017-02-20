@@ -41,7 +41,7 @@ public class CmdTovarEdit extends AbstractActionEdit<Tovar> {
     }
 
     @Override
-    protected AbstractAction getActionReturn() {
+    protected AbstractAction getActionPrevDefault() {
         return Actions.TOVARLIST.command;
     }
 

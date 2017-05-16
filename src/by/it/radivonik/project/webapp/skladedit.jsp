@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<%@ include file="inc_header.jsp" %>
+<%@ include file="include/inc_header.jsp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <form class="form-horizontal" action="do" method="post">
@@ -10,7 +10,14 @@
 
 <input type="hidden" name="command" value="SkladEdit" />
 <input type="hidden" name="id" value="${sklad.id}">
+<c:choose>
+<c:when test='${param.action.equals("create") || action.equals("create_exec")}'>
 <input type="hidden" name="id_user" value="${userActive.id}">
+</c:when>
+<c:otherwise>
+<input type="hidden" name="id_user" value="${sklad.user.id}">
+</c:otherwise>
+</c:choose>
 
 <!-- Select Basic -->
 <div class="form-group">
@@ -40,9 +47,9 @@
   </div>
 </div>
 
-<%@ include file="inc_editbutton.jsp" %>
+<%@ include file="include/inc_editbutton.jsp" %>
 
 </fieldset>
 </form>
 
-<%@ include file="inc_footer.jsp" %>
+<%@ include file="include/inc_footer.jsp" %>

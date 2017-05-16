@@ -13,6 +13,7 @@ public class DAO {
     private NakladDAO naklad;
     private SostavNakladDAO sostavnaklad;
     private SkladDAO sklad;
+    private TypeNakladDAO typenaklad;
 
     private DAO() {
     }
@@ -30,6 +31,7 @@ public class DAO {
                     dao.naklad = new NakladDAO();
                     dao.sostavnaklad = new SostavNakladDAO();
                     dao.sklad = new SkladDAO();
+                    dao.typenaklad = new TypeNakladDAO();
                 }
             }
         }
@@ -66,5 +68,9 @@ public class DAO {
 
     public SkladDAO getSklad() {
         return sklad;
+    }
+
+    public TypeNakladDAO getTypeNaklad() {
+        return typenaklad;
     }
 }

@@ -1,6 +1,7 @@
 package by.it.radivonik.project.java.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.text.ParseException;
@@ -9,6 +10,8 @@ import java.text.ParseException;
  * Created by Radivonik on 06.05.2017.
  */
 public class FormUtils {
+    static final String actionPrevName = "actionPrev";
+
     public static String getString(
         HttpServletRequest req, String param, String pattern, boolean empty, String name) throws ParseException  {
         String value = req.getParameter(param);
@@ -72,5 +75,17 @@ public class FormUtils {
 
     static boolean isPost(HttpServletRequest req) {
         return req.getMethod().toUpperCase().equals("POST");
+    }
+
+    static AbstractAction actionPrev(HttpServletRequest req, AbstractAction actionDefault) {
+        HttpSession session = req.getSession();
+        if (session == null)
+            return null;
+        if (session.getAttribute(actionPrevName) != null) {
+            AbstractAction action = (AbstractAction)session.getAttribute(actionPrevName);
+            session.removeAttribute(actionPrevName);
+            return action;
+        }
+        return actionDefault;
     }
 }

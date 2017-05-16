@@ -61,6 +61,11 @@ public class UserDAO extends AbstractDAO<User> {
     }
 
     @Override
+    protected User newBean() {
+        return new User();
+    }
+
+    @Override
     protected User newBean(ResultSet resultSet) throws SQLException {
         return new User(
             resultSet.getInt("id"),
