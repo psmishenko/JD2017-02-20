@@ -8,7 +8,7 @@
 <c:forEach items="${orders}" var="order">
 <div class="well well-lg">
 
-    <div class="row">Заказ #${order.id}</div>
+    <div class="row">Заказ #${order.id}   <span class="label label-success">Оплачен</span></div>
 
 <hr>
  <b>Данные клиента</b>
