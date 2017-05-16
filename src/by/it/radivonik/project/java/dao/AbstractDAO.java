@@ -50,7 +50,9 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
             }
         };
 
-        try (Statement statement = ConnectionCreator.getConnection().createStatement()) {
+        try (
+            Connection connection = ConnectionCreator.getConnection();
+            Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(sqlSelect()+ " " + where);
             while (resultSet.next()) {
                 T bean = newBean(resultSet);
@@ -96,7 +98,9 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
 
     int executeUpdate(String sql) throws SQLException {
         int res;
-        try (Statement statement = ConnectionCreator.getConnection().createStatement()) {
+        try (
+            Connection connection = ConnectionCreator.getConnection();
+            Statement statement = connection.createStatement()) {
             res = statement.executeUpdate(sql);
         }
         return res;
@@ -104,7 +108,9 @@ public abstract class AbstractDAO<T> implements InterfaceDAO<T> {
 
     int executeCreate(String sql) throws SQLException {
         int res = -1;
-        try (Statement statement = ConnectionCreator.getConnection().createStatement()) {
+        try (
+            Connection connection = ConnectionCreator.getConnection();
+            Statement statement = connection.createStatement()) {
             if (statement.executeUpdate(sql,Statement.RETURN_GENERATED_KEYS) == 1) {
                 ResultSet keys = statement.getGeneratedKeys();
                 if (keys.next())

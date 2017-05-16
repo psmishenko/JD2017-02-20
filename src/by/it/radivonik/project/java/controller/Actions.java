@@ -35,8 +35,11 @@ public enum Actions {
         try {
             HttpSession session = req.getSession(false);
             res = Actions.valueOf(command.toUpperCase()).command;
-            if (res != LOGIN.command && (session == null || session.getAttribute("userActive") == null))
+            if (res != LOGIN.command && (session == null || session.getAttribute("userActive") == null)) {
+                if (session != null)
+                    session.setAttribute(FormUtils.actionPrev, res);
                 res = Actions.LOGIN.command;
+            }
         } catch (IllegalArgumentException e) {
             res = Actions.ERROR.command;
         }
