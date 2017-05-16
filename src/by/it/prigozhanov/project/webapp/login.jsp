@@ -38,6 +38,6 @@
 
 
 
-<p>Cmd Login: ${message}</p>
+<p>${message}</p>
 
 <%@ include file="include/end-html.jsp" %>

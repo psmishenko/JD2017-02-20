@@ -55,7 +55,7 @@
 </form>
 
 
-<p>Cmd SIGN-UP: ${message}</p>
+<p>${message}</p>
 
 
 <%@ include file="include/end-html.jsp" %>
