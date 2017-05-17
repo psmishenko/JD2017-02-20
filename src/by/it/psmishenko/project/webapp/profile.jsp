@@ -36,8 +36,9 @@
  <td>${book.isbn}</td>
  <td>${book.lid}</td>
 <td>
- <form class="form-edit-userbook-${book.id}" action="do?command=EditUserBook" method=GET>
+ <form class="form-edit-userbook-${book.id}" action="do" method=GET>
        <input type="hidden" name="id" value="${book.id}"/>
+        <input type="hidden" name="command" value="EditUserBook"/>
                 <div class=col-md-1>
                     <button id="edituserbook" class="btn btn-success">
                       Edit (doesn't work)
