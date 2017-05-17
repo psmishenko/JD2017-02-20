@@ -9,7 +9,6 @@
     Важно чтобы внутри каждого из этих тегов были теги servlet-name
     и имя сервлета в них было одинаковым!!! Здесь это имя HelloWorld
     -->
-
     <servlet>
         <servlet-name>FrontController</servlet-name>
         <servlet-class>by.it.tereshko.project.java.controller.FrontController</servlet-class>
@@ -21,7 +20,7 @@
     </servlet-mapping>
 
     <filter>
-        <filter-name>EncodingUTF8</filter-name>
+        <filter-name>EncogingUTF8</filter-name>
         <filter-class>by.it.tereshko.project.java.filters.EncodingUTF8</filter-class>
         <init-param>
             <param-name>encoding</param-name>
@@ -30,8 +29,20 @@
     </filter>
 
     <filter-mapping>
-        <filter-name>EncodingUTF8</filter-name>
+        <filter-name>EncogingUTF8</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <description>MySQL my_sql_tereshko</description>
+    <resource-ref>
+        <description>my_sql_tereshko</description>
+        <res-ref-name>jdbc/my_sql_tereshko</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+
+    <listener>
+        <listener-class>by.it.tereshko.project.java.filters.SessionAttributeListener</listener-class>
+    </listener>
 
 </web-app>

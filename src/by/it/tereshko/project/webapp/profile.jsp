@@ -10,6 +10,7 @@
 </div>
 
 <h1>Ваши объявления</h1>
+
 <div class="row">
   <div class="col-md-1">Цена</div>
   <div class="col-md-3">Адрес</div>
@@ -19,6 +20,7 @@
   <div class="col-md-1">Этаж</div>
   <div class="col-md-1">Этажность</div>
 </div>
+
 <c:forEach items="${ads}" var="ad">
   <br><div class="row">
   <div class="col-md-1">${ad.price} </div>
@@ -31,12 +33,13 @@
 </div>
 </c:forEach>
 <br><br>
+<t:paginator count="${adCount}" step="5" urlprefix="?command=Profile&start="/>
+<br>
+
 <form class="form-horizontal" action="do?command=profile" method="POST">
 <fieldset>
-
 <!-- Form Name -->
 <legend>Выход</legend>
-
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-4 control-label" for="logout"></label>
@@ -44,7 +47,6 @@
     <button id="logout" name="logout" class="btn btn-danger">Logout</button>
   </div>
 </div>
-
 </fieldset>
 </form>
 

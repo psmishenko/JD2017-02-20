@@ -1,3 +1,6 @@
+<%@ taglib tagdir="/WEB-INF/tags/menu" prefix="menu" %>
+<%@ taglib tagdir="/WEB-INF/tags" prefix="t" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ include file="include/begin-html.jsp" %>
 
@@ -19,6 +22,7 @@
 </div>
 
 <c:forEach items="${ads}" var="ad">
+    <br>
     <div class="row">
         <div class="col-md-1">${ad.price} </div>
         <div class="col-md-3">${ad.address} </div>
@@ -29,5 +33,7 @@
         <div class="col-md-1">${ad.floors} </div>
     </div>
 </c:forEach>
+<br><br>
+<t:paginator count="${adCount}" step="10" urlprefix="?start="/>
 
 <%@ include file="include/end-html.jsp" %>
