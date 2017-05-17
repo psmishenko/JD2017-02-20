@@ -6,7 +6,7 @@
 
 <!-- Form Name -->
 <legend align="center">Edit user book</legend>
-
+ <input type="hidden" name="id" value="${book.id}"/>
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="author">Author</label>  
