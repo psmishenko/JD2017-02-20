@@ -1,5 +1,8 @@
-package by.it.ikavalenka.jd03_03.DAO;
-import by.it.ikavalenka.jd03_03.beans.client;
+package by.it.ikavalenka.jd03_04.java.controller.dao;
+import by.it.ikavalenka.jd03_04.java.controller.dao.AbstractDAO;
+import by.it.ikavalenka.jd03_04.java.controller.dao.Connect;
+import by.it.ikavalenka.jd03_04.java.controller.dao.IDAO;
+import by.it.ikavalenka.jd03_04.java.controller.dao.beans.client;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -35,7 +38,7 @@ public class ClientDAO extends AbstractDAO implements IDAO<client> {
     }
 
     @Override
-    public boolean update(client client) throws SQLException {
+    public int update(client client) throws SQLException {
         String sql = String.format("UPDATE 'client' SET " +
                         "'Login'='%s'," +
                         "'Password'= '%s'," +

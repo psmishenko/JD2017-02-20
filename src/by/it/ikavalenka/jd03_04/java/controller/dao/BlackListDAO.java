@@ -1,5 +1,8 @@
-package by.it.ikavalenka.jd03_03.DAO;
-import by.it.ikavalenka.jd03_03.beans.blacklist;
+package by.it.ikavalenka.jd03_04.java.controller.dao;
+import by.it.ikavalenka.jd03_04.java.controller.dao.AbstractDAO;
+import by.it.ikavalenka.jd03_04.java.controller.dao.Connect;
+import by.it.ikavalenka.jd03_04.java.controller.dao.IDAO;
+import by.it.ikavalenka.jd03_04.java.controller.dao.beans.blacklist;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -33,7 +36,7 @@ public class BlackListDAO extends AbstractDAO implements IDAO<blacklist> {
         return null;
     }
     @Override
-    public boolean update(blacklist blacklist) throws SQLException{
+    public int update(blacklist blacklist) throws SQLException{
         String sql = String.format("UPDATE 'blacklist' SET " +
                         "'Client_id_fk'='%s'"+
                         "WHERE Black_list_ID",

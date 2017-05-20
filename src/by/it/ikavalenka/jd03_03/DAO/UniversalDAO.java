@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 
-public class UniversalDAO<TypeBean> implements IDAO<TypeBean> {
+public class UniversalDAO<TypeBean>  {
 
     private TypeBean bean;
     private String table;
@@ -79,7 +79,7 @@ public class UniversalDAO<TypeBean> implements IDAO<TypeBean> {
             return null;
     }
 
-    public int update(TypeBean bean) throws SQLException {
+    public boolean update(TypeBean bean) throws SQLException {
 
         String sql = "UPDATE `" + table + "` SET ";
         String delimiter = "";
@@ -128,7 +128,7 @@ public class UniversalDAO<TypeBean> implements IDAO<TypeBean> {
         return (id > 0);
     }
 
-    public int delete(TypeBean bean) throws SQLException {
+    public boolean  delete(TypeBean bean) throws SQLException {
         String sql = null;
         try {
             sql = "DELETE FROM `" + table + "` WHERE `" + table + "`.`ID` = '" + fields[0].get(bean) + "'";
@@ -138,7 +138,6 @@ public class UniversalDAO<TypeBean> implements IDAO<TypeBean> {
         return (0 < executeUpdate(sql, false));
     }
 
-    @SuppressWarnings("unchecked")
     private TypeBean newBean() {
         try {
             return (TypeBean) bean.getClass().newInstance();

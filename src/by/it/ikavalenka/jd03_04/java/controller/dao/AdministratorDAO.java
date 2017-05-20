@@ -1,5 +1,8 @@
-package by.it.ikavalenka.jd03_03.DAO;
-import by.it.ikavalenka.jd03_03.beans.administrator;
+package by.it.ikavalenka.jd03_04.java.controller.dao;
+import by.it.ikavalenka.jd03_04.java.controller.dao.AbstractDAO;
+import by.it.ikavalenka.jd03_04.java.controller.dao.Connect;
+import by.it.ikavalenka.jd03_04.java.controller.dao.IDAO;
+import by.it.ikavalenka.jd03_04.java.controller.dao.beans.administrator;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -33,7 +36,7 @@ public class AdministratorDAO  extends AbstractDAO implements IDAO<administrator
         return null;
     }
     @Override
-    public boolean update(administrator administrator) throws SQLException{
+    public int update(administrator administrator) throws SQLException{
         String sql = String.format("UPDATE 'administrator' SET " +
                 "'Login'='%s'," +
                 "'Password'= '%s',"+
