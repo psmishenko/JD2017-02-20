@@ -10,12 +10,13 @@ import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.text.ParseException;
 
-public class CommandSignup extends Action {
+public class CommandSignupAdministrator extends Action {
     @Override
     public Action execute(HttpServletRequest request) {
         if (!Form.isPost(request)) {
             return null;
         } else {
+
             administrator administrator = new administrator(1, 2, 3, "test", 4, 567);
             try {
                 administrator.setAdm_id(0);
@@ -35,29 +36,7 @@ public class CommandSignup extends Action {
                 return Actions.ERROR.command;
             }
         }
-        if (!Form.isPost(request)){
-            return
-        }
-        else {
-            client client = new client();
-            try {
-                client.setClient_ID(0);
-                client.setLogin(Form.getInt(request,"Login"));
-                client.setPassword(Form.getInt(request,"Password"));
-                client.setOrder_ID(Form.getInt(request,"Order"));
-                client.setCost_order(Form.getString(request,"costOrder",Pattern.ORDER));
-                DAO dao = DAO.getInstance();
-                if (dao.clientDAO.create(client))
-                    return Actions.LOGIN.command;
-                else return null;
-            }catch (ParserException e){
-                return Actions.ERROR.command;
-            }catch (SQLException e) {
-                return Actions.ERROR.command;
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
-        }
+
     }
 
 }

@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 enum Actions {
     SIGNUP {{
-        this.command = new CommandSignup();
+        this.command = new CommandSignupAdministrator();
     }},
     LOGIN {{
         this.command = new CommandLogin();
