@@ -1,5 +1,5 @@
 package by.it.ikavalenka.jd02_09.B;
-import by.it.akhmelev.jd02_09.demo.xcj.Ad;
+
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;

@@ -1,6 +1,5 @@
 package by.it.ikavalenka.project.java.dao;
 
-import by.it.ikavalenka.jd03_03.DAO.Connect;
 import by.it.ikavalenka.project.java.connection.ConnectionCreator;
 
 import java.sql.Connection;
@@ -33,4 +32,7 @@ public abstract class AbstractDAO {
         }
     }
 
+    public abstract void update();
+
+    public abstract void delete();
 }

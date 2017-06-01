@@ -33,7 +33,7 @@ public class AdministratorDAO  extends AbstractDAO implements IDAO<administrator
         return null;
     }
     @Override
-    public boolean update(administrator administrator) throws SQLException{
+    public int update(administrator administrator) throws SQLException{
         String sql = String.format("UPDATE 'administrator' SET " +
                 "'Login'='%s'," +
                 "'Password'= '%s',"+

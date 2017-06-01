@@ -93,7 +93,7 @@ public class administrator extends by.it.ikavalenka.jd03_03.beans.administrator 
         this.FullOrder_id = FullOrder_id;
         this.BlackList_id_fk = BlackList_id_fk;
     }
-    public administrator(){}
+    public administrator(int adm_id, int login, int password, int fullOrder_id, int blackList_id_fk){}
 
     @Override
     public String toString() {

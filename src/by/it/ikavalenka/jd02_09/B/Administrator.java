@@ -1,6 +1,6 @@
 package by.it.ikavalenka.jd02_09.B;
 
-import by.it.akhmelev.jd01_11.Collections.Order;
+
 import by.it.ikavalenka.jd02_02.Backet;
 
 import javax.xml.bind.annotation.*;

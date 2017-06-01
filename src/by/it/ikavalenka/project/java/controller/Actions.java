@@ -12,9 +12,7 @@ enum Actions {
     LOGOUT {{
         this.command = new CommandLogout();
     }},
-    INDEX {{
-        this.command = new CommandIndex();
-    }},
+
     EDITBLACKLIST {{
         this.command =new CommandEditBlackList();
     }

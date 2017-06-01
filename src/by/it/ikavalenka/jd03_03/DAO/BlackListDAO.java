@@ -33,7 +33,7 @@ public class BlackListDAO extends AbstractDAO implements IDAO<blacklist> {
         return null;
     }
     @Override
-    public boolean update(blacklist blacklist) throws SQLException{
+    public int update(blacklist blacklist) throws SQLException{
         String sql = String.format("UPDATE 'blacklist' SET " +
                         "'Client_id_fk'='%s'"+
                         "WHERE Black_list_ID",

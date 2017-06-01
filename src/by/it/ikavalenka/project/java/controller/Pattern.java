@@ -8,5 +8,5 @@ public interface Pattern {
     String PASSWORD ="[0-9]+";
     String CATALOG ="[a-zA-Z0-9]{8,}";
     String ORDER ="[a-zA-Z0-9]{8,}";
-
+    String BLACKLIST ="[a-zA-Z0-9]{8,}";
 }

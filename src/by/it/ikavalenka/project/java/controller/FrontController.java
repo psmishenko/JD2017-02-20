@@ -1,15 +1,32 @@
 package by.it.ikavalenka.project.java.controller;
 
+import by.it.ikavalenka.project.java.dao.DAO;
+
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 
 public class FrontController extends HttpServlet{
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        try {
+            config.getServletContext().setAttribute(
+                    "administrator",
+                    DAO.getInstance().administratorDAO.getAll("")
+            );
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        super.init(config);
+    }
 
     private RequestDispatcher dispatcher(Action action){
         return getServletContext().getRequestDispatcher(action.getJsp());

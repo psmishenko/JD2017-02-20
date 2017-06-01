@@ -1,7 +1,7 @@
 package by.it.ikavalenka.project.java.dao;
-import by.it.ikavalenka.jd03_03.DAO.Connect;
-import by.it.ikavalenka.jd03_03.DAO.IDAO;
-import by.it.ikavalenka.jd03_03.beans.administrator;
+import by.it.ikavalenka.project.java.connection.ConnectionCreator;
+import by.it.ikavalenka.project.java.dao.IDAO;
+import by.it.ikavalenka.project.java.beans.administrator;
 import by.it.ikavalenka.project.java.connection.ConnectionCreator;
 
 import java.sql.Connection;

@@ -1,15 +1,15 @@
 package by.it.ikavalenka.project.java.dao;
 
-import by.it.ikavalenka.jd03_03.DAO.AdministratorDAO;
-import by.it.ikavalenka.jd03_03.DAO.BlackListDAO;
-import by.it.ikavalenka.jd03_03.DAO.ClientDAO;
+import by.it.ikavalenka.project.java.dao.AdministratorDAO;
+import by.it.ikavalenka.project.java.dao.BlackListDAO;
+import by.it.ikavalenka.project.java.dao.ClientDAO;
 
 /**
  * Created by USER on 14.05.2017.
  */
 public class DAO {
     private static DAO instance;
-    public by.it.ikavalenka.jd03_03.DAO.AdministratorDAO administratorDAO;
+    public AdministratorDAO administratorDAO;
     public ClientDAO clientDAO;
     public BlackListDAO blackListDAO;
     private DAO() {}

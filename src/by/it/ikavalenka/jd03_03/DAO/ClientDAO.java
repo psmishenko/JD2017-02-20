@@ -35,7 +35,7 @@ public class ClientDAO extends AbstractDAO implements IDAO<client> {
     }
 
     @Override
-    public boolean update(client client) throws SQLException {
+    public int update(client client) throws SQLException {
         String sql = String.format("UPDATE 'client' SET " +
                         "'Login'='%s'," +
                         "'Password'= '%s'," +

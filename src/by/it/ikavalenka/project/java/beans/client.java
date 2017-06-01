@@ -3,7 +3,7 @@ package by.it.ikavalenka.project.java.beans;
 /**
  * Created by USER on 09.05.2017.
  */
-public class client {
+public class client  {
     private int Client_ID;
     private int Login;
     private int Password;

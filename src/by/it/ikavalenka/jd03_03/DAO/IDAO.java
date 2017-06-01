@@ -9,7 +9,7 @@ import java.util.List;
 public interface IDAO<T> {
     boolean create(T entity) throws SQLException;
     T read (int id) throws SQLException ;
-    boolean update(T entity) throws SQLException;
+    int update(T entity) throws SQLException;
     int delete(T entity) throws  SQLException;
     List<T> getAll(String whereString) throws  SQLException;
 

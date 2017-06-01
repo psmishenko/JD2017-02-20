@@ -15,7 +15,7 @@ public class Utils {
         session.setMaxInactiveInterval(30);
         return ob != null && ob instanceof administrator?(administrator) ob:null;
     }
-    static  client getSessionAdministrator (HttpServletRequest request){
+    static  client getSessionClient (HttpServletRequest request){
         HttpSession session = request.getSession();
         Object object = session.getAttribute("client");
         session.setMaxInactiveInterval(30);
