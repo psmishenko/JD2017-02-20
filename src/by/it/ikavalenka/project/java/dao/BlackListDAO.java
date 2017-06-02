@@ -68,4 +68,14 @@ public class BlackListDAO extends AbstractDAO implements IDAO<blacklist> {
         }
         return result;
     }
+
+    @Override
+    public void update() {
+
+    }
+
+    @Override
+    public void delete() {
+
+    }
 }

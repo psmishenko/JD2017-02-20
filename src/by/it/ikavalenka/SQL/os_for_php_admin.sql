@@ -50,7 +50,7 @@ INSERT INTO `administrator` (`Adm_id`, `Login`, `Password`, `Catalog`, `FullOrde
 --
 
 CREATE TABLE `blacklist` (
-  `Black_list_ID` int(11) NOT NULL,
+  `blacklist` int(11) NOT NULL,
   `Client_id_fk` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

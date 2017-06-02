@@ -17,9 +17,9 @@
       </div>
 <ul class="nav nav navbar-nav navbar-left">
 
-            <li><a href=do?command=editusers>Edit Users</a></li>
-            <li><a href=do?command=editcars>Edit Cars</a></li>
-            <li><a href=do?command=adminorders>Admin Orders</a></li>
+            <li><a href=do?command=catalog>catalog</a></li>
+            <li><a href=do?command=editblacklist>Edit Black List</a></li>
+            <li><a href=do?command=editcatalog>Edit Catalog</a></li>
 </ul>
 </nav>
 </div>

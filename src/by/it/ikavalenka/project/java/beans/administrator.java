@@ -3,7 +3,7 @@ package by.it.ikavalenka.project.java.beans;
 /**
  * Created by USER on 09.05.2017.
  */
-public class administrator extends by.it.ikavalenka.jd03_03.beans.administrator {
+public class administrator  {
     private int Adm_id;
     private int Login;
     private int Password;

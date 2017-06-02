@@ -79,4 +79,14 @@ public class ClientDAO extends AbstractDAO implements IDAO<client> {
             }
         } return result;
     }
+
+    @Override
+    public void update() {
+
+    }
+
+    @Override
+    public void delete() {
+
+    }
 }

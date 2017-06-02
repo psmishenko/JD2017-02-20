@@ -39,23 +39,23 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-        <menu:li command="home" text="Домой" />
-        <menu:li command="cars" text="Арендовать машину" />
+        <menu:li command="blacklist" text="Black List" />
+        <menu:li command="catalog" text="Catalog" />
         </ul>
         <form class="navbar-form navbar-left" action="do?command=search" method="POST">
           <div class="form-group">
-            <input type="text" name="search" class="form-control" placeholder="Найти машину" >
+            <input type="text" name="search" class="form-control" placeholder="Find:" >
           </div>
           <button type="submit" class="btn btn-default">Поиск <span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
         </form>
         <ul class="nav navbar-nav navbar-right">
         <c:choose>
             <c:when test="${user==null}" >
-	    	<menu:li command="login" text="Войти" />
-            <menu:li command="signup" text="Регистрация" />
+	    	<menu:li command="login" text="Login" />
+            <menu:li command="signup" text="Signup" />
             </c:when>
             <c:otherwise>
-            <menu:li command="profile" text="Профиль" />
+            <menu:li command="catalog" text="Catalog" />
             </c:otherwise>
             </c:choose>
             </ul>

@@ -2,26 +2,21 @@
 <%@ include file="include/begin-html.jsp" %>
 <h2>${message}</h2>
 <div class="row">
-<c:forEach items="${cars}" var="car">
+<c:forEach items="${blacklist}" var="blacklist">
 
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
       <div class="caption">
-        <h2>${car.mark} ${car.model}</h2>
-        <h4>${car.price}$ за день</h4>
-        <p>${car.hp} HP</p>
-        <form action="do?command=cars" method="POST">
-                 <input type="hidden" name="id" value="${car.id}"/>
+        <h2>${blacklist.blacklist}</h2>
+        <form action="do?command=blacklist" method="POST">
+                 <input type="hidden" name="id" value="${blacklist.Black_list_ID}"/>
 
 
-                <p><button class="btn btn-success" name="choosecars">Арендовать</button></p>
+                <p><button class="btn btn-success" name="chooselist">Select List</button></p>
 
 
                 </form>
-        <p>Месторасположение: ${car.location} <span class="glyphicon glyphicon-globe" aria-hidden="true"></span></p>
-        <p>Объем багажника: ${car.luggageCapacity}  <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span></p>
-        <p>Колличество мест для пассажиров: ${car.seats}  <span class="glyphicon glyphicon-user" aria-hidden="true"></span></p>
-        <p>Средний расход: ${car.fuelConsumption} литров/100км  <span class="glyphicon glyphicon-filter" aria-hidden="true"></span></p>
+        <p>Client_id: ${blacklist.Client_id_fk} <span class="glyphicon glyphicon-globe" aria-hidden="true"></span></p>
       </div>
     </div>
   </div>

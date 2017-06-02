@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by USER on 14.05.2017.
  */
-public class AdministratorDAO  extends AbstractDAO implements IDAO<administrator>{
+public  class AdministratorDAO  extends AbstractDAO implements IDAO<administrator>{
     @Override
     public boolean create(administrator administrator) throws SQLException{
         String sql = String.format("INSERT INTO 'administrator'('Login ', 'Password ', 'Catalog ', 'FullOrder_id ', 'BlackList_id_fk ')" +
@@ -78,7 +78,17 @@ public class AdministratorDAO  extends AbstractDAO implements IDAO<administrator
         }
         return result;
     }
+
+    @Override
+    public void update() {
+
     }
+
+    @Override
+    public void delete() {
+
+    }
+}
 
 
 
