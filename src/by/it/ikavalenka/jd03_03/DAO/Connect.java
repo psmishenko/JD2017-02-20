@@ -10,7 +10,7 @@ import java.sql.SQLException;
  * Created by USER on 01.05.2017.
  */
 public class Connect {
-    static private Connection connection;
+    public static  Connection connection;
 
     static {
         try {

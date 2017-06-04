@@ -1,27 +1,29 @@
 package by.it.ikavalenka.jd03_04.java.controller.dao;
 
+import by.it.ikavalenka.jd03_03.DAO.AdministratorDAO;
+import by.it.ikavalenka.jd03_03.DAO.BlackListDAO;
+import by.it.ikavalenka.jd03_03.DAO.ClientDAO;
+
+/**
+ * Created by USER on 14.05.2017.
+ */
 public class DAO {
-
     private static DAO instance;
-
-    public UniversalDAO<Role> role;
-    public UniversalDAO<User> user;
-    public UniversalDAO<Ad> ad;
-
-    private DAO() {
-    }
-
-    public static DAO getInstance(){
-        if (instance==null){
+    public by.it.ikavalenka.jd03_03.DAO.AdministratorDAO administratorDAO;
+    public ClientDAO clientDAO;
+    public BlackListDAO blackListDAO;
+    private DAO() {}
+    public static DAO getInstance() {
+        if (instance == null){
             synchronized (DAO.class){
-                if(instance==null){
-                    instance=new DAO();
-                    instance.user=new UniversalDAO<>(new User(),"users");
-                    instance.role=new UniversalDAO<>(new Role(),"roles");
-                    instance.ad=new UniversalDAO<>(new Ad(),"ads");
+                if (instance == null){
+                    instance = new DAO();
+                    instance.administratorDAO=new AdministratorDAO();
+                    instance.clientDAO = new ClientDAO();
+                    instance.blackListDAO = new BlackListDAO();
                 }
             }
         }
-    return instance;
+        return instance;
     }
 }

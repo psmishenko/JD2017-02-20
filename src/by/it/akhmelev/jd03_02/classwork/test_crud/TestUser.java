@@ -24,3 +24,5 @@ public class TestUser {
 
     }
 }
+               "INSERT INTO `users`(`Login`, `Password`, `Email`, `FK_roles`) " +
+                       "VALUES ('%s','%s','%s',%d);",

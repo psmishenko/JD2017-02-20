@@ -7,36 +7,28 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="LoginForm">Login</label>
+  <label class="col-md-4 control-label" for="Login">Login</label>
   <div class="col-md-4">
-  <input id="LoginForm" name="LoginForm" type="text" placeholder="Your Login" class="form-control input-md" required="">
-  <span class="help-block">Enter Your Login</span>
+  <input id="Login" name="Login" type="text" placeholder="Enter Your Login" class="form-control input-md" required="">
+  <span class="help-block">Required field</span>
   </div>
 </div>
 
-<!-- Text input-->
+<!-- Password input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Password">Password*</label>
+  <label class="col-md-4 control-label" for="Password">Password</label>
   <div class="col-md-4">
-  <input id="Password" name="Password" type="text" placeholder="Enter Your Password" class="form-control input-md" required="">
-  <span class="help-block">Help?</span>
+    <input id="Password" name="Password" type="password" placeholder="Enter Your Password" class="form-control input-md" required="">
+    <span class="help-block">Required field</span>
   </div>
 </div>
 
-<!-- Text input-->
+<!-- Button (Double) -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="Email">Email</label>
-  <div class="col-md-4">
-  <input id="Email" name="Email" type="text" placeholder="Enter Your email" class="form-control input-md">
-  <span class="help-block">Forgot?</span>
-  </div>
-</div>
-
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="singlebutton">Single Button</label>
-  <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Button</button>
+  <label class="col-md-4 control-label" for="Login">Login/SignUp</label>
+  <div class="col-md-8">
+    <button id="Login" name="Login" class="btn btn-success">Log in</button>
+    <button id="Sign up" name="Sign up" class="btn btn-danger">Sign up</button>
   </div>
 </div>
 

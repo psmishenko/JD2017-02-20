@@ -30,4 +30,7 @@ public abstract class AbstractDAO {
         }
     }
 
+    public abstract void update();
+
+    public abstract void delete();
 }
